@@ -16,7 +16,13 @@ namespace Summoners_War_Statistics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            IView view = new FormMain();
+            Model model = new Model();
+
+            Presenter presenter = new Presenter(view, model);
+
+            Application.Run((FormMain)view);
         }
     }
 }
