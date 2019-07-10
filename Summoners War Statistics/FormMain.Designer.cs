@@ -36,12 +36,14 @@
             this.labelBuildingsInfo = new System.Windows.Forms.Label();
             this.labelTowersCalculator = new System.Windows.Forms.Label();
             this.labelSomething = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSelectFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAccountInfo
             // 
             this.labelAccountInfo.AutoSize = true;
-            this.labelAccountInfo.Location = new System.Drawing.Point(13, 13);
+            this.labelAccountInfo.Location = new System.Drawing.Point(13, 81);
             this.labelAccountInfo.Name = "labelAccountInfo";
             this.labelAccountInfo.Size = new System.Drawing.Size(272, 39);
             this.labelAccountInfo.TabIndex = 0;
@@ -51,7 +53,7 @@
             // labelRunesInfo
             // 
             this.labelRunesInfo.AutoSize = true;
-            this.labelRunesInfo.Location = new System.Drawing.Point(444, 13);
+            this.labelRunesInfo.Location = new System.Drawing.Point(444, 81);
             this.labelRunesInfo.Name = "labelRunesInfo";
             this.labelRunesInfo.Size = new System.Drawing.Size(309, 39);
             this.labelRunesInfo.TabIndex = 1;
@@ -113,11 +115,26 @@
             this.labelSomething.TabIndex = 7;
             this.labelSomething.Text = "Something else to add";
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // buttonSelectFile
+            // 
+            this.buttonSelectFile.Location = new System.Drawing.Point(13, 13);
+            this.buttonSelectFile.Name = "buttonSelectFile";
+            this.buttonSelectFile.Size = new System.Drawing.Size(188, 23);
+            this.buttonSelectFile.TabIndex = 8;
+            this.buttonSelectFile.Text = "Select JSON file";
+            this.buttonSelectFile.UseVisualStyleBackColor = true;
+            this.buttonSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 607);
+            this.Controls.Add(this.buttonSelectFile);
             this.Controls.Add(this.labelSomething);
             this.Controls.Add(this.labelTowersCalculator);
             this.Controls.Add(this.labelBuildingsInfo);
@@ -144,6 +161,8 @@
         private System.Windows.Forms.Label labelBuildingsInfo;
         private System.Windows.Forms.Label labelTowersCalculator;
         private System.Windows.Forms.Label labelSomething;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button buttonSelectFile;
     }
 }
 

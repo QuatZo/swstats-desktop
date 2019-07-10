@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,22 @@ namespace Summoners_War_Statistics
             }
         }
 
+        public OpenFileDialog OpenFile
+        {
+            get
+            {
+                return openFileDialog;
+            }
+            set
+            {
+                openFileDialog = value;
+            }
+        }
         #endregion
 
         #region Events
         public event Action FormOnLoad;
+        public event Action SelectFileButtonClicked;
         #endregion
 
         public FormMain()
@@ -43,6 +56,11 @@ namespace Summoners_War_Statistics
         private void FormMain_Load(object sender, EventArgs e)
         {
             FormOnLoad?.Invoke();
+        }
+
+        private void buttonSelectFile_Click(object sender, EventArgs e)
+        {
+            SelectFileButtonClicked?.Invoke();
         }
     }
 }
