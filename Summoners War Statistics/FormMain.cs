@@ -14,18 +14,13 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         #region Properties
-        public string Test
+        public IIntroductionView IntroductionView
         {
             get
             {
-                return labelAccountInfo.Text;
-            }
-            set
-            {
-                labelAccountInfo.Text = value;
+                return introduction1;
             }
         }
-
         public OpenFileDialog OpenFile
         {
             get
@@ -50,7 +45,19 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        public void ShowMessage(string message, MessageBoxIcon messageBoxIcon)
+        {
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            if (messageBoxIcon == MessageBoxIcon.Error) { caption = "Error"; }
+            else if (messageBoxIcon == MessageBoxIcon.Information) { caption = "Information"; }
+            else if (messageBoxIcon == MessageBoxIcon.Exclamation) { caption = "Exclamation"; }
+            else if (messageBoxIcon == MessageBoxIcon.Question) { caption = "Question"; buttons = MessageBoxButtons.YesNoCancel; }
+            else if (messageBoxIcon == MessageBoxIcon.Warning) { caption = "Warning"; buttons = MessageBoxButtons.OKCancel; }
+            else { caption = "Error"; messageBoxIcon = MessageBoxIcon.Error; }
 
+            MessageBox.Show(message, caption, buttons, messageBoxIcon);
+        }
         #endregion
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -61,6 +68,16 @@ namespace Summoners_War_Statistics
         private void buttonSelectFile_Click(object sender, EventArgs e)
         {
             SelectFileButtonClicked?.Invoke();
+        }
+
+        private void labelAccountInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void introduction1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

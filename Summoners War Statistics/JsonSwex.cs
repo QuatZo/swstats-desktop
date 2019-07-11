@@ -6,15 +6,15 @@
 //
 //    var jsonSwex = JsonSwex.FromJson(jsonString);
 
+using System;
+using System.Collections.Generic;
+
+using System.Globalization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace Summoners_War_Statistics
 {
-    using System;
-    using System.Collections.Generic;
-
-    using System.Globalization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class JsonSwex
     {
         [JsonProperty("command", NullValueHandling = NullValueHandling.Ignore)]
@@ -302,7 +302,7 @@ namespace Summoners_War_Statistics
         public long? WizardId { get; set; }
 
         [JsonProperty("energy", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Energy { get; set; }
+        public byte Energy { get; set; }
 
         [JsonProperty("date_energy_gain_start", NullValueHandling = NullValueHandling.Ignore)]
         public DateTimeOffset? DateEnergyGainStart { get; set; }
@@ -311,7 +311,7 @@ namespace Summoners_War_Statistics
         public DateTimeOffset? DateAdd { get; set; }
 
         [JsonProperty("energy_max", NullValueHandling = NullValueHandling.Ignore)]
-        public long? EnergyMax { get; set; }
+        public byte EnergyMax { get; set; }
 
         [JsonProperty("energy_gain_term_sec", NullValueHandling = NullValueHandling.Ignore)]
         public long? EnergyGainTermSec { get; set; }
@@ -634,36 +634,6 @@ namespace Summoners_War_Statistics
         [JsonProperty("is_reward", NullValueHandling = NullValueHandling.Ignore)]
         public long? IsReward { get; set; }
     }
-    
-    public partial class The6001
-    {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
-        public long? WizardId { get; set; }
-
-        [JsonProperty("npc_friend_id", NullValueHandling = NullValueHandling.Ignore)]
-        public long? NpcFriendId { get; set; }
-
-        [JsonProperty("npc_friend_level", NullValueHandling = NullValueHandling.Ignore)]
-        public long? NpcFriendLevel { get; set; }
-
-        [JsonProperty("unit_master_id", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UnitMasterId { get; set; }
-
-        [JsonProperty("unit_class", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UnitClass { get; set; }
-
-        [JsonProperty("unit_level", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UnitLevel { get; set; }
-
-        [JsonProperty("last_assist", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTimeOffset? LastAssist { get; set; }
-
-        [JsonProperty("unit_id", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UnitId { get; set; }
-
-        [JsonProperty("next_assist_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? NextAssistTime { get; set; }
-    }
 
     public partial class Slots
     {
@@ -774,18 +744,6 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("extra", NullValueHandling = NullValueHandling.Ignore)]
         public long? Extra { get; set; }
-    }
-   
-    public partial class Upgrade
-    {
-        [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Number { get; set; }
-
-        [JsonProperty("mana", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Mana { get; set; }
-
-        [JsonProperty("crystal", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Crystal { get; set; }
     }
 
     public partial class PurpleUnitList
@@ -917,10 +875,10 @@ namespace Summoners_War_Statistics
         public string WizardName { get; set; }
 
         [JsonProperty("wizard_mana", NullValueHandling = NullValueHandling.Ignore)]
-        public long? WizardMana { get; set; }
+        public ulong WizardMana { get; set; }
 
         [JsonProperty("wizard_crystal", NullValueHandling = NullValueHandling.Ignore)]
-        public long? WizardCrystal { get; set; }
+        public uint WizardCrystal { get; set; }
 
         [JsonProperty("wizard_crystal_paid", NullValueHandling = NullValueHandling.Ignore)]
         public long? WizardCrystalPaid { get; set; }
@@ -935,16 +893,16 @@ namespace Summoners_War_Statistics
         public string WizardLastLang { get; set; }
 
         [JsonProperty("wizard_level", NullValueHandling = NullValueHandling.Ignore)]
-        public long? WizardLevel { get; set; }
+        public byte WizardLevel { get; set; }
 
         [JsonProperty("experience", NullValueHandling = NullValueHandling.Ignore)]
         public long? Experience { get; set; }
 
         [JsonProperty("wizard_energy", NullValueHandling = NullValueHandling.Ignore)]
-        public long? WizardEnergy { get; set; }
+        public byte WizardEnergy { get; set; }
 
         [JsonProperty("energy_max", NullValueHandling = NullValueHandling.Ignore)]
-        public long? EnergyMax { get; set; }
+        public byte EnergyMax { get; set; }
 
         [JsonProperty("energy_per_min", NullValueHandling = NullValueHandling.Ignore)]
         public double? EnergyPerMin { get; set; }
@@ -953,10 +911,10 @@ namespace Summoners_War_Statistics
         public long? NextEnergyGain { get; set; }
 
         [JsonProperty("arena_energy", NullValueHandling = NullValueHandling.Ignore)]
-        public long? ArenaEnergy { get; set; }
+        public byte ArenaEnergy { get; set; }
 
         [JsonProperty("arena_energy_max", NullValueHandling = NullValueHandling.Ignore)]
-        public long? ArenaEnergyMax { get; set; }
+        public byte ArenaEnergyMax { get; set; }
 
         [JsonProperty("arena_energy_next_gain", NullValueHandling = NullValueHandling.Ignore)]
         public long? ArenaEnergyNextGain { get; set; }
@@ -983,25 +941,25 @@ namespace Summoners_War_Statistics
         public long? SocialPointMax { get; set; }
 
         [JsonProperty("honor_point", NullValueHandling = NullValueHandling.Ignore)]
-        public long? HonorPoint { get; set; }
+        public uint HonorPoint { get; set; }
 
         [JsonProperty("guild_point", NullValueHandling = NullValueHandling.Ignore)]
-        public long? GuildPoint { get; set; }
+        public uint GuildPoint { get; set; }
 
         [JsonProperty("darkportal_energy", NullValueHandling = NullValueHandling.Ignore)]
-        public long? DarkportalEnergy { get; set; }
+        public byte DarkportalEnergy { get; set; }
 
         [JsonProperty("darkportal_energy_max", NullValueHandling = NullValueHandling.Ignore)]
-        public long? DarkportalEnergyMax { get; set; }
+        public byte DarkportalEnergyMax { get; set; }
 
         [JsonProperty("costume_point", NullValueHandling = NullValueHandling.Ignore)]
-        public long? CostumePoint { get; set; }
+        public ushort CostumePoint { get; set; }
 
         [JsonProperty("costume_point_max", NullValueHandling = NullValueHandling.Ignore)]
         public long? CostumePointMax { get; set; }
 
         [JsonProperty("honor_medal", NullValueHandling = NullValueHandling.Ignore)]
-        public long? HonorMedal { get; set; }
+        public uint HonorMedal { get; set; }
 
         [JsonProperty("honor_mark", NullValueHandling = NullValueHandling.Ignore)]
         public long? HonorMark { get; set; }
@@ -1017,6 +975,20 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("period_energy_max", NullValueHandling = NullValueHandling.Ignore)]
         public long? PeriodEnergyMax { get; set; }
+
+        public override string ToString()
+        {
+            string message = "";
+            message += WizardName + "\n";
+            message += WizardLevel + "\n";
+            message += WizardEnergy + "\n";
+            message += WizardMana + "\n";
+            message += WizardCrystal + "\n";
+            message += HonorPoint + "\n";
+            message += GuildPoint + "\n";
+
+            return message;
+        }
     }
 
     public partial struct SkillInfo
@@ -1049,11 +1021,6 @@ namespace Summoners_War_Statistics
     public partial class JsonSwex
     {
         public static JsonSwex FromJson(string json) => JsonConvert.DeserializeObject<JsonSwex>(json, Summoners_War_Statistics.Converter.Settings);
-    }
-
-    public static class Serialize
-    {
-        public static string ToJson(this JsonSwex self) => JsonConvert.SerializeObject(self, Summoners_War_Statistics.Converter.Settings);
     }
 
     internal static class Converter

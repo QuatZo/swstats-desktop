@@ -13,10 +13,14 @@ namespace Summoners_War_Statistics
         private readonly IView view;
         private readonly Model model;
 
+        private readonly IntroductionPresenter introductionPresenter;
+
         public Presenter(IView view, Model model)
         {
             this.view = view;
             this.model = model;
+
+            introductionPresenter = new IntroductionPresenter(this.view.IntroductionView, model);
 
             this.view.FormOnLoad += View_FormOnLoad;
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
@@ -32,23 +36,45 @@ namespace Summoners_War_Statistics
 
                     try
                     {
-                        Console.WriteLine(json.WizardInfo.WizardName);
+                        Console.WriteLine(json.WizardInfo);
+                        view.IntroductionView.SummonerName = json.WizardInfo.WizardName;
+                        view.IntroductionView.SummonerLevel = json.WizardInfo.WizardLevel;
+                        view.IntroductionView.SummonerMana = json.WizardInfo.WizardMana;
+                        view.IntroductionView.SummonerCrystals = json.WizardInfo.WizardCrystal;
+
+                        view.IntroductionView.SummonerArenaEnergy = json.WizardInfo.ArenaEnergy;
+                        view.IntroductionView.SummonerArenaEnergyMax = json.WizardInfo.ArenaEnergyMax;
+
+                        view.IntroductionView.SummonerDimensionalCrystals = json.WizardInfo.DarkportalEnergy;
+                        view.IntroductionView.SummonerDimensionalCrystalsMax = json.WizardInfo.DarkportalEnergyMax;
+
+                        view.IntroductionView.SummonerDimensionalHoleEnergy = json.DimensionHoleInfo.Energy;
+                        view.IntroductionView.SummonerDimensionalHoleEnergyMax = json.DimensionHoleInfo.EnergyMax;
+
+                        view.IntroductionView.SummonerEnergy = json.WizardInfo.WizardEnergy;
+                        view.IntroductionView.SummonerEnergyMax = json.WizardInfo.EnergyMax;
+
+                        view.IntroductionView.SummonerGloryPoints = json.WizardInfo.HonorPoint;
+                        view.IntroductionView.SummonerGuildPoints = json.WizardInfo.GuildPoint;
+                        view.IntroductionView.SummonerRTAMedals = json.WizardInfo.HonorMedal;
+
+                        view.IntroductionView.SummonerShapeshiftingStones = json.WizardInfo.CostumePoint;
                     }
                     catch (NullReferenceException)
                     {
-                        MessageBox.Show("You picked the wrong JSON file. Probably exported from SWOP.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP.", MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Why didn't you choose the JSON file? Nothing's gonna happen, because of you.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    view.ShowMessage("Why didn't you choose the JSON file? Nothing's gonna happen, because of you.", MessageBoxIcon.Information);
                 }
             }
         }
 
         private void View_FormOnLoad()
         {
-            view.Test = model.Test();
+            
         }
     }
 }

@@ -9,9 +9,9 @@ namespace Summoners_War_Statistics
 {
     interface IView
     {
-
         #region Properties
-        string Test { get; set; }
+        IIntroductionView IntroductionView { get; }
+
         OpenFileDialog OpenFile { get; set; }
         #endregion
 
@@ -21,7 +21,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Methods
-
+        void ShowMessage(string message, MessageBoxIcon messageBoxIcon);
         #endregion
     }
 }

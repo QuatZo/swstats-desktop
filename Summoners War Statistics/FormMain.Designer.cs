@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelAccountInfo = new System.Windows.Forms.Label();
             this.labelRunesInfo = new System.Windows.Forms.Label();
             this.labelMonsters = new System.Windows.Forms.Label();
             this.labelDimensionalHoleInfo = new System.Windows.Forms.Label();
@@ -38,22 +37,13 @@
             this.labelSomething = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonSelectFile = new System.Windows.Forms.Button();
+            this.introduction1 = new Summoners_War_Statistics.Introduction();
             this.SuspendLayout();
-            // 
-            // labelAccountInfo
-            // 
-            this.labelAccountInfo.AutoSize = true;
-            this.labelAccountInfo.Location = new System.Drawing.Point(13, 81);
-            this.labelAccountInfo.Name = "labelAccountInfo";
-            this.labelAccountInfo.Size = new System.Drawing.Size(272, 39);
-            this.labelAccountInfo.TabIndex = 0;
-            this.labelAccountInfo.Text = "Your account - how old, country,\r\nGuild points, glory points etc\r\nWorld boss, are" +
-    "na best ranking; basically profil info page";
             // 
             // labelRunesInfo
             // 
             this.labelRunesInfo.AutoSize = true;
-            this.labelRunesInfo.Location = new System.Drawing.Point(444, 81);
+            this.labelRunesInfo.Location = new System.Drawing.Point(617, 42);
             this.labelRunesInfo.Name = "labelRunesInfo";
             this.labelRunesInfo.Size = new System.Drawing.Size(309, 39);
             this.labelRunesInfo.TabIndex = 1;
@@ -64,7 +54,7 @@
             // labelMonsters
             // 
             this.labelMonsters.AutoSize = true;
-            this.labelMonsters.Location = new System.Drawing.Point(13, 224);
+            this.labelMonsters.Location = new System.Drawing.Point(10, 336);
             this.labelMonsters.Name = "labelMonsters";
             this.labelMonsters.Size = new System.Drawing.Size(188, 13);
             this.labelMonsters.TabIndex = 2;
@@ -73,7 +63,7 @@
             // labelDimensionalHoleInfo
             // 
             this.labelDimensionalHoleInfo.AutoSize = true;
-            this.labelDimensionalHoleInfo.Location = new System.Drawing.Point(444, 224);
+            this.labelDimensionalHoleInfo.Location = new System.Drawing.Point(603, 336);
             this.labelDimensionalHoleInfo.Name = "labelDimensionalHoleInfo";
             this.labelDimensionalHoleInfo.Size = new System.Drawing.Size(323, 13);
             this.labelDimensionalHoleInfo.TabIndex = 3;
@@ -91,7 +81,7 @@
             // labelBuildingsInfo
             // 
             this.labelBuildingsInfo.AutoSize = true;
-            this.labelBuildingsInfo.Location = new System.Drawing.Point(444, 427);
+            this.labelBuildingsInfo.Location = new System.Drawing.Point(698, 427);
             this.labelBuildingsInfo.Name = "labelBuildingsInfo";
             this.labelBuildingsInfo.Size = new System.Drawing.Size(228, 13);
             this.labelBuildingsInfo.TabIndex = 5;
@@ -109,7 +99,7 @@
             // labelSomething
             // 
             this.labelSomething.AutoSize = true;
-            this.labelSomething.Location = new System.Drawing.Point(444, 585);
+            this.labelSomething.Location = new System.Drawing.Point(603, 585);
             this.labelSomething.Name = "labelSomething";
             this.labelSomething.Size = new System.Drawing.Size(112, 13);
             this.labelSomething.TabIndex = 7;
@@ -129,11 +119,36 @@
             this.buttonSelectFile.UseVisualStyleBackColor = true;
             this.buttonSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
             // 
+            // introduction1
+            // 
+            this.introduction1.Location = new System.Drawing.Point(12, 42);
+            this.introduction1.Name = "introduction1";
+            this.introduction1.Size = new System.Drawing.Size(463, 239);
+            this.introduction1.SummonerArenaEnergy = ((byte)(0));
+            this.introduction1.SummonerArenaEnergyMax = ((byte)(0));
+            this.introduction1.SummonerCrystals = ((uint)(0u));
+            this.introduction1.SummonerDimensionalCrystals = ((byte)(0));
+            this.introduction1.SummonerDimensionalCrystalsMax = ((byte)(0));
+            this.introduction1.SummonerDimensionalHoleEnergy = ((byte)(0));
+            this.introduction1.SummonerDimensionalHoleEnergyMax = ((byte)(0));
+            this.introduction1.SummonerEnergy = ((byte)(0));
+            this.introduction1.SummonerEnergyMax = ((byte)(0));
+            this.introduction1.SummonerGloryPoints = ((uint)(0u));
+            this.introduction1.SummonerGuildPoints = ((uint)(0u));
+            this.introduction1.SummonerLevel = ((byte)(0));
+            this.introduction1.SummonerMana = ((ulong)(0ul));
+            this.introduction1.SummonerName = "QuatZo";
+            this.introduction1.SummonerRTAMedals = ((uint)(0u));
+            this.introduction1.SummonerShapeshiftingStones = ((ushort)(0));
+            this.introduction1.TabIndex = 9;
+            this.introduction1.Load += new System.EventHandler(this.introduction1_Load);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 607);
+            this.Controls.Add(this.introduction1);
             this.Controls.Add(this.buttonSelectFile);
             this.Controls.Add(this.labelSomething);
             this.Controls.Add(this.labelTowersCalculator);
@@ -142,7 +157,6 @@
             this.Controls.Add(this.labelDimensionalHoleInfo);
             this.Controls.Add(this.labelMonsters);
             this.Controls.Add(this.labelRunesInfo);
-            this.Controls.Add(this.labelAccountInfo);
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -152,8 +166,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelAccountInfo;
         private System.Windows.Forms.Label labelRunesInfo;
         private System.Windows.Forms.Label labelMonsters;
         private System.Windows.Forms.Label labelDimensionalHoleInfo;
@@ -163,6 +175,7 @@
         private System.Windows.Forms.Label labelSomething;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button buttonSelectFile;
+        private Introduction introduction1;
     }
 }
 

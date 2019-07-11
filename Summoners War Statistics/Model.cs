@@ -8,6 +8,6 @@ namespace Summoners_War_Statistics
 {
     class Model
     {
-        public string Test() { return "MVP test"; }
+        
     }
 }
