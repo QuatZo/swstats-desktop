@@ -55,16 +55,27 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="IIntroductionView.cs" />
-    <Compile Include="Introduction.cs">
+    <Compile Include="ISummaryView.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Introduction.Designer.cs">
-      <DependentUpon>Introduction.cs</DependentUpon>
+    <Compile Include="Summary.Designer.cs">
+      <DependentUpon>Summary.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntroductionPresenter.cs" />
+    <Compile Include="SummaryPresenter.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="JsonSwex.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
@@ -72,19 +83,20 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Introduction.resx">
-      <DependentUpon>Introduction.cs</DependentUpon>
+    <EmbeddedResource Include="Summary.resx">
+      <DependentUpon>Summary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\images\banner.xcf" />
+    <None Include="Properties\images\menu.xcf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +109,1107 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_04_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_04_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_04_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_04_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_06_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_08_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\alert_icon_0000_09_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\AZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\banner_selectjsonfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\building_icon_0000_0_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\building_icon_0000_2_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\BZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_01_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_05_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_08_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_08_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_09_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\craftstuff_icon_0000_09_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\CZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_0_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_0_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_0_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_0_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_1_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_1_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_2_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_2_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_2_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_3_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_3_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0000_3_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_0_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_1_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_2_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_2_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_3_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\deco_icon_0001_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\default_flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\DZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\EC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\EE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\EG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\EH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\etc_icon_0000_0_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\FR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\GY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\HU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ampstone_common.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ampstone_epic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ampstone_legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ampstone_magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ampstone_rare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_amp_common.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_amp_epic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_amp_legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_amp_magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_amp_rare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_conversion_common.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_conversion_epic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_conversion_legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_conversion_magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_ancient_conversion_rare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_arcane_gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_astrology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_attacked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_common.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_epic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_rare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_conversionstone_special.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_craft_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_crystal_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_ancientcoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_ancientstone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_arenaenergy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_costumestone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_dimensionenergy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_energy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_guildpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_honor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_mana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_rta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_socialpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_irene_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_market_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_rune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_storm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_random_runbox_legend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_random_runbox_mystical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_special_daily_angelmons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\img_wish_result_icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\IT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\JE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\JM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\JO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\JP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\KZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\LY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_dimhole_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_dimhole_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_monsters_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_monsters_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_other_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_other_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_runes_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_runes_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_summary_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_summary_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\MZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\NZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\OM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\PY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\QA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\RE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\riftofworlds_map_thumbnail_hydra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\RO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_1_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_5_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_7_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_7_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_7_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_7_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_8_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\roadmap_icon_8_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\RS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\RU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\RW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\SZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\thumbnail_com2us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\TZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\UA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\UG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\UM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\UY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\UZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\VU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\WS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\YE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\YT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ZA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ZM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\ZW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

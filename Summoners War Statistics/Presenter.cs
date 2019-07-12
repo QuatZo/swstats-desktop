@@ -13,14 +13,14 @@ namespace Summoners_War_Statistics
         private readonly IView view;
         private readonly Model model;
 
-        private readonly IntroductionPresenter introductionPresenter;
+        private readonly SummaryPresenter introductionPresenter;
 
         public Presenter(IView view, Model model)
         {
             this.view = view;
             this.model = model;
 
-            introductionPresenter = new IntroductionPresenter(this.view.IntroductionView, model);
+            introductionPresenter = new SummaryPresenter(this.view.IntroductionView, model);
 
             this.view.FormOnLoad += View_FormOnLoad;
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
@@ -36,7 +36,6 @@ namespace Summoners_War_Statistics
 
                     try
                     {
-                        Console.WriteLine(json.WizardInfo);
                         view.IntroductionView.SummonerName = json.WizardInfo.WizardName;
                         view.IntroductionView.SummonerLevel = json.WizardInfo.WizardLevel;
                         view.IntroductionView.SummonerMana = json.WizardInfo.WizardMana;
@@ -60,9 +59,10 @@ namespace Summoners_War_Statistics
 
                         view.IntroductionView.SummonerShapeshiftingStones = json.WizardInfo.CostumePoint;
                     }
-                    catch (NullReferenceException)
+                    catch (NullReferenceException e)
                     {
                         view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP.", MessageBoxIcon.Error);
+                        Console.WriteLine(e);
                     }
                 }
                 else

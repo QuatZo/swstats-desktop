@@ -14,7 +14,7 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         #region Properties
-        public IIntroductionView IntroductionView
+        public ISummaryView IntroductionView
         {
             get
             {
@@ -65,19 +65,14 @@ namespace Summoners_War_Statistics
             FormOnLoad?.Invoke();
         }
 
-        private void buttonSelectFile_Click(object sender, EventArgs e)
-        {
-            SelectFileButtonClicked?.Invoke();
-        }
-
-        private void labelAccountInfo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void introduction1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBoxSelectJson_Click(object sender, EventArgs e)
+        {
+            SelectFileButtonClicked?.Invoke();
         }
     }
 }

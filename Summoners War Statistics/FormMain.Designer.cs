@@ -36,14 +36,16 @@
             this.labelTowersCalculator = new System.Windows.Forms.Label();
             this.labelSomething = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.buttonSelectFile = new System.Windows.Forms.Button();
-            this.introduction1 = new Summoners_War_Statistics.Introduction();
+            this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
+            this.menu1 = new Summoners_War_Statistics.Menu();
+            this.introduction1 = new Summoners_War_Statistics.Summary();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRunesInfo
             // 
             this.labelRunesInfo.AutoSize = true;
-            this.labelRunesInfo.Location = new System.Drawing.Point(617, 42);
+            this.labelRunesInfo.Location = new System.Drawing.Point(463, 78);
             this.labelRunesInfo.Name = "labelRunesInfo";
             this.labelRunesInfo.Size = new System.Drawing.Size(309, 39);
             this.labelRunesInfo.TabIndex = 1;
@@ -54,7 +56,7 @@
             // labelMonsters
             // 
             this.labelMonsters.AutoSize = true;
-            this.labelMonsters.Location = new System.Drawing.Point(10, 336);
+            this.labelMonsters.Location = new System.Drawing.Point(9, 336);
             this.labelMonsters.Name = "labelMonsters";
             this.labelMonsters.Size = new System.Drawing.Size(188, 13);
             this.labelMonsters.TabIndex = 2;
@@ -63,7 +65,7 @@
             // labelDimensionalHoleInfo
             // 
             this.labelDimensionalHoleInfo.AutoSize = true;
-            this.labelDimensionalHoleInfo.Location = new System.Drawing.Point(603, 336);
+            this.labelDimensionalHoleInfo.Location = new System.Drawing.Point(449, 336);
             this.labelDimensionalHoleInfo.Name = "labelDimensionalHoleInfo";
             this.labelDimensionalHoleInfo.Size = new System.Drawing.Size(323, 13);
             this.labelDimensionalHoleInfo.TabIndex = 3;
@@ -72,7 +74,7 @@
             // labelArenaInfo
             // 
             this.labelArenaInfo.AutoSize = true;
-            this.labelArenaInfo.Location = new System.Drawing.Point(13, 427);
+            this.labelArenaInfo.Location = new System.Drawing.Point(9, 427);
             this.labelArenaInfo.Name = "labelArenaInfo";
             this.labelArenaInfo.Size = new System.Drawing.Size(323, 13);
             this.labelArenaInfo.TabIndex = 4;
@@ -81,7 +83,7 @@
             // labelBuildingsInfo
             // 
             this.labelBuildingsInfo.AutoSize = true;
-            this.labelBuildingsInfo.Location = new System.Drawing.Point(698, 427);
+            this.labelBuildingsInfo.Location = new System.Drawing.Point(544, 427);
             this.labelBuildingsInfo.Name = "labelBuildingsInfo";
             this.labelBuildingsInfo.Size = new System.Drawing.Size(228, 13);
             this.labelBuildingsInfo.TabIndex = 5;
@@ -109,21 +111,31 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
-            // buttonSelectFile
+            // pictureBoxSelectJson
             // 
-            this.buttonSelectFile.Location = new System.Drawing.Point(13, 13);
-            this.buttonSelectFile.Name = "buttonSelectFile";
-            this.buttonSelectFile.Size = new System.Drawing.Size(188, 23);
-            this.buttonSelectFile.TabIndex = 8;
-            this.buttonSelectFile.Text = "Select JSON file";
-            this.buttonSelectFile.UseVisualStyleBackColor = true;
-            this.buttonSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
+            this.pictureBoxSelectJson.Image = global::Summoners_War_Statistics.Properties.Resources.banner_selectjsonfile;
+            this.pictureBoxSelectJson.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxSelectJson.Name = "pictureBoxSelectJson";
+            this.pictureBoxSelectJson.Size = new System.Drawing.Size(760, 50);
+            this.pictureBoxSelectJson.TabIndex = 10;
+            this.pictureBoxSelectJson.TabStop = false;
+            this.pictureBoxSelectJson.Click += new System.EventHandler(this.pictureBoxSelectJson_Click);
+            // 
+            // menu1
+            // 
+            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menu1.Location = new System.Drawing.Point(0, 70);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(800, 80);
+            this.menu1.TabIndex = 12;
             // 
             // introduction1
             // 
-            this.introduction1.Location = new System.Drawing.Point(12, 42);
+            this.introduction1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.introduction1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.introduction1.Location = new System.Drawing.Point(0, 150);
             this.introduction1.Name = "introduction1";
-            this.introduction1.Size = new System.Drawing.Size(463, 239);
+            this.introduction1.Size = new System.Drawing.Size(784, 411);
             this.introduction1.SummonerArenaEnergy = ((byte)(0));
             this.introduction1.SummonerArenaEnergyMax = ((byte)(0));
             this.introduction1.SummonerCrystals = ((uint)(0u));
@@ -140,16 +152,17 @@
             this.introduction1.SummonerName = "QuatZo";
             this.introduction1.SummonerRTAMedals = ((uint)(0u));
             this.introduction1.SummonerShapeshiftingStones = ((ushort)(0));
-            this.introduction1.TabIndex = 9;
-            this.introduction1.Load += new System.EventHandler(this.introduction1_Load);
+            this.introduction1.TabIndex = 13;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 607);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.introduction1);
-            this.Controls.Add(this.buttonSelectFile);
+            this.Controls.Add(this.menu1);
+            this.Controls.Add(this.pictureBoxSelectJson);
             this.Controls.Add(this.labelSomething);
             this.Controls.Add(this.labelTowersCalculator);
             this.Controls.Add(this.labelBuildingsInfo);
@@ -160,6 +173,7 @@
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
             this.Load += new System.EventHandler(this.FormMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,8 +188,9 @@
         private System.Windows.Forms.Label labelTowersCalculator;
         private System.Windows.Forms.Label labelSomething;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button buttonSelectFile;
-        private Introduction introduction1;
+        private System.Windows.Forms.PictureBox pictureBoxSelectJson;
+        private Menu menu1;
+        private Summary introduction1;
     }
 }
 
