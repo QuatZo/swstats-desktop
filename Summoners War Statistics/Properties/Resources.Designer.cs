@@ -1763,6 +1763,16 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_rune_locked {
+            get {
+                object obj = ResourceManager.GetObject("icon_rune_locked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_unit_attribute_dark {
             get {
                 object obj = ResourceManager.GetObject("icon_unit_attribute_dark", resourceCulture);

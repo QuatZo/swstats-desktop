@@ -17,963 +17,963 @@ namespace Summoners_War_Statistics
 {
     public partial class JsonSwex
     {
-        [JsonProperty("command", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("command")]
         public string Command { get; set; }
 
-        [JsonProperty("ret_code", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("ret_code")]
         public long? RetCode { get; set; }
 
-        [JsonProperty("wizard_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_info")]
         public WizardInfo WizardInfo { get; set; }
 
-        [JsonProperty("defense_unit_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("defense_unit_list")]
         public List<DefenseUnitListElement> DefenseUnitList { get; set; }
 
-        [JsonProperty("quest_rewarded", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("quest_rewarded")]
         public List<long> QuestRewarded { get; set; }
 
-        [JsonProperty("event_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("event_id_list")]
         public List<long> EventIdList { get; set; }
 
-        [JsonProperty("building_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("building_list")]
         public List<Dictionary<string, double>> BuildingList { get; set; }
 
-        [JsonProperty("deco_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("deco_list")]
         public List<DecoListElement> DecoList { get; set; }
 
-        [JsonProperty("obstacle_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("obstacle_list")]
         public List<object> ObstacleList { get; set; }
 
-        [JsonProperty("mob_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mob_list")]
         public List<DecoListElement> MobList { get; set; }
 
-        [JsonProperty("mob_costume_equip_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mob_costume_equip_list")]
         public List<MobCostumeEquipList> MobCostumeEquipList { get; set; }
 
-        [JsonProperty("mob_costume_part_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mob_costume_part_list")]
         public List<MobCostumePartList> MobCostumePartList { get; set; }
 
-        [JsonProperty("unit_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_list")]
         public List<PurpleUnitList> UnitList { get; set; }
 
-        [JsonProperty("runes", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("runes")]
         public List<Rune> Runes { get; set; }
 
-        [JsonProperty("push_noti_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("push_noti_status")]
         public long? PushNotiStatus { get; set; }
 
-        [JsonProperty("guild", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild")]
         public Guild Guild { get; set; }
 
-        [JsonProperty("guildwar_defense_unit_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_defense_unit_list")]
         public List<List<GuildwarDefenseUnitListElement>> GuildwarDefenseUnitList { get; set; }
 
-        [JsonProperty("guildwar_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_status")]
         public GuildwarStatus GuildwarStatus { get; set; }
 
-        [JsonProperty("guildwar_member_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_member_list")]
         public List<GuildwarMemberList> GuildwarMemberList { get; set; }
 
-        [JsonProperty("guild_member_defense_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_member_defense_list")]
         public List<GuildMemberDefenseList> GuildMemberDefenseList { get; set; }
 
-        [JsonProperty("guildwar_ranking_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_ranking_info")]
         public GuildwarRankingInfo GuildwarRankingInfo { get; set; }
 
-        [JsonProperty("guildwar_ranking_stat", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_ranking_stat")]
         public GuildwarRankingStat GuildwarRankingStat { get; set; }
 
-        [JsonProperty("guildwar_match_reserve", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_match_reserve")]
         public GuildwarMatchReserve GuildwarMatchReserve { get; set; }
 
-        [JsonProperty("guildwar_my_dead_unit_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_my_dead_unit_id_list")]
         public List<object> GuildwarMyDeadUnitIdList { get; set; }
 
-        [JsonProperty("my_atkdef_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_atkdef_list")]
         public List<MyAtkdefList> MyAtkdefList { get; set; }
 
-        [JsonProperty("my_attack_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_attack_list")]
         public List<MyAttackList> MyAttackList { get; set; }
 
 
-        [JsonProperty("opp_guild_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("opp_guild_info")]
         public GuildInfo OppGuildInfo { get; set; }
 
-        [JsonProperty("opp_guild_member_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("opp_guild_member_list")]
         public List<GuildwarMemberList> OppGuildMemberList { get; set; }
 
 
-        [JsonProperty("guildsiege_defense_unit_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildsiege_defense_unit_list")]
         public List<long> GuildsiegeDefenseUnitList { get; set; }
 
-        [JsonProperty("guildwar_reward_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guildwar_reward_list")]
         public List<GuildwarRewardList> GuildwarRewardList { get; set; }
 
 
-        [JsonProperty("unit_lock_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_lock_list")]
         public List<long> UnitLockList { get; set; }
 
-        [JsonProperty("rune_lock_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rune_lock_list")]
         public List<object> RuneLockList { get; set; }
 
-        [JsonProperty("shop_daily_bonus_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("shop_daily_bonus_list")]
         public List<object> ShopDailyBonusList { get; set; }
 
-        [JsonProperty("raid_deck", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("raid_deck")]
         public RaidDeck RaidDeck { get; set; }
 
-        [JsonProperty("rtpvp_season_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rtpvp_season_info")]
         public RtpvpSeasonInfo RtpvpSeasonInfo { get; set; }
 
-        [JsonProperty("rtpvp_contest_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rtpvp_contest_info")]
         public Dictionary<string, long> RtpvpContestInfo { get; set; }
 
 
-        [JsonProperty("object_storage_slots", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("object_storage_slots")]
         public Slots ObjectStorageSlots { get; set; }
 
 
-        [JsonProperty("lobby_proud_unit_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("lobby_proud_unit_id_list")]
         public List<DefenseUnitListElement> LobbyProudUnitIdList { get; set; }
 
 
-        [JsonProperty("summon_choices", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("summon_choices")]
         public List<object> SummonChoices { get; set; }
 
-        [JsonProperty("item_cart_next_reset_timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("item_cart_next_reset_timestamp")]
         public long? ItemCartNextResetTimestamp { get; set; }
 
-        [JsonProperty("friend_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("friend_list")]
         public List<FriendListElement> FriendList { get; set; }
 
-        [JsonProperty("helper_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("helper_list")]
         public List<FriendListElement> HelperList { get; set; }
 
-        [JsonProperty("helper_remained", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("helper_remained")]
         public long? HelperRemained { get; set; }
 
-        [JsonProperty("mentor_helper_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mentor_helper_list")]
         public List<object> MentorHelperList { get; set; }
 
 
-        [JsonProperty("mentor_slot_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mentor_slot_list")]
         public List<object> MentorSlotList { get; set; }
 
 
-        [JsonProperty("daily_reward_inactive_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("daily_reward_inactive_status")]
         public long? DailyRewardInactiveStatus { get; set; }
 
-        [JsonProperty("daily_reward_new_user_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("daily_reward_new_user_status")]
         public long? DailyRewardNewUserStatus { get; set; }
 
-        [JsonProperty("daily_reward_special_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("daily_reward_special_status")]
         public long? DailyRewardSpecialStatus { get; set; }
 
 
-        [JsonProperty("daily_reward_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("daily_reward_info")]
         public DailyRewardInfo DailyRewardInfo { get; set; }
 
 
-        [JsonProperty("pvp_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pvp_info")]
         public Dictionary<string, long> PvpInfo { get; set; }
 
-        [JsonProperty("pvp_reward_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pvp_reward_list")]
         public List<PvpRewardList> PvpRewardList { get; set; }
 
 
-        [JsonProperty("worldboss_used_unit", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("worldboss_used_unit")]
         public List<long> WorldbossUsedUnit { get; set; }
 
-        [JsonProperty("my_worldboss_ranking", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_worldboss_ranking")]
         public MyWorldbossRanking MyWorldbossRanking { get; set; }
 
-        [JsonProperty("my_worldboss_prev_ranking", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_worldboss_prev_ranking")]
         public MyWorldbossRanking MyWorldbossPrevRanking { get; set; }
 
-        [JsonProperty("my_worldboss_best_ranking", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_worldboss_best_ranking")]
         public MyWorldbossRanking MyWorldbossBestRanking { get; set; }
 
-        [JsonProperty("my_worldboss_daily_battle_count", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("my_worldboss_daily_battle_count")]
         public long? MyWorldbossDailyBattleCount { get; set; }
 
-        [JsonProperty("costume_ticket_purchased_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("costume_ticket_purchased_list")]
         public List<object> CostumeTicketPurchasedList { get; set; }
 
-        [JsonProperty("session_key", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("session_key")]
         public string SessionKey { get; set; }
 
-        [JsonProperty("raid_info_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("raid_info_list")]
         public List<RaidInfoList> RaidInfoList { get; set; }
 
-        [JsonProperty("trans_item_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("trans_item_list")]
         public List<object> TransItemList { get; set; }
 
-        [JsonProperty("rtpvp_reward_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rtpvp_reward_info")]
         public List<object> RtpvpRewardInfo { get; set; }
 
-        [JsonProperty("rtpvp_contest_reward", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rtpvp_contest_reward")]
         public List<object> RtpvpContestReward { get; set; }
 
-        [JsonProperty("dimension_hole_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dimension_hole_info")]
         public DimensionHoleInfo DimensionHoleInfo { get; set; }
 
-        [JsonProperty("country", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("country")]
         public string Country { get; set; }
 
-        [JsonProperty("tvaluelocal_next_monday", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tvaluelocal_next_monday")]
         public long? TvaluelocalNextMonday { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("ts_val", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("ts_val")]
         public long? TsVal { get; set; }
 
-        [JsonProperty("tvalue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tvalue")]
         public long? Tvalue { get; set; }
 
-        [JsonProperty("tvaluelocal", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tvaluelocal")]
         public long? Tvaluelocal { get; set; }
 
-        [JsonProperty("tzone", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tzone")]
         public string Tzone { get; set; }
     }
 
     public partial class DailyRewardInfo
     {
-        [JsonProperty("month", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("month")]
         public DateTimeOffset? Month { get; set; }
 
-        [JsonProperty("is_checked", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("is_checked")]
         public long? IsChecked { get; set; }
 
-        [JsonProperty("check_count", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("check_count")]
         public long? CheckCount { get; set; }
 
-        [JsonProperty("prev_last_check", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("prev_last_check")]
         public DateTimeOffset? PrevLastCheck { get; set; }
 
-        [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("enable")]
         public long? Enable { get; set; }
     }
 
     public partial class DecoListElement
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("deco_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("deco_id")]
         public long? DecoId { get; set; }
 
-        [JsonProperty("master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("master_id")]
         public long? MasterId { get; set; }
 
-        [JsonProperty("island_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("island_id")]
         public long? IslandId { get; set; }
 
-        [JsonProperty("pos_x", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_x")]
         public long? PosX { get; set; }
 
-        [JsonProperty("pos_y", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_y")]
         public long? PosY { get; set; }
 
-        [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("level")]
         public long? Level { get; set; }
 
-        [JsonProperty("mob_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mob_id")]
         public long? MobId { get; set; }
     }
 
     public partial class DefenseUnitListElement
     {
-        [JsonProperty("unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_id")]
         public long? UnitId { get; set; }
 
-        [JsonProperty("pos_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_id")]
         public long? PosId { get; set; }
     }
 
     public partial class DimensionHoleInfo
     {
-        [JsonProperty("rid", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rid")]
         public long? Rid { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("energy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy")]
         public byte Energy { get; set; }
 
-        [JsonProperty("date_energy_gain_start", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("date_energy_gain_start")]
         public DateTimeOffset? DateEnergyGainStart { get; set; }
 
-        [JsonProperty("date_add", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("date_add")]
         public DateTimeOffset? DateAdd { get; set; }
 
-        [JsonProperty("energy_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy_max")]
         public byte EnergyMax { get; set; }
 
-        [JsonProperty("energy_gain_term_sec", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy_gain_term_sec")]
         public long? EnergyGainTermSec { get; set; }
 
-        [JsonProperty("energy_gain_start_timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy_gain_start_timestamp")]
         public long? EnergyGainStartTimestamp { get; set; }
     }
 
     public partial class FriendListElement
     {
-        [JsonProperty("channel_uid", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("channel_uid")]
         public long? ChannelUid { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("wizard_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_level")]
         public long? WizardLevel { get; set; }
 
-        [JsonProperty("wizard_name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_name")]
         public string WizardName { get; set; }
 
-        [JsonProperty("arena_score", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_score")]
         public long? ArenaScore { get; set; }
 
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("next_gift_time", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_gift_time")]
         public long? NextGiftTime { get; set; }
 
-        [JsonProperty("next_assist_time", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_assist_time")]
         public long? NextAssistTime { get; set; }
 
-        [JsonProperty("last_login_timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("last_login_timestamp")]
         public long? LastLoginTimestamp { get; set; }
 
-        [JsonProperty("rep_unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_unit_id")]
         public long? RepUnitId { get; set; }
 
-        [JsonProperty("rep_unit_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_unit_master_id")]
         public long? RepUnitMasterId { get; set; }
 
-        [JsonProperty("rep_unit_class", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_unit_class")]
         public long? RepUnitClass { get; set; }
 
-        [JsonProperty("rep_unit_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_unit_level")]
         public long? RepUnitLevel { get; set; }
     }
 
     public partial class Guild
     {
-        [JsonProperty("price", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("price")]
         public long? Price { get; set; }
 
-        [JsonProperty("dc_rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dc_rate")]
         public long? DcRate { get; set; }
 
-        [JsonProperty("popup_msgs", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("popup_msgs")]
         public List<object> PopupMsgs { get; set; }
 
-        [JsonProperty("guild_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_info")]
         public GuildInfo GuildInfo { get; set; }
 
-        [JsonProperty("guild_members", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_members")]
         public Dictionary<string, GuildwarMemberList> GuildMembers { get; set; }
 
-        [JsonProperty("guild_skills", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_skills")]
         public List<object> GuildSkills { get; set; }
     }
 
     public partial class GuildInfo
     {
-        [JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_id")]
         public long? GuildId { get; set; }
 
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("master_wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("master_wizard_id")]
         public long? MasterWizardId { get; set; }
 
-        [JsonProperty("member_now", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("member_now")]
         public long? MemberNow { get; set; }
 
-        [JsonProperty("member_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("member_max")]
         public long? MemberMax { get; set; }
 
-        [JsonProperty("comment", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("comment")]
         public string Comment { get; set; }
 
-        [JsonProperty("notice", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("notice")]
         public string Notice { get; set; }
 
-        [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("level")]
         public long? Level { get; set; }
 
-        [JsonProperty("experience", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("experience")]
         public long? Experience { get; set; }
 
-        [JsonProperty("recruit_status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("recruit_status")]
         public long? RecruitStatus { get; set; }
 
-        [JsonProperty("arena_rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_rating_id")]
         public long? ArenaRatingId { get; set; }
 
-        [JsonProperty("last_market_refresh_auto", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("last_market_refresh_auto")]
         public DateTimeOffset? LastMarketRefreshAuto { get; set; }
 
-        [JsonProperty("last_market_refresh_manual", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("last_market_refresh_manual")]
         public DateTimeOffset? LastMarketRefreshManual { get; set; }
 
-        [JsonProperty("master_wizard_name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("master_wizard_name")]
         public string MasterWizardName { get; set; }
 
-        [JsonProperty("master_wizard_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("master_wizard_level")]
         public long? MasterWizardLevel { get; set; }
 
-        [JsonProperty("skill_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("skill_info")]
         public Dictionary<string, SkillInfo> SkillInfo { get; set; }
 
-        [JsonProperty("market_refresh_ts", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("market_refresh_ts")]
         public long? MarketRefreshTs { get; set; }
 
-        [JsonProperty("next_market_refresh_auto_ts", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_market_refresh_auto_ts")]
         public long? NextMarketRefreshAutoTs { get; set; }
 
-        [JsonProperty("next_market_refresh_manual_ts", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_market_refresh_manual_ts")]
         public long? NextMarketRefreshManualTs { get; set; }
     }
 
     public partial class GuildwarMemberList
     {
-        [JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_id")]
         public long? GuildId { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("grade", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("grade")]
         public long? Grade { get; set; }
 
-        [JsonProperty("channel_uid", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("channel_uid")]
         public long? ChannelUid { get; set; }
 
-        [JsonProperty("wizard_name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_name")]
         public string WizardName { get; set; }
 
-        [JsonProperty("wizard_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_level")]
         public long? WizardLevel { get; set; }
 
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("arena_score", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_score")]
         public long? ArenaScore { get; set; }
 
-        [JsonProperty("last_login_timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("last_login_timestamp")]
         public long? LastLoginTimestamp { get; set; }
 
-        [JsonProperty("join_timestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("join_timestamp")]
         public long? JoinTimestamp { get; set; }
     }
 
     public partial class GuildMemberDefenseList
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("unit_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_list")]
         public List<List<GuildwarDefenseUnitListElement>> UnitList { get; set; }
     }
 
     public partial class GuildwarDefenseUnitListElement
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("battle_round", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("battle_round")]
         public long? BattleRound { get; set; }
 
-        [JsonProperty("pos_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_id")]
         public long? PosId { get; set; }
 
-        [JsonProperty("unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_id")]
         public long? UnitId { get; set; }
     }
 
     public partial class GuildwarMatchReserve
     {
-        [JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_id")]
         public long? GuildId { get; set; }
 
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("status")]
         public long? Status { get; set; }
 
-        [JsonProperty("date_mod", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("date_mod")]
         public DateTimeOffset? DateMod { get; set; }
     }
 
     public partial class GuildwarRankingInfo
     {
-        [JsonProperty("league_type", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("league_type")]
         public long? LeagueType { get; set; }
 
-        [JsonProperty("rank", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rank")]
         public long? Rank { get; set; }
 
-        [JsonProperty("match_score", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("match_score")]
         public long? MatchScore { get; set; }
 
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("total_guild_count", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("total_guild_count")]
         public long? TotalGuildCount { get; set; }
     }
 
     public partial class GuildwarRankingStat
     {
-        [JsonProperty("current", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("current")]
         public Dictionary<string, double> Current { get; set; }
 
-        [JsonProperty("prev", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("prev")]
         public Dictionary<string, double> Prev { get; set; }
 
-        [JsonProperty("best", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("best")]
         public Dictionary<string, double> Best { get; set; }
     }
     
     public partial class GuildwarRewardList
     {
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("reward", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("reward")]
         public List<List<long>> Reward { get; set; }
     }
 
     public partial class GuildwarStatus
     {
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("status")]
         public long? Status { get; set; }
 
-        [JsonProperty("prepare_remained", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("prepare_remained")]
         public long? PrepareRemained { get; set; }
 
-        [JsonProperty("match_remained", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("match_remained")]
         public long? MatchRemained { get; set; }
 
-        [JsonProperty("reset_remained", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("reset_remained")]
         public long? ResetRemained { get; set; }
     }
 
     public partial class MobCostumeEquipList
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("mob_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mob_id")]
         public long? MobId { get; set; }
 
-        [JsonProperty("costume_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("costume_id")]
         public long? CostumeId { get; set; }
     }
 
     public partial class MobCostumePartList
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("part_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("part_id")]
         public long? PartId { get; set; }
     }
 
     public partial class MyAtkdefList
     {
-        [JsonProperty("match_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("match_id")]
         public long? MatchId { get; set; }
 
-        [JsonProperty("atk_wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("atk_wizard_id")]
         public long? AtkWizardId { get; set; }
 
-        [JsonProperty("def_wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("def_wizard_id")]
         public long? DefWizardId { get; set; }
     }
 
     public partial class MyAttackList
     {
-        [JsonProperty("match_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("match_id")]
         public long? MatchId { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("guild_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_id")]
         public long? GuildId { get; set; }
 
-        [JsonProperty("guild_point_var", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_point_var")]
         public long? GuildPointVar { get; set; }
 
-        [JsonProperty("energy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy")]
         public long? Energy { get; set; }
     }
 
     public partial class MyWorldbossRanking
     {
-        [JsonProperty("ranking", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("ranking")]
         public long? Ranking { get; set; }
 
-        [JsonProperty("accumulate_damage", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("accumulate_damage")]
         public long? AccumulateDamage { get; set; }
 
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("ranking_rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("ranking_rate")]
         public double? RankingRate { get; set; }
 
-        [JsonProperty("is_reward", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("is_reward")]
         public long? IsReward { get; set; }
     }
 
     public partial class Slots
     {
-        [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("number")]
         public long? Number { get; set; }
     }
     
     public partial class PvpRewardList
     {
-        [JsonProperty("rating_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rating_id")]
         public long? RatingId { get; set; }
 
-        [JsonProperty("crystals", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("crystals")]
         public long? Crystals { get; set; }
 
-        [JsonProperty("unit_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_master_id")]
         public long? UnitMasterId { get; set; }
 
-        [JsonProperty("unit_class", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_class")]
         public long? UnitClass { get; set; }
     }
 
     public partial class RaidDeck
     {
-        [JsonProperty("unit_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_id_list")]
         public List<long> UnitIdList { get; set; }
 
-        [JsonProperty("leader_index", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("leader_index")]
         public long? LeaderIndex { get; set; }
     }
 
     public partial class RaidInfoList
     {
-        [JsonProperty("raid_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("raid_id")]
         public long? RaidId { get; set; }
 
-        [JsonProperty("available_stage_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("available_stage_id")]
         public long? AvailableStageId { get; set; }
     }
 
     public partial class RtpvpSeasonInfo
     {
-        [JsonProperty("current_season", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("current_season")]
         public long? CurrentSeason { get; set; }
 
-        [JsonProperty("current_season_end", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("current_season_end")]
         public long? CurrentSeasonEnd { get; set; }
 
-        [JsonProperty("next_season", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_season")]
         public long? NextSeason { get; set; }
 
-        [JsonProperty("next_season_begin", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_season_begin")]
         public long? NextSeasonBegin { get; set; }
 
-        [JsonProperty("display_end_time", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("display_end_time")]
         public long? DisplayEndTime { get; set; }
 
-        [JsonProperty("display_begin_time", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("display_begin_time")]
         public long? DisplayBeginTime { get; set; }
     }
     
     public partial class Rune
     {
-        [JsonProperty("rune_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rune_id")]
         public long? RuneId { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("occupied_type", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("occupied_type")]
         public long? OccupiedType { get; set; }
 
-        [JsonProperty("occupied_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("occupied_id")]
         public long? OccupiedId { get; set; }
 
-        [JsonProperty("slot_no", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("slot_no")]
         public long? SlotNo { get; set; }
 
-        [JsonProperty("rank", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rank")]
         public long? Rank { get; set; }
 
-        [JsonProperty("class", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("class")]
         public long? Class { get; set; }
 
-        [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("set_id")]
         public long? SetId { get; set; }
 
-        [JsonProperty("upgrade_limit", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("upgrade_limit")]
         public long? UpgradeLimit { get; set; }
 
-        [JsonProperty("upgrade_curr", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("upgrade_curr")]
         public long? UpgradeCurr { get; set; }
 
-        [JsonProperty("base_value", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("base_value")]
         public long? BaseValue { get; set; }
 
-        [JsonProperty("sell_value", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("sell_value")]
         public long? SellValue { get; set; }
 
-        [JsonProperty("pri_eff", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pri_eff")]
         public List<long> PriEff { get; set; }
 
-        [JsonProperty("prefix_eff", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("prefix_eff")]
         public List<long> PrefixEff { get; set; }
 
-        [JsonProperty("sec_eff", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("sec_eff")]
         public List<List<long>> SecEff { get; set; }
 
-        [JsonProperty("extra", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("extra")]
         public long? Extra { get; set; }
     }
 
     public partial class PurpleUnitList
     {
-        [JsonProperty("unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_id")]
         public long? UnitId { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("island_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("island_id")]
         public long? IslandId { get; set; }
 
-        [JsonProperty("pos_x", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_x")]
         public long? PosX { get; set; }
 
-        [JsonProperty("pos_y", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pos_y")]
         public long? PosY { get; set; }
 
-        [JsonProperty("building_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("building_id")]
         public long? BuildingId { get; set; }
 
-        [JsonProperty("unit_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_master_id")]
         public long? UnitMasterId { get; set; }
 
-        [JsonProperty("unit_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_level")]
         public long? UnitLevel { get; set; }
 
-        [JsonProperty("class", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("class")]
         public long? Class { get; set; }
 
-        [JsonProperty("con", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("con")]
         public long? Con { get; set; }
 
-        [JsonProperty("atk", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("atk")]
         public long? Atk { get; set; }
 
-        [JsonProperty("def", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("def")]
         public long? Def { get; set; }
 
-        [JsonProperty("spd", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("spd")]
         public long? Spd { get; set; }
 
-        [JsonProperty("resist", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("resist")]
         public long? Resist { get; set; }
 
-        [JsonProperty("accuracy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("accuracy")]
         public long? Accuracy { get; set; }
 
-        [JsonProperty("critical_rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("critical_rate")]
         public long? CriticalRate { get; set; }
 
-        [JsonProperty("critical_damage", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("critical_damage")]
         public long? CriticalDamage { get; set; }
 
-        [JsonProperty("experience", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("experience")]
         public long? Experience { get; set; }
 
-        [JsonProperty("exp_gained", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("exp_gained")]
         public long? ExpGained { get; set; }
 
-        [JsonProperty("exp_gain_rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("exp_gain_rate")]
         public long? ExpGainRate { get; set; }
 
-        [JsonProperty("skills", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("skills")]
         public List<List<long>> Skills { get; set; }
 
-        [JsonProperty("runes", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("runes")]
         public List<Rune> Runes { get; set; }
 
-        [JsonProperty("costume_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("costume_master_id")]
         public long? CostumeMasterId { get; set; }
 
-        [JsonProperty("trans_items", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("trans_items")]
         public List<object> TransItems { get; set; }
 
-        [JsonProperty("attribute", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("attribute")]
         public long? Attribute { get; set; }
 
-        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("create_time")]
         public DateTimeOffset? CreateTime { get; set; }
 
-        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("source")]
         public long? Source { get; set; }
 
-        [JsonProperty("awakening_info", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("awakening_info")]
         public AwakeningInfoUnion? AwakeningInfo { get; set; }
     }
 
     public partial class AwakeningInfoClass
     {
-        [JsonProperty("rid", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rid")]
         public long? Rid { get; set; }
 
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_id")]
         public long? UnitId { get; set; }
 
-        [JsonProperty("unit_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_master_id")]
         public long? UnitMasterId { get; set; }
 
-        [JsonProperty("awaken_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("awaken_master_id")]
         public long? AwakenMasterId { get; set; }
 
-        [JsonProperty("exp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("exp")]
         public long? Exp { get; set; }
 
-        [JsonProperty("is_awakened", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("is_awakened")]
         public long? IsAwakened { get; set; }
 
-        [JsonProperty("date_mod", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("date_mod")]
         public DateTimeOffset? DateMod { get; set; }
 
-        [JsonProperty("date_add", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("date_add")]
         public DateTimeOffset? DateAdd { get; set; }
 
-        [JsonProperty("max_exp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("max_exp")]
         public long? MaxExp { get; set; }
     }
     
     public partial class WizardInfo
     {
-        [JsonProperty("wizard_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_id")]
         public long? WizardId { get; set; }
 
-        [JsonProperty("wizard_name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_name")]
         public string WizardName { get; set; }
 
-        [JsonProperty("wizard_mana", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_mana")]
         public ulong WizardMana { get; set; }
 
-        [JsonProperty("wizard_crystal", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_crystal")]
         public uint WizardCrystal { get; set; }
 
-        [JsonProperty("wizard_crystal_paid", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_crystal_paid")]
         public long? WizardCrystalPaid { get; set; }
 
-        [JsonProperty("wizard_last_login", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_last_login")]
         public DateTimeOffset? WizardLastLogin { get; set; }
 
-        [JsonProperty("wizard_last_country", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_last_country")]
         public string WizardLastCountry { get; set; }
 
-        [JsonProperty("wizard_last_lang", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_last_lang")]
         public string WizardLastLang { get; set; }
 
-        [JsonProperty("wizard_level", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_level")]
         public byte WizardLevel { get; set; }
 
-        [JsonProperty("experience", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("experience")]
         public long? Experience { get; set; }
 
-        [JsonProperty("wizard_energy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("wizard_energy")]
         public byte WizardEnergy { get; set; }
 
-        [JsonProperty("energy_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy_max")]
         public byte EnergyMax { get; set; }
 
-        [JsonProperty("energy_per_min", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("energy_per_min")]
         public double? EnergyPerMin { get; set; }
 
-        [JsonProperty("next_energy_gain", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("next_energy_gain")]
         public long? NextEnergyGain { get; set; }
 
-        [JsonProperty("arena_energy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_energy")]
         public byte ArenaEnergy { get; set; }
 
-        [JsonProperty("arena_energy_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_energy_max")]
         public byte ArenaEnergyMax { get; set; }
 
-        [JsonProperty("arena_energy_next_gain", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("arena_energy_next_gain")]
         public long? ArenaEnergyNextGain { get; set; }
 
-        [JsonProperty("unit_slots", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("unit_slots")]
         public Slots UnitSlots { get; set; }
 
-        [JsonProperty("rep_unit_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_unit_id")]
         public long? RepUnitId { get; set; }
 
-        [JsonProperty("rep_assigned", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rep_assigned")]
         public long? RepAssigned { get; set; }
 
-        [JsonProperty("pvp_event", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pvp_event")]
         public long? PvpEvent { get; set; }
 
-        [JsonProperty("mail_box_event", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mail_box_event")]
         public long? MailBoxEvent { get; set; }
 
-        [JsonProperty("social_point_current", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("social_point_current")]
         public long? SocialPointCurrent { get; set; }
 
-        [JsonProperty("social_point_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("social_point_max")]
         public long? SocialPointMax { get; set; }
 
-        [JsonProperty("honor_point", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("honor_point")]
         public uint HonorPoint { get; set; }
 
-        [JsonProperty("guild_point", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("guild_point")]
         public uint GuildPoint { get; set; }
 
-        [JsonProperty("darkportal_energy", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("darkportal_energy")]
         public byte DarkportalEnergy { get; set; }
 
-        [JsonProperty("darkportal_energy_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("darkportal_energy_max")]
         public byte DarkportalEnergyMax { get; set; }
 
-        [JsonProperty("costume_point", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("costume_point")]
         public ushort CostumePoint { get; set; }
 
-        [JsonProperty("costume_point_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("costume_point_max")]
         public long? CostumePointMax { get; set; }
 
-        [JsonProperty("honor_medal", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("honor_medal")]
         public uint HonorMedal { get; set; }
 
-        [JsonProperty("honor_mark", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("honor_mark")]
         public long? HonorMark { get; set; }
 
-        [JsonProperty("event_coin", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("event_coin")]
         public long? EventCoin { get; set; }
 
-        [JsonProperty("lobby_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("lobby_master_id")]
         public long? LobbyMasterId { get; set; }
 
-        [JsonProperty("emblem_master_id", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("emblem_master_id")]
         public long? EmblemMasterId { get; set; }
 
-        [JsonProperty("period_energy_max", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("period_energy_max")]
         public long? PeriodEnergyMax { get; set; }
 
         public override string ToString()

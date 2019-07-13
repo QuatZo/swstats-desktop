@@ -48,26 +48,44 @@
             this.labelArenaWings = new System.Windows.Forms.Label();
             this.labelArenaWingsSlash = new System.Windows.Forms.Label();
             this.labelArenaWingsMax = new System.Windows.Forms.Label();
-            this.pictureBoxMana = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCrystals = new System.Windows.Forms.PictureBox();
-            this.pictureBoxArenaWings = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEnergy = new System.Windows.Forms.PictureBox();
-            this.pictureBoxGloryPoints = new System.Windows.Forms.PictureBox();
-            this.pictureBoxGuildPoints = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRTAMedals = new System.Windows.Forms.PictureBox();
-            this.pictureBoxShapeshiftingStones = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDimensionalCrystals = new System.Windows.Forms.PictureBox();
+            this.labelMonsters = new System.Windows.Forms.Label();
+            this.labelMonstersLocked = new System.Windows.Forms.Label();
+            this.labelLanguage = new System.Windows.Forms.Label();
+            this.labelCountry = new System.Windows.Forms.Label();
+            this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCountry = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLanguage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMonstersLocked = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
             this.pictureBoxDimensionalHoleEnergy = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnergy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGloryPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuildPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRTAMedals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShapeshiftingStones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalCrystals)).BeginInit();
+            this.pictureBoxDimensionalCrystals = new System.Windows.Forms.PictureBox();
+            this.pictureBoxShapeshiftingStones = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRTAMedals = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGuildPoints = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGloryPoints = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEnergy = new System.Windows.Forms.PictureBox();
+            this.pictureBoxArenaWings = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCrystals = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMana = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRunesLocked = new System.Windows.Forms.PictureBox();
+            this.labelRunes = new System.Windows.Forms.Label();
+            this.labelRunesLocked = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonstersLocked)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalCrystals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShapeshiftingStones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRTAMedals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuildPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGloryPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunesLocked)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSummonerName
@@ -128,7 +146,7 @@
             // 
             this.labelEnergyMax.AutoSize = true;
             this.labelEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelEnergyMax.Location = new System.Drawing.Point(85, 195);
+            this.labelEnergyMax.Location = new System.Drawing.Point(74, 195);
             this.labelEnergyMax.Name = "labelEnergyMax";
             this.labelEnergyMax.Size = new System.Drawing.Size(17, 22);
             this.labelEnergyMax.TabIndex = 5;
@@ -205,7 +223,7 @@
             // 
             this.labelDimensionalCrystalsMax.AutoSize = true;
             this.labelDimensionalCrystalsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalCrystalsMax.Location = new System.Drawing.Point(85, 343);
+            this.labelDimensionalCrystalsMax.Location = new System.Drawing.Point(74, 343);
             this.labelDimensionalCrystalsMax.Name = "labelDimensionalCrystalsMax";
             this.labelDimensionalCrystalsMax.Size = new System.Drawing.Size(21, 22);
             this.labelDimensionalCrystalsMax.TabIndex = 12;
@@ -238,7 +256,7 @@
             // 
             this.labelDimensionalHoleEnergyMax.AutoSize = true;
             this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(85, 371);
+            this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(74, 371);
             this.labelDimensionalHoleEnergyMax.Name = "labelDimensionalHoleEnergyMax";
             this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(28, 22);
             this.labelDimensionalHoleEnergyMax.TabIndex = 15;
@@ -282,93 +300,99 @@
             // 
             this.labelArenaWingsMax.AutoSize = true;
             this.labelArenaWingsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelArenaWingsMax.Location = new System.Drawing.Point(85, 165);
+            this.labelArenaWingsMax.Location = new System.Drawing.Point(74, 165);
             this.labelArenaWingsMax.Name = "labelArenaWingsMax";
             this.labelArenaWingsMax.Size = new System.Drawing.Size(17, 22);
             this.labelArenaWingsMax.TabIndex = 20;
             this.labelArenaWingsMax.Text = "0";
             this.labelArenaWingsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBoxMana
+            // labelMonsters
             // 
-            this.pictureBoxMana.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_mana;
-            this.pictureBoxMana.Location = new System.Drawing.Point(9, 103);
-            this.pictureBoxMana.Name = "pictureBoxMana";
-            this.pictureBoxMana.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxMana.TabIndex = 21;
-            this.pictureBoxMana.TabStop = false;
+            this.labelMonsters.AutoSize = true;
+            this.labelMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMonsters.Location = new System.Drawing.Point(728, 105);
+            this.labelMonsters.Name = "labelMonsters";
+            this.labelMonsters.Size = new System.Drawing.Size(17, 22);
+            this.labelMonsters.TabIndex = 32;
+            this.labelMonsters.Text = "0";
+            this.labelMonsters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBoxCrystals
+            // labelMonstersLocked
             // 
-            this.pictureBoxCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_crystal;
-            this.pictureBoxCrystals.Location = new System.Drawing.Point(9, 133);
-            this.pictureBoxCrystals.Name = "pictureBoxCrystals";
-            this.pictureBoxCrystals.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxCrystals.TabIndex = 22;
-            this.pictureBoxCrystals.TabStop = false;
+            this.labelMonstersLocked.AutoSize = true;
+            this.labelMonstersLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMonstersLocked.Location = new System.Drawing.Point(728, 133);
+            this.labelMonstersLocked.Name = "labelMonstersLocked";
+            this.labelMonstersLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelMonstersLocked.TabIndex = 33;
+            this.labelMonstersLocked.Text = "0";
+            this.labelMonstersLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBoxArenaWings
+            // labelLanguage
             // 
-            this.pictureBoxArenaWings.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_arenaenergy;
-            this.pictureBoxArenaWings.Location = new System.Drawing.Point(9, 163);
-            this.pictureBoxArenaWings.Name = "pictureBoxArenaWings";
-            this.pictureBoxArenaWings.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxArenaWings.TabIndex = 23;
-            this.pictureBoxArenaWings.TabStop = false;
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguage.Location = new System.Drawing.Point(586, 337);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(93, 64);
+            this.labelLanguage.TabIndex = 38;
+            this.labelLanguage.Text = "Last login\r\nlanguage";
             // 
-            // pictureBoxEnergy
+            // labelCountry
             // 
-            this.pictureBoxEnergy.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_energy;
-            this.pictureBoxEnergy.Location = new System.Drawing.Point(9, 193);
-            this.pictureBoxEnergy.Name = "pictureBoxEnergy";
-            this.pictureBoxEnergy.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxEnergy.TabIndex = 24;
-            this.pictureBoxEnergy.TabStop = false;
+            this.labelCountry.AutoSize = true;
+            this.labelCountry.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCountry.Location = new System.Drawing.Point(586, 271);
+            this.labelCountry.Name = "labelCountry";
+            this.labelCountry.Size = new System.Drawing.Size(93, 64);
+            this.labelCountry.TabIndex = 39;
+            this.labelCountry.Text = "Last login\r\ncountry";
             // 
-            // pictureBoxGloryPoints
+            // pictureBoxRunes
             // 
-            this.pictureBoxGloryPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_honor;
-            this.pictureBoxGloryPoints.Location = new System.Drawing.Point(9, 223);
-            this.pictureBoxGloryPoints.Name = "pictureBoxGloryPoints";
-            this.pictureBoxGloryPoints.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxGloryPoints.TabIndex = 25;
-            this.pictureBoxGloryPoints.TabStop = false;
+            this.pictureBoxRunes.Image = global::Summoners_War_Statistics.Properties.Resources.icon_rune;
+            this.pictureBoxRunes.Location = new System.Drawing.Point(751, 165);
+            this.pictureBoxRunes.Name = "pictureBoxRunes";
+            this.pictureBoxRunes.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxRunes.TabIndex = 40;
+            this.pictureBoxRunes.TabStop = false;
             // 
-            // pictureBoxGuildPoints
+            // pictureBoxCountry
             // 
-            this.pictureBoxGuildPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_guildpoint;
-            this.pictureBoxGuildPoints.Location = new System.Drawing.Point(9, 253);
-            this.pictureBoxGuildPoints.Name = "pictureBoxGuildPoints";
-            this.pictureBoxGuildPoints.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxGuildPoints.TabIndex = 26;
-            this.pictureBoxGuildPoints.TabStop = false;
+            this.pictureBoxCountry.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
+            this.pictureBoxCountry.Location = new System.Drawing.Point(685, 275);
+            this.pictureBoxCountry.Name = "pictureBoxCountry";
+            this.pictureBoxCountry.Size = new System.Drawing.Size(90, 60);
+            this.pictureBoxCountry.TabIndex = 36;
+            this.pictureBoxCountry.TabStop = false;
             // 
-            // pictureBoxRTAMedals
+            // pictureBoxLanguage
             // 
-            this.pictureBoxRTAMedals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_rta;
-            this.pictureBoxRTAMedals.Location = new System.Drawing.Point(9, 283);
-            this.pictureBoxRTAMedals.Name = "pictureBoxRTAMedals";
-            this.pictureBoxRTAMedals.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxRTAMedals.TabIndex = 27;
-            this.pictureBoxRTAMedals.TabStop = false;
+            this.pictureBoxLanguage.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
+            this.pictureBoxLanguage.Location = new System.Drawing.Point(685, 341);
+            this.pictureBoxLanguage.Name = "pictureBoxLanguage";
+            this.pictureBoxLanguage.Size = new System.Drawing.Size(90, 60);
+            this.pictureBoxLanguage.TabIndex = 35;
+            this.pictureBoxLanguage.TabStop = false;
             // 
-            // pictureBoxShapeshiftingStones
+            // pictureBoxMonstersLocked
             // 
-            this.pictureBoxShapeshiftingStones.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_costumestone;
-            this.pictureBoxShapeshiftingStones.Location = new System.Drawing.Point(9, 311);
-            this.pictureBoxShapeshiftingStones.Name = "pictureBoxShapeshiftingStones";
-            this.pictureBoxShapeshiftingStones.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxShapeshiftingStones.TabIndex = 28;
-            this.pictureBoxShapeshiftingStones.TabStop = false;
+            this.pictureBoxMonstersLocked.Image = global::Summoners_War_Statistics.Properties.Resources.icon_locked;
+            this.pictureBoxMonstersLocked.Location = new System.Drawing.Point(751, 133);
+            this.pictureBoxMonstersLocked.Name = "pictureBoxMonstersLocked";
+            this.pictureBoxMonstersLocked.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxMonstersLocked.TabIndex = 34;
+            this.pictureBoxMonstersLocked.TabStop = false;
             // 
-            // pictureBoxDimensionalCrystals
+            // pictureBoxMonsters
             // 
-            this.pictureBoxDimensionalCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_hide;
-            this.pictureBoxDimensionalCrystals.Location = new System.Drawing.Point(9, 341);
-            this.pictureBoxDimensionalCrystals.Name = "pictureBoxDimensionalCrystals";
-            this.pictureBoxDimensionalCrystals.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxDimensionalCrystals.TabIndex = 29;
-            this.pictureBoxDimensionalCrystals.TabStop = false;
+            this.pictureBoxMonsters.Image = global::Summoners_War_Statistics.Properties.Resources.alert_icon_0000_04_03;
+            this.pictureBoxMonsters.Location = new System.Drawing.Point(751, 103);
+            this.pictureBoxMonsters.Name = "pictureBoxMonsters";
+            this.pictureBoxMonsters.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxMonsters.TabIndex = 31;
+            this.pictureBoxMonsters.TabStop = false;
             // 
             // pictureBoxDimensionalHoleEnergy
             // 
@@ -379,11 +403,136 @@
             this.pictureBoxDimensionalHoleEnergy.TabIndex = 30;
             this.pictureBoxDimensionalHoleEnergy.TabStop = false;
             // 
+            // pictureBoxDimensionalCrystals
+            // 
+            this.pictureBoxDimensionalCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_hide;
+            this.pictureBoxDimensionalCrystals.Location = new System.Drawing.Point(9, 341);
+            this.pictureBoxDimensionalCrystals.Name = "pictureBoxDimensionalCrystals";
+            this.pictureBoxDimensionalCrystals.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxDimensionalCrystals.TabIndex = 29;
+            this.pictureBoxDimensionalCrystals.TabStop = false;
+            // 
+            // pictureBoxShapeshiftingStones
+            // 
+            this.pictureBoxShapeshiftingStones.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_costumestone;
+            this.pictureBoxShapeshiftingStones.Location = new System.Drawing.Point(9, 311);
+            this.pictureBoxShapeshiftingStones.Name = "pictureBoxShapeshiftingStones";
+            this.pictureBoxShapeshiftingStones.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxShapeshiftingStones.TabIndex = 28;
+            this.pictureBoxShapeshiftingStones.TabStop = false;
+            // 
+            // pictureBoxRTAMedals
+            // 
+            this.pictureBoxRTAMedals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_rta;
+            this.pictureBoxRTAMedals.Location = new System.Drawing.Point(9, 283);
+            this.pictureBoxRTAMedals.Name = "pictureBoxRTAMedals";
+            this.pictureBoxRTAMedals.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxRTAMedals.TabIndex = 27;
+            this.pictureBoxRTAMedals.TabStop = false;
+            // 
+            // pictureBoxGuildPoints
+            // 
+            this.pictureBoxGuildPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_guildpoint;
+            this.pictureBoxGuildPoints.Location = new System.Drawing.Point(9, 253);
+            this.pictureBoxGuildPoints.Name = "pictureBoxGuildPoints";
+            this.pictureBoxGuildPoints.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxGuildPoints.TabIndex = 26;
+            this.pictureBoxGuildPoints.TabStop = false;
+            // 
+            // pictureBoxGloryPoints
+            // 
+            this.pictureBoxGloryPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_honor;
+            this.pictureBoxGloryPoints.Location = new System.Drawing.Point(9, 223);
+            this.pictureBoxGloryPoints.Name = "pictureBoxGloryPoints";
+            this.pictureBoxGloryPoints.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxGloryPoints.TabIndex = 25;
+            this.pictureBoxGloryPoints.TabStop = false;
+            // 
+            // pictureBoxEnergy
+            // 
+            this.pictureBoxEnergy.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_energy;
+            this.pictureBoxEnergy.Location = new System.Drawing.Point(9, 193);
+            this.pictureBoxEnergy.Name = "pictureBoxEnergy";
+            this.pictureBoxEnergy.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxEnergy.TabIndex = 24;
+            this.pictureBoxEnergy.TabStop = false;
+            // 
+            // pictureBoxArenaWings
+            // 
+            this.pictureBoxArenaWings.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_arenaenergy;
+            this.pictureBoxArenaWings.Location = new System.Drawing.Point(9, 163);
+            this.pictureBoxArenaWings.Name = "pictureBoxArenaWings";
+            this.pictureBoxArenaWings.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxArenaWings.TabIndex = 23;
+            this.pictureBoxArenaWings.TabStop = false;
+            // 
+            // pictureBoxCrystals
+            // 
+            this.pictureBoxCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_crystal;
+            this.pictureBoxCrystals.Location = new System.Drawing.Point(9, 133);
+            this.pictureBoxCrystals.Name = "pictureBoxCrystals";
+            this.pictureBoxCrystals.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxCrystals.TabIndex = 22;
+            this.pictureBoxCrystals.TabStop = false;
+            // 
+            // pictureBoxMana
+            // 
+            this.pictureBoxMana.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_mana;
+            this.pictureBoxMana.Location = new System.Drawing.Point(9, 103);
+            this.pictureBoxMana.Name = "pictureBoxMana";
+            this.pictureBoxMana.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxMana.TabIndex = 21;
+            this.pictureBoxMana.TabStop = false;
+            // 
+            // pictureBoxRunesLocked
+            // 
+            this.pictureBoxRunesLocked.Image = global::Summoners_War_Statistics.Properties.Resources.icon_rune_locked;
+            this.pictureBoxRunesLocked.Location = new System.Drawing.Point(751, 193);
+            this.pictureBoxRunesLocked.Name = "pictureBoxRunesLocked";
+            this.pictureBoxRunesLocked.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxRunesLocked.TabIndex = 41;
+            this.pictureBoxRunesLocked.TabStop = false;
+            // 
+            // labelRunes
+            // 
+            this.labelRunes.AutoSize = true;
+            this.labelRunes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRunes.Location = new System.Drawing.Point(728, 165);
+            this.labelRunes.Name = "labelRunes";
+            this.labelRunes.Size = new System.Drawing.Size(17, 22);
+            this.labelRunes.TabIndex = 42;
+            this.labelRunes.Text = "0";
+            this.labelRunes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelRunesLocked
+            // 
+            this.labelRunesLocked.AutoSize = true;
+            this.labelRunesLocked.BackColor = System.Drawing.Color.Transparent;
+            this.labelRunesLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRunesLocked.Location = new System.Drawing.Point(728, 195);
+            this.labelRunesLocked.Name = "labelRunesLocked";
+            this.labelRunesLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelRunesLocked.TabIndex = 43;
+            this.labelRunesLocked.Text = "0";
+            this.labelRunesLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Controls.Add(this.labelRunesLocked);
+            this.Controls.Add(this.labelRunes);
+            this.Controls.Add(this.pictureBoxRunesLocked);
+            this.Controls.Add(this.pictureBoxRunes);
+            this.Controls.Add(this.labelCountry);
+            this.Controls.Add(this.labelLanguage);
+            this.Controls.Add(this.pictureBoxCountry);
+            this.Controls.Add(this.pictureBoxLanguage);
+            this.Controls.Add(this.pictureBoxMonstersLocked);
+            this.Controls.Add(this.labelMonstersLocked);
+            this.Controls.Add(this.labelMonsters);
+            this.Controls.Add(this.pictureBoxMonsters);
             this.Controls.Add(this.pictureBoxDimensionalHoleEnergy);
             this.Controls.Add(this.pictureBoxDimensionalCrystals);
             this.Controls.Add(this.pictureBoxShapeshiftingStones);
@@ -417,16 +566,22 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Summary";
             this.Size = new System.Drawing.Size(784, 411);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnergy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGloryPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuildPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRTAMedals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShapeshiftingStones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalCrystals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLanguage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonstersLocked)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalCrystals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShapeshiftingStones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRTAMedals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuildPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGloryPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunesLocked)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,5 +619,17 @@
         private System.Windows.Forms.PictureBox pictureBoxShapeshiftingStones;
         private System.Windows.Forms.PictureBox pictureBoxDimensionalCrystals;
         private System.Windows.Forms.PictureBox pictureBoxDimensionalHoleEnergy;
+        private System.Windows.Forms.PictureBox pictureBoxMonsters;
+        private System.Windows.Forms.Label labelMonsters;
+        private System.Windows.Forms.Label labelMonstersLocked;
+        private System.Windows.Forms.PictureBox pictureBoxMonstersLocked;
+        private System.Windows.Forms.PictureBox pictureBoxLanguage;
+        private System.Windows.Forms.PictureBox pictureBoxCountry;
+        private System.Windows.Forms.Label labelLanguage;
+        private System.Windows.Forms.Label labelCountry;
+        private System.Windows.Forms.PictureBox pictureBoxRunes;
+        private System.Windows.Forms.PictureBox pictureBoxRunesLocked;
+        private System.Windows.Forms.Label labelRunes;
+        private System.Windows.Forms.Label labelRunesLocked;
     }
 }

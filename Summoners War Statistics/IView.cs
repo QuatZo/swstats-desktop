@@ -10,7 +10,7 @@ namespace Summoners_War_Statistics
     interface IView
     {
         #region Properties
-        ISummaryView IntroductionView { get; }
+        ISummaryView SummaryView { get; }
 
         OpenFileDialog OpenFile { get; set; }
         #endregion

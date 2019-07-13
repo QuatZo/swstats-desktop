@@ -14,7 +14,7 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         #region Properties
-        public ISummaryView IntroductionView
+        public ISummaryView SummaryView
         {
             get
             {

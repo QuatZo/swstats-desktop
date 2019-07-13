@@ -1211,5 +1211,8 @@
   <ItemGroup>
     <None Include="Properties\images\ZW.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_rune_locked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
