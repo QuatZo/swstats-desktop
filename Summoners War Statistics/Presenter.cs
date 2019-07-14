@@ -33,19 +33,33 @@ namespace Summoners_War_Statistics
 
         private void MenuView_ButtonClicked(object obj)
         {
-            List<string> buttonNames = new List<string>()
-            {
-                "Summary",
-                "Monsters",
-                "Runes",
-                "DimHole",
-                "Other"
-            };
-
             if (obj.GetType() != typeof(PictureBox)) { return; }
             var buttonClicked = (PictureBox)obj;
 
-            foreach(var button in view.MenuView.Buttons)
+            view.HideViews();
+            switch (buttonClicked.Name.Remove(0, 10).ToLower())
+            {
+                case "summary":
+                    view.SummaryViewVisibility = true;
+                    break;
+                case "monsters":
+                    view.MonstersViewVisibility = true;
+                    break;
+                case "runes":
+                    view.RunesViewVisibility = true;
+                    break;
+                case "dimhole":
+                    view.DimHoleViewVisibility = true;
+                    break;
+                case "other":
+                    view.OtherViewVisibility = true;
+                    break;
+                default:
+                    break;
+            }
+
+
+            foreach (var button in view.MenuView.Buttons)
             {
                 string resourceName;
                 string buttonName = button.Name.Remove(0, 10).ToLower();
@@ -56,24 +70,6 @@ namespace Summoners_War_Statistics
                 ResourceManager rm = Resources.ResourceManager;
                 button.Image = (Image)rm.GetObject(resourceName);
             }
-
-            //foreach(var buttonName in buttonNames)
-            //{
-            //    if (!button.Name.Contains(buttonName)) { continue; }
-
-            //    string resourceName = "menu_" + buttonName.ToLower() + "_on";
-
-            //    ResourceManager rm = Resources.ResourceManager;
-            //    button.Image = (Image)rm.GetObject(resourceName);
-            //    buttonNames.Remove(buttonName);
-            //    break;
-            //}
-
-            //foreach(var buttonName in buttonNames)
-            //{
-            //    string resourceName = "menu_" + buttonName.ToLower() + "_off";
-            //    Console.WriteLine(resourceName);
-            //}
         }
 
         private void View_SelectFileButtonClicked()
@@ -87,6 +83,9 @@ namespace Summoners_War_Statistics
                     try
                     {
                         view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
+                        // here Monsters, Runes tabs
+                        view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
+                        // here Other tab
                         Console.WriteLine(json.UnitList.Count);
                     }
                     catch (NullReferenceException e)

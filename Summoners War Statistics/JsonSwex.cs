@@ -975,20 +975,6 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("period_energy_max")]
         public long? PeriodEnergyMax { get; set; }
-
-        public override string ToString()
-        {
-            string message = "";
-            message += WizardName + "\n";
-            message += WizardLevel + "\n";
-            message += WizardEnergy + "\n";
-            message += WizardMana + "\n";
-            message += WizardCrystal + "\n";
-            message += HonorPoint + "\n";
-            message += GuildPoint + "\n";
-
-            return message;
-        }
     }
 
     public partial struct SkillInfo
@@ -1028,6 +1014,8 @@ namespace Summoners_War_Statistics
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
         {
             MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            MissingMemberHandling = MissingMemberHandling.Ignore,
+            NullValueHandling = NullValueHandling.Ignore,
             DateParseHandling = DateParseHandling.None,
             Converters =
             {

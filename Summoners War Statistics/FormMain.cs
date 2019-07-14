@@ -14,19 +14,42 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         #region Properties
-        public ISummaryView SummaryView
+        public ISummaryView SummaryView => summary1;
+        public IMenuView MenuView =>  menu1;
+        public IMonstersView MonstersView => monsters1;
+        public IRunesView RunesView => runes1;
+        public IDimHoleView DimHoleView => dimHole1;
+        public IOtherView OtherView => other1;
+
+        public bool MenuViewVisibility
         {
-            get
-            {
-                return introduction1;
-            }
+            get => menu1.Visible;
+            set => menu1.Visible = value;
         }
-        public IMenuView MenuView
+        public bool SummaryViewVisibility
         {
-            get
-            {
-                return menu1;
-            }
+            get => summary1.Visible;
+            set => summary1.Visible = value;
+        }
+        public bool MonstersViewVisibility
+        {
+            get => monsters1.Visible;
+            set => monsters1.Visible = value;
+        }
+        public bool RunesViewVisibility
+        {
+            get => runes1.Visible;
+            set => runes1.Visible = value;
+        }
+        public bool DimHoleViewVisibility
+        {
+            get => dimHole1.Visible;
+            set => dimHole1.Visible = value;
+        }
+        public bool OtherViewVisibility
+        {
+            get => other1.Visible;
+            set => other1.Visible = value;
         }
 
         public OpenFileDialog OpenFile
@@ -57,14 +80,36 @@ namespace Summoners_War_Statistics
         {
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            if (messageBoxIcon == MessageBoxIcon.Error) { caption = "Error"; }
-            else if (messageBoxIcon == MessageBoxIcon.Information) { caption = "Information"; }
-            else if (messageBoxIcon == MessageBoxIcon.Exclamation) { caption = "Exclamation"; }
-            else if (messageBoxIcon == MessageBoxIcon.Question) { caption = "Question"; buttons = MessageBoxButtons.YesNoCancel; }
-            else if (messageBoxIcon == MessageBoxIcon.Warning) { caption = "Warning"; buttons = MessageBoxButtons.OKCancel; }
-            else { caption = "Error"; messageBoxIcon = MessageBoxIcon.Error; }
+
+            switch (messageBoxIcon)
+            {
+                default:
+                    caption = "Error";
+                    break;
+                case MessageBoxIcon.Information:
+                    caption = "Information";
+                    break;
+                case MessageBoxIcon.Question:
+                    caption = "Question";
+                    buttons = MessageBoxButtons.YesNoCancel;
+                    break;
+                case MessageBoxIcon.Warning:
+                    caption = "Warning";
+                    buttons = MessageBoxButtons.OKCancel;
+                    break;
+            }
 
             MessageBox.Show(message, caption, buttons, messageBoxIcon);
+        }
+
+        public void HideViews()
+        {
+            MenuViewVisibility = true;
+            SummaryViewVisibility = false;
+            MonstersViewVisibility = false;
+            RunesViewVisibility = false;
+            DimHoleViewVisibility = false;
+            OtherViewVisibility = false;
         }
         #endregion
 

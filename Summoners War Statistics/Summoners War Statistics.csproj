@@ -64,13 +64,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DimHole\DimHole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DimHole\DimHole.Designer.cs">
+      <DependentUpon>DimHole.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMenuView.cs" />
+    <Compile Include="DimHole\IDimHoleView.cs" />
+    <Compile Include="Menu\IMenuView.cs" />
+    <Compile Include="Monsters\IMonstersView.cs" />
+    <Compile Include="Other\IOtherView.cs" />
+    <Compile Include="Runes\IRunesView.cs" />
+    <Compile Include="Monsters\Monsters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Monsters\Monsters.Designer.cs">
+      <DependentUpon>Monsters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\Other.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Other\Other.Designer.cs">
+      <DependentUpon>Other.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Runes\Runes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Runes\Runes.Designer.cs">
+      <DependentUpon>Runes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Summary\ISummaryView.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,23 +114,35 @@
     <Compile Include="Summary\SummaryPresenter.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="JsonSwex.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Menu\Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Menu\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Model.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DimHole\DimHole.resx">
+      <DependentUpon>DimHole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\Monsters.resx">
+      <DependentUpon>Monsters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\Other.resx">
+      <DependentUpon>Other.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Runes\Runes.resx">
+      <DependentUpon>Runes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Summary\Summary.resx">
       <DependentUpon>Summary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Menu\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

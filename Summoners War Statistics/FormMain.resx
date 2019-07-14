@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="introduction1.SummonerCountry" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="summary1.SummonerCountry" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAAA8CAIAAABpZzoSAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACLSURBVHhe7dAxDQAgAMAwfOAB/6bQAB9hHrpMQcfR
@@ -130,7 +130,16 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="introduction1.SummonerLanguage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="summary1.SummonerLastCountry" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAAA8CAIAAABpZzoSAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACLSURBVHhe7dAxDQAgAMAwfOAB/6bQAB9hHrpMQcfR
+        F46EI+FIOBKOhCPhSDgSjoQj4Ug4Eo6EI+FIOBKOhCPhSDgSjoQj4Ug4Eo6EI+FIOBKONPZcfuPIODKO
+        jCPjyDgyjowj48g4Mo6MI+PIODKOjCPjyDgyjowj48g4Mo6MI+PIODKOjCPj+J7rAr3eTHlyzwqrAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="summary1.SummonerLastLanguage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFoAAAA8CAIAAABpZzoSAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACLSURBVHhe7dAxDQAgAMAwfOAB/6bQAB9hHrpMQcfR

@@ -13,9 +13,11 @@ namespace Summoners_War_Statistics
     public partial class Menu : UserControl, IMenuView
     {
         #region Properties
+        [Browsable(false)] 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<PictureBox> Buttons
         {
-            get => new List<PictureBox>()
+            get => new List<PictureBox>
                 {
                     pictureBoxSummary,
                     pictureBoxMonsters,

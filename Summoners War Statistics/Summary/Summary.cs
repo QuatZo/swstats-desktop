@@ -36,74 +36,77 @@ namespace Summoners_War_Statistics
             get => byte.Parse(labelLevel.Text);
             set => labelLevel.Text = value.ToString();
         }
+
         public ulong SummonerMana
         {
-            get => ulong.Parse(labelLevel.Text);
+            get => ulong.Parse(labelMana.Text);
             set => labelMana.Text = value.ToString("N0");
         }
         public uint SummonerCrystals
         {
-            get => uint.Parse(labelLevel.Text);
+            get => uint.Parse(labelCrystals.Text);
             set => labelCrystals.Text = value.ToString("N0");
         }
         public byte SummonerEnergy
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelEnergy.Text);
             set => labelEnergy.Text = value.ToString();
         }
         public byte SummonerEnergyMax
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelEnergyMax.Text);
             set => labelEnergyMax.Text = value.ToString();
         }
         public byte SummonerArenaEnergy
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelArenaWings.Text);
             set => labelArenaWings.Text = value.ToString();
         }
         public byte SummonerArenaEnergyMax
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelArenaWingsMax.Text);
             set => labelArenaWingsMax.Text = value.ToString();
-        }
-        public uint SummonerGloryPoints
-        {
-            get => uint.Parse(labelLevel.Text);
-            set => labelGloryPoints.Text = value.ToString("N0");
-        }
-        public uint SummonerGuildPoints
-        {
-            get => uint.Parse(labelLevel.Text);
-            set => labelGuildPoints.Text = value.ToString("N0");
         }
         public byte SummonerDimensionalCrystals
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelDimensionalCrystals.Text);
             set => labelDimensionalCrystals.Text = value.ToString();
         }
         public byte SummonerDimensionalCrystalsMax
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelDimensionalCrystalsMax.Text);
             set => labelDimensionalCrystalsMax.Text = value.ToString();
+        }
+
+        public uint SummonerGloryPoints
+        {
+            get => uint.Parse(labelGloryPoints.Text);
+            set => labelGloryPoints.Text = value.ToString("N0");
+        }
+        public uint SummonerGuildPoints
+        {
+            get => uint.Parse(labelGuildPoints.Text);
+            set => labelGuildPoints.Text = value.ToString("N0");
         }
         public ushort SummonerShapeshiftingStones
         {
-            get => ushort.Parse(labelLevel.Text);
+            get => ushort.Parse(labelShapeshiftingStones.Text);
             set => labelShapeshiftingStones.Text = value.ToString("N0");
         }
         public uint SummonerRTAMedals
         {
-            get => uint.Parse(labelLevel.Text);
+            get => uint.Parse(labelRTAMedals.Text);
             set => labelRTAMedals.Text = value.ToString("N0");
         }
+
         public byte SummonerDimensionalHoleEnergy
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelDimensionalHoleEnergy.Text);
             set => labelDimensionalHoleEnergy.Text = value.ToString();
         }
         public byte SummonerDimensionalHoleEnergyMax
         {
-            get => byte.Parse(labelLevel.Text);
+            get => byte.Parse(labelDimensionalHoleEnergyMax.Text);
             set => labelDimensionalHoleEnergyMax.Text = value.ToString();
         }
         public ushort SummonerMonstersAmount

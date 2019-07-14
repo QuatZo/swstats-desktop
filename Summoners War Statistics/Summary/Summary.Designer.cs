@@ -507,7 +507,7 @@
             // 
             this.labelJsonModified.AutoSize = true;
             this.labelJsonModified.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonModified.Location = new System.Drawing.Point(64, 389);
+            this.labelJsonModified.Location = new System.Drawing.Point(64, 373);
             this.labelJsonModified.Name = "labelJsonModified";
             this.labelJsonModified.Size = new System.Drawing.Size(178, 22);
             this.labelJsonModified.TabIndex = 46;
@@ -561,7 +561,7 @@
             // 
             this.labelJsonCreatedText.AutoSize = true;
             this.labelJsonCreatedText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonCreatedText.Location = new System.Drawing.Point(-4, 389);
+            this.labelJsonCreatedText.Location = new System.Drawing.Point(5, 373);
             this.labelJsonCreatedText.Name = "labelJsonCreatedText";
             this.labelJsonCreatedText.Size = new System.Drawing.Size(62, 22);
             this.labelJsonCreatedText.TabIndex = 51;
