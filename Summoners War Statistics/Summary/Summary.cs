@@ -15,10 +15,15 @@ namespace Summoners_War_Statistics
             get => pictureBoxCountry.Image;
             set => pictureBoxCountry.Image = value;
         }
-        public Image SummonerLanguage
+        public Image SummonerLastCountry
         {
-            get => pictureBoxLanguage.Image;
-            set => pictureBoxLanguage.Image = value;
+            get => pictureBoxLastCountry.Image;
+            set => pictureBoxLastCountry.Image = value;
+        }
+        public Image SummonerLastLanguage
+        {
+            get => pictureBoxLastLanguage.Image;
+            set => pictureBoxLastLanguage.Image = value;
         }
 
         public string SummonerName
@@ -34,12 +39,12 @@ namespace Summoners_War_Statistics
         public ulong SummonerMana
         {
             get => ulong.Parse(labelLevel.Text);
-            set => labelMana.Text = value.ToString();
+            set => labelMana.Text = value.ToString("N0");
         }
         public uint SummonerCrystals
         {
             get => uint.Parse(labelLevel.Text);
-            set => labelCrystals.Text = value.ToString();
+            set => labelCrystals.Text = value.ToString("N0");
         }
         public byte SummonerEnergy
         {
@@ -64,12 +69,12 @@ namespace Summoners_War_Statistics
         public uint SummonerGloryPoints
         {
             get => uint.Parse(labelLevel.Text);
-            set => labelGloryPoints.Text = value.ToString();
+            set => labelGloryPoints.Text = value.ToString("N0");
         }
         public uint SummonerGuildPoints
         {
             get => uint.Parse(labelLevel.Text);
-            set => labelGuildPoints.Text = value.ToString();
+            set => labelGuildPoints.Text = value.ToString("N0");
         }
         public byte SummonerDimensionalCrystals
         {
@@ -84,12 +89,12 @@ namespace Summoners_War_Statistics
         public ushort SummonerShapeshiftingStones
         {
             get => ushort.Parse(labelLevel.Text);
-            set => labelShapeshiftingStones.Text = value.ToString();
+            set => labelShapeshiftingStones.Text = value.ToString("N0");
         }
         public uint SummonerRTAMedals
         {
             get => uint.Parse(labelLevel.Text);
-            set => labelRTAMedals.Text = value.ToString();
+            set => labelRTAMedals.Text = value.ToString("N0");
         }
         public byte SummonerDimensionalHoleEnergy
         {
@@ -104,23 +109,39 @@ namespace Summoners_War_Statistics
         public ushort SummonerMonstersAmount
         {
             get => ushort.Parse(labelMonsters.Text);
-            set => labelMonsters.Text = value.ToString();
+            set => labelMonsters.Text = value.ToString("N0");
         }
         public ushort SummonerMonstersLocked
         {
             get => ushort.Parse(labelMonstersLocked.Text);
-            set => labelMonstersLocked.Text = value.ToString();
+            set => labelMonstersLocked.Text = value.ToString("N0");
         }
 
         public ushort SummonerRunes
         {
             get => ushort.Parse(labelRunes.Text);
-            set => labelRunes.Text = value.ToString();
+            set => labelRunes.Text = value.ToString("N0");
         }
         public ushort SummonerRunesLocked
         {
             get => ushort.Parse(labelRunesLocked.Text);
-            set => labelRunesLocked.Text = value.ToString();
+            set => labelRunesLocked.Text = value.ToString("N0");
+        }
+
+        public ushort SummonerSocialPoints
+        {
+            get => ushort.Parse(labelSocialPoints.Text);
+            set => labelSocialPoints.Text = value.ToString("N0");
+        }
+        public ushort SummonerAncientCoins
+        {
+            get => ushort.Parse(labelAncientCoins.Text);
+            set => labelAncientCoins.Text = value.ToString("N0");
+        }
+        public string JsonModifcationDate
+        {
+            get => labelJsonModified.Text;
+            set => labelJsonModified.Text = value;
         }
         #endregion
 
@@ -132,15 +153,16 @@ namespace Summoners_War_Statistics
         #region Methods
 
         #endregion
-        public void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes)
+        public void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
         {
             SummonerRunes = 0;
             SummonerRunesLocked = 0;
 
             ResourceManager rm = Resources.ResourceManager;
-            SummonerCountry = (Image)rm.GetObject(wizardInfo.WizardLastCountry.ToUpper());
-            if(wizardInfo.WizardLastLang.ToUpper() == "EN") { SummonerLanguage = (Image)rm.GetObject("US"); }
-            else { SummonerLanguage = (Image)rm.GetObject(wizardInfo.WizardLastLang.ToUpper()); }
+            SummonerCountry = (Image)rm.GetObject(country.ToUpper());
+            SummonerLastCountry = (Image)rm.GetObject(wizardInfo.WizardLastCountry.ToUpper());
+            if(wizardInfo.WizardLastLang.ToUpper() == "EN") { SummonerLastLanguage = (Image)rm.GetObject("US"); }
+            else { SummonerLastLanguage = (Image)rm.GetObject(wizardInfo.WizardLastLang.ToUpper()); }
 
             SummonerName = wizardInfo.WizardName;
             SummonerLevel = wizardInfo.WizardLevel;
@@ -175,6 +197,9 @@ namespace Summoners_War_Statistics
             }
 
             SummonerRunes = (ushort)(runes.Count + SummonerRunesLocked);
+
+            SummonerSocialPoints = (ushort)wizardInfo.SocialPointCurrent;
+            SummonerAncientCoins = (ushort)wizardInfo.EventCoin;
             // This should be in Monsters view
             //List<long> monstersToLock = new List<long>();
             //foreach(var monster in monsters)
@@ -186,6 +211,7 @@ namespace Summoners_War_Statistics
             //Console.WriteLine($"Monsters to lock: {monstersToLock.Count}");
             //foreach(var monsterToLock in monstersToLock) { Console.WriteLine($"Unit Master ID [use Xzandro's mapping]: {monsterToLock}"); }
 
+            JsonModifcationDate = jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
         }
     }
 }

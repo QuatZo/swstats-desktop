@@ -21,6 +21,14 @@ namespace Summoners_War_Statistics
                 return introduction1;
             }
         }
+        public IMenuView MenuView
+        {
+            get
+            {
+                return menu1;
+            }
+        }
+
         public OpenFileDialog OpenFile
         {
             get

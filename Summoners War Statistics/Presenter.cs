@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Summoners_War_Statistics.Properties;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +27,53 @@ namespace Summoners_War_Statistics
 
             this.view.FormOnLoad += View_FormOnLoad;
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
+
+            this.view.MenuView.ButtonClicked += MenuView_ButtonClicked;
+        }
+
+        private void MenuView_ButtonClicked(object obj)
+        {
+            List<string> buttonNames = new List<string>()
+            {
+                "Summary",
+                "Monsters",
+                "Runes",
+                "DimHole",
+                "Other"
+            };
+
+            if (obj.GetType() != typeof(PictureBox)) { return; }
+            var buttonClicked = (PictureBox)obj;
+
+            foreach(var button in view.MenuView.Buttons)
+            {
+                string resourceName;
+                string buttonName = button.Name.Remove(0, 10).ToLower();
+
+                if (button == buttonClicked) { resourceName = "menu_" + buttonName + "_on"; }
+                else { resourceName = "menu_" + buttonName + "_off"; }
+
+                ResourceManager rm = Resources.ResourceManager;
+                button.Image = (Image)rm.GetObject(resourceName);
+            }
+
+            //foreach(var buttonName in buttonNames)
+            //{
+            //    if (!button.Name.Contains(buttonName)) { continue; }
+
+            //    string resourceName = "menu_" + buttonName.ToLower() + "_on";
+
+            //    ResourceManager rm = Resources.ResourceManager;
+            //    button.Image = (Image)rm.GetObject(resourceName);
+            //    buttonNames.Remove(buttonName);
+            //    break;
+            //}
+
+            //foreach(var buttonName in buttonNames)
+            //{
+            //    string resourceName = "menu_" + buttonName.ToLower() + "_off";
+            //    Console.WriteLine(resourceName);
+            //}
         }
 
         private void View_SelectFileButtonClicked()
@@ -36,7 +86,7 @@ namespace Summoners_War_Statistics
 
                     try
                     {
-                        view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes);
+                        view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
                         Console.WriteLine(json.UnitList.Count);
                     }
                     catch (NullReferenceException e)

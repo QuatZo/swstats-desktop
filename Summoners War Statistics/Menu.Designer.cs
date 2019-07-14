@@ -48,6 +48,7 @@
             this.pictureBoxSummary.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxSummary.TabIndex = 0;
             this.pictureBoxSummary.TabStop = false;
+            this.pictureBoxSummary.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxMonsters
             // 
@@ -57,6 +58,7 @@
             this.pictureBoxMonsters.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxMonsters.TabIndex = 1;
             this.pictureBoxMonsters.TabStop = false;
+            this.pictureBoxMonsters.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxRunes
             // 
@@ -66,6 +68,7 @@
             this.pictureBoxRunes.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxRunes.TabIndex = 2;
             this.pictureBoxRunes.TabStop = false;
+            this.pictureBoxRunes.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxDimHole
             // 
@@ -75,6 +78,7 @@
             this.pictureBoxDimHole.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxDimHole.TabIndex = 3;
             this.pictureBoxDimHole.TabStop = false;
+            this.pictureBoxDimHole.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxOther
             // 
@@ -84,6 +88,7 @@
             this.pictureBoxOther.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxOther.TabIndex = 4;
             this.pictureBoxOther.TabStop = false;
+            this.pictureBoxOther.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // Menu
             // 

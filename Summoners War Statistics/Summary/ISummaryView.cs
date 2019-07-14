@@ -11,7 +11,8 @@ namespace Summoners_War_Statistics
     {
         #region Properties
         Image SummonerCountry { get; set; }
-        Image SummonerLanguage { get; set; }
+        Image SummonerLastCountry { get; set; }
+        Image SummonerLastLanguage { get; set; }
 
         string SummonerName { get; set; }
         byte SummonerLevel { get; set; }
@@ -34,13 +35,18 @@ namespace Summoners_War_Statistics
 
         ushort SummonerRunes { get; set; }
         ushort SummonerRunesLocked { get; set; }
+
+        ushort SummonerSocialPoints { get; set; }
+        ushort SummonerAncientCoins { get; set; }
+
+        string JsonModifcationDate { get; set; }
         #endregion
 
         #region Events
         #endregion
 
         #region Methods
-        void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monstersList, List<long> monstersLockedList, List<Rune> runes);
+        void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country);
         #endregion
     }
 }

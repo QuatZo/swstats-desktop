@@ -11,6 +11,7 @@ namespace Summoners_War_Statistics
     {
         #region Properties
         ISummaryView SummaryView { get; }
+        IMenuView MenuView { get; }
 
         OpenFileDialog OpenFile { get; set; }
         #endregion

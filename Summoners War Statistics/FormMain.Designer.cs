@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.labelRunesInfo = new System.Windows.Forms.Label();
             this.labelMonsters = new System.Windows.Forms.Label();
             this.labelDimensionalHoleInfo = new System.Windows.Forms.Label();
@@ -37,8 +38,8 @@
             this.labelSomething = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
-            this.menu1 = new Summoners_War_Statistics.Menu();
             this.introduction1 = new Summoners_War_Statistics.Summary();
+            this.menu1 = new Summoners_War_Statistics.Menu();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,23 +122,18 @@
             this.pictureBoxSelectJson.TabStop = false;
             this.pictureBoxSelectJson.Click += new System.EventHandler(this.pictureBoxSelectJson_Click);
             // 
-            // menu1
-            // 
-            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.menu1.Location = new System.Drawing.Point(0, 70);
-            this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(800, 80);
-            this.menu1.TabIndex = 12;
-            // 
             // introduction1
             // 
             this.introduction1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.introduction1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.introduction1.JsonModifcationDate = "Json file creation date";
             this.introduction1.Location = new System.Drawing.Point(0, 150);
             this.introduction1.Name = "introduction1";
             this.introduction1.Size = new System.Drawing.Size(784, 411);
+            this.introduction1.SummonerAncientCoins = ((ushort)(0));
             this.introduction1.SummonerArenaEnergy = ((byte)(0));
             this.introduction1.SummonerArenaEnergyMax = ((byte)(0));
+            this.introduction1.SummonerLastCountry = ((System.Drawing.Image)(resources.GetObject("introduction1.SummonerCountry")));
             this.introduction1.SummonerCrystals = ((uint)(0u));
             this.introduction1.SummonerDimensionalCrystals = ((byte)(0));
             this.introduction1.SummonerDimensionalCrystalsMax = ((byte)(0));
@@ -147,12 +143,26 @@
             this.introduction1.SummonerEnergyMax = ((byte)(0));
             this.introduction1.SummonerGloryPoints = ((uint)(0u));
             this.introduction1.SummonerGuildPoints = ((uint)(0u));
+            this.introduction1.SummonerLastLanguage = ((System.Drawing.Image)(resources.GetObject("introduction1.SummonerLanguage")));
             this.introduction1.SummonerLevel = ((byte)(0));
             this.introduction1.SummonerMana = ((ulong)(0ul));
+            this.introduction1.SummonerMonstersAmount = ((ushort)(0));
+            this.introduction1.SummonerMonstersLocked = ((ushort)(0));
             this.introduction1.SummonerName = "QuatZo";
             this.introduction1.SummonerRTAMedals = ((uint)(0u));
+            this.introduction1.SummonerRunes = ((ushort)(0));
+            this.introduction1.SummonerRunesLocked = ((ushort)(0));
             this.introduction1.SummonerShapeshiftingStones = ((ushort)(0));
+            this.introduction1.SummonerSocialPoints = ((ushort)(0));
             this.introduction1.TabIndex = 13;
+            // 
+            // menu1
+            // 
+            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menu1.Location = new System.Drawing.Point(0, 70);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(800, 80);
+            this.menu1.TabIndex = 12;
             // 
             // FormMain
             // 
@@ -170,6 +180,7 @@
             this.Controls.Add(this.labelDimensionalHoleInfo);
             this.Controls.Add(this.labelMonsters);
             this.Controls.Add(this.labelRunesInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
             this.Load += new System.EventHandler(this.FormMain_Load);
