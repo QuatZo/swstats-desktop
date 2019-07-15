@@ -99,10 +99,15 @@
             // 
             // dimHole1
             // 
+            this.dimHole1.AxpPerLevel = ((ushort)(0));
             this.dimHole1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.dimHole1.DimensionalEnergyGainStart = new System.DateTime(((long)(0)));
             this.dimHole1.Location = new System.Drawing.Point(0, 150);
             this.dimHole1.Name = "dimHole1";
             this.dimHole1.Size = new System.Drawing.Size(784, 411);
+            this.dimHole1.SummonerDimensionalHoleEnergy = ((byte)(0));
+            this.dimHole1.SummonerDimensionalHoleEnergyMax = ((byte)(100));
+            this.dimHole1.SummonerDimensionalHoleEnergyMaxInfo = "";
             this.dimHole1.TabIndex = 17;
             // 
             // other1
@@ -149,7 +154,6 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
-            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).EndInit();
             this.ResumeLayout(false);
 

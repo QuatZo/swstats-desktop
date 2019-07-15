@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
@@ -13,6 +7,7 @@ namespace Summoners_War_Statistics
     public partial class DimHole : UserControl, IDimHoleView
     {
         #region Properties
+        public ushort AxpPerLevel { get; set; }
         public byte SummonerDimensionalHoleEnergy
         {
             get => byte.Parse(labelDimensionalHoleEnergy.Text);
@@ -28,6 +23,27 @@ namespace Summoners_War_Statistics
             get => labelDimensionalHoleEnergyMaxInfo.Text;
             set => labelDimensionalHoleEnergyMaxInfo.Text = value;
         }
+        public DateTime DimensionalEnergyGainStart { get; set; }
+        public List<AwakeningInfoClass> DimHoleMonsters { get; set; }
+
+        public ListView DimHoleList
+        {
+            get => listView1;
+            set => listView1 = value;
+        }
+
+        public Dictionary<RadioButton, ushort> DimHoleLevelAXP => new Dictionary<RadioButton, ushort>()
+            {
+                { radioButton1, 320 },
+                { radioButton2, 420 },
+                { radioButton3, 560 },
+                { radioButton4, 740 },
+                { radioButton5, 960 }
+            };
+        #endregion
+
+        #region Events
+        public event Action<RadioButton> DimHoleLevelChanged;
         #endregion
 
         public DimHole()
@@ -56,62 +72,54 @@ namespace Summoners_War_Statistics
                 SummonerDimensionalHoleEnergyMaxInfo = "Your dimensional energy has reached out the limit. You are wasting potential dimensional energy!";
             }
 
+            DimHoleMonsters = new List<AwakeningInfoClass>();
 
-
-
-            List<AwakeningInfoClass> dimHoleMonsters = new List<AwakeningInfoClass>();
-
-            foreach (var unit in unitList)
+            foreach (PurpleUnitList unit in unitList)
             {
                 try
                 {
-                    var temp = unit.AwakeningInfo.Value.AnythingArray.Count;
-                    
-                    
+                    int temp = unit.AwakeningInfo.Value.AnythingArray.Count;
                 }
                 catch (NullReferenceException)
                 {
-                    dimHoleMonsters.Add(unit.AwakeningInfo.Value.AwakeningInfoClass);
+                    DimHoleMonsters.Add(unit.AwakeningInfo.Value.AwakeningInfoClass);
+                }
+                catch (InvalidOperationException)
+                {
+                    throw new InvalidJSONException();
                 }
             }
-            
-            foreach(var mon in dimHoleMonsters)
+
+            DimensionalEnergyGainStart = DateTimeOffset.FromUnixTimeSeconds((long)dimensionHoleInfo.EnergyGainStartTimestamp).ToLocalTime().DateTime;
+
+            foreach (AwakeningInfoClass mon in DimHoleMonsters)
             {
-                byte energyNeeded = (byte)Math.Ceiling((decimal)(mon.MaxExp - mon.Exp) / 960);
+                foreach(KeyValuePair<RadioButton, ushort> dimHoleLevel in DimHoleLevelAXP)
+                {
+                    if(dimHoleLevel.Key.Checked == true) { AxpPerLevel = dimHoleLevel.Value; break; }
+                }
+                ushort energyNeeded = (ushort)Math.Ceiling((decimal)(mon.MaxExp - mon.Exp) / AxpPerLevel);
                 string dateWhen2A = "You have enough dimensional energy to 2A this unit.";
-                if(energyNeeded - SummonerDimensionalHoleEnergy > 0)
+                if (energyNeeded - SummonerDimensionalHoleEnergy > 0)
                 {
                     byte tempEnergy = (byte)(energyNeeded - SummonerDimensionalHoleEnergy);
-                    Console.WriteLine($"{energyNeeded} - {SummonerDimensionalHoleEnergy} = {energyNeeded - SummonerDimensionalHoleEnergy}");
-                    DateTime energyGain = DateTimeOffset.FromUnixTimeSeconds((long)dimensionHoleInfo.EnergyGainStartTimestamp).ToLocalTime().DateTime;
+                    DateTime energyGain = DimensionalEnergyGainStart;
                     while (tempEnergy != 0)
                     {
                         energyGain = energyGain.AddHours(2);
                         tempEnergy--;
-                        Console.WriteLine(tempEnergy);
                     }
                     dateWhen2A = energyGain.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
                 }
-                string[] str = { mon.UnitMasterId.ToString(), (mon.MaxExp-mon.Exp).ToString(), energyNeeded.ToString(), dateWhen2A };
-                listView1.Items.Add(new ListViewItem(str));
-                Console.WriteLine($"Monster {mon.UnitMasterId}[here will be used Xzandro's mapping] can be 2A, it'll take {Math.Ceiling((decimal)(mon.MaxExp - mon.Exp) / 960)} dimensional hole energy more, doing B5.");
+                string[] str = { Mapping.Instance.GetMonsterName((int)mon.UnitMasterId), (mon.MaxExp - mon.Exp).ToString(), energyNeeded.ToString(), dateWhen2A };
+                DimHoleList.Items.Add(new ListViewItem(str));
             }
         }
         #endregion
 
-        private void pictureBoxDimensionalHoleEnergy_Click(object sender, EventArgs e)
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void DimHole_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            DimHoleLevelChanged?.Invoke((RadioButton)sender);
         }
     }
 }

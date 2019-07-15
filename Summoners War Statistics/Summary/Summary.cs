@@ -154,8 +154,6 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-
-        #endregion
         public void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
         {
             SummonerRunes = 0;
@@ -216,5 +214,6 @@ namespace Summoners_War_Statistics
 
             JsonModifcationDate = jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
         }
+        #endregion
     }
 }

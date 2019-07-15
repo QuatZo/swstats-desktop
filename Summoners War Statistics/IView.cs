@@ -28,7 +28,6 @@ namespace Summoners_War_Statistics
 
         #region Events
         event Action SelectFileButtonClicked;
-        event Action FormOnLoad;
         #endregion
 
         #region Methods

@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DimHole\DimHolePresenter.cs" />
     <Compile Include="DimHole\DimHole.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +78,8 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DimHole\IDimHoleView.cs" />
+    <Compile Include="InvalidJSONException.cs" />
+    <Compile Include="Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\IOtherView.cs" />

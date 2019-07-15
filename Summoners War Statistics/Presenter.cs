@@ -17,6 +17,7 @@ namespace Summoners_War_Statistics
         private readonly Model model;
 
         private readonly SummaryPresenter summaryPresenter;
+        private readonly DimHolePresenter dimHolePresenter;
 
         public Presenter(IView view, Model model)
         {
@@ -24,8 +25,8 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
+            dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
 
-            this.view.FormOnLoad += View_FormOnLoad;
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
 
             this.view.MenuView.ButtonClicked += MenuView_ButtonClicked;
@@ -84,11 +85,16 @@ namespace Summoners_War_Statistics
                     {
                         view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
                         // here Monsters, Runes tabs
+                        view.DimHoleView.DimHoleList.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
                         // here Other tab
-                        Console.WriteLine(json.UnitList.Count);
                     }
                     catch (NullReferenceException e)
+                    {
+                        view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
+                        Console.WriteLine(e);
+                    }
+                    catch (InvalidJSONException e)
                     {
                         view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
                         Console.WriteLine(e);
@@ -99,11 +105,6 @@ namespace Summoners_War_Statistics
                     view.ShowMessage("Why didn't you choose the JSON file? Nothing's gonna happen, because of you.", MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void View_FormOnLoad()
-        {
-            
         }
     }
 }

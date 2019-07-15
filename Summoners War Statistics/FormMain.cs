@@ -66,7 +66,6 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action FormOnLoad;
         public event Action SelectFileButtonClicked;
         #endregion
 
@@ -112,16 +111,6 @@ namespace Summoners_War_Statistics
             OtherViewVisibility = false;
         }
         #endregion
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            FormOnLoad?.Invoke();
-        }
-
-        private void introduction1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBoxSelectJson_Click(object sender, EventArgs e)
         {
