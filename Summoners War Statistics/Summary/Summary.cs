@@ -148,6 +148,10 @@ namespace Summoners_War_Statistics
         }
         #endregion
 
+        #region Events
+        public event Action<WizardInfo, DimensionHoleInfo, List<PurpleUnitList>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        #endregion
+
         public Summary()
         {
             InitializeComponent();
@@ -156,63 +160,7 @@ namespace Summoners_War_Statistics
         #region Methods
         public void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
         {
-            SummonerRunes = 0;
-            SummonerRunesLocked = 0;
-
-            ResourceManager rm = Resources.ResourceManager;
-            SummonerCountry = (Image)rm.GetObject(country.ToUpper());
-            SummonerLastCountry = (Image)rm.GetObject(wizardInfo.WizardLastCountry.ToUpper());
-            if(wizardInfo.WizardLastLang.ToUpper() == "EN") { SummonerLastLanguage = (Image)rm.GetObject("US"); }
-            else { SummonerLastLanguage = (Image)rm.GetObject(wizardInfo.WizardLastLang.ToUpper()); }
-
-            SummonerName = wizardInfo.WizardName;
-            SummonerLevel = wizardInfo.WizardLevel;
-            SummonerMana = wizardInfo.WizardMana;
-            SummonerCrystals = wizardInfo.WizardCrystal;
-
-            SummonerArenaEnergy = wizardInfo.ArenaEnergy;
-            SummonerArenaEnergyMax = wizardInfo.ArenaEnergyMax;
-
-            SummonerDimensionalCrystals = wizardInfo.DarkportalEnergy;
-            SummonerDimensionalCrystalsMax = wizardInfo.DarkportalEnergyMax;
-
-            SummonerDimensionalHoleEnergy = dimensionHoleInfo.Energy;
-            SummonerDimensionalHoleEnergyMax = dimensionHoleInfo.EnergyMax;
-
-            SummonerEnergy = wizardInfo.WizardEnergy;
-            SummonerEnergyMax = wizardInfo.EnergyMax;
-
-            SummonerGloryPoints = wizardInfo.HonorPoint;
-            SummonerGuildPoints = wizardInfo.GuildPoint;
-            SummonerRTAMedals = wizardInfo.HonorMedal;
-
-            SummonerShapeshiftingStones = wizardInfo.CostumePoint;
-
-            SummonerMonstersAmount = (ushort)monsters.Count;
-            SummonerMonstersLocked = (ushort)monstersLocked.Count;
-
-            foreach (var monster in monsters)
-            {
-                if(monster.UnitId == null) { continue; }
-                SummonerRunesLocked += (ushort)monster.Runes.Count;
-            }
-
-            SummonerRunes = (ushort)(runes.Count + SummonerRunesLocked);
-
-            SummonerSocialPoints = (ushort)wizardInfo.SocialPointCurrent;
-            SummonerAncientCoins = (ushort)wizardInfo.EventCoin;
-            // This should be in Monsters view
-            //List<long> monstersToLock = new List<long>();
-            //foreach(var monster in monsters)
-            //{
-            //    if(monster.UnitId == null) { continue; }
-
-            //    if(monster.Class == 6 && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add((long)monster.UnitMasterId); }
-            //}
-            //Console.WriteLine($"Monsters to lock: {monstersToLock.Count}");
-            //foreach(var monsterToLock in monstersToLock) { Console.WriteLine($"Unit Master ID [use Xzandro's mapping]: {monsterToLock}"); }
-
-            JsonModifcationDate = jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
+            InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country);
         }
         #endregion
     }

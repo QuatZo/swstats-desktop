@@ -85,7 +85,7 @@ namespace Summoners_War_Statistics
                     {
                         view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
                         // here Monsters, Runes tabs
-                        view.DimHoleView.DimHoleList.Items.Clear();
+                        view.DimHoleView.DimHoleMonstersListView.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
                         // here Other tab
                     }

@@ -931,13 +931,138 @@ namespace Summoners_War_Statistics
             runeEffectTypes.Add(11, "RES");
             runeEffectTypes.Add(12, "ACC");
             #endregion
+
+            #region Rune Sets
+            runeSets.Add(1, "Energy");
+            runeSets.Add(2, "Guard");
+            runeSets.Add(3, "Swift");
+            runeSets.Add(4, "Blade");
+            runeSets.Add(5, "Rage");
+            runeSets.Add(6, "Focus");
+            runeSets.Add(7, "Endure");
+            runeSets.Add(8, "Fatal");
+            runeSets.Add(10, "Despair");
+            runeSets.Add(11, "Vampire");
+            runeSets.Add(13, "Violent");
+            runeSets.Add(14, "Nemesis");
+            runeSets.Add(15, "Will");
+            runeSets.Add(16, "Shield");
+            runeSets.Add(17, "Revenge");
+            runeSets.Add(18, "Destroy");
+            runeSets.Add(19, "Fight");
+            runeSets.Add(20, "Determination");
+            runeSets.Add(21, "Enhance");
+            runeSets.Add(22, "Accuracy");
+            runeSets.Add(23, "Tolerance");
+            runeSets.Add(99, "Immemorial");
+            #endregion
+
+            #region Rune Quality
+            runeQuality.Add(1, "Common");
+            runeQuality.Add(2, "Magic");
+            runeQuality.Add(3, "Rare");
+            runeQuality.Add(4, "Hero");
+            runeQuality.Add(5, "Legend");
+            // ancient rune qualities
+            runeQuality.Add(11, "Ancient Common");
+            runeQuality.Add(12, "Ancient Magic");
+            runeQuality.Add(13, "Ancient Rare");
+            runeQuality.Add(14, "Ancient Hero");
+            runeQuality.Add(15, "Ancient Legend");
+            #endregion
+
+            // not done yet
+            #region Rune Mainstats
+            #endregion
+
+            // not done yet
+            #region Rune Substats
+
+            #endregion
+
+            // not done yet
+            #region Grindstones
+
+            #endregion
+
+            // not done yet
+            #region Enchanted Gems
+
+            #endregion
+
+            #region Scenario
+            scenario.Add(1, "Garen Forest");
+            scenario.Add(2, "Mt. Siz");
+            scenario.Add(3, "Kabir Ruins");
+            scenario.Add(4, "Mt. White Ragon");
+            scenario.Add(5, "Telain Forest");
+            scenario.Add(6, "Hydeni Ruins");
+            scenario.Add(7, "Tamor Desert");
+            scenario.Add(8, "Vrofagus Ruins");
+            scenario.Add(9, "Faimon Volcano");
+            scenario.Add(10, "Aiden Forest");
+            scenario.Add(11, "Ferun Castle");
+            scenario.Add(12, "Mt Runar");
+            scenario.Add(13, "Chiruka Remains");
+            #endregion
+
+            #region Dungeons
+            dungeons.Add(1001, "Hall of Dark");
+            dungeons.Add(1101, "Sanctuary of Dreaming Fairies");
+            dungeons.Add(1201, "Ellunia Remains (Fairy)");
+            dungeons.Add(1202, "Ellunia Remains (Pixie)");
+            dungeons.Add(2001, "Hall of Fire");
+            dungeons.Add(2101, "Forest of Roaring Beasts");
+            dungeons.Add(2201, "Karzhan Remains (Warbear)");
+            dungeons.Add(2202, "Karzhan Remains (Inugami)");
+            dungeons.Add(3001, "Hall of Water");
+            dungeons.Add(4001, "Hall of Wind");
+            dungeons.Add(5001, "Hall of Magic");
+            dungeons.Add(6001, "Necropolis");
+            dungeons.Add(7001, "Hall of Light");
+            dungeons.Add(8001, "Giant\'s Keep");
+            dungeons.Add(9001, "Dragon\'s Lair");
+            #endregion
+
+            #region Elemental Rift Dungeons
+            elementalRiftDungeons.Add(1001, "Rift Dungeon - Ice Beast");
+            elementalRiftDungeons.Add(2001, "Rift Dungeon - Fire Beast");
+            elementalRiftDungeons.Add(3001, "Rift Dungeon - Wind Beast");
+            elementalRiftDungeons.Add(4001, "Rift Dungeon - Light Beast");
+            elementalRiftDungeons.Add(5001, "Rift Dungeon - Dark Beast");
+            #endregion
+
+            #region Raid Rift Levels
+            raidRiftLevels.Add(1, "Rift of Worlds- level 1");
+            raidRiftLevels.Add(2, "Rift of Worlds- level 2");
+            raidRiftLevels.Add(3, "Rift of Worlds- level 3");
+            raidRiftLevels.Add(4, "Rift of Worlds- level 4");
+            raidRiftLevels.Add(5, "Rift of Worlds- level 5");
+            #endregion
+
+            #region Difficulty
+            difficulties.Add(1, "Normal");
+            difficulties.Add(2, "Hard");
+            difficulties.Add(3, "Hell");
+            #endregion
         }
         #endregion
 
-        #region Properties
+        #region Fields
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
-        private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>(); 
+        private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
+        private Dictionary<int, string> runeSets = new Dictionary<int, string>();
+        private Dictionary<int, string> runeQuality = new Dictionary<int, string>();
+        private Dictionary<int, string> scenario = new Dictionary<int, string>();
+        private Dictionary<int, string> dungeons = new Dictionary<int, string>();
+        private Dictionary<int, string> elementalRiftDungeons = new Dictionary<int, string>();
+        private Dictionary<int, string> raidRiftLevels = new Dictionary<int, string>();
+        private Dictionary<int, string> difficulties = new Dictionary<int, string>();
+        #endregion
+
+        #region Properties
+        public string Credits { get; set; } = "Xzandro";
         #endregion
 
 
@@ -967,7 +1092,69 @@ namespace Summoners_War_Statistics
                 return runeEffectTypes[id];
             }
             return "Unknown Rune Effect Type";
+        }
 
+        public string GetRuneSet(int id)
+        {
+            if (runeSets.ContainsKey(id))
+            {
+                return runeSets[id];
+            }
+            return "Unknown Rune Set";
+        }
+
+        public string GetRuneQuality(int id)
+        {
+            if (runeQuality.ContainsKey(id))
+            {
+                return runeQuality[id];
+            }
+            return "Unknown Rune Quality";
+        }
+
+        public string GetScenario(int id)
+        {
+            if (scenario.ContainsKey(id))
+            {
+                return scenario[id];
+            }
+            return "Unknown Scenario";
+        }
+
+        public string GetDungeon(int id)
+        {
+            if (dungeons.ContainsKey(id))
+            {
+                return dungeons[id];
+            }
+            return "Unknown Dungeon";
+        }
+
+        public string GetElementalRiftDungeon(int id)
+        {
+            if (elementalRiftDungeons.ContainsKey(id))
+            {
+                return elementalRiftDungeons[id];
+            }
+            return "Unknown Elemental Rift Dungeon";
+        }
+
+        public string GetRaidRiftLevel(int id)
+        {
+            if (raidRiftLevels.ContainsKey(id))
+            {
+                return raidRiftLevels[id];
+            }
+            return "Unknown Raid Rift Level";
+        }
+
+        public string GetDifficulty(int id)
+        {
+            if (difficulties.ContainsKey(id))
+            {
+                return difficulties[id];
+            }
+            return "Unknown Difficulty";
         }
         #endregion
     }

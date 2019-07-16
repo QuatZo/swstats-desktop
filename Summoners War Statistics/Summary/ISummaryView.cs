@@ -43,6 +43,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        event Action<WizardInfo, DimensionHoleInfo, List<PurpleUnitList>, List<long>, List<Rune>, DateTime, string> InitSummary;
         #endregion
 
         #region Methods
