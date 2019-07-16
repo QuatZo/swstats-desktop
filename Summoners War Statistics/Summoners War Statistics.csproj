@@ -78,9 +78,10 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DimHole\IDimHoleView.cs" />
-    <Compile Include="InvalidJSONException.cs" />
+    <Compile Include="Exceptions\InvalidJSONException.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
+    <Compile Include="Monsters\MonsterPresenter.cs" />
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\IOtherView.cs" />
     <Compile Include="Runes\IRunesView.cs" />

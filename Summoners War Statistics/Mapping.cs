@@ -933,28 +933,28 @@ namespace Summoners_War_Statistics
             #endregion
 
             #region Rune Sets
-            runeSets.Add(1, "Energy");
-            runeSets.Add(2, "Guard");
-            runeSets.Add(3, "Swift");
-            runeSets.Add(4, "Blade");
-            runeSets.Add(5, "Rage");
-            runeSets.Add(6, "Focus");
-            runeSets.Add(7, "Endure");
-            runeSets.Add(8, "Fatal");
-            runeSets.Add(10, "Despair");
-            runeSets.Add(11, "Vampire");
-            runeSets.Add(13, "Violent");
-            runeSets.Add(14, "Nemesis");
-            runeSets.Add(15, "Will");
-            runeSets.Add(16, "Shield");
-            runeSets.Add(17, "Revenge");
-            runeSets.Add(18, "Destroy");
-            runeSets.Add(19, "Fight");
-            runeSets.Add(20, "Determination");
-            runeSets.Add(21, "Enhance");
-            runeSets.Add(22, "Accuracy");
-            runeSets.Add(23, "Tolerance");
-            runeSets.Add(99, "Immemorial");
+            runeSets.Add(1, ("Energy", 2));
+            runeSets.Add(2, ("Guard", 2));
+            runeSets.Add(3, ("Swift", 4));
+            runeSets.Add(4, ("Blade", 2));
+            runeSets.Add(5, ("Rage", 4));
+            runeSets.Add(6, ("Focus", 2));
+            runeSets.Add(7, ("Endure", 2));
+            runeSets.Add(8, ("Fatal", 4));
+            runeSets.Add(10, ("Despair", 4));
+            runeSets.Add(11, ("Vampire", 4));
+            runeSets.Add(13, ("Violent", 4));
+            runeSets.Add(14, ("Nemesis", 2));
+            runeSets.Add(15, ("Will", 2));
+            runeSets.Add(16, ("Shield", 2));
+            runeSets.Add(17, ("Revenge", 2));
+            runeSets.Add(18, ("Destroy", 2));
+            runeSets.Add(19, ("Fight", 2));
+            runeSets.Add(20, ("Determination", 2));
+            runeSets.Add(21, ("Enhance", 2));
+            runeSets.Add(22, ("Accuracy", 2));
+            runeSets.Add(23, ("Tolerance", 2));
+            runeSets.Add(99, ("Immemorial", 1));
             #endregion
 
             #region Rune Quality
@@ -1052,7 +1052,7 @@ namespace Summoners_War_Statistics
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
         private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
-        private Dictionary<int, string> runeSets = new Dictionary<int, string>();
+        private Dictionary<int, (string Name, byte Amount)> runeSets = new Dictionary<int, (string Name, byte Amount)>();
         private Dictionary<int, string> runeQuality = new Dictionary<int, string>();
         private Dictionary<int, string> scenario = new Dictionary<int, string>();
         private Dictionary<int, string> dungeons = new Dictionary<int, string>();
@@ -1098,9 +1098,17 @@ namespace Summoners_War_Statistics
         {
             if (runeSets.ContainsKey(id))
             {
-                return runeSets[id];
+                return runeSets[id].Name;
             }
             return "Unknown Rune Set";
+        }
+        public string GetRuneSetAmount(string set)
+        {
+            foreach(KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
+            {
+                if(runeSet.Value.Name.ToLower() == set.ToLower()) { return runeSet.Value.Amount.ToString(); }
+            }
+            return "Unknown Rune Set Amount";
         }
 
         public string GetRuneQuality(int id)

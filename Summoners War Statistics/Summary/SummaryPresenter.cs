@@ -69,16 +69,6 @@ namespace Summoners_War_Statistics
 
             view.SummonerSocialPoints = (ushort)wizardInfo.SocialPointCurrent;
             view.SummonerAncientCoins = (ushort)wizardInfo.EventCoin;
-            // This should be in Monsters view
-            //List<long> monstersToLock = new List<long>();
-            //foreach(var monster in monsters)
-            //{
-            //    if(monster.UnitId == null) { continue; }
-
-            //    if(monster.Class == 6 && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add((long)monster.UnitMasterId); }
-            //}
-            //Console.WriteLine($"Monsters to lock: {monstersToLock.Count}");
-            //foreach(var monsterToLock in monstersToLock) { Console.WriteLine($"Unit Master ID [use Xzandro's mapping]: {monsterToLock}"); }
 
             view.JsonModifcationDate = jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
         }

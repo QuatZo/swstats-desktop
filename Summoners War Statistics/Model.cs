@@ -27,5 +27,47 @@ namespace Summoners_War_Statistics
 
             return date;
         }
+
+        public List<string[]> MonstersToLock(List<PurpleUnitList> monsters, List<long> monstersLocked)
+        {
+            List<string[]> mons = new List<string[]>();
+
+            List<PurpleUnitList> monstersToLock = new List<PurpleUnitList>();
+            foreach (var monster in monsters)
+            {
+                if (monster.UnitId == null) { continue; }
+
+                if (monster.Class == 6 && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
+            }
+            foreach (var monsterToLock in monstersToLock)
+            {
+                Dictionary<string, byte> runesOfSpecificSet = new Dictionary<string, byte>();
+                foreach (var rune in monsterToLock.Runes)
+                {
+                    string runeSetName = Mapping.Instance.GetRuneSet((int)rune.SetId);
+                    if (runesOfSpecificSet.Keys.Contains(runeSetName))
+                    {
+                        runesOfSpecificSet[runeSetName]++;
+                    }
+                    else { runesOfSpecificSet.Add(runeSetName, 1); }
+                }
+
+                string sets = "";
+                foreach (KeyValuePair<string, byte> runesOnMonster in runesOfSpecificSet)
+                {
+                    byte tempRunesOnMonster = runesOnMonster.Value;
+                    while (tempRunesOnMonster >= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key)))
+                    {
+                        sets += $"{runesOnMonster.Key}, ";
+                        tempRunesOnMonster -= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key));
+                    }
+                }
+                if (sets.Length == 0) { sets = "-"; }
+                else { sets = sets.Remove(sets.Length - 2, 2); }
+
+                mons.Add(new string[] { Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), monsterToLock.Class.ToString(), monsterToLock.UnitLevel.ToString(), monsterToLock.Runes.Count.ToString(), sets });
+            }
+            return mons;
+        }
     }
 }

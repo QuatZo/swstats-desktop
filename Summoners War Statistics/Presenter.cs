@@ -17,6 +17,7 @@ namespace Summoners_War_Statistics
         private readonly Model model;
 
         private readonly SummaryPresenter summaryPresenter;
+        private readonly MonsterPresenter monsterPresenter;
         private readonly DimHolePresenter dimHolePresenter;
 
         public Presenter(IView view, Model model)
@@ -25,6 +26,7 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
+            monsterPresenter = new MonsterPresenter(this.view.MonstersView, model);
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
 
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
@@ -84,7 +86,9 @@ namespace Summoners_War_Statistics
                     try
                     {
                         view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
-                        // here Monsters, Runes tabs
+                        view.MonstersView.MonstersListView.Items.Clear();
+                        view.MonstersView.Init(json.UnitList, json.UnitLockList);
+                        // here Runes tabs
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
                         // here Other tab
