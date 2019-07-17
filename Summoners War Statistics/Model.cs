@@ -41,6 +41,13 @@ namespace Summoners_War_Statistics
             }
             foreach (var monsterToLock in monstersToLock)
             {
+                foreach(var rune in monsterToLock.Runes)
+                {
+                    Console.WriteLine($"{Mapping.Instance.GetRuneEfficiency(rune)}");
+                }
+
+
+
                 Dictionary<string, byte> runesOfSpecificSet = new Dictionary<string, byte>();
                 foreach (var rune in monsterToLock.Runes)
                 {

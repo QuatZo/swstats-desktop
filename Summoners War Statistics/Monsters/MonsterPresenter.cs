@@ -33,6 +33,7 @@ namespace Summoners_War_Statistics
 
             Dictionary<string, ushort> monsterAttributes = new Dictionary<string, ushort>();
             Dictionary<byte, ushort> monsterStars = new Dictionary<byte, ushort>();
+
             foreach(var monster in monsters)
             {
                 string monsterAttribute = Mapping.Instance.GetMonsterAttribute((int)monster.Attribute);
@@ -42,7 +43,6 @@ namespace Summoners_War_Statistics
 
                 if (monsterStars.Keys.Contains(monsterClass)) { monsterStars[monsterClass]++; }
                 else { monsterStars.Add(monsterClass, 1); }
-
             }
 
             if (monsterAttributes.Keys.Contains("Water")) { view.MonsterAttributeWater = monsterAttributes["Water"]; }

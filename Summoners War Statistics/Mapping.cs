@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Summoners_War_Statistics
 {
@@ -971,13 +972,34 @@ namespace Summoners_War_Statistics
             runeQuality.Add(15, "Ancient Legend");
             #endregion
 
-            // not done yet
             #region Rune Mainstats
+            runeMainstats.Add(1, new Dictionary<int, int>() { { 1, 804 }, { 2, 1092 }, { 3, 1380 }, { 4, 1704 }, { 5, 2088 }, { 6, 2448 } });
+            runeMainstats.Add(2, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 38 }, { 4, 43 }, { 5, 51 }, { 6, 63 } });
+            runeMainstats.Add(3, new Dictionary<int, int>() { { 1, 54 }, { 2, 74 }, { 3, 93 }, { 4, 113 }, { 5, 135 }, { 6, 160 } });
+            runeMainstats.Add(4, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 38 }, { 4, 43 }, { 5, 51 }, { 6, 63 } });
+            runeMainstats.Add(5, new Dictionary<int, int>() { { 1, 54 }, { 2, 74 }, { 3, 93 }, { 4, 113 }, { 5, 135 }, { 6, 160 } });
+            runeMainstats.Add(6, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 38 }, { 4, 43 }, { 5, 51 }, { 6, 63 } });
+
+            runeMainstats.Add(8, new Dictionary<int, int>() { { 1, 18 }, { 2, 19 }, { 3, 25 }, { 4, 30 }, { 5, 39 }, { 6, 42 } });
+            runeMainstats.Add(9, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 37 }, { 4, 41 }, { 5, 47 }, { 6, 58 } });
+            runeMainstats.Add(10, new Dictionary<int, int>() { { 1, 20 }, { 2, 37 }, { 3, 43 }, { 4, 58 }, { 5, 65 }, { 6, 80 } });
+            runeMainstats.Add(11, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 38 }, { 4, 44 }, { 5, 51 }, { 6, 64 } });
+            runeMainstats.Add(12, new Dictionary<int, int>() { { 1, 18 }, { 2, 20 }, { 3, 38 }, { 4, 44 }, { 5, 51 }, { 6, 64 } });
             #endregion
 
-            // not done yet
             #region Rune Substats
+            runeSubstats.Add(1, new Dictionary<int, int>() { { 1, 300 }, { 2, 525 }, { 3, 825 }, { 4, 1125 }, { 5, 1500 }, { 6, 1875 } });
+            runeSubstats.Add(2, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 25 }, { 4, 30 }, { 5, 35 }, { 6, 40 } });
+            runeSubstats.Add(3, new Dictionary<int, int>() { { 1, 20 }, { 2, 25 }, { 3, 40 }, { 4, 50 }, { 5, 75 }, { 6, 100 } });
+            runeSubstats.Add(4, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 25 }, { 4, 30 }, { 5, 35 }, { 6, 40 } });
+            runeSubstats.Add(5, new Dictionary<int, int>() { { 1, 20 }, { 2, 25 }, { 3, 40 }, { 4, 50 }, { 5, 75 }, { 6, 100 } });
+            runeSubstats.Add(6, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 25 }, { 4, 30 }, { 5, 35 }, { 6, 40 } });
 
+            runeSubstats.Add(8, new Dictionary<int, int>() { { 1, 5 }, { 2, 10 }, { 3, 15 }, { 4, 20 }, { 5, 25 }, { 6, 30 } });
+            runeSubstats.Add(9, new Dictionary<int, int>() { { 1, 5 }, { 2, 10 }, { 3, 15 }, { 4, 20 }, { 5, 25 }, { 6, 30 } });
+            runeSubstats.Add(10, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 20 }, { 4, 25 }, { 5, 25 }, { 6, 35 } });
+            runeSubstats.Add(11, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 20 }, { 4, 25 }, { 5, 35 }, { 6, 40 } });
+            runeSubstats.Add(12, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 20 }, { 4, 25 }, { 5, 35 }, { 6, 40 } });
             #endregion
 
             // not done yet
@@ -1051,9 +1073,13 @@ namespace Summoners_War_Statistics
         #region Fields
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
+
         private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
         private Dictionary<int, (string Name, byte Amount)> runeSets = new Dictionary<int, (string Name, byte Amount)>();
         private Dictionary<int, string> runeQuality = new Dictionary<int, string>();
+        private Dictionary<int, Dictionary<int, int>> runeMainstats = new Dictionary<int, Dictionary<int, int>>();
+        private Dictionary<int, Dictionary<int, int>> runeSubstats = new Dictionary<int, Dictionary<int, int>>();
+
         private Dictionary<int, string> scenario = new Dictionary<int, string>();
         private Dictionary<int, string> dungeons = new Dictionary<int, string>();
         private Dictionary<int, string> elementalRiftDungeons = new Dictionary<int, string>();
@@ -1163,6 +1189,40 @@ namespace Summoners_War_Statistics
                 return difficulties[id];
             }
             return "Unknown Difficulty";
+        }
+
+
+        // not working as intended, different values than in SWOP
+        public (double Current, double Max) GetRuneEfficiency(Rune rune)
+        {
+            double ratio = 0;
+
+            // mainstat
+            ratio += runeMainstats[(int)rune.PriEff[0]][(int)rune.Class] / runeMainstats[(int)rune.PriEff[0]][6];
+            // substats
+            foreach(var stat in rune.SecEff)
+            {
+                double value;
+                if(stat.Count > 3 && stat[3] > 0) { value = stat[1] + stat[3]; }
+                else { value = stat[1]; }
+                ratio += value / runeSubstats[(int)stat[0]][6];
+
+            }
+
+            Console.WriteLine($"After substats: {ratio}");
+            // innate
+            if (rune.PrefixEff.Count > 0 && rune.PrefixEff[0] > 0)
+            {
+                ratio += rune.PrefixEff[1] / runeSubstats[(int)rune.PrefixEff[0]][6];
+            }
+
+            Console.WriteLine($"After innate: {ratio}");
+
+            double efficiency = (ratio / 2.8) * 100;
+
+            Console.WriteLine($"Efficiency: {efficiency}");
+
+            return (Math.Round(efficiency, 2), efficiency + ((Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr)/3),0)*0.2)/2.8)*100);
         }
         #endregion
     }
