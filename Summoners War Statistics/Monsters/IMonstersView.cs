@@ -11,6 +11,19 @@ namespace Summoners_War_Statistics
     {
 
         #region Properties
+        ushort MonsterAttributeWater { get; set; }
+        ushort MonsterAttributeFire { get; set; }
+        ushort MonsterAttributeWind { get; set; }
+        ushort MonsterAttributeLight { get; set; }
+        ushort MonsterAttributeDark { get; set; }
+
+        ushort MonsterStarsSix { get; set; }
+        ushort MonsterStarsFive { get; set; }
+        ushort MonsterStarsFour { get; set; }
+        ushort MonsterStarsThree { get; set; }
+        ushort MonsterStarsTwo { get; set; }
+        ushort MonsterStarsOne { get; set; }
+
         ListView MonstersListView { get; set; }
         #endregion
 
@@ -20,6 +33,7 @@ namespace Summoners_War_Statistics
 
         #region Methods
         void Init(List<PurpleUnitList> monsters, List<long> monstersLocked);
+        void ResetMonstersStats();
         #endregion
     }
 }

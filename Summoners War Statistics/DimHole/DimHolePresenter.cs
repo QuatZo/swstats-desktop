@@ -19,6 +19,13 @@ namespace Summoners_War_Statistics
 
             this.view.DimHoleLevelChanged += View_DimHoleLevelChanged;
             this.view.InitDimHole += View_InitDimHole;
+
+            this.view.DimHoleMonstersListView.ColumnClick += DimHoleMonstersListView_ColumnClick;
+        }
+
+        private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
         }
 
         private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> unitList)

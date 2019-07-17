@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="DimHole\IDimHoleView.cs" />
     <Compile Include="Exceptions\InvalidJSONException.cs" />
+    <Compile Include="ListViewItemComparer.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
     <Compile Include="Monsters\MonsterPresenter.cs" />
