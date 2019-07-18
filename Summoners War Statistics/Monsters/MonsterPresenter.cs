@@ -19,7 +19,17 @@ namespace Summoners_War_Statistics
 
             this.view.InitMonsters += View_InitMonsters;
             this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
+            this.view.MonstersStarsChanged += View_MonstersStarsChanged;
 
+        }
+
+        private void View_MonstersStarsChanged(RadioButton obj)
+        {
+            view.MonstersListView.Items.Clear();
+            foreach (string[] monsterToLock in model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))))
+            {
+                view.MonstersListView.Items.Add(new ListViewItem(monsterToLock));
+            }
         }
 
         private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -29,12 +39,15 @@ namespace Summoners_War_Statistics
 
         private void View_InitMonsters(List<PurpleUnitList> monsters, List<long> monstersLocked)
         {
+            view.MonstersList = monsters;
+            view.MonstersLocked = monstersLocked;
+
             view.ResetMonstersStats();
 
             Dictionary<string, ushort> monsterAttributes = new Dictionary<string, ushort>();
             Dictionary<byte, ushort> monsterStars = new Dictionary<byte, ushort>();
 
-            foreach(var monster in monsters)
+            foreach(var monster in view.MonstersList)
             {
                 string monsterAttribute = Mapping.Instance.GetMonsterAttribute((int)monster.Attribute);
                 byte monsterClass = (byte)monster.Class;
@@ -58,7 +71,7 @@ namespace Summoners_War_Statistics
             if (monsterStars.Keys.Contains((byte)2)) { view.MonsterStarsTwo = monsterStars[2]; }
             if (monsterStars.Keys.Contains((byte)1)) { view.MonsterStarsOne = monsterStars[1]; }
 
-            foreach (string[] monsterToLock in model.MonstersToLock(monsters, monstersLocked))
+            foreach (string[] monsterToLock in model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked))
             {
                 view.MonstersListView.Items.Add(new ListViewItem(monsterToLock));
             }

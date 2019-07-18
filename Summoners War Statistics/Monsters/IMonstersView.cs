@@ -11,6 +11,8 @@ namespace Summoners_War_Statistics
     {
 
         #region Properties
+        int MonsterStarsChecked { get; }
+
         ushort MonsterAttributeWater { get; set; }
         ushort MonsterAttributeFire { get; set; }
         ushort MonsterAttributeWind { get; set; }
@@ -24,11 +26,15 @@ namespace Summoners_War_Statistics
         ushort MonsterStarsTwo { get; set; }
         ushort MonsterStarsOne { get; set; }
 
+        List<PurpleUnitList> MonstersList { get; set; }
+        List<long> MonstersLocked { get; set; }
+
         ListView MonstersListView { get; set; }
         #endregion
 
         #region Events
         event Action<List<PurpleUnitList>, List<long>> InitMonsters;
+        event Action<RadioButton> MonstersStarsChanged;
         #endregion
 
         #region Methods

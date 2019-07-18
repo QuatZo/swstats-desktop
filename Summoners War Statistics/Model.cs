@@ -28,7 +28,7 @@ namespace Summoners_War_Statistics
             return date;
         }
 
-        public List<string[]> MonstersToLock(List<PurpleUnitList> monsters, List<long> monstersLocked)
+        public List<string[]> MonstersToLock(List<PurpleUnitList> monsters, List<long> monstersLocked, int stars)
         {
             List<string[]> mons = new List<string[]>();
 
@@ -36,18 +36,13 @@ namespace Summoners_War_Statistics
             foreach (var monster in monsters)
             {
                 if (monster.UnitId == null) { continue; }
-
-                if (monster.Class == 6 && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
+                
+                // 14314 - rainbowmon
+                // 15105 - devilmon
+                if (((monster.Class >= stars && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
             }
             foreach (var monsterToLock in monstersToLock)
             {
-                foreach(var rune in monsterToLock.Runes)
-                {
-                    Console.WriteLine($"{Mapping.Instance.GetRuneEfficiency(rune)}");
-                }
-
-
-
                 Dictionary<string, byte> runesOfSpecificSet = new Dictionary<string, byte>();
                 foreach (var rune in monsterToLock.Runes)
                 {

@@ -58,6 +58,8 @@
             this.labelStarsThreeAmount = new System.Windows.Forms.Label();
             this.labelStarsTwoAmount = new System.Windows.Forms.Label();
             this.labelStarsOneAmount = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).BeginInit();
@@ -383,11 +385,41 @@
             this.labelStarsOneAmount.Text = "0";
             this.labelStarsOneAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Checked = true;
+            this.radioButton6.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.radioButton6.Location = new System.Drawing.Point(708, 314);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(43, 23);
+            this.radioButton6.TabIndex = 44;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "6★";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.Click += new System.EventHandler(this.radioButton_Click);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.radioButton5.Location = new System.Drawing.Point(708, 285);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(43, 23);
+            this.radioButton5.TabIndex = 43;
+            this.radioButton5.Text = "5★";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.Click += new System.EventHandler(this.radioButton_Click);
+            // 
             // Monsters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.labelStarsOneAmount);
             this.Controls.Add(this.labelStarsTwoAmount);
             this.Controls.Add(this.labelStarsThreeAmount);
@@ -457,5 +489,7 @@
         private System.Windows.Forms.Label labelStarsThreeAmount;
         private System.Windows.Forms.Label labelStarsTwoAmount;
         private System.Windows.Forms.Label labelStarsOneAmount;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
     }
 }

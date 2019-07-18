@@ -188,175 +188,175 @@ namespace Summoners_War_Statistics
             monsterNames.Add(12113, "Seal");
             monsterNames.Add(12114, "Sia");
             monsterNames.Add(12115, "Seren");
-           
+
             monsterNames.Add(122, "Slime");
             monsterNames.Add(12211, "");
             monsterNames.Add(12212, "");
             monsterNames.Add(12213, "");
             monsterNames.Add(12214, "");
             monsterNames.Add(12215, "");
-           
+
             monsterNames.Add(123, "Forest Keeper");
             monsterNames.Add(12311, "");
             monsterNames.Add(12312, "");
             monsterNames.Add(12313, "");
             monsterNames.Add(12314, "");
             monsterNames.Add(12315, "");
-           
+
             monsterNames.Add(124, "Mushroom");
             monsterNames.Add(12411, "");
             monsterNames.Add(12412, "");
             monsterNames.Add(12413, "");
             monsterNames.Add(12414, "");
             monsterNames.Add(12415, "");
-           
+
             monsterNames.Add(125, "Maned Boar");
             monsterNames.Add(12511, "");
             monsterNames.Add(12512, "");
             monsterNames.Add(12513, "");
             monsterNames.Add(12514, "");
             monsterNames.Add(12515, "");
-           
+
             monsterNames.Add(126, "Monster Flower");
             monsterNames.Add(12611, "");
             monsterNames.Add(12612, "");
             monsterNames.Add(12613, "");
             monsterNames.Add(12614, "");
             monsterNames.Add(12615, "");
-           
+
             monsterNames.Add(127, "Ghost");
             monsterNames.Add(12711, "");
             monsterNames.Add(12712, "");
             monsterNames.Add(12713, "");
             monsterNames.Add(12714, "");
             monsterNames.Add(12715, "");
-           
+
             monsterNames.Add(128, "Low Elemental");
             monsterNames.Add(12811, "Tigresse");
             monsterNames.Add(12812, "Lamor");
             monsterNames.Add(12813, "Samour");
             monsterNames.Add(12814, "Varis");
             monsterNames.Add(12815, "Havana");
-           
+
             monsterNames.Add(129, "Mimick");
             monsterNames.Add(12911, "");
             monsterNames.Add(12912, "");
             monsterNames.Add(12913, "");
             monsterNames.Add(12914, "");
             monsterNames.Add(12915, "");
-           
+
             monsterNames.Add(130, "Horned Frog");
             monsterNames.Add(13011, "");
             monsterNames.Add(13012, "");
             monsterNames.Add(13013, "");
             monsterNames.Add(13014, "");
             monsterNames.Add(13015, "");
-           
+
             monsterNames.Add(131, "Sandman");
             monsterNames.Add(13111, "");
             monsterNames.Add(13112, "");
             monsterNames.Add(13113, "");
             monsterNames.Add(13114, "");
             monsterNames.Add(13115, "");
-           
+
             monsterNames.Add(132, "Howl");
             monsterNames.Add(13211, "Lulu");
             monsterNames.Add(13212, "Lala");
             monsterNames.Add(13213, "Chichi");
             monsterNames.Add(13214, "Shushu");
             monsterNames.Add(13215, "Chacha");
-           
+
             monsterNames.Add(133, "Succubus");
             monsterNames.Add(13311, "Izaria");
             monsterNames.Add(13312, "Akia");
             monsterNames.Add(13313, "Selena");
             monsterNames.Add(13314, "Aria");
             monsterNames.Add(13315, "Isael");
-           
+
             monsterNames.Add(134, "Joker");
             monsterNames.Add(13411, "Sian");
             monsterNames.Add(13412, "Jojo");
             monsterNames.Add(13413, "Lushen");
             monsterNames.Add(13414, "Figaro");
             monsterNames.Add(13415, "Liebli");
-           
+
             monsterNames.Add(135, "Ninja");
             monsterNames.Add(13511, "Susano");
             monsterNames.Add(13512, "Garo");
             monsterNames.Add(13513, "Orochi");
             monsterNames.Add(13514, "Gin");
             monsterNames.Add(13515, "Han");
-           
+
             monsterNames.Add(136, "Surprise Box");
             monsterNames.Add(13611, "");
             monsterNames.Add(13612, "");
             monsterNames.Add(13613, "");
             monsterNames.Add(13614, "");
             monsterNames.Add(13615, "");
-           
+
             monsterNames.Add(137, "Bearman");
             monsterNames.Add(13711, "Gruda");
             monsterNames.Add(13712, "Kungen");
             monsterNames.Add(13713, "Dagorr");
             monsterNames.Add(13714, "Ahman");
             monsterNames.Add(13715, "Haken");
-           
+
             monsterNames.Add(138, "Valkyrja");
             monsterNames.Add(13811, "Camilla");
             monsterNames.Add(13812, "Vanessa");
             monsterNames.Add(13813, "Katarina");
             monsterNames.Add(13814, "Akroma");
             monsterNames.Add(13815, "Trinity");
-           
+
             monsterNames.Add(139, "Pierret");
             monsterNames.Add(13911, "Julie");
             monsterNames.Add(13912, "Clara");
             monsterNames.Add(13913, "Sophia");
             monsterNames.Add(13914, "Eva");
             monsterNames.Add(13915, "Luna");
-           
+
             monsterNames.Add(140, "Werewolf");
             monsterNames.Add(14011, "Vigor");
             monsterNames.Add(14012, "Garoche");
             monsterNames.Add(14013, "Shakan");
             monsterNames.Add(14014, "Eshir");
             monsterNames.Add(14015, "Jultan");
-           
+
             monsterNames.Add(141, "Phantom Thief");
             monsterNames.Add(14111, "Luer");
             monsterNames.Add(14112, "Jean");
             monsterNames.Add(14113, "Julien");
             monsterNames.Add(14114, "Louis");
             monsterNames.Add(14115, "Guillaume");
-           
+
             monsterNames.Add(142, "Angelmon");
             monsterNames.Add(14211, "Blue Angelmon");
             monsterNames.Add(14212, "Red Angelmon");
             monsterNames.Add(14213, "Gold Angelmon");
             monsterNames.Add(14214, "White Angelmon");
             monsterNames.Add(14215, "Dark Angelmon");
-           
+
             monsterNames.Add(144, "Dragon");
             monsterNames.Add(14411, "Verad");
             monsterNames.Add(14412, "Zaiross");
             monsterNames.Add(14413, "Jamire");
             monsterNames.Add(14414, "Zerath");
             monsterNames.Add(14415, "Grogen");
-           
+
             monsterNames.Add(145, "Phoenix");
             monsterNames.Add(14511, "Sigmarus");
             monsterNames.Add(14512, "Perna");
             monsterNames.Add(14513, "Teshar");
             monsterNames.Add(14514, "Eludia");
             monsterNames.Add(14515, "Jaara");
-           
+
             monsterNames.Add(146, "Chimera");
             monsterNames.Add(14611, "Taor");
             monsterNames.Add(14612, "Rakan");
             monsterNames.Add(14613, "Lagmaron");
             monsterNames.Add(14614, "Shan");
             monsterNames.Add(14615, "Zeratu");
-           
+
             monsterNames.Add(147, "Vampire");
             monsterNames.Add(14711, "Liesel");
             monsterNames.Add(14712, "Verdehile");
@@ -370,455 +370,455 @@ namespace Summoners_War_Statistics
             monsterNames.Add(14813, "Walter");
             monsterNames.Add(14814, "Jansson");
             monsterNames.Add(14815, "Janssen");
-           
+
             monsterNames.Add(149, "Amazon");
             monsterNames.Add(14911, "Ellin");
             monsterNames.Add(14912, "Ceres");
             monsterNames.Add(14913, "Hina");
             monsterNames.Add(14914, "Lyn");
             monsterNames.Add(14915, "Mara");
-           
+
             monsterNames.Add(150, "Martial Cat");
             monsterNames.Add(15011, "Mina");
             monsterNames.Add(15012, "Mei");
             monsterNames.Add(15013, "Naomi");
             monsterNames.Add(15014, "Xiao Ling");
             monsterNames.Add(15015, "Miho");
-           
+
             monsterNames.Add(152, "Vagabond");
             monsterNames.Add(15211, "Allen");
             monsterNames.Add(15212, "Kai'en");
             monsterNames.Add(15213, "Roid");
             monsterNames.Add(15214, "Darion");
             monsterNames.Add(15215, "Jubelle");
-     
+
             monsterNames.Add(153, "Epikion Priest");
             monsterNames.Add(15311, "Rina");
             monsterNames.Add(15312, "Chloe");
             monsterNames.Add(15313, "Michelle");
             monsterNames.Add(15314, "Iona");
             monsterNames.Add(15315, "Rasheed");
-           
+
             monsterNames.Add(154, "Magical Archer");
             monsterNames.Add(15411, "Sharron");
             monsterNames.Add(15412, "Cassandra");
             monsterNames.Add(15413, "Ardella");
             monsterNames.Add(15414, "Chris");
             monsterNames.Add(15415, "Bethony");
-           
+
             monsterNames.Add(155, "Rakshasa");
             monsterNames.Add(15511, "Su");
             monsterNames.Add(15512, "Hwa");
             monsterNames.Add(15513, "Yen");
             monsterNames.Add(15514, "Pang");
             monsterNames.Add(15515, "Ran");
-           
+
             monsterNames.Add(156, "Bounty Hunter");
             monsterNames.Add(15611, "Wayne");
             monsterNames.Add(15612, "Randy");
             monsterNames.Add(15613, "Roger");
             monsterNames.Add(15614, "Walkers");
             monsterNames.Add(15615, "Jamie");
-           
+
             monsterNames.Add(157, "Oracle");
             monsterNames.Add(15711, "Praha");
             monsterNames.Add(15712, "Juno");
             monsterNames.Add(15713, "Seara");
             monsterNames.Add(15714, "Laima");
             monsterNames.Add(15715, "Giana");
-           
+
             monsterNames.Add(158, "Imp Champion");
             monsterNames.Add(15811, "Yaku");
             monsterNames.Add(15812, "Fairo");
             monsterNames.Add(15813, "Pigma");
             monsterNames.Add(15814, "Shaffron");
             monsterNames.Add(15815, "Loque");
-           
+
             monsterNames.Add(159, "Mystic Witch");
             monsterNames.Add(15911, "Megan");
             monsterNames.Add(15912, "Rebecca");
             monsterNames.Add(15913, "Silia");
             monsterNames.Add(15914, "Linda");
             monsterNames.Add(15915, "Gina");
-           
+
             monsterNames.Add(160, "Grim Reaper");
             monsterNames.Add(16011, "Hemos");
             monsterNames.Add(16012, "Sath");
             monsterNames.Add(16013, "Hiva");
             monsterNames.Add(16014, "Prom");
             monsterNames.Add(16015, "Thrain");
-           
+
             monsterNames.Add(161, "Occult Girl");
             monsterNames.Add(16111, "Anavel");
             monsterNames.Add(16112, "Rica");
             monsterNames.Add(16113, "Charlotte");
             monsterNames.Add(16114, "Lora");
             monsterNames.Add(16115, "Nicki");
-           
+
             monsterNames.Add(162, "Death Knight");
             monsterNames.Add(16211, "Fedora");
             monsterNames.Add(16212, "Arnold");
             monsterNames.Add(16213, "Briand");
             monsterNames.Add(16214, "Conrad");
             monsterNames.Add(16215, "Dias");
-           
+
             monsterNames.Add(163, "Lich");
             monsterNames.Add(16311, "Rigel");
             monsterNames.Add(16312, "Antares");
             monsterNames.Add(16313, "Fuco");
             monsterNames.Add(16314, "Halphas");
             monsterNames.Add(16315, "Grego");
-           
+
             monsterNames.Add(164, "Skull Soldier");
             monsterNames.Add(16411, "");
             monsterNames.Add(16412, "");
             monsterNames.Add(16413, "");
             monsterNames.Add(16414, "");
             monsterNames.Add(16415, "");
-           
+
             monsterNames.Add(165, "Living Armor");
             monsterNames.Add(16511, "Nickel");
             monsterNames.Add(16512, "Iron");
             monsterNames.Add(16513, "Copper");
             monsterNames.Add(16514, "Silver");
             monsterNames.Add(16515, "Zinc");
-           
+
             monsterNames.Add(166, "Dragon Knight");
             monsterNames.Add(16611, "Chow");
             monsterNames.Add(16612, "Laika");
             monsterNames.Add(16613, "Leo");
             monsterNames.Add(16614, "Jager");
             monsterNames.Add(16615, "Ragdoll");
-           
+
             monsterNames.Add(167, "Magical Archer Promo");
             monsterNames.Add(16711, "");
             monsterNames.Add(16712, "");
             monsterNames.Add(16713, "");
             monsterNames.Add(16714, "Fami");
             monsterNames.Add(16715, "");
-           
+
             monsterNames.Add(168, "Monkey King");
             monsterNames.Add(16811, "Shi Hou");
             monsterNames.Add(16812, "Mei Hou Wang");
             monsterNames.Add(16813, "Xing Zhe");
             monsterNames.Add(16814, "Qitian Dasheng");
             monsterNames.Add(16815, "Son Zhang Lao");
-           
+
             monsterNames.Add(169, "Samurai");
             monsterNames.Add(16911, "Kaz");
             monsterNames.Add(16912, "Jun");
             monsterNames.Add(16913, "Kaito");
             monsterNames.Add(16914, "Tosi");
             monsterNames.Add(16915, "Sige");
-           
+
             monsterNames.Add(170, "Archangel");
             monsterNames.Add(17011, "Ariel");
             monsterNames.Add(17012, "Velajuel");
             monsterNames.Add(17013, "Eladriel");
             monsterNames.Add(17014, "Artamiel");
             monsterNames.Add(17015, "Fermion");
-           
+
             monsterNames.Add(172, "Drunken Master");
             monsterNames.Add(17211, "Mao");
             monsterNames.Add(17212, "Xiao Chun");
             monsterNames.Add(17213, "Huan");
             monsterNames.Add(17214, "Tien Qin");
             monsterNames.Add(17215, "Wei Shin");
-           
+
             monsterNames.Add(173, "Kung Fu Girl");
             monsterNames.Add(17311, "Xiao Lin");
             monsterNames.Add(17312, "Hong Hua");
             monsterNames.Add(17313, "Ling Ling");
             monsterNames.Add(17314, "Liu Mei");
             monsterNames.Add(17315, "Fei");
-           
+
             monsterNames.Add(174, "Beast Monk");
             monsterNames.Add(17411, "Chandra");
             monsterNames.Add(17412, "Kumar");
             monsterNames.Add(17413, "Ritesh");
             monsterNames.Add(17414, "Shazam");
             monsterNames.Add(17415, "Rahul");
-           
+
             monsterNames.Add(175, "Mischievous Bat");
             monsterNames.Add(17511, "");
             monsterNames.Add(17512, "");
             monsterNames.Add(17513, "");
             monsterNames.Add(17514, "");
             monsterNames.Add(17515, "");
-           
+
             monsterNames.Add(176, "Battle Scorpion");
             monsterNames.Add(17611, "");
             monsterNames.Add(17612, "");
             monsterNames.Add(17613, "");
             monsterNames.Add(17614, "");
             monsterNames.Add(17615, "");
-           
+
             monsterNames.Add(177, "Minotauros");
             monsterNames.Add(17711, "Urtau");
             monsterNames.Add(17712, "Burentau");
             monsterNames.Add(17713, "Eintau");
             monsterNames.Add(17714, "Grotau");
             monsterNames.Add(17715, "Kamatau");
-           
+
             monsterNames.Add(178, "Lizardman");
             monsterNames.Add(17811, "Kernodon");
             monsterNames.Add(17812, "Igmanodon");
             monsterNames.Add(17813, "Velfinodon");
             monsterNames.Add(17814, "Glinodon");
             monsterNames.Add(17815, "Devinodon");
-           
+
             monsterNames.Add(179, "Hell Lady");
             monsterNames.Add(17911, "Beth");
             monsterNames.Add(17912, "Raki");
             monsterNames.Add(17913, "Ethna");
             monsterNames.Add(17914, "Asima");
             monsterNames.Add(17915, "Craka");
-           
+
             monsterNames.Add(180, "Brownie Magician");
             monsterNames.Add(18011, "Orion");
             monsterNames.Add(18012, "Draco");
             monsterNames.Add(18013, "Aquila");
             monsterNames.Add(18014, "Gemini");
             monsterNames.Add(18015, "Korona");
-           
+
             monsterNames.Add(181, "Kobold Bomber");
             monsterNames.Add(18111, "Malaka");
             monsterNames.Add(18112, "Zibrolta");
             monsterNames.Add(18113, "Taurus");
             monsterNames.Add(18114, "Dover");
             monsterNames.Add(18115, "Bering");
-           
+
             monsterNames.Add(182, "King Angelmon");
             monsterNames.Add(18211, "Blue King Angelmon");
             monsterNames.Add(18212, "Red King Angelmon");
             monsterNames.Add(18213, "Gold King Angelmon");
             monsterNames.Add(18214, "White King Angelmon");
             monsterNames.Add(18215, "Dark King Angelmon");
-           
+
             monsterNames.Add(183, "Sky Dancer");
             monsterNames.Add(18311, "Mihyang");
             monsterNames.Add(18312, "Hwahee");
             monsterNames.Add(18313, "Chasun");
             monsterNames.Add(18314, "Yeonhong");
             monsterNames.Add(18315, "Wolyung");
-           
+
             monsterNames.Add(184, "Taoist");
             monsterNames.Add(18411, "Gildong");
             monsterNames.Add(18412, "Gunpyeong");
             monsterNames.Add(18413, "Woochi");
             monsterNames.Add(18414, "Hwadam");
             monsterNames.Add(18415, "Woonhak");
-           
+
             monsterNames.Add(185, "Beast Hunter");
             monsterNames.Add(18511, "Gangchun");
             monsterNames.Add(18512, "Nangrim");
             monsterNames.Add(18513, "Suri");
             monsterNames.Add(18514, "Baekdu");
             monsterNames.Add(18515, "Hannam");
-           
+
             monsterNames.Add(186, "Pioneer");
             monsterNames.Add(18611, "Woosa");
             monsterNames.Add(18612, "Chiwu");
             monsterNames.Add(18613, "Pungbaek");
             monsterNames.Add(18614, "Nigong");
             monsterNames.Add(18615, "Woonsa");
-           
+
             monsterNames.Add(187, "Penguin Knight");
             monsterNames.Add(18711, "Toma");
             monsterNames.Add(18712, "Naki");
             monsterNames.Add(18713, "Mav");
             monsterNames.Add(18714, "Dona");
             monsterNames.Add(18715, "Kuna");
-           
+
             monsterNames.Add(188, "Barbaric King");
             monsterNames.Add(18811, "Aegir");
             monsterNames.Add(18812, "Surtr");
             monsterNames.Add(18813, "Hraesvelg");
             monsterNames.Add(18814, "Mimirr");
             monsterNames.Add(18815, "Hrungnir");
-           
+
             monsterNames.Add(189, "Polar Queen");
             monsterNames.Add(18911, "Alicia");
             monsterNames.Add(18912, "Brandia");
             monsterNames.Add(18913, "Tiana");
             monsterNames.Add(18914, "Elenoa");
             monsterNames.Add(18915, "Lydia");
-           
+
             monsterNames.Add(190, "Battle Mammoth");
             monsterNames.Add(19011, "Talc");
             monsterNames.Add(19012, "Granite");
             monsterNames.Add(19013, "Olivine");
             monsterNames.Add(19014, "Marble");
             monsterNames.Add(19015, "Basalt");
-           
+
             monsterNames.Add(191, "Fairy Queen");
             monsterNames.Add(19111, "");
             monsterNames.Add(19112, "");
             monsterNames.Add(19113, "");
             monsterNames.Add(19114, "Fran");
             monsterNames.Add(19115, "");
-           
+
             monsterNames.Add(192, "Ifrit");
             monsterNames.Add(19211, "Theomars");
             monsterNames.Add(19212, "Tesarion");
             monsterNames.Add(19213, "Akhamamir");
             monsterNames.Add(19214, "Elsharion");
             monsterNames.Add(19215, "Veromos");
-           
+
             monsterNames.Add(193, "Cow Girl");
             monsterNames.Add(19311, "Sera");
             monsterNames.Add(19312, "Anne");
             monsterNames.Add(19313, "Hannah");
             monsterNames.Add(19314, "Loren");
             monsterNames.Add(19315, "Cassie");
-           
+
             monsterNames.Add(194, "Pirate Captain");
             monsterNames.Add(19411, "Galleon");
             monsterNames.Add(19412, "Carrack");
             monsterNames.Add(19413, "Barque");
             monsterNames.Add(19414, "Brig");
             monsterNames.Add(19415, "Frigate");
-           
+
             monsterNames.Add(195, "Charger Shark");
             monsterNames.Add(19511, "Aqcus");
             monsterNames.Add(19512, "Ignicus");
             monsterNames.Add(19513, "Zephicus");
             monsterNames.Add(19514, "Rumicus");
             monsterNames.Add(19515, "Calicus");
-           
+
             monsterNames.Add(196, "Mermaid");
             monsterNames.Add(19611, "Tetra");
             monsterNames.Add(19612, "Platy");
             monsterNames.Add(19613, "Cichlid");
             monsterNames.Add(19614, "Molly");
             monsterNames.Add(19615, "Betta");
-           
+
             monsterNames.Add(197, "Sea Emperor");
             monsterNames.Add(19711, "Poseidon");
             monsterNames.Add(19712, "Okeanos");
             monsterNames.Add(19713, "Triton");
             monsterNames.Add(19714, "Pontos");
             monsterNames.Add(19715, "Manannan");
-           
+
             monsterNames.Add(198, "Magic Knight");
             monsterNames.Add(19811, "Lapis");
             monsterNames.Add(19812, "Astar");
             monsterNames.Add(19813, "Lupinus");
             monsterNames.Add(19814, "Iris");
             monsterNames.Add(19815, "Lanett");
-           
+
             monsterNames.Add(199, "Assassin");
             monsterNames.Add(19911, "Stella");
             monsterNames.Add(19912, "Lexy");
             monsterNames.Add(19913, "Tanya");
             monsterNames.Add(19914, "Natalie");
             monsterNames.Add(19915, "Isabelle");
-           
+
             monsterNames.Add(200, "Neostone Fighter");
             monsterNames.Add(20011, "Ryan");
             monsterNames.Add(20012, "Trevor");
             monsterNames.Add(20013, "Logan");
             monsterNames.Add(20014, "Lucas");
             monsterNames.Add(20015, "Karl");
-           
+
             monsterNames.Add(201, "Neostone Agent");
             monsterNames.Add(20111, "Emma");
             monsterNames.Add(20112, "Lisa");
             monsterNames.Add(20113, "Olivia");
             monsterNames.Add(20114, "Illiana");
             monsterNames.Add(20115, "Sylvia");
-           
+
             monsterNames.Add(202, "Martial Artist");
             monsterNames.Add(20211, "Luan");
             monsterNames.Add(20212, "Sin");
             monsterNames.Add(20213, "Lo");
             monsterNames.Add(20214, "Hiro");
             monsterNames.Add(20215, "Jackie");
-           
+
             monsterNames.Add(203, "Mummy");
             monsterNames.Add(20311, "Nubia");
             monsterNames.Add(20312, "Sonora");
             monsterNames.Add(20313, "Namib");
             monsterNames.Add(20314, "Sahara");
             monsterNames.Add(20315, "Karakum");
-           
+
             monsterNames.Add(204, "Anubis");
             monsterNames.Add(20411, "Avaris");
             monsterNames.Add(20412, "Khmun");
             monsterNames.Add(20413, "Iunu");
             monsterNames.Add(20414, "Amarna");
             monsterNames.Add(20415, "Thebae");
-           
+
             monsterNames.Add(205, "Desert Queen");
             monsterNames.Add(20511, "Bastet");
             monsterNames.Add(20512, "Sekhmet");
             monsterNames.Add(20513, "Hathor");
             monsterNames.Add(20514, "Isis");
             monsterNames.Add(20515, "Nephthys");
-           
+
             monsterNames.Add(206, "Horus");
             monsterNames.Add(20611, "Qebehsenuef");
             monsterNames.Add(20612, "Duamutef");
             monsterNames.Add(20613, "Imesety");
             monsterNames.Add(20614, "Wedjat");
             monsterNames.Add(20615, "Amduat");
-           
+
             monsterNames.Add(207, "Jack-o'-lantern");
             monsterNames.Add(20711, "Chilling");
             monsterNames.Add(20712, "Smokey");
             monsterNames.Add(20713, "Windy");
             monsterNames.Add(20714, "Misty");
             monsterNames.Add(20715, "Dusky");
-           
+
             monsterNames.Add(208, "Frankenstein");
             monsterNames.Add(20811, "Tractor");
             monsterNames.Add(20812, "Bulldozer");
             monsterNames.Add(20813, "Crane");
             monsterNames.Add(20814, "Driller");
             monsterNames.Add(20815, "Crawler");
-           
+
             monsterNames.Add(209, "Elven Ranger");
             monsterNames.Add(20911, "Eluin");
             monsterNames.Add(20912, "Adrian");
             monsterNames.Add(20913, "Erwin");
             monsterNames.Add(20914, "Lucien");
             monsterNames.Add(20915, "Isillen");
-           
+
             monsterNames.Add(210, "Harg");
             monsterNames.Add(21011, "Remy");
             monsterNames.Add(21012, "Racuni");
             monsterNames.Add(21013, "Raviti");
             monsterNames.Add(21014, "Dova");
             monsterNames.Add(21015, "Kroa");
-           
+
             monsterNames.Add(211, "Fairy King");
             monsterNames.Add(21111, "Psamathe");
             monsterNames.Add(21112, "Daphnis");
             monsterNames.Add(21113, "Ganymede");
             monsterNames.Add(21114, "Oberon");
             monsterNames.Add(21115, "Nyx");
-           
+
             monsterNames.Add(212, "Panda Warrior");
             monsterNames.Add(21211, "Mo Long");
             monsterNames.Add(21212, "Xiong Fei");
             monsterNames.Add(21213, "Feng Yan");
             monsterNames.Add(21214, "Tian Lang");
             monsterNames.Add(21215, "Mi Ying");
-           
+
             monsterNames.Add(213, "Dice Magician");
             monsterNames.Add(21311, "Reno");
             monsterNames.Add(21312, "Ludo");
             monsterNames.Add(21313, "Morris");
             monsterNames.Add(21314, "Tablo");
             monsterNames.Add(21315, "Monte");
-           
+
             monsterNames.Add(214, "Harp Magician");
             monsterNames.Add(21411, "Sonnet");
             monsterNames.Add(21412, "Harmonia");
             monsterNames.Add(21413, "Triana");
             monsterNames.Add(21414, "Celia");
             monsterNames.Add(21415, "Vivachel");
-           
+
             monsterNames.Add(215, "Unicorn");
             monsterNames.Add(21511, "Amelia");
             monsterNames.Add(21512, "Helena");
@@ -830,35 +830,35 @@ namespace Summoners_War_Statistics
             monsterNames.Add(21613, "Diana");
             monsterNames.Add(21614, "Eleanor");
             monsterNames.Add(21615, "Alexandra");
-           
+
             monsterNames.Add(218, "Paladin");
             monsterNames.Add(21811, "Josephine");
             monsterNames.Add(21812, "Ophilia");
             monsterNames.Add(21813, "Louise");
             monsterNames.Add(21814, "Jeanne");
             monsterNames.Add(21815, "Leona");
-           
+
             monsterNames.Add(219, "Chakram Dancer");
             monsterNames.Add(21911, "Talia");
             monsterNames.Add(21912, "Shaina");
             monsterNames.Add(21913, "Melissa");
             monsterNames.Add(21914, "Deva");
             monsterNames.Add(21915, "Belita");
-           
+
             monsterNames.Add(220, "Boomerang Warrior");
             monsterNames.Add(22011, "Sabrina");
             monsterNames.Add(22012, "Maruna");
             monsterNames.Add(22013, "Zenobia");
             monsterNames.Add(22014, "Bailey");
             monsterNames.Add(22015, "Martina");
-           
+
             monsterNames.Add(221, "Dryad");
             monsterNames.Add(22111, "Herne");
             monsterNames.Add(22112, "Nisha");
             monsterNames.Add(22113, "Mellia");
             monsterNames.Add(22114, "Felleria");
             monsterNames.Add(22115, "Hyanes");
-           
+
             monsterNames.Add(222, "Druid");
             monsterNames.Add(22211, "Abellio");
             monsterNames.Add(22212, "Bellenus");
@@ -870,7 +870,7 @@ namespace Summoners_War_Statistics
             monsterNames.Add(22313, "Taranys");
             monsterNames.Add(22314, "Valantis");
             monsterNames.Add(22315, "Pater");
-           
+
             monsterNames.Add(224, "Giant Warrior");
             monsterNames.Add(22411, "Bagir");
             monsterNames.Add(22412, "Vidurr");
@@ -879,14 +879,14 @@ namespace Summoners_War_Statistics
             monsterNames.Add(22415, "Trasar");
             monsterNames.Add(22513, "Skogul");
             monsterNames.Add(22515, "Trasar");
-           
+
             monsterNames.Add(226, "Lightning Emperor");
             monsterNames.Add(22611, "Bolverk");
             monsterNames.Add(22612, "Baleygr");
             monsterNames.Add(22613, "Odin");
             monsterNames.Add(22614, "Geldnir");
             monsterNames.Add(22615, "Herteit");
-           
+
             monsterNames.Add(227, "Sniper Mk.I");
             monsterNames.Add(22711, "Covenant");
             monsterNames.Add(22712, "Carcano");
@@ -897,14 +897,14 @@ namespace Summoners_War_Statistics
             monsterNames.Add(22812, "Carcano");
             monsterNames.Add(22813, "Carbine");
             monsterNames.Add(22815, "Dragunov");
-           
+
             monsterNames.Add(229, "Cannon Girl");
             monsterNames.Add(22911, "Abigail");
             monsterNames.Add(22912, "Scarlett");
             monsterNames.Add(22913, "Christina");
             monsterNames.Add(22914, "Emily");
             monsterNames.Add(22915, "Bella");
-     
+
             monsterNames.Add(23005, "Vampire Lord");
             monsterNames.Add(23015, "Eirgar");
 
@@ -1002,14 +1002,34 @@ namespace Summoners_War_Statistics
             runeSubstats.Add(12, new Dictionary<int, int>() { { 1, 10 }, { 2, 15 }, { 3, 20 }, { 4, 25 }, { 5, 35 }, { 6, 40 } });
             #endregion
 
-            // not done yet
             #region Grindstones
+            grindstones.Add(1, new Dictionary<int, (int Min, int Max)>() { { 1, (80, 120) }, { 2, (100, 200) }, { 3, (180, 250) }, { 4, (230, 450) }, { 5, (430, 550) } });
+            grindstones.Add(2, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 5) }, { 3, (3, 6) }, { 4, (4, 7) }, { 5, (5, 10) } });
+            grindstones.Add(3, new Dictionary<int, (int Min, int Max)>() { { 1, (4, 8) }, { 2, (6, 12) }, { 3, (10, 18) }, { 4, (12, 22) }, { 5, (18, 30) } });
+            grindstones.Add(4, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 5) }, { 3, (3, 6) }, { 4, (4, 7) }, { 5, (5, 10) } });
+            grindstones.Add(5, new Dictionary<int, (int Min, int Max)>() { { 1, (4, 8) }, { 2, (6, 12) }, { 3, (10, 18) }, { 4, (12, 22) }, { 5, (18, 30) } });
+            grindstones.Add(6, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 5) }, { 3, (3, 6) }, { 4, (4, 7) }, { 5, (5, 10) } });
 
+            grindstones.Add(8, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 2) }, { 2, (1, 2) }, { 3, (2, 3) }, { 4, (3, 4) }, { 5, (4, 5) } });
+            grindstones.Add(9, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 2) }, { 2, (1, 3) }, { 3, (2, 4) }, { 4, (3, 5) }, { 5, (4, 6) } });
+            grindstones.Add(10, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 4) }, { 3, (2, 5) }, { 4, (4, 7) }, { 5, (5, 10) } });
+            grindstones.Add(11, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 4) }, { 3, (2, 5) }, { 4, (4, 7) }, { 5, (5, 10) } });
+            grindstones.Add(12, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 4) }, { 3, (2, 5) }, { 4, (4, 7) }, { 5, (5, 10) } });
             #endregion
 
-            // not done yet
             #region Enchanted Gems
+            enchantGems.Add(1, new Dictionary<int, (int Min, int Max)>() { { 1, (100, 150) }, { 2, (130, 220) }, { 3, (200, 310) }, { 4, (290, 420) }, { 5, (400, 580) } });
+            enchantGems.Add(2, new Dictionary<int, (int Min, int Max)>() { { 1, (2, 4) }, { 2, (3, 7) }, { 3, (5, 9) }, { 4, (7, 11) }, { 5, (9, 13) } });
+            enchantGems.Add(3, new Dictionary<int, (int Min, int Max)>() { { 1, (8, 12) }, { 2, (10, 16) }, { 3, (15, 23) }, { 4, (20, 30) }, { 5, (28, 40) } });
+            enchantGems.Add(4, new Dictionary<int, (int Min, int Max)>() { { 1, (2, 4) }, { 2, (3, 7) }, { 3, (5, 9) }, { 4, (7, 11) }, { 5, (9, 13) } });
+            enchantGems.Add(5, new Dictionary<int, (int Min, int Max)>() { { 1, (8, 12) }, { 2, (10, 16) }, { 3, (15, 23) }, { 4, (20, 30) }, { 5, (28, 40) } });
+            enchantGems.Add(6, new Dictionary<int, (int Min, int Max)>() { { 1, (2, 4) }, { 2, (3, 7) }, { 3, (5, 9) }, { 4, (7, 11) }, { 5, (9, 13) } });
 
+            enchantGems.Add(8, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 4) }, { 3, (3, 6) }, { 4, (5, 8) }, { 5, (7, 10) } });
+            enchantGems.Add(9, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (2, 4) }, { 3, (3, 5) }, { 4, (4, 7) }, { 5, (6, 9) } });
+            enchantGems.Add(10, new Dictionary<int, (int Min, int Max)>() { { 1, (1, 3) }, { 2, (3, 5) }, { 3, (4, 6) }, { 4, (5, 8) }, { 5, (7, 10) } });
+            enchantGems.Add(11, new Dictionary<int, (int Min, int Max)>() { { 1, (2, 4) }, { 2, (3, 6) }, { 3, (5, 8) }, { 4, (6, 9) }, { 5, (8, 11) } });
+            enchantGems.Add(12, new Dictionary<int, (int Min, int Max)>() { { 1, (2, 4) }, { 2, (3, 6) }, { 3, (5, 8) }, { 4, (6, 9) }, { 5, (8, 11) } });
             #endregion
 
             #region Scenario
@@ -1067,6 +1087,42 @@ namespace Summoners_War_Statistics
             difficulties.Add(2, "Hard");
             difficulties.Add(3, "Hell");
             #endregion
+
+            #region Essence Attributes
+            essenceAttributes.Add(1, "Water");
+            essenceAttributes.Add(2, "Fire");
+            essenceAttributes.Add(3, "Wind");
+            essenceAttributes.Add(4, "Light");
+            essenceAttributes.Add(5, "Dark");
+            essenceAttributes.Add(6, "Magic");
+            #endregion
+
+            #region Essence Grades
+            essenceGrades.Add(1, "Low");
+            essenceGrades.Add(2, "Mid");
+            essenceGrades.Add(3, "High");
+            #endregion
+
+            #region Craft Materials
+            craftMaterials.Add(1001, "Hard Wood");
+            craftMaterials.Add(1002, "Tough Leather");
+            craftMaterials.Add(1003, "Solid Rock");
+            craftMaterials.Add(1004, "Solid Iron Ore");
+            craftMaterials.Add(1005, "Shining Mithril");
+            craftMaterials.Add(1006, "Thick Cloth");
+            craftMaterials.Add(2001, "Rune Piece");
+            craftMaterials.Add(3001, "Magic Dust");
+            craftMaterials.Add(4001, "Symbol of Harmony");
+            craftMaterials.Add(4002, "Symbol of Transcendence");
+            craftMaterials.Add(4003, "Symbol of Chaos");
+            craftMaterials.Add(5001, "Frozen Water Crystal");
+            craftMaterials.Add(5002, "Flaming Fire Crystal");
+            craftMaterials.Add(5003, "Whirling Wind Crystal");
+            craftMaterials.Add(5004, "Shiny Light Crystal");
+            craftMaterials.Add(5005, "Pitch-black Dark Crystal");
+            craftMaterials.Add(6001, "Condensed Magic Crystal");
+            craftMaterials.Add(7001, "Pure Magic Crystal");
+            #endregion
         }
         #endregion
 
@@ -1080,11 +1136,18 @@ namespace Summoners_War_Statistics
         private Dictionary<int, Dictionary<int, int>> runeMainstats = new Dictionary<int, Dictionary<int, int>>();
         private Dictionary<int, Dictionary<int, int>> runeSubstats = new Dictionary<int, Dictionary<int, int>>();
 
+        private Dictionary<int, Dictionary<int, (int Min, int Max)>> grindstones = new Dictionary<int, Dictionary<int, (int Min, int Max)>>();
+        private Dictionary<int, Dictionary<int, (int Min, int Max)>> enchantGems = new Dictionary<int, Dictionary<int, (int Min, int Max)>>();
+
         private Dictionary<int, string> scenario = new Dictionary<int, string>();
         private Dictionary<int, string> dungeons = new Dictionary<int, string>();
         private Dictionary<int, string> elementalRiftDungeons = new Dictionary<int, string>();
         private Dictionary<int, string> raidRiftLevels = new Dictionary<int, string>();
         private Dictionary<int, string> difficulties = new Dictionary<int, string>();
+
+        private Dictionary<int, string> essenceAttributes = new Dictionary<int, string>();
+        private Dictionary<int, string> essenceGrades = new Dictionary<int, string>();
+        private Dictionary<int, string> craftMaterials = new Dictionary<int, string>();
         #endregion
 
         #region Properties
@@ -1108,6 +1171,14 @@ namespace Summoners_War_Statistics
             {
                 return monsterNames[id];
             }
+
+            int family = int.Parse(id.ToString().Substring(0, 3));
+            if (monsterNames.ContainsKey(family))
+            {
+                int attribute = int.Parse(id.ToString().Substring(id.ToString().Length - 1));
+                return $"{monsterNames[family]} ({monsterAttributes[attribute]})";
+            }
+
             return "Unknown Monster";
         }
 
@@ -1130,9 +1201,9 @@ namespace Summoners_War_Statistics
         }
         public string GetRuneSetAmount(string set)
         {
-            foreach(KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
+            foreach (KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
             {
-                if(runeSet.Value.Name.ToLower() == set.ToLower()) { return runeSet.Value.Amount.ToString(); }
+                if (runeSet.Value.Name.ToLower() == set.ToLower()) { return runeSet.Value.Amount.ToString(); }
             }
             return "Unknown Rune Set Amount";
         }
@@ -1191,38 +1262,60 @@ namespace Summoners_War_Statistics
             return "Unknown Difficulty";
         }
 
+        private bool IsAncient(Rune rune)
+        {
+            if(rune.Class > 10) { return true; }
+            return false;
+        }
 
-        // not working as intended, different values than in SWOP
         public (double Current, double Max) GetRuneEfficiency(Rune rune)
         {
             double ratio = 0;
-
+            int runeClass = (int)rune.Class;
             // mainstat
-            ratio += runeMainstats[(int)rune.PriEff[0]][(int)rune.Class] / runeMainstats[(int)rune.PriEff[0]][6];
+            if (IsAncient(rune)) { runeClass -= 10; }
+
+
+            ratio += runeMainstats[(int)rune.PriEff[0]][runeClass] / runeMainstats[(int)rune.PriEff[0]][6];
+
             // substats
-            foreach(var stat in rune.SecEff)
+            foreach (List<long> stat in rune.SecEff)
             {
                 double value;
-                if(stat.Count > 3 && stat[3] > 0) { value = stat[1] + stat[3]; }
+                if (stat.Count > 3 && stat[3] > 0) { value = stat[1] + stat[3]; }
                 else { value = stat[1]; }
                 ratio += value / runeSubstats[(int)stat[0]][6];
-
             }
 
-            Console.WriteLine($"After substats: {ratio}");
             // innate
             if (rune.PrefixEff.Count > 0 && rune.PrefixEff[0] > 0)
             {
                 ratio += rune.PrefixEff[1] / runeSubstats[(int)rune.PrefixEff[0]][6];
             }
 
-            Console.WriteLine($"After innate: {ratio}");
-
             double efficiency = (ratio / 2.8) * 100;
 
-            Console.WriteLine($"Efficiency: {efficiency}");
-
-            return (Math.Round(efficiency, 2), efficiency + ((Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr)/3),0)*0.2)/2.8)*100);
+            return (Math.Round(efficiency, 2), Math.Round(efficiency + (Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr) / 3), 0) * 0.2 / 2.8 * 100), 2));
+        }
+        
+        public string GetRuneEffect(Rune rune)
+        {
+            Dictionary<int, string> effect = new Dictionary<int, string>()
+            {
+                {0, "" },
+                {1, $"HP +{rune.PriEff[1]}" },
+                {2, $"HP {rune.PriEff[1]}%" },
+                {3, $"ATK +{rune.PriEff[1]}" },
+                {4, $"ATK {rune.PriEff[1]}%" },
+                {5, $"DEF +{rune.PriEff[1]}" },
+                {6, $"DEF {rune.PriEff[1]}%" },
+                {8, $"SPD +{rune.PriEff[1]}" },
+                {9, $"{rune.PriEff[1]}%" },
+                {10, $"{rune.PriEff[1]}%" },
+                {11, $"Resistance {rune.PriEff[1]}%" },
+                {12, $"Accuracy {rune.PriEff[1]}%" }
+            };
+            return effect[(int)rune.PriEff[0]];
         }
         #endregion
     }

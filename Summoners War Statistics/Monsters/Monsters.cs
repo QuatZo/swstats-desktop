@@ -13,6 +13,15 @@ namespace Summoners_War_Statistics
     public partial class Monsters : UserControl, IMonstersView
     {
         #region Properties
+        public int MonsterStarsChecked
+        {
+            get
+            {
+                if (radioButton5.Checked) { return 5; }
+                else { return 6; }
+            }
+        }
+
         public ushort MonsterAttributeWater
         {
             get => ushort.Parse(labelWater.Text);
@@ -70,6 +79,9 @@ namespace Summoners_War_Statistics
             set => labelStarsOneAmount.Text = value.ToString();
         }
 
+        public List<PurpleUnitList> MonstersList { get; set; } = new List<PurpleUnitList>();
+        public List<long> MonstersLocked { get; set; } = new List<long>();
+
         public ListView MonstersListView
         {
             get => listViewMonstersToLock;
@@ -79,6 +91,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         public event Action<List<PurpleUnitList>, List<long>> InitMonsters;
+        public event Action<RadioButton> MonstersStarsChanged;
         #endregion
 
         public Monsters()
@@ -90,6 +103,10 @@ namespace Summoners_War_Statistics
         public void Init(List<PurpleUnitList> monsters, List<long> monstersLocked)
         {
             InitMonsters?.Invoke(monsters, monstersLocked);
+        }
+        private void radioButton_Click(object sender, EventArgs e)
+        {
+            MonstersStarsChanged?.Invoke((RadioButton)sender);
         }
 
         public void ResetMonstersStats()
