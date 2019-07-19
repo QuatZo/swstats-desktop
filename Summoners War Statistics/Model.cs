@@ -71,5 +71,17 @@ namespace Summoners_War_Statistics
             }
             return mons;
         }
+
+        public List<string[]> FriendsList(List<FriendListElement> friendsList)
+        {
+            List<string[]> friends = new List<string[]>();
+
+            foreach(var friend in friendsList)
+            {
+                friends.Add(new string[] { friend.WizardName, DateTimeOffset.FromUnixTimeSeconds((long)friend.LastLoginTimestamp).DateTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss"), Mapping.Instance.GetMonsterName((int)friend.RepUnitMasterId), friend.RepUnitLevel.ToString() });
+            }
+
+            return friends;
+        }
     }
 }

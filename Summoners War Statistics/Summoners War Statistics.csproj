@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +85,7 @@
     <Compile Include="Menu\IMenuView.cs" />
     <Compile Include="Monsters\MonsterPresenter.cs" />
     <Compile Include="Monsters\IMonstersView.cs" />
+    <Compile Include="Other\OtherPresenter.cs" />
     <Compile Include="Other\IOtherView.cs" />
     <Compile Include="Runes\IRunesView.cs" />
     <Compile Include="Monsters\Monsters.cs">

@@ -18,7 +18,9 @@ namespace Summoners_War_Statistics
 
         private readonly SummaryPresenter summaryPresenter;
         private readonly MonsterPresenter monsterPresenter;
+        // runes tab presenter here
         private readonly DimHolePresenter dimHolePresenter;
+        private readonly OtherPresenter otherPresenter;
 
         public Presenter(IView view, Model model)
         {
@@ -28,6 +30,7 @@ namespace Summoners_War_Statistics
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
             monsterPresenter = new MonsterPresenter(this.view.MonstersView, model);
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
+            otherPresenter = new OtherPresenter(this.view.OtherView, model);
 
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
 
@@ -91,7 +94,8 @@ namespace Summoners_War_Statistics
                         // here Runes tabs
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
-                        // here Other tab
+                        view.OtherView.SummonerFriendsList.Items.Clear();
+                        view.OtherView.Init(json.FriendList);
                     }
                     catch (NullReferenceException e)
                     {
