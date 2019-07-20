@@ -1951,6 +1951,28 @@ namespace Summoners_War_Statistics
             return "Unknown Rune Effect Type";
         }
 
+        public string GetRuneEffect(Rune rune)
+        {
+            Dictionary<int, string> effect = new Dictionary<int, string>()
+            {
+                {0, "" },
+                {1, $"HP +{rune.PriEff[1]}" },
+                {2, $"HP {rune.PriEff[1]}%" },
+                {3, $"ATK +{rune.PriEff[1]}" },
+                {4, $"ATK {rune.PriEff[1]}%" },
+                {5, $"DEF +{rune.PriEff[1]}" },
+                {6, $"DEF {rune.PriEff[1]}%" },
+                {8, $"SPD +{rune.PriEff[1]}" },
+                {9, $"CRate {rune.PriEff[1]}%" },
+                {10, $"CDmg {rune.PriEff[1]}%" },
+                {11, $"Res {rune.PriEff[1]}%" },
+                {12, $"Acc {rune.PriEff[1]}%" }
+            };
+            return effect[(int)rune.PriEff[0]];
+        }
+
+
+
         public string GetRuneSet(int id)
         {
             if (runeSets.ContainsKey(id))
@@ -1959,6 +1981,7 @@ namespace Summoners_War_Statistics
             }
             return "Unknown Rune Set";
         }
+
         public string GetRuneSetAmount(string set)
         {
             foreach (KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
@@ -2058,25 +2081,6 @@ namespace Summoners_War_Statistics
             return (Math.Round(efficiency, 2), Math.Round(efficiency + (Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr) / 3), 0) * 0.2 / 2.8 * 100), 2));
         }
         
-        public string GetRuneEffect(Rune rune)
-        {
-            Dictionary<int, string> effect = new Dictionary<int, string>()
-            {
-                {0, "" },
-                {1, $"HP +{rune.PriEff[1]}" },
-                {2, $"HP {rune.PriEff[1]}%" },
-                {3, $"ATK +{rune.PriEff[1]}" },
-                {4, $"ATK {rune.PriEff[1]}%" },
-                {5, $"DEF +{rune.PriEff[1]}" },
-                {6, $"DEF {rune.PriEff[1]}%" },
-                {8, $"SPD +{rune.PriEff[1]}" },
-                {9, $"{rune.PriEff[1]}%" },
-                {10, $"{rune.PriEff[1]}%" },
-                {11, $"Resistance {rune.PriEff[1]}%" },
-                {12, $"Accuracy {rune.PriEff[1]}%" }
-            };
-            return effect[(int)rune.PriEff[0]];
-        }
 
         public string GetRanking(int id)
         {
@@ -2086,6 +2090,7 @@ namespace Summoners_War_Statistics
             }
             return "Unknown Ranking";
         }
+
         public string GetGuildRanking(int id)
         {
             if (rankingGuild.ContainsKey(id))

@@ -18,7 +18,7 @@ namespace Summoners_War_Statistics
 
         private readonly SummaryPresenter summaryPresenter;
         private readonly MonstersPresenter monsterPresenter;
-        // runes tab presenter here
+        private readonly RunesPresenter runesPresenter;
         private readonly DimHolePresenter dimHolePresenter;
         private readonly OtherPresenter otherPresenter;
 
@@ -29,6 +29,7 @@ namespace Summoners_War_Statistics
 
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
             monsterPresenter = new MonstersPresenter(this.view.MonstersView, model);
+            runesPresenter = new RunesPresenter(this.view.RunesView, model);
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
             otherPresenter = new OtherPresenter(this.view.OtherView, model);
 
@@ -89,11 +90,16 @@ namespace Summoners_War_Statistics
                     try
                     {
                         view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
+
                         view.MonstersView.MonstersListView.Items.Clear();
                         view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
-                        // here Runes tabs
+
+                        view.RunesView.RunesList.Items.Clear();
+                        view.RunesView.Init(model.RunesEvenEquipped(json.Runes, json.MonsterList), model.MonstersMasterId(json.MonsterList));
+
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
+
                         view.OtherView.SummonerFriendsList.Items.Clear();
                         view.OtherView.GuildMembersList.Items.Clear();
                         view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);

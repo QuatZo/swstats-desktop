@@ -128,7 +128,97 @@ namespace Summoners_War_Statistics
             }
 
             return members;
+        }
 
+        public List<Rune> RunesEvenEquipped(List<Rune> runesArg, List<Monster> monsters)
+        {
+            List<Rune> runes = runesArg;
+
+            foreach(var monster in monsters)
+            {
+                foreach(var rune in monster.Runes)
+                {
+                    runes.Add(rune);
+                }
+            }
+
+            return runes;
+        }
+
+        public Dictionary<long, int> MonstersMasterId(List<Monster> monsters)
+        {
+            Dictionary<long, int> monstersMasterId = new Dictionary<long, int>();
+
+            foreach(var monster in monsters)
+            {
+                if (!monstersMasterId.ContainsKey((long)monster.UnitId)) { monstersMasterId.Add((long)monster.UnitId, (int)monster.UnitMasterId); }
+            }
+
+            return monstersMasterId;
+        }
+
+        public List<string[]> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<string> columns)
+        {
+            foreach(var column in columns)
+            {
+                Console.WriteLine(column);
+            }
+
+            List<string[]> runesToReturn = new List<string[]>();
+
+            foreach (var rune in runes)
+            {
+                Dictionary<int, string> effect = new Dictionary<int, string>();
+
+                for(int i = 0; i <= 12; i++)
+                {
+                    if (i == 7) { continue; }
+                    effect.Add(i, "-");
+                }
+
+                foreach(var eff in rune.SecEff)
+                {
+                    effect[(int)eff[0]] = eff[1].ToString();
+                }
+
+                string origin = "Inventory";
+                if(rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
+
+                runesToReturn.Add(
+                    new string[]
+                    {
+                        Mapping.Instance.GetRuneSet((int)rune.SetId), // set
+                        rune.SlotNo.ToString(), // slot
+                        rune.UpgradeCurr.ToString(), // level
+                        origin, // origin
+                        Mapping.Instance.GetRuneEffect(rune), // main
+                        effect[1], // atk flat
+                        effect[2], // atk %
+                        effect[3], // hp flat
+                        effect[4], // hp %
+                        effect[5], // def flat
+                        effect[6], // def %
+                        effect[8], // spd
+                        effect[9], // crate
+                        effect[10], // cdmg
+                        effect[11], // res
+                        effect[12], // acc
+                        Mapping.Instance.GetRuneEfficiency(rune).Current.ToString() // eff.%
+                    }
+                );
+
+                //Console.WriteLine($"---------------------------------------------------------");
+                //Console.WriteLine($"Rune set: {Mapping.Instance.GetRuneSet((int)rune.SetId)}");
+                //Console.WriteLine($"Rune upgrade: +{rune.UpgradeCurr}");
+                //Console.WriteLine($"Rune Effect Type: {Mapping.Instance.GetRuneEffectType((int)rune.PriEff[0])} ({(int)rune.PriEff[0]})");
+                //Console.WriteLine($"Rune Quality: {Mapping.Instance.GetRuneQuality((int)rune.Rank)} ({(int)rune.Rank})");
+                //Console.WriteLine($"Rune Slot: {rune.SlotNo}");
+                //Console.WriteLine($"Rune Efficiency: {Mapping.Instance.GetRuneEfficiency(rune)}");
+            }
+
+            
+
+            return runesToReturn;
         }
     }
 }
