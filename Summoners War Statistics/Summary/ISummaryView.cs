@@ -43,11 +43,11 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        event Action<WizardInfo, DimensionHoleInfo, List<PurpleUnitList>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
         #endregion
 
         #region Methods
-        void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country);
+        void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country);
         #endregion
     }
 }

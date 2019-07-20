@@ -22,7 +22,7 @@ namespace Summoners_War_Statistics
             this.view.InitSummary += View_InitSummary;
         }
 
-        private void View_InitSummary(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
+        private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
         {
             view.SummonerRunes = 0;
             view.SummonerRunesLocked = 0;

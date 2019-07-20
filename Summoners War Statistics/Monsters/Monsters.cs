@@ -100,7 +100,7 @@ namespace Summoners_War_Statistics
             set => labelDaysLDLightning.Text = value.ToString() + " days";
         }
 
-        public List<PurpleUnitList> MonstersList { get; set; } = new List<PurpleUnitList>();
+        public List<Monster> MonstersList { get; set; } = new List<Monster>();
         public List<long> MonstersLocked { get; set; } = new List<long>();
 
         public ListView MonstersListView
@@ -111,7 +111,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<List<PurpleUnitList>, List<long>> InitMonsters;
+        public event Action<List<Monster>, List<long>> InitMonsters;
         public event Action<RadioButton> MonstersStarsChanged;
         #endregion
 
@@ -121,7 +121,7 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(List<PurpleUnitList> monsters, List<long> monstersLocked)
+        public void Init(List<Monster> monsters, List<long> monstersLocked)
         {
             InitMonsters?.Invoke(monsters, monstersLocked);
         }

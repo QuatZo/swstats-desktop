@@ -24,7 +24,7 @@ namespace Summoners_War_Statistics
             set => labelDimensionalHoleEnergyMaxInfo.Text = value;
         }
         public DateTime DimensionalEnergyGainStart { get; set; }
-        public List<AwakeningInfoClass> DimHoleMonsters { get; set; }
+        public List<Awakening> DimHoleMonsters { get; set; }
 
         public ListView DimHoleMonstersListView
         {
@@ -43,7 +43,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<DimensionHoleInfo, List<PurpleUnitList>> InitDimHole;
+        public event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
         public event Action<RadioButton> DimHoleLevelChanged;
         #endregion
 
@@ -53,7 +53,7 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> unitList)
+        public void Init(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)
         {
             InitDimHole?.Invoke(dimensionHoleInfo, unitList);
         }

@@ -149,7 +149,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<WizardInfo, DimensionHoleInfo, List<PurpleUnitList>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
         #endregion
 
         public Summary()
@@ -158,7 +158,7 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(WizardInfo wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
+        public void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
         {
             InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country);
         }

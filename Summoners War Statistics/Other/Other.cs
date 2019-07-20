@@ -62,7 +62,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<List<FriendListElement>, Guild, GuildwarParticipationInfo, List<GuildwarMemberList>, List<GuildMemberDefenseList>, GuildwarRankingStat> InitOther;
+        public event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
         #endregion
 
         public Other()
@@ -71,7 +71,7 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(List<FriendListElement> friendsList, Guild guild, GuildwarParticipationInfo guildwarParticipationInfo, List<GuildwarMemberList> guildwarMemberList, List<GuildMemberDefenseList> guildMemberDefenseList, GuildwarRankingStat guildwarRanking)
+        public void Init(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
         {
             InitOther?.Invoke(friendsList, guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList, guildwarRanking);
         }

@@ -34,7 +34,7 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column);
         }
 
-        private void View_InitOther(List<FriendListElement> friendsList, Guild guild, GuildwarParticipationInfo guildwarParticipationInfo, List<GuildwarMemberList> guildwarMemberList, List<GuildMemberDefenseList> guildMemberDefenseList, GuildwarRankingStat guildwarRanking)
+        private void View_InitOther(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
         {
             foreach(string[] friend in model.FriendsList(friendsList))
             {
@@ -48,7 +48,6 @@ namespace Summoners_War_Statistics
 
             view.GuildName = guild.GuildInfo.Name;
             view.GuildLeaderName = guild.GuildInfo.MasterWizardName;
-            Console.WriteLine($"{(int)guildwarRanking.Best["rating_id"]} => {Mapping.Instance.GetGuildRanking((int)guildwarRanking.Best["rating_id"])}");
             view.GuildBestRanking = Mapping.Instance.GetGuildRanking((int)guildwarRanking.Best["rating_id"]);
             view.GuildMembers = (byte)guild.GuildInfo.MemberNow;
             view.GuildMembersMax = (byte)guild.GuildInfo.MemberMax;

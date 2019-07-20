@@ -37,7 +37,7 @@ namespace Summoners_War_Statistics
             view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
         }
 
-        private void View_InitMonsters(List<PurpleUnitList> monsters, List<long> monstersLocked)
+        private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
         {
             view.MonstersList = monsters;
             view.MonstersLocked = monstersLocked;

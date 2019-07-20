@@ -31,19 +31,19 @@ namespace Summoners_War_Statistics
         ushort DaysSinceNat5 { get; set; }
         ushort DaysSinceLastLDLightning { get; set; }
 
-        List<PurpleUnitList> MonstersList { get; set; }
+        List<Monster> MonstersList { get; set; }
         List<long> MonstersLocked { get; set; }
 
         ListView MonstersListView { get; set; }
         #endregion
 
         #region Events
-        event Action<List<PurpleUnitList>, List<long>> InitMonsters;
+        event Action<List<Monster>, List<long>> InitMonsters;
         event Action<RadioButton> MonstersStarsChanged;
         #endregion
 
         #region Methods
-        void Init(List<PurpleUnitList> monsters, List<long> monstersLocked);
+        void Init(List<Monster> monsters, List<long> monstersLocked);
         void ResetMonstersStats();
         #endregion
     }

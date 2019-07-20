@@ -17,16 +17,16 @@ namespace Summoners_War_Statistics
         Dictionary<RadioButton, ushort> DimHoleLevelAXP { get; }
         ListView DimHoleMonstersListView { get; set; }
         DateTime DimensionalEnergyGainStart { get; set; }
-        List<AwakeningInfoClass> DimHoleMonsters { get; set; }
+        List<Awakening> DimHoleMonsters { get; set; }
         #endregion
 
         #region Events
-        event Action<DimensionHoleInfo, List<PurpleUnitList>> InitDimHole;
+        event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
         event Action<RadioButton> DimHoleLevelChanged;
         #endregion
 
         #region Methods
-        void Init(DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> unitList);
+        void Init(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList);
         #endregion
     }
 }

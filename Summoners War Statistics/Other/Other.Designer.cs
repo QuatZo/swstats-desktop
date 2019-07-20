@@ -88,7 +88,7 @@
             this.listViewFriendsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.listViewFriendsList.FullRowSelect = true;
             this.listViewFriendsList.HideSelection = false;
-            this.listViewFriendsList.Location = new System.Drawing.Point(3, 54);
+            this.listViewFriendsList.Location = new System.Drawing.Point(10, 54);
             this.listViewFriendsList.Name = "listViewFriendsList";
             this.listViewFriendsList.Size = new System.Drawing.Size(623, 142);
             this.listViewFriendsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
@@ -254,7 +254,7 @@
             this.listViewGuildMembersList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.listViewGuildMembersList.FullRowSelect = true;
             this.listViewGuildMembersList.HideSelection = false;
-            this.listViewGuildMembersList.Location = new System.Drawing.Point(3, 266);
+            this.listViewGuildMembersList.Location = new System.Drawing.Point(10, 266);
             this.listViewGuildMembersList.Name = "listViewGuildMembersList";
             this.listViewGuildMembersList.Size = new System.Drawing.Size(623, 142);
             this.listViewGuildMembersList.Sorting = System.Windows.Forms.SortOrder.Ascending;

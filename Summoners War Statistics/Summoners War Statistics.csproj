@@ -12,20 +12,25 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://www.reddit.com/user/QuatZo</SupportUrl>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>Summoners War Statistics</ProductName>
+    <PublisherName>QuatZo</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -65,6 +70,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Json Classes\Decoration.cs" />
+    <Compile Include="Json Classes\Summoner.cs" />
+    <Compile Include="Json Classes\Awakening.cs" />
+    <Compile Include="Json Classes\Monster.cs" />
+    <Compile Include="Json Classes\Rune.cs" />
+    <Compile Include="Json Classes\RTASeason.cs" />
+    <Compile Include="Json Classes\Raid.cs" />
+    <Compile Include="Json Classes\RaidDeck.cs" />
+    <Compile Include="Json Classes\Slots.cs" />
+    <Compile Include="Json Classes\ArenaReward.cs" />
+    <Compile Include="Json Classes\WorldBossRanking.cs" />
+    <Compile Include="Json Classes\SummonerAttack.cs" />
+    <Compile Include="Json Classes\SummonerAtkDef.cs" />
+    <Compile Include="Json Classes\MobCostumePart.cs" />
+    <Compile Include="Json Classes\MobEquippedCostume.cs" />
+    <Compile Include="Json Classes\GuildWarParticipationInfo.cs" />
+    <Compile Include="Json Classes\GuildWarStatus.cs" />
+    <Compile Include="Json Classes\GuildWarReward.cs" />
+    <Compile Include="Json Classes\GuildWarRankingStat.cs" />
+    <Compile Include="Json Classes\GuildWarRankingInfo.cs" />
+    <Compile Include="Json Classes\GuildWarMatchReserve.cs" />
+    <Compile Include="Json Classes\GuildWarDefenseUnit.cs" />
+    <Compile Include="Json Classes\GuildMemberDefense.cs" />
+    <Compile Include="Json Classes\GuildWarMember.cs" />
+    <Compile Include="Json Classes\Guild.cs" />
+    <Compile Include="Json Classes\OpponentGuild.cs" />
+    <Compile Include="Json Classes\Friend.cs" />
+    <Compile Include="Json Classes\SummonerDefenseUnit.cs" />
+    <Compile Include="Json Classes\Mob.cs" />
+    <Compile Include="Json Classes\DimensionHoleInfo.cs" />
+    <Compile Include="Json Classes\DailyRewardInfo.cs" />
     <Compile Include="DimHole\DimHolePresenter.cs" />
     <Compile Include="DimHole\DimHole.cs">
       <SubType>UserControl</SubType>
@@ -120,7 +156,7 @@
     </Compile>
     <Compile Include="Summary\SummaryPresenter.cs" />
     <Compile Include="IView.cs" />
-    <Compile Include="JsonSwex.cs" />
+    <Compile Include="Json Classes\JsonSwex.cs" />
     <Compile Include="Menu\Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1349,5 +1385,6 @@
   <ItemGroup>
     <None Include="Properties\images\icon_guild_ranking.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

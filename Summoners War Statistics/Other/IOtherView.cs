@@ -23,11 +23,11 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        event Action<List<FriendListElement>, Guild, GuildwarParticipationInfo, List<GuildwarMemberList>, List<GuildMemberDefenseList>, GuildwarRankingStat> InitOther;
+        event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
         #endregion
 
         #region Methods
-        void Init(List<FriendListElement> friendsList, Guild guild, GuildwarParticipationInfo guildwarParticipationInfo, List<GuildwarMemberList> guildwarMemberList, List<GuildMemberDefenseList> guildMemberDefenseList, GuildwarRankingStat guildwarRanking);
+        void Init(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking);
         #endregion
 
     }

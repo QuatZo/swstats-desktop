@@ -26,12 +26,12 @@ namespace Summoners_War_Statistics
             return date;
         }
 
-        public List<string[]> MonstersToLock(List<PurpleUnitList> monsters, List<long> monstersLocked, int stars)
+        public List<string[]> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
         {
             List<string[]> mons = new List<string[]>();
 
-            List<PurpleUnitList> monstersToLock = new List<PurpleUnitList>();
-            foreach (PurpleUnitList monster in monsters)
+            List<Monster> monstersToLock = new List<Monster>();
+            foreach (Monster monster in monsters)
             {
                 if (monster.UnitId == null) { continue; }
 
@@ -39,7 +39,7 @@ namespace Summoners_War_Statistics
                 // 15105 - devilmon
                 if (((monster.Class >= stars && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
             }
-            foreach (PurpleUnitList monsterToLock in monstersToLock)
+            foreach (Monster monsterToLock in monstersToLock)
             {
                 Dictionary<string, byte> runesOfSpecificSet = new Dictionary<string, byte>();
                 foreach (Rune rune in monsterToLock.Runes)
@@ -70,11 +70,11 @@ namespace Summoners_War_Statistics
             return mons;
         }
 
-        public List<string[]> FriendsList(List<FriendListElement> friendsList)
+        public List<string[]> FriendsList(List<Friend> friendsList)
         {
             List<string[]> friends = new List<string[]>();
 
-            foreach (FriendListElement friend in friendsList)
+            foreach (Friend friend in friendsList)
             {
                 friends.Add(
                     new string[] {
@@ -90,7 +90,7 @@ namespace Summoners_War_Statistics
             return friends;
         }
 
-        public List<string[]> GuildMembersList(Guild guild, GuildwarParticipationInfo guildwarParticipationInfo, List<GuildwarMemberList> guildwarMemberList, List<GuildMemberDefenseList> guildMemberDefenseList)
+        public List<string[]> GuildMembersList(Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
         {
             List<string[]> members = new List<string[]>();
             List<long> membersInGuildwar = new List<long>();

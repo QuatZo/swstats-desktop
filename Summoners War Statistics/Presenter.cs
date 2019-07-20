@@ -88,15 +88,15 @@ namespace Summoners_War_Statistics
 
                     try
                     {
-                        view.SummaryView.Init(json.WizardInfo, json.DimensionHoleInfo, json.UnitList, json.UnitLockList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
+                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
                         view.MonstersView.MonstersListView.Items.Clear();
-                        view.MonstersView.Init(json.UnitList, json.UnitLockList);
+                        view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
                         // here Runes tabs
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
-                        view.DimHoleView.Init(json.DimensionHoleInfo, json.UnitList);
+                        view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
                         view.OtherView.SummonerFriendsList.Items.Clear();
                         view.OtherView.GuildMembersList.Items.Clear();
-                        view.OtherView.Init(json.FriendList, json.Guild, json.GuildwarParticipationInfo, json.GuildwarMemberList, json.GuildMemberDefenseList, json.GuildwarRankingStat);
+                        view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
                     }
                     catch (NullReferenceException e)
                     {

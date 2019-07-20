@@ -28,17 +28,17 @@ namespace Summoners_War_Statistics
             view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
         }
 
-        private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<PurpleUnitList> unitList)
+        private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)
         {
             view.SummonerDimensionalHoleEnergy = dimensionHoleInfo.Energy;
             view.SummonerDimensionalHoleEnergyMax = dimensionHoleInfo.EnergyMax;
             view.DimensionalEnergyGainStart = DateTimeOffset.FromUnixTimeSeconds((long)dimensionHoleInfo.EnergyGainStartTimestamp).ToLocalTime().DateTime;
-            view.DimHoleMonsters = new List<AwakeningInfoClass>();
+            view.DimHoleMonsters = new List<Awakening>();
 
             view.SummonerDimensionalHoleEnergyMaxInfo = model.DimHoleCalculateTime(view.SummonerDimensionalHoleEnergyMax, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, false);
 
 
-            foreach (PurpleUnitList unit in unitList)
+            foreach (Monster unit in unitList)
             {
                 try
                 {
@@ -55,7 +55,7 @@ namespace Summoners_War_Statistics
             }
 
 
-            foreach (AwakeningInfoClass mon in view.DimHoleMonsters)
+            foreach (Awakening mon in view.DimHoleMonsters)
             {
                 foreach (KeyValuePair<RadioButton, ushort> dimHoleLevel in view.DimHoleLevelAXP)
                 {
