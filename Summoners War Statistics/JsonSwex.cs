@@ -71,6 +71,9 @@ namespace Summoners_War_Statistics
         [JsonProperty("guildwar_status")]
         public GuildwarStatus GuildwarStatus { get; set; }
 
+        [JsonProperty("guildwar_participation_info")]
+        public GuildwarParticipationInfo GuildwarParticipationInfo {get;set;}
+
         [JsonProperty("guildwar_member_list")]
         public List<GuildwarMemberList> GuildwarMemberList { get; set; }
 
@@ -564,6 +567,39 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("reset_remained")]
         public long? ResetRemained { get; set; }
+    }
+
+    public partial class GuildwarParticipationInfo
+    {
+        [JsonProperty("guild_id")]
+        public long? GuildId { get; set; }
+
+        [JsonProperty("league_type")]
+        public long? LeagueType { get; set; }
+
+        [JsonProperty("member_count")]
+        public long? MemberCount { get; set; }
+
+        [JsonProperty("match_score")]
+        public long? MatchScore { get; set; }
+
+        [JsonProperty("match_win")]
+        public long? MatchWin { get; set; }
+
+        [JsonProperty("match_lose")]
+        public long? MatchLose { get; set; }
+
+        [JsonProperty("participated")]
+        public long? Participated { get; set; }
+
+        [JsonProperty("energy")]
+        public long? Energy { get; set; }
+
+        [JsonProperty("energy_regen_remained")]
+        public long? EnergyRegenRemained { get; set; }
+
+        [JsonProperty("energy_max")]
+        public long? EnergyMax { get; set; }
     }
 
     public partial class MobCostumeEquipList

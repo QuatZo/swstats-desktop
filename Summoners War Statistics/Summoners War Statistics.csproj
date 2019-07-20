@@ -83,10 +83,15 @@
     <Compile Include="ListViewItemComparer.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
-    <Compile Include="Monsters\MonsterPresenter.cs" />
+    <Compile Include="Monsters\MonstersPresenter.cs" />
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\OtherPresenter.cs" />
     <Compile Include="Other\IOtherView.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Runes\IRunesView.cs" />
     <Compile Include="Monsters\Monsters.cs">
       <SubType>UserControl</SubType>
@@ -107,11 +112,6 @@
       <DependentUpon>Runes.cs</DependentUpon>
     </Compile>
     <Compile Include="Summary\ISummaryView.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Summary\Summary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1288,6 +1288,66 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_lightdark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_unit_attribute_elemental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_currency_dimensioncrystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_star_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_stars_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_leader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_megaphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_members.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_swords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_monster_locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\icon_guild_ranking.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1553,6 +1553,16 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_clock {
+            get {
+                object obj = ResourceManager.GetObject("icon_clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_conversionstone_legend {
             get {
                 object obj = ResourceManager.GetObject("icon_conversionstone_legend", resourceCulture);
@@ -1643,6 +1653,16 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_currency_dimensioncrystal {
+            get {
+                object obj = ResourceManager.GetObject("icon_currency_dimensioncrystal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_currency_dimensionenergy {
             get {
                 object obj = ResourceManager.GetObject("icon_currency_dimensionenergy", resourceCulture);
@@ -1723,6 +1743,66 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_defense {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_defense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_leader {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_leader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_megaphone {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_megaphone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_members {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_members", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_ranking {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_ranking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_guild_swords {
+            get {
+                object obj = ResourceManager.GetObject("icon_guild_swords", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_irene_0 {
             get {
                 object obj = ResourceManager.GetObject("icon_irene_0", resourceCulture);
@@ -1753,6 +1833,26 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_monster {
+            get {
+                object obj = ResourceManager.GetObject("icon_monster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_monster_locked {
+            get {
+                object obj = ResourceManager.GetObject("icon_monster_locked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_rune {
             get {
                 object obj = ResourceManager.GetObject("icon_rune", resourceCulture);
@@ -1773,9 +1873,99 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_star {
+            get {
+                object obj = ResourceManager.GetObject("icon_star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_star_off {
+            get {
+                object obj = ResourceManager.GetObject("icon_star_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_2 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_3 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_4 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_5 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_stars_6 {
+            get {
+                object obj = ResourceManager.GetObject("icon_stars_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_unit_attribute_dark {
             get {
                 object obj = ResourceManager.GetObject("icon_unit_attribute_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_unit_attribute_elemental {
+            get {
+                object obj = ResourceManager.GetObject("icon_unit_attribute_elemental", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1796,6 +1986,16 @@ namespace Summoners_War_Statistics.Properties {
         internal static System.Drawing.Bitmap icon_unit_attribute_light {
             get {
                 object obj = ResourceManager.GetObject("icon_unit_attribute_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_unit_attribute_lightdark {
+            get {
+                object obj = ResourceManager.GetObject("icon_unit_attribute_lightdark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

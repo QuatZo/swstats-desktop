@@ -79,6 +79,27 @@ namespace Summoners_War_Statistics
             set => labelStarsOneAmount.Text = value.ToString();
         }
 
+        public ushort MonstersNat5Amount
+        {
+            get => ushort.Parse(labelNat5.Text);
+            set => labelNat5.Text = value.ToString();
+        }
+        public ushort MonstersLDNat4PlusAmount
+        {
+            get => ushort.Parse(labelLDNat4Plus.Text);
+            set => labelLDNat4Plus.Text = value.ToString();
+        }
+        public ushort DaysSinceNat5
+        {
+            get => ushort.Parse(labelDaysNat5.Text.Remove(labelDaysNat5.Text.Length - 6));
+            set => labelDaysNat5.Text = value.ToString() + " days";
+        }
+        public ushort DaysSinceLastLDLightning
+        {
+            get => ushort.Parse(labelDaysLDLightning.Text.Remove(labelDaysNat5.Text.Length - 6));
+            set => labelDaysLDLightning.Text = value.ToString() + " days";
+        }
+
         public List<PurpleUnitList> MonstersList { get; set; } = new List<PurpleUnitList>();
         public List<long> MonstersLocked { get; set; } = new List<long>();
 
@@ -123,6 +144,11 @@ namespace Summoners_War_Statistics
             MonsterStarsThree = 0;
             MonsterStarsTwo = 0;
             MonsterStarsOne = 0;
+
+            MonstersNat5Amount = 0;
+            MonstersLDNat4PlusAmount = 0;
+            DaysSinceNat5 = 0;
+            DaysSinceLastLDLightning = 0;
         }
         #endregion
     }

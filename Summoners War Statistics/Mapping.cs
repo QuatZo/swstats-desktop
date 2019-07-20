@@ -363,8 +363,8 @@ namespace Summoners_War_Statistics
             monsterNames.Add(14713, "Argen");
             monsterNames.Add(14714, "Julianne");
             monsterNames.Add(14715, "Cadiz");
-            monsterNames.Add(
-                                     148, "Viking");
+
+            monsterNames.Add(148, "Viking");
             monsterNames.Add(14811, "Huga");
             monsterNames.Add(14812, "Geoffrey");
             monsterNames.Add(14813, "Walter");
@@ -918,6 +918,699 @@ namespace Summoners_War_Statistics
             monsterNames.Add(1000215, "Homunculus - Support (Dark)");
             #endregion
 
+            // Think about doing fuseable and HoH monsters lists, it'll be easier to maintain in the future
+            #region Monster Base Class
+            monsterBaseClass.Add(10111, 3);
+            monsterBaseClass.Add(10112, 3);
+            monsterBaseClass.Add(10113, 2);
+            monsterBaseClass.Add(10114, 3);
+            monsterBaseClass.Add(10115, 2);
+            monsterBaseClass.Add(10131, 3);
+            monsterBaseClass.Add(10132, 3);
+            monsterBaseClass.Add(10133, 2);
+            monsterBaseClass.Add(10134, 3);
+            monsterBaseClass.Add(10135, 2);
+
+            monsterBaseClass.Add(10211, 2);
+            monsterBaseClass.Add(10212, 2);
+            monsterBaseClass.Add(10213, 2);
+            monsterBaseClass.Add(10214, 2);
+            monsterBaseClass.Add(10215, 2);
+
+            monsterBaseClass.Add(10311, 2);
+            monsterBaseClass.Add(10312, 2);
+            monsterBaseClass.Add(10313, 2);
+            monsterBaseClass.Add(10314, 2);
+            monsterBaseClass.Add(10315, 2);
+            monsterBaseClass.Add(10331, 2);
+            monsterBaseClass.Add(10332, 2);
+            monsterBaseClass.Add(10333, 2);
+            monsterBaseClass.Add(10334, 2);
+            monsterBaseClass.Add(10335, 2);
+
+            monsterBaseClass.Add(10411, 2);
+            monsterBaseClass.Add(10412, 2);
+            monsterBaseClass.Add(10413, 2);
+            monsterBaseClass.Add(10414, 2);
+            monsterBaseClass.Add(10415, 3);
+
+            monsterBaseClass.Add(10511, 3);
+            monsterBaseClass.Add(10512, 3);
+            monsterBaseClass.Add(10513, 3);
+            monsterBaseClass.Add(10514, 3);
+            monsterBaseClass.Add(10515, 3);
+
+            monsterBaseClass.Add(10611, 2);
+            monsterBaseClass.Add(10612, 2);
+            monsterBaseClass.Add(10613, 2);
+            monsterBaseClass.Add(10614, 2);
+            monsterBaseClass.Add(10615, 3);
+
+            monsterBaseClass.Add(10711, 3);
+            monsterBaseClass.Add(10712, 2);
+            monsterBaseClass.Add(10713, 2);
+            monsterBaseClass.Add(10714, 2);
+            monsterBaseClass.Add(10715, 2);
+            monsterBaseClass.Add(10731, 3);
+            monsterBaseClass.Add(10732, 2);
+            monsterBaseClass.Add(10733, 2);
+            monsterBaseClass.Add(10734, 2);
+            monsterBaseClass.Add(10735, 2);
+
+            monsterBaseClass.Add(10811, 2);
+            monsterBaseClass.Add(10812, 2);
+            monsterBaseClass.Add(10813, 2);
+            monsterBaseClass.Add(10814, 3);
+            monsterBaseClass.Add(10815, 3);
+
+            monsterBaseClass.Add(10911, 2);
+            monsterBaseClass.Add(10912, 2);
+            monsterBaseClass.Add(10913, 2);
+            monsterBaseClass.Add(10914, 3);
+            monsterBaseClass.Add(10915, 2);
+
+            monsterBaseClass.Add(11011, 3);
+            monsterBaseClass.Add(11012, 3);
+            monsterBaseClass.Add(11013, 3);
+            monsterBaseClass.Add(11014, 3);
+            monsterBaseClass.Add(11015, 3);
+            monsterBaseClass.Add(11031, 3);
+            monsterBaseClass.Add(11032, 3);
+            monsterBaseClass.Add(11033, 3);
+            monsterBaseClass.Add(11034, 3);
+            monsterBaseClass.Add(11035, 3);
+
+            monsterBaseClass.Add(11111, 2);
+            monsterBaseClass.Add(11112, 3);
+            monsterBaseClass.Add(11113, 2);
+            monsterBaseClass.Add(11114, 2);
+            monsterBaseClass.Add(11115, 2);
+
+            monsterBaseClass.Add(11211, 4);
+            monsterBaseClass.Add(11212, 4);
+            monsterBaseClass.Add(11213, 4);
+            monsterBaseClass.Add(11214, 4);
+            monsterBaseClass.Add(11215, 14);
+
+            monsterBaseClass.Add(11311, 3);
+            monsterBaseClass.Add(11312, 3);
+            monsterBaseClass.Add(11313, 3);
+            monsterBaseClass.Add(11314, 3);
+            monsterBaseClass.Add(11315, 3);
+
+            monsterBaseClass.Add(11411, 3);
+            monsterBaseClass.Add(11412, 3);
+            monsterBaseClass.Add(11413, 3);
+            monsterBaseClass.Add(11414, 3);
+            monsterBaseClass.Add(11415, 3);
+
+            monsterBaseClass.Add(11511, 3);
+            monsterBaseClass.Add(11512, 3);
+            monsterBaseClass.Add(11513, 3);
+            monsterBaseClass.Add(11514, 3);
+            monsterBaseClass.Add(11515, 3);
+
+            monsterBaseClass.Add(11611, 4);
+            monsterBaseClass.Add(11612, 4);
+            monsterBaseClass.Add(11613, 4);
+            monsterBaseClass.Add(11614, 14);
+            monsterBaseClass.Add(11615, 14);
+
+            monsterBaseClass.Add(11711, 3);
+            monsterBaseClass.Add(11712, 3);
+            monsterBaseClass.Add(11713, 3);
+            monsterBaseClass.Add(11714, 3);
+            monsterBaseClass.Add(11715, 3);
+
+            monsterBaseClass.Add(11811, 4);
+            monsterBaseClass.Add(11812, 4);
+            monsterBaseClass.Add(11813, 4);
+            monsterBaseClass.Add(11814, 14);
+            monsterBaseClass.Add(11815, 4);
+
+            monsterBaseClass.Add(11911, 4);
+            monsterBaseClass.Add(11912, 4);
+            monsterBaseClass.Add(11913, 4);
+            monsterBaseClass.Add(11914, 4);
+            monsterBaseClass.Add(11915, 4);
+
+            monsterBaseClass.Add(12011, 3);
+            monsterBaseClass.Add(12012, 3);
+            monsterBaseClass.Add(12013, 3);
+            monsterBaseClass.Add(12014, 3);
+            monsterBaseClass.Add(12015, 3);
+
+            monsterBaseClass.Add(12111, 2);
+            monsterBaseClass.Add(12112, 2);
+            monsterBaseClass.Add(12113, 2);
+            monsterBaseClass.Add(12114, 3);
+            monsterBaseClass.Add(12115, 3);
+
+            monsterBaseClass.Add(128, 1);
+            monsterBaseClass.Add(12811, 1);
+            monsterBaseClass.Add(12812, 1);
+            monsterBaseClass.Add(12813, 1);
+            monsterBaseClass.Add(12814, 1);
+            monsterBaseClass.Add(12815, 1);
+
+            monsterBaseClass.Add(13211, 2);
+            monsterBaseClass.Add(13212, 2);
+            monsterBaseClass.Add(13213, 2);
+            monsterBaseClass.Add(13214, 2);
+            monsterBaseClass.Add(13215, 2);
+
+            monsterBaseClass.Add(13311, 4);
+            monsterBaseClass.Add(13312, 4);
+            monsterBaseClass.Add(13313, 4);
+            monsterBaseClass.Add(13314, 14);
+            monsterBaseClass.Add(13315, 14);
+
+            monsterBaseClass.Add(13411, 4);
+            monsterBaseClass.Add(13412, 4);
+            monsterBaseClass.Add(13413, 4);
+            monsterBaseClass.Add(13414, 14);
+            monsterBaseClass.Add(13415, 4);
+
+            monsterBaseClass.Add(13511, 4);
+            monsterBaseClass.Add(13512, 4);
+            monsterBaseClass.Add(13513, 4);
+            monsterBaseClass.Add(13514, 14);
+            monsterBaseClass.Add(13515, 5);
+
+
+            monsterBaseClass.Add(13711, 3);
+            monsterBaseClass.Add(13712, 3);
+            monsterBaseClass.Add(13713, 3);
+            monsterBaseClass.Add(13714, 3);
+            monsterBaseClass.Add(13715, 3);
+
+            monsterBaseClass.Add(13811, 5);
+            monsterBaseClass.Add(13812, 5);
+            monsterBaseClass.Add(13813, 15);
+            monsterBaseClass.Add(13814, 5);
+            monsterBaseClass.Add(13815, 5);
+
+            monsterBaseClass.Add(13911, 4);
+            monsterBaseClass.Add(13912, 4);
+            monsterBaseClass.Add(13913, 4);
+            monsterBaseClass.Add(13914, 14);
+            monsterBaseClass.Add(13915, 4);
+
+            monsterBaseClass.Add(14011, 3);
+            monsterBaseClass.Add(14012, 3);
+            monsterBaseClass.Add(14013, 3);
+            monsterBaseClass.Add(14014, 3);
+            monsterBaseClass.Add(14015, 3);
+
+            monsterBaseClass.Add(14111, 4);
+            monsterBaseClass.Add(14112, 4);
+            monsterBaseClass.Add(14113, 4);
+            monsterBaseClass.Add(14114, 14);
+            monsterBaseClass.Add(14115, 14);
+
+            monsterBaseClass.Add(14411, 5);
+            monsterBaseClass.Add(14412, 5);
+            monsterBaseClass.Add(14413, 5);
+            monsterBaseClass.Add(14414, 5);
+            monsterBaseClass.Add(14415, 5);
+
+            monsterBaseClass.Add(14511, 15);
+            monsterBaseClass.Add(14512, 5);
+            monsterBaseClass.Add(14513, 5);
+            monsterBaseClass.Add(14514, 5);
+            monsterBaseClass.Add(14515, 5);
+
+            monsterBaseClass.Add(14611, 5);
+            monsterBaseClass.Add(14612, 5);
+            monsterBaseClass.Add(14613, 5);
+            monsterBaseClass.Add(14614, 5);
+            monsterBaseClass.Add(14615, 5);
+
+            monsterBaseClass.Add(14711, 4);
+            monsterBaseClass.Add(14712, 4);
+            monsterBaseClass.Add(14713, 4);
+            monsterBaseClass.Add(14714, 4);
+            monsterBaseClass.Add(14715, 4);
+
+            monsterBaseClass.Add(14811, 2);
+            monsterBaseClass.Add(14812, 3);
+            monsterBaseClass.Add(14813, 2);
+            monsterBaseClass.Add(14814, 2);
+            monsterBaseClass.Add(14815, 3);
+
+            monsterBaseClass.Add(14911, 3);
+            monsterBaseClass.Add(14912, 3);
+            monsterBaseClass.Add(14913, 3);
+            monsterBaseClass.Add(14914, 3);
+            monsterBaseClass.Add(14915, 3);
+
+            monsterBaseClass.Add(15011, 3);
+            monsterBaseClass.Add(15012, 3);
+            monsterBaseClass.Add(15013, 3);
+            monsterBaseClass.Add(15014, 3);
+            monsterBaseClass.Add(15015, 3);
+
+            monsterBaseClass.Add(15211, 2);
+            monsterBaseClass.Add(15212, 3);
+            monsterBaseClass.Add(15213, 2);
+            monsterBaseClass.Add(15214, 3);
+            monsterBaseClass.Add(15215, 3);
+
+            monsterBaseClass.Add(15311, 3);
+            monsterBaseClass.Add(15312, 4);
+            monsterBaseClass.Add(15313, 3);
+            monsterBaseClass.Add(15314, 4);
+            monsterBaseClass.Add(15315, 3);
+
+            monsterBaseClass.Add(15411, 3);
+            monsterBaseClass.Add(15412, 3);
+            monsterBaseClass.Add(15413, 3);
+            monsterBaseClass.Add(15414, 4);
+            monsterBaseClass.Add(15415, 4);
+
+            monsterBaseClass.Add(15511, 4);
+            monsterBaseClass.Add(15512, 4);
+            monsterBaseClass.Add(15513, 4);
+            monsterBaseClass.Add(15514, 4);
+            monsterBaseClass.Add(15515, 14);
+
+            monsterBaseClass.Add(15611, 3);
+            monsterBaseClass.Add(15612, 3);
+            monsterBaseClass.Add(15613, 3);
+            monsterBaseClass.Add(15614, 3);
+            monsterBaseClass.Add(15615, 3);
+
+            monsterBaseClass.Add(15711, 5);
+            monsterBaseClass.Add(15712, 5);
+            monsterBaseClass.Add(15713, 5);
+            monsterBaseClass.Add(15714, 5);
+            monsterBaseClass.Add(15715, 5);
+
+            monsterBaseClass.Add(15811, 3);
+            monsterBaseClass.Add(15812, 3);
+            monsterBaseClass.Add(15813, 3);
+            monsterBaseClass.Add(15814, 3);
+            monsterBaseClass.Add(15815, 3);
+
+            monsterBaseClass.Add(15911, 3);
+            monsterBaseClass.Add(15912, 3);
+            monsterBaseClass.Add(15913, 3);
+            monsterBaseClass.Add(15914, 3);
+            monsterBaseClass.Add(15915, 3);
+
+            monsterBaseClass.Add(16011, 3);
+            monsterBaseClass.Add(16012, 3);
+            monsterBaseClass.Add(16013, 3);
+            monsterBaseClass.Add(16014, 3);
+            monsterBaseClass.Add(16015, 3);
+
+            monsterBaseClass.Add(16111, 5);
+            monsterBaseClass.Add(16112, 5);
+            monsterBaseClass.Add(16113, 5);
+            monsterBaseClass.Add(16114, 5);
+            monsterBaseClass.Add(16115, 5);
+
+            monsterBaseClass.Add(16211, 4);
+            monsterBaseClass.Add(16212, 4);
+            monsterBaseClass.Add(16213, 4);
+            monsterBaseClass.Add(16214, 14);
+            monsterBaseClass.Add(16215, 14);
+
+            monsterBaseClass.Add(16311, 4);
+            monsterBaseClass.Add(16312, 4);
+            monsterBaseClass.Add(16313, 4);
+            monsterBaseClass.Add(16314, 4);
+            monsterBaseClass.Add(16315, 4);
+
+            monsterBaseClass.Add(16511, 3);
+            monsterBaseClass.Add(16512, 3);
+            monsterBaseClass.Add(16513, 3);
+            monsterBaseClass.Add(16514, 3);
+            monsterBaseClass.Add(16515, 3);
+
+            monsterBaseClass.Add(16611, 5);
+            monsterBaseClass.Add(16612, 5);
+            monsterBaseClass.Add(16613, 5);
+            monsterBaseClass.Add(16614, 5);
+            monsterBaseClass.Add(16615, 5);
+
+            monsterBaseClass.Add(16711, 0);
+            monsterBaseClass.Add(16712, 0);
+            monsterBaseClass.Add(16713, 0);
+            monsterBaseClass.Add(16714, 3);
+            monsterBaseClass.Add(16715, 0);
+
+            monsterBaseClass.Add(16811, 5);
+            monsterBaseClass.Add(16812, 5);
+            monsterBaseClass.Add(16813, 5);
+            monsterBaseClass.Add(16814, 5);
+            monsterBaseClass.Add(16815, 5);
+
+            monsterBaseClass.Add(16911, 4);
+            monsterBaseClass.Add(16912, 4);
+            monsterBaseClass.Add(16913, 4);
+            monsterBaseClass.Add(16914, 4);
+            monsterBaseClass.Add(16915, 4);
+
+            monsterBaseClass.Add(17011, 5);
+            monsterBaseClass.Add(17012, 5);
+            monsterBaseClass.Add(17013, 5);
+            monsterBaseClass.Add(17014, 5);
+            monsterBaseClass.Add(17015, 5);
+
+            monsterBaseClass.Add(17211, 3);
+            monsterBaseClass.Add(17212, 3);
+            monsterBaseClass.Add(17213, 3);
+            monsterBaseClass.Add(17214, 3);
+            monsterBaseClass.Add(17215, 3);
+
+            monsterBaseClass.Add(17311, 4);
+            monsterBaseClass.Add(17312, 4);
+            monsterBaseClass.Add(17313, 4);
+            monsterBaseClass.Add(17314, 14);
+            monsterBaseClass.Add(17315, 4);
+
+            monsterBaseClass.Add(17411, 5);
+            monsterBaseClass.Add(17412, 5);
+            monsterBaseClass.Add(17413, 5);
+            monsterBaseClass.Add(17414, 5);
+            monsterBaseClass.Add(17415, 5);
+
+            monsterBaseClass.Add(17611, 2);
+            monsterBaseClass.Add(17612, 2);
+            monsterBaseClass.Add(17613, 2);
+            monsterBaseClass.Add(17614, 2);
+            monsterBaseClass.Add(17615, 2);
+
+            monsterBaseClass.Add(17711, 3);
+            monsterBaseClass.Add(17712, 3);
+            monsterBaseClass.Add(17713, 3);
+            monsterBaseClass.Add(17714, 3);
+            monsterBaseClass.Add(17715, 3);
+
+            monsterBaseClass.Add(17811, 3);
+            monsterBaseClass.Add(17812, 3);
+            monsterBaseClass.Add(17813, 3);
+            monsterBaseClass.Add(17814, 3);
+            monsterBaseClass.Add(17815, 3);
+
+            monsterBaseClass.Add(17911, 5);
+            monsterBaseClass.Add(17912, 5);
+            monsterBaseClass.Add(17913, 5);
+            monsterBaseClass.Add(17914, 5);
+            monsterBaseClass.Add(17915, 5);
+
+            monsterBaseClass.Add(18011, 4);
+            monsterBaseClass.Add(18012, 4);
+            monsterBaseClass.Add(18013, 4);
+            monsterBaseClass.Add(18014, 14);
+            monsterBaseClass.Add(18015, 14);
+
+            monsterBaseClass.Add(18111, 4);
+            monsterBaseClass.Add(18112, 4);
+            monsterBaseClass.Add(18113, 4);
+            monsterBaseClass.Add(18114, 4);
+            monsterBaseClass.Add(18115, 14);
+
+            monsterBaseClass.Add(18211, 1);
+            monsterBaseClass.Add(18212, 1);
+            monsterBaseClass.Add(18213, 1);
+            monsterBaseClass.Add(18214, 1);
+            monsterBaseClass.Add(18215, 1);
+
+            monsterBaseClass.Add(18311, 4);
+            monsterBaseClass.Add(18312, 4);
+            monsterBaseClass.Add(18313, 4);
+            monsterBaseClass.Add(18314, 5);
+            monsterBaseClass.Add(18315, 5);
+
+            monsterBaseClass.Add(18411, 4);
+            monsterBaseClass.Add(18412, 3);
+            monsterBaseClass.Add(18413, 4);
+            monsterBaseClass.Add(18414, 4);
+            monsterBaseClass.Add(18415, 3);
+
+            monsterBaseClass.Add(18511, 3);
+            monsterBaseClass.Add(18512, 3);
+            monsterBaseClass.Add(18513, 3);
+            monsterBaseClass.Add(18514, 3);
+            monsterBaseClass.Add(18515, 3);
+
+            monsterBaseClass.Add(18611, 5);
+            monsterBaseClass.Add(18612, 5);
+            monsterBaseClass.Add(18613, 5);
+            monsterBaseClass.Add(18614, 5);
+            monsterBaseClass.Add(18615, 5);
+
+            monsterBaseClass.Add(18711, 3);
+            monsterBaseClass.Add(18712, 3);
+            monsterBaseClass.Add(18713, 3);
+            monsterBaseClass.Add(18714, 3);
+            monsterBaseClass.Add(18715, 3);
+
+            monsterBaseClass.Add(18811, 4);
+            monsterBaseClass.Add(18812, 4);
+            monsterBaseClass.Add(18813, 4);
+            monsterBaseClass.Add(18814, 4);
+            monsterBaseClass.Add(18815, 4);
+
+            monsterBaseClass.Add(18911, 5);
+            monsterBaseClass.Add(18912, 5);
+            monsterBaseClass.Add(18913, 5);
+            monsterBaseClass.Add(18914, 5);
+            monsterBaseClass.Add(18915, 5);
+
+            monsterBaseClass.Add(19011, 3);
+            monsterBaseClass.Add(19012, 3);
+            monsterBaseClass.Add(19013, 3);
+            monsterBaseClass.Add(19014, 3);
+            monsterBaseClass.Add(19015, 3);
+
+            monsterBaseClass.Add(19111, 0);
+            monsterBaseClass.Add(19112, 0);
+            monsterBaseClass.Add(19113, 0);
+            monsterBaseClass.Add(19114, 3);
+            monsterBaseClass.Add(19115, 0);
+
+            monsterBaseClass.Add(19211, 15);
+            monsterBaseClass.Add(19212, 15);
+            monsterBaseClass.Add(19213, 15);
+            monsterBaseClass.Add(19214, 15);
+            monsterBaseClass.Add(19215, 15);
+
+            monsterBaseClass.Add(19311, 3);
+            monsterBaseClass.Add(19312, 3);
+            monsterBaseClass.Add(19313, 3);
+            monsterBaseClass.Add(19314, 3);
+            monsterBaseClass.Add(19315, 3);
+
+            monsterBaseClass.Add(19411, 4);
+            monsterBaseClass.Add(19412, 4);
+            monsterBaseClass.Add(19413, 4);
+            monsterBaseClass.Add(19414, 14);
+            monsterBaseClass.Add(19415, 4);
+
+            monsterBaseClass.Add(19511, 3);
+            monsterBaseClass.Add(19512, 3);
+            monsterBaseClass.Add(19513, 3);
+            monsterBaseClass.Add(19514, 3);
+            monsterBaseClass.Add(19515, 3);
+
+            monsterBaseClass.Add(19611, 4);
+            monsterBaseClass.Add(19612, 4);
+            monsterBaseClass.Add(19613, 4);
+            monsterBaseClass.Add(19614, 4);
+            monsterBaseClass.Add(19615, 4);
+
+            monsterBaseClass.Add(19711, 5);
+            monsterBaseClass.Add(19712, 5);
+            monsterBaseClass.Add(19713, 5);
+            monsterBaseClass.Add(19714, 5);
+            monsterBaseClass.Add(19715, 5);
+
+            monsterBaseClass.Add(19811, 4);
+            monsterBaseClass.Add(19812, 4);
+            monsterBaseClass.Add(19813, 4);
+            monsterBaseClass.Add(19814, 4);
+            monsterBaseClass.Add(19815, 14);
+
+            monsterBaseClass.Add(19911, 4);
+            monsterBaseClass.Add(19912, 4);
+            monsterBaseClass.Add(19913, 4);
+            monsterBaseClass.Add(19914, 14);
+            monsterBaseClass.Add(19915, 14);
+
+            monsterBaseClass.Add(20011, 4);
+            monsterBaseClass.Add(20012, 4);
+            monsterBaseClass.Add(20013, 4);
+            monsterBaseClass.Add(20014, 4);
+            monsterBaseClass.Add(20015, 14);
+
+            monsterBaseClass.Add(20111, 4);
+            monsterBaseClass.Add(20112, 4);
+            monsterBaseClass.Add(20113, 4);
+            monsterBaseClass.Add(20114, 4);
+            monsterBaseClass.Add(20115, 5);
+
+            monsterBaseClass.Add(20211, 3);
+            monsterBaseClass.Add(20212, 3);
+            monsterBaseClass.Add(20213, 3);
+            monsterBaseClass.Add(20214, 3);
+            monsterBaseClass.Add(20215, 3);
+
+            monsterBaseClass.Add(20311, 3);
+            monsterBaseClass.Add(20312, 3);
+            monsterBaseClass.Add(20313, 3);
+            monsterBaseClass.Add(20314, 3);
+            monsterBaseClass.Add(20315, 3);
+
+            monsterBaseClass.Add(20411, 4);
+            monsterBaseClass.Add(20412, 4);
+            monsterBaseClass.Add(20413, 4);
+            monsterBaseClass.Add(20414, 4);
+            monsterBaseClass.Add(20415, 5);
+
+            monsterBaseClass.Add(20511, 5);
+            monsterBaseClass.Add(20512, 5);
+            monsterBaseClass.Add(20513, 5);
+            monsterBaseClass.Add(20514, 5);
+            monsterBaseClass.Add(20515, 5);
+
+            monsterBaseClass.Add(20611, 4);
+            monsterBaseClass.Add(20612, 4);
+            monsterBaseClass.Add(20613, 4);
+            monsterBaseClass.Add(20614, 5);
+            monsterBaseClass.Add(20615, 4);
+
+            monsterBaseClass.Add(20711, 4);
+            monsterBaseClass.Add(20712, 4);
+            monsterBaseClass.Add(20713, 4);
+            monsterBaseClass.Add(20714, 4);
+            monsterBaseClass.Add(20715, 14);
+
+            monsterBaseClass.Add(20811, 3);
+            monsterBaseClass.Add(20812, 3);
+            monsterBaseClass.Add(20813, 3);
+            monsterBaseClass.Add(20814, 3);
+            monsterBaseClass.Add(20815, 3);
+
+            monsterBaseClass.Add(20911, 3);
+            monsterBaseClass.Add(20912, 3);
+            monsterBaseClass.Add(20913, 3);
+            monsterBaseClass.Add(20914, 3);
+            monsterBaseClass.Add(20915, 4);
+
+            monsterBaseClass.Add(21011, 3);
+            monsterBaseClass.Add(21012, 3);
+            monsterBaseClass.Add(21013, 4);
+            monsterBaseClass.Add(21014, 4);
+            monsterBaseClass.Add(21015, 3);
+
+            monsterBaseClass.Add(21111, 5);
+            monsterBaseClass.Add(21112, 5);
+            monsterBaseClass.Add(21113, 5);
+            monsterBaseClass.Add(21114, 5);
+            monsterBaseClass.Add(21115, 5);
+
+            monsterBaseClass.Add(21211, 5);
+            monsterBaseClass.Add(21212, 15);
+            monsterBaseClass.Add(21213, 5);
+            monsterBaseClass.Add(21214, 5);
+            monsterBaseClass.Add(21215, 5);
+
+            monsterBaseClass.Add(21311, 4);
+            monsterBaseClass.Add(21312, 4);
+            monsterBaseClass.Add(21313, 4);
+            monsterBaseClass.Add(21314, 4);
+            monsterBaseClass.Add(21315, 4);
+
+            monsterBaseClass.Add(21411, 4);
+            monsterBaseClass.Add(21412, 4);
+            monsterBaseClass.Add(21413, 4);
+            monsterBaseClass.Add(21414, 5);
+            monsterBaseClass.Add(21415, 5);
+
+            monsterBaseClass.Add(21511, 5);
+            monsterBaseClass.Add(21512, 5);
+            monsterBaseClass.Add(21513, 5);
+            monsterBaseClass.Add(21514, 5);
+            monsterBaseClass.Add(21515, 5);
+            monsterBaseClass.Add(21611, 5);
+            monsterBaseClass.Add(21612, 5);
+            monsterBaseClass.Add(21613, 5);
+            monsterBaseClass.Add(21614, 5);
+            monsterBaseClass.Add(21615, 5);
+
+            monsterBaseClass.Add(21811, 5);
+            monsterBaseClass.Add(21812, 5);
+            monsterBaseClass.Add(21813, 5);
+            monsterBaseClass.Add(21814, 15);
+            monsterBaseClass.Add(21815, 5);
+
+            monsterBaseClass.Add(21911, 4);
+            monsterBaseClass.Add(21912, 4);
+            monsterBaseClass.Add(21913, 4);
+            monsterBaseClass.Add(21914, 14);
+            monsterBaseClass.Add(21915, 4);
+
+            monsterBaseClass.Add(22011, 4);
+            monsterBaseClass.Add(22012, 4);
+            monsterBaseClass.Add(22013, 4);
+            monsterBaseClass.Add(22014, 4);
+            monsterBaseClass.Add(22015, 4);
+
+            monsterBaseClass.Add(22111, 4);
+            monsterBaseClass.Add(22112, 4);
+            monsterBaseClass.Add(22113, 4);
+            monsterBaseClass.Add(22114, 4);
+            monsterBaseClass.Add(22115, 4);
+
+            monsterBaseClass.Add(22211, 5);
+            monsterBaseClass.Add(22212, 5);
+            monsterBaseClass.Add(22213, 5);
+            monsterBaseClass.Add(22214, 5);
+            monsterBaseClass.Add(22215, 5);
+            monsterBaseClass.Add(22311, 5);
+            monsterBaseClass.Add(22312, 5);
+            monsterBaseClass.Add(22313, 5);
+            monsterBaseClass.Add(22314, 5);
+            monsterBaseClass.Add(22315, 5);
+
+            monsterBaseClass.Add(22411, 3);
+            monsterBaseClass.Add(22412, 3);
+            monsterBaseClass.Add(22413, 4);
+            monsterBaseClass.Add(22414, 4);
+            monsterBaseClass.Add(22415, 4);
+            monsterBaseClass.Add(22513, 4);
+            monsterBaseClass.Add(22515, 4);
+
+            monsterBaseClass.Add(22611, 5);
+            monsterBaseClass.Add(22612, 5);
+            monsterBaseClass.Add(22613, 5);
+            monsterBaseClass.Add(22614, 5);
+            monsterBaseClass.Add(22615, 5);
+
+            monsterBaseClass.Add(22711, 4);
+            monsterBaseClass.Add(22712, 4);
+            monsterBaseClass.Add(22713, 4);
+            monsterBaseClass.Add(22714, 4);
+            monsterBaseClass.Add(22715, 4);
+            monsterBaseClass.Add(22812, 4);
+            monsterBaseClass.Add(22813, 4);
+            monsterBaseClass.Add(22815, 4);
+
+            monsterBaseClass.Add(22911, 4);
+            monsterBaseClass.Add(22912, 4);
+            monsterBaseClass.Add(22913, 5);
+            monsterBaseClass.Add(22914, 4);
+            monsterBaseClass.Add(22915, 5);
+
+            monsterBaseClass.Add(23015, 15);
+
+            monsterBaseClass.Add(15105, 1);
+            monsterBaseClass.Add(14314, 0);
+            #endregion
+
             #region Rune Effect Types
             runeEffectTypes.Add(0, "");
             runeEffectTypes.Add(1, "HP flat");
@@ -1123,12 +1816,53 @@ namespace Summoners_War_Statistics
             craftMaterials.Add(6001, "Condensed Magic Crystal");
             craftMaterials.Add(7001, "Pure Magic Crystal");
             #endregion
+
+            #region Ranking Arena
+            rankingArena.Add(901, "Beginner");
+
+            rankingArena.Add(1001, "Challenger I");
+            rankingArena.Add(1002, "Challenger II");
+            rankingArena.Add(1003, "Challenger III");
+
+            rankingArena.Add(2001, "Fighter I");
+            rankingArena.Add(2002, "Fighter II");
+            rankingArena.Add(2003, "Fighter III");
+
+            rankingArena.Add(3001, "Conqueror I");
+            rankingArena.Add(3002, "Conqueror II");
+            rankingArena.Add(3003, "Conqueror III");
+
+            rankingArena.Add(4001, "Guardian I");
+            rankingArena.Add(4002, "Guardian II");
+            rankingArena.Add(4003, "Guardian III");
+
+            rankingArena.Add(5001, "Legend");
+            #endregion
+
+            #region Ranking Guild
+            rankingGuild.Add(1011, "Challenger");
+
+            rankingGuild.Add(2011, "Fighter I");
+            rankingGuild.Add(2012, "Fighter II");
+            rankingGuild.Add(2013, "Fighter III");
+
+            rankingGuild.Add(3011, "Conqueror I");
+            rankingGuild.Add(3012, "Conqueror II");
+            rankingGuild.Add(3013, "Conqueror III");
+
+            rankingGuild.Add(4011, "Guardian I");
+            rankingGuild.Add(4012, "Guardian II");
+            rankingGuild.Add(4013, "Guardian III");
+
+            rankingGuild.Add(5011, "Guardian III");
+            #endregion
         }
         #endregion
 
         #region Fields
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
+        private Dictionary<int, int> monsterBaseClass = new Dictionary<int, int>(); // base class + 10 for L&D HoH monsters, fuseable L&D 4*+ monsters and fuseable elemental 5* monsters
 
         private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
         private Dictionary<int, (string Name, byte Amount)> runeSets = new Dictionary<int, (string Name, byte Amount)>();
@@ -1148,6 +1882,9 @@ namespace Summoners_War_Statistics
         private Dictionary<int, string> essenceAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> essenceGrades = new Dictionary<int, string>();
         private Dictionary<int, string> craftMaterials = new Dictionary<int, string>();
+
+        private Dictionary<int, string> rankingArena = new Dictionary<int, string>();
+        private Dictionary<int, string> rankingGuild = new Dictionary<int, string>();
         #endregion
 
         #region Properties
@@ -1158,6 +1895,7 @@ namespace Summoners_War_Statistics
         #region Methods
         public string GetMonsterAttribute(int id)
         {
+            if(id > 9) { id = id % 10; }
             if (monsterAttributes.ContainsKey(id))
             {
                 return monsterAttributes[id];
@@ -1180,6 +1918,28 @@ namespace Summoners_War_Statistics
             }
 
             return "Unknown Monster";
+        }
+
+        public int GetMonsterBaseClass(int id)
+        {
+            if (monsterBaseClass.ContainsKey(id))
+            {
+                return monsterBaseClass[id];
+            }
+
+            // unawaken monster, so we need to 'awake' him
+            int family = int.Parse(id.ToString().Substring(0, 3));
+            if (monsterNames.ContainsKey(family))
+            {
+                int attribute = int.Parse(id.ToString().Substring(id.ToString().Length - 1));
+
+                if (monsterBaseClass.ContainsKey(family * 100 + 10 + attribute)) // 1A form
+                    return monsterBaseClass[family * 100 + 10 + attribute];
+                else if(monsterBaseClass.ContainsKey(family * 100 + 30 + attribute)) // 2A form
+                    return monsterBaseClass[family * 100 + 30 + attribute];
+            }
+
+            return -1;
         }
 
         public string GetRuneEffectType(int id)
@@ -1316,6 +2076,23 @@ namespace Summoners_War_Statistics
                 {12, $"Accuracy {rune.PriEff[1]}%" }
             };
             return effect[(int)rune.PriEff[0]];
+        }
+
+        public string GetRanking(int id)
+        {
+            if (rankingArena.ContainsKey(id))
+            {
+                return rankingArena[id];
+            }
+            return "Unknown Ranking";
+        }
+        public string GetGuildRanking(int id)
+        {
+            if (rankingGuild.ContainsKey(id))
+            {
+                return rankingGuild[id];
+            }
+            return "Unknown Guild Ranking";
         }
         #endregion
     }

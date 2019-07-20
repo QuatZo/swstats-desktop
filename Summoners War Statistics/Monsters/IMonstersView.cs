@@ -26,6 +26,11 @@ namespace Summoners_War_Statistics
         ushort MonsterStarsTwo { get; set; }
         ushort MonsterStarsOne { get; set; }
 
+        ushort MonstersNat5Amount { get; set; }
+        ushort MonstersLDNat4PlusAmount { get; set; }
+        ushort DaysSinceNat5 { get; set; }
+        ushort DaysSinceLastLDLightning { get; set; }
+
         List<PurpleUnitList> MonstersList { get; set; }
         List<long> MonstersLocked { get; set; }
 
