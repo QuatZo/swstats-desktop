@@ -94,7 +94,6 @@ namespace Summoners_War_Statistics
                         view.MonstersView.MonstersListView.Items.Clear();
                         view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
 
-                        view.RunesView.RunesList.Items.Clear();
                         view.RunesView.Init(model.RunesEvenEquipped(json.Runes, json.MonsterList), model.MonstersMasterId(json.MonsterList));
 
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
@@ -104,15 +103,13 @@ namespace Summoners_War_Statistics
                         view.OtherView.GuildMembersList.Items.Clear();
                         view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
                     }
-                    catch (NullReferenceException e)
+                    catch (NullReferenceException)
                     {
                         view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
-                        Console.WriteLine(e);
                     }
-                    catch (InvalidJSONException e)
+                    catch (InvalidJSONException)
                     {
                         view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
-                        Console.WriteLine(e);
                     }
                 }
                 else

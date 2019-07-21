@@ -1612,7 +1612,6 @@ namespace Summoners_War_Statistics
             #endregion
 
             #region Rune Effect Types
-            runeEffectTypes.Add(0, "");
             runeEffectTypes.Add(1, "HP flat");
             runeEffectTypes.Add(2, "HP%");
             runeEffectTypes.Add(3, "ATK flat");
@@ -1895,7 +1894,7 @@ namespace Summoners_War_Statistics
         #region Methods
         public string GetMonsterAttribute(int id)
         {
-            if(id > 9) { id = id % 10; }
+            if (id > 9) { id = id % 10; }
             if (monsterAttributes.ContainsKey(id))
             {
                 return monsterAttributes[id];
@@ -1934,9 +1933,13 @@ namespace Summoners_War_Statistics
                 int attribute = int.Parse(id.ToString().Substring(id.ToString().Length - 1));
 
                 if (monsterBaseClass.ContainsKey(family * 100 + 10 + attribute)) // 1A form
+                {
                     return monsterBaseClass[family * 100 + 10 + attribute];
-                else if(monsterBaseClass.ContainsKey(family * 100 + 30 + attribute)) // 2A form
+                }
+                else if (monsterBaseClass.ContainsKey(family * 100 + 30 + attribute)) // 2A form
+                {
                     return monsterBaseClass[family * 100 + 30 + attribute];
+                }
             }
 
             return -1;
@@ -1949,6 +1952,11 @@ namespace Summoners_War_Statistics
                 return runeEffectTypes[id];
             }
             return "Unknown Rune Effect Type";
+        }
+
+        public Dictionary<int, string> GetAllRuneEffectTypes()
+        {
+            return runeEffectTypes;
         }
 
         public string GetRuneEffect(Rune rune)
@@ -1971,8 +1979,6 @@ namespace Summoners_War_Statistics
             return effect[(int)rune.PriEff[0]];
         }
 
-
-
         public string GetRuneSet(int id)
         {
             if (runeSets.ContainsKey(id))
@@ -1980,6 +1986,16 @@ namespace Summoners_War_Statistics
                 return runeSets[id].Name;
             }
             return "Unknown Rune Set";
+        }
+
+        public Dictionary<int, string> GetAllRuneSets()
+        {
+            Dictionary<int, string> runeSetsAll = new Dictionary<int, string>();
+            foreach (KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
+            {
+                runeSetsAll.Add(runeSet.Key, runeSet.Value.Name);
+            }
+            return runeSetsAll;
         }
 
         public string GetRuneSetAmount(string set)
@@ -1998,6 +2014,11 @@ namespace Summoners_War_Statistics
                 return runeQuality[id];
             }
             return "Unknown Rune Quality";
+        }
+
+        public Dictionary<int, string> GetAllRuneQuailities()
+        {
+            return runeQuality;
         }
 
         public string GetScenario(int id)
@@ -2047,7 +2068,7 @@ namespace Summoners_War_Statistics
 
         private bool IsAncient(Rune rune)
         {
-            if(rune.Class > 10) { return true; }
+            if (rune.Class > 10) { return true; }
             return false;
         }
 
@@ -2055,11 +2076,10 @@ namespace Summoners_War_Statistics
         {
             double ratio = 0;
             int runeClass = (int)rune.Class;
-            // mainstat
             if (IsAncient(rune)) { runeClass -= 10; }
 
-
-            ratio += runeMainstats[(int)rune.PriEff[0]][runeClass] / runeMainstats[(int)rune.PriEff[0]][6];
+            // mainstat
+            ratio += (double)runeMainstats[(int)rune.PriEff[0]][runeClass] / (double)runeMainstats[(int)rune.PriEff[0]][6];
 
             // substats
             foreach (List<long> stat in rune.SecEff)
@@ -2067,20 +2087,19 @@ namespace Summoners_War_Statistics
                 double value;
                 if (stat.Count > 3 && stat[3] > 0) { value = stat[1] + stat[3]; }
                 else { value = stat[1]; }
-                ratio += value / runeSubstats[(int)stat[0]][6];
+                ratio += (double)value / (double)runeSubstats[(int)stat[0]][6];
             }
-
             // innate
             if (rune.PrefixEff.Count > 0 && rune.PrefixEff[0] > 0)
             {
-                ratio += rune.PrefixEff[1] / runeSubstats[(int)rune.PrefixEff[0]][6];
+                ratio += (double)rune.PrefixEff[1] / (double)runeSubstats[(int)rune.PrefixEff[0]][6]; // cast needed, otherwise always 0; even tho VS says it's redundant
             }
 
             double efficiency = (ratio / 2.8) * 100;
 
-            return (Math.Round(efficiency, 2), Math.Round(efficiency + (Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr) / 3), 0) * 0.2 / 2.8 * 100), 2));
+            double efficiencyMax = efficiency + (Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr) / 3), 0) * 0.2 / 2.8 * 100);
+            return (Math.Round(efficiency, 2), Math.Round(efficiencyMax, 2));
         }
-        
 
         public string GetRanking(int id)
         {

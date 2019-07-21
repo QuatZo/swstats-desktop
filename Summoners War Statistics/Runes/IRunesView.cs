@@ -10,11 +10,34 @@ namespace Summoners_War_Statistics
     public interface IRunesView
     {
         #region Properties
-        ListView RunesList { get; set; }
+        byte ChosenRuneSet { get; }
+        byte ChosenRuneMainstat { get; }
+        byte ChosenRuneQuality { get; }
+        byte ChosenRuneSlot { get; }
+        byte ChosenRuneUpgrade { get; }
+        byte ChosenRuneUpgradeStatement { get; }
+        byte ChosenRuneEfficiency { get; }
+        byte ChosenRuneEfficiencyStatement { get; }
+
+
+        ushort RunesAmount { get; set; }
+        ushort RunesMaxed { get; set; }
+        ushort RunesInventory { get; set; }
+        double RunesEfficiencyMin { get; set; }
+        double RunesEfficiencyMax { get; set; }
+        double RunesEfficiencyMean { get; set; }
+        double RunesEfficiencyMedian { get; set; }
+        double RunesEfficiencyStandardDeviation { get; set; }
+
+
+        ListView RunesListView { get; set; }
+
+        List<Rune> RunesList { get; set; }
+        Dictionary<long, int> MonstersMasterId { get; set; }
         #endregion
 
         #region Events
-        event Action<List<Rune>, Dictionary<long, int>> InitRunes;
+        event Action InitRunes;
         #endregion
 
         #region Methods

@@ -30,10 +30,22 @@ namespace Summoners_War_Statistics
         }
         public int Compare(object x, object y)
         {
-            int.TryParse(((ListViewItem)x).SubItems[col].Text, out int xInt);
-            int.TryParse(((ListViewItem)y).SubItems[col].Text, out int yInt);
+            double.TryParse(((ListViewItem)x).SubItems[col].Text, out double xDouble);
+            double.TryParse(((ListViewItem)y).SubItems[col].Text, out double yDouble);
 
-            if (xInt != 0 && yInt != 0) { return (xInt - yInt) * order; }
+            if (xDouble != 0 && yDouble != 0) {
+                double difference = xDouble - yDouble;
+                if(difference < 0)
+                {
+                    return (int)(Math.Floor(xDouble - yDouble) * order);
+                }
+                return (int)(Math.Ceiling(xDouble - yDouble) * order);
+            }
+
+            //int.TryParse(((ListViewItem)x).SubItems[col].Text, out int xInt);
+            //int.TryParse(((ListViewItem)y).SubItems[col].Text, out int yInt);
+
+            //if (xInt != 0 && yInt != 0) { return (xInt - yInt) * order; }
 
             DateTime.TryParse(((ListViewItem)x).SubItems[col].Text, out DateTime xDateTime);
             DateTime.TryParse(((ListViewItem)y).SubItems[col].Text, out DateTime yDateTime);

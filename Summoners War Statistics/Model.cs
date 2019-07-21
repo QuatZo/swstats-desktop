@@ -157,17 +157,35 @@ namespace Summoners_War_Statistics
             return monstersMasterId;
         }
 
-        public List<string[]> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<string> columns)
+        public List<string[]> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<string> columns, List<byte> filters)
         {
-            foreach(var column in columns)
-            {
-                Console.WriteLine(column);
-            }
-
             List<string[]> runesToReturn = new List<string[]>();
-
+            try
+            {
+                var x = runes.Count;
+            }
+            catch(NullReferenceException){ return runesToReturn; }
             foreach (var rune in runes)
             {
+                double runeEfficiency = Mapping.Instance.GetRuneEfficiency(rune).Current;
+
+                if (filters[0] != 0 && rune.SetId != filters[0]) { continue; }
+                if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { continue; }
+                if (filters[2] != 0 && rune.Rank != filters[2]) { continue; }
+                if (filters[3] != 0 && rune.SlotNo != filters[3]) { continue; }
+
+                if (filters[5] == 0 && rune.UpgradeCurr != filters[4]) { continue; }
+                if (filters[5] == 1 && rune.UpgradeCurr > filters[4]) { continue; }
+                if (filters[5] == 2 && rune.UpgradeCurr < filters[4]) { continue; }
+                if (filters[5] == 3 && rune.UpgradeCurr >= filters[4]) { continue; }
+                if (filters[5] == 4 && rune.UpgradeCurr <= filters[4]) { continue; }
+
+                if (filters[7] == 0 && runeEfficiency != filters[6]) { continue; }
+                if (filters[7] == 1 && runeEfficiency > filters[6]) { continue; }
+                if (filters[7] == 2 && runeEfficiency < filters[6]) { continue; }
+                if (filters[7] == 3 && runeEfficiency >= filters[6]) { continue; }
+                if (filters[7] == 4 && runeEfficiency <= filters[6]) { continue; }
+
                 Dictionary<int, string> effect = new Dictionary<int, string>();
 
                 for(int i = 0; i <= 12; i++)
@@ -178,19 +196,20 @@ namespace Summoners_War_Statistics
 
                 foreach(var eff in rune.SecEff)
                 {
-                    effect[(int)eff[0]] = eff[1].ToString();
+                    effect[(int)eff[0]] = (eff[1] + eff[3]).ToString();
                 }
 
                 string origin = "Inventory";
                 if(rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
 
+                Console.WriteLine(rune.RuneId);
                 runesToReturn.Add(
                     new string[]
                     {
-                        Mapping.Instance.GetRuneSet((int)rune.SetId), // set
-                        rune.SlotNo.ToString(), // slot
-                        rune.UpgradeCurr.ToString(), // level
-                        origin, // origin
+                        Mapping.Instance.GetRuneSet((int)rune.SetId),
+                        rune.SlotNo.ToString(),
+                        rune.UpgradeCurr.ToString(),
+                        origin,
                         Mapping.Instance.GetRuneEffect(rune), // main
                         effect[1], // atk flat
                         effect[2], // atk %
@@ -203,21 +222,10 @@ namespace Summoners_War_Statistics
                         effect[10], // cdmg
                         effect[11], // res
                         effect[12], // acc
-                        Mapping.Instance.GetRuneEfficiency(rune).Current.ToString() // eff.%
+                        runeEfficiency.ToString() // eff.%
                     }
                 );
-
-                //Console.WriteLine($"---------------------------------------------------------");
-                //Console.WriteLine($"Rune set: {Mapping.Instance.GetRuneSet((int)rune.SetId)}");
-                //Console.WriteLine($"Rune upgrade: +{rune.UpgradeCurr}");
-                //Console.WriteLine($"Rune Effect Type: {Mapping.Instance.GetRuneEffectType((int)rune.PriEff[0])} ({(int)rune.PriEff[0]})");
-                //Console.WriteLine($"Rune Quality: {Mapping.Instance.GetRuneQuality((int)rune.Rank)} ({(int)rune.Rank})");
-                //Console.WriteLine($"Rune Slot: {rune.SlotNo}");
-                //Console.WriteLine($"Rune Efficiency: {Mapping.Instance.GetRuneEfficiency(rune)}");
             }
-
-            
-
             return runesToReturn;
         }
     }

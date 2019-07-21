@@ -35,9 +35,8 @@
             this.comboBoxRuneMainstat = new System.Windows.Forms.ComboBox();
             this.comboBoxRuneQuality = new System.Windows.Forms.ComboBox();
             this.labelRuneQuality = new System.Windows.Forms.Label();
-            this.checkBoxIsAncient = new System.Windows.Forms.CheckBox();
             this.comboBoxRuneUpgrade = new System.Windows.Forms.ComboBox();
-            this.comboBoxSlot = new System.Windows.Forms.ComboBox();
+            this.comboBoxRuneSlot = new System.Windows.Forms.ComboBox();
             this.comboBoxRuneEfficiency = new System.Windows.Forms.ComboBox();
             this.comboBoxRuneUpgradeIf = new System.Windows.Forms.ComboBox();
             this.labelRuneSlot = new System.Windows.Forms.Label();
@@ -99,34 +98,12 @@
             this.comboBoxRuneSet.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRuneSet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.comboBoxRuneSet.FormattingEnabled = true;
-            this.comboBoxRuneSet.Items.AddRange(new object[] {
-            "All",
-            "Energy",
-            "Guard",
-            "Swift",
-            "Blade",
-            "Rage",
-            "Focus",
-            "Endure",
-            "Fatal",
-            "Despair",
-            "Vampire",
-            "Violent",
-            "Nemesis",
-            "Will",
-            "Shield",
-            "Revenge",
-            "Destroy",
-            "Fight",
-            "Determination",
-            "Enhance",
-            "Accuracy",
-            "Tolerance"});
             this.comboBoxRuneSet.Location = new System.Drawing.Point(10, 93);
             this.comboBoxRuneSet.MaxDropDownItems = 25;
             this.comboBoxRuneSet.Name = "comboBoxRuneSet";
             this.comboBoxRuneSet.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRuneSet.TabIndex = 2;
+            this.comboBoxRuneSet.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelRuneSet
             // 
@@ -158,24 +135,12 @@
             this.comboBoxRuneMainstat.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRuneMainstat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.comboBoxRuneMainstat.FormattingEnabled = true;
-            this.comboBoxRuneMainstat.Items.AddRange(new object[] {
-            "All",
-            "HP Flat",
-            "HP%",
-            "ATK Flat",
-            "ATK%",
-            "DEF Flat",
-            "DEF%",
-            "SPD",
-            "CRate",
-            "CDmg",
-            "Res",
-            "Acc"});
             this.comboBoxRuneMainstat.Location = new System.Drawing.Point(116, 93);
             this.comboBoxRuneMainstat.MaxDropDownItems = 25;
             this.comboBoxRuneMainstat.Name = "comboBoxRuneMainstat";
             this.comboBoxRuneMainstat.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRuneMainstat.TabIndex = 5;
+            this.comboBoxRuneMainstat.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneQuality
             // 
@@ -185,18 +150,12 @@
             this.comboBoxRuneQuality.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRuneQuality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.comboBoxRuneQuality.FormattingEnabled = true;
-            this.comboBoxRuneQuality.Items.AddRange(new object[] {
-            "All",
-            "Common",
-            "Magic",
-            "Rare",
-            "Hero",
-            "Legend"});
             this.comboBoxRuneQuality.Location = new System.Drawing.Point(222, 93);
             this.comboBoxRuneQuality.MaxDropDownItems = 25;
             this.comboBoxRuneQuality.Name = "comboBoxRuneQuality";
             this.comboBoxRuneQuality.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRuneQuality.TabIndex = 6;
+            this.comboBoxRuneQuality.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelRuneQuality
             // 
@@ -208,18 +167,6 @@
             this.labelRuneQuality.Size = new System.Drawing.Size(51, 22);
             this.labelRuneQuality.TabIndex = 7;
             this.labelRuneQuality.Text = "Quality";
-            // 
-            // checkBoxIsAncient
-            // 
-            this.checkBoxIsAncient.AutoSize = true;
-            this.checkBoxIsAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxIsAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.checkBoxIsAncient.Location = new System.Drawing.Point(270, 72);
-            this.checkBoxIsAncient.Name = "checkBoxIsAncient";
-            this.checkBoxIsAncient.Size = new System.Drawing.Size(58, 20);
-            this.checkBoxIsAncient.TabIndex = 8;
-            this.checkBoxIsAncient.Text = "Ancient";
-            this.checkBoxIsAncient.UseVisualStyleBackColor = true;
             // 
             // comboBoxRuneUpgrade
             // 
@@ -241,16 +188,17 @@
             this.comboBoxRuneUpgrade.Name = "comboBoxRuneUpgrade";
             this.comboBoxRuneUpgrade.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRuneUpgrade.TabIndex = 9;
+            this.comboBoxRuneUpgrade.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
-            // comboBoxSlot
+            // comboBoxRuneSlot
             // 
-            this.comboBoxSlot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.comboBoxSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSlot.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.comboBoxSlot.FormattingEnabled = true;
-            this.comboBoxSlot.Items.AddRange(new object[] {
+            this.comboBoxRuneSlot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneSlot.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneSlot.FormattingEnabled = true;
+            this.comboBoxRuneSlot.Items.AddRange(new object[] {
             "All",
             "1",
             "2",
@@ -258,11 +206,12 @@
             "4",
             "5",
             "6"});
-            this.comboBoxSlot.Location = new System.Drawing.Point(328, 93);
-            this.comboBoxSlot.MaxDropDownItems = 25;
-            this.comboBoxSlot.Name = "comboBoxSlot";
-            this.comboBoxSlot.Size = new System.Drawing.Size(100, 27);
-            this.comboBoxSlot.TabIndex = 10;
+            this.comboBoxRuneSlot.Location = new System.Drawing.Point(328, 93);
+            this.comboBoxRuneSlot.MaxDropDownItems = 25;
+            this.comboBoxRuneSlot.Name = "comboBoxRuneSlot";
+            this.comboBoxRuneSlot.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxRuneSlot.TabIndex = 10;
+            this.comboBoxRuneSlot.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneEfficiency
             // 
@@ -273,7 +222,7 @@
             this.comboBoxRuneEfficiency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.comboBoxRuneEfficiency.FormattingEnabled = true;
             this.comboBoxRuneEfficiency.Items.AddRange(new object[] {
-            "All",
+            "0",
             "10",
             "20",
             "30",
@@ -298,6 +247,7 @@
             this.comboBoxRuneEfficiency.Name = "comboBoxRuneEfficiency";
             this.comboBoxRuneEfficiency.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRuneEfficiency.TabIndex = 11;
+            this.comboBoxRuneEfficiency.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneUpgradeIf
             // 
@@ -318,6 +268,7 @@
             this.comboBoxRuneUpgradeIf.Name = "comboBoxRuneUpgradeIf";
             this.comboBoxRuneUpgradeIf.Size = new System.Drawing.Size(44, 27);
             this.comboBoxRuneUpgradeIf.TabIndex = 13;
+            this.comboBoxRuneUpgradeIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelRuneSlot
             // 
@@ -371,6 +322,7 @@
             this.comboBoxRuneEfficiencyIf.Name = "comboBoxRuneEfficiencyIf";
             this.comboBoxRuneEfficiencyIf.Size = new System.Drawing.Size(44, 27);
             this.comboBoxRuneEfficiencyIf.TabIndex = 17;
+            this.comboBoxRuneEfficiencyIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // listViewRunesList
             // 
@@ -495,7 +447,7 @@
             this.labelTextAmount.AutoSize = true;
             this.labelTextAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextAmount.Location = new System.Drawing.Point(6, 343);
+            this.labelTextAmount.Location = new System.Drawing.Point(16, 343);
             this.labelTextAmount.Name = "labelTextAmount";
             this.labelTextAmount.Size = new System.Drawing.Size(59, 22);
             this.labelTextAmount.TabIndex = 39;
@@ -517,7 +469,7 @@
             this.labelTextHighestEfficiency.AutoSize = true;
             this.labelTextHighestEfficiency.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextHighestEfficiency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextHighestEfficiency.Location = new System.Drawing.Point(218, 380);
+            this.labelTextHighestEfficiency.Location = new System.Drawing.Point(216, 380);
             this.labelTextHighestEfficiency.Name = "labelTextHighestEfficiency";
             this.labelTextHighestEfficiency.Size = new System.Drawing.Size(78, 22);
             this.labelTextHighestEfficiency.TabIndex = 41;
@@ -528,7 +480,7 @@
             this.labelTextInventory.AutoSize = true;
             this.labelTextInventory.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextInventory.Location = new System.Drawing.Point(642, 380);
+            this.labelTextInventory.Location = new System.Drawing.Point(6, 380);
             this.labelTextInventory.Name = "labelTextInventory";
             this.labelTextInventory.Size = new System.Drawing.Size(69, 22);
             this.labelTextInventory.TabIndex = 42;
@@ -550,7 +502,7 @@
             this.labelTextMedianEfficiency.AutoSize = true;
             this.labelTextMedianEfficiency.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextMedianEfficiency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextMedianEfficiency.Location = new System.Drawing.Point(433, 380);
+            this.labelTextMedianEfficiency.Location = new System.Drawing.Point(423, 380);
             this.labelTextMedianEfficiency.Name = "labelTextMedianEfficiency";
             this.labelTextMedianEfficiency.Size = new System.Drawing.Size(74, 22);
             this.labelTextMedianEfficiency.TabIndex = 44;
@@ -572,7 +524,7 @@
             this.labelTextMaxed.AutoSize = true;
             this.labelTextMaxed.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextMaxed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextMaxed.Location = new System.Drawing.Point(6, 380);
+            this.labelTextMaxed.Location = new System.Drawing.Point(660, 380);
             this.labelTextMaxed.Name = "labelTextMaxed";
             this.labelTextMaxed.Size = new System.Drawing.Size(51, 22);
             this.labelTextMaxed.TabIndex = 46;
@@ -583,7 +535,7 @@
             this.labelRunesAmount.AutoSize = true;
             this.labelRunesAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRunesAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelRunesAmount.Location = new System.Drawing.Point(71, 343);
+            this.labelRunesAmount.Location = new System.Drawing.Point(81, 343);
             this.labelRunesAmount.Name = "labelRunesAmount";
             this.labelRunesAmount.Size = new System.Drawing.Size(17, 22);
             this.labelRunesAmount.TabIndex = 47;
@@ -594,7 +546,7 @@
             this.labelRunesMaxed.AutoSize = true;
             this.labelRunesMaxed.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRunesMaxed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelRunesMaxed.Location = new System.Drawing.Point(68, 380);
+            this.labelRunesMaxed.Location = new System.Drawing.Point(717, 380);
             this.labelRunesMaxed.Name = "labelRunesMaxed";
             this.labelRunesMaxed.Size = new System.Drawing.Size(17, 22);
             this.labelRunesMaxed.TabIndex = 48;
@@ -660,7 +612,7 @@
             this.labelRunesInventory.AutoSize = true;
             this.labelRunesInventory.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRunesInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelRunesInventory.Location = new System.Drawing.Point(717, 380);
+            this.labelRunesInventory.Location = new System.Drawing.Point(81, 380);
             this.labelRunesInventory.Name = "labelRunesInventory";
             this.labelRunesInventory.Size = new System.Drawing.Size(17, 22);
             this.labelRunesInventory.TabIndex = 54;
@@ -694,9 +646,8 @@
             this.Controls.Add(this.labelRuneSlot);
             this.Controls.Add(this.comboBoxRuneUpgradeIf);
             this.Controls.Add(this.comboBoxRuneEfficiency);
-            this.Controls.Add(this.comboBoxSlot);
+            this.Controls.Add(this.comboBoxRuneSlot);
             this.Controls.Add(this.comboBoxRuneUpgrade);
-            this.Controls.Add(this.checkBoxIsAncient);
             this.Controls.Add(this.labelRuneQuality);
             this.Controls.Add(this.comboBoxRuneQuality);
             this.Controls.Add(this.comboBoxRuneMainstat);
@@ -720,9 +671,8 @@
         private System.Windows.Forms.ComboBox comboBoxRuneMainstat;
         private System.Windows.Forms.ComboBox comboBoxRuneQuality;
         private System.Windows.Forms.Label labelRuneQuality;
-        private System.Windows.Forms.CheckBox checkBoxIsAncient;
         private System.Windows.Forms.ComboBox comboBoxRuneUpgrade;
-        private System.Windows.Forms.ComboBox comboBoxSlot;
+        private System.Windows.Forms.ComboBox comboBoxRuneSlot;
         private System.Windows.Forms.ComboBox comboBoxRuneEfficiency;
         private System.Windows.Forms.ComboBox comboBoxRuneUpgradeIf;
         private System.Windows.Forms.Label labelRuneSlot;
