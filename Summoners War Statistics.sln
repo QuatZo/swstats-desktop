@@ -1,14 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summoners War Statistics", "Summoners War Statistics\Summoners War Statistics.csproj", "{A03B7C1D-298C-4403-AD3B-CA878D841F60}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Summoners War Statistics Setup", "Summoners War Statistics Setup\Summoners War Statistics Setup.vdproj", "{C7C01BC1-EB96-4B3E-A5EE-61DC8F14D20A}"
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -18,11 +17,16 @@ Global
 		{A03B7C1D-298C-4403-AD3B-CA878D841F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03B7C1D-298C-4403-AD3B-CA878D841F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03B7C1D-298C-4403-AD3B-CA878D841F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C01BC1-EB96-4B3E-A5EE-61DC8F14D20A}.Debug|Any CPU.ActiveCfg = Debug
+		{C7C01BC1-EB96-4B3E-A5EE-61DC8F14D20A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F1A7AF5C-A641-438E-99C2-D2E4227489C7}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
