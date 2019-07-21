@@ -8,11 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 
 namespace Summoners_War_Statistics
 {
     public partial class FormMain : Form, IView
     {
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+
+        FontFamily ff;
+        Font font;
+
         #region Properties
         public ISummaryView SummaryView => summary1;
         public IMenuView MenuView =>  menu1;
@@ -75,6 +83,28 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        private void LoadFont()
+        {
+            byte[] fontArray = Properties.Resources.coolvetica_condensed_rg;
+            int dataLength = Properties.Resources.coolvetica_condensed_rg.Length;
+
+            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+
+            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+
+            uint cFonts = 0;
+            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            pfc.AddMemoryFont(ptrData, dataLength);
+
+            Marshal.FreeCoTaskMem(ptrData);
+
+            ff = pfc.Families[0];
+            font = new Font(ff, 14f, FontStyle.Regular);
+        }
+
         public void ShowMessage(string message, MessageBoxIcon messageBoxIcon)
         {
             string caption = "";
@@ -115,6 +145,86 @@ namespace Summoners_War_Statistics
         private void pictureBoxSelectJson_Click(object sender, EventArgs e)
         {
             SelectFileButtonClicked?.Invoke();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            LoadFont();
+            foreach(var control in SummaryView.ControlsSummary)
+            {
+                if (control.Name.Contains("SummonerName"))
+                {
+                    control.Font = new Font(ff, 32, FontStyle.Regular);
+                    continue;
+                }
+                
+                if (control.Name.Contains("Country") || control.Name.Contains("Language") || control.Name.Contains("Level"))
+                {
+                    control.Font = new Font(ff, 20, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(ff, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in MonstersView.ControlsMonster)
+            {
+                if (control.Name.Contains("Stats") || control.Name == "labelMonsters")
+                {
+                    control.Font = new Font(ff, 24, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(ff, 10, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(ff, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in RunesView.ControlsRunes)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(ff, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name == "labelRunes")
+                {
+                    control.Font = new Font(ff, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(ff, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in DimHoleView.ControlsDimHole)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(ff, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("DimHole"))
+                {
+                    control.Font = new Font(ff, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(ff, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in OtherView.ControlsOther)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(ff, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("Other"))
+                {
+                    control.Font = new Font(ff, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(ff, 14, FontStyle.Regular);
+            }
         }
     }
 }

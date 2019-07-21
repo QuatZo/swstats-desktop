@@ -10,6 +10,7 @@ namespace Summoners_War_Statistics
     public interface IRunesView
     {
         #region Properties
+        List<Control> ControlsRunes { get; }
         byte ChosenRuneSet { get; }
         byte ChosenRuneMainstat { get; }
         byte ChosenRuneQuality { get; }

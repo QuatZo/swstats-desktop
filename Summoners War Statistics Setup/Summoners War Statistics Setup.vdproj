@@ -370,12 +370,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_024CA1BC7CE4681E3B38DC03766E28B1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0B8C1DD5CFBE4843802803D9B628764C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -383,6 +377,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4DA68058A3CE717534F28E58CBF17832"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_024CA1BC7CE4681E3B38DC03766E28B1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -403,6 +403,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -419,6 +435,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1679,6 +1703,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_55D90C37E8704FE4BA8A226900A35B0E"
+                    {
+                    "Name" = "8:Summoners War Statistics"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D2F68A646F5D47129B7CC2C98144F33E"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -1698,7 +1733,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Summoners War Statistics"
         "ProductCode" = "8:{7A2CB319-4755-408E-B547-56D5C68C87D7}"
-        "PackageCode" = "8:{B35ABC1F-5E7D-42F7-A0F6-48F40FB2702F}"
+        "PackageCode" = "8:{AEC85C19-BEAE-4E89-B8E3-CF61A1751BD6}"
         "UpgradeCode" = "8:{125D78CB-75A2-47EF-A180-2AFABACBA203}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1818,6 +1853,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_46125837C3804A47BD0EC07E2FD37951"
+            {
+            "Name" = "8:Summoners War Statistics"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_0B8C1DD5CFBE4843802803D9B628764C"
+            "Folder" = "8:_55D90C37E8704FE4BA8A226900A35B0E"
+            "WorkingFolder" = "8:_B96D04B1A41B4CFC930C7B07665C07AA"
+            "Icon" = "8:_181423B65A2D49389FECF10829FD045C"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C652F903BB3A44B6A11C5ECEC290CE1D"
             {
             "Name" = "8:Summoners War Statistics"

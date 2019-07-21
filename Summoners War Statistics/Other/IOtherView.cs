@@ -10,6 +10,7 @@ namespace Summoners_War_Statistics
     public interface IOtherView
     {
         #region Properties
+        List<Control> ControlsOther { get; }
         ListView SummonerFriendsList { get; set; }
 
         ListView GuildMembersList { get; set; }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelOther = new System.Windows.Forms.Label();
+            this.labelRunes = new System.Windows.Forms.Label();
             this.comboBoxRuneSet = new System.Windows.Forms.ComboBox();
             this.labelRuneSet = new System.Windows.Forms.Label();
             this.labelRuneMainstat = new System.Windows.Forms.Label();
@@ -79,16 +79,16 @@
             this.labelRunesInventory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelOther
+            // labelRunes
             // 
-            this.labelOther.AutoSize = true;
-            this.labelOther.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOther.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelOther.Location = new System.Drawing.Point(3, 9);
-            this.labelOther.Name = "labelOther";
-            this.labelOther.Size = new System.Drawing.Size(82, 42);
-            this.labelOther.TabIndex = 1;
-            this.labelOther.Text = "Runes";
+            this.labelRunes.AutoSize = true;
+            this.labelRunes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRunes.Location = new System.Drawing.Point(3, 9);
+            this.labelRunes.Name = "labelRunes";
+            this.labelRunes.Size = new System.Drawing.Size(82, 42);
+            this.labelRunes.TabIndex = 1;
+            this.labelRunes.Text = "Runes";
             // 
             // comboBoxRuneSet
             // 
@@ -654,7 +654,7 @@
             this.Controls.Add(this.labelRuneMainstat);
             this.Controls.Add(this.labelRuneSet);
             this.Controls.Add(this.comboBoxRuneSet);
-            this.Controls.Add(this.labelOther);
+            this.Controls.Add(this.labelRunes);
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
             this.ResumeLayout(false);
@@ -664,7 +664,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelOther;
+        private System.Windows.Forms.Label labelRunes;
         private System.Windows.Forms.ComboBox comboBoxRuneSet;
         private System.Windows.Forms.Label labelRuneSet;
         private System.Windows.Forms.Label labelRuneMainstat;

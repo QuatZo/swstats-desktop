@@ -1240,4 +1240,16 @@
   <data name="icon_guild_ranking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>images\icon_guild_ranking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coolvetica_compressed_rg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>fonts\coolvetica compressed rg.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="coolvetica_condensed_rg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>fonts\coolvetica condensed rg.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="coolvetica_crammed_rg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>fonts\coolvetica crammed rg.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="coolvetica_rg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>fonts\coolvetica rg.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

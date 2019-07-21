@@ -188,6 +188,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).EndInit();
             this.ResumeLayout(false);
 

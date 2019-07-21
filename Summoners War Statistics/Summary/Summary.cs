@@ -1,6 +1,7 @@
 ﻿using Summoners_War_Statistics.Properties;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
@@ -10,6 +11,43 @@ namespace Summoners_War_Statistics
     public partial class Summary : UserControl, ISummaryView
     {
         #region Properties
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Control> ControlsSummary => new List<Control>()
+                {
+                    labelAncientCoins,
+                    labelArenaWings,
+                    labelArenaWingsMax,
+                    labelArenaWingsSlash,
+                    labelCountry,
+                    labelCrystals,
+                    labelDimensionalCrystals,
+                    labelDimensionalCrystalsMax,
+                    labelDimensionalCrystalsSlash,
+                    labelDimensionalHoleEnergy,
+                    labelDimensionalHoleEnergyMax,
+                    labelDimensionalHoleEnergySlash,
+                    labelEnergy,
+                    labelEnergyMax,
+                    labelEnergySlash,
+                    labelGloryPoints,
+                    labelGuildPoints,
+                    labelJsonCreatedText,
+                    labelJsonModified,
+                    labelLastCountry,
+                    labelLastLanguage,
+                    labelLevel,
+                    labelMana,
+                    labelMonsters,
+                    labelMonstersLocked,
+                    labelRTAMedals,
+                    labelRunes,
+                    labelRunesLocked,
+                    labelShapeshiftingStones,
+                    labelSocialPoints,
+                    labelSummonerName
+                };
         public Image SummonerCountry
         {
             get => pictureBoxCountry.Image;

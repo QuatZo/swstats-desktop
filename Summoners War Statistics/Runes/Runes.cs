@@ -13,6 +13,45 @@ namespace Summoners_War_Statistics
     public partial class Runes : UserControl, IRunesView
     {
         #region Properties
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Control> ControlsRunes => new List<Control>()
+        {
+            labelRunes,
+            labelRuneEfficiency,
+            labelRuneMainstat,
+            labelRuneQuality,
+            labelRunesAmount,
+            labelRunesEfficiencyHigh,
+            labelRunesEfficiencyLow,
+            labelRunesEfficiencyMean,
+            labelRunesEfficiencyMedian,
+            labelRuneSet,
+            labelRunesInventory,
+            labelRuneSlot,
+            labelRunesMaxed,
+            labelRunesStandardDeviation,
+            labelTextAmount,
+            labelTextEfficiencyLow,
+            labelTextHighestEfficiency,
+            labelTextInventory,
+            labelTextMaxed,
+            labelTextMeanEfficiency,
+            labelTextMedianEfficiency,
+            labelTextStandardDeviation,
+            labelUpgrade,
+            listViewRunesList,
+            comboBoxRuneEfficiency,
+            comboBoxRuneEfficiencyIf,
+            comboBoxRuneMainstat,
+            comboBoxRuneQuality,
+            comboBoxRuneSet,
+            comboBoxRuneSlot,
+            comboBoxRuneUpgrade,
+            comboBoxRuneUpgradeIf
+        };
+
         public byte ChosenRuneSet
         {
             get

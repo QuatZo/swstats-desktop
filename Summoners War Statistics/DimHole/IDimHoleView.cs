@@ -10,6 +10,7 @@ namespace Summoners_War_Statistics
     public interface IDimHoleView
     {
         #region Properties
+        List<Control> ControlsDimHole { get; }
         ushort AxpPerLevel { get; set; }
         byte SummonerDimensionalHoleEnergy { get; set; }
         byte SummonerDimensionalHoleEnergyMax { get; set; }

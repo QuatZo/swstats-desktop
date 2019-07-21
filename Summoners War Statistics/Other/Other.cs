@@ -13,6 +13,22 @@ namespace Summoners_War_Statistics
     public partial class Other : UserControl, IOtherView
     {
         #region Properties
+        public List<Control> ControlsOther => new List<Control>()
+        {
+            labelDefenseUnits,
+            labelDefenseUnitsMax,
+            labelDefenseUnitsSlash,
+            labelGuildName,
+            labelLeaderName,
+            labelMembers,
+            labelMembersMax,
+            labelMembersSlash,
+            labelOtherActiveFriends,
+            labelOtherGuild,
+            labelRanking,
+            listViewFriendsList,
+            listViewGuildMembersList
+        };
         public ListView SummonerFriendsList
         {
             get => listViewFriendsList;

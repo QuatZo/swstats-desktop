@@ -195,6 +195,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <EmbeddedResource Include="Properties\fonts\coolvetica compressed rg.ttf" />
+    <EmbeddedResource Include="Properties\fonts\coolvetica condensed rg.ttf" />
+    <EmbeddedResource Include="Properties\fonts\coolvetica crammed rg.ttf" />
+    <EmbeddedResource Include="Properties\fonts\coolvetica rg.ttf" />
     <None Include="Properties\images\banner.xcf" />
     <None Include="Properties\images\menu.xcf" />
     <None Include="Properties\Settings.settings">

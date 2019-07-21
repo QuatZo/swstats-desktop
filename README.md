@@ -29,7 +29,7 @@ You just need to download (clone) this repo and open **Summoners War Statistics.
 
 ### Installing
 
-1. Download **Summoners War Statistics Setup.exe** file from **Release** tab
+1. Download **Summoners War Statistics Setup.exe** file from [Release](https://github.com/QuatZo/Summoners-War-Statistics/releases) tab
 2. Run installer
 3. Follow steps
 4. Run **Summoners War Statistics.exe** from your Desktop

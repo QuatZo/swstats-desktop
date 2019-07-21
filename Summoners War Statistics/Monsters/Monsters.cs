@@ -13,6 +13,35 @@ namespace Summoners_War_Statistics
     public partial class Monsters : UserControl, IMonstersView
     {
         #region Properties
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Control> ControlsMonster => new List<Control>()
+                {
+                    label1,
+                    label2,
+                    labelDark,
+                    labelDaysLDLightning,
+                    labelDaysNat5,
+                    labelFire,
+                    labelLDNat4Plus,
+                    labelLight,
+                    labelMonsters,
+                    labelMonsterStats,
+                    labelNat5,
+                    labelStarsFiveAmount,
+                    labelStarsFourAmount,
+                    labelStarsOneAmount,
+                    labelStarsSixAmount,
+                    labelStarsThreeAmount,
+                    labelStarsTwoAmount,
+                    labelWater,
+                    labelWind,
+                    listViewMonstersToLock,
+                    radioButton5,
+                    radioButton6
+                };
+
         public int MonsterStarsChecked
         {
             get

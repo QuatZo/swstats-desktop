@@ -11,6 +11,8 @@ namespace Summoners_War_Statistics
     {
 
         #region Properties
+        List<Control> ControlsMonster { get; }
+
         int MonsterStarsChecked { get; }
 
         ushort MonsterAttributeWater { get; set; }

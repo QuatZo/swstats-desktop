@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelOther = new System.Windows.Forms.Label();
+            this.labelDimHoleEnergy = new System.Windows.Forms.Label();
             this.pictureBoxDimensionalHoleEnergy = new System.Windows.Forms.PictureBox();
             this.labelDimensionalHoleEnergyMax = new System.Windows.Forms.Label();
             this.labelDimensionalHoleEnergySlash = new System.Windows.Forms.Label();
             this.labelDimensionalHoleEnergy = new System.Windows.Forms.Label();
             this.labelDimensionalHoleEnergyMaxInfo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDimHoleMonsters = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,16 +48,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelOther
+            // labelDimHoleEnergy
             // 
-            this.labelOther.AutoSize = true;
-            this.labelOther.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOther.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelOther.Location = new System.Drawing.Point(3, 10);
-            this.labelOther.Name = "labelOther";
-            this.labelOther.Size = new System.Drawing.Size(266, 42);
-            this.labelOther.TabIndex = 1;
-            this.labelOther.Text = "Dimensional Hole Energy";
+            this.labelDimHoleEnergy.AutoSize = true;
+            this.labelDimHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleEnergy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDimHoleEnergy.Location = new System.Drawing.Point(3, 10);
+            this.labelDimHoleEnergy.Name = "labelDimHoleEnergy";
+            this.labelDimHoleEnergy.Size = new System.Drawing.Size(266, 42);
+            this.labelDimHoleEnergy.TabIndex = 1;
+            this.labelDimHoleEnergy.Text = "Dimensional Hole Energy";
             // 
             // pictureBoxDimensionalHoleEnergy
             // 
@@ -115,16 +115,16 @@
             this.labelDimensionalHoleEnergyMaxInfo.TabIndex = 35;
             this.labelDimensionalHoleEnergyMaxInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // labelDimHoleMonsters
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(3, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 42);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Dimensional Hole Monsters";
+            this.labelDimHoleMonsters.AutoSize = true;
+            this.labelDimHoleMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleMonsters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDimHoleMonsters.Location = new System.Drawing.Point(3, 91);
+            this.labelDimHoleMonsters.Name = "labelDimHoleMonsters";
+            this.labelDimHoleMonsters.Size = new System.Drawing.Size(296, 42);
+            this.labelDimHoleMonsters.TabIndex = 36;
+            this.labelDimHoleMonsters.Text = "Dimensional Hole Monsters";
             // 
             // listView1
             // 
@@ -245,13 +245,13 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDimHoleMonsters);
             this.Controls.Add(this.labelDimensionalHoleEnergyMaxInfo);
             this.Controls.Add(this.pictureBoxDimensionalHoleEnergy);
             this.Controls.Add(this.labelDimensionalHoleEnergyMax);
             this.Controls.Add(this.labelDimensionalHoleEnergySlash);
             this.Controls.Add(this.labelDimensionalHoleEnergy);
-            this.Controls.Add(this.labelOther);
+            this.Controls.Add(this.labelDimHoleEnergy);
             this.Name = "DimHole";
             this.Size = new System.Drawing.Size(780, 411);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).EndInit();
@@ -262,13 +262,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelOther;
+        private System.Windows.Forms.Label labelDimHoleEnergy;
         private System.Windows.Forms.PictureBox pictureBoxDimensionalHoleEnergy;
         private System.Windows.Forms.Label labelDimensionalHoleEnergyMax;
         private System.Windows.Forms.Label labelDimensionalHoleEnergySlash;
         private System.Windows.Forms.Label labelDimensionalHoleEnergy;
         private System.Windows.Forms.Label labelDimensionalHoleEnergyMaxInfo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDimHoleMonsters;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
@@ -7,6 +8,24 @@ namespace Summoners_War_Statistics
     public partial class DimHole : UserControl, IDimHoleView
     {
         #region Properties
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Control> ControlsDimHole => new List<Control>()
+        {
+            labelDimHoleMonsters,
+            labelDimensionalHoleEnergy,
+            labelDimensionalHoleEnergyMax,
+            labelDimensionalHoleEnergyMaxInfo,
+            labelDimensionalHoleEnergySlash,
+            labelDimHoleEnergy,
+            listView1,
+            radioButton1,
+            radioButton2,
+            radioButton3,
+            radioButton4,
+            radioButton5
+        };
         public ushort AxpPerLevel { get; set; }
         public byte SummonerDimensionalHoleEnergy
         {

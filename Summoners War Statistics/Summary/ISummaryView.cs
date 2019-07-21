@@ -4,12 +4,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
 {
     public interface ISummaryView
     {
         #region Properties
+        List<Control> ControlsSummary { get; }
+
         Image SummonerCountry { get; set; }
         Image SummonerLastCountry { get; set; }
         Image SummonerLastLanguage { get; set; }
