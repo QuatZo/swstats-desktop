@@ -69,6 +69,10 @@
             this.pictureBoxStars3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxStars4 = new System.Windows.Forms.PictureBox();
             this.pictureBoxStars5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).BeginInit();
@@ -84,6 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMonsters
@@ -498,21 +504,67 @@
             this.pictureBoxStars5.TabIndex = 64;
             this.pictureBoxStars5.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBox1.Location = new System.Drawing.Point(234, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(222, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 22);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "5";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBox2.Location = new System.Drawing.Point(234, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 67;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(215, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 22);
+            this.label2.TabIndex = 68;
+            this.label2.Text = "4+";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Monsters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Controls.Add(this.pictureBoxLDNat4Plus);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBoxElementalNat5);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxStars5);
             this.Controls.Add(this.pictureBoxStars4);
             this.Controls.Add(this.pictureBoxStars3);
             this.Controls.Add(this.pictureBoxStars2);
             this.Controls.Add(this.pictureBoxStars1);
             this.Controls.Add(this.pictureBoxStars6);
-            this.Controls.Add(this.pictureBoxElementalNat5);
             this.Controls.Add(this.pictureBoxElementalNat5Clock);
             this.Controls.Add(this.pictureBoxLDNat4PlusClock);
-            this.Controls.Add(this.pictureBoxLDNat4Plus);
             this.Controls.Add(this.labelNat5);
             this.Controls.Add(this.labelLDNat4Plus);
             this.Controls.Add(this.labelDaysLDLightning);
@@ -555,6 +607,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +656,9 @@
         private System.Windows.Forms.PictureBox pictureBoxStars3;
         private System.Windows.Forms.PictureBox pictureBoxStars4;
         private System.Windows.Forms.PictureBox pictureBoxStars5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

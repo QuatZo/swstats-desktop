@@ -415,7 +415,7 @@
             // columnHeader12
             // 
             this.columnHeader12.Text = "SPD";
-            this.columnHeader12.Width = 29;
+            this.columnHeader12.Width = 31;
             // 
             // columnHeader13
             // 

@@ -102,6 +102,7 @@
             this.dimHole1.AxpPerLevel = ((ushort)(0));
             this.dimHole1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dimHole1.DimensionalEnergyGainStart = new System.DateTime(((long)(0)));
+            this.dimHole1.DimHoleMonsters = null;
             this.dimHole1.Location = new System.Drawing.Point(0, 150);
             this.dimHole1.Name = "dimHole1";
             this.dimHole1.Size = new System.Drawing.Size(784, 411);
@@ -113,6 +114,13 @@
             // other1
             // 
             this.other1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.other1.GuildBestRanking = "Best ranking";
+            this.other1.GuildLeaderName = "Leader\'s name";
+            this.other1.GuildMembers = ((byte)(0));
+            this.other1.GuildMembersDefenses = ((byte)(0));
+            this.other1.GuildMembersDefensesMax = ((byte)(0));
+            this.other1.GuildMembersMax = ((byte)(0));
+            this.other1.GuildName = "Guild\'s name";
             this.other1.Location = new System.Drawing.Point(0, 150);
             this.other1.Name = "other1";
             this.other1.Size = new System.Drawing.Size(784, 411);
@@ -122,14 +130,40 @@
             // 
             this.runes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.runes1.Location = new System.Drawing.Point(0, 150);
+            this.runes1.MonstersMasterId = null;
             this.runes1.Name = "runes1";
+            this.runes1.RunesAmount = ((ushort)(0));
+            this.runes1.RunesEfficiencyMax = 0D;
+            this.runes1.RunesEfficiencyMean = 0D;
+            this.runes1.RunesEfficiencyMedian = 0D;
+            this.runes1.RunesEfficiencyMin = 0D;
+            this.runes1.RunesEfficiencyStandardDeviation = 0D;
+            this.runes1.RunesInventory = ((ushort)(0));
+            this.runes1.RunesList = null;
+            this.runes1.RunesMaxed = ((ushort)(0));
             this.runes1.Size = new System.Drawing.Size(784, 411);
             this.runes1.TabIndex = 15;
             // 
             // monsters1
             // 
             this.monsters1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.monsters1.DaysSinceLastLDLightning = ((ushort)(0));
+            this.monsters1.DaysSinceNat5 = ((ushort)(0));
             this.monsters1.Location = new System.Drawing.Point(0, 150);
+            this.monsters1.MonsterAttributeDark = ((ushort)(0));
+            this.monsters1.MonsterAttributeFire = ((ushort)(0));
+            this.monsters1.MonsterAttributeLight = ((ushort)(0));
+            this.monsters1.MonsterAttributeWater = ((ushort)(0));
+            this.monsters1.MonsterAttributeWind = ((ushort)(0));
+            this.monsters1.MonstersLDNat4PlusAmount = ((ushort)(0));
+            this.monsters1.MonstersLocked = ((System.Collections.Generic.List<long>)(resources.GetObject("monsters1.MonstersLocked")));
+            this.monsters1.MonstersNat5Amount = ((ushort)(0));
+            this.monsters1.MonsterStarsFive = ((ushort)(0));
+            this.monsters1.MonsterStarsFour = ((ushort)(0));
+            this.monsters1.MonsterStarsOne = ((ushort)(0));
+            this.monsters1.MonsterStarsSix = ((ushort)(0));
+            this.monsters1.MonsterStarsThree = ((ushort)(0));
+            this.monsters1.MonsterStarsTwo = ((ushort)(0));
             this.monsters1.Name = "monsters1";
             this.monsters1.Size = new System.Drawing.Size(784, 411);
             this.monsters1.TabIndex = 14;

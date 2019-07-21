@@ -91,18 +91,38 @@ namespace Summoners_War_Statistics
         }
         public ushort DaysSinceNat5
         {
-            get => ushort.Parse(labelDaysNat5.Text.Remove(labelDaysNat5.Text.Length - 6));
+            get
+            {
+                try
+                {
+                    return ushort.Parse(labelDaysNat5.Text.Remove(labelDaysNat5.Text.Length - 6));
+                }
+                catch (FormatException) { return 0; }
+            }
             set => labelDaysNat5.Text = value.ToString() + " days";
         }
         public ushort DaysSinceLastLDLightning
         {
-            get => ushort.Parse(labelDaysLDLightning.Text.Remove(labelDaysNat5.Text.Length - 6));
+            get
+            {
+                try
+                {
+                    return ushort.Parse(labelDaysLDLightning.Text.Remove(labelDaysLDLightning.Text.Length - 6));
+                }
+                catch (FormatException) { return 0; }
+            }
             set => labelDaysLDLightning.Text = value.ToString() + " days";
         }
 
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Monster> MonstersList { get; set; } = new List<Monster>();
         public List<long> MonstersLocked { get; set; } = new List<long>();
 
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ListView MonstersListView
         {
             get => listViewMonstersToLock;
@@ -111,6 +131,9 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event Action<List<Monster>, List<long>> InitMonsters;
         public event Action<RadioButton> MonstersStarsChanged;
         #endregion
