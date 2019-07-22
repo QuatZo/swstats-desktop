@@ -202,7 +202,7 @@
             this.Controls.Add(this.monsters1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(600, 480);
+            this.MinimumSize = new System.Drawing.Size(816, 620);
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
             this.Load += new System.EventHandler(this.FormMain_Load);

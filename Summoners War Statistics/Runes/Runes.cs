@@ -34,11 +34,11 @@ namespace Summoners_War_Statistics
             labelRunesStandardDeviation,
             labelTextAmount,
             labelTextEfficiencyLow,
-            labelTextHighestEfficiency,
+            labelTextEfficiencyHigh,
             labelTextInventory,
             labelTextMaxed,
-            labelTextMeanEfficiency,
-            labelTextMedianEfficiency,
+            labelTextEfficiencyMean,
+            labelTextEfficiencyMedian,
             labelTextStandardDeviation,
             labelUpgrade,
             listViewRunesList,
@@ -281,6 +281,40 @@ namespace Summoners_War_Statistics
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {
             InitRunes?.Invoke();
+        }
+
+        private void PanelFooter_Resize(object sender, EventArgs e)
+        {
+            int heightFirstLevel = 10;
+            int heightSecondLevel = heightFirstLevel + 35;
+            // temporarily, there should be an event and properties for locations
+            labelTextAmount.Location = new Point(20, heightFirstLevel);
+            labelRunesAmount.Location = new Point(labelTextAmount.Location.X + labelTextAmount.Size.Width + 5, heightFirstLevel);
+            labelTextInventory.Location = new Point(labelTextAmount.Location.X + labelTextAmount.Size.Width - labelTextInventory.Size.Width, heightSecondLevel);
+            labelRunesInventory.Location = new Point(labelRunesAmount.Location.X, heightSecondLevel);
+
+            //int widthSecondLevel = labelRunesAmount.Location.X + labelRunesAmount.Size.Width + 100;
+            int widthSecondLevel = panelFooter.Width / 4;
+
+            labelTextEfficiencyLow.Location = new Point(widthSecondLevel, heightFirstLevel);
+            labelRunesEfficiencyLow.Location = new Point(widthSecondLevel + labelTextEfficiencyLow.Size.Width +5, heightFirstLevel);
+            labelTextEfficiencyHigh.Location = new Point(widthSecondLevel + labelTextEfficiencyLow.Size.Width - labelTextEfficiencyHigh.Size.Width, heightSecondLevel);
+            labelRunesEfficiencyHigh.Location = new Point(labelRunesEfficiencyLow.Location.X, heightSecondLevel);
+
+            int widthThirdLevel = panelFooter.Width * 2 / 3;
+
+            labelTextEfficiencyMean.Location = new Point(widthThirdLevel, heightFirstLevel);
+            labelRunesEfficiencyMean.Location = new Point(widthThirdLevel + labelTextEfficiencyMean.Size.Width + 5, heightFirstLevel);
+            labelTextEfficiencyMedian.Location = new Point(widthThirdLevel + labelTextEfficiencyMean.Size.Width - labelTextEfficiencyMedian.Size.Width, heightSecondLevel);
+            labelRunesEfficiencyMedian.Location = new Point(labelRunesEfficiencyMean.Location.X, heightSecondLevel);
+
+            int widthFourthLevel = panelFooter.Width - 50;
+
+            labelRunesStandardDeviation.Location = new Point(widthFourthLevel, heightFirstLevel);
+            labelTextStandardDeviation.Location = new Point(widthFourthLevel - 5 - labelTextStandardDeviation.Size.Width, heightFirstLevel);
+            labelRunesMaxed.Location = new Point(widthFourthLevel, heightSecondLevel);
+            labelTextMaxed.Location = new Point(widthFourthLevel - 5 - labelTextMaxed.Size.Width, heightSecondLevel);
+
         }
     }
 }
