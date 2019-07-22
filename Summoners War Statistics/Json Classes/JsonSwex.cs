@@ -106,11 +106,12 @@ namespace Summoners_War_Statistics
         [JsonProperty("unit_lock_list")]
         public List<long> LockedMonstersList { get; set; }
 
-        [JsonProperty("rune_lock_list")]
-        public List<object> LockedRunesList { get; set; }
+        // No info what's inside
+        //[JsonProperty("rune_lock_list")]
+        //public List<object> LockedRunesList { get; set; }
 
-        [JsonProperty("shop_daily_bonus_list")]
-        public List<object> ShopDailyBonusList { get; set; }
+        //[JsonProperty("shop_daily_bonus_list")]
+        //public List<object> ShopDailyBonusList { get; set; }
 
         [JsonProperty("raid_deck")]
         public RaidDeck RaidDeck { get; set; }
@@ -123,7 +124,6 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("object_storage_slots")]
         public Slots ObjectStorageSlots { get; set; }
-
 
         [JsonProperty("lobby_proud_unit_id_list")]
         public List<SummonerDefenseUnit> ProfileMonstersList { get; set; }
@@ -186,13 +186,14 @@ namespace Summoners_War_Statistics
         public List<Raid> RaidInfoList { get; set; }
 
         [JsonProperty("trans_item_list")]
-        public List<object> TransItemList { get; set; }
+        public TransItems TransItemList { get; set; }
 
-        [JsonProperty("rtpvp_reward_info")]
-        public List<object> RtpvpRewardInfo { get; set; }
+        // No info what's inside.
+        //[JsonProperty("rtpvp_reward_info")]
+        //public List<object> RtpvpRewardInfo { get; set; }
 
-        [JsonProperty("rtpvp_contest_reward")]
-        public List<object> RtpvpContestReward { get; set; }
+        //[JsonProperty("rtpvp_contest_reward")]
+        //public List<object> RtpvpContestReward { get; set; }
 
         [JsonProperty("dimension_hole_info")]
         public DimensionHoleInfo DimensionHoleInfo { get; set; }
@@ -256,6 +257,7 @@ namespace Summoners_War_Statistics
                 SkillInfoConverter.Singleton,
                 ItemUnionConverter.Singleton,
                 AwakeningUnionConverter.Singleton,
+                TransItemsConverter.Singleton,
                 new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
             },
         };

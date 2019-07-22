@@ -202,7 +202,6 @@ namespace Summoners_War_Statistics
                 string origin = "Inventory";
                 if(rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
 
-                Console.WriteLine(rune.RuneId);
                 runesToReturn.Add(
                     new string[]
                     {

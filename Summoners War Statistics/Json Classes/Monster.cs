@@ -78,8 +78,9 @@ namespace Summoners_War_Statistics
         [JsonProperty("costume_master_id")]
         public long? CostumeMasterId { get; set; }
 
+        // NEEDS BETTER JSON FILE, PROBABLY WITH AURAS AND WINGS
         [JsonProperty("trans_items")]
-        public List<object> TransItems { get; set; }
+        public TransItems TransItems { get; set; }
 
         [JsonProperty("attribute")]
         public long? Attribute { get; set; }

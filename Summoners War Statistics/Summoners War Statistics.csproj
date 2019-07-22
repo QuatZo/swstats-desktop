@@ -168,6 +168,7 @@
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Json Classes\TransItems.cs" />
     <EmbeddedResource Include="DimHole\DimHole.resx">
       <DependentUpon>DimHole.cs</DependentUpon>
     </EmbeddedResource>

@@ -105,11 +105,11 @@ namespace Summoners_War_Statistics
                     }
                     catch (NullReferenceException)
                     {
-                        view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
+                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
                     }
                     catch (InvalidJSONException)
                     {
-                        view.ShowMessage("You picked the wrong JSON file. Probably exported from SWOP or before Dimensional Hole update.", MessageBoxIcon.Error);
+                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
                     }
                 }
                 else
