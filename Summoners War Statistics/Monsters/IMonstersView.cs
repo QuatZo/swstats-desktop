@@ -47,6 +47,7 @@ namespace Summoners_War_Statistics
         #region Methods
         void Init(List<Monster> monsters, List<long> monstersLocked);
         void ResetMonstersStats();
+        void Front();
         #endregion
     }
 }

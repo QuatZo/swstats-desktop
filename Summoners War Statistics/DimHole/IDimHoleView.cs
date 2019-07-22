@@ -28,6 +28,7 @@ namespace Summoners_War_Statistics
 
         #region Methods
         void Init(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList);
+        void Front();
         #endregion
     }
 }

@@ -91,6 +91,10 @@ namespace Summoners_War_Statistics
         {
             InitOther?.Invoke(friendsList, guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList, guildwarRanking);
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
     }
 }

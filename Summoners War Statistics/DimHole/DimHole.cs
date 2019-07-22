@@ -76,6 +76,10 @@ namespace Summoners_War_Statistics
         {
             InitDimHole?.Invoke(dimensionHoleInfo, unitList);
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)

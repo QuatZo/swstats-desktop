@@ -29,6 +29,7 @@ namespace Summoners_War_Statistics
 
         #region Methods
         void Init(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking);
+        void Front();
         #endregion
 
     }

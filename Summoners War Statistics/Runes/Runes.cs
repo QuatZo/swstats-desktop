@@ -272,6 +272,11 @@ namespace Summoners_War_Statistics
             InitComboBoxes();
             InitRunes?.Invoke();
         }
+
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {

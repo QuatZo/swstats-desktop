@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
-            this.menu1 = new Summoners_War_Statistics.Menu();
             this.summary1 = new Summoners_War_Statistics.Summary();
+            this.menu1 = new Summoners_War_Statistics.Menu();
             this.dimHole1 = new Summoners_War_Statistics.DimHole();
             this.other1 = new Summoners_War_Statistics.Other();
             this.runes1 = new Summoners_War_Statistics.Runes();
@@ -46,30 +46,26 @@
             // 
             // pictureBoxSelectJson
             // 
+            this.pictureBoxSelectJson.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBoxSelectJson.Image = global::Summoners_War_Statistics.Properties.Resources.banner_selectjsonfile;
-            this.pictureBoxSelectJson.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxSelectJson.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectJson.Name = "pictureBoxSelectJson";
-            this.pictureBoxSelectJson.Size = new System.Drawing.Size(760, 50);
+            this.pictureBoxSelectJson.Padding = new System.Windows.Forms.Padding(15, 10, 0, 0);
+            this.pictureBoxSelectJson.Size = new System.Drawing.Size(800, 70);
             this.pictureBoxSelectJson.TabIndex = 10;
             this.pictureBoxSelectJson.TabStop = false;
             this.pictureBoxSelectJson.Click += new System.EventHandler(this.pictureBoxSelectJson_Click);
             // 
-            // menu1
-            // 
-            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.menu1.Location = new System.Drawing.Point(0, 78);
-            this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(784, 76);
-            this.menu1.TabIndex = 12;
-            // 
             // summary1
             // 
+            this.summary1.AutoScroll = true;
             this.summary1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.summary1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.summary1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.summary1.JsonModifcationDate = "Json file creation date";
             this.summary1.Location = new System.Drawing.Point(0, 150);
             this.summary1.Name = "summary1";
-            this.summary1.Size = new System.Drawing.Size(784, 411);
+            this.summary1.Size = new System.Drawing.Size(800, 431);
             this.summary1.SummonerAncientCoins = ((ushort)(0));
             this.summary1.SummonerArenaEnergy = ((byte)(0));
             this.summary1.SummonerArenaEnergyMax = ((byte)(0));
@@ -97,23 +93,39 @@
             this.summary1.SummonerSocialPoints = ((ushort)(0));
             this.summary1.TabIndex = 13;
             // 
+            // menu1
+            // 
+            this.menu1.AutoScroll = true;
+            this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menu1.Location = new System.Drawing.Point(0, 70);
+            this.menu1.Name = "menu1";
+            this.menu1.Size = new System.Drawing.Size(800, 80);
+            this.menu1.TabIndex = 12;
+            // 
             // dimHole1
             // 
+            this.dimHole1.AutoScroll = true;
+            this.dimHole1.AutoSize = true;
             this.dimHole1.AxpPerLevel = ((ushort)(0));
             this.dimHole1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dimHole1.DimensionalEnergyGainStart = new System.DateTime(((long)(0)));
             this.dimHole1.DimHoleMonsters = null;
-            this.dimHole1.Location = new System.Drawing.Point(0, 150);
+            this.dimHole1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dimHole1.Location = new System.Drawing.Point(0, 0);
             this.dimHole1.Name = "dimHole1";
-            this.dimHole1.Size = new System.Drawing.Size(784, 411);
+            this.dimHole1.Size = new System.Drawing.Size(800, 581);
             this.dimHole1.SummonerDimensionalHoleEnergy = ((byte)(0));
             this.dimHole1.SummonerDimensionalHoleEnergyMax = ((byte)(100));
             this.dimHole1.SummonerDimensionalHoleEnergyMaxInfo = "";
             this.dimHole1.TabIndex = 17;
+            this.dimHole1.Visible = false;
             // 
             // other1
             // 
+            this.other1.AutoScroll = true;
             this.other1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.other1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.other1.GuildBestRanking = "Best ranking";
             this.other1.GuildLeaderName = "Leader\'s name";
             this.other1.GuildMembers = ((byte)(0));
@@ -121,15 +133,18 @@
             this.other1.GuildMembersDefensesMax = ((byte)(0));
             this.other1.GuildMembersMax = ((byte)(0));
             this.other1.GuildName = "Guild\'s name";
-            this.other1.Location = new System.Drawing.Point(0, 150);
+            this.other1.Location = new System.Drawing.Point(0, 0);
             this.other1.Name = "other1";
-            this.other1.Size = new System.Drawing.Size(784, 411);
+            this.other1.Size = new System.Drawing.Size(800, 581);
             this.other1.TabIndex = 16;
+            this.other1.Visible = false;
             // 
             // runes1
             // 
+            this.runes1.AutoScroll = true;
             this.runes1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.runes1.Location = new System.Drawing.Point(0, 150);
+            this.runes1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.runes1.Location = new System.Drawing.Point(0, 0);
             this.runes1.MonstersMasterId = null;
             this.runes1.Name = "runes1";
             this.runes1.RunesAmount = ((ushort)(0));
@@ -141,15 +156,18 @@
             this.runes1.RunesInventory = ((ushort)(0));
             this.runes1.RunesList = null;
             this.runes1.RunesMaxed = ((ushort)(0));
-            this.runes1.Size = new System.Drawing.Size(784, 411);
+            this.runes1.Size = new System.Drawing.Size(800, 581);
             this.runes1.TabIndex = 15;
+            this.runes1.Visible = false;
             // 
             // monsters1
             // 
+            this.monsters1.AutoScroll = true;
             this.monsters1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.monsters1.DaysSinceLastLDLightning = ((ushort)(0));
             this.monsters1.DaysSinceNat5 = ((ushort)(0));
-            this.monsters1.Location = new System.Drawing.Point(0, 150);
+            this.monsters1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monsters1.Location = new System.Drawing.Point(0, 0);
             this.monsters1.MonsterAttributeDark = ((ushort)(0));
             this.monsters1.MonsterAttributeFire = ((ushort)(0));
             this.monsters1.MonsterAttributeLight = ((ushort)(0));
@@ -165,17 +183,18 @@
             this.monsters1.MonsterStarsThree = ((ushort)(0));
             this.monsters1.MonsterStarsTwo = ((ushort)(0));
             this.monsters1.Name = "monsters1";
-            this.monsters1.Size = new System.Drawing.Size(784, 411);
+            this.monsters1.Size = new System.Drawing.Size(800, 581);
             this.monsters1.TabIndex = 14;
+            this.monsters1.Visible = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.menu1);
+            this.ClientSize = new System.Drawing.Size(800, 581);
             this.Controls.Add(this.summary1);
+            this.Controls.Add(this.menu1);
             this.Controls.Add(this.pictureBoxSelectJson);
             this.Controls.Add(this.dimHole1);
             this.Controls.Add(this.other1);
@@ -183,14 +202,14 @@
             this.Controls.Add(this.monsters1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 600);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(600, 480);
             this.Name = "FormMain";
             this.Text = "Summoners War Statistics";
             this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Resize += new System.EventHandler(this.FormMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

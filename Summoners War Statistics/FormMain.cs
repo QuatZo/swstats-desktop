@@ -140,7 +140,18 @@ namespace Summoners_War_Statistics
             DimHoleViewVisibility = false;
             OtherViewVisibility = false;
         }
+        // Flickering while bringing something to front https://stackoverflow.com/a/2613272
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
         #endregion
+
 
         private void pictureBoxSelectJson_Click(object sender, EventArgs e)
         {
@@ -225,6 +236,12 @@ namespace Summoners_War_Statistics
                 }
                 control.Font = new Font(ff, 14, FontStyle.Regular);
             }
+        }
+
+        private void FormMain_Resize(object sender, EventArgs e)
+        {
+            pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
+            Refresh();
         }
     }
 }

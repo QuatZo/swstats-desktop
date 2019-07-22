@@ -200,6 +200,10 @@ namespace Summoners_War_Statistics
         {
             InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country);
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
     }
 }

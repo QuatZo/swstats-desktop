@@ -47,18 +47,23 @@ namespace Summoners_War_Statistics
             switch (buttonClicked.Name.Remove(0, 10).ToLower())
             {
                 case "summary":
+                    view.SummaryView.Front();
                     view.SummaryViewVisibility = true;
                     break;
                 case "monsters":
+                    view.MonstersView.Front();
                     view.MonstersViewVisibility = true;
                     break;
                 case "runes":
+                    view.RunesView.Front();
                     view.RunesViewVisibility = true;
                     break;
                 case "dimhole":
+                    view.DimHoleView.Front();
                     view.DimHoleViewVisibility = true;
                     break;
                 case "other":
+                    view.OtherView.Front();
                     view.OtherViewVisibility = true;
                     break;
                 default:

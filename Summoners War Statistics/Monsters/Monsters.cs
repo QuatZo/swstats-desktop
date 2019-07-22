@@ -202,6 +202,10 @@ namespace Summoners_War_Statistics
             DaysSinceNat5 = 0;
             DaysSinceLastLDLightning = 0;
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
     }
 }

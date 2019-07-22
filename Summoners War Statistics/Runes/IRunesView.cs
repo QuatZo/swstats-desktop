@@ -43,6 +43,7 @@ namespace Summoners_War_Statistics
 
         #region Methods
         void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId);
+        void Front();
         #endregion
     }
 }
