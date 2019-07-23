@@ -39,6 +39,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         event Action InitRunes;
+        event Action Resized;
         #endregion
 
         #region Methods

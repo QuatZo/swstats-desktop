@@ -354,7 +354,7 @@
             // 
             this.labelJsonModified.AutoSize = true;
             this.labelJsonModified.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonModified.Location = new System.Drawing.Point(385, 376);
+            this.labelJsonModified.Location = new System.Drawing.Point(337, 398);
             this.labelJsonModified.Name = "labelJsonModified";
             this.labelJsonModified.Size = new System.Drawing.Size(178, 22);
             this.labelJsonModified.TabIndex = 46;
@@ -408,7 +408,7 @@
             // 
             this.labelJsonCreatedText.AutoSize = true;
             this.labelJsonCreatedText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonCreatedText.Location = new System.Drawing.Point(326, 376);
+            this.labelJsonCreatedText.Location = new System.Drawing.Point(278, 398);
             this.labelJsonCreatedText.Name = "labelJsonCreatedText";
             this.labelJsonCreatedText.Size = new System.Drawing.Size(62, 22);
             this.labelJsonCreatedText.TabIndex = 51;
@@ -664,7 +664,7 @@
             this.Controls.Add(this.labelSummonerName);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Summary";
-            this.Size = new System.Drawing.Size(784, 411);
+            this.Size = new System.Drawing.Size(784, 431);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).EndInit();

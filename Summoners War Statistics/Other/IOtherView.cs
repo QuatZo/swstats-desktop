@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Summoners_War_Statistics
     public interface IOtherView
     {
         #region Properties
+        Size TabSize { get; set; }
         List<Control> ControlsOther { get; }
         ListView SummonerFriendsList { get; set; }
 
@@ -25,6 +27,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
+        event Action Resized;
         #endregion
 
         #region Methods

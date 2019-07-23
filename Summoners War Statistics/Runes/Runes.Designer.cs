@@ -78,8 +78,8 @@
             this.labelRunesStandardDeviation = new System.Windows.Forms.Label();
             this.labelRunesInventory = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panelFooter = new System.Windows.Forms.Panel();
             this.panelTable = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.SuspendLayout();
@@ -656,6 +656,13 @@
             this.panelHeader.Size = new System.Drawing.Size(780, 115);
             this.panelHeader.TabIndex = 55;
             // 
+            // panelTable
+            // 
+            this.panelTable.Location = new System.Drawing.Point(0, 115);
+            this.panelTable.Name = "panelTable";
+            this.panelTable.Size = new System.Drawing.Size(780, 215);
+            this.panelTable.TabIndex = 57;
+            // 
             // panelFooter
             // 
             this.panelFooter.Controls.Add(this.labelRunesInventory);
@@ -679,14 +686,6 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(780, 81);
             this.panelFooter.TabIndex = 56;
-            this.panelFooter.Resize += new System.EventHandler(this.PanelFooter_Resize);
-            // 
-            // panelTable
-            // 
-            this.panelTable.Location = new System.Drawing.Point(0, 115);
-            this.panelTable.Name = "panelTable";
-            this.panelTable.Size = new System.Drawing.Size(780, 215);
-            this.panelTable.TabIndex = 57;
             // 
             // Runes
             // 
@@ -699,6 +698,7 @@
             this.DoubleBuffered = true;
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
+            this.Resize += new System.EventHandler(this.Runes_Resize);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);

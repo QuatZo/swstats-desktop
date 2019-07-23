@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,33 @@ namespace Summoners_War_Statistics
             this.view.InitOther += View_InitOther;
 
             this.view.SummonerFriendsList.ColumnClick += SummonerFriendsList_ColumnClick;
-
             this.view.GuildMembersList.ColumnClick += GuildMembersList_ColumnClick;
+
+            this.view.Resized += View_Resized;
+        }
+
+        private void View_Resized()
+        {
+            //labelDefenseUnits                 - 0
+            //labelDefenseUnitsMax              - 1
+            //labelDefenseUnitsSlash            - 2
+            //labelGuildName                    - 3
+            //labelLeaderName                   - 4
+            //labelMembers                      - 5
+            //labelMembersMax                   - 6
+            //labelMembersSlash                 - 7
+            //labelOtherActiveFriends           - 8
+            //labelOtherGuild                   - 9
+            //labelRanking                      - 10
+            //listViewFriendsList               - 11
+            //listViewGuildMembersList          - 12
+            //panelFriends                      - 13
+            //panelGuild                        - 14
+            //panelGuildText                    - 15
+
+            view.ControlsOther[13].Size = new Size(view.ControlsOther[13].Size.Width, view.TabSize.Height * 50 / 100);
+            view.ControlsOther[14].Location = new Point(0, view.ControlsOther[13].Size.Height);
+            view.ControlsOther[14].Size = new Size(view.ControlsOther[14].Size.Width, view.TabSize.Height - view.ControlsOther[13].Size.Height);
         }
 
         private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)

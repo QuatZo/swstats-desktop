@@ -13,6 +13,12 @@ namespace Summoners_War_Statistics
     public partial class Other : UserControl, IOtherView
     {
         #region Properties
+        public Size TabSize
+        {
+            get => Size;
+            set => Size = new Size(value.Width, value.Height);
+        }
+
         public List<Control> ControlsOther => new List<Control>()
         {
             labelDefenseUnits,
@@ -27,7 +33,10 @@ namespace Summoners_War_Statistics
             labelOtherGuild,
             labelRanking,
             listViewFriendsList,
-            listViewGuildMembersList
+            listViewGuildMembersList,
+            panelFriends,
+            panelGuild,
+            panelGuildText
         };
         public ListView SummonerFriendsList
         {
@@ -79,6 +88,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         public event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
+        public event Action Resized;
         #endregion
 
         public Other()
@@ -96,5 +106,15 @@ namespace Summoners_War_Statistics
             BringToFront();
         }
         #endregion
+
+        private void Other_Resize(object sender, EventArgs e)
+        {
+            Resized?.Invoke();
+        }
+
+        private void PanelGuildText_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
