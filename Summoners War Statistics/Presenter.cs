@@ -44,7 +44,10 @@ namespace Summoners_War_Statistics
             var buttonClicked = (PictureBox)obj;
 
             view.HideViews();
-            switch (buttonClicked.Name.Remove(0, 10).ToLower())
+
+            var buttonClickedName = buttonClicked.Name.Remove(0, 10);
+            Logger.log.Info($"Changing tab to {buttonClickedName}");
+            switch (buttonClickedName.ToLower())
             {
                 case "summary":
                     view.SummaryViewVisibility = true;
@@ -65,7 +68,6 @@ namespace Summoners_War_Statistics
                     break;
             }
 
-
             foreach (var button in view.MenuView.Buttons)
             {
                 string resourceName;
@@ -81,39 +83,62 @@ namespace Summoners_War_Statistics
 
         private void View_SelectFileButtonClicked()
         {
+            Logger.log.Info("Selecting file...");
             if (view.OpenFile.ShowDialog() == DialogResult.OK)
             {
+                Logger.log.Info($"Selected file {view.OpenFile.FileName}");
                 if (view.OpenFile.FileName.Contains(".json"))
                 {
+                    Logger.log.Info($"Reading file {view.OpenFile.FileName}");
                     var json = JsonSwex.FromJson(File.ReadAllText($"{view.OpenFile.FileName}"));
 
+                    Logger.log.Info($"Initializing...");
                     try
                     {
+                        Logger.log.Info($"Summary tab");
                         view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
+                        Logger.log.Info("[Summary] DONE");
 
+                        Logger.log.Info($"Monsters tab");
                         view.MonstersView.MonstersListView.Items.Clear();
                         view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
+                        Logger.log.Info("[Monsters] DONE");
 
+                        Logger.log.Info($"Runes tab");
                         view.RunesView.Init(model.RunesEvenEquipped(json.Runes, json.MonsterList), model.MonstersMasterId(json.MonsterList));
+                        Logger.log.Info("[Runes] DONE");
 
+                        Logger.log.Info($"Dimension Hole tab");
                         view.DimHoleView.DimHoleMonstersListView.Items.Clear();
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
+                        Logger.log.Info("[Dimension Hole] DONE");
 
+                        Logger.log.Info($"Other tab");
                         view.OtherView.SummonerFriendsList.Items.Clear();
                         view.OtherView.GuildMembersList.Items.Clear();
                         view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
+                        Logger.log.Info("[Other] DONE");
                     }
-                    catch (NullReferenceException)
+                    catch (NullReferenceException e)
                     {
+                        Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
                         view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
+                        Logger.log.Error(e.StackTrace);
                     }
-                    catch (InvalidJSONException)
+                    catch (InvalidJSONException e)
                     {
+                        Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
                         view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
+                        Logger.log.Error(e.StackTrace);
+                    }
+                    finally
+                    {
+                        Logger.log.Info("Initializing has ended");
                     }
                 }
                 else
                 {
+                    Logger.log.Warn($"User didn't choose any file.");
                     view.ShowMessage("Why didn't you choose the JSON file? Nothing's gonna happen, because of you.", MessageBoxIcon.Information);
                 }
             }

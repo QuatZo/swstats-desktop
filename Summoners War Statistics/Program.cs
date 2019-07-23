@@ -1,6 +1,9 @@
-﻿using System;
+﻿using log4net;
+using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +18,8 @@ namespace Summoners_War_Statistics
         [STAThread]
         static void Main()
         {
+            XmlConfigurator.Configure();
+            Logger.log.Info($"Starting app....");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -22,8 +27,9 @@ namespace Summoners_War_Statistics
             Model model = new Model();
 
             Presenter presenter = new Presenter(view, model);
-
             Application.Run((FormMain)view);
+            Logger.log.Info($"Closing app....");
+            Logger.log.Info($"-----------------------------------");
         }
     }
 }

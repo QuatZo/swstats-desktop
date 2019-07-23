@@ -27,11 +27,13 @@ namespace Summoners_War_Statistics
         private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Guild] Sorting");
         }
 
         private void SummonerFriendsList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Friends] Sorting");
         }
 
         private void View_InitOther(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
@@ -40,17 +42,24 @@ namespace Summoners_War_Statistics
             {
                 view.SummonerFriendsList.Items.Add(new ListViewItem(friend));
             }
-            
-            foreach(string[] member in model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList))
+            Logger.log.Info($"[Friends] Friends to list done");
+
+            foreach (string[] member in model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList))
             {
                 view.GuildMembersList.Items.Add(new ListViewItem(member));
             }
+            Logger.log.Info($"[Guild] Guild members to list done");
 
             view.GuildName = guild.GuildInfo.Name;
+            Logger.log.Info($"[Guild] Guild name done");
             view.GuildLeaderName = guild.GuildInfo.MasterWizardName;
+            Logger.log.Info($"[Guild] Guild leader name done");
             view.GuildBestRanking = Mapping.Instance.GetGuildRanking((int)guildwarRanking.Best["rating_id"]);
+            Logger.log.Info($"[Guild] Guild best ranking done");
             view.GuildMembers = (byte)guild.GuildInfo.MemberNow;
+            Logger.log.Info($"[Guild] Guild members amount done");
             view.GuildMembersMax = (byte)guild.GuildInfo.MemberMax;
+            Logger.log.Info($"[Guild] Guild members max done");
 
             List<long> membersInGuildwar = new List<long>();
             byte defenses = 0;
@@ -72,7 +81,9 @@ namespace Summoners_War_Statistics
             }
 
             view.GuildMembersDefenses = defenses;
+            Logger.log.Info($"[Guild] Guild defenses amount done");
             view.GuildMembersDefensesMax = (byte)(guildwarParticipationInfo.MemberCount * 6);
+            Logger.log.Info($"[Guild] Guild defenses max done");
         }
     }
 }

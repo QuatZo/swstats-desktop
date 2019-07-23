@@ -26,16 +26,21 @@ namespace Summoners_War_Statistics
         private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Dimension Hole] Sorting");
         }
 
         private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)
         {
             view.SummonerDimensionalHoleEnergy = dimensionHoleInfo.Energy;
+            Logger.log.Info($"[Dimension Hole] Dim Hole energy done");
             view.SummonerDimensionalHoleEnergyMax = dimensionHoleInfo.EnergyMax;
+            Logger.log.Info($"[Dimension Hole] Dim Hole energy max done");
             view.DimensionalEnergyGainStart = DateTimeOffset.FromUnixTimeSeconds((long)dimensionHoleInfo.EnergyGainStartTimestamp).ToLocalTime().DateTime;
+            Logger.log.Info($"[Dimension Hole] Dim Hole energy gain start done");
             view.DimHoleMonsters = new List<Awakening>();
 
             view.SummonerDimensionalHoleEnergyMaxInfo = model.DimHoleCalculateTime(view.SummonerDimensionalHoleEnergyMax, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, false);
+            Logger.log.Info($"[Dimension Hole] Dim Hole energy max INFO done");
 
 
             foreach (Monster unit in unitList)
@@ -53,6 +58,7 @@ namespace Summoners_War_Statistics
                     throw new InvalidJSONException();
                 }
             }
+            Logger.log.Info($"[Dimension Hole] Dim Hole init monsters done");
 
 
             foreach (Awakening mon in view.DimHoleMonsters)
@@ -66,13 +72,16 @@ namespace Summoners_War_Statistics
                 string[] str = { Mapping.Instance.GetMonsterName((int)mon.UnitMasterId), (mon.MaxExp - mon.Exp).ToString(), energyNeeded.ToString(), dateWhen2A };
                 view.DimHoleMonstersListView.Items.Add(new ListViewItem(str));
             }
+            Logger.log.Info($"[Dimension Hole] Dim Hole calculator done");
         }
 
         private void View_DimHoleLevelChanged(RadioButton obj)
         {
+            Logger.log.Info($"[Dimension Hole] Dim Hole level changed to {obj.Name.Remove(0, 11)}");
             view.AxpPerLevel = view.DimHoleLevelAXP[obj];
+            Logger.log.Info($"[Dimension Hole] Dim Hole AXP per level change done");
 
-            for(int i=0; i < view.DimHoleMonstersListView.Items.Count; i++)
+            for (int i=0; i < view.DimHoleMonstersListView.Items.Count; i++)
             {
                 List<string> item = new List<string>();
                 for(int j = 0; j < view.DimHoleMonstersListView.Items[i].SubItems.Count; j++)
@@ -91,6 +100,7 @@ namespace Summoners_War_Statistics
                 }
                 view.DimHoleMonstersListView.Items[i] = new ListViewItem(item.ToArray());
             }
+            Logger.log.Info($"[Dimension Hole] Dim Hole calculator done");
         }
     }
 }
