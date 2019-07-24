@@ -165,7 +165,8 @@ namespace Summoners_War_Statistics
         }
         public ushort SummonerRunesLocked
         {
-            get => ushort.Parse(labelRunesLocked.Text);
+            get => ushort.Parse(labelRunesLocked.Text.Replace(",", ""));
+
             set => labelRunesLocked.Text = value.ToString("N0");
         }
 
