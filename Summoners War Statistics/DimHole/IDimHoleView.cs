@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Summoners_War_Statistics
     public interface IDimHoleView
     {
         #region Properties
+        Size SizeWindow { get; set; }
         List<Control> ControlsDimHole { get; }
         ushort AxpPerLevel { get; set; }
         byte SummonerDimensionalHoleEnergy { get; set; }
@@ -24,6 +26,7 @@ namespace Summoners_War_Statistics
         #region Events
         event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
         event Action<RadioButton> DimHoleLevelChanged;
+        event Action Resized;
         #endregion
 
         #region Methods

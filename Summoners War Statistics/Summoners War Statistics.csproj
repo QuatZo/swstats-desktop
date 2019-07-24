@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlExtensions.cs" />
     <Compile Include="Json Classes\Decoration.cs" />
     <Compile Include="Json Classes\Summoner.cs" />
     <Compile Include="Json Classes\Awakening.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -128,6 +129,15 @@ namespace Summoners_War_Statistics
             view.ControlsRunes[12].Location = new Point(footerWidthFourthLevel, footerHeightSecondLevel);
             view.ControlsRunes[18].Location = new Point(footerWidthFourthLevel - 5 - view.ControlsRunes[18].Size.Width, footerHeightSecondLevel);
 
+            // panelTable
+            view.RunesListView.BeginUpdate();
+            var columnWidth = view.RunesListView.Size.Width / view.RunesListView.Columns.Count;
+
+            foreach(ColumnHeader column in view.RunesListView.Columns)
+            {
+                column.Width = columnWidth - 5;
+            }
+            view.RunesListView.EndUpdate();
         }
 
         private void RunesList_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -165,8 +175,8 @@ namespace Summoners_War_Statistics
             ushort runesInInventory = 0;
             ushort runesMaxed = 0;
             List<double> efficiencies = new List<double>();
-
-            foreach(string[] rune in model.RunesList(view.RunesList, view.MonstersMasterId, GetColumns(), filters))
+            view.RunesListView.BeginUpdate();
+            foreach (string[] rune in model.RunesList(view.RunesList, view.MonstersMasterId, GetColumns(), filters))
             {
                 if(rune[2] == "15") { runesMaxed++; }
                 if(rune[3].ToLower() == "inventory") { runesInInventory++; }
@@ -175,6 +185,7 @@ namespace Summoners_War_Statistics
 
                 view.RunesListView.Items.Add(new ListViewItem(rune));
             }
+            view.RunesListView.EndUpdate();
             view.RunesAmount = (ushort)view.RunesListView.Items.Count;
             view.RunesMaxed = runesMaxed;
             view.RunesInventory = runesInInventory;

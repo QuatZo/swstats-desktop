@@ -363,6 +363,7 @@
             this.listViewRunesList.TabIndex = 38;
             this.listViewRunesList.UseCompatibleStateImageBehavior = false;
             this.listViewRunesList.View = System.Windows.Forms.View.Details;
+            this.listViewRunesList.SizeChanged += new System.EventHandler(this.Runes_Resize);
             // 
             // columnHeader1
             // 
@@ -698,6 +699,7 @@
             this.DoubleBuffered = true;
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
+            this.SizeChanged += new System.EventHandler(this.Runes_Resize);
             this.Resize += new System.EventHandler(this.Runes_Resize);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

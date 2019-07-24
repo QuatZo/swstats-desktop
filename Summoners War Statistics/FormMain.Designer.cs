@@ -115,6 +115,7 @@
             this.dimHole1.Location = new System.Drawing.Point(0, 0);
             this.dimHole1.Name = "dimHole1";
             this.dimHole1.Size = new System.Drawing.Size(800, 581);
+            this.dimHole1.SizeWindow = new System.Drawing.Size(800, 581);
             this.dimHole1.SummonerDimensionalHoleEnergy = ((byte)(0));
             this.dimHole1.SummonerDimensionalHoleEnergyMax = ((byte)(100));
             this.dimHole1.SummonerDimensionalHoleEnergyMaxInfo = "";
@@ -137,6 +138,7 @@
             this.other1.Name = "other1";
             this.other1.Size = new System.Drawing.Size(800, 581);
             this.other1.TabIndex = 16;
+            this.other1.TabSize = new System.Drawing.Size(800, 581);
             this.other1.Visible = false;
             // 
             // runes1

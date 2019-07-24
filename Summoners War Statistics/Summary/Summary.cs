@@ -46,7 +46,36 @@ namespace Summoners_War_Statistics
                     labelRunesLocked,
                     labelShapeshiftingStones,
                     labelSocialPoints,
-                    labelSummonerName
+                    labelSummonerName,
+                    pictureBoxAncientCoins,
+                    pictureBoxArenaWings,
+                    pictureBoxCountry,
+                    pictureBoxCrystals,
+                    pictureBoxDimensionalCrystals,
+                    pictureBoxDimensionalHoleEnergy,
+                    pictureBoxEnergy,
+                    pictureBoxGloryPoints,
+                    pictureBoxGuildPoints,
+                    pictureBoxLastCountry,
+                    pictureBoxLastLanguage,
+                    pictureBoxMana,
+                    pictureBoxMonsters,
+                    pictureBoxMonstersLocked,
+                    pictureBoxRTAMedals,
+                    pictureBoxRunes,
+                    pictureBoxRunesLocked,
+                    pictureBoxShapeshiftingStones,
+                    pictureBoxSocialPoints,
+                    panelContent,
+                    panelContentLeft,
+                    panelContentMid,
+                    panelContentRight,
+                    panelFlags,
+                    panelFlagsLeft,
+                    panelFlagsMid,
+                    panelFlagsRight,
+                    panelFooter,
+                    panelHeader
                 };
         public Image SummonerCountry
         {
@@ -188,6 +217,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        public event Action Resized;
         #endregion
 
         public Summary()
@@ -205,5 +235,10 @@ namespace Summoners_War_Statistics
             BringToFront();
         }
         #endregion
+
+        private void Summary_Resize(object sender, EventArgs e)
+        {
+            Resized?.Invoke();
+        }
     }
 }

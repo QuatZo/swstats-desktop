@@ -236,6 +236,8 @@ namespace Summoners_War_Statistics
         public Runes()
         {
             InitializeComponent();
+
+            listViewRunesList.DoubleBuffering(true);
         }
 
         #region Methods

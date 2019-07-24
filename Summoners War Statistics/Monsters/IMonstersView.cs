@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Summoners_War_Statistics
 {
@@ -11,6 +12,7 @@ namespace Summoners_War_Statistics
     {
 
         #region Properties
+        Size SizeWindow { get; }
         List<Control> ControlsMonster { get; }
 
         int MonsterStarsChecked { get; }
@@ -42,6 +44,7 @@ namespace Summoners_War_Statistics
         #region Events
         event Action<List<Monster>, List<long>> InitMonsters;
         event Action<RadioButton> MonstersStarsChanged;
+        event Action Resized;
         #endregion
 
         #region Methods

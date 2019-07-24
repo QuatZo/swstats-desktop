@@ -78,6 +78,16 @@
             this.pictureBoxArenaWings = new System.Windows.Forms.PictureBox();
             this.pictureBoxCrystals = new System.Windows.Forms.PictureBox();
             this.pictureBoxMana = new System.Windows.Forms.PictureBox();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelFlags = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.panelContentLeft = new System.Windows.Forms.Panel();
+            this.panelContentRight = new System.Windows.Forms.Panel();
+            this.panelContentMid = new System.Windows.Forms.Panel();
+            this.panelFlagsLeft = new System.Windows.Forms.Panel();
+            this.panelFlagsRight = new System.Windows.Forms.Panel();
+            this.panelFlagsMid = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).BeginInit();
@@ -97,6 +107,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            this.panelFlags.SuspendLayout();
+            this.panelFooter.SuspendLayout();
+            this.panelContent.SuspendLayout();
+            this.panelContentLeft.SuspendLayout();
+            this.panelContentRight.SuspendLayout();
+            this.panelContentMid.SuspendLayout();
+            this.panelFlagsLeft.SuspendLayout();
+            this.panelFlagsRight.SuspendLayout();
+            this.panelFlagsMid.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSummonerName
@@ -113,7 +133,7 @@
             // 
             this.labelMana.AutoSize = true;
             this.labelMana.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelMana.Location = new System.Drawing.Point(39, 103);
+            this.labelMana.Location = new System.Drawing.Point(33, 0);
             this.labelMana.Name = "labelMana";
             this.labelMana.Size = new System.Drawing.Size(17, 22);
             this.labelMana.TabIndex = 1;
@@ -124,7 +144,7 @@
             // 
             this.labelCrystals.AutoSize = true;
             this.labelCrystals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelCrystals.Location = new System.Drawing.Point(39, 133);
+            this.labelCrystals.Location = new System.Drawing.Point(33, 30);
             this.labelCrystals.Name = "labelCrystals";
             this.labelCrystals.Size = new System.Drawing.Size(17, 22);
             this.labelCrystals.TabIndex = 2;
@@ -135,7 +155,7 @@
             // 
             this.labelEnergy.AutoSize = true;
             this.labelEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelEnergy.Location = new System.Drawing.Point(452, 105);
+            this.labelEnergy.Location = new System.Drawing.Point(303, 2);
             this.labelEnergy.Name = "labelEnergy";
             this.labelEnergy.Size = new System.Drawing.Size(17, 22);
             this.labelEnergy.TabIndex = 3;
@@ -146,7 +166,7 @@
             // 
             this.labelEnergySlash.AutoSize = true;
             this.labelEnergySlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelEnergySlash.Location = new System.Drawing.Point(476, 105);
+            this.labelEnergySlash.Location = new System.Drawing.Point(327, 2);
             this.labelEnergySlash.Name = "labelEnergySlash";
             this.labelEnergySlash.Size = new System.Drawing.Size(14, 22);
             this.labelEnergySlash.TabIndex = 4;
@@ -157,7 +177,7 @@
             // 
             this.labelEnergyMax.AutoSize = true;
             this.labelEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelEnergyMax.Location = new System.Drawing.Point(487, 105);
+            this.labelEnergyMax.Location = new System.Drawing.Point(338, 2);
             this.labelEnergyMax.Name = "labelEnergyMax";
             this.labelEnergyMax.Size = new System.Drawing.Size(17, 22);
             this.labelEnergyMax.TabIndex = 5;
@@ -168,7 +188,7 @@
             // 
             this.labelGuildPoints.AutoSize = true;
             this.labelGuildPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelGuildPoints.Location = new System.Drawing.Point(39, 194);
+            this.labelGuildPoints.Location = new System.Drawing.Point(33, 91);
             this.labelGuildPoints.Name = "labelGuildPoints";
             this.labelGuildPoints.Size = new System.Drawing.Size(17, 22);
             this.labelGuildPoints.TabIndex = 6;
@@ -179,7 +199,7 @@
             // 
             this.labelGloryPoints.AutoSize = true;
             this.labelGloryPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelGloryPoints.Location = new System.Drawing.Point(39, 165);
+            this.labelGloryPoints.Location = new System.Drawing.Point(33, 62);
             this.labelGloryPoints.Name = "labelGloryPoints";
             this.labelGloryPoints.Size = new System.Drawing.Size(17, 22);
             this.labelGloryPoints.TabIndex = 7;
@@ -190,7 +210,7 @@
             // 
             this.labelRTAMedals.AutoSize = true;
             this.labelRTAMedals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelRTAMedals.Location = new System.Drawing.Point(248, 105);
+            this.labelRTAMedals.Location = new System.Drawing.Point(33, 5);
             this.labelRTAMedals.Name = "labelRTAMedals";
             this.labelRTAMedals.Size = new System.Drawing.Size(17, 22);
             this.labelRTAMedals.TabIndex = 8;
@@ -201,7 +221,7 @@
             // 
             this.labelShapeshiftingStones.AutoSize = true;
             this.labelShapeshiftingStones.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelShapeshiftingStones.Location = new System.Drawing.Point(248, 133);
+            this.labelShapeshiftingStones.Location = new System.Drawing.Point(33, 33);
             this.labelShapeshiftingStones.Name = "labelShapeshiftingStones";
             this.labelShapeshiftingStones.Size = new System.Drawing.Size(17, 22);
             this.labelShapeshiftingStones.TabIndex = 9;
@@ -212,7 +232,7 @@
             // 
             this.labelDimensionalCrystals.AutoSize = true;
             this.labelDimensionalCrystals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalCrystals.Location = new System.Drawing.Point(452, 195);
+            this.labelDimensionalCrystals.Location = new System.Drawing.Point(303, 92);
             this.labelDimensionalCrystals.Name = "labelDimensionalCrystals";
             this.labelDimensionalCrystals.Size = new System.Drawing.Size(17, 22);
             this.labelDimensionalCrystals.TabIndex = 10;
@@ -223,7 +243,7 @@
             // 
             this.labelDimensionalCrystalsSlash.AutoSize = true;
             this.labelDimensionalCrystalsSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalCrystalsSlash.Location = new System.Drawing.Point(476, 195);
+            this.labelDimensionalCrystalsSlash.Location = new System.Drawing.Point(327, 92);
             this.labelDimensionalCrystalsSlash.Name = "labelDimensionalCrystalsSlash";
             this.labelDimensionalCrystalsSlash.Size = new System.Drawing.Size(14, 22);
             this.labelDimensionalCrystalsSlash.TabIndex = 11;
@@ -234,7 +254,7 @@
             // 
             this.labelDimensionalCrystalsMax.AutoSize = true;
             this.labelDimensionalCrystalsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalCrystalsMax.Location = new System.Drawing.Point(487, 195);
+            this.labelDimensionalCrystalsMax.Location = new System.Drawing.Point(338, 92);
             this.labelDimensionalCrystalsMax.Name = "labelDimensionalCrystalsMax";
             this.labelDimensionalCrystalsMax.Size = new System.Drawing.Size(21, 22);
             this.labelDimensionalCrystalsMax.TabIndex = 12;
@@ -245,7 +265,7 @@
             // 
             this.labelDimensionalHoleEnergy.AutoSize = true;
             this.labelDimensionalHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalHoleEnergy.Location = new System.Drawing.Point(452, 133);
+            this.labelDimensionalHoleEnergy.Location = new System.Drawing.Point(303, 30);
             this.labelDimensionalHoleEnergy.Name = "labelDimensionalHoleEnergy";
             this.labelDimensionalHoleEnergy.Size = new System.Drawing.Size(17, 22);
             this.labelDimensionalHoleEnergy.TabIndex = 13;
@@ -256,7 +276,7 @@
             // 
             this.labelDimensionalHoleEnergySlash.AutoSize = true;
             this.labelDimensionalHoleEnergySlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalHoleEnergySlash.Location = new System.Drawing.Point(476, 133);
+            this.labelDimensionalHoleEnergySlash.Location = new System.Drawing.Point(327, 30);
             this.labelDimensionalHoleEnergySlash.Name = "labelDimensionalHoleEnergySlash";
             this.labelDimensionalHoleEnergySlash.Size = new System.Drawing.Size(14, 22);
             this.labelDimensionalHoleEnergySlash.TabIndex = 14;
@@ -267,7 +287,7 @@
             // 
             this.labelDimensionalHoleEnergyMax.AutoSize = true;
             this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(487, 133);
+            this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(338, 30);
             this.labelDimensionalHoleEnergyMax.Name = "labelDimensionalHoleEnergyMax";
             this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(28, 22);
             this.labelDimensionalHoleEnergyMax.TabIndex = 15;
@@ -276,9 +296,10 @@
             // 
             // labelLevel
             // 
+            this.labelLevel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelLevel.AutoSize = true;
             this.labelLevel.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F);
-            this.labelLevel.Location = new System.Drawing.Point(750, 20);
+            this.labelLevel.Location = new System.Drawing.Point(753, 0);
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(25, 32);
             this.labelLevel.TabIndex = 17;
@@ -289,7 +310,7 @@
             // 
             this.labelArenaWings.AutoSize = true;
             this.labelArenaWings.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelArenaWings.Location = new System.Drawing.Point(452, 165);
+            this.labelArenaWings.Location = new System.Drawing.Point(303, 62);
             this.labelArenaWings.Name = "labelArenaWings";
             this.labelArenaWings.Size = new System.Drawing.Size(17, 22);
             this.labelArenaWings.TabIndex = 18;
@@ -300,7 +321,7 @@
             // 
             this.labelArenaWingsSlash.AutoSize = true;
             this.labelArenaWingsSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelArenaWingsSlash.Location = new System.Drawing.Point(476, 165);
+            this.labelArenaWingsSlash.Location = new System.Drawing.Point(327, 62);
             this.labelArenaWingsSlash.Name = "labelArenaWingsSlash";
             this.labelArenaWingsSlash.Size = new System.Drawing.Size(14, 22);
             this.labelArenaWingsSlash.TabIndex = 19;
@@ -311,7 +332,7 @@
             // 
             this.labelArenaWingsMax.AutoSize = true;
             this.labelArenaWingsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelArenaWingsMax.Location = new System.Drawing.Point(487, 165);
+            this.labelArenaWingsMax.Location = new System.Drawing.Point(338, 62);
             this.labelArenaWingsMax.Name = "labelArenaWingsMax";
             this.labelArenaWingsMax.Size = new System.Drawing.Size(17, 22);
             this.labelArenaWingsMax.TabIndex = 20;
@@ -322,7 +343,7 @@
             // 
             this.labelLastLanguage.AutoSize = true;
             this.labelLastLanguage.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastLanguage.Location = new System.Drawing.Point(586, 265);
+            this.labelLastLanguage.Location = new System.Drawing.Point(3, 11);
             this.labelLastLanguage.Name = "labelLastLanguage";
             this.labelLastLanguage.Size = new System.Drawing.Size(93, 64);
             this.labelLastLanguage.TabIndex = 38;
@@ -332,7 +353,7 @@
             // 
             this.labelLastCountry.AutoSize = true;
             this.labelLastCountry.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastCountry.Location = new System.Drawing.Point(295, 265);
+            this.labelLastCountry.Location = new System.Drawing.Point(104, 11);
             this.labelLastCountry.Name = "labelLastCountry";
             this.labelLastCountry.Size = new System.Drawing.Size(93, 64);
             this.labelLastCountry.TabIndex = 39;
@@ -343,7 +364,7 @@
             this.labelSocialPoints.AutoSize = true;
             this.labelSocialPoints.BackColor = System.Drawing.Color.Transparent;
             this.labelSocialPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelSocialPoints.Location = new System.Drawing.Point(248, 159);
+            this.labelSocialPoints.Location = new System.Drawing.Point(33, 59);
             this.labelSocialPoints.Name = "labelSocialPoints";
             this.labelSocialPoints.Size = new System.Drawing.Size(17, 22);
             this.labelSocialPoints.TabIndex = 45;
@@ -352,9 +373,10 @@
             // 
             // labelJsonModified
             // 
+            this.labelJsonModified.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelJsonModified.AutoSize = true;
             this.labelJsonModified.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonModified.Location = new System.Drawing.Point(337, 398);
+            this.labelJsonModified.Location = new System.Drawing.Point(62, 16);
             this.labelJsonModified.Name = "labelJsonModified";
             this.labelJsonModified.Size = new System.Drawing.Size(178, 22);
             this.labelJsonModified.TabIndex = 46;
@@ -364,7 +386,7 @@
             // 
             this.labelMonsters.AutoSize = true;
             this.labelMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelMonsters.Location = new System.Drawing.Point(685, 103);
+            this.labelMonsters.Location = new System.Drawing.Point(36, 0);
             this.labelMonsters.Name = "labelMonsters";
             this.labelMonsters.Size = new System.Drawing.Size(17, 22);
             this.labelMonsters.TabIndex = 47;
@@ -375,7 +397,7 @@
             // 
             this.labelMonstersLocked.AutoSize = true;
             this.labelMonstersLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelMonstersLocked.Location = new System.Drawing.Point(685, 133);
+            this.labelMonstersLocked.Location = new System.Drawing.Point(36, 30);
             this.labelMonstersLocked.Name = "labelMonstersLocked";
             this.labelMonstersLocked.Size = new System.Drawing.Size(17, 22);
             this.labelMonstersLocked.TabIndex = 48;
@@ -386,7 +408,7 @@
             // 
             this.labelRunes.AutoSize = true;
             this.labelRunes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelRunes.Location = new System.Drawing.Point(685, 163);
+            this.labelRunes.Location = new System.Drawing.Point(36, 60);
             this.labelRunes.Name = "labelRunes";
             this.labelRunes.Size = new System.Drawing.Size(17, 22);
             this.labelRunes.TabIndex = 49;
@@ -397,7 +419,7 @@
             // 
             this.labelRunesLocked.AutoSize = true;
             this.labelRunesLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelRunesLocked.Location = new System.Drawing.Point(685, 195);
+            this.labelRunesLocked.Location = new System.Drawing.Point(36, 92);
             this.labelRunesLocked.Name = "labelRunesLocked";
             this.labelRunesLocked.Size = new System.Drawing.Size(17, 22);
             this.labelRunesLocked.TabIndex = 50;
@@ -406,9 +428,10 @@
             // 
             // labelJsonCreatedText
             // 
+            this.labelJsonCreatedText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelJsonCreatedText.AutoSize = true;
             this.labelJsonCreatedText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelJsonCreatedText.Location = new System.Drawing.Point(278, 398);
+            this.labelJsonCreatedText.Location = new System.Drawing.Point(3, 16);
             this.labelJsonCreatedText.Name = "labelJsonCreatedText";
             this.labelJsonCreatedText.Size = new System.Drawing.Size(62, 22);
             this.labelJsonCreatedText.TabIndex = 51;
@@ -419,7 +442,7 @@
             this.labelAncientCoins.AutoSize = true;
             this.labelAncientCoins.BackColor = System.Drawing.Color.Transparent;
             this.labelAncientCoins.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelAncientCoins.Location = new System.Drawing.Point(248, 191);
+            this.labelAncientCoins.Location = new System.Drawing.Point(33, 91);
             this.labelAncientCoins.Name = "labelAncientCoins";
             this.labelAncientCoins.Size = new System.Drawing.Size(17, 22);
             this.labelAncientCoins.TabIndex = 53;
@@ -430,7 +453,7 @@
             // 
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(9, 280);
+            this.labelCountry.Location = new System.Drawing.Point(6, 26);
             this.labelCountry.Name = "labelCountry";
             this.labelCountry.Size = new System.Drawing.Size(81, 32);
             this.labelCountry.TabIndex = 55;
@@ -439,7 +462,7 @@
             // pictureBoxCountry
             // 
             this.pictureBoxCountry.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxCountry.Location = new System.Drawing.Point(108, 269);
+            this.pictureBoxCountry.Location = new System.Drawing.Point(105, 15);
             this.pictureBoxCountry.Name = "pictureBoxCountry";
             this.pictureBoxCountry.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxCountry.TabIndex = 54;
@@ -448,7 +471,7 @@
             // pictureBoxAncientCoins
             // 
             this.pictureBoxAncientCoins.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_ancientcoin;
-            this.pictureBoxAncientCoins.Location = new System.Drawing.Point(218, 189);
+            this.pictureBoxAncientCoins.Location = new System.Drawing.Point(3, 89);
             this.pictureBoxAncientCoins.Name = "pictureBoxAncientCoins";
             this.pictureBoxAncientCoins.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxAncientCoins.TabIndex = 52;
@@ -457,7 +480,7 @@
             // pictureBoxSocialPoints
             // 
             this.pictureBoxSocialPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_socialpoint;
-            this.pictureBoxSocialPoints.Location = new System.Drawing.Point(218, 159);
+            this.pictureBoxSocialPoints.Location = new System.Drawing.Point(3, 59);
             this.pictureBoxSocialPoints.Name = "pictureBoxSocialPoints";
             this.pictureBoxSocialPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxSocialPoints.TabIndex = 44;
@@ -466,7 +489,7 @@
             // pictureBoxRunesLocked
             // 
             this.pictureBoxRunesLocked.Image = global::Summoners_War_Statistics.Properties.Resources.icon_rune_locked;
-            this.pictureBoxRunesLocked.Location = new System.Drawing.Point(655, 192);
+            this.pictureBoxRunesLocked.Location = new System.Drawing.Point(6, 89);
             this.pictureBoxRunesLocked.Name = "pictureBoxRunesLocked";
             this.pictureBoxRunesLocked.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRunesLocked.TabIndex = 41;
@@ -475,7 +498,7 @@
             // pictureBoxRunes
             // 
             this.pictureBoxRunes.Image = global::Summoners_War_Statistics.Properties.Resources.icon_rune;
-            this.pictureBoxRunes.Location = new System.Drawing.Point(655, 163);
+            this.pictureBoxRunes.Location = new System.Drawing.Point(6, 60);
             this.pictureBoxRunes.Name = "pictureBoxRunes";
             this.pictureBoxRunes.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRunes.TabIndex = 40;
@@ -484,7 +507,7 @@
             // pictureBoxLastCountry
             // 
             this.pictureBoxLastCountry.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxLastCountry.Location = new System.Drawing.Point(394, 269);
+            this.pictureBoxLastCountry.Location = new System.Drawing.Point(207, 15);
             this.pictureBoxLastCountry.Name = "pictureBoxLastCountry";
             this.pictureBoxLastCountry.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxLastCountry.TabIndex = 36;
@@ -493,7 +516,7 @@
             // pictureBoxLastLanguage
             // 
             this.pictureBoxLastLanguage.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxLastLanguage.Location = new System.Drawing.Point(685, 269);
+            this.pictureBoxLastLanguage.Location = new System.Drawing.Point(104, 11);
             this.pictureBoxLastLanguage.Name = "pictureBoxLastLanguage";
             this.pictureBoxLastLanguage.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxLastLanguage.TabIndex = 35;
@@ -502,7 +525,7 @@
             // pictureBoxMonstersLocked
             // 
             this.pictureBoxMonstersLocked.Image = global::Summoners_War_Statistics.Properties.Resources.icon_monster_locked;
-            this.pictureBoxMonstersLocked.Location = new System.Drawing.Point(655, 133);
+            this.pictureBoxMonstersLocked.Location = new System.Drawing.Point(6, 30);
             this.pictureBoxMonstersLocked.Name = "pictureBoxMonstersLocked";
             this.pictureBoxMonstersLocked.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMonstersLocked.TabIndex = 34;
@@ -511,7 +534,7 @@
             // pictureBoxMonsters
             // 
             this.pictureBoxMonsters.Image = global::Summoners_War_Statistics.Properties.Resources.icon_monster;
-            this.pictureBoxMonsters.Location = new System.Drawing.Point(655, 103);
+            this.pictureBoxMonsters.Location = new System.Drawing.Point(6, 0);
             this.pictureBoxMonsters.Name = "pictureBoxMonsters";
             this.pictureBoxMonsters.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMonsters.TabIndex = 31;
@@ -520,7 +543,7 @@
             // pictureBoxDimensionalHoleEnergy
             // 
             this.pictureBoxDimensionalHoleEnergy.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_dimensionenergy;
-            this.pictureBoxDimensionalHoleEnergy.Location = new System.Drawing.Point(422, 133);
+            this.pictureBoxDimensionalHoleEnergy.Location = new System.Drawing.Point(273, 30);
             this.pictureBoxDimensionalHoleEnergy.Name = "pictureBoxDimensionalHoleEnergy";
             this.pictureBoxDimensionalHoleEnergy.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDimensionalHoleEnergy.TabIndex = 30;
@@ -529,7 +552,7 @@
             // pictureBoxDimensionalCrystals
             // 
             this.pictureBoxDimensionalCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_dimensioncrystal;
-            this.pictureBoxDimensionalCrystals.Location = new System.Drawing.Point(422, 193);
+            this.pictureBoxDimensionalCrystals.Location = new System.Drawing.Point(273, 90);
             this.pictureBoxDimensionalCrystals.Name = "pictureBoxDimensionalCrystals";
             this.pictureBoxDimensionalCrystals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDimensionalCrystals.TabIndex = 29;
@@ -538,7 +561,7 @@
             // pictureBoxShapeshiftingStones
             // 
             this.pictureBoxShapeshiftingStones.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_costumestone;
-            this.pictureBoxShapeshiftingStones.Location = new System.Drawing.Point(218, 131);
+            this.pictureBoxShapeshiftingStones.Location = new System.Drawing.Point(3, 31);
             this.pictureBoxShapeshiftingStones.Name = "pictureBoxShapeshiftingStones";
             this.pictureBoxShapeshiftingStones.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxShapeshiftingStones.TabIndex = 28;
@@ -547,7 +570,7 @@
             // pictureBoxRTAMedals
             // 
             this.pictureBoxRTAMedals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_rta;
-            this.pictureBoxRTAMedals.Location = new System.Drawing.Point(218, 103);
+            this.pictureBoxRTAMedals.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxRTAMedals.Name = "pictureBoxRTAMedals";
             this.pictureBoxRTAMedals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRTAMedals.TabIndex = 27;
@@ -556,7 +579,7 @@
             // pictureBoxGuildPoints
             // 
             this.pictureBoxGuildPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_guildpoint;
-            this.pictureBoxGuildPoints.Location = new System.Drawing.Point(9, 192);
+            this.pictureBoxGuildPoints.Location = new System.Drawing.Point(3, 89);
             this.pictureBoxGuildPoints.Name = "pictureBoxGuildPoints";
             this.pictureBoxGuildPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxGuildPoints.TabIndex = 26;
@@ -565,7 +588,7 @@
             // pictureBoxGloryPoints
             // 
             this.pictureBoxGloryPoints.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_honor;
-            this.pictureBoxGloryPoints.Location = new System.Drawing.Point(9, 163);
+            this.pictureBoxGloryPoints.Location = new System.Drawing.Point(3, 60);
             this.pictureBoxGloryPoints.Name = "pictureBoxGloryPoints";
             this.pictureBoxGloryPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxGloryPoints.TabIndex = 25;
@@ -574,7 +597,7 @@
             // pictureBoxEnergy
             // 
             this.pictureBoxEnergy.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_energy;
-            this.pictureBoxEnergy.Location = new System.Drawing.Point(422, 103);
+            this.pictureBoxEnergy.Location = new System.Drawing.Point(273, 0);
             this.pictureBoxEnergy.Name = "pictureBoxEnergy";
             this.pictureBoxEnergy.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxEnergy.TabIndex = 24;
@@ -583,7 +606,7 @@
             // pictureBoxArenaWings
             // 
             this.pictureBoxArenaWings.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_arenaenergy;
-            this.pictureBoxArenaWings.Location = new System.Drawing.Point(422, 163);
+            this.pictureBoxArenaWings.Location = new System.Drawing.Point(273, 60);
             this.pictureBoxArenaWings.Name = "pictureBoxArenaWings";
             this.pictureBoxArenaWings.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxArenaWings.TabIndex = 23;
@@ -592,7 +615,7 @@
             // pictureBoxCrystals
             // 
             this.pictureBoxCrystals.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_crystal;
-            this.pictureBoxCrystals.Location = new System.Drawing.Point(9, 133);
+            this.pictureBoxCrystals.Location = new System.Drawing.Point(3, 30);
             this.pictureBoxCrystals.Name = "pictureBoxCrystals";
             this.pictureBoxCrystals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxCrystals.TabIndex = 22;
@@ -601,70 +624,161 @@
             // pictureBoxMana
             // 
             this.pictureBoxMana.Image = global::Summoners_War_Statistics.Properties.Resources.icon_currency_mana;
-            this.pictureBoxMana.Location = new System.Drawing.Point(9, 103);
+            this.pictureBoxMana.Location = new System.Drawing.Point(3, 0);
             this.pictureBoxMana.Name = "pictureBoxMana";
             this.pictureBoxMana.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMana.TabIndex = 21;
             this.pictureBoxMana.TabStop = false;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.labelSummonerName);
+            this.panelHeader.Controls.Add(this.labelLevel);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(784, 80);
+            this.panelHeader.TabIndex = 56;
+            // 
+            // panelFlags
+            // 
+            this.panelFlags.Controls.Add(this.panelFlagsMid);
+            this.panelFlags.Controls.Add(this.panelFlagsRight);
+            this.panelFlags.Controls.Add(this.panelFlagsLeft);
+            this.panelFlags.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFlags.Location = new System.Drawing.Point(0, 260);
+            this.panelFlags.Name = "panelFlags";
+            this.panelFlags.Size = new System.Drawing.Size(784, 120);
+            this.panelFlags.TabIndex = 57;
+            // 
+            // panelFooter
+            // 
+            this.panelFooter.Controls.Add(this.labelJsonCreatedText);
+            this.panelFooter.Controls.Add(this.labelJsonModified);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 380);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(784, 51);
+            this.panelFooter.TabIndex = 58;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Controls.Add(this.panelContentMid);
+            this.panelContent.Controls.Add(this.panelContentRight);
+            this.panelContent.Controls.Add(this.panelContentLeft);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 80);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(784, 180);
+            this.panelContent.TabIndex = 59;
+            // 
+            // panelContentLeft
+            // 
+            this.panelContentLeft.Controls.Add(this.pictureBoxCrystals);
+            this.panelContentLeft.Controls.Add(this.pictureBoxGuildPoints);
+            this.panelContentLeft.Controls.Add(this.labelMana);
+            this.panelContentLeft.Controls.Add(this.pictureBoxGloryPoints);
+            this.panelContentLeft.Controls.Add(this.labelCrystals);
+            this.panelContentLeft.Controls.Add(this.pictureBoxMana);
+            this.panelContentLeft.Controls.Add(this.labelGuildPoints);
+            this.panelContentLeft.Controls.Add(this.labelGloryPoints);
+            this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContentLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelContentLeft.Name = "panelContentLeft";
+            this.panelContentLeft.Size = new System.Drawing.Size(200, 180);
+            this.panelContentLeft.TabIndex = 54;
+            // 
+            // panelContentRight
+            // 
+            this.panelContentRight.Controls.Add(this.labelRunes);
+            this.panelContentRight.Controls.Add(this.pictureBoxMonsters);
+            this.panelContentRight.Controls.Add(this.labelRunesLocked);
+            this.panelContentRight.Controls.Add(this.pictureBoxMonstersLocked);
+            this.panelContentRight.Controls.Add(this.pictureBoxRunes);
+            this.panelContentRight.Controls.Add(this.pictureBoxRunesLocked);
+            this.panelContentRight.Controls.Add(this.labelMonstersLocked);
+            this.panelContentRight.Controls.Add(this.labelMonsters);
+            this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelContentRight.Location = new System.Drawing.Point(685, 0);
+            this.panelContentRight.Name = "panelContentRight";
+            this.panelContentRight.Size = new System.Drawing.Size(99, 180);
+            this.panelContentRight.TabIndex = 55;
+            // 
+            // panelContentMid
+            // 
+            this.panelContentMid.Controls.Add(this.pictureBoxRTAMedals);
+            this.panelContentMid.Controls.Add(this.pictureBoxSocialPoints);
+            this.panelContentMid.Controls.Add(this.labelShapeshiftingStones);
+            this.panelContentMid.Controls.Add(this.pictureBoxDimensionalHoleEnergy);
+            this.panelContentMid.Controls.Add(this.pictureBoxDimensionalCrystals);
+            this.panelContentMid.Controls.Add(this.labelAncientCoins);
+            this.panelContentMid.Controls.Add(this.pictureBoxEnergy);
+            this.panelContentMid.Controls.Add(this.labelSocialPoints);
+            this.panelContentMid.Controls.Add(this.pictureBoxArenaWings);
+            this.panelContentMid.Controls.Add(this.pictureBoxAncientCoins);
+            this.panelContentMid.Controls.Add(this.labelArenaWingsMax);
+            this.panelContentMid.Controls.Add(this.labelRTAMedals);
+            this.panelContentMid.Controls.Add(this.labelArenaWingsSlash);
+            this.panelContentMid.Controls.Add(this.pictureBoxShapeshiftingStones);
+            this.panelContentMid.Controls.Add(this.labelEnergy);
+            this.panelContentMid.Controls.Add(this.labelDimensionalCrystalsMax);
+            this.panelContentMid.Controls.Add(this.labelArenaWings);
+            this.panelContentMid.Controls.Add(this.labelDimensionalCrystalsSlash);
+            this.panelContentMid.Controls.Add(this.labelEnergySlash);
+            this.panelContentMid.Controls.Add(this.labelDimensionalHoleEnergy);
+            this.panelContentMid.Controls.Add(this.labelDimensionalHoleEnergyMax);
+            this.panelContentMid.Controls.Add(this.labelDimensionalCrystals);
+            this.panelContentMid.Controls.Add(this.labelEnergyMax);
+            this.panelContentMid.Controls.Add(this.labelDimensionalHoleEnergySlash);
+            this.panelContentMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContentMid.Location = new System.Drawing.Point(200, 0);
+            this.panelContentMid.Name = "panelContentMid";
+            this.panelContentMid.Size = new System.Drawing.Size(485, 180);
+            this.panelContentMid.TabIndex = 56;
+            // 
+            // panelFlagsLeft
+            // 
+            this.panelFlagsLeft.Controls.Add(this.labelCountry);
+            this.panelFlagsLeft.Controls.Add(this.pictureBoxCountry);
+            this.panelFlagsLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelFlagsLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelFlagsLeft.Name = "panelFlagsLeft";
+            this.panelFlagsLeft.Size = new System.Drawing.Size(200, 120);
+            this.panelFlagsLeft.TabIndex = 56;
+            // 
+            // panelFlagsRight
+            // 
+            this.panelFlagsRight.Controls.Add(this.labelLastLanguage);
+            this.panelFlagsRight.Controls.Add(this.pictureBoxLastLanguage);
+            this.panelFlagsRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFlagsRight.Location = new System.Drawing.Point(584, 0);
+            this.panelFlagsRight.Name = "panelFlagsRight";
+            this.panelFlagsRight.Size = new System.Drawing.Size(200, 120);
+            this.panelFlagsRight.TabIndex = 57;
+            // 
+            // panelFlagsMid
+            // 
+            this.panelFlagsMid.Controls.Add(this.labelLastCountry);
+            this.panelFlagsMid.Controls.Add(this.pictureBoxLastCountry);
+            this.panelFlagsMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFlagsMid.Location = new System.Drawing.Point(200, 0);
+            this.panelFlagsMid.Name = "panelFlagsMid";
+            this.panelFlagsMid.Size = new System.Drawing.Size(384, 120);
+            this.panelFlagsMid.TabIndex = 58;
             // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.Controls.Add(this.labelCountry);
-            this.Controls.Add(this.pictureBoxCountry);
-            this.Controls.Add(this.labelAncientCoins);
-            this.Controls.Add(this.pictureBoxAncientCoins);
-            this.Controls.Add(this.labelJsonCreatedText);
-            this.Controls.Add(this.labelRunesLocked);
-            this.Controls.Add(this.labelRunes);
-            this.Controls.Add(this.labelMonstersLocked);
-            this.Controls.Add(this.labelMonsters);
-            this.Controls.Add(this.labelJsonModified);
-            this.Controls.Add(this.labelSocialPoints);
-            this.Controls.Add(this.pictureBoxSocialPoints);
-            this.Controls.Add(this.pictureBoxRunesLocked);
-            this.Controls.Add(this.pictureBoxRunes);
-            this.Controls.Add(this.labelLastCountry);
-            this.Controls.Add(this.labelLastLanguage);
-            this.Controls.Add(this.pictureBoxLastCountry);
-            this.Controls.Add(this.pictureBoxLastLanguage);
-            this.Controls.Add(this.pictureBoxMonstersLocked);
-            this.Controls.Add(this.pictureBoxMonsters);
-            this.Controls.Add(this.pictureBoxDimensionalHoleEnergy);
-            this.Controls.Add(this.pictureBoxDimensionalCrystals);
-            this.Controls.Add(this.pictureBoxShapeshiftingStones);
-            this.Controls.Add(this.pictureBoxRTAMedals);
-            this.Controls.Add(this.pictureBoxGuildPoints);
-            this.Controls.Add(this.pictureBoxGloryPoints);
-            this.Controls.Add(this.pictureBoxEnergy);
-            this.Controls.Add(this.pictureBoxArenaWings);
-            this.Controls.Add(this.pictureBoxCrystals);
-            this.Controls.Add(this.pictureBoxMana);
-            this.Controls.Add(this.labelArenaWingsMax);
-            this.Controls.Add(this.labelArenaWingsSlash);
-            this.Controls.Add(this.labelArenaWings);
-            this.Controls.Add(this.labelLevel);
-            this.Controls.Add(this.labelDimensionalHoleEnergyMax);
-            this.Controls.Add(this.labelDimensionalHoleEnergySlash);
-            this.Controls.Add(this.labelDimensionalHoleEnergy);
-            this.Controls.Add(this.labelDimensionalCrystalsMax);
-            this.Controls.Add(this.labelDimensionalCrystalsSlash);
-            this.Controls.Add(this.labelDimensionalCrystals);
-            this.Controls.Add(this.labelShapeshiftingStones);
-            this.Controls.Add(this.labelRTAMedals);
-            this.Controls.Add(this.labelGloryPoints);
-            this.Controls.Add(this.labelGuildPoints);
-            this.Controls.Add(this.labelEnergyMax);
-            this.Controls.Add(this.labelEnergySlash);
-            this.Controls.Add(this.labelEnergy);
-            this.Controls.Add(this.labelCrystals);
-            this.Controls.Add(this.labelMana);
-            this.Controls.Add(this.labelSummonerName);
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelFlags);
+            this.Controls.Add(this.panelFooter);
+            this.Controls.Add(this.panelHeader);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Summary";
             this.Size = new System.Drawing.Size(784, 431);
+            this.Resize += new System.EventHandler(this.Summary_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).EndInit();
@@ -684,8 +798,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArenaWings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelFlags.ResumeLayout(false);
+            this.panelFooter.ResumeLayout(false);
+            this.panelFooter.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelContentLeft.ResumeLayout(false);
+            this.panelContentLeft.PerformLayout();
+            this.panelContentRight.ResumeLayout(false);
+            this.panelContentRight.PerformLayout();
+            this.panelContentMid.ResumeLayout(false);
+            this.panelContentMid.PerformLayout();
+            this.panelFlagsLeft.ResumeLayout(false);
+            this.panelFlagsLeft.PerformLayout();
+            this.panelFlagsRight.ResumeLayout(false);
+            this.panelFlagsRight.PerformLayout();
+            this.panelFlagsMid.ResumeLayout(false);
+            this.panelFlagsMid.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -741,5 +872,15 @@
         private System.Windows.Forms.Label labelAncientCoins;
         private System.Windows.Forms.PictureBox pictureBoxCountry;
         private System.Windows.Forms.Label labelCountry;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelFlags;
+        private System.Windows.Forms.Panel panelFooter;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Panel panelContentLeft;
+        private System.Windows.Forms.Panel panelContentMid;
+        private System.Windows.Forms.Panel panelContentRight;
+        private System.Windows.Forms.Panel panelFlagsLeft;
+        private System.Windows.Forms.Panel panelFlagsRight;
+        private System.Windows.Forms.Panel panelFlagsMid;
     }
 }

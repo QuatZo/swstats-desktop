@@ -47,6 +47,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        event Action Resized;
         #endregion
 
         #region Methods

@@ -57,16 +57,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
             this.panelGuild = new System.Windows.Forms.Panel();
-            this.panelFriends = new System.Windows.Forms.Panel();
             this.panelGuildText = new System.Windows.Forms.Panel();
+            this.panelFriends = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
             this.panelGuild.SuspendLayout();
-            this.panelFriends.SuspendLayout();
             this.panelGuildText.SuspendLayout();
+            this.panelFriends.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelOtherActiveFriends
@@ -290,7 +290,7 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "First defense";
-            this.columnHeader8.Width = 83;
+            this.columnHeader8.Width = 88;
             // 
             // columnHeader9
             // 
@@ -353,16 +353,6 @@
             this.panelGuild.Size = new System.Drawing.Size(780, 201);
             this.panelGuild.TabIndex = 48;
             // 
-            // panelFriends
-            // 
-            this.panelFriends.Controls.Add(this.listViewFriendsList);
-            this.panelFriends.Controls.Add(this.labelOtherActiveFriends);
-            this.panelFriends.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFriends.Location = new System.Drawing.Point(0, 0);
-            this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(780, 210);
-            this.panelFriends.TabIndex = 49;
-            // 
             // panelGuildText
             // 
             this.panelGuildText.Controls.Add(this.labelRanking);
@@ -384,7 +374,16 @@
             this.panelGuildText.Name = "panelGuildText";
             this.panelGuildText.Size = new System.Drawing.Size(144, 159);
             this.panelGuildText.TabIndex = 48;
-            this.panelGuildText.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGuildText_Paint);
+            // 
+            // panelFriends
+            // 
+            this.panelFriends.Controls.Add(this.listViewFriendsList);
+            this.panelFriends.Controls.Add(this.labelOtherActiveFriends);
+            this.panelFriends.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFriends.Location = new System.Drawing.Point(0, 0);
+            this.panelFriends.Name = "panelFriends";
+            this.panelFriends.Size = new System.Drawing.Size(780, 210);
+            this.panelFriends.TabIndex = 49;
             // 
             // Other
             // 
@@ -395,6 +394,7 @@
             this.Controls.Add(this.panelGuild);
             this.Name = "Other";
             this.Size = new System.Drawing.Size(780, 411);
+            this.SizeChanged += new System.EventHandler(this.Other_Resize);
             this.Resize += new System.EventHandler(this.Other_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -403,10 +403,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).EndInit();
             this.panelGuild.ResumeLayout(false);
             this.panelGuild.PerformLayout();
-            this.panelFriends.ResumeLayout(false);
-            this.panelFriends.PerformLayout();
             this.panelGuildText.ResumeLayout(false);
             this.panelGuildText.PerformLayout();
+            this.panelFriends.ResumeLayout(false);
+            this.panelFriends.PerformLayout();
             this.ResumeLayout(false);
 
         }

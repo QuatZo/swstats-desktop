@@ -20,6 +20,71 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             this.view.InitSummary += View_InitSummary;
+            this.view.Resized += View_Resized;
+        }
+
+        private void View_Resized()
+        {
+            //labelAncientCoins                 - 0
+            //labelArenaWings                   - 1
+            //labelArenaWingsMax                - 2
+            //labelArenaWingsSlash              - 3
+            //labelCountry                      - 4
+            //labelCrystals                     - 5
+            //labelDimensionalCrystals          - 6
+            //labelDimensionalCrystalsMax       - 7
+            //labelDimensionalCrystalsSlash     - 8
+            //labelDimensionalHoleEnergy        - 9
+            //labelDimensionalHoleEnergyMax     - 10
+            //labelDimensionalHoleEnergySlash   - 11
+            //labelEnergy                       - 12
+            //labelEnergyMax                    - 13
+            //labelEnergySlash                  - 14    
+            //labelGloryPoints                  - 15
+            //labelGuildPoints                  - 16
+            //labelJsonCreatedText              - 17
+            //labelJsonModified                 - 18
+            //labelLastCountry                  - 19
+            //labelLastLanguage                 - 20
+            //labelLevel                        - 21
+            //labelMana                         - 22
+            //labelMonsters                     - 23
+            //labelMonstersLocked               - 24
+            //labelRTAMedals                    - 25
+            //labelRunes                        - 26
+            //labelRunesLocked                  - 27
+            //labelShapeshiftingStones          - 28
+            //labelSocialPoints                 - 29
+            //labelSummonerName                 - 30        
+            //pictureBoxAncientCoins            - 31    
+            //pictureBoxArenaWings              - 32
+            //pictureBoxCountry                 - 33    
+            //pictureBoxCrystals                - 34
+            //pictureBoxDimensionalCrystals     - 35
+            //pictureBoxDimensionalHoleEnergy   - 36
+            //pictureBoxEnergy                  - 37
+            //pictureBoxGloryPoints             - 38
+            //pictureBoxGuildPoints             - 39
+            //pictureBoxLastCountry             - 40
+            //pictureBoxLastLanguage            - 41
+            //pictureBoxMana                    - 42
+            //pictureBoxMonsters                - 43
+            //pictureBoxMonstersLocked          - 44
+            //pictureBoxRTAMedals               - 45
+            //pictureBoxRunes                   - 46
+            //pictureBoxRunesLocked             - 47
+            //pictureBoxShapeshiftingStones     - 48
+            //pictureBoxSocialPoints            - 49
+            //panelContent                      - 50
+            //panelContentLeft                  - 51
+            //panelContentMid                   - 52
+            //panelContentRight                 - 53
+            //panelFlags                        - 54
+            //panelFlagsLeft                    - 55
+            //panelFlagsMi                      - 56
+            //panelFlagsRight                   - 57
+            //panelFooter                       - 58
+            //panelHeader                       - 59
         }
 
         private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)

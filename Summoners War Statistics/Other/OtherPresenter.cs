@@ -45,9 +45,29 @@ namespace Summoners_War_Statistics
             //panelGuild                        - 14
             //panelGuildText                    - 15
 
+            view.GuildMembersList.BeginUpdate();
+            view.SummonerFriendsList.BeginUpdate();
             view.ControlsOther[13].Size = new Size(view.ControlsOther[13].Size.Width, view.TabSize.Height * 50 / 100);
             view.ControlsOther[14].Location = new Point(0, view.ControlsOther[13].Size.Height);
             view.ControlsOther[14].Size = new Size(view.ControlsOther[14].Size.Width, view.TabSize.Height - view.ControlsOther[13].Size.Height);
+            var columnWidth = view.GuildMembersList.Size.Width / view.GuildMembersList.Columns.Count;
+
+
+            foreach (ColumnHeader column in view.GuildMembersList.Columns)
+            {
+                column.Width = columnWidth - 5;
+            }
+
+
+            columnWidth = view.SummonerFriendsList.Size.Width / view.SummonerFriendsList.Columns.Count;
+
+
+            foreach (ColumnHeader column in view.SummonerFriendsList.Columns)
+            {
+                column.Width = columnWidth - 5;
+            }
+            view.GuildMembersList.EndUpdate();
+            view.SummonerFriendsList.EndUpdate();
         }
 
         private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)

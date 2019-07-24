@@ -94,6 +94,8 @@ namespace Summoners_War_Statistics
         public Other()
         {
             InitializeComponent();
+            listViewFriendsList.DoubleBuffering(true);
+            listViewGuildMembersList.DoubleBuffering(true);
         }
 
         #region Methods
@@ -110,11 +112,6 @@ namespace Summoners_War_Statistics
         private void Other_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
-        }
-
-        private void PanelGuildText_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
