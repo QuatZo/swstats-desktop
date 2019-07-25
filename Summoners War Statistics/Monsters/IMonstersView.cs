@@ -13,7 +13,7 @@ namespace Summoners_War_Statistics
 
         #region Properties
         Size SizeWindow { get; }
-        List<Control> ControlsMonster { get; }
+        List<Control> Cntrls { get; }
 
         int MonsterStarsChecked { get; }
 

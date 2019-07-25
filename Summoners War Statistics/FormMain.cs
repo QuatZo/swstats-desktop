@@ -18,8 +18,8 @@ namespace Summoners_War_Statistics
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
 
-        FontFamily ff;
-        Font font;
+        public FontFamily FF { get; set; }
+        public Font Fnt { get; set; }
 
         #region Properties
         public ISummaryView SummaryView => summary1;
@@ -75,6 +75,7 @@ namespace Summoners_War_Statistics
 
         #region Events
         public event Action SelectFileButtonClicked;
+        public event Action Loaded;
         #endregion
 
         public FormMain()
@@ -101,8 +102,8 @@ namespace Summoners_War_Statistics
 
             Marshal.FreeCoTaskMem(ptrData);
 
-            ff = pfc.Families[0];
-            font = new Font(ff, 14f, FontStyle.Regular);
+            FF = pfc.Families[0];
+            Fnt = new Font(FF, 14f, FontStyle.Regular);
         }
 
         public void ShowMessage(string message, MessageBoxIcon messageBoxIcon)
@@ -140,6 +141,7 @@ namespace Summoners_War_Statistics
             DimHoleViewVisibility = false;
             OtherViewVisibility = false;
         }
+
         // Flickering while bringing something to front https://stackoverflow.com/a/2613272
         protected override CreateParams CreateParams
         {
@@ -161,81 +163,7 @@ namespace Summoners_War_Statistics
         private void FormMain_Load(object sender, EventArgs e)
         {
             LoadFont();
-            foreach(var control in SummaryView.ControlsSummary)
-            {
-                if (control.Name.Contains("SummonerName"))
-                {
-                    control.Font = new Font(ff, 32, FontStyle.Regular);
-                    continue;
-                }
-                
-                if (control.Name.Contains("Country") || control.Name.Contains("Language") || control.Name.Contains("Level"))
-                {
-                    control.Font = new Font(ff, 20, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(ff, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in MonstersView.ControlsMonster)
-            {
-                if (control.Name.Contains("Stats") || control.Name == "labelMonsters")
-                {
-                    control.Font = new Font(ff, 24, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("listView"))
-                {
-                    control.Font = new Font(ff, 10, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(ff, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in RunesView.ControlsRunes)
-            {
-                if (control.Name.Contains("listView"))
-                {
-                    control.Font = new Font(ff, 10, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name == "labelRunes")
-                {
-                    control.Font = new Font(ff, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(ff, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in DimHoleView.ControlsDimHole)
-            {
-                if (control.Name.Contains("listView"))
-                {
-                    control.Font = new Font(ff, 10, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("DimHole"))
-                {
-                    control.Font = new Font(ff, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(ff, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in OtherView.ControlsOther)
-            {
-                if (control.Name.Contains("listView"))
-                {
-                    control.Font = new Font(ff, 10, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("Other"))
-                {
-                    control.Font = new Font(ff, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(ff, 14, FontStyle.Regular);
-            }
+            Loaded?.Invoke();
         }
 
         private void FormMain_Resize(object sender, EventArgs e)

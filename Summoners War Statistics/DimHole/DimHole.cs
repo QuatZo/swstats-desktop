@@ -18,7 +18,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsDimHole => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
         {
             labelDimHoleMonsters,
             labelDimensionalHoleEnergy,

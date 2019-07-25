@@ -45,7 +45,7 @@ namespace Summoners_War_Statistics
             //panelButtons                          - 14
 
 
-            view.ControlsDimHole[3].Location = new Point(view.SizeWindow.Width - 5 - view.ControlsDimHole[3].Size.Width, view.ControlsDimHole[1].Location.Y);
+            view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
 
             view.DimHoleMonstersListView.BeginUpdate();
             int columnWidth = view.DimHoleMonstersListView.Size.Width / view.DimHoleMonstersListView.Columns.Count;

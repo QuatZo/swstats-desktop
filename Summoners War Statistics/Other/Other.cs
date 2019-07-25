@@ -19,7 +19,7 @@ namespace Summoners_War_Statistics
             set => Size = new Size(value.Width, value.Height);
         }
 
-        public List<Control> ControlsOther => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
         {
             labelDefenseUnits,
             labelDefenseUnitsMax,

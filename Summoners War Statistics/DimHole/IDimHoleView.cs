@@ -12,7 +12,7 @@ namespace Summoners_War_Statistics
     {
         #region Properties
         Size SizeWindow { get; set; }
-        List<Control> ControlsDimHole { get; }
+        List<Control> Cntrls { get; }
         ushort AxpPerLevel { get; set; }
         byte SummonerDimensionalHoleEnergy { get; set; }
         byte SummonerDimensionalHoleEnergyMax { get; set; }

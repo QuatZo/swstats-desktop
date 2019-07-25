@@ -78,65 +78,65 @@ namespace Summoners_War_Statistics
             
             int headerHeightFirstLevel = 10;
             // left
-            int height = view.ControlsMonster[28].Size.Height + 2;
+            int height = view.Cntrls[28].Size.Height + 2;
             int headerWidthFirstLevel = 10;
-            view.ControlsMonster[28].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
-            view.ControlsMonster[17].Location = new Point(headerWidthFirstLevel + view.ControlsMonster[28].Size.Width, headerHeightFirstLevel);
+            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[17].Location = new Point(headerWidthFirstLevel + view.Cntrls[28].Size.Width, headerHeightFirstLevel);
 
             int headerHeightSecondLevel = headerHeightFirstLevel + height;
-            view.ControlsMonster[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
-            view.ControlsMonster[5].Location = new Point(headerWidthFirstLevel + view.ControlsMonster[29].Size.Width, headerHeightSecondLevel);
+            view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[5].Location = new Point(headerWidthFirstLevel + view.Cntrls[29].Size.Width, headerHeightSecondLevel);
 
             int headerHeightThirdLevel = headerHeightSecondLevel + height;
-            view.ControlsMonster[30].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
-            view.ControlsMonster[18].Location = new Point(headerWidthFirstLevel + view.ControlsMonster[30].Size.Width, headerHeightThirdLevel);
+            view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
+            view.Cntrls[18].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width, headerHeightThirdLevel);
 
             int headerHeightFourthLevel = headerHeightThirdLevel + height;
-            view.ControlsMonster[31].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
-            view.ControlsMonster[7].Location = new Point(headerWidthFirstLevel + view.ControlsMonster[31].Size.Width, headerHeightFourthLevel);
+            view.Cntrls[31].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
+            view.Cntrls[7].Location = new Point(headerWidthFirstLevel + view.Cntrls[31].Size.Width, headerHeightFourthLevel);
 
             int headerHeightFifthLevel = headerHeightFourthLevel + height;
-            view.ControlsMonster[32].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
-            view.ControlsMonster[2].Location = new Point(headerWidthFirstLevel + view.ControlsMonster[32].Size.Width, headerHeightFifthLevel);
+            view.Cntrls[32].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
+            view.Cntrls[2].Location = new Point(headerWidthFirstLevel + view.Cntrls[32].Size.Width, headerHeightFifthLevel);
 
             // mid
-            int headerWidthSecondLevel = (view.SizeWindow.Width / 2) - view.ControlsMonster[33].Size.Width * 2;
-            int headerWidthSecondHalfLevel = headerWidthSecondLevel + view.ControlsMonster[33].Size.Width;
-            view.ControlsMonster[33].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
-            view.ControlsMonster[14].Location = new Point(headerWidthSecondHalfLevel, headerHeightFirstLevel);
+            int headerWidthSecondLevel = (view.SizeWindow.Width / 2) - view.Cntrls[33].Size.Width * 2;
+            int headerWidthSecondHalfLevel = headerWidthSecondLevel + view.Cntrls[33].Size.Width;
+            view.Cntrls[33].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
+            view.Cntrls[14].Location = new Point(headerWidthSecondHalfLevel, headerHeightFirstLevel);
 
-            view.ControlsMonster[34].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
-            view.ControlsMonster[11].Location = new Point(headerWidthSecondHalfLevel, headerHeightSecondLevel);
+            view.Cntrls[34].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
+            view.Cntrls[11].Location = new Point(headerWidthSecondHalfLevel, headerHeightSecondLevel);
 
-            view.ControlsMonster[35].Location = new Point(headerWidthSecondLevel, headerHeightThirdLevel);
-            view.ControlsMonster[12].Location = new Point(headerWidthSecondHalfLevel, headerHeightThirdLevel);
+            view.Cntrls[35].Location = new Point(headerWidthSecondLevel, headerHeightThirdLevel);
+            view.Cntrls[12].Location = new Point(headerWidthSecondHalfLevel, headerHeightThirdLevel);
 
-            view.ControlsMonster[36].Location = new Point(headerWidthSecondLevel, headerHeightFourthLevel);
-            view.ControlsMonster[15].Location = new Point(headerWidthSecondHalfLevel, headerHeightFourthLevel);
+            view.Cntrls[36].Location = new Point(headerWidthSecondLevel, headerHeightFourthLevel);
+            view.Cntrls[15].Location = new Point(headerWidthSecondHalfLevel, headerHeightFourthLevel);
 
-            view.ControlsMonster[37].Location = new Point(headerWidthSecondLevel, headerHeightFifthLevel);
-            view.ControlsMonster[16].Location = new Point(headerWidthSecondHalfLevel, headerHeightFifthLevel);
+            view.Cntrls[37].Location = new Point(headerWidthSecondLevel, headerHeightFifthLevel);
+            view.Cntrls[16].Location = new Point(headerWidthSecondHalfLevel, headerHeightFifthLevel);
 
             int headerHeightSixthLevel = headerHeightFifthLevel + height;
-            view.ControlsMonster[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
-            view.ControlsMonster[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
+            view.Cntrls[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
+            view.Cntrls[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
 
             // right
-            view.ControlsMonster[0].Location = new Point(view.ControlsMonster[0].Location.X, headerHeightFirstLevel);
-            view.ControlsMonster[22].Location = new Point(view.ControlsMonster[22].Location.X, headerHeightFirstLevel);
-            view.ControlsMonster[23].Location = new Point(view.ControlsMonster[23].Location.X, headerHeightFirstLevel);
-            view.ControlsMonster[10].Location = new Point(view.ControlsMonster[10].Location.X, headerHeightFirstLevel);
+            view.Cntrls[0].Location = new Point(view.Cntrls[0].Location.X, headerHeightFirstLevel);
+            view.Cntrls[22].Location = new Point(view.Cntrls[22].Location.X, headerHeightFirstLevel);
+            view.Cntrls[23].Location = new Point(view.Cntrls[23].Location.X, headerHeightFirstLevel);
+            view.Cntrls[10].Location = new Point(view.Cntrls[10].Location.X, headerHeightFirstLevel);
 
-            view.ControlsMonster[24].Location = new Point(view.ControlsMonster[24].Location.X, headerHeightSecondLevel);
-            view.ControlsMonster[4].Location = new Point(view.ControlsMonster[4].Location.X, headerHeightSecondLevel);
+            view.Cntrls[24].Location = new Point(view.Cntrls[24].Location.X, headerHeightSecondLevel);
+            view.Cntrls[4].Location = new Point(view.Cntrls[4].Location.X, headerHeightSecondLevel);
 
-            view.ControlsMonster[1].Location = new Point(view.ControlsMonster[1].Location.X, headerHeightThirdLevel);
-            view.ControlsMonster[25].Location = new Point(view.ControlsMonster[25].Location.X, headerHeightThirdLevel);
-            view.ControlsMonster[26].Location = new Point(view.ControlsMonster[26].Location.X, headerHeightThirdLevel);
-            view.ControlsMonster[6].Location = new Point(view.ControlsMonster[6].Location.X, headerHeightThirdLevel);
+            view.Cntrls[1].Location = new Point(view.Cntrls[1].Location.X, headerHeightThirdLevel);
+            view.Cntrls[25].Location = new Point(view.Cntrls[25].Location.X, headerHeightThirdLevel);
+            view.Cntrls[26].Location = new Point(view.Cntrls[26].Location.X, headerHeightThirdLevel);
+            view.Cntrls[6].Location = new Point(view.Cntrls[6].Location.X, headerHeightThirdLevel);
 
-            view.ControlsMonster[27].Location = new Point(view.ControlsMonster[27].Location.X, headerHeightFourthLevel);
-            view.ControlsMonster[3].Location = new Point(view.ControlsMonster[3].Location.X, headerHeightFourthLevel);
+            view.Cntrls[27].Location = new Point(view.Cntrls[27].Location.X, headerHeightFourthLevel);
+            view.Cntrls[3].Location = new Point(view.Cntrls[3].Location.X, headerHeightFourthLevel);
 
 
             view.MonstersListView.BeginUpdate();

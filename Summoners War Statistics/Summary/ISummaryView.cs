@@ -11,7 +11,8 @@ namespace Summoners_War_Statistics
     public interface ISummaryView
     {
         #region Properties
-        List<Control> ControlsSummary { get; }
+        Size SizeWindow { get; }
+        List<Control> Cntrls { get; }
 
         Image SummonerCountry { get; set; }
         Image SummonerLastCountry { get; set; }
@@ -48,6 +49,7 @@ namespace Summoners_War_Statistics
         #region Events
         event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
         event Action Resized;
+        event Action Loaded;
         #endregion
 
         #region Methods

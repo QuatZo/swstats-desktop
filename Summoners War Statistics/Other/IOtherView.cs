@@ -12,7 +12,7 @@ namespace Summoners_War_Statistics
     {
         #region Properties
         Size TabSize { get; set; }
-        List<Control> ControlsOther { get; }
+        List<Control> Cntrls { get; }
         ListView SummonerFriendsList { get; set; }
 
         ListView GuildMembersList { get; set; }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace Summoners_War_Statistics
 {
@@ -19,7 +18,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsMonster => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
                 {
                     labelNat5s,
                     labelLDNat4sPlus,

@@ -16,7 +16,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsRunes => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
         {
             labelRunes,
             labelRuneEfficiency,

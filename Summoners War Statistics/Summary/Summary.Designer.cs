@@ -80,14 +80,14 @@
             this.pictureBoxMana = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelFlags = new System.Windows.Forms.Panel();
+            this.panelFlagsMid = new System.Windows.Forms.Panel();
+            this.panelFlagsRight = new System.Windows.Forms.Panel();
+            this.panelFlagsLeft = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panelContentLeft = new System.Windows.Forms.Panel();
-            this.panelContentRight = new System.Windows.Forms.Panel();
             this.panelContentMid = new System.Windows.Forms.Panel();
-            this.panelFlagsLeft = new System.Windows.Forms.Panel();
-            this.panelFlagsRight = new System.Windows.Forms.Panel();
-            this.panelFlagsMid = new System.Windows.Forms.Panel();
+            this.panelContentRight = new System.Windows.Forms.Panel();
+            this.panelContentLeft = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).BeginInit();
@@ -109,14 +109,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelFlags.SuspendLayout();
+            this.panelFlagsMid.SuspendLayout();
+            this.panelFlagsRight.SuspendLayout();
+            this.panelFlagsLeft.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.panelContentLeft.SuspendLayout();
-            this.panelContentRight.SuspendLayout();
             this.panelContentMid.SuspendLayout();
-            this.panelFlagsLeft.SuspendLayout();
-            this.panelFlagsRight.SuspendLayout();
-            this.panelFlagsMid.SuspendLayout();
+            this.panelContentRight.SuspendLayout();
+            this.panelContentLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSummonerName
@@ -373,7 +373,7 @@
             // 
             // labelJsonModified
             // 
-            this.labelJsonModified.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelJsonModified.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelJsonModified.AutoSize = true;
             this.labelJsonModified.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelJsonModified.Location = new System.Drawing.Point(62, 16);
@@ -428,7 +428,7 @@
             // 
             // labelJsonCreatedText
             // 
-            this.labelJsonCreatedText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelJsonCreatedText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelJsonCreatedText.AutoSize = true;
             this.labelJsonCreatedText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelJsonCreatedText.Location = new System.Drawing.Point(3, 16);
@@ -651,6 +651,36 @@
             this.panelFlags.Size = new System.Drawing.Size(784, 120);
             this.panelFlags.TabIndex = 57;
             // 
+            // panelFlagsMid
+            // 
+            this.panelFlagsMid.Controls.Add(this.labelLastCountry);
+            this.panelFlagsMid.Controls.Add(this.pictureBoxLastCountry);
+            this.panelFlagsMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFlagsMid.Location = new System.Drawing.Point(200, 0);
+            this.panelFlagsMid.Name = "panelFlagsMid";
+            this.panelFlagsMid.Size = new System.Drawing.Size(384, 120);
+            this.panelFlagsMid.TabIndex = 58;
+            // 
+            // panelFlagsRight
+            // 
+            this.panelFlagsRight.Controls.Add(this.labelLastLanguage);
+            this.panelFlagsRight.Controls.Add(this.pictureBoxLastLanguage);
+            this.panelFlagsRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFlagsRight.Location = new System.Drawing.Point(584, 0);
+            this.panelFlagsRight.Name = "panelFlagsRight";
+            this.panelFlagsRight.Size = new System.Drawing.Size(200, 120);
+            this.panelFlagsRight.TabIndex = 57;
+            // 
+            // panelFlagsLeft
+            // 
+            this.panelFlagsLeft.Controls.Add(this.labelCountry);
+            this.panelFlagsLeft.Controls.Add(this.pictureBoxCountry);
+            this.panelFlagsLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelFlagsLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelFlagsLeft.Name = "panelFlagsLeft";
+            this.panelFlagsLeft.Size = new System.Drawing.Size(200, 120);
+            this.panelFlagsLeft.TabIndex = 56;
+            // 
             // panelFooter
             // 
             this.panelFooter.Controls.Add(this.labelJsonCreatedText);
@@ -671,38 +701,6 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(784, 180);
             this.panelContent.TabIndex = 59;
-            // 
-            // panelContentLeft
-            // 
-            this.panelContentLeft.Controls.Add(this.pictureBoxCrystals);
-            this.panelContentLeft.Controls.Add(this.pictureBoxGuildPoints);
-            this.panelContentLeft.Controls.Add(this.labelMana);
-            this.panelContentLeft.Controls.Add(this.pictureBoxGloryPoints);
-            this.panelContentLeft.Controls.Add(this.labelCrystals);
-            this.panelContentLeft.Controls.Add(this.pictureBoxMana);
-            this.panelContentLeft.Controls.Add(this.labelGuildPoints);
-            this.panelContentLeft.Controls.Add(this.labelGloryPoints);
-            this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelContentLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelContentLeft.Name = "panelContentLeft";
-            this.panelContentLeft.Size = new System.Drawing.Size(200, 180);
-            this.panelContentLeft.TabIndex = 54;
-            // 
-            // panelContentRight
-            // 
-            this.panelContentRight.Controls.Add(this.labelRunes);
-            this.panelContentRight.Controls.Add(this.pictureBoxMonsters);
-            this.panelContentRight.Controls.Add(this.labelRunesLocked);
-            this.panelContentRight.Controls.Add(this.pictureBoxMonstersLocked);
-            this.panelContentRight.Controls.Add(this.pictureBoxRunes);
-            this.panelContentRight.Controls.Add(this.pictureBoxRunesLocked);
-            this.panelContentRight.Controls.Add(this.labelMonstersLocked);
-            this.panelContentRight.Controls.Add(this.labelMonsters);
-            this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelContentRight.Location = new System.Drawing.Point(685, 0);
-            this.panelContentRight.Name = "panelContentRight";
-            this.panelContentRight.Size = new System.Drawing.Size(99, 180);
-            this.panelContentRight.TabIndex = 55;
             // 
             // panelContentMid
             // 
@@ -736,35 +734,37 @@
             this.panelContentMid.Size = new System.Drawing.Size(485, 180);
             this.panelContentMid.TabIndex = 56;
             // 
-            // panelFlagsLeft
+            // panelContentRight
             // 
-            this.panelFlagsLeft.Controls.Add(this.labelCountry);
-            this.panelFlagsLeft.Controls.Add(this.pictureBoxCountry);
-            this.panelFlagsLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelFlagsLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelFlagsLeft.Name = "panelFlagsLeft";
-            this.panelFlagsLeft.Size = new System.Drawing.Size(200, 120);
-            this.panelFlagsLeft.TabIndex = 56;
+            this.panelContentRight.Controls.Add(this.labelRunes);
+            this.panelContentRight.Controls.Add(this.pictureBoxMonsters);
+            this.panelContentRight.Controls.Add(this.labelRunesLocked);
+            this.panelContentRight.Controls.Add(this.pictureBoxMonstersLocked);
+            this.panelContentRight.Controls.Add(this.pictureBoxRunes);
+            this.panelContentRight.Controls.Add(this.pictureBoxRunesLocked);
+            this.panelContentRight.Controls.Add(this.labelMonstersLocked);
+            this.panelContentRight.Controls.Add(this.labelMonsters);
+            this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelContentRight.Location = new System.Drawing.Point(685, 0);
+            this.panelContentRight.Name = "panelContentRight";
+            this.panelContentRight.Size = new System.Drawing.Size(99, 180);
+            this.panelContentRight.TabIndex = 55;
             // 
-            // panelFlagsRight
+            // panelContentLeft
             // 
-            this.panelFlagsRight.Controls.Add(this.labelLastLanguage);
-            this.panelFlagsRight.Controls.Add(this.pictureBoxLastLanguage);
-            this.panelFlagsRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFlagsRight.Location = new System.Drawing.Point(584, 0);
-            this.panelFlagsRight.Name = "panelFlagsRight";
-            this.panelFlagsRight.Size = new System.Drawing.Size(200, 120);
-            this.panelFlagsRight.TabIndex = 57;
-            // 
-            // panelFlagsMid
-            // 
-            this.panelFlagsMid.Controls.Add(this.labelLastCountry);
-            this.panelFlagsMid.Controls.Add(this.pictureBoxLastCountry);
-            this.panelFlagsMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFlagsMid.Location = new System.Drawing.Point(200, 0);
-            this.panelFlagsMid.Name = "panelFlagsMid";
-            this.panelFlagsMid.Size = new System.Drawing.Size(384, 120);
-            this.panelFlagsMid.TabIndex = 58;
+            this.panelContentLeft.Controls.Add(this.pictureBoxCrystals);
+            this.panelContentLeft.Controls.Add(this.pictureBoxGuildPoints);
+            this.panelContentLeft.Controls.Add(this.labelMana);
+            this.panelContentLeft.Controls.Add(this.pictureBoxGloryPoints);
+            this.panelContentLeft.Controls.Add(this.labelCrystals);
+            this.panelContentLeft.Controls.Add(this.pictureBoxMana);
+            this.panelContentLeft.Controls.Add(this.labelGuildPoints);
+            this.panelContentLeft.Controls.Add(this.labelGloryPoints);
+            this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContentLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelContentLeft.Name = "panelContentLeft";
+            this.panelContentLeft.Size = new System.Drawing.Size(200, 180);
+            this.panelContentLeft.TabIndex = 54;
             // 
             // Summary
             // 
@@ -778,6 +778,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Summary";
             this.Size = new System.Drawing.Size(784, 431);
+            this.Load += new System.EventHandler(this.Summary_Load);
             this.Resize += new System.EventHandler(this.Summary_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).EndInit();
@@ -801,21 +802,21 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFlags.ResumeLayout(false);
+            this.panelFlagsMid.ResumeLayout(false);
+            this.panelFlagsMid.PerformLayout();
+            this.panelFlagsRight.ResumeLayout(false);
+            this.panelFlagsRight.PerformLayout();
+            this.panelFlagsLeft.ResumeLayout(false);
+            this.panelFlagsLeft.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.panelContentLeft.ResumeLayout(false);
-            this.panelContentLeft.PerformLayout();
-            this.panelContentRight.ResumeLayout(false);
-            this.panelContentRight.PerformLayout();
             this.panelContentMid.ResumeLayout(false);
             this.panelContentMid.PerformLayout();
-            this.panelFlagsLeft.ResumeLayout(false);
-            this.panelFlagsLeft.PerformLayout();
-            this.panelFlagsRight.ResumeLayout(false);
-            this.panelFlagsRight.PerformLayout();
-            this.panelFlagsMid.ResumeLayout(false);
-            this.panelFlagsMid.PerformLayout();
+            this.panelContentRight.ResumeLayout(false);
+            this.panelContentRight.PerformLayout();
+            this.panelContentLeft.ResumeLayout(false);
+            this.panelContentLeft.PerformLayout();
             this.ResumeLayout(false);
 
         }

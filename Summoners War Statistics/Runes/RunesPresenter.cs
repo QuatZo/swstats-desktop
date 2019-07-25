@@ -66,68 +66,68 @@ namespace Summoners_War_Statistics
             // panelHeader
             int headerHeightNullLevel = 5;
             int headerWidthFirstLevel = 5;
-            int headerHeightFirstLevel = view.ControlsRunes[32].Size.Height - 60;
-            int headerHeightSecondLevel = view.ControlsRunes[32].Size.Height - 35;
+            int headerHeightFirstLevel = view.Cntrls[32].Size.Height - 60;
+            int headerHeightSecondLevel = view.Cntrls[32].Size.Height - 35;
 
-            view.ControlsRunes[0].Location = new Point(headerWidthFirstLevel, headerHeightNullLevel);
-            view.ControlsRunes[9].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
-            view.ControlsRunes[28].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[0].Location = new Point(headerWidthFirstLevel, headerHeightNullLevel);
+            view.Cntrls[9].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
 
-            int headerWidthSecondLevel = view.ControlsRunes[32].Size.Width * 14 /100;
-            view.ControlsRunes[2].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
-            view.ControlsRunes[26].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
+            int headerWidthSecondLevel = view.Cntrls[32].Size.Width * 14 /100;
+            view.Cntrls[2].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
+            view.Cntrls[26].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
 
-            int headerWidthThirdLevel = view.ControlsRunes[32].Size.Width * 28 / 100;
-            view.ControlsRunes[3].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
-            view.ControlsRunes[27].Location = new Point(headerWidthThirdLevel, headerHeightSecondLevel);
+            int headerWidthThirdLevel = view.Cntrls[32].Size.Width * 28 / 100;
+            view.Cntrls[3].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
+            view.Cntrls[27].Location = new Point(headerWidthThirdLevel, headerHeightSecondLevel);
 
-            int headerWidthFourthLevel = view.ControlsRunes[32].Size.Width * 42 / 100;
-            view.ControlsRunes[11].Location = new Point(headerWidthFourthLevel, headerHeightFirstLevel);
-            view.ControlsRunes[29].Location = new Point(headerWidthFourthLevel, headerHeightSecondLevel);
+            int headerWidthFourthLevel = view.Cntrls[32].Size.Width * 42 / 100;
+            view.Cntrls[11].Location = new Point(headerWidthFourthLevel, headerHeightFirstLevel);
+            view.Cntrls[29].Location = new Point(headerWidthFourthLevel, headerHeightSecondLevel);
 
-            int headerWidthFifthLevel = view.ControlsRunes[32].Size.Width * 56 / 100;
-            view.ControlsRunes[22].Location = new Point(headerWidthFifthLevel, headerHeightFirstLevel);
-            view.ControlsRunes[30].Location = new Point(headerWidthFifthLevel, headerHeightSecondLevel);
+            int headerWidthFifthLevel = view.Cntrls[32].Size.Width * 56 / 100;
+            view.Cntrls[22].Location = new Point(headerWidthFifthLevel, headerHeightFirstLevel);
+            view.Cntrls[30].Location = new Point(headerWidthFifthLevel, headerHeightSecondLevel);
 
-            int headerWidthFifthHalfLevel = headerWidthFifthLevel + view.ControlsRunes[30].Size.Width + 2;
-            view.ControlsRunes[31].Location = new Point(headerWidthFifthHalfLevel, headerHeightSecondLevel);
+            int headerWidthFifthHalfLevel = headerWidthFifthLevel + view.Cntrls[30].Size.Width + 2;
+            view.Cntrls[31].Location = new Point(headerWidthFifthHalfLevel, headerHeightSecondLevel);
 
-            int headerWidthSixthLevel = view.ControlsRunes[32].Size.Width * 76 / 100; // + 14 (comboBox) +6 (mini comboBox)
-            view.ControlsRunes[1].Location = new Point(headerWidthSixthLevel, headerHeightFirstLevel);
-            view.ControlsRunes[24].Location = new Point(headerWidthSixthLevel, headerHeightSecondLevel);
+            int headerWidthSixthLevel = view.Cntrls[32].Size.Width * 76 / 100; // + 14 (comboBox) +6 (mini comboBox)
+            view.Cntrls[1].Location = new Point(headerWidthSixthLevel, headerHeightFirstLevel);
+            view.Cntrls[24].Location = new Point(headerWidthSixthLevel, headerHeightSecondLevel);
 
-            int headerWidthSixthHalfLevel = headerWidthSixthLevel + view.ControlsRunes[24].Size.Width + 2;
-            view.ControlsRunes[25].Location = new Point(headerWidthSixthHalfLevel, headerHeightSecondLevel);
+            int headerWidthSixthHalfLevel = headerWidthSixthLevel + view.Cntrls[24].Size.Width + 2;
+            view.Cntrls[25].Location = new Point(headerWidthSixthHalfLevel, headerHeightSecondLevel);
 
             // panelFooter
             int footerHeightFirstLevel = 10;
             int footerHeightSecondLevel = footerHeightFirstLevel + 35;
 
-            view.ControlsRunes[14].Location = new Point(20, footerHeightFirstLevel);
-            view.ControlsRunes[4].Location = new Point(view.ControlsRunes[14].Location.X + view.ControlsRunes[14].Size.Width + 5, footerHeightFirstLevel);
-            view.ControlsRunes[17].Location = new Point(view.ControlsRunes[14].Location.X + view.ControlsRunes[14].Size.Width - view.ControlsRunes[17].Size.Width, footerHeightSecondLevel);
-            view.ControlsRunes[10].Location = new Point(view.ControlsRunes[4].Location.X, footerHeightSecondLevel);
+            view.Cntrls[14].Location = new Point(20, footerHeightFirstLevel);
+            view.Cntrls[4].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width + 5, footerHeightFirstLevel);
+            view.Cntrls[17].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width - view.Cntrls[17].Size.Width, footerHeightSecondLevel);
+            view.Cntrls[10].Location = new Point(view.Cntrls[4].Location.X, footerHeightSecondLevel);
 
-            int footerWidthSecondLevel = view.ControlsRunes[34].Width / 4;
+            int footerWidthSecondLevel = view.Cntrls[34].Width / 4;
 
-            view.ControlsRunes[15].Location = new Point(footerWidthSecondLevel, footerHeightFirstLevel);
-            view.ControlsRunes[6].Location = new Point(footerWidthSecondLevel + view.ControlsRunes[15].Size.Width + 5, footerHeightFirstLevel);
-            view.ControlsRunes[16].Location = new Point(footerWidthSecondLevel + view.ControlsRunes[15].Size.Width - view.ControlsRunes[16].Size.Width, footerHeightSecondLevel);
-            view.ControlsRunes[5].Location = new Point(view.ControlsRunes[6].Location.X, footerHeightSecondLevel);
+            view.Cntrls[15].Location = new Point(footerWidthSecondLevel, footerHeightFirstLevel);
+            view.Cntrls[6].Location = new Point(footerWidthSecondLevel + view.Cntrls[15].Size.Width + 5, footerHeightFirstLevel);
+            view.Cntrls[16].Location = new Point(footerWidthSecondLevel + view.Cntrls[15].Size.Width - view.Cntrls[16].Size.Width, footerHeightSecondLevel);
+            view.Cntrls[5].Location = new Point(view.Cntrls[6].Location.X, footerHeightSecondLevel);
 
-            int footerWidthThirdLevel = view.ControlsRunes[34].Width * 3 / 5;
+            int footerWidthThirdLevel = view.Cntrls[34].Width * 3 / 5;
 
-            view.ControlsRunes[19].Location = new Point(footerWidthThirdLevel, footerHeightFirstLevel);
-            view.ControlsRunes[7].Location = new Point(footerWidthThirdLevel + view.ControlsRunes[19].Size.Width + 5, footerHeightFirstLevel);
-            view.ControlsRunes[20].Location = new Point(footerWidthThirdLevel + view.ControlsRunes[19].Size.Width - view.ControlsRunes[20].Size.Width, footerHeightSecondLevel);
-            view.ControlsRunes[8].Location = new Point(view.ControlsRunes[7].Location.X, footerHeightSecondLevel);
+            view.Cntrls[19].Location = new Point(footerWidthThirdLevel, footerHeightFirstLevel);
+            view.Cntrls[7].Location = new Point(footerWidthThirdLevel + view.Cntrls[19].Size.Width + 5, footerHeightFirstLevel);
+            view.Cntrls[20].Location = new Point(footerWidthThirdLevel + view.Cntrls[19].Size.Width - view.Cntrls[20].Size.Width, footerHeightSecondLevel);
+            view.Cntrls[8].Location = new Point(view.Cntrls[7].Location.X, footerHeightSecondLevel);
 
-            int footerWidthFourthLevel = view.ControlsRunes[34].Width - 50;
+            int footerWidthFourthLevel = view.Cntrls[34].Width - 50;
 
-            view.ControlsRunes[13].Location = new Point(footerWidthFourthLevel, footerHeightFirstLevel);
-            view.ControlsRunes[21].Location = new Point(footerWidthFourthLevel - 5 - view.ControlsRunes[21].Size.Width, footerHeightFirstLevel);
-            view.ControlsRunes[12].Location = new Point(footerWidthFourthLevel, footerHeightSecondLevel);
-            view.ControlsRunes[18].Location = new Point(footerWidthFourthLevel - 5 - view.ControlsRunes[18].Size.Width, footerHeightSecondLevel);
+            view.Cntrls[13].Location = new Point(footerWidthFourthLevel, footerHeightFirstLevel);
+            view.Cntrls[21].Location = new Point(footerWidthFourthLevel - 5 - view.Cntrls[21].Size.Width, footerHeightFirstLevel);
+            view.Cntrls[12].Location = new Point(footerWidthFourthLevel, footerHeightSecondLevel);
+            view.Cntrls[18].Location = new Point(footerWidthFourthLevel - 5 - view.Cntrls[18].Size.Width, footerHeightSecondLevel);
 
             // panelTable
             view.RunesListView.BeginUpdate();
