@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Summoners_War_Statistics
         byte SummonerDimensionalHoleEnergyMax { get; set; }
         string SummonerDimensionalHoleEnergyMaxInfo { get; set; }
         Dictionary<RadioButton, ushort> DimHoleLevelAXP { get; }
-        ListView DimHoleMonstersListView { get; set; }
+        ObjectListView DimHoleMonstersListView { get; set; }
         DateTime DimensionalEnergyGainStart { get; set; }
         List<Awakening> DimHoleMonsters { get; set; }
         #endregion

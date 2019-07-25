@@ -26,9 +26,9 @@ namespace Summoners_War_Statistics
             return date;
         }
 
-        public List<string[]> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
+        public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
         {
-            List<string[]> mons = new List<string[]>();
+            List<MonstersToLockRow> mons = new List<MonstersToLockRow>();
 
             List<Monster> monstersToLock = new List<Monster>();
             foreach (Monster monster in monsters)
@@ -65,34 +65,34 @@ namespace Summoners_War_Statistics
                 if (sets.Length == 0) { sets = "-"; }
                 else { sets = sets.Remove(sets.Length - 2, 2); }
 
-                mons.Add(new string[] { Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), monsterToLock.Class.ToString(), monsterToLock.UnitLevel.ToString(), monsterToLock.Runes.Count.ToString(), sets });
+                mons.Add(new MonstersToLockRow(Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), (byte)monsterToLock.Class, (byte)monsterToLock.UnitLevel, (byte)monsterToLock.Runes.Count, sets));
             }
             return mons;
         }
 
-        public List<string[]> FriendsList(List<Friend> friendsList)
+        public List<FriendsRow> FriendsList(List<Friend> friendsList)
         {
-            List<string[]> friends = new List<string[]>();
+            List<FriendsRow> friends = new List<FriendsRow>();
 
             foreach (Friend friend in friendsList)
             {
                 friends.Add(
-                    new string[] {
+                    new FriendsRow(
                         friend.WizardName,
                         DateTimeOffset.FromUnixTimeSeconds((long)friend.LastLoginTimestamp).DateTime.ToString("dd-MMMM-yyyy HH:mm:ss"),
                         Mapping.Instance.GetMonsterName((int)friend.RepUnitMasterId),
-                        friend.RepUnitClass.ToString(),
-                        friend.RepUnitLevel.ToString()
-                    }
+                        (byte)friend.RepUnitClass,
+                        (byte)friend.RepUnitLevel
+                    )
                 );
             }
 
             return friends;
         }
 
-        public List<string[]> GuildMembersList(Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
+        public List<GuildRow> GuildMembersList(Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
         {
-            List<string[]> members = new List<string[]>();
+            List<GuildRow> members = new List<GuildRow>();
             List<long> membersInGuildwar = new List<long>();
 
             foreach (var guildwarMember in guildwarMemberList)
@@ -116,14 +116,14 @@ namespace Summoners_War_Statistics
                 }
 
                 members.Add(
-                    new string[]
-                    {
+                    new GuildRow
+                    (
                         member.Value.WizardName,
                         DateTimeOffset.FromUnixTimeSeconds((long)member.Value.JoinTimestamp).DateTime.ToString("dd-MMMM-yyyy HH:mm:ss"),
                         DateTimeOffset.FromUnixTimeSeconds((long)member.Value.LastLoginTimestamp).DateTime.ToString("dd-MMMM-yyyy HH:mm:ss"),
                         defenseFirst,
                         defenseSecond
-                    }
+                    )
                 );
             }
 
@@ -134,9 +134,9 @@ namespace Summoners_War_Statistics
         {
             List<Rune> runes = runesArg;
 
-            foreach(var monster in monsters)
+            foreach (var monster in monsters)
             {
-                foreach(var rune in monster.Runes)
+                foreach (var rune in monster.Runes)
                 {
                     runes.Add(rune);
                 }
@@ -149,7 +149,7 @@ namespace Summoners_War_Statistics
         {
             Dictionary<long, int> monstersMasterId = new Dictionary<long, int>();
 
-            foreach(var monster in monsters)
+            foreach (var monster in monsters)
             {
                 if (!monstersMasterId.ContainsKey((long)monster.UnitId)) { monstersMasterId.Add((long)monster.UnitId, (int)monster.UnitMasterId); }
             }
@@ -157,14 +157,14 @@ namespace Summoners_War_Statistics
             return monstersMasterId;
         }
 
-        public List<string[]> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<string> columns, List<byte> filters)
+        public List<RuneRow> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<string> columns, List<byte> filters)
         {
-            List<string[]> runesToReturn = new List<string[]>();
+            List<RuneRow> runesToReturn = new List<RuneRow>();
             try
             {
                 var x = runes.Count;
             }
-            catch(NullReferenceException){ return runesToReturn; }
+            catch (NullReferenceException) { return runesToReturn; }
             foreach (var rune in runes)
             {
                 double runeEfficiency = Mapping.Instance.GetRuneEfficiency(rune).Current;
@@ -188,28 +188,29 @@ namespace Summoners_War_Statistics
 
                 Dictionary<int, string> effect = new Dictionary<int, string>();
 
-                for(int i = 0; i <= 12; i++)
+                for (int i = 0; i <= 12; i++)
                 {
                     if (i == 7) { continue; }
                     effect.Add(i, "-");
                 }
 
-                foreach(var eff in rune.SecEff)
+                foreach (var eff in rune.SecEff)
                 {
                     effect[(int)eff[0]] = (eff[1] + eff[3]).ToString();
                 }
 
                 string origin = "Inventory";
-                if(rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
+                if (rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
 
                 runesToReturn.Add(
-                    new string[]
-                    {
+                    new RuneRow
+                    (
                         Mapping.Instance.GetRuneSet((int)rune.SetId),
-                        rune.SlotNo.ToString(),
-                        rune.UpgradeCurr.ToString(),
+                        (byte)rune.SlotNo,
+                        (byte)rune.UpgradeCurr,
                         origin,
                         Mapping.Instance.GetRuneEffect(rune), // main
+                        Mapping.Instance.GetRuneInnateEffect(rune), // innate
                         effect[1], // atk flat
                         effect[2], // atk %
                         effect[3], // hp flat
@@ -222,7 +223,7 @@ namespace Summoners_War_Statistics
                         effect[11], // res
                         effect[12], // acc
                         runeEfficiency.ToString() // eff.%
-                    }
+                    )
                 );
             }
             return runesToReturn;

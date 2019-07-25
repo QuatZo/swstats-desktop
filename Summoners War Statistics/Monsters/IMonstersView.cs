@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using BrightIdeasSoftware;
 
 namespace Summoners_War_Statistics
 {
@@ -38,7 +39,7 @@ namespace Summoners_War_Statistics
         List<Monster> MonstersList { get; set; }
         List<long> MonstersLocked { get; set; }
 
-        ListView MonstersListView { get; set; }
+        ObjectListView MonstersListView { get; set; }
         #endregion
 
         #region Events

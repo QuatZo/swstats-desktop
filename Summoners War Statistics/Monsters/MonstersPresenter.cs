@@ -19,13 +19,18 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             this.view.InitMonsters += View_InitMonsters;
-            this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
             this.view.MonstersStarsChanged += View_MonstersStarsChanged;
+
+            this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
 
             this.view.Resized += View_Resized;
 
         }
-
+        private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Monsters] Sorting");
+        }
         private void View_Resized()
         {
             //labelNat5s                    - 0
@@ -152,19 +157,9 @@ namespace Summoners_War_Statistics
         {
             Logger.log.Info("[Monsters] MonstersToLock star changing");
             view.MonstersListView.Items.Clear();
-            foreach (string[] monsterToLock in model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))))
-            {
-                view.MonstersListView.Items.Add(new ListViewItem(monsterToLock));
-            }
+            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
             Logger.log.Info("[Monsters] MonstersToLock star changed");
         }
-
-        private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
-            Logger.log.Info($"[Monsters] Sorting");
-        }
-
         private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
         {
             view.MonstersList = monsters;
@@ -239,10 +234,7 @@ namespace Summoners_War_Statistics
             if (monsterStars.Keys.Contains((byte)1)) { view.MonsterStarsOne = monsterStars[1]; }
             Logger.log.Info($"[Monsters] 1* monsters done");
 
-            foreach (string[] monsterToLock in model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked))
-            {
-                view.MonstersListView.Items.Add(new ListViewItem(monsterToLock));
-            }
+            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
             Logger.log.Info($"[Monsters] MonstersToLock list done");
         }
     }

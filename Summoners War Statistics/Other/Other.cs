@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 
 namespace Summoners_War_Statistics
 {
@@ -32,22 +33,22 @@ namespace Summoners_War_Statistics
             labelOtherActiveFriends,
             labelOtherGuild,
             labelRanking,
-            listViewFriendsList,
-            listViewGuildMembersList,
+            objectListViewFriends,
+            objectListViewGuild,
             panelFriends,
             panelGuild,
             panelGuildText
         };
-        public ListView SummonerFriendsList
+        public ObjectListView SummonerFriendsList
         {
-            get => listViewFriendsList;
-            set => listViewFriendsList = value;
+            get => objectListViewFriends;
+            set => objectListViewFriends = value;
         }
 
-        public ListView GuildMembersList
+        public ObjectListView GuildMembersList
         {
-            get => listViewGuildMembersList;
-            set => listViewGuildMembersList = value;
+            get => objectListViewGuild;
+            set => objectListViewGuild = value;
         }
         public string GuildName
         {
@@ -94,8 +95,8 @@ namespace Summoners_War_Statistics
         public Other()
         {
             InitializeComponent();
-            listViewFriendsList.DoubleBuffering(true);
-            listViewGuildMembersList.DoubleBuffering(true);
+            objectListViewFriends.DoubleBuffering(true);
+            objectListViewGuild.DoubleBuffering(true);
         }
 
         #region Methods

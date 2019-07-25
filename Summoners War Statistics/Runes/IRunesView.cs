@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace Summoners_War_Statistics
         double RunesEfficiencyStandardDeviation { get; set; }
 
 
-        ListView RunesListView { get; set; }
+        ObjectListView RunesListView { get; set; }
 
         List<Rune> RunesList { get; set; }
         Dictionary<long, int> MonstersMasterId { get; set; }

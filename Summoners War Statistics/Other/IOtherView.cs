@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -13,9 +14,9 @@ namespace Summoners_War_Statistics
         #region Properties
         Size TabSize { get; set; }
         List<Control> Cntrls { get; }
-        ListView SummonerFriendsList { get; set; }
+        ObjectListView SummonerFriendsList { get; set; }
 
-        ListView GuildMembersList { get; set; }
+        ObjectListView GuildMembersList { get; set; }
         string GuildName { get; set; }
         string GuildLeaderName { get; set; }
         string GuildBestRanking { get; set; }

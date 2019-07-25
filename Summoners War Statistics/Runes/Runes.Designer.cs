@@ -43,24 +43,6 @@
             this.labelUpgrade = new System.Windows.Forms.Label();
             this.labelRuneEfficiency = new System.Windows.Forms.Label();
             this.comboBoxRuneEfficiencyIf = new System.Windows.Forms.ComboBox();
-            this.listViewRunesList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelTextAmount = new System.Windows.Forms.Label();
             this.labelTextEfficiencyLow = new System.Windows.Forms.Label();
             this.labelTextEfficiencyHigh = new System.Windows.Forms.Label();
@@ -80,8 +62,28 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelTable = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
+            this.objectListViewRunes = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn6 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn8 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn12 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn13 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn15 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn17 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRunes
@@ -329,126 +331,6 @@
             this.comboBoxRuneEfficiencyIf.TabIndex = 17;
             this.comboBoxRuneEfficiencyIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
-            // listViewRunesList
-            // 
-            this.listViewRunesList.AllowColumnReorder = true;
-            this.listViewRunesList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.listViewRunesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17});
-            this.listViewRunesList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewRunesList.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewRunesList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.listViewRunesList.FullRowSelect = true;
-            this.listViewRunesList.HideSelection = false;
-            this.listViewRunesList.Location = new System.Drawing.Point(0, 115);
-            this.listViewRunesList.Name = "listViewRunesList";
-            this.listViewRunesList.Size = new System.Drawing.Size(780, 215);
-            this.listViewRunesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewRunesList.TabIndex = 38;
-            this.listViewRunesList.UseCompatibleStateImageBehavior = false;
-            this.listViewRunesList.View = System.Windows.Forms.View.Details;
-            this.listViewRunesList.SizeChanged += new System.EventHandler(this.Runes_Resize);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Set";
-            this.columnHeader1.Width = 54;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Slot";
-            this.columnHeader2.Width = 37;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Level";
-            this.columnHeader3.Width = 43;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Origin";
-            this.columnHeader4.Width = 42;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Mainstat";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "HP Flat";
-            this.columnHeader6.Width = 44;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "HP%";
-            this.columnHeader7.Width = 31;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "ATK Flat";
-            this.columnHeader8.Width = 51;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "ATK%";
-            this.columnHeader9.Width = 39;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "DEF Flat";
-            this.columnHeader10.Width = 48;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "DEF%";
-            this.columnHeader11.Width = 37;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "SPD";
-            this.columnHeader12.Width = 31;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "CRate";
-            this.columnHeader13.Width = 45;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "CDmg";
-            this.columnHeader14.Width = 41;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Res";
-            this.columnHeader15.Width = 32;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Acc";
-            this.columnHeader16.Width = 36;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Eff.%";
-            this.columnHeader17.Width = 38;
-            // 
             // labelTextAmount
             // 
             this.labelTextAmount.AutoSize = true;
@@ -688,12 +570,173 @@
             this.panelFooter.Size = new System.Drawing.Size(780, 81);
             this.panelFooter.TabIndex = 56;
             // 
+            // objectListViewRunes
+            // 
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn1);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn2);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn3);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn4);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn5);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn6);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn7);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn8);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn9);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn10);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn11);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn12);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn13);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn14);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn15);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn16);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn17);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn18);
+            this.objectListViewRunes.AllowColumnReorder = true;
+            this.objectListViewRunes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewRunes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn1,
+            this.olvColumn2,
+            this.olvColumn3,
+            this.olvColumn4,
+            this.olvColumn5,
+            this.olvColumn6,
+            this.olvColumn7,
+            this.olvColumn8,
+            this.olvColumn9,
+            this.olvColumn10,
+            this.olvColumn11,
+            this.olvColumn12,
+            this.olvColumn13,
+            this.olvColumn14,
+            this.olvColumn15,
+            this.olvColumn16,
+            this.olvColumn17,
+            this.olvColumn18});
+            this.objectListViewRunes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewRunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewRunes.FullRowSelect = true;
+            this.objectListViewRunes.Location = new System.Drawing.Point(0, 115);
+            this.objectListViewRunes.Name = "objectListViewRunes";
+            this.objectListViewRunes.ShowGroups = false;
+            this.objectListViewRunes.Size = new System.Drawing.Size(780, 215);
+            this.objectListViewRunes.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewRunes.TabIndex = 57;
+            this.objectListViewRunes.UseCompatibleStateImageBehavior = false;
+            this.objectListViewRunes.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "Set";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Set";
+            // 
+            // olvColumn2
+            // 
+            this.olvColumn2.AspectName = "Slot";
+            this.olvColumn2.CellPadding = null;
+            this.olvColumn2.Text = "Slot";
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "Level";
+            this.olvColumn3.CellPadding = null;
+            this.olvColumn3.Text = "Level";
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "Origin";
+            this.olvColumn4.CellPadding = null;
+            this.olvColumn4.Text = "Origin";
+            // 
+            // olvColumn5
+            // 
+            this.olvColumn5.AspectName = "Mainstat";
+            this.olvColumn5.CellPadding = null;
+            this.olvColumn5.Text = "Mainstat";
+            // 
+            // olvColumn6
+            // 
+            this.olvColumn6.AspectName = "Innate";
+            this.olvColumn6.CellPadding = null;
+            this.olvColumn6.Text = "Innate";
+            // 
+            // olvColumn7
+            // 
+            this.olvColumn7.AspectName = "HPFlat";
+            this.olvColumn7.CellPadding = null;
+            this.olvColumn7.Text = "HP Flat";
+            // 
+            // olvColumn8
+            // 
+            this.olvColumn8.AspectName = "HPPercentage";
+            this.olvColumn8.CellPadding = null;
+            this.olvColumn8.Text = "HP%";
+            // 
+            // olvColumn9
+            // 
+            this.olvColumn9.AspectName = "ATKFlat";
+            this.olvColumn9.CellPadding = null;
+            this.olvColumn9.Text = "ATK Flat";
+            // 
+            // olvColumn10
+            // 
+            this.olvColumn10.AspectName = "ATKPercentage";
+            this.olvColumn10.CellPadding = null;
+            this.olvColumn10.Text = "ATK%";
+            // 
+            // olvColumn11
+            // 
+            this.olvColumn11.AspectName = "DEFFlat";
+            this.olvColumn11.CellPadding = null;
+            this.olvColumn11.Text = "DEF Flat";
+            // 
+            // olvColumn12
+            // 
+            this.olvColumn12.AspectName = "DEFPercentage";
+            this.olvColumn12.CellPadding = null;
+            this.olvColumn12.Text = "DEF%";
+            // 
+            // olvColumn13
+            // 
+            this.olvColumn13.AspectName = "SPD";
+            this.olvColumn13.CellPadding = null;
+            this.olvColumn13.Text = "SPD";
+            // 
+            // olvColumn14
+            // 
+            this.olvColumn14.AspectName = "CRate";
+            this.olvColumn14.CellPadding = null;
+            this.olvColumn14.Text = "CRate";
+            // 
+            // olvColumn15
+            // 
+            this.olvColumn15.AspectName = "CDmg";
+            this.olvColumn15.CellPadding = null;
+            this.olvColumn15.Text = "CDmg";
+            // 
+            // olvColumn16
+            // 
+            this.olvColumn16.AspectName = "Res";
+            this.olvColumn16.CellPadding = null;
+            this.olvColumn16.Text = "Res";
+            // 
+            // olvColumn17
+            // 
+            this.olvColumn17.AspectName = "Acc";
+            this.olvColumn17.CellPadding = null;
+            this.olvColumn17.Text = "Acc";
+            // 
+            // olvColumn18
+            // 
+            this.olvColumn18.AspectName = "Eff";
+            this.olvColumn18.CellPadding = null;
+            this.olvColumn18.Text = "Eff%";
+            // 
             // Runes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.Controls.Add(this.listViewRunesList);
+            this.Controls.Add(this.objectListViewRunes);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelFooter);
             this.DoubleBuffered = true;
@@ -705,6 +748,7 @@
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -726,24 +770,6 @@
         private System.Windows.Forms.Label labelUpgrade;
         private System.Windows.Forms.Label labelRuneEfficiency;
         private System.Windows.Forms.ComboBox comboBoxRuneEfficiencyIf;
-        private System.Windows.Forms.ListView listViewRunesList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.ColumnHeader columnHeader16;
-        private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.Label labelTextAmount;
         private System.Windows.Forms.Label labelTextEfficiencyLow;
         private System.Windows.Forms.Label labelTextEfficiencyHigh;
@@ -763,5 +789,24 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelTable;
+        private BrightIdeasSoftware.ObjectListView objectListViewRunes;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private BrightIdeasSoftware.OLVColumn olvColumn2;
+        private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn olvColumn5;
+        private BrightIdeasSoftware.OLVColumn olvColumn6;
+        private BrightIdeasSoftware.OLVColumn olvColumn7;
+        private BrightIdeasSoftware.OLVColumn olvColumn8;
+        private BrightIdeasSoftware.OLVColumn olvColumn9;
+        private BrightIdeasSoftware.OLVColumn olvColumn10;
+        private BrightIdeasSoftware.OLVColumn olvColumn11;
+        private BrightIdeasSoftware.OLVColumn olvColumn12;
+        private BrightIdeasSoftware.OLVColumn olvColumn13;
+        private BrightIdeasSoftware.OLVColumn olvColumn14;
+        private BrightIdeasSoftware.OLVColumn olvColumn15;
+        private BrightIdeasSoftware.OLVColumn olvColumn16;
+        private BrightIdeasSoftware.OLVColumn olvColumn17;
+        private BrightIdeasSoftware.OLVColumn olvColumn18;
     }
 }

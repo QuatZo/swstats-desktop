@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 
 namespace Summoners_War_Statistics
 {
@@ -39,7 +40,7 @@ namespace Summoners_War_Statistics
                     labelStarsTwoAmount,
                     labelWater,
                     labelWind,
-                    listViewMonstersToLock,
+                    objectListViewMonstersToLock,
                     radioButton5,
                     radioButton6,
                     pictureBoxStarFives,
@@ -177,10 +178,10 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ListView MonstersListView
+        public ObjectListView MonstersListView
         {
-            get => listViewMonstersToLock;
-            set => listViewMonstersToLock = value;
+            get => objectListViewMonstersToLock;
+            set => objectListViewMonstersToLock = value;
         }
         #endregion
 
@@ -196,6 +197,7 @@ namespace Summoners_War_Statistics
         public Monsters()
         {
             InitializeComponent();
+            objectListViewMonstersToLock.DoubleBuffering(true);
         }
 
         #region Methods

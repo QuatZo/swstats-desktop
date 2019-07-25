@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -26,7 +27,7 @@ namespace Summoners_War_Statistics
             labelDimensionalHoleEnergyMaxInfo,
             labelDimensionalHoleEnergySlash,
             labelDimHoleEnergy,
-            listView1,
+            objectListViewDimHole,
             radioButton1,
             radioButton2,
             radioButton3,
@@ -55,10 +56,10 @@ namespace Summoners_War_Statistics
         public DateTime DimensionalEnergyGainStart { get; set; }
         public List<Awakening> DimHoleMonsters { get; set; }
 
-        public ListView DimHoleMonstersListView
+        public ObjectListView DimHoleMonstersListView
         {
-            get => listView1;
-            set => listView1 = value;
+            get => objectListViewDimHole;
+            set => objectListViewDimHole = value;
         }
 
         public Dictionary<RadioButton, ushort> DimHoleLevelAXP => new Dictionary<RadioButton, ushort>()
@@ -80,7 +81,7 @@ namespace Summoners_War_Statistics
         public DimHole()
         {
             InitializeComponent();
-            listView1.DoubleBuffering(true);
+            objectListViewDimHole.DoubleBuffering(true);
         }
 
         #region Methods

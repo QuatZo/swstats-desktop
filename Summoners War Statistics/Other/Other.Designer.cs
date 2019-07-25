@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.labelOtherActiveFriends = new System.Windows.Forms.Label();
-            this.listViewFriendsList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelOtherGuild = new System.Windows.Forms.Label();
             this.labelDefenseUnitsMax = new System.Windows.Forms.Label();
             this.labelDefenseUnitsSlash = new System.Windows.Forms.Label();
@@ -45,28 +39,36 @@
             this.labelMembersMax = new System.Windows.Forms.Label();
             this.labelMembersSlash = new System.Windows.Forms.Label();
             this.labelMembers = new System.Windows.Forms.Label();
-            this.listViewGuildMembersList = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
             this.panelGuild = new System.Windows.Forms.Panel();
+            this.objectListViewGuild = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelGuildText = new System.Windows.Forms.Panel();
             this.panelFriends = new System.Windows.Forms.Panel();
+            this.objectListViewFriends = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn6 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn8 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
             this.panelGuild.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewGuild)).BeginInit();
             this.panelGuildText.SuspendLayout();
             this.panelFriends.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOtherActiveFriends
@@ -80,54 +82,6 @@
             this.labelOtherActiveFriends.Size = new System.Drawing.Size(136, 42);
             this.labelOtherActiveFriends.TabIndex = 0;
             this.labelOtherActiveFriends.Text = "Friends List";
-            // 
-            // listViewFriendsList
-            // 
-            this.listViewFriendsList.AllowColumnReorder = true;
-            this.listViewFriendsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.listViewFriendsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader4});
-            this.listViewFriendsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewFriendsList.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewFriendsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.listViewFriendsList.FullRowSelect = true;
-            this.listViewFriendsList.HideSelection = false;
-            this.listViewFriendsList.Location = new System.Drawing.Point(0, 42);
-            this.listViewFriendsList.Name = "listViewFriendsList";
-            this.listViewFriendsList.Size = new System.Drawing.Size(780, 168);
-            this.listViewFriendsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewFriendsList.TabIndex = 1;
-            this.listViewFriendsList.UseCompatibleStateImageBehavior = false;
-            this.listViewFriendsList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 166;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Offline since";
-            this.columnHeader2.Width = 137;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Rep monster";
-            this.columnHeader3.Width = 138;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Rep stars";
-            this.columnHeader5.Width = 82;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Rep level";
-            this.columnHeader4.Width = 75;
             // 
             // labelOtherGuild
             // 
@@ -249,54 +203,6 @@
             this.labelMembers.Text = "0";
             this.labelMembers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // listViewGuildMembersList
-            // 
-            this.listViewGuildMembersList.AllowColumnReorder = true;
-            this.listViewGuildMembersList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.listViewGuildMembersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader10,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listViewGuildMembersList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewGuildMembersList.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewGuildMembersList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.listViewGuildMembersList.FullRowSelect = true;
-            this.listViewGuildMembersList.HideSelection = false;
-            this.listViewGuildMembersList.Location = new System.Drawing.Point(0, 42);
-            this.listViewGuildMembersList.Name = "listViewGuildMembersList";
-            this.listViewGuildMembersList.Size = new System.Drawing.Size(636, 159);
-            this.listViewGuildMembersList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewGuildMembersList.TabIndex = 47;
-            this.listViewGuildMembersList.UseCompatibleStateImageBehavior = false;
-            this.listViewGuildMembersList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Name";
-            this.columnHeader6.Width = 128;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Joined";
-            this.columnHeader10.Width = 131;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Offline since";
-            this.columnHeader7.Width = 141;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "First defense";
-            this.columnHeader8.Width = 88;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Second defense";
-            this.columnHeader9.Width = 93;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Summoners_War_Statistics.Properties.Resources.icon_guild_members;
@@ -344,7 +250,7 @@
             // 
             // panelGuild
             // 
-            this.panelGuild.Controls.Add(this.listViewGuildMembersList);
+            this.panelGuild.Controls.Add(this.objectListViewGuild);
             this.panelGuild.Controls.Add(this.panelGuildText);
             this.panelGuild.Controls.Add(this.labelOtherGuild);
             this.panelGuild.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -352,6 +258,64 @@
             this.panelGuild.Name = "panelGuild";
             this.panelGuild.Size = new System.Drawing.Size(780, 201);
             this.panelGuild.TabIndex = 48;
+            // 
+            // objectListViewGuild
+            // 
+            this.objectListViewGuild.AllColumns.Add(this.olvColumn1);
+            this.objectListViewGuild.AllColumns.Add(this.olvColumn2);
+            this.objectListViewGuild.AllColumns.Add(this.olvColumn3);
+            this.objectListViewGuild.AllColumns.Add(this.olvColumn4);
+            this.objectListViewGuild.AllColumns.Add(this.olvColumn5);
+            this.objectListViewGuild.AllowColumnReorder = true;
+            this.objectListViewGuild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewGuild.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn1,
+            this.olvColumn2,
+            this.olvColumn3,
+            this.olvColumn4,
+            this.olvColumn5});
+            this.objectListViewGuild.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewGuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewGuild.FullRowSelect = true;
+            this.objectListViewGuild.HideSelection = false;
+            this.objectListViewGuild.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewGuild.Name = "objectListViewGuild";
+            this.objectListViewGuild.ShowGroups = false;
+            this.objectListViewGuild.Size = new System.Drawing.Size(636, 159);
+            this.objectListViewGuild.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewGuild.TabIndex = 59;
+            this.objectListViewGuild.UseCompatibleStateImageBehavior = false;
+            this.objectListViewGuild.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "Name";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Name";
+            // 
+            // olvColumn2
+            // 
+            this.olvColumn2.AspectName = "Joined";
+            this.olvColumn2.CellPadding = null;
+            this.olvColumn2.Text = "Joined";
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "OfflineSince";
+            this.olvColumn3.CellPadding = null;
+            this.olvColumn3.Text = "Offline Since";
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "FirstDefense";
+            this.olvColumn4.CellPadding = null;
+            this.olvColumn4.Text = "First Defense";
+            // 
+            // olvColumn5
+            // 
+            this.olvColumn5.AspectName = "SecondDefense";
+            this.olvColumn5.CellPadding = null;
+            this.olvColumn5.Text = "Second Defense";
             // 
             // panelGuildText
             // 
@@ -377,13 +341,71 @@
             // 
             // panelFriends
             // 
-            this.panelFriends.Controls.Add(this.listViewFriendsList);
+            this.panelFriends.Controls.Add(this.objectListViewFriends);
             this.panelFriends.Controls.Add(this.labelOtherActiveFriends);
             this.panelFriends.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFriends.Location = new System.Drawing.Point(0, 0);
             this.panelFriends.Name = "panelFriends";
             this.panelFriends.Size = new System.Drawing.Size(780, 210);
             this.panelFriends.TabIndex = 49;
+            // 
+            // objectListViewFriends
+            // 
+            this.objectListViewFriends.AllColumns.Add(this.olvColumn6);
+            this.objectListViewFriends.AllColumns.Add(this.olvColumn8);
+            this.objectListViewFriends.AllColumns.Add(this.olvColumn9);
+            this.objectListViewFriends.AllColumns.Add(this.olvColumn10);
+            this.objectListViewFriends.AllColumns.Add(this.olvColumn11);
+            this.objectListViewFriends.AllowColumnReorder = true;
+            this.objectListViewFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn6,
+            this.olvColumn8,
+            this.olvColumn9,
+            this.olvColumn10,
+            this.olvColumn11});
+            this.objectListViewFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewFriends.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewFriends.FullRowSelect = true;
+            this.objectListViewFriends.HideSelection = false;
+            this.objectListViewFriends.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewFriends.Name = "objectListViewFriends";
+            this.objectListViewFriends.ShowGroups = false;
+            this.objectListViewFriends.Size = new System.Drawing.Size(780, 168);
+            this.objectListViewFriends.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewFriends.TabIndex = 60;
+            this.objectListViewFriends.UseCompatibleStateImageBehavior = false;
+            this.objectListViewFriends.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn6
+            // 
+            this.olvColumn6.AspectName = "Name";
+            this.olvColumn6.CellPadding = null;
+            this.olvColumn6.Text = "Name";
+            // 
+            // olvColumn8
+            // 
+            this.olvColumn8.AspectName = "OfflineSince";
+            this.olvColumn8.CellPadding = null;
+            this.olvColumn8.Text = "Offline Since";
+            // 
+            // olvColumn9
+            // 
+            this.olvColumn9.AspectName = "RepMonster";
+            this.olvColumn9.CellPadding = null;
+            this.olvColumn9.Text = "Rep monster";
+            // 
+            // olvColumn10
+            // 
+            this.olvColumn10.AspectName = "RepStars";
+            this.olvColumn10.CellPadding = null;
+            this.olvColumn10.Text = "Rep stars";
+            // 
+            // olvColumn11
+            // 
+            this.olvColumn11.AspectName = "RepLevel";
+            this.olvColumn11.CellPadding = null;
+            this.olvColumn11.Text = "Rep level";
             // 
             // Other
             // 
@@ -403,10 +425,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).EndInit();
             this.panelGuild.ResumeLayout(false);
             this.panelGuild.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewGuild)).EndInit();
             this.panelGuildText.ResumeLayout(false);
             this.panelGuildText.PerformLayout();
             this.panelFriends.ResumeLayout(false);
             this.panelFriends.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,13 +438,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelOtherActiveFriends;
-        private System.Windows.Forms.ListView listViewFriendsList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label labelOtherGuild;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.PictureBox pictureBoxMonsters;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -435,14 +453,20 @@
         private System.Windows.Forms.Label labelMembersMax;
         private System.Windows.Forms.Label labelMembersSlash;
         private System.Windows.Forms.Label labelMembers;
-        private System.Windows.Forms.ListView listViewGuildMembersList;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Panel panelGuild;
         private System.Windows.Forms.Panel panelFriends;
         private System.Windows.Forms.Panel panelGuildText;
+        private BrightIdeasSoftware.ObjectListView objectListViewGuild;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private BrightIdeasSoftware.OLVColumn olvColumn2;
+        private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn olvColumn5;
+        private BrightIdeasSoftware.ObjectListView objectListViewFriends;
+        private BrightIdeasSoftware.OLVColumn olvColumn6;
+        private BrightIdeasSoftware.OLVColumn olvColumn8;
+        private BrightIdeasSoftware.OLVColumn olvColumn9;
+        private BrightIdeasSoftware.OLVColumn olvColumn10;
+        private BrightIdeasSoftware.OLVColumn olvColumn11;
     }
 }

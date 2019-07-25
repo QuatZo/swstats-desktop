@@ -65,7 +65,7 @@ namespace Summoners_War_Statistics
                     control.Font = new Font(view.FF, 24, FontStyle.Regular);
                     continue;
                 }
-                if (control.Name.Contains("listView"))
+                if (control.Name.Contains("ListView"))
                 {
                     control.Font = new Font(view.FF, 10, FontStyle.Regular);
                     continue;
@@ -75,7 +75,7 @@ namespace Summoners_War_Statistics
 
             foreach (var control in view.RunesView.Cntrls)
             {
-                if (control.Name.Contains("listView"))
+                if (control.Name.Contains("ListView"))
                 {
                     control.Font = new Font(view.FF, 10, FontStyle.Regular);
                     continue;
@@ -90,7 +90,7 @@ namespace Summoners_War_Statistics
 
             foreach (var control in view.DimHoleView.Cntrls)
             {
-                if (control.Name.Contains("listView"))
+                if (control.Name.Contains("ListView"))
                 {
                     control.Font = new Font(view.FF, 10, FontStyle.Regular);
                     continue;
@@ -105,7 +105,7 @@ namespace Summoners_War_Statistics
 
             foreach (var control in view.OtherView.Cntrls)
             {
-                if (control.Name.Contains("listView"))
+                if (control.Name.Contains("ListView"))
                 {
                     control.Font = new Font(view.FF, 10, FontStyle.Regular);
                     continue;

@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monsters));
             this.labelMonsters = new System.Windows.Forms.Label();
-            this.listViewMonstersToLock = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelMonsterStats = new System.Windows.Forms.Label();
             this.labelWater = new System.Windows.Forms.Label();
             this.labelWind = new System.Windows.Forms.Label();
@@ -74,11 +68,17 @@
             this.pictureBoxStarsFourPlus = new System.Windows.Forms.PictureBox();
             this.labelLDNat4sPlus = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panelHeaderLeft = new System.Windows.Forms.Panel();
             this.panelHeaderMid = new System.Windows.Forms.Panel();
             this.panelHeaderRight = new System.Windows.Forms.Panel();
+            this.panelHeaderLeft = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelFooterRight = new System.Windows.Forms.Panel();
+            this.objectListViewMonstersToLock = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).BeginInit();
@@ -97,11 +97,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).BeginInit();
             this.panelHeader.SuspendLayout();
-            this.panelHeaderLeft.SuspendLayout();
             this.panelHeaderMid.SuspendLayout();
             this.panelHeaderRight.SuspendLayout();
+            this.panelHeaderLeft.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panelFooterRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMonsters
@@ -115,54 +116,6 @@
             this.labelMonsters.Size = new System.Drawing.Size(198, 42);
             this.labelMonsters.TabIndex = 1;
             this.labelMonsters.Text = "Monsters To Lock";
-            // 
-            // listViewMonstersToLock
-            // 
-            this.listViewMonstersToLock.AllowColumnReorder = true;
-            this.listViewMonstersToLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.listViewMonstersToLock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listViewMonstersToLock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewMonstersToLock.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewMonstersToLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.listViewMonstersToLock.FullRowSelect = true;
-            this.listViewMonstersToLock.HideSelection = false;
-            this.listViewMonstersToLock.Location = new System.Drawing.Point(0, 42);
-            this.listViewMonstersToLock.Name = "listViewMonstersToLock";
-            this.listViewMonstersToLock.Size = new System.Drawing.Size(726, 139);
-            this.listViewMonstersToLock.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listViewMonstersToLock.TabIndex = 2;
-            this.listViewMonstersToLock.UseCompatibleStateImageBehavior = false;
-            this.listViewMonstersToLock.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 226;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Stars";
-            this.columnHeader2.Width = 53;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Level";
-            this.columnHeader3.Width = 68;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Runes";
-            this.columnHeader4.Width = 75;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Rune sets";
-            this.columnHeader5.Width = 209;
             // 
             // labelMonsterStats
             // 
@@ -573,24 +526,6 @@
             this.panelHeader.Size = new System.Drawing.Size(780, 230);
             this.panelHeader.TabIndex = 69;
             // 
-            // panelHeaderLeft
-            // 
-            this.panelHeaderLeft.Controls.Add(this.labelLight);
-            this.panelHeaderLeft.Controls.Add(this.labelDark);
-            this.panelHeaderLeft.Controls.Add(this.labelFire);
-            this.panelHeaderLeft.Controls.Add(this.labelWind);
-            this.panelHeaderLeft.Controls.Add(this.labelWater);
-            this.panelHeaderLeft.Controls.Add(this.pictureBoxLight);
-            this.panelHeaderLeft.Controls.Add(this.pictureBoxWater);
-            this.panelHeaderLeft.Controls.Add(this.pictureBoxDark);
-            this.panelHeaderLeft.Controls.Add(this.pictureBoxFire);
-            this.panelHeaderLeft.Controls.Add(this.pictureBoxWind);
-            this.panelHeaderLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelHeaderLeft.Location = new System.Drawing.Point(0, 42);
-            this.panelHeaderLeft.Name = "panelHeaderLeft";
-            this.panelHeaderLeft.Size = new System.Drawing.Size(210, 188);
-            this.panelHeaderLeft.TabIndex = 69;
-            // 
             // panelHeaderMid
             // 
             this.panelHeaderMid.Controls.Add(this.pictureBoxStars6);
@@ -631,9 +566,27 @@
             this.panelHeaderRight.Size = new System.Drawing.Size(200, 188);
             this.panelHeaderRight.TabIndex = 71;
             // 
+            // panelHeaderLeft
+            // 
+            this.panelHeaderLeft.Controls.Add(this.labelLight);
+            this.panelHeaderLeft.Controls.Add(this.labelDark);
+            this.panelHeaderLeft.Controls.Add(this.labelFire);
+            this.panelHeaderLeft.Controls.Add(this.labelWind);
+            this.panelHeaderLeft.Controls.Add(this.labelWater);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxLight);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxWater);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxDark);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxFire);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxWind);
+            this.panelHeaderLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelHeaderLeft.Location = new System.Drawing.Point(0, 42);
+            this.panelHeaderLeft.Name = "panelHeaderLeft";
+            this.panelHeaderLeft.Size = new System.Drawing.Size(210, 188);
+            this.panelHeaderLeft.TabIndex = 69;
+            // 
             // panelFooter
             // 
-            this.panelFooter.Controls.Add(this.listViewMonstersToLock);
+            this.panelFooter.Controls.Add(this.objectListViewMonstersToLock);
             this.panelFooter.Controls.Add(this.panelFooterRight);
             this.panelFooter.Controls.Add(this.labelMonsters);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -651,6 +604,68 @@
             this.panelFooterRight.Name = "panelFooterRight";
             this.panelFooterRight.Size = new System.Drawing.Size(54, 139);
             this.panelFooterRight.TabIndex = 45;
+            // 
+            // objectListViewMonstersToLock
+            // 
+            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn19);
+            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn20);
+            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn21);
+            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn22);
+            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn1);
+            this.objectListViewMonstersToLock.AllowColumnReorder = true;
+            this.objectListViewMonstersToLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewMonstersToLock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn19,
+            this.olvColumn20,
+            this.olvColumn21,
+            this.olvColumn22,
+            this.olvColumn1});
+            this.objectListViewMonstersToLock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewMonstersToLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewMonstersToLock.FullRowSelect = true;
+            this.objectListViewMonstersToLock.HideSelection = false;
+            this.objectListViewMonstersToLock.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewMonstersToLock.Name = "objectListViewMonstersToLock";
+            this.objectListViewMonstersToLock.ShowGroups = false;
+            this.objectListViewMonstersToLock.Size = new System.Drawing.Size(726, 139);
+            this.objectListViewMonstersToLock.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewMonstersToLock.TabIndex = 59;
+            this.objectListViewMonstersToLock.UseCompatibleStateImageBehavior = false;
+            this.objectListViewMonstersToLock.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn19
+            // 
+            this.olvColumn19.AspectName = "Name";
+            this.olvColumn19.CellPadding = null;
+            this.olvColumn19.Text = "Name";
+            this.olvColumn19.Width = 164;
+            // 
+            // olvColumn20
+            // 
+            this.olvColumn20.AspectName = "Stars";
+            this.olvColumn20.CellPadding = null;
+            this.olvColumn20.Text = "Stars";
+            this.olvColumn20.Width = 226;
+            // 
+            // olvColumn21
+            // 
+            this.olvColumn21.AspectName = "Level";
+            this.olvColumn21.CellPadding = null;
+            this.olvColumn21.Text = "Level";
+            this.olvColumn21.Width = 131;
+            // 
+            // olvColumn22
+            // 
+            this.olvColumn22.AspectName = "Runes";
+            this.olvColumn22.CellPadding = null;
+            this.olvColumn22.Text = "Runes";
+            this.olvColumn22.Width = 109;
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "RuneSets";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Rune sets";
             // 
             // Monsters
             // 
@@ -681,16 +696,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            this.panelHeaderLeft.ResumeLayout(false);
-            this.panelHeaderLeft.PerformLayout();
             this.panelHeaderMid.ResumeLayout(false);
             this.panelHeaderMid.PerformLayout();
             this.panelHeaderRight.ResumeLayout(false);
             this.panelHeaderRight.PerformLayout();
+            this.panelHeaderLeft.ResumeLayout(false);
+            this.panelHeaderLeft.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.panelFooterRight.ResumeLayout(false);
             this.panelFooterRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -698,13 +714,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelMonsters;
-        private System.Windows.Forms.ListView listViewMonstersToLock;
         private System.Windows.Forms.Label labelMonsterStats;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.PictureBox pictureBoxWater;
         private System.Windows.Forms.PictureBox pictureBoxWind;
         private System.Windows.Forms.PictureBox pictureBoxFire;
@@ -747,5 +757,11 @@
         private System.Windows.Forms.Panel panelHeaderLeft;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelFooterRight;
+        private BrightIdeasSoftware.ObjectListView objectListViewMonstersToLock;
+        private BrightIdeasSoftware.OLVColumn olvColumn19;
+        private BrightIdeasSoftware.OLVColumn olvColumn20;
+        private BrightIdeasSoftware.OLVColumn olvColumn21;
+        private BrightIdeasSoftware.OLVColumn olvColumn22;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
     }
 }

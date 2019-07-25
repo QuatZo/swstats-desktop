@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 
 namespace Summoners_War_Statistics
 {
@@ -41,7 +42,7 @@ namespace Summoners_War_Statistics
             labelTextEfficiencyMedian,
             labelTextStandardDeviation,
             labelUpgrade,
-            listViewRunesList,
+            objectListViewRunes,
             comboBoxRuneEfficiency,
             comboBoxRuneEfficiencyIf,
             comboBoxRuneMainstat,
@@ -218,10 +219,10 @@ namespace Summoners_War_Statistics
             set => labelRunesStandardDeviation.Text = value.ToString() + "%";
         }
 
-        public ListView RunesListView
+        public ObjectListView RunesListView
         {
-            get => listViewRunesList;
-            set => listViewRunesList = value;
+            get => objectListViewRunes;
+            set => objectListViewRunes = value;
         }
 
         public List<Rune> RunesList { get; set; }
@@ -237,7 +238,7 @@ namespace Summoners_War_Statistics
         {
             InitializeComponent();
 
-            listViewRunesList.DoubleBuffering(true);
+            objectListViewRunes.DoubleBuffering(true);
         }
 
         #region Methods

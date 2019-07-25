@@ -181,15 +181,16 @@ namespace Summoners_War_Statistics
             ushort runesMaxed = 0;
             List<double> efficiencies = new List<double>();
             view.RunesListView.BeginUpdate();
-            foreach (string[] rune in model.RunesList(view.RunesList, view.MonstersMasterId, GetColumns(), filters))
+            List<RuneRow> runes = model.RunesList(view.RunesList, view.MonstersMasterId, GetColumns(), filters);
+            foreach (RuneRow rune in runes)
             {
-                if(rune[2] == "15") { runesMaxed++; }
-                if(rune[3].ToLower() == "inventory") { runesInInventory++; }
+                if(rune.Level == 15) { runesMaxed++; }
+                if(rune.Origin.ToLower() == "inventory") { runesInInventory++; }
 
-                efficiencies.Add(double.Parse(rune[rune.Length - 1]));
-
-                view.RunesListView.Items.Add(new ListViewItem(rune));
+                efficiencies.Add(double.Parse(rune.Eff));
             }
+
+            view.RunesListView.AddObjects(runes);
 
             view.RunesListView.EndUpdate();
             Logger.log.Info($"[Runes] Runes in list view done");

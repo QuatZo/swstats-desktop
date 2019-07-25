@@ -53,11 +53,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ListViewPrinter, Version=2.7.1.31255, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\ListViewPrinter.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.7.1.31255, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="SparkleLibrary, Version=2.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.2.7.1.5\lib\SparkleLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlExtensions.cs" />
+    <Compile Include="DimHole\DimHoleRow.cs" />
+    <Compile Include="FriendsRow.cs" />
+    <Compile Include="GuildRow.cs" />
     <Compile Include="Json Classes\Decoration.cs" />
     <Compile Include="Json Classes\Summoner.cs" />
     <Compile Include="Json Classes\Awakening.cs" />
@@ -124,6 +136,7 @@
     <Compile Include="Logger.cs" />
     <Compile Include="Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
+    <Compile Include="Monsters\MonstersToLockRow.cs" />
     <Compile Include="Monsters\MonstersPresenter.cs" />
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\OtherPresenter.cs" />
@@ -133,6 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Runes\RuneRow.cs" />
     <Compile Include="Runes\RunesPresenter.cs" />
     <Compile Include="Runes\IRunesView.cs" />
     <Compile Include="Monsters\Monsters.cs">

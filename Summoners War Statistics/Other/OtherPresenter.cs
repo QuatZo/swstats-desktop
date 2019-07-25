@@ -25,7 +25,17 @@ namespace Summoners_War_Statistics
 
             this.view.Resized += View_Resized;
         }
+        private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Guild] Sorting");
+        }
 
+        private void SummonerFriendsList_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            Logger.log.Info($"[Friends] Sorting");
+        }
         private void View_Resized()
         {
             //labelDefenseUnits                 - 0
@@ -39,8 +49,8 @@ namespace Summoners_War_Statistics
             //labelOtherActiveFriends           - 8
             //labelOtherGuild                   - 9
             //labelRanking                      - 10
-            //listViewFriendsList               - 11
-            //listViewGuildMembersList          - 12
+            //ObjectListViewFriends             - 11
+            //ObjectListViewGuild               - 12
             //panelFriends                      - 13
             //panelGuild                        - 14
             //panelGuildText                    - 15
@@ -70,30 +80,12 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.EndUpdate();
         }
 
-        private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column);
-            Logger.log.Info($"[Guild] Sorting");
-        }
-
-        private void SummonerFriendsList_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column);
-            Logger.log.Info($"[Friends] Sorting");
-        }
-
         private void View_InitOther(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
         {
-            foreach(string[] friend in model.FriendsList(friendsList))
-            {
-                view.SummonerFriendsList.Items.Add(new ListViewItem(friend));
-            }
+            view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
 
-            foreach (string[] member in model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList))
-            {
-                view.GuildMembersList.Items.Add(new ListViewItem(member));
-            }
+            view.GuildMembersList.AddObjects(model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList));
             Logger.log.Info($"[Guild] Guild members to list done");
 
             view.GuildName = guild.GuildInfo.Name;

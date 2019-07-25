@@ -1979,6 +1979,27 @@ namespace Summoners_War_Statistics
             return effect[(int)rune.PriEff[0]];
         }
 
+        public string GetRuneInnateEffect(Rune rune)
+        {
+            if (rune.PrefixEff.Count <= 0 || rune.PrefixEff[0] <= 0) { return "-"; }
+            Dictionary<int, string> effect = new Dictionary<int, string>()
+            {
+                {0, "" },
+                {1, $"HP +{rune.PrefixEff[1]}" },
+                {2, $"HP {rune.PrefixEff[1]}%" },
+                {3, $"ATK +{rune.PrefixEff[1]}" },
+                {4, $"ATK {rune.PrefixEff[1]}%" },
+                {5, $"DEF +{rune.PrefixEff[1]}" },
+                {6, $"DEF {rune.PrefixEff[1]}%" },
+                {8, $"SPD +{rune.PrefixEff[1]}" },
+                {9, $"CRate {rune.PrefixEff[1]}%" },
+                {10, $"CDmg {rune.PrefixEff[1]}%" },
+                {11, $"Res {rune.PrefixEff[1]}%" },
+                {12, $"Acc {rune.PrefixEff[1]}%" }
+            };
+            return effect[(int)rune.PrefixEff[0]];
+        }
+
         public string GetRuneSet(int id)
         {
             if (runeSets.ContainsKey(id))

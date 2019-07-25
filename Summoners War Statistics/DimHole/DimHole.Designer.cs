@@ -35,11 +35,6 @@
             this.labelDimensionalHoleEnergy = new System.Windows.Forms.Label();
             this.labelDimensionalHoleEnergyMaxInfo = new System.Windows.Forms.Label();
             this.labelDimHoleMonsters = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -47,10 +42,16 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.objectListViewDimHole = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelButtons = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewDimHole)).BeginInit();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,48 +133,6 @@
             this.labelDimHoleMonsters.Size = new System.Drawing.Size(296, 42);
             this.labelDimHoleMonsters.TabIndex = 36;
             this.labelDimHoleMonsters.Text = "Dimensional Hole Monsters";
-            // 
-            // listView1
-            // 
-            this.listView1.AllowColumnReorder = true;
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 42);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(720, 269);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView1.TabIndex = 37;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 97;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "AXP needed";
-            this.columnHeader2.Width = 131;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Energy needed";
-            this.columnHeader3.Width = 119;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "When will be 2A";
-            this.columnHeader4.Width = 293;
             // 
             // radioButton1
             // 
@@ -258,7 +217,7 @@
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.listView1);
+            this.panelContent.Controls.Add(this.objectListViewDimHole);
             this.panelContent.Controls.Add(this.panelButtons);
             this.panelContent.Controls.Add(this.labelDimHoleMonsters);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -266,6 +225,60 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(780, 311);
             this.panelContent.TabIndex = 36;
+            // 
+            // objectListViewDimHole
+            // 
+            this.objectListViewDimHole.AllColumns.Add(this.olvColumn19);
+            this.objectListViewDimHole.AllColumns.Add(this.olvColumn20);
+            this.objectListViewDimHole.AllColumns.Add(this.olvColumn21);
+            this.objectListViewDimHole.AllColumns.Add(this.olvColumn22);
+            this.objectListViewDimHole.AllowColumnReorder = true;
+            this.objectListViewDimHole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewDimHole.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn19,
+            this.olvColumn20,
+            this.olvColumn21,
+            this.olvColumn22});
+            this.objectListViewDimHole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewDimHole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewDimHole.FullRowSelect = true;
+            this.objectListViewDimHole.HideSelection = false;
+            this.objectListViewDimHole.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewDimHole.Name = "objectListViewDimHole";
+            this.objectListViewDimHole.ShowGroups = false;
+            this.objectListViewDimHole.Size = new System.Drawing.Size(720, 269);
+            this.objectListViewDimHole.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewDimHole.TabIndex = 58;
+            this.objectListViewDimHole.UseCompatibleStateImageBehavior = false;
+            this.objectListViewDimHole.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumn19
+            // 
+            this.olvColumn19.AspectName = "Name";
+            this.olvColumn19.CellPadding = null;
+            this.olvColumn19.Text = "Name";
+            this.olvColumn19.Width = 164;
+            // 
+            // olvColumn20
+            // 
+            this.olvColumn20.AspectName = "AXPNeeded";
+            this.olvColumn20.CellPadding = null;
+            this.olvColumn20.Text = "AXP Needed";
+            this.olvColumn20.Width = 226;
+            // 
+            // olvColumn21
+            // 
+            this.olvColumn21.AspectName = "EnergyNeeded";
+            this.olvColumn21.CellPadding = null;
+            this.olvColumn21.Text = "Energy Needed";
+            this.olvColumn21.Width = 131;
+            // 
+            // olvColumn22
+            // 
+            this.olvColumn22.AspectName = "When2A";
+            this.olvColumn22.CellPadding = null;
+            this.olvColumn22.Text = "When will be 2A";
+            this.olvColumn22.Width = 109;
             // 
             // panelButtons
             // 
@@ -295,6 +308,7 @@
             this.panelHeader.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewDimHole)).EndInit();
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
             this.ResumeLayout(false);
@@ -310,11 +324,6 @@
         private System.Windows.Forms.Label labelDimensionalHoleEnergy;
         private System.Windows.Forms.Label labelDimensionalHoleEnergyMaxInfo;
         private System.Windows.Forms.Label labelDimHoleMonsters;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -323,5 +332,10 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelButtons;
+        private BrightIdeasSoftware.ObjectListView objectListViewDimHole;
+        private BrightIdeasSoftware.OLVColumn olvColumn19;
+        private BrightIdeasSoftware.OLVColumn olvColumn20;
+        private BrightIdeasSoftware.OLVColumn olvColumn21;
+        private BrightIdeasSoftware.OLVColumn olvColumn22;
     }
 }
