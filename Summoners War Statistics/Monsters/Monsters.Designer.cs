@@ -69,10 +69,16 @@
             this.pictureBoxStars3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxStars4 = new System.Windows.Forms.PictureBox();
             this.pictureBoxStars5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxStarFives = new System.Windows.Forms.PictureBox();
+            this.labelNat5s = new System.Windows.Forms.Label();
+            this.pictureBoxStarsFourPlus = new System.Windows.Forms.PictureBox();
+            this.labelLDNat4sPlus = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelHeaderLeft = new System.Windows.Forms.Panel();
+            this.panelHeaderMid = new System.Windows.Forms.Panel();
+            this.panelHeaderRight = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.panelFooterRight = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).BeginInit();
@@ -88,16 +94,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            this.panelHeaderLeft.SuspendLayout();
+            this.panelHeaderMid.SuspendLayout();
+            this.panelHeaderRight.SuspendLayout();
+            this.panelFooter.SuspendLayout();
+            this.panelFooterRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMonsters
             // 
             this.labelMonsters.AutoSize = true;
+            this.labelMonsters.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonsters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelMonsters.Location = new System.Drawing.Point(3, 240);
+            this.labelMonsters.Location = new System.Drawing.Point(0, 0);
             this.labelMonsters.Name = "labelMonsters";
             this.labelMonsters.Size = new System.Drawing.Size(198, 42);
             this.labelMonsters.TabIndex = 1;
@@ -113,13 +126,14 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listViewMonstersToLock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewMonstersToLock.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewMonstersToLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.listViewMonstersToLock.FullRowSelect = true;
             this.listViewMonstersToLock.HideSelection = false;
-            this.listViewMonstersToLock.Location = new System.Drawing.Point(10, 285);
+            this.listViewMonstersToLock.Location = new System.Drawing.Point(0, 42);
             this.listViewMonstersToLock.Name = "listViewMonstersToLock";
-            this.listViewMonstersToLock.Size = new System.Drawing.Size(692, 113);
+            this.listViewMonstersToLock.Size = new System.Drawing.Size(726, 139);
             this.listViewMonstersToLock.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewMonstersToLock.TabIndex = 2;
             this.listViewMonstersToLock.UseCompatibleStateImageBehavior = false;
@@ -153,9 +167,10 @@
             // labelMonsterStats
             // 
             this.labelMonsterStats.AutoSize = true;
+            this.labelMonsterStats.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelMonsterStats.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonsterStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelMonsterStats.Location = new System.Drawing.Point(3, 11);
+            this.labelMonsterStats.Location = new System.Drawing.Point(0, 0);
             this.labelMonsterStats.Name = "labelMonsterStats";
             this.labelMonsterStats.Size = new System.Drawing.Size(185, 42);
             this.labelMonsterStats.TabIndex = 3;
@@ -166,7 +181,7 @@
             this.labelWater.AutoSize = true;
             this.labelWater.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelWater.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelWater.Location = new System.Drawing.Point(40, 57);
+            this.labelWater.Location = new System.Drawing.Point(40, 5);
             this.labelWater.Name = "labelWater";
             this.labelWater.Size = new System.Drawing.Size(17, 22);
             this.labelWater.TabIndex = 9;
@@ -178,7 +193,7 @@
             this.labelWind.AutoSize = true;
             this.labelWind.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelWind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelWind.Location = new System.Drawing.Point(40, 115);
+            this.labelWind.Location = new System.Drawing.Point(40, 63);
             this.labelWind.Name = "labelWind";
             this.labelWind.Size = new System.Drawing.Size(17, 22);
             this.labelWind.TabIndex = 10;
@@ -190,7 +205,7 @@
             this.labelFire.AutoSize = true;
             this.labelFire.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelFire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelFire.Location = new System.Drawing.Point(40, 87);
+            this.labelFire.Location = new System.Drawing.Point(40, 35);
             this.labelFire.Name = "labelFire";
             this.labelFire.Size = new System.Drawing.Size(17, 22);
             this.labelFire.TabIndex = 11;
@@ -202,7 +217,7 @@
             this.labelLight.AutoSize = true;
             this.labelLight.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelLight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelLight.Location = new System.Drawing.Point(40, 145);
+            this.labelLight.Location = new System.Drawing.Point(40, 93);
             this.labelLight.Name = "labelLight";
             this.labelLight.Size = new System.Drawing.Size(17, 22);
             this.labelLight.TabIndex = 12;
@@ -214,7 +229,7 @@
             this.labelDark.AutoSize = true;
             this.labelDark.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelDark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelDark.Location = new System.Drawing.Point(40, 175);
+            this.labelDark.Location = new System.Drawing.Point(40, 123);
             this.labelDark.Name = "labelDark";
             this.labelDark.Size = new System.Drawing.Size(17, 22);
             this.labelDark.TabIndex = 13;
@@ -226,7 +241,7 @@
             this.labelStarsSixAmount.AutoSize = true;
             this.labelStarsSixAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsSixAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsSixAmount.Location = new System.Drawing.Point(612, 57);
+            this.labelStarsSixAmount.Location = new System.Drawing.Point(158, 3);
             this.labelStarsSixAmount.Name = "labelStarsSixAmount";
             this.labelStarsSixAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsSixAmount.TabIndex = 20;
@@ -238,7 +253,7 @@
             this.labelStarsFiveAmount.AutoSize = true;
             this.labelStarsFiveAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsFiveAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsFiveAmount.Location = new System.Drawing.Point(612, 89);
+            this.labelStarsFiveAmount.Location = new System.Drawing.Point(158, 35);
             this.labelStarsFiveAmount.Name = "labelStarsFiveAmount";
             this.labelStarsFiveAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsFiveAmount.TabIndex = 21;
@@ -250,7 +265,7 @@
             this.labelStarsFourAmount.AutoSize = true;
             this.labelStarsFourAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsFourAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsFourAmount.Location = new System.Drawing.Point(612, 119);
+            this.labelStarsFourAmount.Location = new System.Drawing.Point(158, 65);
             this.labelStarsFourAmount.Name = "labelStarsFourAmount";
             this.labelStarsFourAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsFourAmount.TabIndex = 22;
@@ -262,7 +277,7 @@
             this.labelStarsThreeAmount.AutoSize = true;
             this.labelStarsThreeAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsThreeAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsThreeAmount.Location = new System.Drawing.Point(612, 149);
+            this.labelStarsThreeAmount.Location = new System.Drawing.Point(158, 95);
             this.labelStarsThreeAmount.Name = "labelStarsThreeAmount";
             this.labelStarsThreeAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsThreeAmount.TabIndex = 23;
@@ -274,7 +289,7 @@
             this.labelStarsTwoAmount.AutoSize = true;
             this.labelStarsTwoAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsTwoAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsTwoAmount.Location = new System.Drawing.Point(612, 179);
+            this.labelStarsTwoAmount.Location = new System.Drawing.Point(158, 125);
             this.labelStarsTwoAmount.Name = "labelStarsTwoAmount";
             this.labelStarsTwoAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsTwoAmount.TabIndex = 24;
@@ -286,7 +301,7 @@
             this.labelStarsOneAmount.AutoSize = true;
             this.labelStarsOneAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsOneAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsOneAmount.Location = new System.Drawing.Point(612, 209);
+            this.labelStarsOneAmount.Location = new System.Drawing.Point(158, 155);
             this.labelStarsOneAmount.Name = "labelStarsOneAmount";
             this.labelStarsOneAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsOneAmount.TabIndex = 25;
@@ -299,7 +314,7 @@
             this.radioButton6.Checked = true;
             this.radioButton6.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton6.Location = new System.Drawing.Point(708, 314);
+            this.radioButton6.Location = new System.Drawing.Point(3, 50);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(43, 23);
             this.radioButton6.TabIndex = 44;
@@ -313,7 +328,7 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(708, 285);
+            this.radioButton5.Location = new System.Drawing.Point(3, 21);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(43, 23);
             this.radioButton5.TabIndex = 43;
@@ -326,7 +341,7 @@
             this.labelDaysNat5.AutoSize = true;
             this.labelDaysNat5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelDaysNat5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelDaysNat5.Location = new System.Drawing.Point(275, 89);
+            this.labelDaysNat5.Location = new System.Drawing.Point(60, 30);
             this.labelDaysNat5.Name = "labelDaysNat5";
             this.labelDaysNat5.Size = new System.Drawing.Size(47, 22);
             this.labelDaysNat5.TabIndex = 47;
@@ -338,7 +353,7 @@
             this.labelDaysLDLightning.AutoSize = true;
             this.labelDaysLDLightning.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelDaysLDLightning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelDaysLDLightning.Location = new System.Drawing.Point(275, 147);
+            this.labelDaysLDLightning.Location = new System.Drawing.Point(60, 88);
             this.labelDaysLDLightning.Name = "labelDaysLDLightning";
             this.labelDaysLDLightning.Size = new System.Drawing.Size(47, 22);
             this.labelDaysLDLightning.TabIndex = 48;
@@ -350,7 +365,7 @@
             this.labelLDNat4Plus.AutoSize = true;
             this.labelLDNat4Plus.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelLDNat4Plus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelLDNat4Plus.Location = new System.Drawing.Point(275, 117);
+            this.labelLDNat4Plus.Location = new System.Drawing.Point(60, 58);
             this.labelLDNat4Plus.Name = "labelLDNat4Plus";
             this.labelLDNat4Plus.Size = new System.Drawing.Size(17, 22);
             this.labelLDNat4Plus.TabIndex = 51;
@@ -362,7 +377,7 @@
             this.labelNat5.AutoSize = true;
             this.labelNat5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelNat5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelNat5.Location = new System.Drawing.Point(275, 59);
+            this.labelNat5.Location = new System.Drawing.Point(60, 0);
             this.labelNat5.Name = "labelNat5";
             this.labelNat5.Size = new System.Drawing.Size(17, 22);
             this.labelNat5.TabIndex = 52;
@@ -372,7 +387,7 @@
             // pictureBoxStars6
             // 
             this.pictureBoxStars6.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_6;
-            this.pictureBoxStars6.Location = new System.Drawing.Point(474, 57);
+            this.pictureBoxStars6.Location = new System.Drawing.Point(20, 3);
             this.pictureBoxStars6.Name = "pictureBoxStars6";
             this.pictureBoxStars6.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars6.TabIndex = 59;
@@ -381,7 +396,7 @@
             // pictureBoxElementalNat5
             // 
             this.pictureBoxElementalNat5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_elemental;
-            this.pictureBoxElementalNat5.Location = new System.Drawing.Point(245, 57);
+            this.pictureBoxElementalNat5.Location = new System.Drawing.Point(30, -2);
             this.pictureBoxElementalNat5.Name = "pictureBoxElementalNat5";
             this.pictureBoxElementalNat5.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxElementalNat5.TabIndex = 56;
@@ -390,7 +405,7 @@
             // pictureBoxElementalNat5Clock
             // 
             this.pictureBoxElementalNat5Clock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxElementalNat5Clock.Image")));
-            this.pictureBoxElementalNat5Clock.Location = new System.Drawing.Point(245, 87);
+            this.pictureBoxElementalNat5Clock.Location = new System.Drawing.Point(30, 28);
             this.pictureBoxElementalNat5Clock.Name = "pictureBoxElementalNat5Clock";
             this.pictureBoxElementalNat5Clock.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxElementalNat5Clock.TabIndex = 55;
@@ -399,7 +414,7 @@
             // pictureBoxLDNat4PlusClock
             // 
             this.pictureBoxLDNat4PlusClock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLDNat4PlusClock.Image")));
-            this.pictureBoxLDNat4PlusClock.Location = new System.Drawing.Point(245, 145);
+            this.pictureBoxLDNat4PlusClock.Location = new System.Drawing.Point(30, 86);
             this.pictureBoxLDNat4PlusClock.Name = "pictureBoxLDNat4PlusClock";
             this.pictureBoxLDNat4PlusClock.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLDNat4PlusClock.TabIndex = 54;
@@ -408,7 +423,7 @@
             // pictureBoxLDNat4Plus
             // 
             this.pictureBoxLDNat4Plus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_lightdark;
-            this.pictureBoxLDNat4Plus.Location = new System.Drawing.Point(245, 115);
+            this.pictureBoxLDNat4Plus.Location = new System.Drawing.Point(30, 56);
             this.pictureBoxLDNat4Plus.Name = "pictureBoxLDNat4Plus";
             this.pictureBoxLDNat4Plus.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLDNat4Plus.TabIndex = 53;
@@ -417,7 +432,7 @@
             // pictureBoxLight
             // 
             this.pictureBoxLight.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_light;
-            this.pictureBoxLight.Location = new System.Drawing.Point(10, 145);
+            this.pictureBoxLight.Location = new System.Drawing.Point(10, 93);
             this.pictureBoxLight.Name = "pictureBoxLight";
             this.pictureBoxLight.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLight.TabIndex = 8;
@@ -426,7 +441,7 @@
             // pictureBoxDark
             // 
             this.pictureBoxDark.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_dark;
-            this.pictureBoxDark.Location = new System.Drawing.Point(10, 175);
+            this.pictureBoxDark.Location = new System.Drawing.Point(10, 123);
             this.pictureBoxDark.Name = "pictureBoxDark";
             this.pictureBoxDark.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDark.TabIndex = 7;
@@ -435,7 +450,7 @@
             // pictureBoxFire
             // 
             this.pictureBoxFire.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_fire;
-            this.pictureBoxFire.Location = new System.Drawing.Point(10, 87);
+            this.pictureBoxFire.Location = new System.Drawing.Point(10, 35);
             this.pictureBoxFire.Name = "pictureBoxFire";
             this.pictureBoxFire.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxFire.TabIndex = 6;
@@ -444,7 +459,7 @@
             // pictureBoxWind
             // 
             this.pictureBoxWind.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_storm;
-            this.pictureBoxWind.Location = new System.Drawing.Point(10, 115);
+            this.pictureBoxWind.Location = new System.Drawing.Point(10, 63);
             this.pictureBoxWind.Name = "pictureBoxWind";
             this.pictureBoxWind.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxWind.TabIndex = 5;
@@ -453,7 +468,7 @@
             // pictureBoxWater
             // 
             this.pictureBoxWater.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_water;
-            this.pictureBoxWater.Location = new System.Drawing.Point(10, 57);
+            this.pictureBoxWater.Location = new System.Drawing.Point(10, 5);
             this.pictureBoxWater.Name = "pictureBoxWater";
             this.pictureBoxWater.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxWater.TabIndex = 4;
@@ -462,7 +477,7 @@
             // pictureBoxStars1
             // 
             this.pictureBoxStars1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_1;
-            this.pictureBoxStars1.Location = new System.Drawing.Point(474, 209);
+            this.pictureBoxStars1.Location = new System.Drawing.Point(20, 155);
             this.pictureBoxStars1.Name = "pictureBoxStars1";
             this.pictureBoxStars1.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars1.TabIndex = 60;
@@ -471,7 +486,7 @@
             // pictureBoxStars2
             // 
             this.pictureBoxStars2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_2;
-            this.pictureBoxStars2.Location = new System.Drawing.Point(474, 179);
+            this.pictureBoxStars2.Location = new System.Drawing.Point(20, 125);
             this.pictureBoxStars2.Name = "pictureBoxStars2";
             this.pictureBoxStars2.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars2.TabIndex = 61;
@@ -480,7 +495,7 @@
             // pictureBoxStars3
             // 
             this.pictureBoxStars3.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_3;
-            this.pictureBoxStars3.Location = new System.Drawing.Point(474, 149);
+            this.pictureBoxStars3.Location = new System.Drawing.Point(20, 95);
             this.pictureBoxStars3.Name = "pictureBoxStars3";
             this.pictureBoxStars3.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars3.TabIndex = 62;
@@ -489,7 +504,7 @@
             // pictureBoxStars4
             // 
             this.pictureBoxStars4.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_4;
-            this.pictureBoxStars4.Location = new System.Drawing.Point(474, 119);
+            this.pictureBoxStars4.Location = new System.Drawing.Point(20, 65);
             this.pictureBoxStars4.Name = "pictureBoxStars4";
             this.pictureBoxStars4.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars4.TabIndex = 63;
@@ -498,100 +513,155 @@
             // pictureBoxStars5
             // 
             this.pictureBoxStars5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_5;
-            this.pictureBoxStars5.Location = new System.Drawing.Point(474, 89);
+            this.pictureBoxStars5.Location = new System.Drawing.Point(20, 35);
             this.pictureBoxStars5.Name = "pictureBoxStars5";
             this.pictureBoxStars5.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars5.TabIndex = 64;
             this.pictureBoxStars5.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxStarFives
             // 
-            this.pictureBox1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
-            this.pictureBox1.Location = new System.Drawing.Point(234, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxStarFives.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBoxStarFives.Location = new System.Drawing.Point(19, -2);
+            this.pictureBoxStarFives.Name = "pictureBoxStarFives";
+            this.pictureBoxStarFives.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxStarFives.TabIndex = 65;
+            this.pictureBoxStarFives.TabStop = false;
             // 
-            // label1
+            // labelNat5s
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(222, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 22);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "5";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelNat5s.AutoSize = true;
+            this.labelNat5s.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelNat5s.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelNat5s.Location = new System.Drawing.Point(7, -2);
+            this.labelNat5s.Name = "labelNat5s";
+            this.labelNat5s.Size = new System.Drawing.Size(17, 22);
+            this.labelNat5s.TabIndex = 66;
+            this.labelNat5s.Text = "5";
+            this.labelNat5s.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox2
+            // pictureBoxStarsFourPlus
             // 
-            this.pictureBox2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
-            this.pictureBox2.Location = new System.Drawing.Point(234, 115);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.TabIndex = 67;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxStarsFourPlus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBoxStarsFourPlus.Location = new System.Drawing.Point(19, 56);
+            this.pictureBoxStarsFourPlus.Name = "pictureBoxStarsFourPlus";
+            this.pictureBoxStarsFourPlus.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxStarsFourPlus.TabIndex = 67;
+            this.pictureBoxStarsFourPlus.TabStop = false;
             // 
-            // label2
+            // labelLDNat4sPlus
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(215, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 22);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "4+";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelLDNat4sPlus.AutoSize = true;
+            this.labelLDNat4sPlus.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelLDNat4sPlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelLDNat4sPlus.Location = new System.Drawing.Point(0, 56);
+            this.labelLDNat4sPlus.Name = "labelLDNat4sPlus";
+            this.labelLDNat4sPlus.Size = new System.Drawing.Size(24, 22);
+            this.labelLDNat4sPlus.TabIndex = 68;
+            this.labelLDNat4sPlus.Text = "4+";
+            this.labelLDNat4sPlus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.panelHeaderMid);
+            this.panelHeader.Controls.Add(this.panelHeaderRight);
+            this.panelHeader.Controls.Add(this.panelHeaderLeft);
+            this.panelHeader.Controls.Add(this.labelMonsterStats);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(780, 230);
+            this.panelHeader.TabIndex = 69;
+            // 
+            // panelHeaderLeft
+            // 
+            this.panelHeaderLeft.Controls.Add(this.labelLight);
+            this.panelHeaderLeft.Controls.Add(this.labelDark);
+            this.panelHeaderLeft.Controls.Add(this.labelFire);
+            this.panelHeaderLeft.Controls.Add(this.labelWind);
+            this.panelHeaderLeft.Controls.Add(this.labelWater);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxLight);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxWater);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxDark);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxFire);
+            this.panelHeaderLeft.Controls.Add(this.pictureBoxWind);
+            this.panelHeaderLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelHeaderLeft.Location = new System.Drawing.Point(0, 42);
+            this.panelHeaderLeft.Name = "panelHeaderLeft";
+            this.panelHeaderLeft.Size = new System.Drawing.Size(210, 188);
+            this.panelHeaderLeft.TabIndex = 69;
+            // 
+            // panelHeaderMid
+            // 
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars6);
+            this.panelHeaderMid.Controls.Add(this.labelStarsOneAmount);
+            this.panelHeaderMid.Controls.Add(this.labelStarsTwoAmount);
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars5);
+            this.panelHeaderMid.Controls.Add(this.labelStarsThreeAmount);
+            this.panelHeaderMid.Controls.Add(this.labelStarsFourAmount);
+            this.panelHeaderMid.Controls.Add(this.labelStarsFiveAmount);
+            this.panelHeaderMid.Controls.Add(this.labelStarsSixAmount);
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars1);
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars2);
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars3);
+            this.panelHeaderMid.Controls.Add(this.pictureBoxStars4);
+            this.panelHeaderMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHeaderMid.Location = new System.Drawing.Point(210, 42);
+            this.panelHeaderMid.Name = "panelHeaderMid";
+            this.panelHeaderMid.Size = new System.Drawing.Size(370, 188);
+            this.panelHeaderMid.TabIndex = 70;
+            // 
+            // panelHeaderRight
+            // 
+            this.panelHeaderRight.Controls.Add(this.pictureBoxLDNat4Plus);
+            this.panelHeaderRight.Controls.Add(this.pictureBoxStarsFourPlus);
+            this.panelHeaderRight.Controls.Add(this.pictureBoxElementalNat5);
+            this.panelHeaderRight.Controls.Add(this.pictureBoxStarFives);
+            this.panelHeaderRight.Controls.Add(this.labelDaysNat5);
+            this.panelHeaderRight.Controls.Add(this.labelDaysLDLightning);
+            this.panelHeaderRight.Controls.Add(this.labelLDNat4Plus);
+            this.panelHeaderRight.Controls.Add(this.labelNat5);
+            this.panelHeaderRight.Controls.Add(this.pictureBoxLDNat4PlusClock);
+            this.panelHeaderRight.Controls.Add(this.pictureBoxElementalNat5Clock);
+            this.panelHeaderRight.Controls.Add(this.labelLDNat4sPlus);
+            this.panelHeaderRight.Controls.Add(this.labelNat5s);
+            this.panelHeaderRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelHeaderRight.Location = new System.Drawing.Point(580, 42);
+            this.panelHeaderRight.Name = "panelHeaderRight";
+            this.panelHeaderRight.Size = new System.Drawing.Size(200, 188);
+            this.panelHeaderRight.TabIndex = 71;
+            // 
+            // panelFooter
+            // 
+            this.panelFooter.Controls.Add(this.listViewMonstersToLock);
+            this.panelFooter.Controls.Add(this.panelFooterRight);
+            this.panelFooter.Controls.Add(this.labelMonsters);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFooter.Location = new System.Drawing.Point(0, 230);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(780, 181);
+            this.panelFooter.TabIndex = 70;
+            // 
+            // panelFooterRight
+            // 
+            this.panelFooterRight.Controls.Add(this.radioButton5);
+            this.panelFooterRight.Controls.Add(this.radioButton6);
+            this.panelFooterRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFooterRight.Location = new System.Drawing.Point(726, 42);
+            this.panelFooterRight.Name = "panelFooterRight";
+            this.panelFooterRight.Size = new System.Drawing.Size(54, 139);
+            this.panelFooterRight.TabIndex = 45;
             // 
             // Monsters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.Controls.Add(this.pictureBoxLDNat4Plus);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBoxElementalNat5);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBoxStars5);
-            this.Controls.Add(this.pictureBoxStars4);
-            this.Controls.Add(this.pictureBoxStars3);
-            this.Controls.Add(this.pictureBoxStars2);
-            this.Controls.Add(this.pictureBoxStars1);
-            this.Controls.Add(this.pictureBoxStars6);
-            this.Controls.Add(this.pictureBoxElementalNat5Clock);
-            this.Controls.Add(this.pictureBoxLDNat4PlusClock);
-            this.Controls.Add(this.labelNat5);
-            this.Controls.Add(this.labelLDNat4Plus);
-            this.Controls.Add(this.labelDaysLDLightning);
-            this.Controls.Add(this.labelDaysNat5);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.labelStarsOneAmount);
-            this.Controls.Add(this.labelStarsTwoAmount);
-            this.Controls.Add(this.labelStarsThreeAmount);
-            this.Controls.Add(this.labelStarsFourAmount);
-            this.Controls.Add(this.labelStarsFiveAmount);
-            this.Controls.Add(this.labelStarsSixAmount);
-            this.Controls.Add(this.labelDark);
-            this.Controls.Add(this.labelLight);
-            this.Controls.Add(this.labelFire);
-            this.Controls.Add(this.labelWind);
-            this.Controls.Add(this.labelWater);
-            this.Controls.Add(this.pictureBoxLight);
-            this.Controls.Add(this.pictureBoxDark);
-            this.Controls.Add(this.pictureBoxFire);
-            this.Controls.Add(this.pictureBoxWind);
-            this.Controls.Add(this.pictureBoxWater);
-            this.Controls.Add(this.labelMonsterStats);
-            this.Controls.Add(this.listViewMonstersToLock);
-            this.Controls.Add(this.labelMonsters);
+            this.Controls.Add(this.panelFooter);
+            this.Controls.Add(this.panelHeader);
             this.Name = "Monsters";
             this.Size = new System.Drawing.Size(780, 411);
+            this.Resize += new System.EventHandler(this.Monsters_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).EndInit();
@@ -607,10 +677,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelHeaderLeft.ResumeLayout(false);
+            this.panelHeaderLeft.PerformLayout();
+            this.panelHeaderMid.ResumeLayout(false);
+            this.panelHeaderMid.PerformLayout();
+            this.panelHeaderRight.ResumeLayout(false);
+            this.panelHeaderRight.PerformLayout();
+            this.panelFooter.ResumeLayout(false);
+            this.panelFooter.PerformLayout();
+            this.panelFooterRight.ResumeLayout(false);
+            this.panelFooterRight.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -656,9 +737,15 @@
         private System.Windows.Forms.PictureBox pictureBoxStars3;
         private System.Windows.Forms.PictureBox pictureBoxStars4;
         private System.Windows.Forms.PictureBox pictureBoxStars5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBoxStarFives;
+        private System.Windows.Forms.Label labelNat5s;
+        private System.Windows.Forms.PictureBox pictureBoxStarsFourPlus;
+        private System.Windows.Forms.Label labelLDNat4sPlus;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelHeaderMid;
+        private System.Windows.Forms.Panel panelHeaderRight;
+        private System.Windows.Forms.Panel panelHeaderLeft;
+        private System.Windows.Forms.Panel panelFooter;
+        private System.Windows.Forms.Panel panelFooterRight;
     }
 }

@@ -33,9 +33,90 @@ namespace Summoners_War_Statistics
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
             otherPresenter = new OtherPresenter(this.view.OtherView, model);
 
+            this.view.Loaded += View_Loaded;
+
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
 
             this.view.MenuView.ButtonClicked += MenuView_ButtonClicked;
+        }
+
+        private void View_Loaded()
+        {
+            foreach (var control in view.SummaryView.Cntrls)
+            {
+                if (control.Name.Contains("SummonerName"))
+                {
+                    control.Font = new Font(view.FF, 32, FontStyle.Regular);
+                    continue;
+                }
+
+                if (control.Name.Contains("Country") || control.Name.Contains("Language") || control.Name.Contains("Level"))
+                {
+                    control.Font = new Font(view.FF, 20, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(view.FF, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in view.MonstersView.Cntrls)
+            {
+                if (control.Name.Contains("Stats") || control.Name == "labelMonsters")
+                {
+                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(view.FF, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in view.RunesView.Cntrls)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name == "labelRunes")
+                {
+                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(view.FF, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in view.DimHoleView.Cntrls)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("DimHole"))
+                {
+                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(view.FF, 14, FontStyle.Regular);
+            }
+
+            foreach (var control in view.OtherView.Cntrls)
+            {
+                if (control.Name.Contains("listView"))
+                {
+                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    continue;
+                }
+                if (control.Name.Contains("Other"))
+                {
+                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
+                    continue;
+                }
+                control.Font = new Font(view.FF, 14, FontStyle.Regular);
+            }
         }
 
         private void MenuView_ButtonClicked(object obj)
@@ -50,18 +131,23 @@ namespace Summoners_War_Statistics
             switch (buttonClickedName.ToLower())
             {
                 case "summary":
+                    view.SummaryView.Front();
                     view.SummaryViewVisibility = true;
                     break;
                 case "monsters":
+                    view.MonstersView.Front();
                     view.MonstersViewVisibility = true;
                     break;
                 case "runes":
+                    view.RunesView.Front();
                     view.RunesViewVisibility = true;
                     break;
                 case "dimhole":
+                    view.DimHoleView.Front();
                     view.DimHoleViewVisibility = true;
                     break;
                 case "other":
+                    view.OtherView.Front();
                     view.OtherViewVisibility = true;
                     break;
                 default:

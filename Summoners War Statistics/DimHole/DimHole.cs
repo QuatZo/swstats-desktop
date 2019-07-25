@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
@@ -8,10 +9,16 @@ namespace Summoners_War_Statistics
     public partial class DimHole : UserControl, IDimHoleView
     {
         #region Properties
+        public Size SizeWindow
+        {
+            get => Size;
+            set => Size = value;
+        }
+
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsDimHole => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
         {
             labelDimHoleMonsters,
             labelDimensionalHoleEnergy,
@@ -24,7 +31,10 @@ namespace Summoners_War_Statistics
             radioButton2,
             radioButton3,
             radioButton4,
-            radioButton5
+            radioButton5,
+            panelHeader,
+            panelContent,
+            panelButtons
         };
         public ushort AxpPerLevel { get; set; }
         public byte SummonerDimensionalHoleEnergy
@@ -64,11 +74,13 @@ namespace Summoners_War_Statistics
         #region Events
         public event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
         public event Action<RadioButton> DimHoleLevelChanged;
+        public event Action Resized;
         #endregion
 
         public DimHole()
         {
             InitializeComponent();
+            listView1.DoubleBuffering(true);
         }
 
         #region Methods
@@ -76,11 +88,20 @@ namespace Summoners_War_Statistics
         {
             InitDimHole?.Invoke(dimensionHoleInfo, unitList);
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             DimHoleLevelChanged?.Invoke((RadioButton)sender);
+        }
+
+        private void DimHole_Resize(object sender, EventArgs e)
+        {
+            Resized?.Invoke();
         }
     }
 }

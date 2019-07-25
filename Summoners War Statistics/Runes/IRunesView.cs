@@ -10,7 +10,7 @@ namespace Summoners_War_Statistics
     public interface IRunesView
     {
         #region Properties
-        List<Control> ControlsRunes { get; }
+        List<Control> Cntrls { get; }
         byte ChosenRuneSet { get; }
         byte ChosenRuneMainstat { get; }
         byte ChosenRuneQuality { get; }
@@ -39,10 +39,12 @@ namespace Summoners_War_Statistics
 
         #region Events
         event Action InitRunes;
+        event Action Resized;
         #endregion
 
         #region Methods
         void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId);
+        void Front();
         #endregion
     }
 }

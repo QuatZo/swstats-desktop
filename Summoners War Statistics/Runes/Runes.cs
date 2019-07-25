@@ -16,7 +16,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsRunes => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
         {
             labelRunes,
             labelRuneEfficiency,
@@ -34,11 +34,11 @@ namespace Summoners_War_Statistics
             labelRunesStandardDeviation,
             labelTextAmount,
             labelTextEfficiencyLow,
-            labelTextHighestEfficiency,
+            labelTextEfficiencyHigh,
             labelTextInventory,
             labelTextMaxed,
-            labelTextMeanEfficiency,
-            labelTextMedianEfficiency,
+            labelTextEfficiencyMean,
+            labelTextEfficiencyMedian,
             labelTextStandardDeviation,
             labelUpgrade,
             listViewRunesList,
@@ -49,7 +49,10 @@ namespace Summoners_War_Statistics
             comboBoxRuneSet,
             comboBoxRuneSlot,
             comboBoxRuneUpgrade,
-            comboBoxRuneUpgradeIf
+            comboBoxRuneUpgradeIf,
+            panelHeader,
+            panelTable,
+            panelFooter
         };
 
         public byte ChosenRuneSet
@@ -227,11 +230,14 @@ namespace Summoners_War_Statistics
 
         #region Events
         public event Action InitRunes;
+        public event Action Resized;
         #endregion
         
         public Runes()
         {
             InitializeComponent();
+
+            listViewRunesList.DoubleBuffering(true);
         }
 
         #region Methods
@@ -272,10 +278,21 @@ namespace Summoners_War_Statistics
             InitComboBoxes();
             InitRunes?.Invoke();
         }
+
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
+
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {
             InitRunes?.Invoke();
+        }
+
+        private void Runes_Resize(object sender, EventArgs e)
+        {
+            Resized?.Invoke();
         }
     }
 }

@@ -101,7 +101,7 @@
             this.Controls.Add(this.pictureBoxMonsters);
             this.Controls.Add(this.pictureBoxSummary);
             this.Name = "Menu";
-            this.Size = new System.Drawing.Size(800, 80);
+            this.Size = new System.Drawing.Size(780, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).EndInit();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Summoners_War_Statistics
 {
@@ -21,6 +22,38 @@ namespace Summoners_War_Statistics
             this.view.InitDimHole += View_InitDimHole;
 
             this.view.DimHoleMonstersListView.ColumnClick += DimHoleMonstersListView_ColumnClick;
+
+            this.view.Resized += View_Resized;
+        }
+
+        private void View_Resized()
+        {
+            //labelDimHoleMonsters                  - 0
+            //labelDimensionalHoleEnergy            - 1
+            //labelDimensionalHoleEnergyMax         - 2
+            //labelDimensionalHoleEnergyMaxInfo     - 3
+            //labelDimensionalHoleEnergySlash       - 4
+            //labelDimHoleEnergy                    - 5 
+            //listView1                             - 6
+            //radioButton1                          - 7
+            //radioButton2                          - 8
+            //radioButton3                          - 9
+            //radioButton4                          - 10
+            //radioButton5                          - 11
+            //panelHeader                           - 12
+            //panelContent                          - 13
+            //panelButtons                          - 14
+
+
+            view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
+
+            view.DimHoleMonstersListView.BeginUpdate();
+            int columnWidth = view.DimHoleMonstersListView.Size.Width / view.DimHoleMonstersListView.Columns.Count;
+            foreach(ColumnHeader column in view.DimHoleMonstersListView.Columns)
+            {
+                column.Width = columnWidth - 5;
+            }
+            view.DimHoleMonstersListView.EndUpdate();
         }
 
         private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)

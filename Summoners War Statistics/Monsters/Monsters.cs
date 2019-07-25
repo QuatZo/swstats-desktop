@@ -13,13 +13,15 @@ namespace Summoners_War_Statistics
     public partial class Monsters : UserControl, IMonstersView
     {
         #region Properties
+
+        public Size SizeWindow => Size;
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Control> ControlsMonster => new List<Control>()
+        public List<Control> Cntrls => new List<Control>()
                 {
-                    label1,
-                    label2,
+                    labelNat5s,
+                    labelLDNat4sPlus,
                     labelDark,
                     labelDaysLDLightning,
                     labelDaysNat5,
@@ -39,7 +41,30 @@ namespace Summoners_War_Statistics
                     labelWind,
                     listViewMonstersToLock,
                     radioButton5,
-                    radioButton6
+                    radioButton6,
+                    pictureBoxStarFives,
+                    pictureBoxElementalNat5,
+                    pictureBoxElementalNat5Clock,
+                    pictureBoxStarsFourPlus,
+                    pictureBoxLDNat4Plus,
+                    pictureBoxLDNat4PlusClock,
+                    pictureBoxWater,
+                    pictureBoxFire,
+                    pictureBoxWind,
+                    pictureBoxLight,
+                    pictureBoxDark,
+                    pictureBoxStars6,
+                    pictureBoxStars5,
+                    pictureBoxStars4,
+                    pictureBoxStars3,
+                    pictureBoxStars2,
+                    pictureBoxStars1,
+                    panelHeader,
+                    panelHeaderLeft,
+                    panelHeaderMid,
+                    panelHeaderRight,
+                    panelFooter,
+                    panelFooterRight
                 };
 
         public int MonsterStarsChecked
@@ -165,6 +190,7 @@ namespace Summoners_War_Statistics
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event Action<List<Monster>, List<long>> InitMonsters;
         public event Action<RadioButton> MonstersStarsChanged;
+        public event Action Resized;
         #endregion
 
         public Monsters()
@@ -202,6 +228,15 @@ namespace Summoners_War_Statistics
             DaysSinceNat5 = 0;
             DaysSinceLastLDLightning = 0;
         }
+        public void Front()
+        {
+            BringToFront();
+        }
         #endregion
+
+        private void Monsters_Resize(object sender, EventArgs e)
+        {
+            Resized?.Invoke();
+        }
     }
 }
