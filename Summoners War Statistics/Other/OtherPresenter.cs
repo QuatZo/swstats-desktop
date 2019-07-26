@@ -21,19 +21,47 @@ namespace Summoners_War_Statistics
             this.view.InitOther += View_InitOther;
 
             this.view.SummonerFriendsList.ColumnClick += SummonerFriendsList_ColumnClick;
+            this.view.SummonerFriendsList.BeforeSorting += SummonerFriendsList_BeforeSorting;
+
             this.view.GuildMembersList.ColumnClick += GuildMembersList_ColumnClick;
+            this.view.GuildMembersList.BeforeSorting += GuildMembersList_BeforeSorting;
 
             this.view.Resized += View_Resized;
         }
+
+        private void GuildMembersList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
+        {
+            if (view.GuildMembersList.PrimarySortColumn != view.GuildMembersList.SecondarySortColumn) { view.GuildMembersList.SecondarySortColumn = view.GuildMembersList.PrimarySortColumn; }
+        }
+
+        private void SummonerFriendsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
+        {
+            if (view.SummonerFriendsList.PrimarySortColumn != view.SummonerFriendsList.SecondarySortColumn) { view.SummonerFriendsList.SecondarySortColumn = view.SummonerFriendsList.PrimarySortColumn; }
+        }
+
         private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if (view.GuildMembersList.SecondarySortColumn != null)
+            {
+                view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column, view.GuildMembersList.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.GuildMembersList.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
             Logger.log.Info($"[Guild] Sorting");
         }
 
         private void SummonerFriendsList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if (view.SummonerFriendsList.SecondarySortColumn != null)
+            {
+                view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column, view.SummonerFriendsList.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.SummonerFriendsList.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
             Logger.log.Info($"[Friends] Sorting");
         }
         private void View_Resized()

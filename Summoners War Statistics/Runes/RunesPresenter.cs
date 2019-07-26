@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 
 namespace Summoners_War_Statistics
 {
@@ -21,8 +22,14 @@ namespace Summoners_War_Statistics
 
             this.view.InitRunes += View_InitRunes;
 
+            this.view.RunesListView.BeforeSorting += RunesListView_BeforeSorting;
             this.view.RunesListView.ColumnClick += RunesList_ColumnClick;
             this.view.Resized += View_Resized;
+        }
+
+        private void RunesListView_BeforeSorting(object sender, BeforeSortingEventArgs e)
+        {
+            if (view.RunesListView.PrimarySortColumn != view.RunesListView.SecondarySortColumn) { view.RunesListView.SecondarySortColumn = view.RunesListView.PrimarySortColumn; }
         }
 
         private void View_Resized()
@@ -142,7 +149,14 @@ namespace Summoners_War_Statistics
 
         private void RunesList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            view.RunesListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if(view.RunesListView.SecondarySortColumn != null)
+            {
+                view.RunesListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.RunesListView.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.RunesListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
             Logger.log.Info($"[Runes] Sorting");
         }
 

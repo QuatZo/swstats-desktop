@@ -22,12 +22,26 @@ namespace Summoners_War_Statistics
             this.view.InitDimHole += View_InitDimHole;
 
             this.view.DimHoleMonstersListView.ColumnClick += DimHoleMonstersListView_ColumnClick;
+            this.view.DimHoleMonstersListView.BeforeSorting += DimHoleMonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
         }
+
+        private void DimHoleMonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
+        {
+            if (view.DimHoleMonstersListView.PrimarySortColumn != view.DimHoleMonstersListView.SecondarySortColumn) { view.DimHoleMonstersListView.SecondarySortColumn = view.DimHoleMonstersListView.PrimarySortColumn; }
+        }
+
         private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if (view.DimHoleMonstersListView.SecondarySortColumn != null)
+            {
+                view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.DimHoleMonstersListView.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.DimHoleMonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
             Logger.log.Info($"[Dimension Hole] Sorting");
         }
         private void View_Resized()

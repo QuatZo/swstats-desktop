@@ -22,13 +22,27 @@ namespace Summoners_War_Statistics
             this.view.MonstersStarsChanged += View_MonstersStarsChanged;
 
             this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
+            this.view.MonstersListView.BeforeSorting += MonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
 
         }
+
+        private void MonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
+        {
+            if (view.MonstersListView.PrimarySortColumn != view.MonstersListView.SecondarySortColumn) { view.MonstersListView.SecondarySortColumn = view.MonstersListView.PrimarySortColumn; }
+        }
+
         private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column);
+            if (view.MonstersListView.SecondarySortColumn != null)
+            {
+                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.MonstersListView.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
             Logger.log.Info($"[Monsters] Sorting");
         }
         private void View_Resized()

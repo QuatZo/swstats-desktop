@@ -14,6 +14,10 @@ namespace Summoners_War_Statistics
         private static int colOrder;
         private static short order = 1;
 
+        private int col2;
+        private static int colOrder2;
+        private static short order2 = 1;
+
         public ListViewItemComparer()
         {
             col = 0;
@@ -28,34 +32,61 @@ namespace Summoners_War_Statistics
             }
             else { colOrder = col; order = 1; }
         }
-        public int Compare(object x, object y)
+        public ListViewItemComparer(int column1, int column2)
         {
-            double.TryParse(((ListViewItem)x).SubItems[col].Text, out double xDouble);
-            double.TryParse(((ListViewItem)y).SubItems[col].Text, out double yDouble);
+            col = column1;
+            if (col == colOrder)
+            {
+                order *= -1;
+            }
+            else { colOrder = col; order = 1; }
 
-            if (xDouble != 0 && yDouble != 0) {
+            col2 = column2;
+            if (col2 == colOrder2)
+            {
+                order2 *= -1;
+            }
+            else { colOrder2 = col2; order2 = 1; }
+        }
+
+        public int CompareOne(object x, object y, int colToCompare, int orderToUse)
+        {
+            Console.WriteLine($"Column to compare: {colToCompare}");
+            Console.WriteLine($"\tValues: {((ListViewItem)x).SubItems[colToCompare].Text} , {((ListViewItem)y).SubItems[colToCompare].Text}");
+
+            double.TryParse(((ListViewItem)x).SubItems[colToCompare].Text, out double xDouble);
+            double.TryParse(((ListViewItem)y).SubItems[colToCompare].Text, out double yDouble);
+
+            if (xDouble != 0 && yDouble != 0)
+            {
                 double difference = xDouble - yDouble;
-                if(difference < 0)
+                if(difference == 0) { return 0; }
+                if (difference < 0)
                 {
-                    return (int)(Math.Floor(xDouble - yDouble) * order);
+                    return (int)(Math.Floor(xDouble - yDouble) * orderToUse);
                 }
-                return (int)(Math.Ceiling(xDouble - yDouble) * order);
+                return (int)(Math.Ceiling(xDouble - yDouble) * orderToUse);
             }
 
-            //int.TryParse(((ListViewItem)x).SubItems[col].Text, out int xInt);
-            //int.TryParse(((ListViewItem)y).SubItems[col].Text, out int yInt);
-
-            //if (xInt != 0 && yInt != 0) { return (xInt - yInt) * order; }
-
-            DateTime.TryParse(((ListViewItem)x).SubItems[col].Text, out DateTime xDateTime);
-            DateTime.TryParse(((ListViewItem)y).SubItems[col].Text, out DateTime yDateTime);
+            DateTime.TryParse(((ListViewItem)x).SubItems[colToCompare].Text, out DateTime xDateTime);
+            DateTime.TryParse(((ListViewItem)y).SubItems[colToCompare].Text, out DateTime yDateTime);
 
             int xTimestamp = (int)(xDateTime.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
             int yTimestamp = (int)(yDateTime.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 
-            if (xTimestamp > 0 && yTimestamp > 0) { return (xTimestamp - yTimestamp) * order; }
+            if (xTimestamp > 0 && yTimestamp > 0) { return (xTimestamp - yTimestamp) * orderToUse; }
 
-            return string.Compare(((ListViewItem)x).SubItems[col].Text, ((ListViewItem)y).SubItems[col].Text) * order;
+            return string.Compare(((ListViewItem)x).SubItems[colToCompare].Text, ((ListViewItem)y).SubItems[colToCompare].Text) * orderToUse;
+        }
+
+        public int Compare(object x, object y)
+        {
+            int result = CompareOne(x, y, col, order);
+            if (result == 0 && col2 != -1)
+            {
+                result = CompareOne(x, y, col2, order2);
+            }
+            return result;
         }
     }
 }
