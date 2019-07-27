@@ -51,9 +51,6 @@ namespace Summoners_War_Statistics
 
         public int CompareOne(object x, object y, int colToCompare, int orderToUse)
         {
-            Console.WriteLine($"Column to compare: {colToCompare}");
-            Console.WriteLine($"\tValues: {((ListViewItem)x).SubItems[colToCompare].Text} , {((ListViewItem)y).SubItems[colToCompare].Text}");
-
             double.TryParse(((ListViewItem)x).SubItems[colToCompare].Text, out double xDouble);
             double.TryParse(((ListViewItem)y).SubItems[colToCompare].Text, out double yDouble);
 

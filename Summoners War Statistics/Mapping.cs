@@ -1855,6 +1855,14 @@ namespace Summoners_War_Statistics
 
             rankingGuild.Add(5011, "Guardian III");
             #endregion
+
+            #region Dim Hole AXP
+            axpPerFloor.Add(1, 320);
+            axpPerFloor.Add(2, 420);
+            axpPerFloor.Add(3, 560);
+            axpPerFloor.Add(4, 740);
+            axpPerFloor.Add(5, 960);
+            #endregion
         }
         #endregion
 
@@ -1884,6 +1892,8 @@ namespace Summoners_War_Statistics
 
         private Dictionary<int, string> rankingArena = new Dictionary<int, string>();
         private Dictionary<int, string> rankingGuild = new Dictionary<int, string>();
+
+        private Dictionary<int, int> axpPerFloor = new Dictionary<int, int>();
         #endregion
 
         #region Properties
@@ -2138,6 +2148,14 @@ namespace Summoners_War_Statistics
                 return rankingGuild[id];
             }
             return "Unknown Guild Ranking";
+        }
+        public int GetAxpByFloor(int floor)
+        {
+            if (axpPerFloor.ContainsKey(floor))
+            {
+                return axpPerFloor[floor];
+            }
+            return 0;
         }
         #endregion
     }

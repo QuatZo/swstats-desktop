@@ -25,6 +25,29 @@ namespace Summoners_War_Statistics
             this.view.DimHoleMonstersListView.BeforeSorting += DimHoleMonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
+
+            this.view.FloorTextChanged += View_FloorTextChanged;
+        }
+
+        private void View_FloorTextChanged()
+        {
+            List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)> inputs = new List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)>()
+            {
+                (1, view.DimHoleFloorTimes[0], view.DimHoleFloorSuccessRates[0], (double)Mapping.Instance.GetAxpByFloor(1) / (double)Mapping.Instance.GetAxpByFloor(5)),
+                (2, view.DimHoleFloorTimes[1], view.DimHoleFloorSuccessRates[1], (double)Mapping.Instance.GetAxpByFloor(2) / (double)Mapping.Instance.GetAxpByFloor(5)),
+                (3, view.DimHoleFloorTimes[2], view.DimHoleFloorSuccessRates[2], (double)Mapping.Instance.GetAxpByFloor(3) / (double)Mapping.Instance.GetAxpByFloor(5)),
+                (4, view.DimHoleFloorTimes[3], view.DimHoleFloorSuccessRates[3], (double)Mapping.Instance.GetAxpByFloor(4) / (double)Mapping.Instance.GetAxpByFloor(5)),
+                (5, view.DimHoleFloorTimes[4], view.DimHoleFloorSuccessRates[4], (double)Mapping.Instance.GetAxpByFloor(5) / (double)Mapping.Instance.GetAxpByFloor(5))
+            };
+
+            Dictionary<int, double> floors = new Dictionary<int, double>() { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, { 5, 0 } };
+            foreach(var item in inputs)
+            {
+                if (item.SuccessRate > 1 || item.Time.TotalSeconds == 0) { continue; }
+                floors[item.Floor] = item.SuccessRate * item.Ratio / (item.Time.TotalSeconds + 1);
+                Console.WriteLine(floors[item.Floor]);
+            }
+            view.DimHoleFloor = "B" + floors.Aggregate((l, r) => l.Value > r.Value ? l : r).Key.ToString();
         }
 
         private void DimHoleMonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
@@ -61,7 +84,6 @@ namespace Summoners_War_Statistics
             //panelHeader                           - 12
             //panelContent                          - 13
             //panelButtons                          - 14
-
 
             view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
 

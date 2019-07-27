@@ -22,12 +22,17 @@ namespace Summoners_War_Statistics
         ObjectListView DimHoleMonstersListView { get; set; }
         DateTime DimensionalEnergyGainStart { get; set; }
         List<Awakening> DimHoleMonsters { get; set; }
+        List<TimeSpan> DimHoleFloorTimes { get; }
+        List<double> DimHoleFloorSuccessRates { get; }
+        string DimHoleFloor { set; }
+
         #endregion
 
         #region Events
         event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
         event Action<RadioButton> DimHoleLevelChanged;
         event Action Resized;
+        event Action FloorTextChanged;
         #endregion
 
         #region Methods

@@ -48,11 +48,33 @@
             this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.panelFarm = new System.Windows.Forms.Panel();
+            this.maskedTextBoxSuccessRateB5 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxSuccessRateB4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxSuccessRateB3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxSuccessRateB2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTimeB5 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTimeB4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTimeB3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTimeB2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxSuccessRateB1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTimeB1 = new System.Windows.Forms.MaskedTextBox();
+            this.labelDimHoleFarm = new System.Windows.Forms.Label();
+            this.labelTextFarm = new System.Windows.Forms.Label();
+            this.labelTextSuccessRate = new System.Windows.Forms.Label();
+            this.labelTextTime = new System.Windows.Forms.Label();
+            this.labelTextB5 = new System.Windows.Forms.Label();
+            this.labelTextB4 = new System.Windows.Forms.Label();
+            this.labelTextB3 = new System.Windows.Forms.Label();
+            this.labelTextB2 = new System.Windows.Forms.Label();
+            this.labelTextB1 = new System.Windows.Forms.Label();
+            this.labelDimHoleFloor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewDimHole)).BeginInit();
             this.panelButtons.SuspendLayout();
+            this.panelFarm.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelDimHoleEnergy
@@ -60,11 +82,11 @@
             this.labelDimHoleEnergy.AutoSize = true;
             this.labelDimHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDimHoleEnergy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelDimHoleEnergy.Location = new System.Drawing.Point(3, 0);
+            this.labelDimHoleEnergy.Location = new System.Drawing.Point(0, 0);
             this.labelDimHoleEnergy.Name = "labelDimHoleEnergy";
-            this.labelDimHoleEnergy.Size = new System.Drawing.Size(266, 42);
+            this.labelDimHoleEnergy.Size = new System.Drawing.Size(249, 42);
             this.labelDimHoleEnergy.TabIndex = 1;
-            this.labelDimHoleEnergy.Text = "Dimensional Hole Energy";
+            this.labelDimHoleEnergy.Text = "Dimension Hole Energy";
             // 
             // pictureBoxDimensionalHoleEnergy
             // 
@@ -130,16 +152,16 @@
             this.labelDimHoleMonsters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimHoleMonsters.Location = new System.Drawing.Point(0, 0);
             this.labelDimHoleMonsters.Name = "labelDimHoleMonsters";
-            this.labelDimHoleMonsters.Size = new System.Drawing.Size(296, 42);
+            this.labelDimHoleMonsters.Size = new System.Drawing.Size(279, 42);
             this.labelDimHoleMonsters.TabIndex = 36;
-            this.labelDimHoleMonsters.Text = "Dimensional Hole Monsters";
+            this.labelDimHoleMonsters.Text = "Dimension Hole Monsters";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton1.Location = new System.Drawing.Point(3, 17);
+            this.radioButton1.Location = new System.Drawing.Point(6, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(36, 23);
             this.radioButton1.TabIndex = 38;
@@ -152,7 +174,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton2.Location = new System.Drawing.Point(3, 46);
+            this.radioButton2.Location = new System.Drawing.Point(6, 32);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(39, 23);
             this.radioButton2.TabIndex = 39;
@@ -165,7 +187,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton3.Location = new System.Drawing.Point(3, 75);
+            this.radioButton3.Location = new System.Drawing.Point(6, 61);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(39, 23);
             this.radioButton3.TabIndex = 40;
@@ -178,7 +200,7 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton4.Location = new System.Drawing.Point(3, 104);
+            this.radioButton4.Location = new System.Drawing.Point(6, 90);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(39, 23);
             this.radioButton4.TabIndex = 41;
@@ -192,7 +214,7 @@
             this.radioButton5.Checked = true;
             this.radioButton5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(3, 133);
+            this.radioButton5.Location = new System.Drawing.Point(6, 119);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(39, 23);
             this.radioButton5.TabIndex = 42;
@@ -212,7 +234,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 100);
+            this.panelHeader.Size = new System.Drawing.Size(780, 91);
             this.panelHeader.TabIndex = 43;
             // 
             // panelContent
@@ -221,9 +243,9 @@
             this.panelContent.Controls.Add(this.panelButtons);
             this.panelContent.Controls.Add(this.labelDimHoleMonsters);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 100);
+            this.panelContent.Location = new System.Drawing.Point(0, 227);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(780, 311);
+            this.panelContent.Size = new System.Drawing.Size(780, 184);
             this.panelContent.TabIndex = 36;
             // 
             // objectListViewDimHole
@@ -246,7 +268,7 @@
             this.objectListViewDimHole.Location = new System.Drawing.Point(0, 42);
             this.objectListViewDimHole.Name = "objectListViewDimHole";
             this.objectListViewDimHole.ShowGroups = false;
-            this.objectListViewDimHole.Size = new System.Drawing.Size(720, 269);
+            this.objectListViewDimHole.Size = new System.Drawing.Size(720, 142);
             this.objectListViewDimHole.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewDimHole.TabIndex = 58;
             this.objectListViewDimHole.UseCompatibleStateImageBehavior = false;
@@ -290,8 +312,285 @@
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelButtons.Location = new System.Drawing.Point(720, 42);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(60, 269);
+            this.panelButtons.Size = new System.Drawing.Size(60, 142);
             this.panelButtons.TabIndex = 43;
+            // 
+            // panelFarm
+            // 
+            this.panelFarm.Controls.Add(this.maskedTextBoxSuccessRateB5);
+            this.panelFarm.Controls.Add(this.maskedTextBoxSuccessRateB4);
+            this.panelFarm.Controls.Add(this.maskedTextBoxSuccessRateB3);
+            this.panelFarm.Controls.Add(this.maskedTextBoxSuccessRateB2);
+            this.panelFarm.Controls.Add(this.maskedTextBoxTimeB5);
+            this.panelFarm.Controls.Add(this.maskedTextBoxTimeB4);
+            this.panelFarm.Controls.Add(this.maskedTextBoxTimeB3);
+            this.panelFarm.Controls.Add(this.maskedTextBoxTimeB2);
+            this.panelFarm.Controls.Add(this.maskedTextBoxSuccessRateB1);
+            this.panelFarm.Controls.Add(this.maskedTextBoxTimeB1);
+            this.panelFarm.Controls.Add(this.labelDimHoleFarm);
+            this.panelFarm.Controls.Add(this.labelTextFarm);
+            this.panelFarm.Controls.Add(this.labelTextSuccessRate);
+            this.panelFarm.Controls.Add(this.labelTextTime);
+            this.panelFarm.Controls.Add(this.labelTextB5);
+            this.panelFarm.Controls.Add(this.labelTextB4);
+            this.panelFarm.Controls.Add(this.labelTextB3);
+            this.panelFarm.Controls.Add(this.labelTextB2);
+            this.panelFarm.Controls.Add(this.labelTextB1);
+            this.panelFarm.Controls.Add(this.labelDimHoleFloor);
+            this.panelFarm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFarm.Location = new System.Drawing.Point(0, 91);
+            this.panelFarm.Name = "panelFarm";
+            this.panelFarm.Size = new System.Drawing.Size(780, 136);
+            this.panelFarm.TabIndex = 44;
+            // 
+            // maskedTextBoxSuccessRateB5
+            // 
+            this.maskedTextBoxSuccessRateB5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxSuccessRateB5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxSuccessRateB5.Location = new System.Drawing.Point(543, 97);
+            this.maskedTextBoxSuccessRateB5.Mask = "990%";
+            this.maskedTextBoxSuccessRateB5.Name = "maskedTextBoxSuccessRateB5";
+            this.maskedTextBoxSuccessRateB5.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxSuccessRateB5.TabIndex = 64;
+            this.maskedTextBoxSuccessRateB5.Text = "100";
+            this.maskedTextBoxSuccessRateB5.ValidatingType = typeof(int);
+            this.maskedTextBoxSuccessRateB5.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxSuccessRateB4
+            // 
+            this.maskedTextBoxSuccessRateB4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxSuccessRateB4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxSuccessRateB4.Location = new System.Drawing.Point(437, 97);
+            this.maskedTextBoxSuccessRateB4.Mask = "990%";
+            this.maskedTextBoxSuccessRateB4.Name = "maskedTextBoxSuccessRateB4";
+            this.maskedTextBoxSuccessRateB4.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxSuccessRateB4.TabIndex = 63;
+            this.maskedTextBoxSuccessRateB4.Text = "100";
+            this.maskedTextBoxSuccessRateB4.ValidatingType = typeof(int);
+            this.maskedTextBoxSuccessRateB4.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxSuccessRateB3
+            // 
+            this.maskedTextBoxSuccessRateB3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxSuccessRateB3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxSuccessRateB3.Location = new System.Drawing.Point(331, 97);
+            this.maskedTextBoxSuccessRateB3.Mask = "990%";
+            this.maskedTextBoxSuccessRateB3.Name = "maskedTextBoxSuccessRateB3";
+            this.maskedTextBoxSuccessRateB3.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxSuccessRateB3.TabIndex = 62;
+            this.maskedTextBoxSuccessRateB3.Text = "100";
+            this.maskedTextBoxSuccessRateB3.ValidatingType = typeof(int);
+            this.maskedTextBoxSuccessRateB3.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxSuccessRateB2
+            // 
+            this.maskedTextBoxSuccessRateB2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxSuccessRateB2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxSuccessRateB2.Location = new System.Drawing.Point(225, 97);
+            this.maskedTextBoxSuccessRateB2.Mask = "990%";
+            this.maskedTextBoxSuccessRateB2.Name = "maskedTextBoxSuccessRateB2";
+            this.maskedTextBoxSuccessRateB2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxSuccessRateB2.TabIndex = 61;
+            this.maskedTextBoxSuccessRateB2.Text = "100";
+            this.maskedTextBoxSuccessRateB2.ValidatingType = typeof(int);
+            this.maskedTextBoxSuccessRateB2.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxTimeB5
+            // 
+            this.maskedTextBoxTimeB5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxTimeB5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxTimeB5.Location = new System.Drawing.Point(543, 72);
+            this.maskedTextBoxTimeB5.Mask = "00:00";
+            this.maskedTextBoxTimeB5.Name = "maskedTextBoxTimeB5";
+            this.maskedTextBoxTimeB5.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxTimeB5.TabIndex = 60;
+            this.maskedTextBoxTimeB5.Text = "0000";
+            this.maskedTextBoxTimeB5.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxTimeB5.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxTimeB4
+            // 
+            this.maskedTextBoxTimeB4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxTimeB4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxTimeB4.Location = new System.Drawing.Point(437, 72);
+            this.maskedTextBoxTimeB4.Mask = "00:00";
+            this.maskedTextBoxTimeB4.Name = "maskedTextBoxTimeB4";
+            this.maskedTextBoxTimeB4.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxTimeB4.TabIndex = 59;
+            this.maskedTextBoxTimeB4.Text = "0000";
+            this.maskedTextBoxTimeB4.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxTimeB4.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxTimeB3
+            // 
+            this.maskedTextBoxTimeB3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxTimeB3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxTimeB3.Location = new System.Drawing.Point(331, 72);
+            this.maskedTextBoxTimeB3.Mask = "00:00";
+            this.maskedTextBoxTimeB3.Name = "maskedTextBoxTimeB3";
+            this.maskedTextBoxTimeB3.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxTimeB3.TabIndex = 58;
+            this.maskedTextBoxTimeB3.Text = "0000";
+            this.maskedTextBoxTimeB3.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxTimeB3.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxTimeB2
+            // 
+            this.maskedTextBoxTimeB2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxTimeB2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxTimeB2.Location = new System.Drawing.Point(225, 72);
+            this.maskedTextBoxTimeB2.Mask = "00:00";
+            this.maskedTextBoxTimeB2.Name = "maskedTextBoxTimeB2";
+            this.maskedTextBoxTimeB2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxTimeB2.TabIndex = 57;
+            this.maskedTextBoxTimeB2.Text = "0000";
+            this.maskedTextBoxTimeB2.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxTimeB2.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxSuccessRateB1
+            // 
+            this.maskedTextBoxSuccessRateB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxSuccessRateB1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxSuccessRateB1.Location = new System.Drawing.Point(119, 97);
+            this.maskedTextBoxSuccessRateB1.Mask = "990%";
+            this.maskedTextBoxSuccessRateB1.Name = "maskedTextBoxSuccessRateB1";
+            this.maskedTextBoxSuccessRateB1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxSuccessRateB1.TabIndex = 56;
+            this.maskedTextBoxSuccessRateB1.Text = "100";
+            this.maskedTextBoxSuccessRateB1.ValidatingType = typeof(int);
+            this.maskedTextBoxSuccessRateB1.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // maskedTextBoxTimeB1
+            // 
+            this.maskedTextBoxTimeB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.maskedTextBoxTimeB1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.maskedTextBoxTimeB1.Location = new System.Drawing.Point(119, 73);
+            this.maskedTextBoxTimeB1.Mask = "00:00";
+            this.maskedTextBoxTimeB1.Name = "maskedTextBoxTimeB1";
+            this.maskedTextBoxTimeB1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxTimeB1.TabIndex = 55;
+            this.maskedTextBoxTimeB1.Text = "0000";
+            this.maskedTextBoxTimeB1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxTimeB1.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
+            // 
+            // labelDimHoleFarm
+            // 
+            this.labelDimHoleFarm.AutoSize = true;
+            this.labelDimHoleFarm.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimHoleFarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDimHoleFarm.Location = new System.Drawing.Point(696, 83);
+            this.labelDimHoleFarm.Name = "labelDimHoleFarm";
+            this.labelDimHoleFarm.Size = new System.Drawing.Size(24, 22);
+            this.labelDimHoleFarm.TabIndex = 54;
+            this.labelDimHoleFarm.Text = "B5";
+            this.labelDimHoleFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextFarm
+            // 
+            this.labelTextFarm.AutoSize = true;
+            this.labelTextFarm.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextFarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextFarm.Location = new System.Drawing.Point(658, 48);
+            this.labelTextFarm.Name = "labelTextFarm";
+            this.labelTextFarm.Size = new System.Drawing.Size(100, 22);
+            this.labelTextFarm.TabIndex = 53;
+            this.labelTextFarm.Text = "You should farm";
+            this.labelTextFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextSuccessRate
+            // 
+            this.labelTextSuccessRate.AutoSize = true;
+            this.labelTextSuccessRate.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextSuccessRate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextSuccessRate.Location = new System.Drawing.Point(26, 97);
+            this.labelTextSuccessRate.Name = "labelTextSuccessRate";
+            this.labelTextSuccessRate.Size = new System.Drawing.Size(87, 22);
+            this.labelTextSuccessRate.TabIndex = 52;
+            this.labelTextSuccessRate.Text = "Success rate";
+            this.labelTextSuccessRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextTime
+            // 
+            this.labelTextTime.AutoSize = true;
+            this.labelTextTime.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextTime.Location = new System.Drawing.Point(75, 73);
+            this.labelTextTime.Name = "labelTextTime";
+            this.labelTextTime.Size = new System.Drawing.Size(38, 22);
+            this.labelTextTime.TabIndex = 51;
+            this.labelTextTime.Text = "Time";
+            this.labelTextTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextB5
+            // 
+            this.labelTextB5.AutoSize = true;
+            this.labelTextB5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextB5.Location = new System.Drawing.Point(585, 48);
+            this.labelTextB5.Name = "labelTextB5";
+            this.labelTextB5.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB5.TabIndex = 50;
+            this.labelTextB5.Text = "B5";
+            this.labelTextB5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextB4
+            // 
+            this.labelTextB4.AutoSize = true;
+            this.labelTextB4.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextB4.Location = new System.Drawing.Point(483, 48);
+            this.labelTextB4.Name = "labelTextB4";
+            this.labelTextB4.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB4.TabIndex = 49;
+            this.labelTextB4.Text = "B4";
+            this.labelTextB4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextB3
+            // 
+            this.labelTextB3.AutoSize = true;
+            this.labelTextB3.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextB3.Location = new System.Drawing.Point(374, 48);
+            this.labelTextB3.Name = "labelTextB3";
+            this.labelTextB3.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB3.TabIndex = 48;
+            this.labelTextB3.Text = "B3";
+            this.labelTextB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextB2
+            // 
+            this.labelTextB2.AutoSize = true;
+            this.labelTextB2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextB2.Location = new System.Drawing.Point(268, 48);
+            this.labelTextB2.Name = "labelTextB2";
+            this.labelTextB2.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB2.TabIndex = 47;
+            this.labelTextB2.Text = "B2";
+            this.labelTextB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTextB1
+            // 
+            this.labelTextB1.AutoSize = true;
+            this.labelTextB1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextB1.Location = new System.Drawing.Point(155, 48);
+            this.labelTextB1.Name = "labelTextB1";
+            this.labelTextB1.Size = new System.Drawing.Size(21, 22);
+            this.labelTextB1.TabIndex = 36;
+            this.labelTextB1.Text = "B1";
+            this.labelTextB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelDimHoleFloor
+            // 
+            this.labelDimHoleFloor.AutoSize = true;
+            this.labelDimHoleFloor.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDimHoleFloor.Location = new System.Drawing.Point(0, 0);
+            this.labelDimHoleFloor.Name = "labelDimHoleFloor";
+            this.labelDimHoleFloor.Size = new System.Drawing.Size(228, 42);
+            this.labelDimHoleFloor.TabIndex = 36;
+            this.labelDimHoleFloor.Text = "Dimension Hole Floor";
             // 
             // DimHole
             // 
@@ -299,6 +598,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelFarm);
             this.Controls.Add(this.panelHeader);
             this.Name = "DimHole";
             this.Size = new System.Drawing.Size(780, 411);
@@ -311,6 +611,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewDimHole)).EndInit();
             this.panelButtons.ResumeLayout(false);
             this.panelButtons.PerformLayout();
+            this.panelFarm.ResumeLayout(false);
+            this.panelFarm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -337,5 +639,26 @@
         private BrightIdeasSoftware.OLVColumn olvColumn20;
         private BrightIdeasSoftware.OLVColumn olvColumn21;
         private BrightIdeasSoftware.OLVColumn olvColumn22;
+        private System.Windows.Forms.Panel panelFarm;
+        private System.Windows.Forms.Label labelDimHoleFarm;
+        private System.Windows.Forms.Label labelTextFarm;
+        private System.Windows.Forms.Label labelTextSuccessRate;
+        private System.Windows.Forms.Label labelTextTime;
+        private System.Windows.Forms.Label labelTextB5;
+        private System.Windows.Forms.Label labelTextB4;
+        private System.Windows.Forms.Label labelTextB3;
+        private System.Windows.Forms.Label labelTextB2;
+        private System.Windows.Forms.Label labelTextB1;
+        private System.Windows.Forms.Label labelDimHoleFloor;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSuccessRateB5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSuccessRateB4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSuccessRateB3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSuccessRateB2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSuccessRateB1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB1;
     }
 }
