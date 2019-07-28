@@ -35,7 +35,29 @@ namespace Summoners_War_Statistics
             radioButton5,
             panelHeader,
             panelContent,
-            panelButtons
+            panelButtons,
+            labelTextB1,
+            maskedTextBoxTimeB1,
+            maskedTextBoxSuccessRateB1,
+            labelTextB2,
+            maskedTextBoxTimeB2,
+            maskedTextBoxSuccessRateB2,
+            labelTextB3,
+            maskedTextBoxTimeB3,
+            maskedTextBoxSuccessRateB3,
+            labelTextB4,
+            maskedTextBoxTimeB4,
+            maskedTextBoxSuccessRateB4,
+            labelTextB5,
+            maskedTextBoxTimeB5,
+            maskedTextBoxSuccessRateB5,
+            labelTextTime,
+            labelTextSuccessRate,
+            labelTextFarm,
+            labelFarmTime,
+            labelFarmSuccess,
+            panelFarm,
+            panelFarmRight
         };
         public ushort AxpPerLevel { get; set; }
         public byte SummonerDimensionalHoleEnergy
@@ -120,7 +142,8 @@ namespace Summoners_War_Statistics
             }
         }
 
-        public string DimHoleFloor { set => labelDimHoleFarm.Text = value; }
+        public string DimHoleFloorTime { set => labelFarmTime.Text = value; }
+        public string DimHoleFloorSuccess { set => labelFarmSuccess.Text = value; }
         #endregion
 
         #region Events
@@ -160,6 +183,16 @@ namespace Summoners_War_Statistics
         private void DimHoleFloor_TextChanged(object sender, EventArgs e)
         {
             FloorTextChanged?.Invoke();
+        }
+
+        private void LabelDimHoleFarmSuccess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelDimHoleFarmTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Summoners_War_Statistics
 
             foreach (var control in view.DimHoleView.Cntrls)
             {
-                if (control.Name.Contains("ListView"))
+                if (control.Name.Contains("ListView") || control.Name.Contains("TextBox"))
                 {
                     control.Font = new Font(view.FF, 10, FontStyle.Regular);
                     continue;

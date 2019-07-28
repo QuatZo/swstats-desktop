@@ -24,7 +24,8 @@ namespace Summoners_War_Statistics
         List<Awakening> DimHoleMonsters { get; set; }
         List<TimeSpan> DimHoleFloorTimes { get; }
         List<double> DimHoleFloorSuccessRates { get; }
-        string DimHoleFloor { set; }
+        string DimHoleFloorTime { set; }
+        string DimHoleFloorSuccess { set; }
 
         #endregion
 
