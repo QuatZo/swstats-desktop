@@ -49,6 +49,10 @@
             this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelButtons = new System.Windows.Forms.Panel();
             this.panelFarm = new System.Windows.Forms.Panel();
+            this.panelFarmRight = new System.Windows.Forms.Panel();
+            this.labelTextFarm = new System.Windows.Forms.Label();
+            this.labelFarmSuccess = new System.Windows.Forms.Label();
+            this.labelFarmTime = new System.Windows.Forms.Label();
             this.maskedTextBoxSuccessRateB5 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxSuccessRateB4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxSuccessRateB3 = new System.Windows.Forms.MaskedTextBox();
@@ -59,8 +63,6 @@
             this.maskedTextBoxTimeB2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxSuccessRateB1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxTimeB1 = new System.Windows.Forms.MaskedTextBox();
-            this.labelFarmTime = new System.Windows.Forms.Label();
-            this.labelTextFarm = new System.Windows.Forms.Label();
             this.labelTextSuccessRate = new System.Windows.Forms.Label();
             this.labelTextTime = new System.Windows.Forms.Label();
             this.labelTextB5 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.labelTextB2 = new System.Windows.Forms.Label();
             this.labelTextB1 = new System.Windows.Forms.Label();
             this.labelDimHoleFloor = new System.Windows.Forms.Label();
-            this.labelFarmSuccess = new System.Windows.Forms.Label();
-            this.panelFarmRight = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -345,6 +345,55 @@
             this.panelFarm.Size = new System.Drawing.Size(780, 136);
             this.panelFarm.TabIndex = 44;
             // 
+            // panelFarmRight
+            // 
+            this.panelFarmRight.Controls.Add(this.labelTextFarm);
+            this.panelFarmRight.Controls.Add(this.labelFarmSuccess);
+            this.panelFarmRight.Controls.Add(this.labelFarmTime);
+            this.panelFarmRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFarmRight.Location = new System.Drawing.Point(677, 0);
+            this.panelFarmRight.Name = "panelFarmRight";
+            this.panelFarmRight.Size = new System.Drawing.Size(103, 136);
+            this.panelFarmRight.TabIndex = 66;
+            // 
+            // labelTextFarm
+            // 
+            this.labelTextFarm.AutoSize = true;
+            this.labelTextFarm.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextFarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelTextFarm.Location = new System.Drawing.Point(0, 48);
+            this.labelTextFarm.Name = "labelTextFarm";
+            this.labelTextFarm.Size = new System.Drawing.Size(100, 22);
+            this.labelTextFarm.TabIndex = 53;
+            this.labelTextFarm.Text = "You should farm";
+            this.labelTextFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelFarmSuccess
+            // 
+            this.labelFarmSuccess.AutoSize = true;
+            this.labelFarmSuccess.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelFarmSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelFarmSuccess.Location = new System.Drawing.Point(41, 97);
+            this.labelFarmSuccess.Name = "labelFarmSuccess";
+            this.labelFarmSuccess.Size = new System.Drawing.Size(24, 22);
+            this.labelFarmSuccess.TabIndex = 65;
+            this.labelFarmSuccess.Text = "B5";
+            this.labelFarmSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelFarmSuccess.Click += new System.EventHandler(this.LabelDimHoleFarmSuccess_Click);
+            // 
+            // labelFarmTime
+            // 
+            this.labelFarmTime.AutoSize = true;
+            this.labelFarmTime.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelFarmTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelFarmTime.Location = new System.Drawing.Point(41, 70);
+            this.labelFarmTime.Name = "labelFarmTime";
+            this.labelFarmTime.Size = new System.Drawing.Size(24, 22);
+            this.labelFarmTime.TabIndex = 54;
+            this.labelFarmTime.Text = "B5";
+            this.labelFarmTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelFarmTime.Click += new System.EventHandler(this.LabelDimHoleFarmTime_Click);
+            // 
             // maskedTextBoxSuccessRateB5
             // 
             this.maskedTextBoxSuccessRateB5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -475,31 +524,6 @@
             this.maskedTextBoxTimeB1.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB1.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
-            // labelFarmTime
-            // 
-            this.labelFarmTime.AutoSize = true;
-            this.labelFarmTime.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelFarmTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelFarmTime.Location = new System.Drawing.Point(41, 70);
-            this.labelFarmTime.Name = "labelFarmTime";
-            this.labelFarmTime.Size = new System.Drawing.Size(24, 22);
-            this.labelFarmTime.TabIndex = 54;
-            this.labelFarmTime.Text = "B5";
-            this.labelFarmTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFarmTime.Click += new System.EventHandler(this.LabelDimHoleFarmTime_Click);
-            // 
-            // labelTextFarm
-            // 
-            this.labelTextFarm.AutoSize = true;
-            this.labelTextFarm.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelTextFarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelTextFarm.Location = new System.Drawing.Point(0, 48);
-            this.labelTextFarm.Name = "labelTextFarm";
-            this.labelTextFarm.Size = new System.Drawing.Size(100, 22);
-            this.labelTextFarm.TabIndex = 53;
-            this.labelTextFarm.Text = "You should farm";
-            this.labelTextFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // labelTextSuccessRate
             // 
             this.labelTextSuccessRate.AutoSize = true;
@@ -594,30 +618,6 @@
             this.labelDimHoleFloor.Size = new System.Drawing.Size(228, 42);
             this.labelDimHoleFloor.TabIndex = 36;
             this.labelDimHoleFloor.Text = "Dimension Hole Floor";
-            // 
-            // labelFarmSuccess
-            // 
-            this.labelFarmSuccess.AutoSize = true;
-            this.labelFarmSuccess.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelFarmSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelFarmSuccess.Location = new System.Drawing.Point(41, 97);
-            this.labelFarmSuccess.Name = "labelFarmSuccess";
-            this.labelFarmSuccess.Size = new System.Drawing.Size(24, 22);
-            this.labelFarmSuccess.TabIndex = 65;
-            this.labelFarmSuccess.Text = "B5";
-            this.labelFarmSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFarmSuccess.Click += new System.EventHandler(this.LabelDimHoleFarmSuccess_Click);
-            // 
-            // panelFarmRight
-            // 
-            this.panelFarmRight.Controls.Add(this.labelTextFarm);
-            this.panelFarmRight.Controls.Add(this.labelFarmSuccess);
-            this.panelFarmRight.Controls.Add(this.labelFarmTime);
-            this.panelFarmRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFarmRight.Location = new System.Drawing.Point(677, 0);
-            this.panelFarmRight.Name = "panelFarmRight";
-            this.panelFarmRight.Size = new System.Drawing.Size(103, 136);
-            this.panelFarmRight.TabIndex = 66;
             // 
             // DimHole
             // 

@@ -69,6 +69,8 @@ namespace Summoners_War_Statistics
             //panelHeader                       - 32
             //panelTable                        - 33   
             //panelFooter                       - 34
+            //labelRuneOriginalQuality          - 35
+            //comboBoxRuneOriginalQuality       - 36
 
             // panelHeader
             int headerHeightNullLevel = 5;
@@ -80,31 +82,35 @@ namespace Summoners_War_Statistics
             view.Cntrls[9].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
             view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
 
-            int headerWidthSecondLevel = view.Cntrls[32].Size.Width * 14 /100;
+            int headerWidthSecondLevel = view.Cntrls[32].Size.Width * 12 /100;
             view.Cntrls[2].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
             view.Cntrls[26].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
 
-            int headerWidthThirdLevel = view.Cntrls[32].Size.Width * 28 / 100;
+            int headerWidthThirdLevel = view.Cntrls[32].Size.Width * 24 / 100;
             view.Cntrls[3].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
             view.Cntrls[27].Location = new Point(headerWidthThirdLevel, headerHeightSecondLevel);
 
-            int headerWidthFourthLevel = view.Cntrls[32].Size.Width * 42 / 100;
-            view.Cntrls[11].Location = new Point(headerWidthFourthLevel, headerHeightFirstLevel);
-            view.Cntrls[29].Location = new Point(headerWidthFourthLevel, headerHeightSecondLevel);
+            int headerWidthFourthLevel = view.Cntrls[32].Size.Width * 36 / 100;
+            view.Cntrls[35].Location = new Point(headerWidthFourthLevel, headerHeightFirstLevel);
+            view.Cntrls[36].Location = new Point(headerWidthFourthLevel, headerHeightSecondLevel);
 
-            int headerWidthFifthLevel = view.Cntrls[32].Size.Width * 56 / 100;
-            view.Cntrls[22].Location = new Point(headerWidthFifthLevel, headerHeightFirstLevel);
-            view.Cntrls[30].Location = new Point(headerWidthFifthLevel, headerHeightSecondLevel);
+            int headerWidthFifthLevel = view.Cntrls[32].Size.Width * 48 / 100;
+            view.Cntrls[11].Location = new Point(headerWidthFifthLevel, headerHeightFirstLevel);
+            view.Cntrls[29].Location = new Point(headerWidthFifthLevel, headerHeightSecondLevel);
 
-            int headerWidthFifthHalfLevel = headerWidthFifthLevel + view.Cntrls[30].Size.Width + 2;
-            view.Cntrls[31].Location = new Point(headerWidthFifthHalfLevel, headerHeightSecondLevel);
+            int headerWidthSixthLevel = view.Cntrls[32].Size.Width * 60 / 100;
+            view.Cntrls[22].Location = new Point(headerWidthSixthLevel, headerHeightFirstLevel);
+            view.Cntrls[30].Location = new Point(headerWidthSixthLevel, headerHeightSecondLevel);
 
-            int headerWidthSixthLevel = view.Cntrls[32].Size.Width * 76 / 100; // + 14 (comboBox) +6 (mini comboBox)
-            view.Cntrls[1].Location = new Point(headerWidthSixthLevel, headerHeightFirstLevel);
-            view.Cntrls[24].Location = new Point(headerWidthSixthLevel, headerHeightSecondLevel);
+            int headerWidthSixthHalfLevel = headerWidthSixthLevel + view.Cntrls[30].Size.Width + 2;
+            view.Cntrls[31].Location = new Point(headerWidthSixthHalfLevel, headerHeightSecondLevel);
 
-            int headerWidthSixthHalfLevel = headerWidthSixthLevel + view.Cntrls[24].Size.Width + 2;
-            view.Cntrls[25].Location = new Point(headerWidthSixthHalfLevel, headerHeightSecondLevel);
+            int headerWidthSeventhLevel = view.Cntrls[32].Size.Width * 78 / 100; // + 12 (comboBox) +6 (mini comboBox)
+            view.Cntrls[1].Location = new Point(headerWidthSeventhLevel, headerHeightFirstLevel);
+            view.Cntrls[24].Location = new Point(headerWidthSeventhLevel, headerHeightSecondLevel);
+
+            int headerWidthSeventhHalfLevel = headerWidthSeventhLevel + view.Cntrls[24].Size.Width + 2;
+            view.Cntrls[25].Location = new Point(headerWidthSeventhHalfLevel, headerHeightSecondLevel);
 
             // panelFooter
             int footerHeightFirstLevel = 10;
@@ -182,6 +188,7 @@ namespace Summoners_War_Statistics
                 view.ChosenRuneSet,
                 view.ChosenRuneMainstat,
                 view.ChosenRuneQuality,
+                view.ChosenRuneOriginQuality,
                 view.ChosenRuneSlot,
                 view.ChosenRuneUpgrade,
                 view.ChosenRuneUpgradeStatement,

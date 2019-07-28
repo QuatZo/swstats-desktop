@@ -172,19 +172,20 @@ namespace Summoners_War_Statistics
                 if (filters[0] != 0 && rune.SetId != filters[0]) { continue; }
                 if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { continue; }
                 if (filters[2] != 0 && rune.Rank != filters[2]) { continue; }
-                if (filters[3] != 0 && rune.SlotNo != filters[3]) { continue; }
+                if (filters[3] != 0 && rune.Extra != filters[3]) { continue; }
+                if (filters[4] != 0 && rune.SlotNo != filters[4]) { continue; }
 
-                if (filters[5] == 0 && rune.UpgradeCurr != filters[4]) { continue; }
-                if (filters[5] == 1 && rune.UpgradeCurr > filters[4]) { continue; }
-                if (filters[5] == 2 && rune.UpgradeCurr < filters[4]) { continue; }
-                if (filters[5] == 3 && rune.UpgradeCurr >= filters[4]) { continue; }
-                if (filters[5] == 4 && rune.UpgradeCurr <= filters[4]) { continue; }
+                if (filters[6] == 0 && rune.UpgradeCurr != filters[5]) { continue; }
+                if (filters[6] == 1 && rune.UpgradeCurr > filters[5]) { continue; }
+                if (filters[6] == 2 && rune.UpgradeCurr < filters[5]) { continue; }
+                if (filters[6] == 3 && rune.UpgradeCurr >= filters[5]) { continue; }
+                if (filters[6] == 4 && rune.UpgradeCurr <= filters[5]) { continue; }
 
-                if (filters[7] == 0 && runeEfficiency != filters[6]) { continue; }
-                if (filters[7] == 1 && runeEfficiency > filters[6]) { continue; }
-                if (filters[7] == 2 && runeEfficiency < filters[6]) { continue; }
-                if (filters[7] == 3 && runeEfficiency >= filters[6]) { continue; }
-                if (filters[7] == 4 && runeEfficiency <= filters[6]) { continue; }
+                if (filters[8] == 0 && runeEfficiency != filters[7]) { continue; }
+                if (filters[8] == 1 && runeEfficiency > filters[7]) { continue; }
+                if (filters[8] == 2 && runeEfficiency < filters[7]) { continue; }
+                if (filters[8] == 3 && runeEfficiency >= filters[7]) { continue; }
+                if (filters[8] == 4 && runeEfficiency <= filters[7]) { continue; }
 
                 Dictionary<int, string> effect = new Dictionary<int, string>();
 

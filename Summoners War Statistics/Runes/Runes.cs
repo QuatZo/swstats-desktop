@@ -53,7 +53,9 @@ namespace Summoners_War_Statistics
             comboBoxRuneUpgradeIf,
             panelHeader,
             panelTable,
-            panelFooter
+            panelFooter,
+            labelRuneOriginalQuality,
+            comboBoxRuneOriginalQuality
         };
 
         public byte ChosenRuneSet
@@ -92,6 +94,19 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        public byte ChosenRuneOriginQuality
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneOriginalQuality.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        
         public byte ChosenRuneSlot
         {
             get
@@ -265,6 +280,9 @@ namespace Summoners_War_Statistics
             comboBoxRuneQuality.DataSource = new BindingSource(runeQualities, null);
             comboBoxRuneQuality.DisplayMember = "Value";
             comboBoxRuneQuality.ValueMember = "Key";
+            comboBoxRuneOriginalQuality.DataSource = new BindingSource(runeQualities, null);
+            comboBoxRuneOriginalQuality.DisplayMember = "Value";
+            comboBoxRuneOriginalQuality.ValueMember = "Key";
 
             comboBoxRuneSlot.SelectedIndex = 0;
             comboBoxRuneUpgrade.SelectedIndex = 0;

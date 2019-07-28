@@ -3,13 +3,16 @@
 This tool will give you an information about your Summoner's War account, like amount of monsters, friends list and dimension hole calculator. In the first published version you are able to check some currency stuff, extended info about your monsters (as a group, e.g. amount of elemental monsters or days since last **usable** (non-feeded) nat5), some info about runes (min, max, mean, median, standard deviation efficiency; amount of runes: total, maxed and in inventory), dimension hole caculator (when you will be able to 2A next monster), friends list (their reps, since when they are offline) and guild stuff (members, best rank, defense monsters). The very first version is static (in terms of resolution), but I'm planning to do it more dynamic (once I learn how to).
 
 ## Future features
-* Dynamic window
+* Double-level rune filters (it means more of them)
+* Refactor Dynamic UI (now it looks meh, but hey it works)
+* Fix efficiency calc (some of them don't overlap with SWOP nor SWARFARM)
+* Transmog tab (or at least some info in Monsters/Other tab, but I need more JSON files with in-game info [like who has which aura/wings])
 * More information in Monsters tab (probably list with filters similar to Rune tab)
 * Advanced Rune tab (my main objective here is to make some plots and checker if your runes comply with the normal distribution rules [for fun])
 * Decks tab
-* Dimension hole calculator, which takes into consideration fail rate, time and floor just to decide which floor is best to farm
 * Move Guild info from Other tab to new Guild tab, which means adding more guild stuff
 * Other tab fullfiled with less important info
+* Make a Linux version (?)
 
 ![screen]
 
