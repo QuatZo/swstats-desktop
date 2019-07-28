@@ -2149,6 +2149,7 @@ namespace Summoners_War_Statistics
             }
             return "Unknown Guild Ranking";
         }
+
         public int GetAxpByFloor(int floor)
         {
             if (axpPerFloor.ContainsKey(floor))

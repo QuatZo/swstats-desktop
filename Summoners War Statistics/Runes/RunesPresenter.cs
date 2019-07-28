@@ -21,10 +21,16 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             this.view.InitRunes += View_InitRunes;
+            this.view.CanSeeRunesTab += View_CanSeeRunesTab;
 
             this.view.RunesListView.BeforeSorting += RunesListView_BeforeSorting;
             this.view.RunesListView.ColumnClick += RunesList_ColumnClick;
             this.view.Resized += View_Resized;
+        }
+
+        private void View_CanSeeRunesTab()
+        {
+            SetUI();
         }
 
         private void RunesListView_BeforeSorting(object sender, BeforeSortingEventArgs e)
@@ -71,56 +77,36 @@ namespace Summoners_War_Statistics
             //panelFooter                       - 34
             //labelRuneOriginalQuality          - 35
             //comboBoxRuneOriginalQuality       - 36
+            //flowLayoutPanelFilters            - 37
+            //labelRuneInnate                   - 38
+            //comboBoxRuneInnate                - 39
+            //labelRuneSubstat1                 - 40
+            //comboBoxRuneSubstat1              - 41
+            //comboBoxRuneSubstat1YesNo         - 42
+            //labelRuneSubstat2                 - 43
+            //comboBoxRuneSubstat2              - 44
+            //comboBoxRuneSubstat2YesNo         - 45
+            //labelRuneSubstat3                 - 46
+            //comboBoxRuneSubstat3              - 47
+            //comboBoxRuneSubstat3YesNo         - 48
+            //labelRuneSubstat4                 - 49
+            //comboBoxRuneSubstat4              - 50
+            //comboBoxRuneSubstat4YesNo         - 51
 
-            // panelHeader
-            int headerHeightNullLevel = 5;
-            int headerWidthFirstLevel = 5;
-            int headerHeightFirstLevel = view.Cntrls[32].Size.Height - 60;
-            int headerHeightSecondLevel = view.Cntrls[32].Size.Height - 35;
+            FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)view.Cntrls[37];
+            if(flowLayoutPanel.Controls[0].Location.Y != flowLayoutPanel.Controls[flowLayoutPanel.Controls.Count - 1].Location.Y)
+            {
+                view.Cntrls[32].Height = (flowLayoutPanel.Controls[0].Height * 2) + 20 + view.Cntrls[0].Height;
+            }
+            else { view.Cntrls[32].Height = flowLayoutPanel.Controls[0].Height + view.Cntrls[0].Height + 20; }
+            
 
-            view.Cntrls[0].Location = new Point(headerWidthFirstLevel, headerHeightNullLevel);
-            view.Cntrls[9].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
-            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
-
-            int headerWidthSecondLevel = view.Cntrls[32].Size.Width * 12 /100;
-            view.Cntrls[2].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
-            view.Cntrls[26].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
-
-            int headerWidthThirdLevel = view.Cntrls[32].Size.Width * 24 / 100;
-            view.Cntrls[3].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
-            view.Cntrls[27].Location = new Point(headerWidthThirdLevel, headerHeightSecondLevel);
-
-            int headerWidthFourthLevel = view.Cntrls[32].Size.Width * 36 / 100;
-            view.Cntrls[35].Location = new Point(headerWidthFourthLevel, headerHeightFirstLevel);
-            view.Cntrls[36].Location = new Point(headerWidthFourthLevel, headerHeightSecondLevel);
-
-            int headerWidthFifthLevel = view.Cntrls[32].Size.Width * 48 / 100;
-            view.Cntrls[11].Location = new Point(headerWidthFifthLevel, headerHeightFirstLevel);
-            view.Cntrls[29].Location = new Point(headerWidthFifthLevel, headerHeightSecondLevel);
-
-            int headerWidthSixthLevel = view.Cntrls[32].Size.Width * 60 / 100;
-            view.Cntrls[22].Location = new Point(headerWidthSixthLevel, headerHeightFirstLevel);
-            view.Cntrls[30].Location = new Point(headerWidthSixthLevel, headerHeightSecondLevel);
-
-            int headerWidthSixthHalfLevel = headerWidthSixthLevel + view.Cntrls[30].Size.Width + 2;
-            view.Cntrls[31].Location = new Point(headerWidthSixthHalfLevel, headerHeightSecondLevel);
-
-            int headerWidthSeventhLevel = view.Cntrls[32].Size.Width * 78 / 100; // + 12 (comboBox) +6 (mini comboBox)
-            view.Cntrls[1].Location = new Point(headerWidthSeventhLevel, headerHeightFirstLevel);
-            view.Cntrls[24].Location = new Point(headerWidthSeventhLevel, headerHeightSecondLevel);
-
-            int headerWidthSeventhHalfLevel = headerWidthSeventhLevel + view.Cntrls[24].Size.Width + 2;
-            view.Cntrls[25].Location = new Point(headerWidthSeventhHalfLevel, headerHeightSecondLevel);
+            view.Cntrls[33].Location = new Point(flowLayoutPanel.Location.X + flowLayoutPanel.Size.Width, flowLayoutPanel.Location.Y + flowLayoutPanel.Size.Height);
+            view.Cntrls[23].Location = new Point(0, 0);
 
             // panelFooter
             int footerHeightFirstLevel = 10;
-            int footerHeightSecondLevel = footerHeightFirstLevel + 35;
-
-            view.Cntrls[14].Location = new Point(20, footerHeightFirstLevel);
-            view.Cntrls[4].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width + 5, footerHeightFirstLevel);
-            view.Cntrls[17].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width - view.Cntrls[17].Size.Width, footerHeightSecondLevel);
-            view.Cntrls[10].Location = new Point(view.Cntrls[4].Location.X, footerHeightSecondLevel);
-
+            int footerHeightSecondLevel = footerHeightFirstLevel + 20;
             int footerWidthSecondLevel = view.Cntrls[34].Width / 4;
 
             view.Cntrls[15].Location = new Point(footerWidthSecondLevel, footerHeightFirstLevel);
@@ -163,37 +149,93 @@ namespace Summoners_War_Statistics
             {
                 view.RunesListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
             }
-            Logger.log.Info($"[Runes] Sorting");
+            Logger.log.Info($"[Runes] Sorting by {e.Column}");
         }
 
-        private List<string> GetColumns()
+        private void SetUI()
         {
-            List<string> columns = new List<string>();
+            int headerHeightNullLevel = 5;
+            int headerWidthFirstLevel = 5;
+            int headerHeightFirstLevel = 0;
+            int headerHeightSecondLevel = view.Cntrls[9].Size.Height + view.Cntrls[9].Location.Y + 5;
 
-            foreach(ColumnHeader column in view.RunesListView.Columns)
-            {
-                columns.Add(column.Text);
-            }
+            view.Cntrls[0].Location = new Point(headerWidthFirstLevel, headerHeightNullLevel);
 
-            return columns;
+            view.Cntrls[9].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[2].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[26].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[38].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[39].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[3].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[27].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[35].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[36].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[11].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
+            view.Cntrls[22].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[31].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[1].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[24].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[25].Location = new Point(headerWidthFirstLevel + view.Cntrls[24].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[40].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[41].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[42].Location = new Point(headerWidthFirstLevel + view.Cntrls[41].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[43].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[44].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[45].Location = new Point(headerWidthFirstLevel + view.Cntrls[41].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[46].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[47].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[48].Location = new Point(headerWidthFirstLevel + view.Cntrls[41].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[49].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[50].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[51].Location = new Point(headerWidthFirstLevel + view.Cntrls[41].Size.Width + 2, headerHeightSecondLevel);
+
+            int footerHeightFirstLevel = 10;
+            int footerHeightSecondLevel = footerHeightFirstLevel + 20;
+
+            view.Cntrls[14].Location = new Point(20, footerHeightFirstLevel);
+            view.Cntrls[4].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width + 5, footerHeightFirstLevel);
+            view.Cntrls[17].Location = new Point(view.Cntrls[14].Location.X + view.Cntrls[14].Size.Width - view.Cntrls[17].Size.Width, footerHeightSecondLevel);
+            view.Cntrls[10].Location = new Point(view.Cntrls[4].Location.X, footerHeightSecondLevel);
         }
 
         private void View_InitRunes()
         {
             view.RunesListView.Items.Clear();
-
             Logger.log.Info($"[Runes] Reading filters");
             List<byte> filters = new List<byte>()
             {
-                view.ChosenRuneSet,
+                view.ChosenRuneSet, // ID 0
                 view.ChosenRuneMainstat,
+                view.ChosenRuneInnate,
                 view.ChosenRuneQuality,
                 view.ChosenRuneOriginQuality,
-                view.ChosenRuneSlot,
+                view.ChosenRuneSlot, // ID 5
                 view.ChosenRuneUpgrade,
                 view.ChosenRuneUpgradeStatement,
                 view.ChosenRuneEfficiency,
-                view.ChosenRuneEfficiencyStatement
+                view.ChosenRuneEfficiencyStatement,
+                view.ChosenRuneSubstat1, // ID 10
+                view.ChosenRuneSubstat1Statement,
+                view.ChosenRuneSubstat2,
+                view.ChosenRuneSubstat2Statement,
+                view.ChosenRuneSubstat3,
+                view.ChosenRuneSubstat3Statement, // ID 15
+                view.ChosenRuneSubstat4,
+                view.ChosenRuneSubstat4Statement,
             };
 
             Logger.log.Info($"[Runes] Correct");
@@ -202,7 +244,7 @@ namespace Summoners_War_Statistics
             ushort runesMaxed = 0;
             List<double> efficiencies = new List<double>();
             view.RunesListView.BeginUpdate();
-            List<RuneRow> runes = model.RunesList(view.RunesList, view.MonstersMasterId, GetColumns(), filters);
+            List<RuneRow> runes = model.RunesList(view.RunesList, view.MonstersMasterId, filters);
             foreach (RuneRow rune in runes)
             {
                 if(rune.Level == 15) { runesMaxed++; }
@@ -231,7 +273,7 @@ namespace Summoners_War_Statistics
                 Logger.log.Info($"[Runes] Runes efficiency max done");
                 view.RunesEfficiencyMean = Math.Round(efficiencies.Sum() / efficiencies.Count, 2);
                 Logger.log.Info($"[Runes] Runes efficiency mean done");
-                if (efficiencies.Count > 2)
+                if (efficiencies.Count >= 2)
                 {
                     int mid = efficiencies.Count / 2;
 
@@ -245,6 +287,15 @@ namespace Summoners_War_Statistics
                     }
                     view.RunesEfficiencyStandardDeviation = Math.Round(Math.Sqrt(sum / (efficiencies.Count - 1)), 2);
                     Logger.log.Info($"[Runes] Runes efficiency standard deviation done");
+                }
+                else if(efficiencies.Count == 1)
+                {
+                    view.RunesEfficiencyMedian = efficiencies[0];
+                    view.RunesEfficiencyStandardDeviation = 0;
+                }
+                else
+                {
+                    view.RunesEfficiencyMedian = view.RunesEfficiencyStandardDeviation = 0;
                 }
             }
         }

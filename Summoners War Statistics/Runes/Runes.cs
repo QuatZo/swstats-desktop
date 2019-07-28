@@ -14,6 +14,7 @@ namespace Summoners_War_Statistics
     public partial class Runes : UserControl, IRunesView
     {
         #region Properties
+        public Size SizeWindow => Size;
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -55,7 +56,22 @@ namespace Summoners_War_Statistics
             panelTable,
             panelFooter,
             labelRuneOriginalQuality,
-            comboBoxRuneOriginalQuality
+            comboBoxRuneOriginalQuality,
+            flowLayoutPanelFilters,
+            labelRuneInnate,
+            comboBoxRuneInnate,
+            labelRuneSubstat1,
+            comboBoxRuneSubstat1,
+            comboBoxRuneSubstat1YesNo,
+            labelRuneSubstat2,
+            comboBoxRuneSubstat2,
+            comboBoxRuneSubstat2YesNo,
+            labelRuneSubstat3,
+            comboBoxRuneSubstat3,
+            comboBoxRuneSubstat3YesNo,
+            labelRuneSubstat4,
+            comboBoxRuneSubstat4,
+            comboBoxRuneSubstat4YesNo
         };
 
         public byte ChosenRuneSet
@@ -77,6 +93,18 @@ namespace Summoners_War_Statistics
                 try
                 {
                     return byte.Parse(comboBoxRuneMainstat.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneInnate
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneInnate.SelectedValue.ToString());
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
@@ -155,6 +183,87 @@ namespace Summoners_War_Statistics
             {
                 if (comboBoxRuneEfficiencyIf.SelectedIndex < 0) { return 2; } // >=
                 return (byte)comboBoxRuneEfficiencyIf.SelectedIndex;
+            }
+        }
+
+        public byte ChosenRuneSubstat1
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneSubstat1.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneSubstat1Statement
+        {
+            get
+            {
+                if (comboBoxRuneSubstat1YesNo.SelectedIndex != 0) { return 1; } // Yes
+                return 0;
+            }
+        }
+        public byte ChosenRuneSubstat2
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneSubstat2.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneSubstat2Statement
+        {
+            get
+            {
+                if (comboBoxRuneSubstat2YesNo.SelectedIndex != 0) { return 1; } // Yes
+                return 0;
+            }
+        }
+        public byte ChosenRuneSubstat3
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneSubstat3.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneSubstat3Statement
+        {
+            get
+            {
+                if (comboBoxRuneSubstat3YesNo.SelectedIndex != 0) { return 1; } // Yes
+                return 0;
+            }
+        }
+        public byte ChosenRuneSubstat4
+        {
+            get
+            {
+                try
+                {
+                    return byte.Parse(comboBoxRuneSubstat4.SelectedValue.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneSubstat4Statement
+        {
+            get
+            {
+                if (comboBoxRuneSubstat4YesNo.SelectedIndex != 0) { return 1; } // Yes
+                return 0;
             }
         }
 
@@ -247,6 +356,7 @@ namespace Summoners_War_Statistics
         #region Events
         public event Action InitRunes;
         public event Action Resized;
+        public event Action CanSeeRunesTab;
         #endregion
         
         public Runes()
@@ -272,7 +382,23 @@ namespace Summoners_War_Statistics
             comboBoxRuneMainstat.DataSource = new BindingSource(runeEffectTypes, null);
             comboBoxRuneMainstat.DisplayMember = "Value";
             comboBoxRuneMainstat.ValueMember = "Key";
-
+            comboBoxRuneSubstat1.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat1.DisplayMember = "Value";
+            comboBoxRuneSubstat1.ValueMember = "Key";
+            comboBoxRuneSubstat2.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat2.DisplayMember = "Value";
+            comboBoxRuneSubstat2.ValueMember = "Key";
+            comboBoxRuneSubstat3.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat3.DisplayMember = "Value";
+            comboBoxRuneSubstat3.ValueMember = "Key";
+            comboBoxRuneSubstat4.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat4.DisplayMember = "Value";
+            comboBoxRuneSubstat4.ValueMember = "Key";
+            if (!runeEffectTypes.ContainsKey(99)) { runeEffectTypes.Add(99, "None"); }
+            runeEffectTypes = runeEffectTypes.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
+            comboBoxRuneInnate.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneInnate.DisplayMember = "Value";
+            comboBoxRuneInnate.ValueMember = "Key";
 
             Dictionary<int, string> runeQualities = Mapping.Instance.GetAllRuneQuailities(); // rune quality (with ancient)
             if (!runeQualities.ContainsKey(0)) { runeQualities.Add(0, "All"); }
@@ -289,6 +415,11 @@ namespace Summoners_War_Statistics
             comboBoxRuneUpgradeIf.SelectedIndex = 2;
             comboBoxRuneEfficiency.SelectedIndex = 0;
             comboBoxRuneEfficiencyIf.SelectedIndex = 2;
+
+            comboBoxRuneSubstat1YesNo.SelectedIndex = 1;
+            comboBoxRuneSubstat2YesNo.SelectedIndex = 1;
+            comboBoxRuneSubstat3YesNo.SelectedIndex = 1;
+            comboBoxRuneSubstat4YesNo.SelectedIndex = 1;
         }
         public void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId)
         {
@@ -297,7 +428,6 @@ namespace Summoners_War_Statistics
             InitComboBoxes();
             InitRunes?.Invoke();
         }
-
         public void Front()
         {
             BringToFront();
@@ -312,6 +442,14 @@ namespace Summoners_War_Statistics
         private void Runes_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
+        }
+
+        private void Runes_VisibleChanged(object sender, EventArgs e)
+        {
+            if(Visible == true)
+            {
+                CanSeeRunesTab?.Invoke();
+            }
         }
     }
 }

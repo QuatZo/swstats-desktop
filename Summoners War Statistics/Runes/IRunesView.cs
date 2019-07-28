@@ -1,6 +1,7 @@
 ﻿using BrightIdeasSoftware;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,12 @@ namespace Summoners_War_Statistics
     public interface IRunesView
     {
         #region Properties
+        Size SizeWindow { get; }
+
         List<Control> Cntrls { get; }
         byte ChosenRuneSet { get; }
         byte ChosenRuneMainstat { get; }
+        byte ChosenRuneInnate { get; }
         byte ChosenRuneQuality { get; }
         byte ChosenRuneOriginQuality { get; }
         byte ChosenRuneSlot { get; }
@@ -21,6 +25,14 @@ namespace Summoners_War_Statistics
         byte ChosenRuneUpgradeStatement { get; }
         byte ChosenRuneEfficiency { get; }
         byte ChosenRuneEfficiencyStatement { get; }
+        byte ChosenRuneSubstat1 { get; }
+        byte ChosenRuneSubstat1Statement { get; }
+        byte ChosenRuneSubstat2 { get; }
+        byte ChosenRuneSubstat2Statement { get; }
+        byte ChosenRuneSubstat3 { get; }
+        byte ChosenRuneSubstat3Statement { get; }
+        byte ChosenRuneSubstat4 { get; }
+        byte ChosenRuneSubstat4Statement { get; }
 
 
         ushort RunesAmount { get; set; }
@@ -42,6 +54,7 @@ namespace Summoners_War_Statistics
         #region Events
         event Action InitRunes;
         event Action Resized;
+        event Action CanSeeRunesTab;
         #endregion
 
         #region Methods
