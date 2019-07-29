@@ -24,9 +24,23 @@ namespace Summoners_War_Statistics
             this.view.DimHoleMonstersListView.ColumnClick += DimHoleMonstersListView_ColumnClick;
             this.view.DimHoleMonstersListView.BeforeSorting += DimHoleMonstersListView_BeforeSorting;
 
+            this.view.CanSeeDimHoleTab += View_CanSeeDimHoleTab;
+
             this.view.Resized += View_Resized;
 
             this.view.FloorTextChanged += View_FloorTextChanged;
+        }
+
+        private void View_CanSeeDimHoleTab()
+        {
+            int heightFarmFirstLevel = 40;
+            int heightFarmSecondLevel = heightFarmFirstLevel + view.Cntrls[15].Size.Height + 5;
+            int heightFarmThirdLevel = heightFarmSecondLevel + view.Cntrls[15].Size.Height + 5;
+
+            int widthFarmFirstLevel = 5;
+
+            view.Cntrls[31].Location = new Point(widthFarmFirstLevel, heightFarmThirdLevel);
+            view.Cntrls[30].Location = new Point(widthFarmFirstLevel, heightFarmSecondLevel);
         }
 
         private void View_FloorTextChanged()
@@ -70,6 +84,7 @@ namespace Summoners_War_Statistics
             }
             Logger.log.Info($"[Dimension Hole] Sorting");
         }
+
         private void View_Resized()
         {
             //labelDimHoleMonsters                  - 0
@@ -87,7 +102,6 @@ namespace Summoners_War_Statistics
             //panelHeader                           - 12
             //panelContent                          - 13
             //panelButtons                          - 14
-
             //labelTextB1                           - 15
             //maskedTextBoxTimeB1                   - 16
             //maskedTextBoxSuccessRateB1            - 17
@@ -117,15 +131,11 @@ namespace Summoners_War_Statistics
             int heightFarmSecondLevel = heightFarmFirstLevel + view.Cntrls[15].Size.Height + 5;
             int heightFarmThirdLevel = heightFarmSecondLevel + view.Cntrls[15].Size.Height + 5;
 
-            int widthFarmFirstLevel = 5;
             int widthFarmSEcondLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 1 / 6;
             int widthFarmThirdLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 2 / 6;
             int widthFarmFourthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 3 / 6;
             int widthFarmFifthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 4 / 6;
             int widthFarmSixthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 5 / 6;
-
-            view.Cntrls[31].Location = new Point(widthFarmFirstLevel, heightFarmThirdLevel);
-            view.Cntrls[30].Location = new Point(widthFarmFirstLevel, heightFarmSecondLevel);
 
             int mid = view.Cntrls[16].Size.Width / 2 - view.Cntrls[15].Size.Width / 2;
             view.Cntrls[15].Location = new Point(widthFarmSEcondLevel + mid, heightFarmFirstLevel);
@@ -186,7 +196,7 @@ namespace Summoners_War_Statistics
 
             view.SummonerDimensionalHoleEnergyMaxInfo = model.DimHoleCalculateTime(view.SummonerDimensionalHoleEnergyMax, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, false);
             Logger.log.Info($"[Dimension Hole] Dim Hole energy max INFO done");
-
+            view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
 
             foreach (Monster unit in unitList)
             {

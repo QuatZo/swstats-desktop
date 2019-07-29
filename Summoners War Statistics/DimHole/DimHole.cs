@@ -151,6 +151,7 @@ namespace Summoners_War_Statistics
         public event Action<RadioButton> DimHoleLevelChanged;
         public event Action Resized;
         public event Action FloorTextChanged;
+        public event Action CanSeeDimHoleTab;
         #endregion
 
         public DimHole()
@@ -193,6 +194,14 @@ namespace Summoners_War_Statistics
         private void LabelDimHoleFarmTime_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DimHole_VisibleChanged(object sender, EventArgs e)
+        {
+            if(Visible == true)
+            {
+                CanSeeDimHoleTab?.Invoke();
+            }
         }
     }
 }

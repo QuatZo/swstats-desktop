@@ -2105,7 +2105,7 @@ namespace Summoners_War_Statistics
 
         public (double Current, double Max) GetRuneEfficiency(Rune rune)
         {
-            double ratio = 0;
+            double ratio = 0.0;
             int runeClass = (int)rune.Class;
             if (IsAncient(rune)) { runeClass -= 10; }
 
@@ -2116,8 +2116,8 @@ namespace Summoners_War_Statistics
             foreach (List<long> stat in rune.SecEff)
             {
                 double value;
-                if (stat.Count > 3 && stat[3] > 0) { value = stat[1] + stat[3]; }
-                else { value = stat[1]; }
+                if (stat.Count > 3 && stat[3] > 0) { value = (double)stat[1] + (double)stat[3]; }
+                else { value = (double)stat[1]; }
                 ratio += (double)value / (double)runeSubstats[(int)stat[0]][6];
             }
             // innate
@@ -2126,7 +2126,7 @@ namespace Summoners_War_Statistics
                 ratio += (double)rune.PrefixEff[1] / (double)runeSubstats[(int)rune.PrefixEff[0]][6]; // cast needed, otherwise always 0; even tho VS says it's redundant
             }
 
-            double efficiency = (ratio / 2.8) * 100;
+            double efficiency = (ratio / 2.8) * (double)100;
 
             double efficiencyMax = efficiency + (Math.Max(Math.Ceiling((12 - (double)rune.UpgradeCurr) / 3), 0) * 0.2 / 2.8 * 100);
             return (Math.Round(efficiency, 2), Math.Round(efficiencyMax, 2));

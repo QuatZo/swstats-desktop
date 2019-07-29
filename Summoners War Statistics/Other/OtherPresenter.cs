@@ -85,21 +85,18 @@ namespace Summoners_War_Statistics
 
             view.GuildMembersList.BeginUpdate();
             view.SummonerFriendsList.BeginUpdate();
+
             view.Cntrls[13].Size = new Size(view.Cntrls[13].Size.Width, view.TabSize.Height * 50 / 100);
             view.Cntrls[14].Location = new Point(0, view.Cntrls[13].Size.Height);
             view.Cntrls[14].Size = new Size(view.Cntrls[14].Size.Width, view.TabSize.Height - view.Cntrls[13].Size.Height);
+
             var columnWidth = view.GuildMembersList.Size.Width / view.GuildMembersList.Columns.Count;
-
-
             foreach (ColumnHeader column in view.GuildMembersList.Columns)
             {
                 column.Width = columnWidth - 5;
             }
 
-
             columnWidth = view.SummonerFriendsList.Size.Width / view.SummonerFriendsList.Columns.Count;
-
-
             foreach (ColumnHeader column in view.SummonerFriendsList.Columns)
             {
                 column.Width = columnWidth - 5;

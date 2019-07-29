@@ -21,11 +21,57 @@ namespace Summoners_War_Statistics
             this.view.InitMonsters += View_InitMonsters;
             this.view.MonstersStarsChanged += View_MonstersStarsChanged;
 
+            this.view.CanSeeMonstersTab += View_CanSeeMonstersTab;
+
             this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
             this.view.MonstersListView.BeforeSorting += MonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
 
+        }
+
+        private void View_CanSeeMonstersTab()
+        {
+            // panelHeader
+            int headerHeightFirstLevel = 10;
+            // left
+            int height = view.Cntrls[28].Size.Height + 2;
+            int headerWidthFirstLevel = 10;
+            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[17].Location = new Point(headerWidthFirstLevel + view.Cntrls[28].Size.Width, headerHeightFirstLevel);
+
+            int headerHeightSecondLevel = headerHeightFirstLevel + height;
+            view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[5].Location = new Point(headerWidthFirstLevel + view.Cntrls[29].Size.Width, headerHeightSecondLevel);
+
+            int headerHeightThirdLevel = headerHeightSecondLevel + height;
+            view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
+            view.Cntrls[18].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width, headerHeightThirdLevel);
+
+            int headerHeightFourthLevel = headerHeightThirdLevel + height;
+            view.Cntrls[31].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
+            view.Cntrls[7].Location = new Point(headerWidthFirstLevel + view.Cntrls[31].Size.Width, headerHeightFourthLevel);
+
+            int headerHeightFifthLevel = headerHeightFourthLevel + height;
+            view.Cntrls[32].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
+            view.Cntrls[2].Location = new Point(headerWidthFirstLevel + view.Cntrls[32].Size.Width, headerHeightFifthLevel);
+
+            // right
+            view.Cntrls[0].Location = new Point(view.Cntrls[0].Location.X, headerHeightFirstLevel);
+            view.Cntrls[22].Location = new Point(view.Cntrls[22].Location.X, headerHeightFirstLevel);
+            view.Cntrls[23].Location = new Point(view.Cntrls[23].Location.X, headerHeightFirstLevel);
+            view.Cntrls[10].Location = new Point(view.Cntrls[10].Location.X, headerHeightFirstLevel);
+
+            view.Cntrls[24].Location = new Point(view.Cntrls[24].Location.X, headerHeightSecondLevel);
+            view.Cntrls[4].Location = new Point(view.Cntrls[4].Location.X, headerHeightSecondLevel);
+
+            view.Cntrls[1].Location = new Point(view.Cntrls[1].Location.X, headerHeightThirdLevel);
+            view.Cntrls[25].Location = new Point(view.Cntrls[25].Location.X, headerHeightThirdLevel);
+            view.Cntrls[26].Location = new Point(view.Cntrls[26].Location.X, headerHeightThirdLevel);
+            view.Cntrls[6].Location = new Point(view.Cntrls[6].Location.X, headerHeightThirdLevel);
+
+            view.Cntrls[27].Location = new Point(view.Cntrls[27].Location.X, headerHeightFourthLevel);
+            view.Cntrls[3].Location = new Point(view.Cntrls[3].Location.X, headerHeightFourthLevel);
         }
 
         private void MonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
@@ -94,29 +140,13 @@ namespace Summoners_War_Statistics
             //panelFooterRight              - 44
 
             // panelHeader
-            
             int headerHeightFirstLevel = 10;
             // left
             int height = view.Cntrls[28].Size.Height + 2;
-            int headerWidthFirstLevel = 10;
-            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
-            view.Cntrls[17].Location = new Point(headerWidthFirstLevel + view.Cntrls[28].Size.Width, headerHeightFirstLevel);
-
             int headerHeightSecondLevel = headerHeightFirstLevel + height;
-            view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
-            view.Cntrls[5].Location = new Point(headerWidthFirstLevel + view.Cntrls[29].Size.Width, headerHeightSecondLevel);
-
             int headerHeightThirdLevel = headerHeightSecondLevel + height;
-            view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
-            view.Cntrls[18].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width, headerHeightThirdLevel);
-
             int headerHeightFourthLevel = headerHeightThirdLevel + height;
-            view.Cntrls[31].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
-            view.Cntrls[7].Location = new Point(headerWidthFirstLevel + view.Cntrls[31].Size.Width, headerHeightFourthLevel);
-
             int headerHeightFifthLevel = headerHeightFourthLevel + height;
-            view.Cntrls[32].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
-            view.Cntrls[2].Location = new Point(headerWidthFirstLevel + view.Cntrls[32].Size.Width, headerHeightFifthLevel);
 
             // mid
             int headerWidthSecondLevel = (view.SizeWindow.Width / 2) - view.Cntrls[33].Size.Width * 2;
@@ -139,24 +169,6 @@ namespace Summoners_War_Statistics
             int headerHeightSixthLevel = headerHeightFifthLevel + height;
             view.Cntrls[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
             view.Cntrls[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
-
-            // right
-            view.Cntrls[0].Location = new Point(view.Cntrls[0].Location.X, headerHeightFirstLevel);
-            view.Cntrls[22].Location = new Point(view.Cntrls[22].Location.X, headerHeightFirstLevel);
-            view.Cntrls[23].Location = new Point(view.Cntrls[23].Location.X, headerHeightFirstLevel);
-            view.Cntrls[10].Location = new Point(view.Cntrls[10].Location.X, headerHeightFirstLevel);
-
-            view.Cntrls[24].Location = new Point(view.Cntrls[24].Location.X, headerHeightSecondLevel);
-            view.Cntrls[4].Location = new Point(view.Cntrls[4].Location.X, headerHeightSecondLevel);
-
-            view.Cntrls[1].Location = new Point(view.Cntrls[1].Location.X, headerHeightThirdLevel);
-            view.Cntrls[25].Location = new Point(view.Cntrls[25].Location.X, headerHeightThirdLevel);
-            view.Cntrls[26].Location = new Point(view.Cntrls[26].Location.X, headerHeightThirdLevel);
-            view.Cntrls[6].Location = new Point(view.Cntrls[6].Location.X, headerHeightThirdLevel);
-
-            view.Cntrls[27].Location = new Point(view.Cntrls[27].Location.X, headerHeightFourthLevel);
-            view.Cntrls[3].Location = new Point(view.Cntrls[3].Location.X, headerHeightFourthLevel);
-
 
             view.MonstersListView.BeginUpdate();
             int columnWidth = view.MonstersListView.Size.Width / view.MonstersListView.Columns.Count;

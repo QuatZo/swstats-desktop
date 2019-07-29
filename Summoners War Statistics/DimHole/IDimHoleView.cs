@@ -34,6 +34,7 @@ namespace Summoners_War_Statistics
         event Action<RadioButton> DimHoleLevelChanged;
         event Action Resized;
         event Action FloorTextChanged;
+        event Action CanSeeDimHoleTab;
         #endregion
 
         #region Methods

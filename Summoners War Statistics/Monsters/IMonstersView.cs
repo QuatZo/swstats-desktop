@@ -46,6 +46,7 @@ namespace Summoners_War_Statistics
         event Action<List<Monster>, List<long>> InitMonsters;
         event Action<RadioButton> MonstersStarsChanged;
         event Action Resized;
+        event Action CanSeeMonstersTab;
         #endregion
 
         #region Methods

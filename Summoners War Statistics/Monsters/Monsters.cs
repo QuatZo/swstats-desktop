@@ -192,6 +192,7 @@ namespace Summoners_War_Statistics
         public event Action<List<Monster>, List<long>> InitMonsters;
         public event Action<RadioButton> MonstersStarsChanged;
         public event Action Resized;
+        public event Action CanSeeMonstersTab;
         #endregion
 
         public Monsters()
@@ -239,6 +240,14 @@ namespace Summoners_War_Statistics
         private void Monsters_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
+        }
+
+        private void Monsters_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible == true)
+            {
+                CanSeeMonstersTab?.Invoke();
+            }
         }
     }
 }
