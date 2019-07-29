@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelSummonerName = new System.Windows.Forms.Label();
             this.labelMana = new System.Windows.Forms.Label();
             this.labelCrystals = new System.Windows.Forms.Label();
@@ -88,6 +89,7 @@
             this.panelContentMid = new System.Windows.Forms.Panel();
             this.panelContentRight = new System.Windows.Forms.Panel();
             this.panelContentLeft = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).BeginInit();
@@ -128,6 +130,7 @@
             this.labelSummonerName.Size = new System.Drawing.Size(124, 57);
             this.labelSummonerName.TabIndex = 0;
             this.labelSummonerName.Text = "QuatZo";
+            this.toolTip1.SetToolTip(this.labelSummonerName, "Your nickname");
             // 
             // labelMana
             // 
@@ -139,6 +142,7 @@
             this.labelMana.TabIndex = 1;
             this.labelMana.Text = "0";
             this.labelMana.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMana, "Amount of mana ");
             // 
             // labelCrystals
             // 
@@ -150,6 +154,7 @@
             this.labelCrystals.TabIndex = 2;
             this.labelCrystals.Text = "0";
             this.labelCrystals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCrystals, "Amount of crystals");
             // 
             // labelEnergy
             // 
@@ -161,6 +166,7 @@
             this.labelEnergy.TabIndex = 3;
             this.labelEnergy.Text = "0";
             this.labelEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelEnergy, "Amount of current energy / max energy");
             // 
             // labelEnergySlash
             // 
@@ -172,6 +178,7 @@
             this.labelEnergySlash.TabIndex = 4;
             this.labelEnergySlash.Text = "/";
             this.labelEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelEnergySlash, "Amount of current energy / max energy");
             // 
             // labelEnergyMax
             // 
@@ -183,6 +190,7 @@
             this.labelEnergyMax.TabIndex = 5;
             this.labelEnergyMax.Text = "0";
             this.labelEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelEnergyMax, "Amount of current energy / max energy");
             // 
             // labelGuildPoints
             // 
@@ -194,6 +202,7 @@
             this.labelGuildPoints.TabIndex = 6;
             this.labelGuildPoints.Text = "0";
             this.labelGuildPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelGuildPoints, "Amount of guild points");
             // 
             // labelGloryPoints
             // 
@@ -205,6 +214,7 @@
             this.labelGloryPoints.TabIndex = 7;
             this.labelGloryPoints.Text = "0";
             this.labelGloryPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelGloryPoints, "Amount of glory points");
             // 
             // labelRTAMedals
             // 
@@ -216,6 +226,7 @@
             this.labelRTAMedals.TabIndex = 8;
             this.labelRTAMedals.Text = "0";
             this.labelRTAMedals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRTAMedals, "Amount of RTA points");
             // 
             // labelShapeshiftingStones
             // 
@@ -227,6 +238,7 @@
             this.labelShapeshiftingStones.TabIndex = 9;
             this.labelShapeshiftingStones.Text = "0";
             this.labelShapeshiftingStones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelShapeshiftingStones, "Amount of shapeshifting stones");
             // 
             // labelDimensionalCrystals
             // 
@@ -238,6 +250,7 @@
             this.labelDimensionalCrystals.TabIndex = 10;
             this.labelDimensionalCrystals.Text = "0";
             this.labelDimensionalCrystals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDimensionalCrystals, "Amount of dimensional crystal / max dimensional crystals");
             // 
             // labelDimensionalCrystalsSlash
             // 
@@ -249,6 +262,7 @@
             this.labelDimensionalCrystalsSlash.TabIndex = 11;
             this.labelDimensionalCrystalsSlash.Text = "/";
             this.labelDimensionalCrystalsSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelDimensionalCrystalsSlash, "Amount of dimensional crystal / max dimensional crystals");
             // 
             // labelDimensionalCrystalsMax
             // 
@@ -260,6 +274,7 @@
             this.labelDimensionalCrystalsMax.TabIndex = 12;
             this.labelDimensionalCrystalsMax.Text = "10";
             this.labelDimensionalCrystalsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelDimensionalCrystalsMax, "Amount of dimensional crystal / max dimensional crystals");
             // 
             // labelDimensionalHoleEnergy
             // 
@@ -271,6 +286,7 @@
             this.labelDimensionalHoleEnergy.TabIndex = 13;
             this.labelDimensionalHoleEnergy.Text = "0";
             this.labelDimensionalHoleEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergy, "Amount of current dimension hole energy / max dimension hole energy");
             // 
             // labelDimensionalHoleEnergySlash
             // 
@@ -282,6 +298,7 @@
             this.labelDimensionalHoleEnergySlash.TabIndex = 14;
             this.labelDimensionalHoleEnergySlash.Text = "/";
             this.labelDimensionalHoleEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergySlash, "Amount of current dimension hole energy / max dimension hole energy");
             // 
             // labelDimensionalHoleEnergyMax
             // 
@@ -293,6 +310,7 @@
             this.labelDimensionalHoleEnergyMax.TabIndex = 15;
             this.labelDimensionalHoleEnergyMax.Text = "100";
             this.labelDimensionalHoleEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergyMax, "Amount of current dimension hole energy / max dimension hole energy");
             // 
             // labelLevel
             // 
@@ -305,6 +323,7 @@
             this.labelLevel.TabIndex = 17;
             this.labelLevel.Text = "0";
             this.labelLevel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip1.SetToolTip(this.labelLevel, "Your level");
             // 
             // labelArenaWings
             // 
@@ -316,6 +335,7 @@
             this.labelArenaWings.TabIndex = 18;
             this.labelArenaWings.Text = "0";
             this.labelArenaWings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelArenaWings, "Amount of arena wings / max arena wings");
             // 
             // labelArenaWingsSlash
             // 
@@ -327,6 +347,7 @@
             this.labelArenaWingsSlash.TabIndex = 19;
             this.labelArenaWingsSlash.Text = "/";
             this.labelArenaWingsSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelArenaWingsSlash, "Amount of arena wings / max arena wings");
             // 
             // labelArenaWingsMax
             // 
@@ -338,6 +359,7 @@
             this.labelArenaWingsMax.TabIndex = 20;
             this.labelArenaWingsMax.Text = "0";
             this.labelArenaWingsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelArenaWingsMax, "Amount of arena wings / max arena wings");
             // 
             // labelLastLanguage
             // 
@@ -348,6 +370,7 @@
             this.labelLastLanguage.Size = new System.Drawing.Size(93, 64);
             this.labelLastLanguage.TabIndex = 38;
             this.labelLastLanguage.Text = "Last login\r\nlanguage";
+            this.toolTip1.SetToolTip(this.labelLastLanguage, "Last login language");
             // 
             // labelLastCountry
             // 
@@ -358,6 +381,7 @@
             this.labelLastCountry.Size = new System.Drawing.Size(93, 64);
             this.labelLastCountry.TabIndex = 39;
             this.labelLastCountry.Text = "Last login\r\ncountry";
+            this.toolTip1.SetToolTip(this.labelLastCountry, "Last login country");
             // 
             // labelSocialPoints
             // 
@@ -370,6 +394,7 @@
             this.labelSocialPoints.TabIndex = 45;
             this.labelSocialPoints.Text = "0";
             this.labelSocialPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelSocialPoints, "Amount of social points");
             // 
             // labelJsonModified
             // 
@@ -381,6 +406,7 @@
             this.labelJsonModified.Size = new System.Drawing.Size(178, 22);
             this.labelJsonModified.TabIndex = 46;
             this.labelJsonModified.Text = "Date of JSON file modification";
+            this.toolTip1.SetToolTip(this.labelJsonModified, "Date of JSON file modification");
             // 
             // labelMonsters
             // 
@@ -392,6 +418,7 @@
             this.labelMonsters.TabIndex = 47;
             this.labelMonsters.Text = "0";
             this.labelMonsters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMonsters, "Amount of monsters");
             // 
             // labelMonstersLocked
             // 
@@ -403,6 +430,7 @@
             this.labelMonstersLocked.TabIndex = 48;
             this.labelMonstersLocked.Text = "0";
             this.labelMonstersLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMonstersLocked, "Amount of locked monsters");
             // 
             // labelRunes
             // 
@@ -414,6 +442,7 @@
             this.labelRunes.TabIndex = 49;
             this.labelRunes.Text = "0";
             this.labelRunes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRunes, "Amount of runes");
             // 
             // labelRunesLocked
             // 
@@ -425,6 +454,7 @@
             this.labelRunesLocked.TabIndex = 50;
             this.labelRunesLocked.Text = "0";
             this.labelRunesLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRunesLocked, "Amount of locked (equipped on monsters) runes");
             // 
             // labelJsonCreatedText
             // 
@@ -436,6 +466,7 @@
             this.labelJsonCreatedText.Size = new System.Drawing.Size(62, 22);
             this.labelJsonCreatedText.TabIndex = 51;
             this.labelJsonCreatedText.Text = "Created: ";
+            this.toolTip1.SetToolTip(this.labelJsonCreatedText, "Date of JSON file modification");
             // 
             // labelAncientCoins
             // 
@@ -448,6 +479,7 @@
             this.labelAncientCoins.TabIndex = 53;
             this.labelAncientCoins.Text = "0";
             this.labelAncientCoins.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelAncientCoins, "Amount of ancient coins");
             // 
             // labelCountry
             // 
@@ -458,6 +490,7 @@
             this.labelCountry.Size = new System.Drawing.Size(81, 32);
             this.labelCountry.TabIndex = 55;
             this.labelCountry.Text = "Country";
+            this.toolTip1.SetToolTip(this.labelCountry, "Your account\'s country");
             // 
             // pictureBoxCountry
             // 
@@ -467,6 +500,7 @@
             this.pictureBoxCountry.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxCountry.TabIndex = 54;
             this.pictureBoxCountry.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxCountry, "Your account\'s country");
             // 
             // pictureBoxAncientCoins
             // 
@@ -476,6 +510,7 @@
             this.pictureBoxAncientCoins.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxAncientCoins.TabIndex = 52;
             this.pictureBoxAncientCoins.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxAncientCoins, "Amount of ancient coins");
             // 
             // pictureBoxSocialPoints
             // 
@@ -485,6 +520,7 @@
             this.pictureBoxSocialPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxSocialPoints.TabIndex = 44;
             this.pictureBoxSocialPoints.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxSocialPoints, "Amount of social points");
             // 
             // pictureBoxRunesLocked
             // 
@@ -494,6 +530,7 @@
             this.pictureBoxRunesLocked.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRunesLocked.TabIndex = 41;
             this.pictureBoxRunesLocked.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxRunesLocked, "Amount of locked (equipped on monsters) runes");
             // 
             // pictureBoxRunes
             // 
@@ -503,6 +540,7 @@
             this.pictureBoxRunes.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRunes.TabIndex = 40;
             this.pictureBoxRunes.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxRunes, "Amount of runes");
             // 
             // pictureBoxLastCountry
             // 
@@ -512,6 +550,7 @@
             this.pictureBoxLastCountry.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxLastCountry.TabIndex = 36;
             this.pictureBoxLastCountry.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLastCountry, "Last login country");
             // 
             // pictureBoxLastLanguage
             // 
@@ -521,6 +560,7 @@
             this.pictureBoxLastLanguage.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxLastLanguage.TabIndex = 35;
             this.pictureBoxLastLanguage.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLastLanguage, "Last login language");
             // 
             // pictureBoxMonstersLocked
             // 
@@ -530,6 +570,7 @@
             this.pictureBoxMonstersLocked.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMonstersLocked.TabIndex = 34;
             this.pictureBoxMonstersLocked.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxMonstersLocked, "Amount of locked monsters");
             // 
             // pictureBoxMonsters
             // 
@@ -539,6 +580,7 @@
             this.pictureBoxMonsters.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMonsters.TabIndex = 31;
             this.pictureBoxMonsters.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxMonsters, "Amount of monsters");
             // 
             // pictureBoxDimensionalHoleEnergy
             // 
@@ -548,6 +590,7 @@
             this.pictureBoxDimensionalHoleEnergy.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDimensionalHoleEnergy.TabIndex = 30;
             this.pictureBoxDimensionalHoleEnergy.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDimensionalHoleEnergy, "Amount of current dimension hole energy / max dimension hole energy");
             // 
             // pictureBoxDimensionalCrystals
             // 
@@ -557,6 +600,7 @@
             this.pictureBoxDimensionalCrystals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDimensionalCrystals.TabIndex = 29;
             this.pictureBoxDimensionalCrystals.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDimensionalCrystals, "Amount of dimensional crystal / max dimensional crystals");
             // 
             // pictureBoxShapeshiftingStones
             // 
@@ -566,6 +610,7 @@
             this.pictureBoxShapeshiftingStones.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxShapeshiftingStones.TabIndex = 28;
             this.pictureBoxShapeshiftingStones.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxShapeshiftingStones, "Amount of shapeshifting stones");
             // 
             // pictureBoxRTAMedals
             // 
@@ -575,6 +620,7 @@
             this.pictureBoxRTAMedals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxRTAMedals.TabIndex = 27;
             this.pictureBoxRTAMedals.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxRTAMedals, "Amount of RTA points");
             // 
             // pictureBoxGuildPoints
             // 
@@ -584,6 +630,7 @@
             this.pictureBoxGuildPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxGuildPoints.TabIndex = 26;
             this.pictureBoxGuildPoints.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxGuildPoints, "Amount of guild points");
             // 
             // pictureBoxGloryPoints
             // 
@@ -593,6 +640,7 @@
             this.pictureBoxGloryPoints.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxGloryPoints.TabIndex = 25;
             this.pictureBoxGloryPoints.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxGloryPoints, "Amount of glory points");
             // 
             // pictureBoxEnergy
             // 
@@ -602,6 +650,7 @@
             this.pictureBoxEnergy.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxEnergy.TabIndex = 24;
             this.pictureBoxEnergy.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxEnergy, "Amount of current energy / max energy");
             // 
             // pictureBoxArenaWings
             // 
@@ -611,6 +660,7 @@
             this.pictureBoxArenaWings.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxArenaWings.TabIndex = 23;
             this.pictureBoxArenaWings.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxArenaWings, "Amount of arena wings / max arena wings");
             // 
             // pictureBoxCrystals
             // 
@@ -620,6 +670,7 @@
             this.pictureBoxCrystals.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxCrystals.TabIndex = 22;
             this.pictureBoxCrystals.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxCrystals, "Amount of crystals");
             // 
             // pictureBoxMana
             // 
@@ -629,6 +680,7 @@
             this.pictureBoxMana.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMana.TabIndex = 21;
             this.pictureBoxMana.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxMana, "Amount of mana ");
             // 
             // panelHeader
             // 
@@ -766,6 +818,13 @@
             this.panelContentLeft.Size = new System.Drawing.Size(200, 180);
             this.panelContentLeft.TabIndex = 54;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
+            // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,5 +942,6 @@
         private System.Windows.Forms.Panel panelFlagsLeft;
         private System.Windows.Forms.Panel panelFlagsRight;
         private System.Windows.Forms.Panel panelFlagsMid;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

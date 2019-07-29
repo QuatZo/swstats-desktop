@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
@@ -37,6 +38,7 @@
             this.other1 = new Summoners_War_Statistics.Other();
             this.runes1 = new Summoners_War_Statistics.Runes();
             this.monsters1 = new Summoners_War_Statistics.Monsters();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@
             this.pictureBoxSelectJson.Size = new System.Drawing.Size(800, 70);
             this.pictureBoxSelectJson.TabIndex = 10;
             this.pictureBoxSelectJson.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxSelectJson, "Click here to select JSON File");
             this.pictureBoxSelectJson.Click += new System.EventHandler(this.pictureBoxSelectJson_Click);
             // 
             // summary1
@@ -189,6 +192,13 @@
             this.monsters1.TabIndex = 14;
             this.monsters1.Visible = false;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +234,7 @@
         private Runes runes1;
         private Other other1;
         private DimHole dimHole1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

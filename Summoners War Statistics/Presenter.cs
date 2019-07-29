@@ -67,7 +67,7 @@ namespace Summoners_War_Statistics
                 }
                 if (control.Name.Contains("ListView"))
                 {
-                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
                     continue;
                 }
                 control.Font = new Font(view.FF, 14, FontStyle.Regular);
@@ -77,7 +77,7 @@ namespace Summoners_War_Statistics
             {
                 if (control.Name.Contains("ListView"))
                 {
-                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
                     continue;
                 }
                 if (control.Name == "labelRunes")
@@ -92,7 +92,7 @@ namespace Summoners_War_Statistics
             {
                 if (control.Name.Contains("ListView") || control.Name.Contains("TextBox"))
                 {
-                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
                     continue;
                 }
                 if (control.Name.Contains("DimHole"))
@@ -107,7 +107,7 @@ namespace Summoners_War_Statistics
             {
                 if (control.Name.Contains("ListView"))
                 {
-                    control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
                     continue;
                 }
                 if (control.Name.Contains("Other"))

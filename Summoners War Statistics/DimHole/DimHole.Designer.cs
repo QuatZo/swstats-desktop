@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelDimHoleEnergy = new System.Windows.Forms.Label();
             this.pictureBoxDimensionalHoleEnergy = new System.Windows.Forms.PictureBox();
             this.labelDimensionalHoleEnergyMax = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.labelTextB2 = new System.Windows.Forms.Label();
             this.labelTextB1 = new System.Windows.Forms.Label();
             this.labelDimHoleFloor = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -90,6 +92,7 @@
             this.labelDimHoleEnergy.Size = new System.Drawing.Size(249, 42);
             this.labelDimHoleEnergy.TabIndex = 1;
             this.labelDimHoleEnergy.Text = "Dimension Hole Energy";
+            this.toolTip1.SetToolTip(this.labelDimHoleEnergy, "Shows the actual dimension hole energy you have");
             // 
             // pictureBoxDimensionalHoleEnergy
             // 
@@ -99,6 +102,7 @@
             this.pictureBoxDimensionalHoleEnergy.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDimensionalHoleEnergy.TabIndex = 34;
             this.pictureBoxDimensionalHoleEnergy.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDimensionalHoleEnergy, "Shows the actual dimension hole energy you have");
             // 
             // labelDimensionalHoleEnergyMax
             // 
@@ -111,6 +115,7 @@
             this.labelDimensionalHoleEnergyMax.TabIndex = 33;
             this.labelDimensionalHoleEnergyMax.Text = "100";
             this.labelDimensionalHoleEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergyMax, "Shows the actual dimension hole energy you have");
             // 
             // labelDimensionalHoleEnergySlash
             // 
@@ -123,6 +128,7 @@
             this.labelDimensionalHoleEnergySlash.TabIndex = 32;
             this.labelDimensionalHoleEnergySlash.Text = "/";
             this.labelDimensionalHoleEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergySlash, "Shows the actual dimension hole energy you have");
             // 
             // labelDimensionalHoleEnergy
             // 
@@ -135,6 +141,7 @@
             this.labelDimensionalHoleEnergy.TabIndex = 31;
             this.labelDimensionalHoleEnergy.Text = "0";
             this.labelDimensionalHoleEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergy, "Shows the actual dimension hole energy you have");
             // 
             // labelDimensionalHoleEnergyMaxInfo
             // 
@@ -146,6 +153,7 @@
             this.labelDimensionalHoleEnergyMaxInfo.Size = new System.Drawing.Size(0, 22);
             this.labelDimensionalHoleEnergyMaxInfo.TabIndex = 35;
             this.labelDimensionalHoleEnergyMaxInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergyMaxInfo, "Shows if your energy is maxed out and/or when it\'ll be");
             // 
             // labelDimHoleMonsters
             // 
@@ -158,6 +166,8 @@
             this.labelDimHoleMonsters.Size = new System.Drawing.Size(279, 42);
             this.labelDimHoleMonsters.TabIndex = 36;
             this.labelDimHoleMonsters.Text = "Dimension Hole Monsters";
+            this.toolTip1.SetToolTip(this.labelDimHoleMonsters, "This section calculates energy and time needed to 2A monster, depending on level " +
+        "you farm");
             // 
             // radioButton1
             // 
@@ -169,6 +179,7 @@
             this.radioButton1.Size = new System.Drawing.Size(36, 23);
             this.radioButton1.TabIndex = 38;
             this.radioButton1.Text = "B1";
+            this.toolTip1.SetToolTip(this.radioButton1, "Here you can change which floor you\'ll farm to 2A a monster");
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -182,6 +193,7 @@
             this.radioButton2.Size = new System.Drawing.Size(39, 23);
             this.radioButton2.TabIndex = 39;
             this.radioButton2.Text = "B2";
+            this.toolTip1.SetToolTip(this.radioButton2, "Here you can change which floor you\'ll farm to 2A a monster");
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.Click += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -195,6 +207,7 @@
             this.radioButton3.Size = new System.Drawing.Size(39, 23);
             this.radioButton3.TabIndex = 40;
             this.radioButton3.Text = "B3";
+            this.toolTip1.SetToolTip(this.radioButton3, "Here you can change which floor you\'ll farm to 2A a monster");
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.Click += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -208,6 +221,7 @@
             this.radioButton4.Size = new System.Drawing.Size(39, 23);
             this.radioButton4.TabIndex = 41;
             this.radioButton4.Text = "B4";
+            this.toolTip1.SetToolTip(this.radioButton4, "Here you can change which floor you\'ll farm to 2A a monster");
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.Click += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -223,6 +237,7 @@
             this.radioButton5.TabIndex = 42;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "B5";
+            this.toolTip1.SetToolTip(this.radioButton5, "Here you can change which floor you\'ll farm to 2A a monster");
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.Click += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -367,6 +382,7 @@
             this.labelTextFarm.TabIndex = 53;
             this.labelTextFarm.Text = "You should farm";
             this.labelTextFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextFarm, "This section calculates which floor you should farm");
             // 
             // labelFarmSuccess
             // 
@@ -379,6 +395,7 @@
             this.labelFarmSuccess.TabIndex = 65;
             this.labelFarmSuccess.Text = "B5";
             this.labelFarmSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelFarmSuccess, "Which floor you should farm, when success rate is a major dependency ");
             this.labelFarmSuccess.Click += new System.EventHandler(this.LabelDimHoleFarmSuccess_Click);
             // 
             // labelFarmTime
@@ -392,6 +409,7 @@
             this.labelFarmTime.TabIndex = 54;
             this.labelFarmTime.Text = "B5";
             this.labelFarmTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelFarmTime, "Which floor you should farm, when time is a major dependency ");
             this.labelFarmTime.Click += new System.EventHandler(this.LabelDimHoleFarmTime_Click);
             // 
             // maskedTextBoxSuccessRateB5
@@ -404,6 +422,7 @@
             this.maskedTextBoxSuccessRateB5.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSuccessRateB5.TabIndex = 64;
             this.maskedTextBoxSuccessRateB5.Text = "100";
+            this.toolTip1.SetToolTip(this.maskedTextBoxSuccessRateB5, "Type success rate of dimension hole run");
             this.maskedTextBoxSuccessRateB5.ValidatingType = typeof(int);
             this.maskedTextBoxSuccessRateB5.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -417,6 +436,7 @@
             this.maskedTextBoxSuccessRateB4.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSuccessRateB4.TabIndex = 63;
             this.maskedTextBoxSuccessRateB4.Text = "100";
+            this.toolTip1.SetToolTip(this.maskedTextBoxSuccessRateB4, "Type success rate of dimension hole run");
             this.maskedTextBoxSuccessRateB4.ValidatingType = typeof(int);
             this.maskedTextBoxSuccessRateB4.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -430,6 +450,7 @@
             this.maskedTextBoxSuccessRateB3.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSuccessRateB3.TabIndex = 62;
             this.maskedTextBoxSuccessRateB3.Text = "100";
+            this.toolTip1.SetToolTip(this.maskedTextBoxSuccessRateB3, "Type success rate of dimension hole run");
             this.maskedTextBoxSuccessRateB3.ValidatingType = typeof(int);
             this.maskedTextBoxSuccessRateB3.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -443,6 +464,7 @@
             this.maskedTextBoxSuccessRateB2.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSuccessRateB2.TabIndex = 61;
             this.maskedTextBoxSuccessRateB2.Text = "100";
+            this.toolTip1.SetToolTip(this.maskedTextBoxSuccessRateB2, "Type success rate of dimension hole run");
             this.maskedTextBoxSuccessRateB2.ValidatingType = typeof(int);
             this.maskedTextBoxSuccessRateB2.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -456,6 +478,7 @@
             this.maskedTextBoxTimeB5.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxTimeB5.TabIndex = 60;
             this.maskedTextBoxTimeB5.Text = "0000";
+            this.toolTip1.SetToolTip(this.maskedTextBoxTimeB5, "Type clear time in format [mm:ss]");
             this.maskedTextBoxTimeB5.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB5.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -469,6 +492,7 @@
             this.maskedTextBoxTimeB4.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxTimeB4.TabIndex = 59;
             this.maskedTextBoxTimeB4.Text = "0000";
+            this.toolTip1.SetToolTip(this.maskedTextBoxTimeB4, "Type clear time in format [mm:ss]");
             this.maskedTextBoxTimeB4.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB4.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -482,6 +506,7 @@
             this.maskedTextBoxTimeB3.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxTimeB3.TabIndex = 58;
             this.maskedTextBoxTimeB3.Text = "0000";
+            this.toolTip1.SetToolTip(this.maskedTextBoxTimeB3, "Type clear time in format [mm:ss]");
             this.maskedTextBoxTimeB3.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB3.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -495,6 +520,7 @@
             this.maskedTextBoxTimeB2.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxTimeB2.TabIndex = 57;
             this.maskedTextBoxTimeB2.Text = "0000";
+            this.toolTip1.SetToolTip(this.maskedTextBoxTimeB2, "Type clear time in format [mm:ss]");
             this.maskedTextBoxTimeB2.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB2.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -508,6 +534,7 @@
             this.maskedTextBoxSuccessRateB1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSuccessRateB1.TabIndex = 56;
             this.maskedTextBoxSuccessRateB1.Text = "100";
+            this.toolTip1.SetToolTip(this.maskedTextBoxSuccessRateB1, "Type success rate of dimension hole run");
             this.maskedTextBoxSuccessRateB1.ValidatingType = typeof(int);
             this.maskedTextBoxSuccessRateB1.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -521,6 +548,7 @@
             this.maskedTextBoxTimeB1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxTimeB1.TabIndex = 55;
             this.maskedTextBoxTimeB1.Text = "0000";
+            this.toolTip1.SetToolTip(this.maskedTextBoxTimeB1, "Type clear time in format [mm:ss]");
             this.maskedTextBoxTimeB1.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxTimeB1.TextChanged += new System.EventHandler(this.DimHoleFloor_TextChanged);
             // 
@@ -535,6 +563,7 @@
             this.labelTextSuccessRate.TabIndex = 52;
             this.labelTextSuccessRate.Text = "Success rate";
             this.labelTextSuccessRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextSuccessRate, "This section calculates which floor you should farm");
             // 
             // labelTextTime
             // 
@@ -547,6 +576,7 @@
             this.labelTextTime.TabIndex = 51;
             this.labelTextTime.Text = "Time";
             this.labelTextTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextTime, "This section calculates which floor you should farm");
             // 
             // labelTextB5
             // 
@@ -559,6 +589,7 @@
             this.labelTextB5.TabIndex = 50;
             this.labelTextB5.Text = "B5";
             this.labelTextB5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextB5, "This section calculates which floor you should farm");
             // 
             // labelTextB4
             // 
@@ -571,6 +602,7 @@
             this.labelTextB4.TabIndex = 49;
             this.labelTextB4.Text = "B4";
             this.labelTextB4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextB4, "This section calculates which floor you should farm");
             // 
             // labelTextB3
             // 
@@ -583,6 +615,7 @@
             this.labelTextB3.TabIndex = 48;
             this.labelTextB3.Text = "B3";
             this.labelTextB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextB3, "This section calculates which floor you should farm");
             // 
             // labelTextB2
             // 
@@ -595,6 +628,7 @@
             this.labelTextB2.TabIndex = 47;
             this.labelTextB2.Text = "B2";
             this.labelTextB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextB2, "This section calculates which floor you should farm");
             // 
             // labelTextB1
             // 
@@ -607,6 +641,7 @@
             this.labelTextB1.TabIndex = 36;
             this.labelTextB1.Text = "B1";
             this.labelTextB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelTextB1, "This section calculates which floor you should farm");
             // 
             // labelDimHoleFloor
             // 
@@ -618,6 +653,14 @@
             this.labelDimHoleFloor.Size = new System.Drawing.Size(228, 42);
             this.labelDimHoleFloor.TabIndex = 36;
             this.labelDimHoleFloor.Text = "Dimension Hole Floor";
+            this.toolTip1.SetToolTip(this.labelDimHoleFloor, "This section calculates which floor you should farm");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
             // 
             // DimHole
             // 
@@ -691,5 +734,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTimeB1;
         private System.Windows.Forms.Label labelFarmSuccess;
         private System.Windows.Forms.Panel panelFarmRight;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

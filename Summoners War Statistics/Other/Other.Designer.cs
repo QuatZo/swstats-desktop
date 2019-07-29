@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelOtherActiveFriends = new System.Windows.Forms.Label();
             this.labelOtherGuild = new System.Windows.Forms.Label();
             this.labelDefenseUnitsMax = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@
             this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,6 +84,8 @@
             this.labelOtherActiveFriends.Size = new System.Drawing.Size(136, 42);
             this.labelOtherActiveFriends.TabIndex = 0;
             this.labelOtherActiveFriends.Text = "Friends List";
+            this.toolTip1.SetToolTip(this.labelOtherActiveFriends, "This is the section when you can see list of your friends list, incl. their reps " +
+        "and last log-in time");
             // 
             // labelOtherGuild
             // 
@@ -94,6 +98,8 @@
             this.labelOtherGuild.Size = new System.Drawing.Size(110, 42);
             this.labelOtherGuild.TabIndex = 2;
             this.labelOtherGuild.Text = "Guild Info";
+            this.toolTip1.SetToolTip(this.labelOtherGuild, "This is the section where you can see your guild members, including their defense" +
+        "s, last log-in time and since when they are in guild");
             // 
             // labelDefenseUnitsMax
             // 
@@ -106,6 +112,7 @@
             this.labelDefenseUnitsMax.TabIndex = 39;
             this.labelDefenseUnitsMax.Text = "0";
             this.labelDefenseUnitsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelDefenseUnitsMax, "This gives you an amount of monsters in defenses of defenders");
             // 
             // labelDefenseUnitsSlash
             // 
@@ -118,6 +125,7 @@
             this.labelDefenseUnitsSlash.TabIndex = 38;
             this.labelDefenseUnitsSlash.Text = "/";
             this.labelDefenseUnitsSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelDefenseUnitsSlash, "This gives you an amount of monsters in defenses of defenders");
             // 
             // labelDefenseUnits
             // 
@@ -130,6 +138,7 @@
             this.labelDefenseUnits.TabIndex = 37;
             this.labelDefenseUnits.Text = "0";
             this.labelDefenseUnits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDefenseUnits, "This gives you an amount of monsters in defenses of defenders");
             // 
             // labelGuildName
             // 
@@ -142,6 +151,7 @@
             this.labelGuildName.TabIndex = 40;
             this.labelGuildName.Text = "Guild\'s name";
             this.labelGuildName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelGuildName, "This gives you a name of guild you are in");
             // 
             // labelLeaderName
             // 
@@ -154,6 +164,7 @@
             this.labelLeaderName.TabIndex = 41;
             this.labelLeaderName.Text = "Leader\'s name";
             this.labelLeaderName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelLeaderName, "This gives you a name of your guild\'s leader");
             // 
             // labelRanking
             // 
@@ -166,6 +177,7 @@
             this.labelRanking.TabIndex = 43;
             this.labelRanking.Text = "Best ranking";
             this.labelRanking.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRanking, "This gives you a best GW ranking your guild achieved");
             // 
             // labelMembersMax
             // 
@@ -178,6 +190,7 @@
             this.labelMembersMax.TabIndex = 46;
             this.labelMembersMax.Text = "0";
             this.labelMembersMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.labelMembersMax, "This gives you an amount of members your guild actually has");
             // 
             // labelMembersSlash
             // 
@@ -190,6 +203,7 @@
             this.labelMembersSlash.TabIndex = 45;
             this.labelMembersSlash.Text = "/";
             this.labelMembersSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelMembersSlash, "This gives you an amount of members your guild actually has");
             // 
             // labelMembers
             // 
@@ -202,6 +216,7 @@
             this.labelMembers.TabIndex = 44;
             this.labelMembers.Text = "0";
             this.labelMembers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMembers, "This gives you an amount of members your guild actually has");
             // 
             // pictureBox4
             // 
@@ -211,6 +226,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, "This gives you an amount of members your guild actually has");
             // 
             // pictureBox3
             // 
@@ -220,6 +236,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(24, 24);
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "This gives you a name of guild you are in");
             // 
             // pictureBox2
             // 
@@ -229,6 +246,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "This gives you a best GW ranking your guild achieved");
             // 
             // pictureBox1
             // 
@@ -238,6 +256,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "This gives you a name of your guild\'s leader");
             // 
             // pictureBoxMonsters
             // 
@@ -247,6 +266,7 @@
             this.pictureBoxMonsters.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxMonsters.TabIndex = 32;
             this.pictureBoxMonsters.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxMonsters, "This gives you an amount of monsters in defenses of defenders");
             // 
             // panelGuild
             // 
@@ -407,6 +427,13 @@
             this.olvColumn11.CellPadding = null;
             this.olvColumn11.Text = "Rep level";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
+            // 
             // Other
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,5 +495,6 @@
         private BrightIdeasSoftware.OLVColumn olvColumn9;
         private BrightIdeasSoftware.OLVColumn olvColumn10;
         private BrightIdeasSoftware.OLVColumn olvColumn11;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

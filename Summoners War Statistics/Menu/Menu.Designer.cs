@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBoxSummary = new System.Windows.Forms.PictureBox();
             this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
             this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
             this.pictureBoxDimHole = new System.Windows.Forms.PictureBox();
             this.pictureBoxOther = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
@@ -48,6 +50,7 @@
             this.pictureBoxSummary.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxSummary.TabIndex = 0;
             this.pictureBoxSummary.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxSummary, "Click here to open Summary Tab\r\n");
             this.pictureBoxSummary.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxMonsters
@@ -58,6 +61,7 @@
             this.pictureBoxMonsters.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxMonsters.TabIndex = 1;
             this.pictureBoxMonsters.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxMonsters, "Click here to open Monsters Tab");
             this.pictureBoxMonsters.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxRunes
@@ -68,6 +72,7 @@
             this.pictureBoxRunes.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxRunes.TabIndex = 2;
             this.pictureBoxRunes.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxRunes, "Click here to open Runes Tab");
             this.pictureBoxRunes.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxDimHole
@@ -78,6 +83,7 @@
             this.pictureBoxDimHole.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxDimHole.TabIndex = 3;
             this.pictureBoxDimHole.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDimHole, "Click here to open Dimension Hole Tab");
             this.pictureBoxDimHole.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBoxOther
@@ -88,7 +94,15 @@
             this.pictureBoxOther.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxOther.TabIndex = 4;
             this.pictureBoxOther.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxOther, "Click here to open Other Tab");
             this.pictureBoxOther.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
             // 
             // Menu
             // 
@@ -118,5 +132,6 @@
         private System.Windows.Forms.PictureBox pictureBoxRunes;
         private System.Windows.Forms.PictureBox pictureBoxDimHole;
         private System.Windows.Forms.PictureBox pictureBoxOther;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

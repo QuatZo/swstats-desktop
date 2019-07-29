@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monsters));
             this.labelMonsters = new System.Windows.Forms.Label();
             this.labelMonsterStats = new System.Windows.Forms.Label();
@@ -72,13 +73,14 @@
             this.panelHeaderRight = new System.Windows.Forms.Panel();
             this.panelHeaderLeft = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.panelFooterRight = new System.Windows.Forms.Panel();
             this.objectListViewMonstersToLock = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.panelFooterRight = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).BeginInit();
@@ -101,8 +103,8 @@
             this.panelHeaderRight.SuspendLayout();
             this.panelHeaderLeft.SuspendLayout();
             this.panelFooter.SuspendLayout();
-            this.panelFooterRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).BeginInit();
+            this.panelFooterRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMonsters
@@ -116,6 +118,7 @@
             this.labelMonsters.Size = new System.Drawing.Size(198, 42);
             this.labelMonsters.TabIndex = 1;
             this.labelMonsters.Text = "Monsters To Lock";
+            this.toolTip1.SetToolTip(this.labelMonsters, "This is the section when you can see monsters you should lock");
             // 
             // labelMonsterStats
             // 
@@ -128,6 +131,7 @@
             this.labelMonsterStats.Size = new System.Drawing.Size(185, 42);
             this.labelMonsterStats.TabIndex = 3;
             this.labelMonsterStats.Text = "Monsters Stats";
+            this.toolTip1.SetToolTip(this.labelMonsterStats, "This section shows overall monster stats");
             // 
             // labelWater
             // 
@@ -140,6 +144,7 @@
             this.labelWater.TabIndex = 9;
             this.labelWater.Text = "0";
             this.labelWater.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelWater, "The amount of water monsters you have");
             // 
             // labelWind
             // 
@@ -152,6 +157,7 @@
             this.labelWind.TabIndex = 10;
             this.labelWind.Text = "0";
             this.labelWind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelWind, "The amount of wind monsters you have");
             // 
             // labelFire
             // 
@@ -164,6 +170,7 @@
             this.labelFire.TabIndex = 11;
             this.labelFire.Text = "0";
             this.labelFire.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelFire, "The amount of fire monsters you have");
             // 
             // labelLight
             // 
@@ -176,6 +183,7 @@
             this.labelLight.TabIndex = 12;
             this.labelLight.Text = "0";
             this.labelLight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelLight, "The amount of light monsters you have");
             // 
             // labelDark
             // 
@@ -188,6 +196,7 @@
             this.labelDark.TabIndex = 13;
             this.labelDark.Text = "0";
             this.labelDark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDark, "The amount of dark monsters you have");
             // 
             // labelStarsSixAmount
             // 
@@ -200,6 +209,7 @@
             this.labelStarsSixAmount.TabIndex = 20;
             this.labelStarsSixAmount.Text = "0";
             this.labelStarsSixAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsSixAmount, "The amount of 6* monsters you have");
             // 
             // labelStarsFiveAmount
             // 
@@ -212,6 +222,7 @@
             this.labelStarsFiveAmount.TabIndex = 21;
             this.labelStarsFiveAmount.Text = "0";
             this.labelStarsFiveAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsFiveAmount, "The amount of 5* monsters you have");
             // 
             // labelStarsFourAmount
             // 
@@ -224,6 +235,7 @@
             this.labelStarsFourAmount.TabIndex = 22;
             this.labelStarsFourAmount.Text = "0";
             this.labelStarsFourAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsFourAmount, "The amount of 4* monsters you have");
             // 
             // labelStarsThreeAmount
             // 
@@ -236,6 +248,7 @@
             this.labelStarsThreeAmount.TabIndex = 23;
             this.labelStarsThreeAmount.Text = "0";
             this.labelStarsThreeAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsThreeAmount, "The amount of 3* monsters you have");
             // 
             // labelStarsTwoAmount
             // 
@@ -248,6 +261,7 @@
             this.labelStarsTwoAmount.TabIndex = 24;
             this.labelStarsTwoAmount.Text = "0";
             this.labelStarsTwoAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsTwoAmount, "The amount of 2* monsters you have");
             // 
             // labelStarsOneAmount
             // 
@@ -260,6 +274,7 @@
             this.labelStarsOneAmount.TabIndex = 25;
             this.labelStarsOneAmount.Text = "0";
             this.labelStarsOneAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelStarsOneAmount, "The amount of 1* monsters you have");
             // 
             // radioButton6
             // 
@@ -273,6 +288,7 @@
             this.radioButton6.TabIndex = 44;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "6★";
+            this.toolTip1.SetToolTip(this.radioButton6, "Choose which monsters you want to see:\r\n5*+\r\n6*");
             this.radioButton6.UseVisualStyleBackColor = true;
             this.radioButton6.Click += new System.EventHandler(this.radioButton_Click);
             // 
@@ -286,6 +302,7 @@
             this.radioButton5.Size = new System.Drawing.Size(43, 23);
             this.radioButton5.TabIndex = 43;
             this.radioButton5.Text = "5★";
+            this.toolTip1.SetToolTip(this.radioButton5, "Choose which monsters you want to see:\r\n5*+\r\n6*");
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.Click += new System.EventHandler(this.radioButton_Click);
             // 
@@ -300,6 +317,7 @@
             this.labelDaysNat5.TabIndex = 47;
             this.labelDaysNat5.Text = "0 days";
             this.labelDaysNat5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDaysNat5, "Days since last non-farmable 5* monster");
             // 
             // labelDaysLDLightning
             // 
@@ -312,6 +330,7 @@
             this.labelDaysLDLightning.TabIndex = 48;
             this.labelDaysLDLightning.Text = "0 days";
             this.labelDaysLDLightning.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelDaysLDLightning, "Days since last non-farmable 4* L&D monster");
             // 
             // labelLDNat4Plus
             // 
@@ -324,6 +343,7 @@
             this.labelLDNat4Plus.TabIndex = 51;
             this.labelLDNat4Plus.Text = "0";
             this.labelLDNat4Plus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelLDNat4Plus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
             // 
             // labelNat5
             // 
@@ -336,6 +356,8 @@
             this.labelNat5.TabIndex = 52;
             this.labelNat5.Text = "0";
             this.labelNat5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelNat5, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
             // 
             // pictureBoxStars6
             // 
@@ -345,6 +367,7 @@
             this.pictureBoxStars6.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars6.TabIndex = 59;
             this.pictureBoxStars6.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars6, "The amount of 6* monsters you have");
             // 
             // pictureBoxElementalNat5
             // 
@@ -354,6 +377,8 @@
             this.pictureBoxElementalNat5.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxElementalNat5.TabIndex = 56;
             this.pictureBoxElementalNat5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
             // 
             // pictureBoxElementalNat5Clock
             // 
@@ -363,6 +388,7 @@
             this.pictureBoxElementalNat5Clock.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxElementalNat5Clock.TabIndex = 55;
             this.pictureBoxElementalNat5Clock.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5Clock, "Days since last non-farmable 5* monster");
             // 
             // pictureBoxLDNat4PlusClock
             // 
@@ -372,6 +398,7 @@
             this.pictureBoxLDNat4PlusClock.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLDNat4PlusClock.TabIndex = 54;
             this.pictureBoxLDNat4PlusClock.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLDNat4PlusClock, "Days since last non-farmable 4* L&D monster");
             // 
             // pictureBoxLDNat4Plus
             // 
@@ -381,6 +408,7 @@
             this.pictureBoxLDNat4Plus.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLDNat4Plus.TabIndex = 53;
             this.pictureBoxLDNat4Plus.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLDNat4Plus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
             // 
             // pictureBoxLight
             // 
@@ -390,6 +418,7 @@
             this.pictureBoxLight.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLight.TabIndex = 8;
             this.pictureBoxLight.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLight, "The amount of light monsters you have");
             // 
             // pictureBoxDark
             // 
@@ -399,6 +428,7 @@
             this.pictureBoxDark.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxDark.TabIndex = 7;
             this.pictureBoxDark.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDark, "The amount of dark monsters you have");
             // 
             // pictureBoxFire
             // 
@@ -408,6 +438,7 @@
             this.pictureBoxFire.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxFire.TabIndex = 6;
             this.pictureBoxFire.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxFire, "The amount of fire monsters you have");
             // 
             // pictureBoxWind
             // 
@@ -417,6 +448,7 @@
             this.pictureBoxWind.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxWind.TabIndex = 5;
             this.pictureBoxWind.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxWind, "The amount of wind monsters you have");
             // 
             // pictureBoxWater
             // 
@@ -426,6 +458,7 @@
             this.pictureBoxWater.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxWater.TabIndex = 4;
             this.pictureBoxWater.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxWater, "The amount of water monsters you have");
             // 
             // pictureBoxStars1
             // 
@@ -435,6 +468,7 @@
             this.pictureBoxStars1.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars1.TabIndex = 60;
             this.pictureBoxStars1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars1, "The amount of 1* monsters you have");
             // 
             // pictureBoxStars2
             // 
@@ -444,6 +478,7 @@
             this.pictureBoxStars2.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars2.TabIndex = 61;
             this.pictureBoxStars2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars2, "The amount of 2* monsters you have");
             // 
             // pictureBoxStars3
             // 
@@ -453,6 +488,7 @@
             this.pictureBoxStars3.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars3.TabIndex = 62;
             this.pictureBoxStars3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars3, "The amount of 3* monsters you have");
             // 
             // pictureBoxStars4
             // 
@@ -462,6 +498,7 @@
             this.pictureBoxStars4.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars4.TabIndex = 63;
             this.pictureBoxStars4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars4, "The amount of 4* monsters you have");
             // 
             // pictureBoxStars5
             // 
@@ -471,6 +508,7 @@
             this.pictureBoxStars5.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars5.TabIndex = 64;
             this.pictureBoxStars5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars5, "The amount of 5* monsters you have");
             // 
             // pictureBoxStarFives
             // 
@@ -480,6 +518,8 @@
             this.pictureBoxStarFives.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxStarFives.TabIndex = 65;
             this.pictureBoxStarFives.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStarFives, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
             // 
             // labelNat5s
             // 
@@ -492,6 +532,8 @@
             this.labelNat5s.TabIndex = 66;
             this.labelNat5s.Text = "5";
             this.labelNat5s.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelNat5s, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
             // 
             // pictureBoxStarsFourPlus
             // 
@@ -501,6 +543,7 @@
             this.pictureBoxStarsFourPlus.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxStarsFourPlus.TabIndex = 67;
             this.pictureBoxStarsFourPlus.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStarsFourPlus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
             // 
             // labelLDNat4sPlus
             // 
@@ -513,6 +556,7 @@
             this.labelLDNat4sPlus.TabIndex = 68;
             this.labelLDNat4sPlus.Text = "4+";
             this.labelLDNat4sPlus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelLDNat4sPlus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
             // 
             // panelHeader
             // 
@@ -595,16 +639,6 @@
             this.panelFooter.Size = new System.Drawing.Size(780, 181);
             this.panelFooter.TabIndex = 70;
             // 
-            // panelFooterRight
-            // 
-            this.panelFooterRight.Controls.Add(this.radioButton5);
-            this.panelFooterRight.Controls.Add(this.radioButton6);
-            this.panelFooterRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFooterRight.Location = new System.Drawing.Point(726, 42);
-            this.panelFooterRight.Name = "panelFooterRight";
-            this.panelFooterRight.Size = new System.Drawing.Size(54, 139);
-            this.panelFooterRight.TabIndex = 45;
-            // 
             // objectListViewMonstersToLock
             // 
             this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn19);
@@ -667,6 +701,23 @@
             this.olvColumn1.CellPadding = null;
             this.olvColumn1.Text = "Rune sets";
             // 
+            // panelFooterRight
+            // 
+            this.panelFooterRight.Controls.Add(this.radioButton5);
+            this.panelFooterRight.Controls.Add(this.radioButton6);
+            this.panelFooterRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFooterRight.Location = new System.Drawing.Point(726, 42);
+            this.panelFooterRight.Name = "panelFooterRight";
+            this.panelFooterRight.Size = new System.Drawing.Size(54, 139);
+            this.panelFooterRight.TabIndex = 45;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
+            // 
             // Monsters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,9 +755,9 @@
             this.panelHeaderLeft.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).EndInit();
             this.panelFooterRight.ResumeLayout(false);
             this.panelFooterRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -763,5 +814,6 @@
         private BrightIdeasSoftware.OLVColumn olvColumn21;
         private BrightIdeasSoftware.OLVColumn olvColumn22;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

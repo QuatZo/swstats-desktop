@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelRunes = new System.Windows.Forms.Label();
             this.labelRuneMainstat = new System.Windows.Forms.Label();
             this.comboBoxRuneMainstat = new System.Windows.Forms.ComboBox();
@@ -110,6 +111,7 @@
             this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn17 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelHeader.SuspendLayout();
             this.flowLayoutPanelFilters.SuspendLayout();
             this.panelSet.SuspendLayout();
@@ -139,6 +141,7 @@
             this.labelRunes.Size = new System.Drawing.Size(82, 42);
             this.labelRunes.TabIndex = 1;
             this.labelRunes.Text = "Runes";
+            this.toolTip1.SetToolTip(this.labelRunes, "This is the section where you can check and filter your runes");
             // 
             // labelRuneMainstat
             // 
@@ -150,6 +153,7 @@
             this.labelRuneMainstat.Size = new System.Drawing.Size(65, 22);
             this.labelRuneMainstat.TabIndex = 4;
             this.labelRuneMainstat.Text = "Mainstat";
+            this.toolTip1.SetToolTip(this.labelRuneMainstat, "Filters");
             // 
             // comboBoxRuneMainstat
             // 
@@ -164,6 +168,7 @@
             this.comboBoxRuneMainstat.Name = "comboBoxRuneMainstat";
             this.comboBoxRuneMainstat.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneMainstat.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.comboBoxRuneMainstat, "Filters");
             this.comboBoxRuneMainstat.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneQuality
@@ -179,6 +184,7 @@
             this.comboBoxRuneQuality.Name = "comboBoxRuneQuality";
             this.comboBoxRuneQuality.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneQuality.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.comboBoxRuneQuality, "Filters");
             this.comboBoxRuneQuality.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelRuneQuality
@@ -191,6 +197,7 @@
             this.labelRuneQuality.Size = new System.Drawing.Size(51, 22);
             this.labelRuneQuality.TabIndex = 7;
             this.labelRuneQuality.Text = "Quality";
+            this.toolTip1.SetToolTip(this.labelRuneQuality, "Filters");
             // 
             // comboBoxRuneUpgrade
             // 
@@ -212,6 +219,7 @@
             this.comboBoxRuneUpgrade.Name = "comboBoxRuneUpgrade";
             this.comboBoxRuneUpgrade.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneUpgrade.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.comboBoxRuneUpgrade, "Filters");
             this.comboBoxRuneUpgrade.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneSlot
@@ -235,6 +243,7 @@
             this.comboBoxRuneSlot.Name = "comboBoxRuneSlot";
             this.comboBoxRuneSlot.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSlot.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSlot, "Filters");
             this.comboBoxRuneSlot.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneEfficiency
@@ -271,6 +280,7 @@
             this.comboBoxRuneEfficiency.Name = "comboBoxRuneEfficiency";
             this.comboBoxRuneEfficiency.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneEfficiency.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneEfficiency, "Filters");
             this.comboBoxRuneEfficiency.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneUpgradeIf
@@ -292,6 +302,7 @@
             this.comboBoxRuneUpgradeIf.Name = "comboBoxRuneUpgradeIf";
             this.comboBoxRuneUpgradeIf.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneUpgradeIf.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.comboBoxRuneUpgradeIf, "Filters");
             this.comboBoxRuneUpgradeIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelRuneSlot
@@ -304,6 +315,7 @@
             this.labelRuneSlot.Size = new System.Drawing.Size(34, 22);
             this.labelRuneSlot.TabIndex = 14;
             this.labelRuneSlot.Text = "Slot";
+            this.toolTip1.SetToolTip(this.labelRuneSlot, "Filters");
             // 
             // labelUpgrade
             // 
@@ -315,6 +327,7 @@
             this.labelUpgrade.Size = new System.Drawing.Size(57, 22);
             this.labelUpgrade.TabIndex = 15;
             this.labelUpgrade.Text = "Upgrade";
+            this.toolTip1.SetToolTip(this.labelUpgrade, "Filters");
             // 
             // labelRuneEfficiency
             // 
@@ -326,6 +339,7 @@
             this.labelRuneEfficiency.Size = new System.Drawing.Size(67, 22);
             this.labelRuneEfficiency.TabIndex = 16;
             this.labelRuneEfficiency.Text = "Efficiency";
+            this.toolTip1.SetToolTip(this.labelRuneEfficiency, "Filters");
             // 
             // comboBoxRuneEfficiencyIf
             // 
@@ -346,6 +360,7 @@
             this.comboBoxRuneEfficiencyIf.Name = "comboBoxRuneEfficiencyIf";
             this.comboBoxRuneEfficiencyIf.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneEfficiencyIf.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.comboBoxRuneEfficiencyIf, "Filters");
             this.comboBoxRuneEfficiencyIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // labelTextAmount
@@ -358,6 +373,7 @@
             this.labelTextAmount.Size = new System.Drawing.Size(59, 22);
             this.labelTextAmount.TabIndex = 39;
             this.labelTextAmount.Text = "Amount:";
+            this.toolTip1.SetToolTip(this.labelTextAmount, "Amount of filtered runes");
             // 
             // labelTextEfficiencyLow
             // 
@@ -370,6 +386,7 @@
             this.labelTextEfficiencyLow.TabIndex = 40;
             this.labelTextEfficiencyLow.Text = "Lowest Eff.:";
             this.labelTextEfficiencyLow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelTextEfficiencyLow, "Lowest efficiency of filtered runes");
             // 
             // labelTextEfficiencyHigh
             // 
@@ -382,6 +399,7 @@
             this.labelTextEfficiencyHigh.TabIndex = 41;
             this.labelTextEfficiencyHigh.Text = "Highest Eff.:";
             this.labelTextEfficiencyHigh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelTextEfficiencyHigh, "Highest efficiency of filtered runes");
             // 
             // labelTextInventory
             // 
@@ -393,6 +411,7 @@
             this.labelTextInventory.Size = new System.Drawing.Size(69, 22);
             this.labelTextInventory.TabIndex = 42;
             this.labelTextInventory.Text = "Inventory:";
+            this.toolTip1.SetToolTip(this.labelTextInventory, "Amount of filtered runes in inventory");
             // 
             // labelTextEfficiencyMean
             // 
@@ -405,6 +424,7 @@
             this.labelTextEfficiencyMean.TabIndex = 43;
             this.labelTextEfficiencyMean.Text = "Mean Eff.:";
             this.labelTextEfficiencyMean.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelTextEfficiencyMean, "Mean efficiency of filtered runes");
             // 
             // labelTextEfficiencyMedian
             // 
@@ -417,6 +437,7 @@
             this.labelTextEfficiencyMedian.TabIndex = 44;
             this.labelTextEfficiencyMedian.Text = "Median Eff.:";
             this.labelTextEfficiencyMedian.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelTextEfficiencyMedian, "Median efficiency of filtered runes");
             // 
             // labelTextStandardDeviation
             // 
@@ -428,6 +449,7 @@
             this.labelTextStandardDeviation.Size = new System.Drawing.Size(106, 22);
             this.labelTextStandardDeviation.TabIndex = 45;
             this.labelTextStandardDeviation.Text = "St. Deviation Eff.:";
+            this.toolTip1.SetToolTip(this.labelTextStandardDeviation, "Standard deviation efficiency of filtered runes");
             // 
             // labelTextMaxed
             // 
@@ -439,6 +461,7 @@
             this.labelTextMaxed.Size = new System.Drawing.Size(51, 22);
             this.labelTextMaxed.TabIndex = 46;
             this.labelTextMaxed.Text = "Maxed:";
+            this.toolTip1.SetToolTip(this.labelTextMaxed, "Amount of maxed filtered runes");
             // 
             // labelRunesAmount
             // 
@@ -450,6 +473,7 @@
             this.labelRunesAmount.Size = new System.Drawing.Size(17, 22);
             this.labelRunesAmount.TabIndex = 47;
             this.labelRunesAmount.Text = "0";
+            this.toolTip1.SetToolTip(this.labelRunesAmount, "Amount of filtered runes");
             // 
             // labelRunesMaxed
             // 
@@ -461,6 +485,7 @@
             this.labelRunesMaxed.Size = new System.Drawing.Size(17, 22);
             this.labelRunesMaxed.TabIndex = 48;
             this.labelRunesMaxed.Text = "0";
+            this.toolTip1.SetToolTip(this.labelRunesMaxed, "Amount of maxed filtered runes");
             // 
             // labelRunesEfficiencyLow
             // 
@@ -473,6 +498,7 @@
             this.labelRunesEfficiencyLow.TabIndex = 49;
             this.labelRunesEfficiencyLow.Text = "0";
             this.labelRunesEfficiencyLow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelRunesEfficiencyLow, "Lowest efficiency of filtered runes");
             // 
             // labelRunesEfficiencyHigh
             // 
@@ -485,6 +511,7 @@
             this.labelRunesEfficiencyHigh.TabIndex = 50;
             this.labelRunesEfficiencyHigh.Text = "0";
             this.labelRunesEfficiencyHigh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelRunesEfficiencyHigh, "Highest efficiency of filtered runes");
             // 
             // labelRunesEfficiencyMean
             // 
@@ -497,6 +524,7 @@
             this.labelRunesEfficiencyMean.TabIndex = 51;
             this.labelRunesEfficiencyMean.Text = "0";
             this.labelRunesEfficiencyMean.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelRunesEfficiencyMean, "Mean efficiency of filtered runes");
             // 
             // labelRunesEfficiencyMedian
             // 
@@ -509,6 +537,7 @@
             this.labelRunesEfficiencyMedian.TabIndex = 52;
             this.labelRunesEfficiencyMedian.Text = "0";
             this.labelRunesEfficiencyMedian.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.labelRunesEfficiencyMedian, "Median efficiency of filtered runes");
             // 
             // labelRunesStandardDeviation
             // 
@@ -520,6 +549,7 @@
             this.labelRunesStandardDeviation.Size = new System.Drawing.Size(17, 22);
             this.labelRunesStandardDeviation.TabIndex = 53;
             this.labelRunesStandardDeviation.Text = "0";
+            this.toolTip1.SetToolTip(this.labelRunesStandardDeviation, "Standard deviation efficiency of filtered runes");
             // 
             // labelRunesInventory
             // 
@@ -531,6 +561,7 @@
             this.labelRunesInventory.Size = new System.Drawing.Size(17, 22);
             this.labelRunesInventory.TabIndex = 54;
             this.labelRunesInventory.Text = "0";
+            this.toolTip1.SetToolTip(this.labelRunesInventory, "Amount of filtered runes in inventory");
             // 
             // panelHeader
             // 
@@ -582,6 +613,7 @@
             this.labelRuneSet.Size = new System.Drawing.Size(31, 22);
             this.labelRuneSet.TabIndex = 3;
             this.labelRuneSet.Text = "Set";
+            this.toolTip1.SetToolTip(this.labelRuneSet, "Filters");
             // 
             // comboBoxRuneSet
             // 
@@ -596,6 +628,7 @@
             this.comboBoxRuneSet.Name = "comboBoxRuneSet";
             this.comboBoxRuneSet.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSet.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSet, "Filters");
             this.comboBoxRuneSet.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelMainstat
@@ -626,6 +659,7 @@
             this.labelRuneInnate.Size = new System.Drawing.Size(48, 22);
             this.labelRuneInnate.TabIndex = 16;
             this.labelRuneInnate.Text = "Innate";
+            this.toolTip1.SetToolTip(this.labelRuneInnate, "Filters");
             // 
             // comboBoxRuneInnate
             // 
@@ -640,6 +674,7 @@
             this.comboBoxRuneInnate.Name = "comboBoxRuneInnate";
             this.comboBoxRuneInnate.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneInnate.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneInnate, "Filters");
             this.comboBoxRuneInnate.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelQuality
@@ -670,6 +705,7 @@
             this.labelRuneOriginalQuality.Size = new System.Drawing.Size(61, 22);
             this.labelRuneOriginalQuality.TabIndex = 59;
             this.labelRuneOriginalQuality.Text = "Original Q";
+            this.toolTip1.SetToolTip(this.labelRuneOriginalQuality, "Filters");
             // 
             // comboBoxRuneOriginalQuality
             // 
@@ -684,6 +720,7 @@
             this.comboBoxRuneOriginalQuality.Name = "comboBoxRuneOriginalQuality";
             this.comboBoxRuneOriginalQuality.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneOriginalQuality.TabIndex = 58;
+            this.toolTip1.SetToolTip(this.comboBoxRuneOriginalQuality, "Filters");
             this.comboBoxRuneOriginalQuality.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelSlot
@@ -735,6 +772,7 @@
             this.labelRuneSubstat1.Size = new System.Drawing.Size(73, 22);
             this.labelRuneSubstat1.TabIndex = 16;
             this.labelRuneSubstat1.Text = "Substat (1)";
+            this.toolTip1.SetToolTip(this.labelRuneSubstat1, "Filters");
             // 
             // comboBoxRuneSubstat1YesNo
             // 
@@ -752,6 +790,7 @@
             this.comboBoxRuneSubstat1YesNo.Name = "comboBoxRuneSubstat1YesNo";
             this.comboBoxRuneSubstat1YesNo.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneSubstat1YesNo.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat1YesNo, "Filters");
             this.comboBoxRuneSubstat1YesNo.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneSubstat1
@@ -767,6 +806,7 @@
             this.comboBoxRuneSubstat1.Name = "comboBoxRuneSubstat1";
             this.comboBoxRuneSubstat1.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSubstat1.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat1, "Filters");
             this.comboBoxRuneSubstat1.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelSubstat2
@@ -789,6 +829,7 @@
             this.labelRuneSubstat2.Size = new System.Drawing.Size(74, 22);
             this.labelRuneSubstat2.TabIndex = 16;
             this.labelRuneSubstat2.Text = "Substat(2)";
+            this.toolTip1.SetToolTip(this.labelRuneSubstat2, "Filters");
             // 
             // comboBoxRuneSubstat2YesNo
             // 
@@ -806,6 +847,7 @@
             this.comboBoxRuneSubstat2YesNo.Name = "comboBoxRuneSubstat2YesNo";
             this.comboBoxRuneSubstat2YesNo.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneSubstat2YesNo.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat2YesNo, "Filters");
             this.comboBoxRuneSubstat2YesNo.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneSubstat2
@@ -821,6 +863,7 @@
             this.comboBoxRuneSubstat2.Name = "comboBoxRuneSubstat2";
             this.comboBoxRuneSubstat2.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSubstat2.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat2, "Filters");
             this.comboBoxRuneSubstat2.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelSubstat3
@@ -843,6 +886,7 @@
             this.labelRuneSubstat3.Size = new System.Drawing.Size(76, 22);
             this.labelRuneSubstat3.TabIndex = 16;
             this.labelRuneSubstat3.Text = "Substat (3)";
+            this.toolTip1.SetToolTip(this.labelRuneSubstat3, "Filters");
             // 
             // comboBoxRuneSubstat3YesNo
             // 
@@ -860,6 +904,7 @@
             this.comboBoxRuneSubstat3YesNo.Name = "comboBoxRuneSubstat3YesNo";
             this.comboBoxRuneSubstat3YesNo.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneSubstat3YesNo.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat3YesNo, "Filters");
             this.comboBoxRuneSubstat3YesNo.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneSubstat3
@@ -875,6 +920,7 @@
             this.comboBoxRuneSubstat3.Name = "comboBoxRuneSubstat3";
             this.comboBoxRuneSubstat3.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSubstat3.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat3, "Filters");
             this.comboBoxRuneSubstat3.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelSubstat4
@@ -897,6 +943,7 @@
             this.labelRuneSubstat4.Size = new System.Drawing.Size(76, 22);
             this.labelRuneSubstat4.TabIndex = 16;
             this.labelRuneSubstat4.Text = "Substat (4)";
+            this.toolTip1.SetToolTip(this.labelRuneSubstat4, "Filters");
             // 
             // comboBoxRuneSubstat4YesNo
             // 
@@ -914,6 +961,7 @@
             this.comboBoxRuneSubstat4YesNo.Name = "comboBoxRuneSubstat4YesNo";
             this.comboBoxRuneSubstat4YesNo.Size = new System.Drawing.Size(40, 27);
             this.comboBoxRuneSubstat4YesNo.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat4YesNo, "Filters");
             this.comboBoxRuneSubstat4YesNo.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // comboBoxRuneSubstat4
@@ -929,6 +977,7 @@
             this.comboBoxRuneSubstat4.Name = "comboBoxRuneSubstat4";
             this.comboBoxRuneSubstat4.Size = new System.Drawing.Size(80, 27);
             this.comboBoxRuneSubstat4.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxRuneSubstat4, "Filters");
             this.comboBoxRuneSubstat4.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelTable
@@ -1124,6 +1173,13 @@
             this.olvColumn18.CellPadding = null;
             this.olvColumn18.Text = "Eff%";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
+            // 
             // Runes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1255,5 +1311,6 @@
         private System.Windows.Forms.Label labelRuneSubstat4;
         private System.Windows.Forms.ComboBox comboBoxRuneSubstat4YesNo;
         private System.Windows.Forms.ComboBox comboBoxRuneSubstat4;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
