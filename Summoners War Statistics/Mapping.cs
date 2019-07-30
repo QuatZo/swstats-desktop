@@ -1863,6 +1863,15 @@ namespace Summoners_War_Statistics
             axpPerFloor.Add(4, 740);
             axpPerFloor.Add(5, 960);
             #endregion
+
+            #region Decks
+            decksPlace.Add(1, "Arena");
+            decksPlace.Add(2, "Guild War");
+            decksPlace.Add(3, "Raid");
+            decksPlace.Add(4, "Lab 5-man");
+            decksPlace.Add(5, "Lab 4-man");
+            decksPlace.Add(6, "ToA");
+            #endregion
         }
         #endregion
 
@@ -1894,6 +1903,8 @@ namespace Summoners_War_Statistics
         private Dictionary<int, string> rankingGuild = new Dictionary<int, string>();
 
         private Dictionary<int, int> axpPerFloor = new Dictionary<int, int>();
+
+        private Dictionary<int, string> decksPlace = new Dictionary<int, string>();
         #endregion
 
         #region Properties
@@ -2157,6 +2168,15 @@ namespace Summoners_War_Statistics
                 return axpPerFloor[floor];
             }
             return 0;
+        }
+
+        public string GetDeckPlace(int id)
+        {
+            if (decksPlace.ContainsKey(id))
+            {
+                return decksPlace[id];
+            }
+            return "Unknown Place";
         }
         #endregion
     }

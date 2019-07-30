@@ -261,5 +261,42 @@ namespace Summoners_War_Statistics
             }
             return runesToReturn;
         }
+
+        public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks, RaidDeck raidDeck)
+        {
+            List<DecksRow> decksRows = new List<DecksRow>();
+
+            foreach(var deck in decks)
+            {
+                // here will be mapping for deck types
+                string place = Mapping.Instance.GetDeckPlace((int)deck.DeckType);
+                List<string> monstersDecks = new List<string>();
+                bool isLeader = false;
+                string leader = "-";
+                foreach(var unit in deck.UnitIdList)
+                {
+                    if(unit == 0) { monstersDecks.Add("-"); continue; }
+                    foreach(var monster in monsters)
+                    {
+                        if(monster.UnitId == unit)
+                        {
+                            string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
+                            monstersDecks.Add(monsterName);
+                            if (!isLeader && monster.UnitId == deck.LeaderUnitId) { leader = monsterName; isLeader = true; }
+                            break;
+                        }
+                    }
+                }
+                decksRows.Add(new DecksRow
+                    (
+                        place,
+                        monstersDecks,
+                        leader
+                    )
+                );
+            }
+
+            return decksRows;
+        }
     }
 }

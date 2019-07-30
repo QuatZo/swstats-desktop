@@ -91,6 +91,7 @@ namespace Summoners_War_Statistics
             }
             Logger.log.Info($"[Monsters] Sorting");
         }
+
         private void View_Resized()
         {
             //labelNat5s                    - 0
@@ -186,6 +187,7 @@ namespace Summoners_War_Statistics
             view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
             Logger.log.Info("[Monsters] MonstersToLock star changed");
         }
+
         private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
         {
             view.MonstersList = monsters;
@@ -231,6 +233,7 @@ namespace Summoners_War_Statistics
                 if (monsterStars.Keys.Contains(monsterClass)) { monsterStars[monsterClass]++; }
                 else { monsterStars.Add(monsterClass, 1); }
             }
+
             view.DaysSinceLastLDLightning = (ushort)daysSinceLDLightning;
             Logger.log.Info($"[Monsters] Days since last L&D lightning done");
             view.DaysSinceNat5 = (ushort)daysSinceNat5;

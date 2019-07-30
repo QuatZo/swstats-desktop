@@ -1,4 +1,5 @@
-﻿using Summoners_War_Statistics.Properties;
+﻿using BrightIdeasSoftware;
+using Summoners_War_Statistics.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,6 @@ namespace Summoners_War_Statistics
                     labelArenaWings,
                     labelArenaWingsMax,
                     labelArenaWingsSlash,
-                    labelCountry,
                     labelCrystals,
                     labelDimensionalCrystals,
                     labelDimensionalCrystalsMax,
@@ -37,8 +37,6 @@ namespace Summoners_War_Statistics
                     labelGuildPoints,
                     labelJsonCreatedText,
                     labelJsonModified,
-                    labelLastCountry,
-                    labelLastLanguage,
                     labelLevel,
                     labelMana,
                     labelMonsters,
@@ -58,8 +56,6 @@ namespace Summoners_War_Statistics
                     pictureBoxEnergy,
                     pictureBoxGloryPoints,
                     pictureBoxGuildPoints,
-                    pictureBoxLastCountry,
-                    pictureBoxLastLanguage,
                     pictureBoxMana,
                     pictureBoxMonsters,
                     pictureBoxMonstersLocked,
@@ -72,27 +68,15 @@ namespace Summoners_War_Statistics
                     panelContentLeft,
                     panelContentMid,
                     panelContentRight,
-                    panelFlags,
-                    panelFlagsLeft,
-                    panelFlagsMid,
-                    panelFlagsRight,
+                    panelDecks,
                     panelFooter,
-                    panelHeader
+                    panelHeader,
+                    objectListViewDecks
                 };
         public Image SummonerCountry
         {
             get => pictureBoxCountry.Image;
             set => pictureBoxCountry.Image = value;
-        }
-        public Image SummonerLastCountry
-        {
-            get => pictureBoxLastCountry.Image;
-            set => pictureBoxLastCountry.Image = value;
-        }
-        public Image SummonerLastLanguage
-        {
-            get => pictureBoxLastLanguage.Image;
-            set => pictureBoxLastLanguage.Image = value;
         }
 
         public string SummonerName
@@ -211,15 +195,22 @@ namespace Summoners_War_Statistics
             get => ushort.Parse(labelAncientCoins.Text);
             set => labelAncientCoins.Text = value.ToString("N0");
         }
+
         public string JsonModifcationDate
         {
             get => labelJsonModified.Text;
             set => labelJsonModified.Text = value;
         }
+
+        public ObjectListView SummaryDecksListView
+        {
+            get => objectListViewDecks;
+            set => objectListViewDecks = value;
+        }
         #endregion
 
         #region Events
-        public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>, RaidDeck> InitSummary;
         public event Action Resized;
         public event Action Loaded;
         #endregion
@@ -230,9 +221,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country)
+        public void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck)
         {
-            InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country);
+            InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country, decks, raidDeck);
         }
         public void Front()
         {

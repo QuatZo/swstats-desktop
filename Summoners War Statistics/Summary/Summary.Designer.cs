@@ -49,8 +49,6 @@
             this.labelArenaWings = new System.Windows.Forms.Label();
             this.labelArenaWingsSlash = new System.Windows.Forms.Label();
             this.labelArenaWingsMax = new System.Windows.Forms.Label();
-            this.labelLastLanguage = new System.Windows.Forms.Label();
-            this.labelLastCountry = new System.Windows.Forms.Label();
             this.labelSocialPoints = new System.Windows.Forms.Label();
             this.labelJsonModified = new System.Windows.Forms.Label();
             this.labelMonsters = new System.Windows.Forms.Label();
@@ -59,14 +57,11 @@
             this.labelRunesLocked = new System.Windows.Forms.Label();
             this.labelJsonCreatedText = new System.Windows.Forms.Label();
             this.labelAncientCoins = new System.Windows.Forms.Label();
-            this.labelCountry = new System.Windows.Forms.Label();
             this.pictureBoxCountry = new System.Windows.Forms.PictureBox();
             this.pictureBoxAncientCoins = new System.Windows.Forms.PictureBox();
             this.pictureBoxSocialPoints = new System.Windows.Forms.PictureBox();
             this.pictureBoxRunesLocked = new System.Windows.Forms.PictureBox();
             this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLastCountry = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLastLanguage = new System.Windows.Forms.PictureBox();
             this.pictureBoxMonstersLocked = new System.Windows.Forms.PictureBox();
             this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
             this.pictureBoxDimensionalHoleEnergy = new System.Windows.Forms.PictureBox();
@@ -80,23 +75,30 @@
             this.pictureBoxCrystals = new System.Windows.Forms.PictureBox();
             this.pictureBoxMana = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panelFlags = new System.Windows.Forms.Panel();
-            this.panelFlagsMid = new System.Windows.Forms.Panel();
-            this.panelFlagsRight = new System.Windows.Forms.Panel();
-            this.panelFlagsLeft = new System.Windows.Forms.Panel();
+            this.panelDecks = new System.Windows.Forms.Panel();
+            this.objectListViewDecks = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn6 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn8 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.labelSummaryDecks = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelContentMid = new System.Windows.Forms.Panel();
             this.panelContentRight = new System.Windows.Forms.Panel();
             this.panelContentLeft = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunesLocked)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLastCountry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLastLanguage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonstersLocked)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
@@ -110,10 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrystals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).BeginInit();
             this.panelHeader.SuspendLayout();
-            this.panelFlags.SuspendLayout();
-            this.panelFlagsMid.SuspendLayout();
-            this.panelFlagsRight.SuspendLayout();
-            this.panelFlagsLeft.SuspendLayout();
+            this.panelDecks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewDecks)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panelContentMid.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             this.labelSummonerName.AutoSize = true;
             this.labelSummonerName.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSummonerName.Location = new System.Drawing.Point(3, 0);
+            this.labelSummonerName.Location = new System.Drawing.Point(96, 0);
             this.labelSummonerName.Name = "labelSummonerName";
             this.labelSummonerName.Size = new System.Drawing.Size(124, 57);
             this.labelSummonerName.TabIndex = 0;
@@ -361,28 +361,6 @@
             this.labelArenaWingsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelArenaWingsMax, "Amount of arena wings / max arena wings");
             // 
-            // labelLastLanguage
-            // 
-            this.labelLastLanguage.AutoSize = true;
-            this.labelLastLanguage.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastLanguage.Location = new System.Drawing.Point(3, 11);
-            this.labelLastLanguage.Name = "labelLastLanguage";
-            this.labelLastLanguage.Size = new System.Drawing.Size(93, 64);
-            this.labelLastLanguage.TabIndex = 38;
-            this.labelLastLanguage.Text = "Last login\r\nlanguage";
-            this.toolTip1.SetToolTip(this.labelLastLanguage, "Last login language");
-            // 
-            // labelLastCountry
-            // 
-            this.labelLastCountry.AutoSize = true;
-            this.labelLastCountry.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastCountry.Location = new System.Drawing.Point(104, 11);
-            this.labelLastCountry.Name = "labelLastCountry";
-            this.labelLastCountry.Size = new System.Drawing.Size(93, 64);
-            this.labelLastCountry.TabIndex = 39;
-            this.labelLastCountry.Text = "Last login\r\ncountry";
-            this.toolTip1.SetToolTip(this.labelLastCountry, "Last login country");
-            // 
             // labelSocialPoints
             // 
             this.labelSocialPoints.AutoSize = true;
@@ -481,21 +459,10 @@
             this.labelAncientCoins.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelAncientCoins, "Amount of ancient coins");
             // 
-            // labelCountry
-            // 
-            this.labelCountry.AutoSize = true;
-            this.labelCountry.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(6, 26);
-            this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(81, 32);
-            this.labelCountry.TabIndex = 55;
-            this.labelCountry.Text = "Country";
-            this.toolTip1.SetToolTip(this.labelCountry, "Your account\'s country");
-            // 
             // pictureBoxCountry
             // 
             this.pictureBoxCountry.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxCountry.Location = new System.Drawing.Point(105, 15);
+            this.pictureBoxCountry.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxCountry.Name = "pictureBoxCountry";
             this.pictureBoxCountry.Size = new System.Drawing.Size(90, 60);
             this.pictureBoxCountry.TabIndex = 54;
@@ -541,26 +508,6 @@
             this.pictureBoxRunes.TabIndex = 40;
             this.pictureBoxRunes.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBoxRunes, "Amount of runes");
-            // 
-            // pictureBoxLastCountry
-            // 
-            this.pictureBoxLastCountry.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxLastCountry.Location = new System.Drawing.Point(207, 15);
-            this.pictureBoxLastCountry.Name = "pictureBoxLastCountry";
-            this.pictureBoxLastCountry.Size = new System.Drawing.Size(90, 60);
-            this.pictureBoxLastCountry.TabIndex = 36;
-            this.pictureBoxLastCountry.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxLastCountry, "Last login country");
-            // 
-            // pictureBoxLastLanguage
-            // 
-            this.pictureBoxLastLanguage.Image = global::Summoners_War_Statistics.Properties.Resources.PL;
-            this.pictureBoxLastLanguage.Location = new System.Drawing.Point(104, 11);
-            this.pictureBoxLastLanguage.Name = "pictureBoxLastLanguage";
-            this.pictureBoxLastLanguage.Size = new System.Drawing.Size(90, 60);
-            this.pictureBoxLastLanguage.TabIndex = 35;
-            this.pictureBoxLastLanguage.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxLastLanguage, "Last login language");
             // 
             // pictureBoxMonstersLocked
             // 
@@ -685,6 +632,7 @@
             // panelHeader
             // 
             this.panelHeader.Controls.Add(this.labelSummonerName);
+            this.panelHeader.Controls.Add(this.pictureBoxCountry);
             this.panelHeader.Controls.Add(this.labelLevel);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -692,46 +640,128 @@
             this.panelHeader.Size = new System.Drawing.Size(784, 80);
             this.panelHeader.TabIndex = 56;
             // 
-            // panelFlags
+            // panelDecks
             // 
-            this.panelFlags.Controls.Add(this.panelFlagsMid);
-            this.panelFlags.Controls.Add(this.panelFlagsRight);
-            this.panelFlags.Controls.Add(this.panelFlagsLeft);
-            this.panelFlags.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFlags.Location = new System.Drawing.Point(0, 260);
-            this.panelFlags.Name = "panelFlags";
-            this.panelFlags.Size = new System.Drawing.Size(784, 120);
-            this.panelFlags.TabIndex = 57;
+            this.panelDecks.Controls.Add(this.objectListViewDecks);
+            this.panelDecks.Controls.Add(this.labelSummaryDecks);
+            this.panelDecks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDecks.Location = new System.Drawing.Point(0, 201);
+            this.panelDecks.Name = "panelDecks";
+            this.panelDecks.Size = new System.Drawing.Size(784, 179);
+            this.panelDecks.TabIndex = 57;
             // 
-            // panelFlagsMid
+            // objectListViewDecks
             // 
-            this.panelFlagsMid.Controls.Add(this.labelLastCountry);
-            this.panelFlagsMid.Controls.Add(this.pictureBoxLastCountry);
-            this.panelFlagsMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFlagsMid.Location = new System.Drawing.Point(200, 0);
-            this.panelFlagsMid.Name = "panelFlagsMid";
-            this.panelFlagsMid.Size = new System.Drawing.Size(384, 120);
-            this.panelFlagsMid.TabIndex = 58;
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn1);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn2);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn3);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn4);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn5);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn6);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn7);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn8);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn9);
+            this.objectListViewDecks.AllColumns.Add(this.olvColumn10);
+            this.objectListViewDecks.AllowColumnReorder = true;
+            this.objectListViewDecks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewDecks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn1,
+            this.olvColumn2,
+            this.olvColumn3,
+            this.olvColumn4,
+            this.olvColumn5,
+            this.olvColumn6,
+            this.olvColumn7,
+            this.olvColumn8,
+            this.olvColumn9,
+            this.olvColumn10});
+            this.objectListViewDecks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewDecks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewDecks.FullRowSelect = true;
+            this.objectListViewDecks.HideSelection = false;
+            this.objectListViewDecks.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewDecks.Name = "objectListViewDecks";
+            this.objectListViewDecks.ShowGroups = false;
+            this.objectListViewDecks.Size = new System.Drawing.Size(784, 137);
+            this.objectListViewDecks.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewDecks.TabIndex = 59;
+            this.objectListViewDecks.UseCompatibleStateImageBehavior = false;
+            this.objectListViewDecks.View = System.Windows.Forms.View.Details;
             // 
-            // panelFlagsRight
+            // olvColumn1
             // 
-            this.panelFlagsRight.Controls.Add(this.labelLastLanguage);
-            this.panelFlagsRight.Controls.Add(this.pictureBoxLastLanguage);
-            this.panelFlagsRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFlagsRight.Location = new System.Drawing.Point(584, 0);
-            this.panelFlagsRight.Name = "panelFlagsRight";
-            this.panelFlagsRight.Size = new System.Drawing.Size(200, 120);
-            this.panelFlagsRight.TabIndex = 57;
+            this.olvColumn1.AspectName = "Place";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Place";
             // 
-            // panelFlagsLeft
+            // olvColumn2
             // 
-            this.panelFlagsLeft.Controls.Add(this.labelCountry);
-            this.panelFlagsLeft.Controls.Add(this.pictureBoxCountry);
-            this.panelFlagsLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelFlagsLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelFlagsLeft.Name = "panelFlagsLeft";
-            this.panelFlagsLeft.Size = new System.Drawing.Size(200, 120);
-            this.panelFlagsLeft.TabIndex = 56;
+            this.olvColumn2.AspectName = "Monster1";
+            this.olvColumn2.CellPadding = null;
+            this.olvColumn2.Text = "Monster 1st";
+            this.olvColumn2.Width = 77;
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "Monster2";
+            this.olvColumn3.CellPadding = null;
+            this.olvColumn3.Text = "Monster 2nd";
+            this.olvColumn3.Width = 81;
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "Monster3";
+            this.olvColumn4.CellPadding = null;
+            this.olvColumn4.Text = "Monster 3rd";
+            this.olvColumn4.Width = 75;
+            // 
+            // olvColumn5
+            // 
+            this.olvColumn5.AspectName = "Monster4";
+            this.olvColumn5.CellPadding = null;
+            this.olvColumn5.Text = "Monster 4th";
+            this.olvColumn5.Width = 81;
+            // 
+            // olvColumn6
+            // 
+            this.olvColumn6.AspectName = "Monster5";
+            this.olvColumn6.CellPadding = null;
+            this.olvColumn6.Text = "Monster 5th";
+            this.olvColumn6.Width = 77;
+            // 
+            // olvColumn7
+            // 
+            this.olvColumn7.AspectName = "Monster6";
+            this.olvColumn7.CellPadding = null;
+            this.olvColumn7.Text = "Monster 6th";
+            this.olvColumn7.Width = 78;
+            // 
+            // olvColumn8
+            // 
+            this.olvColumn8.AspectName = "Monster7";
+            this.olvColumn8.CellPadding = null;
+            this.olvColumn8.Text = "Monster 7th";
+            this.olvColumn8.Width = 75;
+            // 
+            // olvColumn9
+            // 
+            this.olvColumn9.AspectName = "Monster8";
+            this.olvColumn9.CellPadding = null;
+            this.olvColumn9.Text = "Monster 8th";
+            this.olvColumn9.Width = 76;
+            // 
+            // labelSummaryDecks
+            // 
+            this.labelSummaryDecks.AutoSize = true;
+            this.labelSummaryDecks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelSummaryDecks.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummaryDecks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSummaryDecks.Location = new System.Drawing.Point(0, 0);
+            this.labelSummaryDecks.Name = "labelSummaryDecks";
+            this.labelSummaryDecks.Size = new System.Drawing.Size(80, 42);
+            this.labelSummaryDecks.TabIndex = 60;
+            this.labelSummaryDecks.Text = "Decks";
+            this.toolTip1.SetToolTip(this.labelSummaryDecks, "This is the section when you can see monsters you should lock");
             // 
             // panelFooter
             // 
@@ -748,10 +778,10 @@
             this.panelContent.Controls.Add(this.panelContentMid);
             this.panelContent.Controls.Add(this.panelContentRight);
             this.panelContent.Controls.Add(this.panelContentLeft);
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelContent.Location = new System.Drawing.Point(0, 80);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(784, 180);
+            this.panelContent.Size = new System.Drawing.Size(784, 121);
             this.panelContent.TabIndex = 59;
             // 
             // panelContentMid
@@ -783,7 +813,7 @@
             this.panelContentMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContentMid.Location = new System.Drawing.Point(200, 0);
             this.panelContentMid.Name = "panelContentMid";
-            this.panelContentMid.Size = new System.Drawing.Size(485, 180);
+            this.panelContentMid.Size = new System.Drawing.Size(485, 121);
             this.panelContentMid.TabIndex = 56;
             // 
             // panelContentRight
@@ -799,7 +829,7 @@
             this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContentRight.Location = new System.Drawing.Point(685, 0);
             this.panelContentRight.Name = "panelContentRight";
-            this.panelContentRight.Size = new System.Drawing.Size(99, 180);
+            this.panelContentRight.Size = new System.Drawing.Size(99, 121);
             this.panelContentRight.TabIndex = 55;
             // 
             // panelContentLeft
@@ -815,7 +845,7 @@
             this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelContentLeft.Location = new System.Drawing.Point(0, 0);
             this.panelContentLeft.Name = "panelContentLeft";
-            this.panelContentLeft.Size = new System.Drawing.Size(200, 180);
+            this.panelContentLeft.Size = new System.Drawing.Size(200, 121);
             this.panelContentLeft.TabIndex = 54;
             // 
             // toolTip1
@@ -825,13 +855,19 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
+            // olvColumn10
+            // 
+            this.olvColumn10.AspectName = "Leader";
+            this.olvColumn10.CellPadding = null;
+            this.olvColumn10.Text = "Leader";
+            // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.Controls.Add(this.panelDecks);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelFlags);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
@@ -844,8 +880,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunesLocked)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLastCountry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLastLanguage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonstersLocked)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).EndInit();
@@ -860,13 +894,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMana)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            this.panelFlags.ResumeLayout(false);
-            this.panelFlagsMid.ResumeLayout(false);
-            this.panelFlagsMid.PerformLayout();
-            this.panelFlagsRight.ResumeLayout(false);
-            this.panelFlagsRight.PerformLayout();
-            this.panelFlagsLeft.ResumeLayout(false);
-            this.panelFlagsLeft.PerformLayout();
+            this.panelDecks.ResumeLayout(false);
+            this.panelDecks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewDecks)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.panelContent.ResumeLayout(false);
@@ -914,10 +944,6 @@
         private System.Windows.Forms.PictureBox pictureBoxDimensionalHoleEnergy;
         private System.Windows.Forms.PictureBox pictureBoxMonsters;
         private System.Windows.Forms.PictureBox pictureBoxMonstersLocked;
-        private System.Windows.Forms.PictureBox pictureBoxLastLanguage;
-        private System.Windows.Forms.PictureBox pictureBoxLastCountry;
-        private System.Windows.Forms.Label labelLastLanguage;
-        private System.Windows.Forms.Label labelLastCountry;
         private System.Windows.Forms.PictureBox pictureBoxRunes;
         private System.Windows.Forms.PictureBox pictureBoxRunesLocked;
         private System.Windows.Forms.PictureBox pictureBoxSocialPoints;
@@ -931,17 +957,25 @@
         private System.Windows.Forms.PictureBox pictureBoxAncientCoins;
         private System.Windows.Forms.Label labelAncientCoins;
         private System.Windows.Forms.PictureBox pictureBoxCountry;
-        private System.Windows.Forms.Label labelCountry;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Panel panelFlags;
+        private System.Windows.Forms.Panel panelDecks;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelContentLeft;
         private System.Windows.Forms.Panel panelContentMid;
         private System.Windows.Forms.Panel panelContentRight;
-        private System.Windows.Forms.Panel panelFlagsLeft;
-        private System.Windows.Forms.Panel panelFlagsRight;
-        private System.Windows.Forms.Panel panelFlagsMid;
         private System.Windows.Forms.ToolTip toolTip1;
+        private BrightIdeasSoftware.ObjectListView objectListViewDecks;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private BrightIdeasSoftware.OLVColumn olvColumn2;
+        private BrightIdeasSoftware.OLVColumn olvColumn3;
+        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn olvColumn5;
+        private BrightIdeasSoftware.OLVColumn olvColumn6;
+        private BrightIdeasSoftware.OLVColumn olvColumn7;
+        private BrightIdeasSoftware.OLVColumn olvColumn8;
+        private BrightIdeasSoftware.OLVColumn olvColumn9;
+        private System.Windows.Forms.Label labelSummaryDecks;
+        private BrightIdeasSoftware.OLVColumn olvColumn10;
     }
 }

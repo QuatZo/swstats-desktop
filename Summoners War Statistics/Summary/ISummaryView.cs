@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,8 +16,6 @@ namespace Summoners_War_Statistics
         List<Control> Cntrls { get; }
 
         Image SummonerCountry { get; set; }
-        Image SummonerLastCountry { get; set; }
-        Image SummonerLastLanguage { get; set; }
 
         string SummonerName { get; set; }
         byte SummonerLevel { get; set; }
@@ -44,16 +43,17 @@ namespace Summoners_War_Statistics
         ushort SummonerAncientCoins { get; set; }
 
         string JsonModifcationDate { get; set; }
+        ObjectListView SummaryDecksListView { get; set; }
         #endregion
 
         #region Events
-        event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string> InitSummary;
+        event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>, RaidDeck> InitSummary;
         event Action Resized;
         event Action Loaded;
         #endregion
 
         #region Methods
-        void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country);
+        void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck);
         void Front();
         #endregion
     }

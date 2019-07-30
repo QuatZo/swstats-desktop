@@ -44,6 +44,11 @@ namespace Summoners_War_Statistics
         {
             foreach (var control in view.SummaryView.Cntrls)
             {
+                if (control.Name.Contains("ListView"))
+                {
+                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
+                    continue;
+                }
                 if (control.Name.Contains("SummonerName"))
                 {
                     control.Font = new Font(view.FF, 32, FontStyle.Regular);
@@ -182,7 +187,7 @@ namespace Summoners_War_Statistics
                     try
                     {
                         Logger.log.Info($"Summary tab");
-                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country);
+                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks, json.RaidDeck);
                         Logger.log.Info("[Summary] DONE");
 
                         Logger.log.Info($"Monsters tab");

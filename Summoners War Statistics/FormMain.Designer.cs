@@ -82,8 +82,6 @@
             this.summary1.SummonerEnergyMax = ((byte)(0));
             this.summary1.SummonerGloryPoints = ((uint)(0u));
             this.summary1.SummonerGuildPoints = ((uint)(0u));
-            this.summary1.SummonerLastCountry = ((System.Drawing.Image)(resources.GetObject("summary1.SummonerLastCountry")));
-            this.summary1.SummonerLastLanguage = ((System.Drawing.Image)(resources.GetObject("summary1.SummonerLastLanguage")));
             this.summary1.SummonerLevel = ((byte)(0));
             this.summary1.SummonerMana = ((ulong)(0ul));
             this.summary1.SummonerMonstersAmount = ((ushort)(0));

@@ -89,7 +89,6 @@ namespace Summoners_War_Statistics
         [JsonProperty("my_attack_list")]
         public List<SummonerAttack> MyAttackList { get; set; }
 
-
         [JsonProperty("opp_guild_info")]
         public OpponentGuild OpponentGuild { get; set; }
 
@@ -101,7 +100,6 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("guildwar_reward_list")]
         public List<GuildWarReward> GuildwarRewardList { get; set; }
-
 
         [JsonProperty("unit_lock_list")]
         public List<long> LockedMonstersList { get; set; }
@@ -115,6 +113,9 @@ namespace Summoners_War_Statistics
 
         [JsonProperty("raid_deck")]
         public RaidDeck RaidDeck { get; set; }
+
+        [JsonProperty("deck_list")]
+        public List<Deck> Decks { get; set; }
 
         [JsonProperty("rtpvp_season_info")]
         public RTASeason RTASeason { get; set; }
