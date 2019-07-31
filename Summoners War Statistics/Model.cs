@@ -39,6 +39,7 @@ namespace Summoners_War_Statistics
                 // 15105 - devilmon
                 if (((monster.Class >= stars && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
             }
+
             foreach (Monster monsterToLock in monstersToLock)
             {
                 Dictionary<string, byte> runesOfSpecificSet = new Dictionary<string, byte>();
@@ -65,7 +66,14 @@ namespace Summoners_War_Statistics
                 if (sets.Length == 0) { sets = "-"; }
                 else { sets = sets.Remove(sets.Length - 2, 2); }
 
-                mons.Add(new MonstersToLockRow(Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), (byte)monsterToLock.Class, (byte)monsterToLock.UnitLevel, (byte)monsterToLock.Runes.Count, sets));
+                mons.Add(new MonstersToLockRow(
+                        Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), 
+                        (byte)monsterToLock.Class, 
+                        (byte)monsterToLock.UnitLevel, 
+                        (byte)monsterToLock.Runes.Count, 
+                        sets
+                    )
+                );
             }
             return mons;
         }
@@ -159,23 +167,23 @@ namespace Summoners_War_Statistics
 
         private bool RuneMeetsRequirements(Rune rune, List<byte> filters, double runeEfficiency)
         {
-            if (filters[0] != 0 && rune.SetId != filters[0]) { return false; }
-            if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { return false; }
+            if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
+            if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { return false; } // mainstat
 
-            if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; }
-            else if (filters[2] != 99 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; }
+            if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
+            else if (filters[2] != 99 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; } // innate
 
-            if (filters[3] != 0 && rune.Rank != filters[3]) { return false; }
-            if (filters[4] != 0 && rune.Extra != filters[4]) { return false; }
-            if (filters[5] != 0 && rune.SlotNo != filters[5]) { return false; }
+            if (filters[3] != 0 && rune.Rank != filters[3]) { return false; } // quality
+            if (filters[4] != 0 && rune.Extra != filters[4]) { return false; } // original quality
+            if (filters[5] != 0 && rune.SlotNo != filters[5]) { return false; } // slot
 
-            if (filters[7] == 0 && rune.UpgradeCurr != filters[6]) { return false; }
+            if (filters[7] == 0 && rune.UpgradeCurr != filters[6]) { return false; } // level
             if (filters[7] == 1 && rune.UpgradeCurr > filters[6]) { return false; }
             if (filters[7] == 2 && rune.UpgradeCurr < filters[6]) { return false; }
             if (filters[7] == 3 && rune.UpgradeCurr >= filters[6]) { return false; }
             if (filters[7] == 4 && rune.UpgradeCurr <= filters[6]) { return false; }
 
-            if (filters[9] == 0 && runeEfficiency != filters[8]) { return false; }
+            if (filters[9] == 0 && runeEfficiency != filters[8]) { return false; } // efficiency
             if (filters[9] == 1 && runeEfficiency > filters[8]) { return false; }
             if (filters[9] == 2 && runeEfficiency < filters[8]) { return false; }
             if (filters[9] == 3 && runeEfficiency >= filters[8]) { return false; }
@@ -190,16 +198,16 @@ namespace Summoners_War_Statistics
                     (filters[16], filters[17])
                 };
             bool shouldSkipRune = false;
-            foreach (var pair in substatFilters)
+            foreach ((byte Substat, byte YesNo) in substatFilters)
             {
-                if (pair.Substat != 0)
+                if (Substat != 0)
                 {
                     bool hasSubstat = false;
                     foreach (var substat in rune.SecEff)
                     {
-                        if (pair.Substat == substat[0]) { hasSubstat = true; break; }
+                        if (Substat == substat[0]) { hasSubstat = true; break; }
                     }
-                    if ((!hasSubstat && pair.YesNo != 0) || (hasSubstat && pair.YesNo == 0)) { shouldSkipRune = true; break; }
+                    if ((!hasSubstat && YesNo != 0) || (hasSubstat && YesNo == 0)) { shouldSkipRune = true; break; }
                 }
             }
             if (shouldSkipRune) { return false; }
@@ -214,6 +222,7 @@ namespace Summoners_War_Statistics
                 var x = runes.Count;
             }
             catch (NullReferenceException) { return runesToReturn; }
+
             foreach (var rune in runes)
             {
                 double runeEfficiency = Mapping.Instance.GetRuneEfficiency(rune).Current;
@@ -268,11 +277,12 @@ namespace Summoners_War_Statistics
 
             foreach(var deck in decks)
             {
-                // here will be mapping for deck types
                 string place = Mapping.Instance.GetDeckPlace((int)deck.DeckType);
                 List<string> monstersDecks = new List<string>();
+
                 bool isLeader = false;
                 string leader = "-";
+
                 foreach(var unit in deck.UnitIdList)
                 {
                     if(unit == 0) { monstersDecks.Add("-"); continue; }
@@ -287,6 +297,7 @@ namespace Summoners_War_Statistics
                         }
                     }
                 }
+
                 decksRows.Add(new DecksRow
                     (
                         place,

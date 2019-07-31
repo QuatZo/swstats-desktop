@@ -14,7 +14,6 @@ namespace Summoners_War_Statistics
     public partial class Monsters : UserControl, IMonstersView
     {
         #region Properties
-
         public Size SizeWindow => Size;
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -235,7 +234,6 @@ namespace Summoners_War_Statistics
         {
             BringToFront();
         }
-        #endregion
 
         private void Monsters_Resize(object sender, EventArgs e)
         {
@@ -249,5 +247,6 @@ namespace Summoners_War_Statistics
                 CanSeeMonstersTab?.Invoke();
             }
         }
+        #endregion
     }
 }

@@ -396,7 +396,6 @@
             this.labelFarmSuccess.Text = "B5";
             this.labelFarmSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelFarmSuccess, "Which floor you should farm, when success rate is a major dependency ");
-            this.labelFarmSuccess.Click += new System.EventHandler(this.LabelDimHoleFarmSuccess_Click);
             // 
             // labelFarmTime
             // 
@@ -410,7 +409,6 @@
             this.labelFarmTime.Text = "B5";
             this.labelFarmTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelFarmTime, "Which floor you should farm, when time is a major dependency ");
-            this.labelFarmTime.Click += new System.EventHandler(this.LabelDimHoleFarmTime_Click);
             // 
             // maskedTextBoxSuccessRateB5
             // 

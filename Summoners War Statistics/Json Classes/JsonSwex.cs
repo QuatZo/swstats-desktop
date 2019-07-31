@@ -242,7 +242,7 @@ namespace Summoners_War_Statistics
 
     public partial class JsonSwex
     {
-        public static JsonSwex FromJson(string json) => JsonConvert.DeserializeObject<JsonSwex>(json, Summoners_War_Statistics.Converter.Settings);
+        public static JsonSwex FromJson(string json) => JsonConvert.DeserializeObject<JsonSwex>(json, Converter.Settings);
     }
 
     internal static class Converter

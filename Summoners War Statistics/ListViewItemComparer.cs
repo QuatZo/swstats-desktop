@@ -10,11 +10,11 @@ namespace Summoners_War_Statistics
 {
     public class ListViewItemComparer : IComparer
     {
-        private int col;
+        private readonly int col;
         private static int colOrder;
         private static short order = 1;
 
-        private int col2;
+        private readonly int col2;
         private static int colOrder2;
         private static short order2 = 1;
 

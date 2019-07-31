@@ -39,11 +39,11 @@ namespace Summoners_War_Statistics
                     labelJsonModified,
                     labelLevel,
                     labelMana,
-                    labelMonsters,
-                    labelMonstersLocked,
+                    labelMons,
+                    labelMonsLocked,
                     labelRTAMedals,
-                    labelRunes,
-                    labelRunesLocked,
+                    labelRnes,
+                    labelRnesLocked,
                     labelShapeshiftingStones,
                     labelSocialPoints,
                     labelSummonerName,
@@ -164,25 +164,25 @@ namespace Summoners_War_Statistics
         }
         public ushort SummonerMonstersAmount
         {
-            get => ushort.Parse(labelMonsters.Text);
-            set => labelMonsters.Text = value.ToString("N0");
+            get => ushort.Parse(labelMons.Text);
+            set => labelMons.Text = value.ToString("N0");
         }
         public ushort SummonerMonstersLocked
         {
-            get => ushort.Parse(labelMonstersLocked.Text);
-            set => labelMonstersLocked.Text = value.ToString("N0");
+            get => ushort.Parse(labelMonsLocked.Text);
+            set => labelMonsLocked.Text = value.ToString("N0");
         }
 
         public ushort SummonerRunes
         {
-            get => ushort.Parse(labelRunes.Text);
-            set => labelRunes.Text = value.ToString("N0");
+            get => ushort.Parse(labelRnes.Text);
+            set => labelRnes.Text = value.ToString("N0");
         }
         public ushort SummonerRunesLocked
         {
-            get => ushort.Parse(labelRunesLocked.Text.Replace(",", ""));
+            get => ushort.Parse(labelRnesLocked.Text.Replace(",", ""));
 
-            set => labelRunesLocked.Text = value.ToString("N0");
+            set => labelRnesLocked.Text = value.ToString("N0");
         }
 
         public ushort SummonerSocialPoints
@@ -225,11 +225,11 @@ namespace Summoners_War_Statistics
         {
             InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country, decks, raidDeck);
         }
+
         public void Front()
         {
             BringToFront();
         }
-        #endregion
 
         private void Summary_Resize(object sender, EventArgs e)
         {
@@ -240,5 +240,8 @@ namespace Summoners_War_Statistics
         {
             Loaded?.Invoke();
         }
+        #endregion
+
+
     }
 }

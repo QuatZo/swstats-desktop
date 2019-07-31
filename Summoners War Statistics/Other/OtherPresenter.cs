@@ -64,6 +64,7 @@ namespace Summoners_War_Statistics
             }
             Logger.log.Info($"[Friends] Sorting");
         }
+
         private void View_Resized()
         {
             //labelDefenseUnits                 - 0
@@ -105,7 +106,8 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.EndUpdate();
         }
 
-        private void View_InitOther(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
+        private void View_InitOther(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, 
+            List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
         {
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");

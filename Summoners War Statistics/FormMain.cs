@@ -18,10 +18,11 @@ namespace Summoners_War_Statistics
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
 
-        public FontFamily FF { get; set; }
-        public Font Fnt { get; set; }
+
 
         #region Properties
+        public FontFamily FF { get; set; }
+        public Font Fnt { get; set; }
         public ISummaryView SummaryView => summary1;
         public IMenuView MenuView =>  menu1;
         public IMonstersView MonstersView => monsters1;
@@ -62,14 +63,8 @@ namespace Summoners_War_Statistics
 
         public OpenFileDialog OpenFile
         {
-            get
-            {
-                return openFileDialog;
-            }
-            set
-            {
-                openFileDialog = value;
-            }
+            get => openFileDialog;
+            set => openFileDialog = value;
         }
         #endregion
 
@@ -106,8 +101,14 @@ namespace Summoners_War_Statistics
             Fnt = new Font(FF, 14f, FontStyle.Regular);
         }
 
-        public void ShowMessage(string message, MessageBoxIcon messageBoxIcon)
+        public void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null)
         {
+            if(e != null)
+            {
+                Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
+                Logger.log.Error(e.StackTrace);
+            }
+
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
 
@@ -152,8 +153,6 @@ namespace Summoners_War_Statistics
                 return cp;
             }
         }
-        #endregion
-
 
         private void pictureBoxSelectJson_Click(object sender, EventArgs e)
         {
@@ -171,5 +170,6 @@ namespace Summoners_War_Statistics
             pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
             Refresh();
         }
+        #endregion
     }
 }

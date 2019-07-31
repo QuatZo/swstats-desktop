@@ -36,7 +36,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Methods
-        void ShowMessage(string message, MessageBoxIcon messageBoxIcon);
+        void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null);
         void HideViews();
         #endregion
     }

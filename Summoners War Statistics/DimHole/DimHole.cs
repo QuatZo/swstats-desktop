@@ -59,6 +59,7 @@ namespace Summoners_War_Statistics
             panelFarm,
             panelFarmRight
         };
+
         public ushort AxpPerLevel { get; set; }
         public byte SummonerDimensionalHoleEnergy
         {
@@ -100,20 +101,21 @@ namespace Summoners_War_Statistics
         {
             get
             {
-                int.TryParse(maskedTextBoxTimeB1.Text.Substring(0, maskedTextBoxTimeB1.Text.IndexOf(":")), out int int1);
-                int.TryParse(maskedTextBoxTimeB1.Text.Substring(maskedTextBoxTimeB1.Text.IndexOf(":") + 1, maskedTextBoxTimeB1.Text.Length - maskedTextBoxTimeB1.Text.IndexOf(":") - 1), out int int1half);
+                _ = int.TryParse(maskedTextBoxTimeB1.Text.Substring(0, maskedTextBoxTimeB1.Text.IndexOf(":")), out int int1);
+                _ = int.TryParse(maskedTextBoxTimeB1.Text.Substring(maskedTextBoxTimeB1.Text.IndexOf(":") + 1, maskedTextBoxTimeB1.Text.Length - maskedTextBoxTimeB1.Text.IndexOf(":") - 1), out int int1half);
 
-                int.TryParse(maskedTextBoxTimeB2.Text.Substring(0, maskedTextBoxTimeB2.Text.IndexOf(":")), out int int2);
-                int.TryParse(maskedTextBoxTimeB2.Text.Substring(maskedTextBoxTimeB2.Text.IndexOf(":") + 1, maskedTextBoxTimeB2.Text.Length - maskedTextBoxTimeB2.Text.IndexOf(":") - 1), out int int2half);
+                _ = int.TryParse(maskedTextBoxTimeB2.Text.Substring(0, maskedTextBoxTimeB2.Text.IndexOf(":")), out int int2);
+                _ = int.TryParse(maskedTextBoxTimeB2.Text.Substring(maskedTextBoxTimeB2.Text.IndexOf(":") + 1, maskedTextBoxTimeB2.Text.Length - maskedTextBoxTimeB2.Text.IndexOf(":") - 1), out int int2half);
 
-                int.TryParse(maskedTextBoxTimeB3.Text.Substring(0, maskedTextBoxTimeB3.Text.IndexOf(":")), out int int3);
-                int.TryParse(maskedTextBoxTimeB3.Text.Substring(maskedTextBoxTimeB3.Text.IndexOf(":") + 1, maskedTextBoxTimeB3.Text.Length - maskedTextBoxTimeB3.Text.IndexOf(":") - 1), out int int3half);
+                _ = int.TryParse(maskedTextBoxTimeB3.Text.Substring(0, maskedTextBoxTimeB3.Text.IndexOf(":")), out int int3);
+                _ = int.TryParse(maskedTextBoxTimeB3.Text.Substring(maskedTextBoxTimeB3.Text.IndexOf(":") + 1, maskedTextBoxTimeB3.Text.Length - maskedTextBoxTimeB3.Text.IndexOf(":") - 1), out int int3half);
 
-                int.TryParse(maskedTextBoxTimeB4.Text.Substring(0, maskedTextBoxTimeB4.Text.IndexOf(":")), out int int4);
-                int.TryParse(maskedTextBoxTimeB4.Text.Substring(maskedTextBoxTimeB4.Text.IndexOf(":") + 1, maskedTextBoxTimeB4.Text.Length - maskedTextBoxTimeB4.Text.IndexOf(":") - 1), out int int4half);
+                _ = int.TryParse(maskedTextBoxTimeB4.Text.Substring(0, maskedTextBoxTimeB4.Text.IndexOf(":")), out int int4);
+                _ = int.TryParse(maskedTextBoxTimeB4.Text.Substring(maskedTextBoxTimeB4.Text.IndexOf(":") + 1, maskedTextBoxTimeB4.Text.Length - maskedTextBoxTimeB4.Text.IndexOf(":") - 1), out int int4half);
 
-                int.TryParse(maskedTextBoxTimeB5.Text.Substring(0, maskedTextBoxTimeB5.Text.IndexOf(":")), out int int5);
-                int.TryParse(maskedTextBoxTimeB5.Text.Substring(maskedTextBoxTimeB5.Text.IndexOf(":") + 1, maskedTextBoxTimeB5.Text.Length - maskedTextBoxTimeB5.Text.IndexOf(":") - 1), out int int5half);
+                _ = int.TryParse(maskedTextBoxTimeB5.Text.Substring(0, maskedTextBoxTimeB5.Text.IndexOf(":")), out int int5);
+                _ = int.TryParse(maskedTextBoxTimeB5.Text.Substring(maskedTextBoxTimeB5.Text.IndexOf(":") + 1, maskedTextBoxTimeB5.Text.Length - maskedTextBoxTimeB5.Text.IndexOf(":") - 1), out int int5half);
+
                 List <TimeSpan> list = new List<TimeSpan>()
                 {
                     new TimeSpan(0, int1, int1half),
@@ -165,11 +167,11 @@ namespace Summoners_War_Statistics
         {
             InitDimHole?.Invoke(dimensionHoleInfo, unitList);
         }
+
         public void Front()
         {
             BringToFront();
         }
-        #endregion
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -186,22 +188,13 @@ namespace Summoners_War_Statistics
             FloorTextChanged?.Invoke();
         }
 
-        private void LabelDimHoleFarmSuccess_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelDimHoleFarmTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DimHole_VisibleChanged(object sender, EventArgs e)
         {
-            if(Visible == true)
+            if (Visible == true)
             {
                 CanSeeDimHoleTab?.Invoke();
             }
         }
+        #endregion
     }
 }

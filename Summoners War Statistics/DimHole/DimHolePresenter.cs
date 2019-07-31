@@ -10,23 +10,21 @@ namespace Summoners_War_Statistics
 {
     class DimHolePresenter
     {
-        IDimHoleView view;
-        Model model;
+        private readonly IDimHoleView view;
+        private readonly Model model;
 
         public DimHolePresenter(IDimHoleView view, Model model)
         {
             this.view = view;
             this.model = model;
 
-            this.view.DimHoleLevelChanged += View_DimHoleLevelChanged;
             this.view.InitDimHole += View_InitDimHole;
+            this.view.CanSeeDimHoleTab += View_CanSeeDimHoleTab;
+            this.view.Resized += View_Resized;
 
             this.view.DimHoleMonstersListView.ColumnClick += DimHoleMonstersListView_ColumnClick;
             this.view.DimHoleMonstersListView.BeforeSorting += DimHoleMonstersListView_BeforeSorting;
-
-            this.view.CanSeeDimHoleTab += View_CanSeeDimHoleTab;
-
-            this.view.Resized += View_Resized;
+            this.view.DimHoleLevelChanged += View_DimHoleLevelChanged;
 
             this.view.FloorTextChanged += View_FloorTextChanged;
         }
@@ -45,14 +43,12 @@ namespace Summoners_War_Statistics
 
         private void View_FloorTextChanged()
         {
-            List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)> inputs = new List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)>()
+            List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)> inputs = new List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)>();
+
+            for (int i = 1; i <= 5; i++)
             {
-                (1, view.DimHoleFloorTimes[0], view.DimHoleFloorSuccessRates[0], (double)Mapping.Instance.GetAxpByFloor(1) / (double)Mapping.Instance.GetAxpByFloor(5)),
-                (2, view.DimHoleFloorTimes[1], view.DimHoleFloorSuccessRates[1], (double)Mapping.Instance.GetAxpByFloor(2) / (double)Mapping.Instance.GetAxpByFloor(5)),
-                (3, view.DimHoleFloorTimes[2], view.DimHoleFloorSuccessRates[2], (double)Mapping.Instance.GetAxpByFloor(3) / (double)Mapping.Instance.GetAxpByFloor(5)),
-                (4, view.DimHoleFloorTimes[3], view.DimHoleFloorSuccessRates[3], (double)Mapping.Instance.GetAxpByFloor(4) / (double)Mapping.Instance.GetAxpByFloor(5)),
-                (5, view.DimHoleFloorTimes[4], view.DimHoleFloorSuccessRates[4], (double)Mapping.Instance.GetAxpByFloor(5) / (double)Mapping.Instance.GetAxpByFloor(5))
-            };
+                inputs.Add((i, view.DimHoleFloorTimes[i - 1], view.DimHoleFloorSuccessRates[i - 1], (double)Mapping.Instance.GetAxpByFloor(i) / (double)Mapping.Instance.GetAxpByFloor(5)));
+            }
 
             Dictionary<int, double> floorsTime = new Dictionary<int, double>() { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, { 5, 0 } };
             Dictionary<int, double> floorsSuccess = new Dictionary<int, double>() { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, { 5, 0 } };
@@ -69,7 +65,10 @@ namespace Summoners_War_Statistics
 
         private void DimHoleMonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
-            if (view.DimHoleMonstersListView.PrimarySortColumn != view.DimHoleMonstersListView.SecondarySortColumn) { view.DimHoleMonstersListView.SecondarySortColumn = view.DimHoleMonstersListView.PrimarySortColumn; }
+            if (view.DimHoleMonstersListView.PrimarySortColumn != view.DimHoleMonstersListView.SecondarySortColumn)
+            {
+                view.DimHoleMonstersListView.SecondarySortColumn = view.DimHoleMonstersListView.PrimarySortColumn;
+            }
         }
 
         private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -159,21 +158,11 @@ namespace Summoners_War_Statistics
             view.Cntrls[29].Location = new Point(widthFarmSixthLevel, heightFarmThirdLevel);
 
             Size maskedTextBoxSize = new Size(view.Cntrls[22].Location.X - view.Cntrls[19].Location.X - 15, view.Cntrls[19].Size.Height);
-            view.Cntrls[16].Size = maskedTextBoxSize;
-            view.Cntrls[17].Size = maskedTextBoxSize;
 
-            view.Cntrls[19].Size = maskedTextBoxSize;
-            view.Cntrls[20].Size = maskedTextBoxSize;
-
-            view.Cntrls[22].Size = maskedTextBoxSize;
-            view.Cntrls[23].Size = maskedTextBoxSize;
-
-            view.Cntrls[25].Size = maskedTextBoxSize;
-            view.Cntrls[26].Size = maskedTextBoxSize;
-
-            view.Cntrls[28].Size = maskedTextBoxSize;
-            view.Cntrls[29].Size = maskedTextBoxSize;
-
+            foreach(var i in [16, 17, 19, 20, 22, 23, 25, 26, 28, 29])
+            {
+                view.Cntrls[i].Size = maskedTextBoxSize;
+            }
 
             view.DimHoleMonstersListView.BeginUpdate();
             int columnWidth = view.DimHoleMonstersListView.Size.Width / view.DimHoleMonstersListView.Columns.Count;

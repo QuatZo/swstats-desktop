@@ -42,85 +42,41 @@ namespace Summoners_War_Statistics
 
         private void View_Loaded()
         {
-            foreach (var control in view.SummaryView.Cntrls)
+            List<List<Control>> controlList = new List<List<Control>>()
             {
-                if (control.Name.Contains("ListView"))
-                {
-                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("SummonerName"))
-                {
-                    control.Font = new Font(view.FF, 32, FontStyle.Regular);
-                    continue;
-                }
-
-                if (control.Name.Contains("Country") || control.Name.Contains("Language") || control.Name.Contains("Level"))
-                {
-                    control.Font = new Font(view.FF, 20, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(view.FF, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in view.MonstersView.Cntrls)
+                view.SummaryView.Cntrls,
+                view.MonstersView.Cntrls,
+                view.RunesView.Cntrls,
+                view.DimHoleView.Cntrls,
+                view.OtherView.Cntrls
+            };
+            foreach(var controls in controlList)
             {
-                if (control.Name.Contains("Stats") || control.Name == "labelMonsters")
+                foreach(var control in controls)
                 {
-                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
-                    continue;
+                    if (control.Name.Contains("SummonerName"))
+                    {
+                        control.Font = new Font(view.FF, 32, FontStyle.Regular);
+                        continue;
+                    }
+                    if (control.Name.Contains("ListView") || control.Name.Contains("TextBox"))
+                    {
+                        control.Font = new Font(view.FF, 12, FontStyle.Regular);
+                        continue;
+                    }
+                    if (control.Name.Contains("Level"))
+                    {
+                        control.Font = new Font(view.FF, 20, FontStyle.Regular);
+                        continue;
+                    }
+                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other"))
+                    {
+                        control.Font = new Font(view.FF, 24, FontStyle.Regular);
+                        continue;
+                    }
+                    
+                    control.Font = new Font(view.FF, 14, FontStyle.Regular);
                 }
-                if (control.Name.Contains("ListView"))
-                {
-                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(view.FF, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in view.RunesView.Cntrls)
-            {
-                if (control.Name.Contains("ListView"))
-                {
-                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name == "labelRunes")
-                {
-                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(view.FF, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in view.DimHoleView.Cntrls)
-            {
-                if (control.Name.Contains("ListView") || control.Name.Contains("TextBox"))
-                {
-                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("DimHole"))
-                {
-                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(view.FF, 14, FontStyle.Regular);
-            }
-
-            foreach (var control in view.OtherView.Cntrls)
-            {
-                if (control.Name.Contains("ListView"))
-                {
-                    control.Font = new Font(view.FF, 12, FontStyle.Regular);
-                    continue;
-                }
-                if (control.Name.Contains("Other"))
-                {
-                    control.Font = new Font(view.FF, 24, FontStyle.Regular);
-                    continue;
-                }
-                control.Font = new Font(view.FF, 14, FontStyle.Regular);
             }
         }
 
@@ -132,7 +88,7 @@ namespace Summoners_War_Statistics
             view.HideViews();
 
             var buttonClickedName = buttonClicked.Name.Remove(0, 10);
-            Logger.log.Info($"Changing tab to {buttonClickedName}");
+            Logger.log.Info($"Changing tab to [{buttonClickedName}]");
             switch (buttonClickedName.ToLower())
             {
                 case "summary":
@@ -181,11 +137,11 @@ namespace Summoners_War_Statistics
                 if (view.OpenFile.FileName.Contains(".json"))
                 {
                     Logger.log.Info($"Reading file {view.OpenFile.FileName}");
-                    var json = JsonSwex.FromJson(File.ReadAllText($"{view.OpenFile.FileName}"));
-
-                    Logger.log.Info($"Initializing...");
                     try
                     {
+                        var json = JsonSwex.FromJson(File.ReadAllText($"{view.OpenFile.FileName}"));
+                        Logger.log.Info($"Initializing...");
+                    
                         Logger.log.Info($"Summary tab");
                         view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks, json.RaidDeck);
                         Logger.log.Info("[Summary] DONE");
@@ -210,17 +166,17 @@ namespace Summoners_War_Statistics
                         view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
                         Logger.log.Info("[Other] DONE");
                     }
+                    catch (FormatException e)
+                    {
+                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
+                    }
                     catch (NullReferenceException e)
                     {
-                        Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
-                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
-                        Logger.log.Error(e.StackTrace);
+                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
                     }
                     catch (InvalidJSONException e)
                     {
-                        Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
-                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error);
-                        Logger.log.Error(e.StackTrace);
+                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
                     }
                     finally
                     {

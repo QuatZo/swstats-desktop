@@ -68,11 +68,11 @@ namespace Summoners_War_Statistics
             //labelJsonModified                 - 17
             //labelLevel                        - 18
             //labelMana                         - 19
-            //labelMonsters                     - 20
-            //labelMonstersLocked               - 21
+            //labelMons                         - 20
+            //labelMonsLocked                   - 21
             //labelRTAMedals                    - 22
-            //labelRunes                        - 23
-            //labelRunesLocked                  - 24
+            //labelRnes                         - 23
+            //labelRnesLocked                   - 24
             //labelShapeshiftingStones          - 25
             //labelSocialPoints                 - 26
             //labelSummonerName                 - 27        
@@ -158,6 +158,18 @@ namespace Summoners_War_Statistics
             view.Cntrls[7].Location = new Point(view.Cntrls[5].Location.X + view.Cntrls[5].Width, heightContentFourthLevel);
             view.Cntrls[6].Location = new Point(view.Cntrls[7].Location.X + view.Cntrls[7].Width, heightContentFourthLevel);
 
+            view.Cntrls[38].Location = new Point(view.Cntrls[38].Location.X, heightContentFirstLevel);
+            view.Cntrls[20].Location = new Point(view.Cntrls[38].Location.X + pictureBoxWidth, heightContentFirstLevel);
+
+            view.Cntrls[39].Location = new Point(view.Cntrls[39].Location.X, heightContentSecondLevel);
+            view.Cntrls[21].Location = new Point(view.Cntrls[39].Location.X + pictureBoxWidth, heightContentSecondLevel);
+
+            view.Cntrls[41].Location = new Point(view.Cntrls[41].Location.X, heightContentThirdLevel);
+            view.Cntrls[23].Location = new Point(view.Cntrls[41].Location.X + pictureBoxWidth, heightContentThirdLevel);
+
+            view.Cntrls[42].Location = new Point(view.Cntrls[42].Location.X, heightContentFourthLevel);
+            view.Cntrls[24].Location = new Point(view.Cntrls[42].Location.X + pictureBoxWidth, heightContentFourthLevel);
+
             view.SummaryDecksListView.BeginUpdate();
             int columnWidth = view.SummaryDecksListView.Size.Width / view.SummaryDecksListView.Columns.Count;
             foreach (ColumnHeader column in view.SummaryDecksListView.Columns)
@@ -167,7 +179,8 @@ namespace Summoners_War_Statistics
             view.SummaryDecksListView.EndUpdate();
         }
 
-        private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck)
+        private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, 
+            DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck)
         {
             view.SummonerRunes = 0;
             view.SummonerRunesLocked = 0;

@@ -39,17 +39,18 @@ namespace Summoners_War_Statistics
             panelGuild,
             panelGuildText
         };
+
         public ObjectListView SummonerFriendsList
         {
             get => objectListViewFriends;
             set => objectListViewFriends = value;
         }
-
         public ObjectListView GuildMembersList
         {
             get => objectListViewGuild;
             set => objectListViewGuild = value;
         }
+
         public string GuildName
         {
             get => labelGuildName.Text;
@@ -104,15 +105,18 @@ namespace Summoners_War_Statistics
         {
             InitOther?.Invoke(friendsList, guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList, guildwarRanking);
         }
+
         public void Front()
         {
             BringToFront();
         }
-        #endregion
 
         private void Other_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
         }
+        #endregion
+
+
     }
 }

@@ -51,10 +51,10 @@
             this.labelArenaWingsMax = new System.Windows.Forms.Label();
             this.labelSocialPoints = new System.Windows.Forms.Label();
             this.labelJsonModified = new System.Windows.Forms.Label();
-            this.labelMonsters = new System.Windows.Forms.Label();
-            this.labelMonstersLocked = new System.Windows.Forms.Label();
-            this.labelRunes = new System.Windows.Forms.Label();
-            this.labelRunesLocked = new System.Windows.Forms.Label();
+            this.labelMons = new System.Windows.Forms.Label();
+            this.labelMonsLocked = new System.Windows.Forms.Label();
+            this.labelRnes = new System.Windows.Forms.Label();
+            this.labelRnesLocked = new System.Windows.Forms.Label();
             this.labelJsonCreatedText = new System.Windows.Forms.Label();
             this.labelAncientCoins = new System.Windows.Forms.Label();
             this.pictureBoxCountry = new System.Windows.Forms.PictureBox();
@@ -86,6 +86,7 @@
             this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn8 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.labelSummaryDecks = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
@@ -93,7 +94,6 @@
             this.panelContentRight = new System.Windows.Forms.Panel();
             this.panelContentLeft = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).BeginInit();
@@ -386,53 +386,53 @@
             this.labelJsonModified.Text = "Date of JSON file modification";
             this.toolTip1.SetToolTip(this.labelJsonModified, "Date of JSON file modification");
             // 
-            // labelMonsters
+            // labelMons
             // 
-            this.labelMonsters.AutoSize = true;
-            this.labelMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelMonsters.Location = new System.Drawing.Point(36, 0);
-            this.labelMonsters.Name = "labelMonsters";
-            this.labelMonsters.Size = new System.Drawing.Size(17, 22);
-            this.labelMonsters.TabIndex = 47;
-            this.labelMonsters.Text = "0";
-            this.labelMonsters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.labelMonsters, "Amount of monsters");
+            this.labelMons.AutoSize = true;
+            this.labelMons.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMons.Location = new System.Drawing.Point(36, 0);
+            this.labelMons.Name = "labelMons";
+            this.labelMons.Size = new System.Drawing.Size(17, 22);
+            this.labelMons.TabIndex = 47;
+            this.labelMons.Text = "0";
+            this.labelMons.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMons, "Amount of monsters");
             // 
-            // labelMonstersLocked
+            // labelMonsLocked
             // 
-            this.labelMonstersLocked.AutoSize = true;
-            this.labelMonstersLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelMonstersLocked.Location = new System.Drawing.Point(36, 30);
-            this.labelMonstersLocked.Name = "labelMonstersLocked";
-            this.labelMonstersLocked.Size = new System.Drawing.Size(17, 22);
-            this.labelMonstersLocked.TabIndex = 48;
-            this.labelMonstersLocked.Text = "0";
-            this.labelMonstersLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.labelMonstersLocked, "Amount of locked monsters");
+            this.labelMonsLocked.AutoSize = true;
+            this.labelMonsLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMonsLocked.Location = new System.Drawing.Point(36, 30);
+            this.labelMonsLocked.Name = "labelMonsLocked";
+            this.labelMonsLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelMonsLocked.TabIndex = 48;
+            this.labelMonsLocked.Text = "0";
+            this.labelMonsLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelMonsLocked, "Amount of locked monsters");
             // 
-            // labelRunes
+            // labelRnes
             // 
-            this.labelRunes.AutoSize = true;
-            this.labelRunes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelRunes.Location = new System.Drawing.Point(36, 60);
-            this.labelRunes.Name = "labelRunes";
-            this.labelRunes.Size = new System.Drawing.Size(17, 22);
-            this.labelRunes.TabIndex = 49;
-            this.labelRunes.Text = "0";
-            this.labelRunes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.labelRunes, "Amount of runes");
+            this.labelRnes.AutoSize = true;
+            this.labelRnes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRnes.Location = new System.Drawing.Point(36, 60);
+            this.labelRnes.Name = "labelRnes";
+            this.labelRnes.Size = new System.Drawing.Size(17, 22);
+            this.labelRnes.TabIndex = 49;
+            this.labelRnes.Text = "0";
+            this.labelRnes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRnes, "Amount of runes");
             // 
-            // labelRunesLocked
+            // labelRnesLocked
             // 
-            this.labelRunesLocked.AutoSize = true;
-            this.labelRunesLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelRunesLocked.Location = new System.Drawing.Point(36, 92);
-            this.labelRunesLocked.Name = "labelRunesLocked";
-            this.labelRunesLocked.Size = new System.Drawing.Size(17, 22);
-            this.labelRunesLocked.TabIndex = 50;
-            this.labelRunesLocked.Text = "0";
-            this.labelRunesLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.labelRunesLocked, "Amount of locked (equipped on monsters) runes");
+            this.labelRnesLocked.AutoSize = true;
+            this.labelRnesLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRnesLocked.Location = new System.Drawing.Point(36, 92);
+            this.labelRnesLocked.Name = "labelRnesLocked";
+            this.labelRnesLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelRnesLocked.TabIndex = 50;
+            this.labelRnesLocked.Text = "0";
+            this.labelRnesLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelRnesLocked, "Amount of locked (equipped on monsters) runes");
             // 
             // labelJsonCreatedText
             // 
@@ -750,6 +750,12 @@
             this.olvColumn9.Text = "Monster 8th";
             this.olvColumn9.Width = 76;
             // 
+            // olvColumn10
+            // 
+            this.olvColumn10.AspectName = "Leader";
+            this.olvColumn10.CellPadding = null;
+            this.olvColumn10.Text = "Leader";
+            // 
             // labelSummaryDecks
             // 
             this.labelSummaryDecks.AutoSize = true;
@@ -818,14 +824,14 @@
             // 
             // panelContentRight
             // 
-            this.panelContentRight.Controls.Add(this.labelRunes);
+            this.panelContentRight.Controls.Add(this.labelRnes);
             this.panelContentRight.Controls.Add(this.pictureBoxMonsters);
-            this.panelContentRight.Controls.Add(this.labelRunesLocked);
+            this.panelContentRight.Controls.Add(this.labelRnesLocked);
             this.panelContentRight.Controls.Add(this.pictureBoxMonstersLocked);
             this.panelContentRight.Controls.Add(this.pictureBoxRunes);
             this.panelContentRight.Controls.Add(this.pictureBoxRunesLocked);
-            this.panelContentRight.Controls.Add(this.labelMonstersLocked);
-            this.panelContentRight.Controls.Add(this.labelMonsters);
+            this.panelContentRight.Controls.Add(this.labelMonsLocked);
+            this.panelContentRight.Controls.Add(this.labelMons);
             this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContentRight.Location = new System.Drawing.Point(685, 0);
             this.panelContentRight.Name = "panelContentRight";
@@ -854,12 +860,6 @@
             this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
-            // 
-            // olvColumn10
-            // 
-            this.olvColumn10.AspectName = "Leader";
-            this.olvColumn10.CellPadding = null;
-            this.olvColumn10.Text = "Leader";
             // 
             // Summary
             // 
@@ -949,10 +949,10 @@
         private System.Windows.Forms.PictureBox pictureBoxSocialPoints;
         private System.Windows.Forms.Label labelSocialPoints;
         private System.Windows.Forms.Label labelJsonModified;
-        private System.Windows.Forms.Label labelMonsters;
-        private System.Windows.Forms.Label labelMonstersLocked;
-        private System.Windows.Forms.Label labelRunes;
-        private System.Windows.Forms.Label labelRunesLocked;
+        private System.Windows.Forms.Label labelMons;
+        private System.Windows.Forms.Label labelMonsLocked;
+        private System.Windows.Forms.Label labelRnes;
+        private System.Windows.Forms.Label labelRnesLocked;
         private System.Windows.Forms.Label labelJsonCreatedText;
         private System.Windows.Forms.PictureBox pictureBoxAncientCoins;
         private System.Windows.Forms.Label labelAncientCoins;
