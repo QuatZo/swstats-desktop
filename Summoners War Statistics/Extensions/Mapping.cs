@@ -918,7 +918,6 @@ namespace Summoners_War_Statistics
             monsterNames.Add(1000215, "Homunculus - Support (Dark)");
             #endregion
 
-            // Think about doing fuseable and HoH monsters lists, it'll be easier to maintain in the future
             #region Monster Base Class
             monsterBaseClass.Add(10111, 3);
             monsterBaseClass.Add(10112, 3);
@@ -1010,7 +1009,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(11212, 4);
             monsterBaseClass.Add(11213, 4);
             monsterBaseClass.Add(11214, 4);
-            monsterBaseClass.Add(11215, 14);
+            monsterBaseClass.Add(11215, 4);
 
             monsterBaseClass.Add(11311, 3);
             monsterBaseClass.Add(11312, 3);
@@ -1033,8 +1032,8 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(11611, 4);
             monsterBaseClass.Add(11612, 4);
             monsterBaseClass.Add(11613, 4);
-            monsterBaseClass.Add(11614, 14);
-            monsterBaseClass.Add(11615, 14);
+            monsterBaseClass.Add(11614, 4);
+            monsterBaseClass.Add(11615, 4);
 
             monsterBaseClass.Add(11711, 3);
             monsterBaseClass.Add(11712, 3);
@@ -1045,7 +1044,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(11811, 4);
             monsterBaseClass.Add(11812, 4);
             monsterBaseClass.Add(11813, 4);
-            monsterBaseClass.Add(11814, 14);
+            monsterBaseClass.Add(11814, 4);
             monsterBaseClass.Add(11815, 4);
 
             monsterBaseClass.Add(11911, 4);
@@ -1066,7 +1065,6 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(12114, 3);
             monsterBaseClass.Add(12115, 3);
 
-            monsterBaseClass.Add(128, 1);
             monsterBaseClass.Add(12811, 1);
             monsterBaseClass.Add(12812, 1);
             monsterBaseClass.Add(12813, 1);
@@ -1082,19 +1080,19 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(13311, 4);
             monsterBaseClass.Add(13312, 4);
             monsterBaseClass.Add(13313, 4);
-            monsterBaseClass.Add(13314, 14);
-            monsterBaseClass.Add(13315, 14);
+            monsterBaseClass.Add(13314, 4);
+            monsterBaseClass.Add(13315, 4);
 
             monsterBaseClass.Add(13411, 4);
             monsterBaseClass.Add(13412, 4);
             monsterBaseClass.Add(13413, 4);
-            monsterBaseClass.Add(13414, 14);
+            monsterBaseClass.Add(13414, 4);
             monsterBaseClass.Add(13415, 4);
 
             monsterBaseClass.Add(13511, 4);
             monsterBaseClass.Add(13512, 4);
             monsterBaseClass.Add(13513, 4);
-            monsterBaseClass.Add(13514, 14);
+            monsterBaseClass.Add(13514, 4);
             monsterBaseClass.Add(13515, 5);
 
 
@@ -1106,14 +1104,14 @@ namespace Summoners_War_Statistics
 
             monsterBaseClass.Add(13811, 5);
             monsterBaseClass.Add(13812, 5);
-            monsterBaseClass.Add(13813, 15);
+            monsterBaseClass.Add(13813, 5);
             monsterBaseClass.Add(13814, 5);
             monsterBaseClass.Add(13815, 5);
 
             monsterBaseClass.Add(13911, 4);
             monsterBaseClass.Add(13912, 4);
             monsterBaseClass.Add(13913, 4);
-            monsterBaseClass.Add(13914, 14);
+            monsterBaseClass.Add(13914, 4);
             monsterBaseClass.Add(13915, 4);
 
             monsterBaseClass.Add(14011, 3);
@@ -1125,8 +1123,8 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(14111, 4);
             monsterBaseClass.Add(14112, 4);
             monsterBaseClass.Add(14113, 4);
-            monsterBaseClass.Add(14114, 14);
-            monsterBaseClass.Add(14115, 14);
+            monsterBaseClass.Add(14114, 4);
+            monsterBaseClass.Add(14115, 4);
 
             monsterBaseClass.Add(14411, 5);
             monsterBaseClass.Add(14412, 5);
@@ -1134,7 +1132,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(14414, 5);
             monsterBaseClass.Add(14415, 5);
 
-            monsterBaseClass.Add(14511, 15);
+            monsterBaseClass.Add(14511, 5);
             monsterBaseClass.Add(14512, 5);
             monsterBaseClass.Add(14513, 5);
             monsterBaseClass.Add(14514, 5);
@@ -1192,7 +1190,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(15512, 4);
             monsterBaseClass.Add(15513, 4);
             monsterBaseClass.Add(15514, 4);
-            monsterBaseClass.Add(15515, 14);
+            monsterBaseClass.Add(15515, 4);
 
             monsterBaseClass.Add(15611, 3);
             monsterBaseClass.Add(15612, 3);
@@ -1233,8 +1231,8 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(16211, 4);
             monsterBaseClass.Add(16212, 4);
             monsterBaseClass.Add(16213, 4);
-            monsterBaseClass.Add(16214, 14);
-            monsterBaseClass.Add(16215, 14);
+            monsterBaseClass.Add(16214, 4);
+            monsterBaseClass.Add(16215, 4);
 
             monsterBaseClass.Add(16311, 4);
             monsterBaseClass.Add(16312, 4);
@@ -1287,7 +1285,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(17311, 4);
             monsterBaseClass.Add(17312, 4);
             monsterBaseClass.Add(17313, 4);
-            monsterBaseClass.Add(17314, 14);
+            monsterBaseClass.Add(17314, 4);
             monsterBaseClass.Add(17315, 4);
 
             monsterBaseClass.Add(17411, 5);
@@ -1323,14 +1321,14 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(18011, 4);
             monsterBaseClass.Add(18012, 4);
             monsterBaseClass.Add(18013, 4);
-            monsterBaseClass.Add(18014, 14);
-            monsterBaseClass.Add(18015, 14);
+            monsterBaseClass.Add(18014, 4);
+            monsterBaseClass.Add(18015, 4);
 
             monsterBaseClass.Add(18111, 4);
             monsterBaseClass.Add(18112, 4);
             monsterBaseClass.Add(18113, 4);
             monsterBaseClass.Add(18114, 4);
-            monsterBaseClass.Add(18115, 14);
+            monsterBaseClass.Add(18115, 4);
 
             monsterBaseClass.Add(18211, 1);
             monsterBaseClass.Add(18212, 1);
@@ -1392,11 +1390,11 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(19114, 3);
             monsterBaseClass.Add(19115, 0);
 
-            monsterBaseClass.Add(19211, 15);
-            monsterBaseClass.Add(19212, 15);
-            monsterBaseClass.Add(19213, 15);
-            monsterBaseClass.Add(19214, 15);
-            monsterBaseClass.Add(19215, 15);
+            monsterBaseClass.Add(19211, 5);
+            monsterBaseClass.Add(19212, 5);
+            monsterBaseClass.Add(19213, 5);
+            monsterBaseClass.Add(19214, 5);
+            monsterBaseClass.Add(19215, 5);
 
             monsterBaseClass.Add(19311, 3);
             monsterBaseClass.Add(19312, 3);
@@ -1407,7 +1405,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(19411, 4);
             monsterBaseClass.Add(19412, 4);
             monsterBaseClass.Add(19413, 4);
-            monsterBaseClass.Add(19414, 14);
+            monsterBaseClass.Add(19414, 4);
             monsterBaseClass.Add(19415, 4);
 
             monsterBaseClass.Add(19511, 3);
@@ -1432,19 +1430,19 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(19812, 4);
             monsterBaseClass.Add(19813, 4);
             monsterBaseClass.Add(19814, 4);
-            monsterBaseClass.Add(19815, 14);
+            monsterBaseClass.Add(19815, 4);
 
             monsterBaseClass.Add(19911, 4);
             monsterBaseClass.Add(19912, 4);
             monsterBaseClass.Add(19913, 4);
-            monsterBaseClass.Add(19914, 14);
-            monsterBaseClass.Add(19915, 14);
+            monsterBaseClass.Add(19914, 4);
+            monsterBaseClass.Add(19915, 4);
 
             monsterBaseClass.Add(20011, 4);
             monsterBaseClass.Add(20012, 4);
             monsterBaseClass.Add(20013, 4);
             monsterBaseClass.Add(20014, 4);
-            monsterBaseClass.Add(20015, 14);
+            monsterBaseClass.Add(20015, 4);
 
             monsterBaseClass.Add(20111, 4);
             monsterBaseClass.Add(20112, 4);
@@ -1486,7 +1484,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(20712, 4);
             monsterBaseClass.Add(20713, 4);
             monsterBaseClass.Add(20714, 4);
-            monsterBaseClass.Add(20715, 14);
+            monsterBaseClass.Add(20715, 4);
 
             monsterBaseClass.Add(20811, 3);
             monsterBaseClass.Add(20812, 3);
@@ -1513,7 +1511,7 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(21115, 5);
 
             monsterBaseClass.Add(21211, 5);
-            monsterBaseClass.Add(21212, 15);
+            monsterBaseClass.Add(21212, 5);
             monsterBaseClass.Add(21213, 5);
             monsterBaseClass.Add(21214, 5);
             monsterBaseClass.Add(21215, 5);
@@ -1544,13 +1542,13 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(21811, 5);
             monsterBaseClass.Add(21812, 5);
             monsterBaseClass.Add(21813, 5);
-            monsterBaseClass.Add(21814, 15);
+            monsterBaseClass.Add(21814, 5);
             monsterBaseClass.Add(21815, 5);
 
             monsterBaseClass.Add(21911, 4);
             monsterBaseClass.Add(21912, 4);
             monsterBaseClass.Add(21913, 4);
-            monsterBaseClass.Add(21914, 14);
+            monsterBaseClass.Add(21914, 4);
             monsterBaseClass.Add(21915, 4);
 
             monsterBaseClass.Add(22011, 4);
@@ -1605,10 +1603,103 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(22914, 4);
             monsterBaseClass.Add(22915, 5);
 
-            monsterBaseClass.Add(23015, 15);
+            monsterBaseClass.Add(23015, 5);
 
             monsterBaseClass.Add(15105, 1);
             monsterBaseClass.Add(14314, 0);
+            #endregion
+
+            #region Monster HoH
+            monsterHoH.Add(11613);
+            monsterHoH.Add(15511);
+            monsterHoH.Add(11212);
+            monsterHoH.Add(13314);
+            monsterHoH.Add(14115);
+            monsterHoH.Add(11913);
+            monsterHoH.Add(14711);
+            monsterHoH.Add(17312);
+            monsterHoH.Add(11814);
+            monsterHoH.Add(16215);
+            monsterHoH.Add(13514);
+            monsterHoH.Add(18113);
+            monsterHoH.Add(16911);
+            monsterHoH.Add(18012);
+            monsterHoH.Add(19414);
+            monsterHoH.Add(19815);
+            monsterHoH.Add(19613);
+            monsterHoH.Add(20011);
+            monsterHoH.Add(18812);
+            monsterHoH.Add(16214);
+            monsterHoH.Add(11615);
+            monsterHoH.Add(20113);
+            monsterHoH.Add(16311);
+            monsterHoH.Add(19912);
+            monsterHoH.Add(13914);
+            monsterHoH.Add(15515);
+            monsterHoH.Add(20613);
+            monsterHoH.Add(20411);
+            monsterHoH.Add(20712);
+            monsterHoH.Add(18014);
+            monsterHoH.Add(18115);
+            monsterHoH.Add(19413);
+            monsterHoH.Add(13411);
+            monsterHoH.Add(16912);
+            monsterHoH.Add(11614);
+            monsterHoH.Add(20015);
+            monsterHoH.Add(11813);
+            monsterHoH.Add(18811);
+            monsterHoH.Add(13912);
+            monsterHoH.Add(19914);
+            monsterHoH.Add(20715);
+            monsterHoH.Add(19813);
+            monsterHoH.Add(19611);
+            monsterHoH.Add(16212);
+            monsterHoH.Add(14114);
+            monsterHoH.Add(11215);
+            monsterHoH.Add(13513);
+            monsterHoH.Add(18311);
+            monsterHoH.Add(16312);
+            monsterHoH.Add(17314);
+            monsterHoH.Add(18015);
+            monsterHoH.Add(21313);
+            monsterHoH.Add(20711);
+            monsterHoH.Add(20612);
+            monsterHoH.Add(21914);
+            monsterHoH.Add(19915);
+            monsterHoH.Add(14113);
+            monsterHoH.Add(16211);
+            monsterHoH.Add(20012);
+            monsterHoH.Add(13414);
+            monsterHoH.Add(13315);
+            monsterHoH.Add(22113);
+            #endregion
+
+            #region Monster Fusion
+            monsterFusion.Add(22612);
+            monsterFusion.Add(21814);
+            monsterFusion.Add(14511);
+            monsterFusion.Add(13813);
+            monsterFusion.Add(19215);
+            monsterFusion.Add(19214);
+            monsterFusion.Add(19213);
+            monsterFusion.Add(19212);
+            monsterFusion.Add(19211);
+            monsterFusion.Add(23005);
+            monsterFusion.Add(23015);
+            monsterFusion.Add(21212);
+            monsterFusion.Add(11213);
+            monsterFusion.Add(13412);
+            monsterFusion.Add(13511);
+            monsterFusion.Add(11812);
+            monsterFusion.Add(11611);
+            monsterFusion.Add(14713);
+            monsterFusion.Add(13312);
+            monsterFusion.Add(17313);
+            monsterFusion.Add(20611);
+            monsterFusion.Add(21412);
+            monsterFusion.Add(16911);
+            monsterFusion.Add(14712);
+            monsterFusion.Add(19813);
             #endregion
 
             #region Rune Effect Types
@@ -1878,7 +1969,9 @@ namespace Summoners_War_Statistics
         #region Fields
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
-        private Dictionary<int, int> monsterBaseClass = new Dictionary<int, int>(); // base class + 10 for L&D HoH monsters, fuseable L&D 4*+ monsters and fuseable elemental 5* monsters
+        private Dictionary<int, int> monsterBaseClass = new Dictionary<int, int>();
+        private List<int> monsterHoH = new List<int>();
+        private List<int> monsterFusion = new List<int>();
 
         private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
         private Dictionary<int, (string Name, byte Amount)> runeSets = new Dictionary<int, (string Name, byte Amount)>();
@@ -1910,7 +2003,6 @@ namespace Summoners_War_Statistics
         #region Properties
         public string Credits { get; set; } = "Xzandro";
         #endregion
-
 
         #region Methods
         public string GetMonsterAttribute(int id)
@@ -1964,6 +2056,18 @@ namespace Summoners_War_Statistics
             }
 
             return -1;
+        }
+
+        public bool GetMonsterHoHStatus(int id)
+        {
+            if (monsterHoH.Contains(id)) { return true; }
+            return false;
+        }
+
+        public bool GetMonsterFusionStatus(int id)
+        {
+            if (monsterFusion.Contains(id)) { return true; }
+            return false;
         }
 
         public string GetRuneEffectType(int id)

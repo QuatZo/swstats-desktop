@@ -137,6 +137,7 @@ namespace Summoners_War_Statistics
                 if (view.OpenFile.FileName.Contains(".json"))
                 {
                     Logger.log.Info($"Reading file {view.OpenFile.FileName}");
+                    string jsonErrorMessage = "You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.";
                     try
                     {
                         var json = JsonSwex.FromJson(File.ReadAllText($"{view.OpenFile.FileName}"));
@@ -168,15 +169,15 @@ namespace Summoners_War_Statistics
                     }
                     catch (FormatException e)
                     {
-                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
+                        view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (NullReferenceException e)
                     {
-                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
+                        view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (InvalidJSONException e)
                     {
-                        view.ShowMessage("You picked incomplete JSON file. You won't see all data, unless you redownload your JSON file using SWEX.", MessageBoxIcon.Error, e);
+                        view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     finally
                     {
@@ -185,7 +186,7 @@ namespace Summoners_War_Statistics
                 }
                 else
                 {
-                    Logger.log.Warn($"User didn't choose any file.");
+                    Logger.log.Warn($"User didn't choose JSON file.");
                     view.ShowMessage("Why didn't you choose the JSON file? Nothing's gonna happen, because of you.", MessageBoxIcon.Information);
                 }
             }

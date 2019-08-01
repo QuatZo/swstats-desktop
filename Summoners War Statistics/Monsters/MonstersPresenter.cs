@@ -203,26 +203,28 @@ namespace Summoners_War_Statistics
 
             int daysSinceNat5 = 18250; // ~50 years
             int daysSinceLDLightning = 18250; // ~50 years
+            DateTime now = DateTime.UtcNow;
 
             foreach (var monster in view.MonstersList)
             {
                 int monsterBaseClass = Mapping.Instance.GetMonsterBaseClass((int)monster.UnitMasterId);
-                DateTime now = DateTime.UtcNow;
+                bool isHoH = Mapping.Instance.GetMonsterHoHStatus((int)monster.UnitMasterId) || Mapping.Instance.GetMonsterHoHStatus((int)monster.UnitMasterId + 10);
+                bool isFusion = Mapping.Instance.GetMonsterFusionStatus((int)monster.UnitMasterId) || Mapping.Instance.GetMonsterFusionStatus((int)monster.UnitMasterId + 10);
+                string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
                 
-
-                if (monsterBaseClass == 4 || monsterBaseClass == 5)
+                if (monsterBaseClass >= 4 && !isHoH && !isFusion)
                 {
                     int daysSinceSummon = (now - monster.CreateTime.Value.UtcDateTime).Days;
                     if (monster.Attribute == 4 || monster.Attribute == 5) {
                         view.MonstersLDNat4PlusAmount++;
                         if(daysSinceSummon < daysSinceLDLightning) { daysSinceLDLightning = daysSinceSummon; }
-                        Logger.log.Info($"[Monsters] Monster (Master ID: {monster.UnitMasterId}) added to L&D nat4+ monsters");
+                        Logger.log.Info($"[Monsters] Monster {monsterName} (Master ID: {monster.UnitMasterId}) added to L&D nat4+ monsters");
                     }
                     else if(monsterBaseClass == 5)
                     {
                         view.MonstersNat5Amount++;
                         if (daysSinceSummon < daysSinceNat5) { daysSinceNat5 = daysSinceSummon; }
-                        Logger.log.Info($"[Monsters] Monster (Master ID: {monster.UnitMasterId}) added to nat5 monsters");
+                        Logger.log.Info($"[Monsters] Monster {monsterName} (Master ID: {monster.UnitMasterId}) added to elemental nat5 monsters");
                     }
                 }
                 string monsterAttribute = Mapping.Instance.GetMonsterAttribute((int)monster.Attribute);
@@ -240,31 +242,22 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Monsters] Days since last nat5 done");
 
             if (monsterAttributes.Keys.Contains("Water")) { view.MonsterAttributeWater = monsterAttributes["Water"]; }
-            Logger.log.Info($"[Monsters] Water attribute monsters done");
             if (monsterAttributes.Keys.Contains("Fire")) { view.MonsterAttributeFire = monsterAttributes["Fire"]; }
-            Logger.log.Info($"[Monsters] Fire attribute monsters done");
             if (monsterAttributes.Keys.Contains("Wind")) { view.MonsterAttributeWind = monsterAttributes["Wind"]; }
-            Logger.log.Info($"[Monsters] Wind attribute monsters done");
             if (monsterAttributes.Keys.Contains("Light")) { view.MonsterAttributeLight = monsterAttributes["Light"]; }
-            Logger.log.Info($"[Monsters] Light attribute monsters done");
             if (monsterAttributes.Keys.Contains("Dark")) { view.MonsterAttributeDark = monsterAttributes["Dark"]; }
-            Logger.log.Info($"[Monsters] Dark attribute monsters done");
+            Logger.log.Info($"[Monsters] Attributes done");
 
             if (monsterStars.Keys.Contains((byte)6)) { view.MonsterStarsSix = monsterStars[6]; }
-            Logger.log.Info($"[Monsters] 6* monsters done");
             if (monsterStars.Keys.Contains((byte)5)) { view.MonsterStarsFive = monsterStars[5]; }
-            Logger.log.Info($"[Monsters] 5* monsters done");
             if (monsterStars.Keys.Contains((byte)4)) { view.MonsterStarsFour = monsterStars[4]; }
-            Logger.log.Info($"[Monsters] 4* monsters done");
             if (monsterStars.Keys.Contains((byte)3)) { view.MonsterStarsThree = monsterStars[3]; }
-            Logger.log.Info($"[Monsters] 3* monsters done");
             if (monsterStars.Keys.Contains((byte)2)) { view.MonsterStarsTwo = monsterStars[2]; }
-            Logger.log.Info($"[Monsters] 2* monsters done");
             if (monsterStars.Keys.Contains((byte)1)) { view.MonsterStarsOne = monsterStars[1]; }
-            Logger.log.Info($"[Monsters] 1* monsters done");
+            Logger.log.Info($"[Monsters] Stars done");
 
             view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
-            Logger.log.Info($"[Monsters] MonstersToLock list done");
+            Logger.log.Info($"[Monsters] Monsters To Lock list done");
         }
     }
 }

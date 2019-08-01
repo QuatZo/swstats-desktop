@@ -159,7 +159,7 @@ namespace Summoners_War_Statistics
 
             Size maskedTextBoxSize = new Size(view.Cntrls[22].Location.X - view.Cntrls[19].Location.X - 15, view.Cntrls[19].Size.Height);
 
-            foreach(var i in [16, 17, 19, 20, 22, 23, 25, 26, 28, 29])
+            foreach(var i in new int[16, 17, 19, 20, 22, 23, 25, 26, 28, 29])
             {
                 view.Cntrls[i].Size = maskedTextBoxSize;
             }

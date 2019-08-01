@@ -82,7 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlExtensions.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
@@ -134,9 +134,9 @@
     </Compile>
     <Compile Include="DimHole\IDimHoleView.cs" />
     <Compile Include="Exceptions\InvalidJSONException.cs" />
-    <Compile Include="ListViewItemComparer.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="Mapping.cs" />
+    <Compile Include="Extensions\ListViewItemComparer.cs" />
+    <Compile Include="Extensions\Logger.cs" />
+    <Compile Include="Extensions\Mapping.cs" />
     <Compile Include="Menu\IMenuView.cs" />
     <Compile Include="Monsters\MonstersToLockRow.cs" />
     <Compile Include="Monsters\MonstersPresenter.cs" />
