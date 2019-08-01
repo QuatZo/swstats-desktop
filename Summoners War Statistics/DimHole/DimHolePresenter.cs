@@ -123,54 +123,60 @@ namespace Summoners_War_Statistics
             //labelDimHoleFarmSuccess               - 34
             //panelFarm                             - 35
             //panelFarmRight                        - 36
-
-            view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
-
-            int heightFarmFirstLevel = 40;
-            int heightFarmSecondLevel = heightFarmFirstLevel + view.Cntrls[15].Size.Height + 5;
-            int heightFarmThirdLevel = heightFarmSecondLevel + view.Cntrls[15].Size.Height + 5;
-
-            int widthFarmSEcondLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 1 / 6;
-            int widthFarmThirdLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 2 / 6;
-            int widthFarmFourthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 3 / 6;
-            int widthFarmFifthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 4 / 6;
-            int widthFarmSixthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 5 / 6;
-
-            int mid = view.Cntrls[16].Size.Width / 2 - view.Cntrls[15].Size.Width / 2;
-            view.Cntrls[15].Location = new Point(widthFarmSEcondLevel + mid, heightFarmFirstLevel);
-            view.Cntrls[16].Location = new Point(widthFarmSEcondLevel, heightFarmSecondLevel);
-            view.Cntrls[17].Location = new Point(widthFarmSEcondLevel, heightFarmThirdLevel);
-
-            view.Cntrls[18].Location = new Point(widthFarmThirdLevel + mid, heightFarmFirstLevel);
-            view.Cntrls[19].Location = new Point(widthFarmThirdLevel, heightFarmSecondLevel);
-            view.Cntrls[20].Location = new Point(widthFarmThirdLevel, heightFarmThirdLevel);
-
-            view.Cntrls[21].Location = new Point(widthFarmFourthLevel + mid, heightFarmFirstLevel);
-            view.Cntrls[22].Location = new Point(widthFarmFourthLevel, heightFarmSecondLevel);
-            view.Cntrls[23].Location = new Point(widthFarmFourthLevel, heightFarmThirdLevel);
-
-            view.Cntrls[24].Location = new Point(widthFarmFifthLevel + mid, heightFarmFirstLevel);
-            view.Cntrls[25].Location = new Point(widthFarmFifthLevel, heightFarmSecondLevel);
-            view.Cntrls[26].Location = new Point(widthFarmFifthLevel, heightFarmThirdLevel);
-
-            view.Cntrls[27].Location = new Point(widthFarmSixthLevel + mid, heightFarmFirstLevel);
-            view.Cntrls[28].Location = new Point(widthFarmSixthLevel, heightFarmSecondLevel);
-            view.Cntrls[29].Location = new Point(widthFarmSixthLevel, heightFarmThirdLevel);
-
-            Size maskedTextBoxSize = new Size(view.Cntrls[22].Location.X - view.Cntrls[19].Location.X - 15, view.Cntrls[19].Size.Height);
-
-            foreach(var i in new int[16, 17, 19, 20, 22, 23, 25, 26, 28, 29])
+            try
             {
-                view.Cntrls[i].Size = maskedTextBoxSize;
-            }
+                view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
 
-            view.DimHoleMonstersListView.BeginUpdate();
-            int columnWidth = view.DimHoleMonstersListView.Size.Width / view.DimHoleMonstersListView.Columns.Count;
-            foreach(ColumnHeader column in view.DimHoleMonstersListView.Columns)
-            {
-                column.Width = columnWidth - 5;
+                int heightFarmFirstLevel = 40;
+                int heightFarmSecondLevel = heightFarmFirstLevel + view.Cntrls[15].Size.Height + 5;
+                int heightFarmThirdLevel = heightFarmSecondLevel + view.Cntrls[15].Size.Height + 5;
+
+                int widthFarmSEcondLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 1 / 6;
+                int widthFarmThirdLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 2 / 6;
+                int widthFarmFourthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 3 / 6;
+                int widthFarmFifthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 4 / 6;
+                int widthFarmSixthLevel = (view.SizeWindow.Width - view.Cntrls[36].Size.Width) * 5 / 6;
+
+                int mid = view.Cntrls[16].Size.Width / 2 - view.Cntrls[15].Size.Width / 2;
+                view.Cntrls[15].Location = new Point(widthFarmSEcondLevel + mid, heightFarmFirstLevel);
+                view.Cntrls[16].Location = new Point(widthFarmSEcondLevel, heightFarmSecondLevel);
+                view.Cntrls[17].Location = new Point(widthFarmSEcondLevel, heightFarmThirdLevel);
+
+                view.Cntrls[18].Location = new Point(widthFarmThirdLevel + mid, heightFarmFirstLevel);
+                view.Cntrls[19].Location = new Point(widthFarmThirdLevel, heightFarmSecondLevel);
+                view.Cntrls[20].Location = new Point(widthFarmThirdLevel, heightFarmThirdLevel);
+
+                view.Cntrls[21].Location = new Point(widthFarmFourthLevel + mid, heightFarmFirstLevel);
+                view.Cntrls[22].Location = new Point(widthFarmFourthLevel, heightFarmSecondLevel);
+                view.Cntrls[23].Location = new Point(widthFarmFourthLevel, heightFarmThirdLevel);
+
+                view.Cntrls[24].Location = new Point(widthFarmFifthLevel + mid, heightFarmFirstLevel);
+                view.Cntrls[25].Location = new Point(widthFarmFifthLevel, heightFarmSecondLevel);
+                view.Cntrls[26].Location = new Point(widthFarmFifthLevel, heightFarmThirdLevel);
+
+                view.Cntrls[27].Location = new Point(widthFarmSixthLevel + mid, heightFarmFirstLevel);
+                view.Cntrls[28].Location = new Point(widthFarmSixthLevel, heightFarmSecondLevel);
+                view.Cntrls[29].Location = new Point(widthFarmSixthLevel, heightFarmThirdLevel);
+
+                Size maskedTextBoxSize = new Size(view.Cntrls[22].Location.X - view.Cntrls[19].Location.X - 15, view.Cntrls[19].Size.Height);
+
+                foreach (var i in new int[16, 17, 19, 20, 22, 23, 25, 26, 28, 29])
+                {
+                    view.Cntrls[i].Size = maskedTextBoxSize;
+                }
+
+                view.DimHoleMonstersListView.BeginUpdate();
+                int columnWidth = view.DimHoleMonstersListView.Size.Width / view.DimHoleMonstersListView.Columns.Count;
+                foreach (ColumnHeader column in view.DimHoleMonstersListView.Columns)
+                {
+                    column.Width = columnWidth - 5;
+                }
+                view.DimHoleMonstersListView.EndUpdate();
             }
-            view.DimHoleMonstersListView.EndUpdate();
+            catch (OutOfMemoryException)
+            {
+                Logger.log.Error("[Dimension Hole] Out of memory exception!");
+            }
         }
 
         private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)

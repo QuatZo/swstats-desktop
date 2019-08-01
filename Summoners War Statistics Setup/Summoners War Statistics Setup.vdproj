@@ -1926,7 +1926,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.2.0"
+        "ProductVersion" = "8:0.3.0"
         "Manufacturer" = "8:QuatZo"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://reddit.com/u/quatzo"
