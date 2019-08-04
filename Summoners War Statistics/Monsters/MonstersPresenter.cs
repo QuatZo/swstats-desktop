@@ -258,6 +258,11 @@ namespace Summoners_War_Statistics
 
             view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
             Logger.log.Info($"[Monsters] Monsters To Lock list done");
+
+            foreach(var type in model.GetSummonersMonstersCollection(monsters))
+            {
+                Console.WriteLine($"{type.Key}: {type.Value}");
+            }
         }
     }
 }

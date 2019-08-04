@@ -2070,6 +2070,36 @@ namespace Summoners_War_Statistics
             return false;
         }
 
+        public Dictionary<string, int> GetMonstersCollection()
+        {
+            Dictionary<string, int> monstersCollection = new Dictionary<string, int>()
+            {
+                {"Water", 0 },
+                {"Fire", 0 },
+                {"Wind", 0 },
+                {"Light", 0 },
+                {"Dark", 0 },
+                {"Nat3", 0 },
+                {"Nat4", 0 },
+                {"Nat5", 0 },
+            };
+
+            foreach(var monster in monsterBaseClass)
+            {
+                if(monster.Value >= 3)
+                {
+                    string monsterAttribute = GetMonsterAttribute(monster.Key);
+                    if (monstersCollection.ContainsKey(monsterAttribute)) { monstersCollection[monsterAttribute]++; }
+
+                    if (monster.Value == 3) { monstersCollection["Nat3"]++; }
+                    else if (monster.Value == 4) { monstersCollection["Nat4"]++; }
+                    else if (monster.Value == 5) { monstersCollection["Nat5"]++; }
+                }
+            }
+
+            return monstersCollection;
+        }
+
         public string GetRuneEffectType(int id)
         {
             if (runeEffectTypes.ContainsKey(id))
