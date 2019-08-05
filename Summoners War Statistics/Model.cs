@@ -310,38 +310,11 @@ namespace Summoners_War_Statistics
             return decksRows;
         }
 
-        public Dictionary<string, string> GetSummonersMonstersCollection(List<Monster> monsters)
+        public Dictionary<(int Stars, string Attribute), int> GetSummonersMonstersCollection(List<Monster> monsters)
         {
-            Dictionary<string, int> monstersCollection = Mapping.Instance.GetMonstersCollection();
-            Dictionary<string, int> summonerMonstersCollection = new Dictionary<string, int>();
-            foreach(var monsterInCollection in monstersCollection)
-            {
-                summonerMonstersCollection.Add(monsterInCollection.Key, 0);
-            }
-            List<int> uniqueMonsters = new List<int>();
-            foreach (var monster in monsters)
-            {
-                int monsterID = (int)monster.UnitMasterId;
-                if (uniqueMonsters.Contains(monsterID)) { continue; }
 
-                int baseClass = Mapping.Instance.GetMonsterBaseClass(monsterID);
-                if(baseClass >= 3)
-                {
-                    uniqueMonsters.Add(monsterID);
-                    string attribute = Mapping.Instance.GetMonsterAttribute(monsterID);
-                    if (summonerMonstersCollection.ContainsKey(attribute)) { summonerMonstersCollection[attribute]++; }
-
-                    if (baseClass == 3) { summonerMonstersCollection["Nat3"]++; }
-                    if (baseClass == 4) { summonerMonstersCollection["Nat4"]++; }
-                    if (baseClass == 5) { summonerMonstersCollection["Nat5"]++; }
-                }
-            }
-            Dictionary<string, string> summonerMonstersCollectionReturn = new Dictionary<string, string>();
-            foreach (var monsterType in summonerMonstersCollection)
-            {
-                summonerMonstersCollectionReturn.Add(monsterType.Key, monsterType.Value + " / " + monstersCollection[monsterType.Key]);
-            }
-            return summonerMonstersCollectionReturn;
+            return Mapping.Instance.GetSummonerMonstersCollection(monsters);
+            
         }
     }
 }

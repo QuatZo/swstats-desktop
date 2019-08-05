@@ -1998,6 +1998,7 @@ namespace Summoners_War_Statistics
         private Dictionary<int, int> axpPerFloor = new Dictionary<int, int>();
 
         private Dictionary<int, string> decksPlace = new Dictionary<int, string>();
+        private Dictionary<(int Stars, string Attribute), int> monstersCollection = new Dictionary<(int Stars, string Attribute), int>();
         #endregion
 
         #region Properties
@@ -2070,36 +2071,6 @@ namespace Summoners_War_Statistics
             return false;
         }
 
-        public Dictionary<string, int> GetMonstersCollection()
-        {
-            Dictionary<string, int> monstersCollection = new Dictionary<string, int>()
-            {
-                {"Water", 0 },
-                {"Fire", 0 },
-                {"Wind", 0 },
-                {"Light", 0 },
-                {"Dark", 0 },
-                {"Nat3", 0 },
-                {"Nat4", 0 },
-                {"Nat5", 0 },
-            };
-
-            foreach(var monster in monsterBaseClass)
-            {
-                if(monster.Value >= 3)
-                {
-                    string monsterAttribute = GetMonsterAttribute(monster.Key);
-                    if (monstersCollection.ContainsKey(monsterAttribute)) { monstersCollection[monsterAttribute]++; }
-
-                    if (monster.Value == 3) { monstersCollection["Nat3"]++; }
-                    else if (monster.Value == 4) { monstersCollection["Nat4"]++; }
-                    else if (monster.Value == 5) { monstersCollection["Nat5"]++; }
-                }
-            }
-
-            return monstersCollection;
-        }
-
         public string GetRuneEffectType(int id)
         {
             if (runeEffectTypes.ContainsKey(id))
@@ -2107,6 +2078,48 @@ namespace Summoners_War_Statistics
                 return runeEffectTypes[id];
             }
             return "Unknown Rune Effect Type";
+        }
+
+        public Dictionary<(int Stars, string Attribute), int> GetMonstersCollection()
+        {
+            if(monstersCollection.Count > 0) { return monstersCollection; }
+
+            foreach(var monster in monsterBaseClass)
+            {
+                if(monster.Value < 3) { continue; }
+                string attribute = GetMonsterAttribute(monster.Key);
+                if (!monstersCollection.ContainsKey((monster.Value, attribute)))
+                {
+                    monstersCollection.Add((monster.Value, attribute), 1);
+                }
+                else { monstersCollection[(monster.Value, attribute)]++; }
+            }
+            return monstersCollection;
+        }   
+
+        public Dictionary<(int Stars, string Attribute), int> GetSummonerMonstersCollection(List<Monster> monsters)
+        {
+            Dictionary<(int Stars, string Attribute), int> monstersSummonerCollection = new Dictionary<(int Stars, string Attribute), int>();
+
+            List<int> monstersInCollection = new List<int>();
+            foreach (var monster in monsters)
+            {
+                int monsterId = (int)monster.UnitMasterId;
+                int baseClass = GetMonsterBaseClass(monsterId);
+                if (monstersInCollection.Contains(monsterId) || baseClass < 3) { continue; }
+                monstersInCollection.Add(monsterId);
+
+                string attribute = GetMonsterAttribute(monsterId);
+                if (!monstersSummonerCollection.ContainsKey((baseClass, attribute)))
+                {
+                    monstersSummonerCollection.Add( (baseClass, attribute), 1);
+                }
+                else
+                {
+                    monstersSummonerCollection[(baseClass, attribute)]++;
+                }
+            }
+            return monstersSummonerCollection;
         }
 
         public Dictionary<int, string> GetAllRuneEffectTypes()
