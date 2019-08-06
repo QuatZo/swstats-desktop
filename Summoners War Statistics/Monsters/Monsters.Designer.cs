@@ -70,6 +70,13 @@
             this.labelLDNat4sPlus = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelHeaderMid = new System.Windows.Forms.Panel();
+            this.checkedListBoxCollectionStars = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxCollectionAttribute = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCollectionWhole = new System.Windows.Forms.Label();
+            this.labelCollectionSlash = new System.Windows.Forms.Label();
+            this.labelCollectionSummoner = new System.Windows.Forms.Label();
             this.panelHeaderRight = new System.Windows.Forms.Panel();
             this.panelHeaderLeft = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -572,6 +579,13 @@
             // 
             // panelHeaderMid
             // 
+            this.panelHeaderMid.Controls.Add(this.checkedListBoxCollectionStars);
+            this.panelHeaderMid.Controls.Add(this.checkedListBoxCollectionAttribute);
+            this.panelHeaderMid.Controls.Add(this.label1);
+            this.panelHeaderMid.Controls.Add(this.label2);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionWhole);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionSlash);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionSummoner);
             this.panelHeaderMid.Controls.Add(this.pictureBoxStars6);
             this.panelHeaderMid.Controls.Add(this.labelStarsOneAmount);
             this.panelHeaderMid.Controls.Add(this.labelStarsTwoAmount);
@@ -589,6 +603,109 @@
             this.panelHeaderMid.Name = "panelHeaderMid";
             this.panelHeaderMid.Size = new System.Drawing.Size(433, 188);
             this.panelHeaderMid.TabIndex = 70;
+            // 
+            // checkedListBoxCollectionStars
+            // 
+            this.checkedListBoxCollectionStars.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionStars.CheckOnClick = true;
+            this.checkedListBoxCollectionStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxCollectionStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.checkedListBoxCollectionStars.FormattingEnabled = true;
+            this.checkedListBoxCollectionStars.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.checkedListBoxCollectionStars.Location = new System.Drawing.Point(309, 5);
+            this.checkedListBoxCollectionStars.Name = "checkedListBoxCollectionStars";
+            this.checkedListBoxCollectionStars.Size = new System.Drawing.Size(120, 58);
+            this.checkedListBoxCollectionStars.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.checkedListBoxCollectionStars, "Natural stars of monsters in Collection.");
+            this.checkedListBoxCollectionStars.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);
+            // 
+            // checkedListBoxCollectionAttribute
+            // 
+            this.checkedListBoxCollectionAttribute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionAttribute.CheckOnClick = true;
+            this.checkedListBoxCollectionAttribute.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxCollectionAttribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.checkedListBoxCollectionAttribute.FormattingEnabled = true;
+            this.checkedListBoxCollectionAttribute.Items.AddRange(new object[] {
+            "Water",
+            "Fire",
+            "Wind",
+            "Light",
+            "Dark"});
+            this.checkedListBoxCollectionAttribute.Location = new System.Drawing.Point(309, 68);
+            this.checkedListBoxCollectionAttribute.Name = "checkedListBoxCollectionAttribute";
+            this.checkedListBoxCollectionAttribute.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBoxCollectionAttribute.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.checkedListBoxCollectionAttribute, "Attribute of monsters in Collection");
+            this.checkedListBoxCollectionAttribute.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(234, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 22);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Attribute";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.label1, "Attribute of monsters in Collection");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(213, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Natural stars";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.label2, "Natural stars of monsters in Collection.\r\nAll = 3*+");
+            // 
+            // labelCollectionWhole
+            // 
+            this.labelCollectionWhole.AutoSize = true;
+            this.labelCollectionWhole.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionWhole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionWhole.Location = new System.Drawing.Point(412, 163);
+            this.labelCollectionWhole.Name = "labelCollectionWhole";
+            this.labelCollectionWhole.Size = new System.Drawing.Size(17, 22);
+            this.labelCollectionWhole.TabIndex = 74;
+            this.labelCollectionWhole.Text = "0";
+            this.labelCollectionWhole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionWhole, "Amount of specific monsters in Collection");
+            // 
+            // labelCollectionSlash
+            // 
+            this.labelCollectionSlash.AutoSize = true;
+            this.labelCollectionSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionSlash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionSlash.Location = new System.Drawing.Point(392, 163);
+            this.labelCollectionSlash.Name = "labelCollectionSlash";
+            this.labelCollectionSlash.Size = new System.Drawing.Size(14, 22);
+            this.labelCollectionSlash.TabIndex = 73;
+            this.labelCollectionSlash.Text = "/";
+            this.labelCollectionSlash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionSlash, "Attribute of monsters in Collection");
+            // 
+            // labelCollectionSummoner
+            // 
+            this.labelCollectionSummoner.AutoSize = true;
+            this.labelCollectionSummoner.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionSummoner.Location = new System.Drawing.Point(369, 163);
+            this.labelCollectionSummoner.Name = "labelCollectionSummoner";
+            this.labelCollectionSummoner.Size = new System.Drawing.Size(17, 22);
+            this.labelCollectionSummoner.TabIndex = 72;
+            this.labelCollectionSummoner.Text = "0";
+            this.labelCollectionSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionSummoner, "Amount of specific monsters in Summoner\'s Collection");
             // 
             // panelHeaderRight
             // 
@@ -816,5 +933,12 @@
         private BrightIdeasSoftware.OLVColumn olvColumn22;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCollectionStars;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCollectionAttribute;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCollectionWhole;
+        private System.Windows.Forms.Label labelCollectionSlash;
+        private System.Windows.Forms.Label labelCollectionSummoner;
     }
 }

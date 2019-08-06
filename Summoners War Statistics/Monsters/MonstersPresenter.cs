@@ -28,6 +28,24 @@ namespace Summoners_War_Statistics
 
             this.view.Resized += View_Resized;
 
+            this.view.MonstersCollectionItemChecked += View_MonstersCollectionItemChecked;
+
+        }
+
+        private void View_MonstersCollectionItemChecked()
+        {
+            view.MonstersCollectionSummoner = view.MonstersCollectionWhole = 0;
+            bool specificStar = false;
+            bool specificAttribute = false;
+            if (view.MonstersCollectionCheckedStars.Count > 0) { specificStar = true; }
+            if (view.MonstersCollectionCheckedAttributes.Count > 0) { specificAttribute = true; }
+
+            view.MonstersCollectionSummoner = model.GetMonstersAmountInCollection(model.GetSummonersMonstersCollection(view.MonstersList), specificStar, specificAttribute,
+                view.MonstersCollectionCheckedStars, view.MonstersCollectionCheckedAttributes);
+
+            view.MonstersCollectionWhole = model.GetMonstersAmountInCollection(Mapping.Instance.GetMonstersCollection(), specificStar, specificAttribute,
+                view.MonstersCollectionCheckedStars, view.MonstersCollectionCheckedAttributes);
+            Logger.log.Info($"[Monsters] Monsters Collection done");
         }
 
         private void View_CanSeeMonstersTab()
@@ -259,10 +277,7 @@ namespace Summoners_War_Statistics
             view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
             Logger.log.Info($"[Monsters] Monsters To Lock list done");
 
-            foreach(var type in model.GetSummonersMonstersCollection(monsters))
-            {
-                Console.WriteLine($"{type.Key}: {type.Value}");
-            }
+            View_MonstersCollectionItemChecked();
         }
     }
 }

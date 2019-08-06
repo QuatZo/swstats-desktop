@@ -312,9 +312,65 @@ namespace Summoners_War_Statistics
 
         public Dictionary<(int Stars, string Attribute), int> GetSummonersMonstersCollection(List<Monster> monsters)
         {
+            Dictionary<(int Stars, string Attribute), int> monstersSummonerCollection = new Dictionary<(int Stars, string Attribute), int>();
 
-            return Mapping.Instance.GetSummonerMonstersCollection(monsters);
-            
+            List<int> monstersInCollection = new List<int>();
+            foreach (var monster in monsters)
+            {
+                int monsterId = (int)monster.UnitMasterId;
+                int baseClass = Mapping.Instance.GetMonsterBaseClass(monsterId);
+                if (monstersInCollection.Contains(monsterId) || baseClass < 3) { continue; }
+                monstersInCollection.Add(monsterId);
+
+                string attribute = Mapping.Instance.GetMonsterAttribute(monsterId);
+                if (!monstersSummonerCollection.ContainsKey((baseClass, attribute)))
+                {
+                    monstersSummonerCollection.Add((baseClass, attribute), 1);
+                }
+                else
+                {
+                    monstersSummonerCollection[(baseClass, attribute)]++;
+                }
+            }
+            return monstersSummonerCollection;
+        }
+
+        public int GetMonstersAmountInCollection(Dictionary<(int Stars, string Attribute), int> collectionArg, bool specificStar, bool specificAttribute, List<int> stars, List<string> attributes)
+        {
+            int amount = 0;
+            foreach (var collection in collectionArg)
+            {
+                if (specificStar && specificAttribute)
+                {
+                    foreach (var star in stars)
+                    {
+                        foreach (var attribute in attributes)
+                        {
+                            if (collection.Key == (star, attribute)) { amount += collection.Value; }
+                        }
+                    }
+                }
+                else if (specificStar)
+                {
+                    foreach (var star in stars)
+                    {
+                        if (collection.Key.Stars == star) { amount += collection.Value; }
+                    }
+                }
+                else if (specificAttribute)
+                {
+                    foreach (var attribute in attributes)
+                    {
+                        if (collection.Key.Attribute == attribute) { amount += collection.Value; }
+                    }
+                }
+                else
+                {
+                    amount += collection.Value;
+                }
+            }
+
+            return amount;
         }
     }
 }

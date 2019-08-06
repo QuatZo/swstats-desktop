@@ -11,7 +11,6 @@ namespace Summoners_War_Statistics
 {
     public interface IMonstersView
     {
-
         #region Properties
         Size SizeWindow { get; }
         List<Control> Cntrls { get; }
@@ -40,6 +39,12 @@ namespace Summoners_War_Statistics
         List<long> MonstersLocked { get; set; }
 
         ObjectListView MonstersListView { get; set; }
+
+
+        List<int> MonstersCollectionCheckedStars { get;}
+        List<string> MonstersCollectionCheckedAttributes { get; }
+        int MonstersCollectionSummoner { get; set; }
+        int MonstersCollectionWhole { get; set; }
         #endregion
 
         #region Events
@@ -47,6 +52,7 @@ namespace Summoners_War_Statistics
         event Action<RadioButton> MonstersStarsChanged;
         event Action Resized;
         event Action CanSeeMonstersTab;
+        event Action MonstersCollectionItemChecked;
         #endregion
 
         #region Methods

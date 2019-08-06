@@ -2097,31 +2097,6 @@ namespace Summoners_War_Statistics
             return monstersCollection;
         }   
 
-        public Dictionary<(int Stars, string Attribute), int> GetSummonerMonstersCollection(List<Monster> monsters)
-        {
-            Dictionary<(int Stars, string Attribute), int> monstersSummonerCollection = new Dictionary<(int Stars, string Attribute), int>();
-
-            List<int> monstersInCollection = new List<int>();
-            foreach (var monster in monsters)
-            {
-                int monsterId = (int)monster.UnitMasterId;
-                int baseClass = GetMonsterBaseClass(monsterId);
-                if (monstersInCollection.Contains(monsterId) || baseClass < 3) { continue; }
-                monstersInCollection.Add(monsterId);
-
-                string attribute = GetMonsterAttribute(monsterId);
-                if (!monstersSummonerCollection.ContainsKey((baseClass, attribute)))
-                {
-                    monstersSummonerCollection.Add( (baseClass, attribute), 1);
-                }
-                else
-                {
-                    monstersSummonerCollection[(baseClass, attribute)]++;
-                }
-            }
-            return monstersSummonerCollection;
-        }
-
         public Dictionary<int, string> GetAllRuneEffectTypes()
         {
             return runeEffectTypes;

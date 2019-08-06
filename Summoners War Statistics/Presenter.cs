@@ -64,6 +64,11 @@ namespace Summoners_War_Statistics
                         control.Font = new Font(view.FF, 12, FontStyle.Regular);
                         continue;
                     }
+                    if (control.Name.Contains("checkedListBox"))
+                    {
+                        control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                        continue;
+                    }
                     if (control.Name.Contains("Level"))
                     {
                         control.Font = new Font(view.FF, 20, FontStyle.Regular);
