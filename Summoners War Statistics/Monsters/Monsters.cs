@@ -64,7 +64,15 @@ namespace Summoners_War_Statistics
                     panelHeaderMid,
                     panelHeaderRight,
                     panelFooter,
-                    panelFooterRight
+                    panelFooterRight,
+                    labelCollectionStars,
+                    checkedListBoxCollectionStars,
+                    labelCollectionAttribute,
+                    checkedListBoxCollectionAttribute,
+                    labelCollection,
+                    labelCollectionSummoner,
+                    labelCollectionSlash,
+                    labelCollectionWhole
                 };
 
         public int MonsterStarsChecked

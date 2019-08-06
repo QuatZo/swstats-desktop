@@ -45,6 +45,8 @@ namespace Summoners_War_Statistics
 
             view.MonstersCollectionWhole = model.GetMonstersAmountInCollection(Mapping.Instance.GetMonstersCollection(), specificStar, specificAttribute,
                 view.MonstersCollectionCheckedStars, view.MonstersCollectionCheckedAttributes);
+
+            View_Resized();
             Logger.log.Info($"[Monsters] Monsters Collection done");
         }
 
@@ -157,6 +159,14 @@ namespace Summoners_War_Statistics
             //panelHeaderRight              - 42
             //panelFooter                   - 43
             //panelFooterRight              - 44
+            //labelCollectionStars          - 45
+            //checkedListBoxCollectionStars - 46
+            //labelCollectionAttribute      - 47
+            //checkListBoxCol[...]Attribute - 48
+            //labelCollection               - 49
+            //labelCollectionSummoner       - 50
+            //labelCollectionSlash          - 51
+            //labelCollectionWhole          - 52
 
             // panelHeader
             int headerHeightFirstLevel = 10;
@@ -168,7 +178,7 @@ namespace Summoners_War_Statistics
             int headerHeightFifthLevel = headerHeightFourthLevel + height;
 
             // mid
-            int headerWidthSecondLevel = (view.SizeWindow.Width / 2) - view.Cntrls[33].Size.Width * 2;
+            int headerWidthSecondLevel = view.Cntrls[41].Size.Width / 10;
             int headerWidthSecondHalfLevel = headerWidthSecondLevel + view.Cntrls[33].Size.Width;
             view.Cntrls[33].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
             view.Cntrls[14].Location = new Point(headerWidthSecondHalfLevel, headerHeightFirstLevel);
@@ -184,6 +194,22 @@ namespace Summoners_War_Statistics
 
             view.Cntrls[37].Location = new Point(headerWidthSecondLevel, headerHeightFifthLevel);
             view.Cntrls[16].Location = new Point(headerWidthSecondHalfLevel, headerHeightFifthLevel);
+
+            int headerWidthThirdLevel = view.Cntrls[41].Size.Width * 5 / 10;
+            int headerWidthThirdHalfLevel = headerWidthThirdLevel + view.Cntrls[45].Size.Width;
+            int headerHeightSecondListBox = headerHeightFirstLevel + view.Cntrls[46].Size.Height;
+            int headerHeightAfterListBox = headerHeightSecondListBox + view.Cntrls[48].Size.Height;
+
+            view.Cntrls[45].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
+            view.Cntrls[46].Location = new Point(headerWidthThirdHalfLevel, headerHeightFirstLevel);
+
+            view.Cntrls[47].Location = new Point(headerWidthThirdLevel, headerHeightSecondListBox);
+            view.Cntrls[48].Location = new Point(headerWidthThirdHalfLevel, headerHeightSecondListBox);
+
+            view.Cntrls[49].Location = new Point(headerWidthThirdLevel, headerHeightAfterListBox);
+            view.Cntrls[50].Location = new Point(headerWidthThirdHalfLevel, headerHeightAfterListBox);
+            view.Cntrls[51].Location = new Point(view.Cntrls[50].Location.X + view.Cntrls[50].Size.Width, headerHeightAfterListBox);
+            view.Cntrls[52].Location = new Point(view.Cntrls[51].Location.X + view.Cntrls[51].Size.Width, headerHeightAfterListBox);
 
             int headerHeightSixthLevel = headerHeightFifthLevel + height;
             view.Cntrls[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
