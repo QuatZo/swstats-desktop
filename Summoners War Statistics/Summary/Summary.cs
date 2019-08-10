@@ -34,7 +34,7 @@ namespace Summoners_War_Statistics
                     labelEnergyMax,
                     labelEnergySlash,
                     labelGloryPoints,
-                    labelGuildPoints,
+                    labelGldPoints,
                     labelJsonCreatedText,
                     labelJsonModified,
                     labelLevel,
@@ -138,8 +138,8 @@ namespace Summoners_War_Statistics
         }
         public uint SummonerGuildPoints
         {
-            get => uint.Parse(labelGuildPoints.Text);
-            set => labelGuildPoints.Text = value.ToString("N0");
+            get => uint.Parse(labelGldPoints.Text);
+            set => labelGldPoints.Text = value.ToString("N0");
         }
         public ushort SummonerShapeshiftingStones
         {

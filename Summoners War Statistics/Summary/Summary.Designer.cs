@@ -35,7 +35,7 @@
             this.labelEnergy = new System.Windows.Forms.Label();
             this.labelEnergySlash = new System.Windows.Forms.Label();
             this.labelEnergyMax = new System.Windows.Forms.Label();
-            this.labelGuildPoints = new System.Windows.Forms.Label();
+            this.labelGldPoints = new System.Windows.Forms.Label();
             this.labelGloryPoints = new System.Windows.Forms.Label();
             this.labelRTAMedals = new System.Windows.Forms.Label();
             this.labelShapeshiftingStones = new System.Windows.Forms.Label();
@@ -192,17 +192,17 @@
             this.labelEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelEnergyMax, "Amount of current energy / max energy");
             // 
-            // labelGuildPoints
+            // labelGldPoints
             // 
-            this.labelGuildPoints.AutoSize = true;
-            this.labelGuildPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
-            this.labelGuildPoints.Location = new System.Drawing.Point(33, 91);
-            this.labelGuildPoints.Name = "labelGuildPoints";
-            this.labelGuildPoints.Size = new System.Drawing.Size(17, 22);
-            this.labelGuildPoints.TabIndex = 6;
-            this.labelGuildPoints.Text = "0";
-            this.labelGuildPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.labelGuildPoints, "Amount of guild points");
+            this.labelGldPoints.AutoSize = true;
+            this.labelGldPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelGldPoints.Location = new System.Drawing.Point(33, 91);
+            this.labelGldPoints.Name = "labelGldPoints";
+            this.labelGldPoints.Size = new System.Drawing.Size(17, 22);
+            this.labelGldPoints.TabIndex = 6;
+            this.labelGldPoints.Text = "0";
+            this.labelGldPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelGldPoints, "Amount of guild points");
             // 
             // labelGloryPoints
             // 
@@ -846,7 +846,7 @@
             this.panelContentLeft.Controls.Add(this.pictureBoxGloryPoints);
             this.panelContentLeft.Controls.Add(this.labelCrystals);
             this.panelContentLeft.Controls.Add(this.pictureBoxMana);
-            this.panelContentLeft.Controls.Add(this.labelGuildPoints);
+            this.panelContentLeft.Controls.Add(this.labelGldPoints);
             this.panelContentLeft.Controls.Add(this.labelGloryPoints);
             this.panelContentLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelContentLeft.Location = new System.Drawing.Point(0, 0);
@@ -918,7 +918,7 @@
         private System.Windows.Forms.Label labelEnergy;
         private System.Windows.Forms.Label labelEnergySlash;
         private System.Windows.Forms.Label labelEnergyMax;
-        private System.Windows.Forms.Label labelGuildPoints;
+        private System.Windows.Forms.Label labelGldPoints;
         private System.Windows.Forms.Label labelGloryPoints;
         private System.Windows.Forms.Label labelRTAMedals;
         private System.Windows.Forms.Label labelShapeshiftingStones;

@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBoxSummary = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDimHole = new System.Windows.Forms.PictureBox();
             this.pictureBoxGuild = new System.Windows.Forms.PictureBox();
             this.pictureBoxOther = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimHole)).BeginInit();
+            this.pictureBoxDimHole = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSummary = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuild)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOther)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimHole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).BeginInit();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -59,7 +59,7 @@
             this.pictureBoxGuild.Size = new System.Drawing.Size(160, 80);
             this.pictureBoxGuild.TabIndex = 5;
             this.pictureBoxGuild.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxGuild, "Click here to open Other Tab");
+            this.toolTip1.SetToolTip(this.pictureBoxGuild, "Click here to open Guild Tab");
             this.pictureBoxGuild.Click += new System.EventHandler(this.pictureBox_Click);
             this.pictureBoxGuild.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
             this.pictureBoxGuild.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
