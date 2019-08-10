@@ -15,24 +15,15 @@ namespace Summoners_War_Statistics
         Size TabSize { get; set; }
         List<Control> Cntrls { get; }
         ObjectListView SummonerFriendsList { get; set; }
-
-        ObjectListView GuildMembersList { get; set; }
-        string GuildName { get; set; }
-        string GuildLeaderName { get; set; }
-        string GuildBestRanking { get; set; }
-        byte GuildMembers { get; set; }
-        byte GuildMembersMax { get; set; }
-        byte GuildMembersDefenses { get; set; }
-        byte GuildMembersDefensesMax { get; set; }
         #endregion
 
         #region Events
-        event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
+        event Action<List<Friend>> InitOther;
         event Action Resized;
         #endregion
 
         #region Methods
-        void Init(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking);
+        void Init(List<Friend> friendsList);
         void Front();
         #endregion
 

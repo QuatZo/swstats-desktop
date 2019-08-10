@@ -18,8 +18,6 @@ namespace Summoners_War_Statistics
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
 
-
-
         #region Properties
         public FontFamily FF { get; set; }
         public Font Fnt { get; set; }
@@ -28,6 +26,7 @@ namespace Summoners_War_Statistics
         public IMonstersView MonstersView => monsters1;
         public IRunesView RunesView => runes1;
         public IDimHoleView DimHoleView => dimHole1;
+        public IGuildView GuildView => guild1;
         public IOtherView OtherView => other1;
 
         public bool MenuViewVisibility
@@ -54,6 +53,11 @@ namespace Summoners_War_Statistics
         {
             get => dimHole1.Visible;
             set => dimHole1.Visible = value;
+        }
+        public bool GuildViewVisibility
+        {
+            get => guild1.Visible;
+            set => guild1.Visible = value;
         }
         public bool OtherViewVisibility
         {
@@ -141,6 +145,7 @@ namespace Summoners_War_Statistics
             MonstersViewVisibility = false;
             RunesViewVisibility = false;
             DimHoleViewVisibility = false;
+            GuildViewVisibility = false;
             OtherViewVisibility = false;
         }
 

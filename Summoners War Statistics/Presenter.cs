@@ -22,6 +22,7 @@ namespace Summoners_War_Statistics
         private readonly MonstersPresenter monsterPresenter;
         private readonly RunesPresenter runesPresenter;
         private readonly DimHolePresenter dimHolePresenter;
+        private readonly GuildPresenter guildPresenter;
         private readonly OtherPresenter otherPresenter;
 
         public Presenter(IView view, Model model)
@@ -35,6 +36,7 @@ namespace Summoners_War_Statistics
             monsterPresenter = new MonstersPresenter(this.view.MonstersView, model);
             runesPresenter = new RunesPresenter(this.view.RunesView, model);
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
+            guildPresenter = new GuildPresenter(this.view.GuildView, model);
             otherPresenter = new OtherPresenter(this.view.OtherView, model);
 
             this.view.Loaded += View_Loaded;
@@ -52,6 +54,7 @@ namespace Summoners_War_Statistics
                 view.MonstersView.Cntrls,
                 view.RunesView.Cntrls,
                 view.DimHoleView.Cntrls,
+                view.GuildView.Cntrls,
                 view.OtherView.Cntrls
             };
             foreach(var controls in controlList)
@@ -116,6 +119,10 @@ namespace Summoners_War_Statistics
                     view.DimHoleView.Front();
                     view.DimHoleViewVisibility = true;
                     break;
+                case "guild":
+                    view.GuildView.Front();
+                    view.GuildViewVisibility = true;
+                    break;
                 case "other":
                     view.OtherView.Front();
                     view.OtherViewVisibility = true;
@@ -170,10 +177,14 @@ namespace Summoners_War_Statistics
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
                         Logger.log.Info("[Dimension Hole] DONE");
 
+                        Logger.log.Info($"Guild tab");
+                        view.GuildView.GuildMembersList.Items.Clear();
+                        view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
+                        Logger.log.Info("[Guild] DONE");
+
                         Logger.log.Info($"Other tab");
                         view.OtherView.SummonerFriendsList.Items.Clear();
-                        view.OtherView.GuildMembersList.Items.Clear();
-                        view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
+                        view.OtherView.Init(json.FriendList);
                         Logger.log.Info("[Other] DONE");
                     }
                     catch (FormatException e)

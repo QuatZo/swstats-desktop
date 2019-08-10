@@ -83,12 +83,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Guild\Guild.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Guild\Guild.Designer.cs">
+      <DependentUpon>Guild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guild\GuildPresenter.cs" />
+    <Compile Include="Guild\IGuildView.cs" />
     <Compile Include="Menu\MenuPresenter.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
     <Compile Include="Other\FriendsRow.cs" />
-    <Compile Include="Other\GuildRow.cs" />
+    <Compile Include="Guild\GuildMembersRow.cs" />
     <Compile Include="Json Classes\Decoration.cs" />
     <Compile Include="Json Classes\Summoner.cs" />
     <Compile Include="Json Classes\Awakening.cs" />
@@ -113,7 +121,7 @@
     <Compile Include="Json Classes\GuildWarDefenseUnit.cs" />
     <Compile Include="Json Classes\GuildMemberDefense.cs" />
     <Compile Include="Json Classes\GuildWarMember.cs" />
-    <Compile Include="Json Classes\Guild.cs" />
+    <Compile Include="Json Classes\GuildMap.cs" />
     <Compile Include="Json Classes\OpponentGuild.cs" />
     <Compile Include="Json Classes\Friend.cs" />
     <Compile Include="Json Classes\SummonerDefenseUnit.cs" />
@@ -196,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guild\Guild.resx">
+      <DependentUpon>Guild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Monsters\Monsters.resx">
       <DependentUpon>Monsters.cs</DependentUpon>

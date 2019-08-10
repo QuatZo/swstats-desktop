@@ -98,9 +98,9 @@ namespace Summoners_War_Statistics
             return friends;
         }
 
-        public List<GuildRow> GuildMembersList(Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
+        public List<GuildMembersRow> GuildMembersList(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
         {
-            List<GuildRow> members = new List<GuildRow>();
+            List<GuildMembersRow> members = new List<GuildMembersRow>();
             List<long> membersInGuildwar = new List<long>();
 
             foreach (var guildwarMember in guildwarMemberList)
@@ -124,7 +124,7 @@ namespace Summoners_War_Statistics
                 }
 
                 members.Add(
-                    new GuildRow
+                    new GuildMembersRow
                     (
                         member.Value.WizardName,
                         DateTimeOffset.FromUnixTimeSeconds((long)member.Value.JoinTimestamp).DateTime.ToString("dd-MMMM-yyyy HH:mm:ss"),

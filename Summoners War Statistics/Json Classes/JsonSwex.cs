@@ -54,7 +54,7 @@ namespace Summoners_War_Statistics
         public long? PushNotificationStatus { get; set; }
 
         [JsonProperty("guild")]
-        public Guild Guild { get; set; }
+        public GuildMap GuildMap { get; set; }
 
         [JsonProperty("guildwar_defense_unit_list")]
         public List<List<GuildWarDefenseUnit>> GuildWarDefenseUnitList { get; set; }

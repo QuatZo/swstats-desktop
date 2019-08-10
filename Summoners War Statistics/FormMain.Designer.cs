@@ -33,6 +33,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.guild1 = new Summoners_War_Statistics.Guild();
             this.summary1 = new Summoners_War_Statistics.Summary();
             this.menu1 = new Summoners_War_Statistics.Menu();
             this.dimHole1 = new Summoners_War_Statistics.DimHole();
@@ -65,6 +66,24 @@
             this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
+            // 
+            // guild1
+            // 
+            this.guild1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.guild1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.guild1.GuildBestRanking = "Best ranking";
+            this.guild1.GuildLeaderName = "Leader\'s name";
+            this.guild1.GuildMembers = ((byte)(0));
+            this.guild1.GuildMembersDefenses = ((byte)(0));
+            this.guild1.GuildMembersDefensesMax = ((byte)(0));
+            this.guild1.GuildMembersMax = ((byte)(0));
+            this.guild1.GuildName = "Guild\'s name";
+            this.guild1.Location = new System.Drawing.Point(0, 150);
+            this.guild1.Name = "guild1";
+            this.guild1.Size = new System.Drawing.Size(800, 600);
+            this.guild1.TabIndex = 18;
+            this.guild1.TabSize = new System.Drawing.Size(800, 600);
+            this.guild1.Visible = false;
             // 
             // summary1
             // 
@@ -105,10 +124,13 @@
             // 
             this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.menu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menu1.IsMouseDown = false;
             this.menu1.Location = new System.Drawing.Point(0, 70);
+            this.menu1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.menu1.Name = "menu1";
             this.menu1.Size = new System.Drawing.Size(800, 80);
             this.menu1.TabIndex = 12;
+            this.menu1.WindowWidth = 0;
             // 
             // dimHole1
             // 
@@ -134,13 +156,6 @@
             this.other1.AutoScroll = true;
             this.other1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.other1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.other1.GuildBestRanking = "Best ranking";
-            this.other1.GuildLeaderName = "Leader\'s name";
-            this.other1.GuildMembers = ((byte)(0));
-            this.other1.GuildMembersDefenses = ((byte)(0));
-            this.other1.GuildMembersDefensesMax = ((byte)(0));
-            this.other1.GuildMembersMax = ((byte)(0));
-            this.other1.GuildName = "Guild\'s name";
             this.other1.Location = new System.Drawing.Point(0, 0);
             this.other1.Name = "other1";
             this.other1.Size = new System.Drawing.Size(800, 581);
@@ -211,6 +226,7 @@
             this.Controls.Add(this.other1);
             this.Controls.Add(this.runes1);
             this.Controls.Add(this.monsters1);
+            this.Controls.Add(this.guild1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 620);
@@ -234,6 +250,7 @@
         private Other other1;
         private DimHole dimHole1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Guild guild1;
     }
 }
 

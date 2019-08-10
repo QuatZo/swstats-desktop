@@ -22,22 +22,9 @@ namespace Summoners_War_Statistics
 
         public List<Control> Cntrls => new List<Control>()
         {
-            labelDefenseUnits,
-            labelDefenseUnitsMax,
-            labelDefenseUnitsSlash,
-            labelGuildName,
-            labelLeaderName,
-            labelMembers,
-            labelMembersMax,
-            labelMembersSlash,
             labelOtherActiveFriends,
-            labelOtherGuild,
-            labelRanking,
             objectListViewFriends,
-            objectListViewGuild,
-            panelFriends,
-            panelGuild,
-            panelGuildText
+            panelFriends
         };
 
         public ObjectListView SummonerFriendsList
@@ -45,51 +32,10 @@ namespace Summoners_War_Statistics
             get => objectListViewFriends;
             set => objectListViewFriends = value;
         }
-        public ObjectListView GuildMembersList
-        {
-            get => objectListViewGuild;
-            set => objectListViewGuild = value;
-        }
-
-        public string GuildName
-        {
-            get => labelGuildName.Text;
-            set => labelGuildName.Text = value;
-        }
-        public string GuildLeaderName
-        {
-            get => labelLeaderName.Text;
-            set => labelLeaderName.Text = value;
-        }
-        public string GuildBestRanking
-        {
-            get => labelRanking.Text;
-            set => labelRanking.Text = value;
-        }
-        public byte GuildMembers
-        {
-            get => byte.Parse(labelMembers.Text);
-            set => labelMembers.Text = value.ToString();
-        }
-        public byte GuildMembersMax
-        {
-            get => byte.Parse(labelMembersMax.Text);
-            set => labelMembersMax.Text = value.ToString();
-        }
-        public byte GuildMembersDefenses
-        {
-            get => byte.Parse(labelDefenseUnits.Text);
-            set => labelDefenseUnits.Text = value.ToString();
-        }
-        public byte GuildMembersDefensesMax
-        {
-            get => byte.Parse(labelDefenseUnitsMax.Text);
-            set => labelDefenseUnitsMax.Text = value.ToString();
-        }
         #endregion
 
         #region Events
-        public event Action<List<Friend>, Guild, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitOther;
+        public event Action<List<Friend>> InitOther;
         public event Action Resized;
         #endregion
 
@@ -97,13 +43,12 @@ namespace Summoners_War_Statistics
         {
             InitializeComponent();
             objectListViewFriends.DoubleBuffering(true);
-            objectListViewGuild.DoubleBuffering(true);
         }
 
         #region Methods
-        public void Init(List<Friend> friendsList, Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
+        public void Init(List<Friend> friendsList)
         {
-            InitOther?.Invoke(friendsList, guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList, guildwarRanking);
+            InitOther?.Invoke(friendsList);
         }
 
         public void Front()
