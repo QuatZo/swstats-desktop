@@ -15,9 +15,11 @@ namespace Summoners_War_Statistics
         Size TabSize { get; set; }
         List<Control> Cntrls { get; }
 
+        ObjectListView GuildSiegeDefensesList { get; set; }
         ObjectListView GuildMembersList { get; set; }
         string GuildName { get; set; }
         string GuildLeaderName { get; set; }
+        string GuildActualRanking { get; set; }
         string GuildBestRanking { get; set; }
         byte GuildMembers { get; set; }
         byte GuildMembersMax { get; set; }

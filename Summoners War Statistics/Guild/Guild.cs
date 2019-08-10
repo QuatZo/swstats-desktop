@@ -22,40 +22,62 @@ namespace Summoners_War_Statistics
 
         public List<Control> Cntrls => new List<Control>()
         {
+            pictureBoxDefenseUnits,
             labelDefenseUnits,
             labelDefenseUnitsMax,
             labelDefenseUnitsSlash,
-            labelGuildName,
+            pictureBoxName,
+            labelName,
+            pictureBoxLeader,
             labelLeaderName,
+            pictureBoxMembers,
             labelMembers,
             labelMembersMax,
             labelMembersSlash,
-            labelRanking,
-            objectListViewGuild,
-            panelGuild,
-            panelGuildText
+            pictureBoxActualRanking,
+            labelActualRanking,
+            pictureBoxBestRanking,
+            labelBestRanking,
+            objectListViewGuildSiegeDefenses,
+            objectListViewGuildMembers,
+            panelGuildMembers,
+            panelGuildText,
+            panelGuildSiegeDefenses,
+            labelGuildSiegeDefenses,
+            labelGuildMembers,
+            labelGuildInfo
         };
 
+        public ObjectListView GuildSiegeDefensesList
+        {
+            get => objectListViewGuildSiegeDefenses;
+            set => objectListViewGuildSiegeDefenses = value;
+        }
         public ObjectListView GuildMembersList
         {
-            get => objectListViewGuild;
-            set => objectListViewGuild = value;
+            get => objectListViewGuildMembers;
+            set => objectListViewGuildMembers = value;
         }
 
         public string GuildName
         {
-            get => labelGuildName.Text;
-            set => labelGuildName.Text = value;
+            get => labelName.Text;
+            set => labelName.Text = value;
         }
         public string GuildLeaderName
         {
             get => labelLeaderName.Text;
             set => labelLeaderName.Text = value;
         }
+        public string GuildActualRanking
+        {
+            get => labelActualRanking.Text;
+            set => labelActualRanking.Text = value;
+        }
         public string GuildBestRanking
         {
-            get => labelRanking.Text;
-            set => labelRanking.Text = value;
+            get => labelBestRanking.Text;
+            set => labelBestRanking.Text = value;
         }
         public byte GuildMembers
         {
@@ -87,7 +109,7 @@ namespace Summoners_War_Statistics
         public Guild()
         {
             InitializeComponent();
-            objectListViewGuild.DoubleBuffering(true);
+            objectListViewGuildMembers.DoubleBuffering(true);
         }
 
         #region Methods

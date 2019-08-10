@@ -81,7 +81,7 @@ namespace Summoners_War_Statistics
                         control.Font = new Font(view.FF, 20, FontStyle.Regular);
                         continue;
                     }
-                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other"))
+                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other") || control.Name.Contains("Guild"))
                     {
                         control.Font = new Font(view.FF, 24, FontStyle.Regular);
                         continue;
