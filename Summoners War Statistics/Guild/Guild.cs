@@ -102,7 +102,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<GuildMap, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitGuild;
+        public event Action<GuildMap, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat, List<long>, List<Monster>> InitGuild;
         public event Action Resized;
         #endregion
 
@@ -113,9 +113,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(GuildMap guild, GuildWarParticipationInfo guildWarParticipationInfo, List<GuildWarMember> guildWarMembers, List<GuildMemberDefense> guildWarDefenses, GuildWarRankingStat guildWarRanking)
+        public void Init(GuildMap guild, GuildWarParticipationInfo guildWarParticipationInfo, List<GuildWarMember> guildWarMembers, List<GuildMemberDefense> guildWarDefenses, GuildWarRankingStat guildWarRanking, List<long> siegeDefenses, List<Monster> monsters)
         {
-            InitGuild?.Invoke(guild, guildWarParticipationInfo, guildWarMembers, guildWarDefenses, guildWarRanking);
+            InitGuild?.Invoke(guild, guildWarParticipationInfo, guildWarMembers, guildWarDefenses, guildWarRanking, siegeDefenses, monsters);
         }
 
         public void Front()

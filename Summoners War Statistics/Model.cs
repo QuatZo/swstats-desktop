@@ -138,6 +138,34 @@ namespace Summoners_War_Statistics
             return members;
         }
 
+        public List<GuildSiegeDefensesRow> GuildSiegeDefensesList(List<long> siegeDefenses, List<Monster> monsters)
+        {
+            List<GuildSiegeDefensesRow> comps = new List<GuildSiegeDefensesRow>();
+
+            for(int i = 0; i < siegeDefenses.Count; i+= 3)
+            {
+                string[] units = { "-", "-", "-" };
+                foreach(var unit in monsters)
+                {
+                    if (siegeDefenses[i] == unit.UnitId) { units[i % 3] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (siegeDefenses[i + 1] == unit.UnitId) { units[(i % 3) + 1] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (siegeDefenses[i + 2] == unit.UnitId) { units[(i % 3) + 2] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (!units.Contains("-")) { break; }
+                }
+
+                comps.Add(
+                    new GuildSiegeDefensesRow
+                    (
+                        units[0],
+                        units[1],
+                        units[2]
+                    )
+                );
+            }
+
+            return comps;
+        }
+
         public List<Rune> RunesEvenEquipped(List<Rune> runesArg, List<Monster> monsters)
         {
             List<Rune> runes = runesArg;

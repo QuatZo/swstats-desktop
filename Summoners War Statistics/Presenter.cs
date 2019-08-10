@@ -179,7 +179,7 @@ namespace Summoners_War_Statistics
 
                         Logger.log.Info($"Guild tab");
                         view.GuildView.GuildMembersList.Items.Clear();
-                        view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
+                        view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
                         Logger.log.Info("[Guild] DONE");
 
                         Logger.log.Info($"Other tab");

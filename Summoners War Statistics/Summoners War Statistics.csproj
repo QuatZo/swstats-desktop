@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="GuildSiegeDefensesRow.cs" />
     <Compile Include="Guild\Guild.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -111,10 +111,11 @@ namespace Summoners_War_Statistics
             view.Cntrls[13].Location = new Point(widthSecondHalfLevel, heightThirdLevel);
 
             view.Cntrls[16].Size = new Size(view.Cntrls[16].Size.Width, view.Cntrls[20].Size.Height - view.Cntrls[21].Size.Height);
+
             int columnWidth = view.GuildSiegeDefensesList.Size.Width / view.GuildSiegeDefensesList.Columns.Count;
             foreach (ColumnHeader column in view.GuildSiegeDefensesList.Columns)
             {
-                column.Width = columnWidth - 5;
+                column.Width = columnWidth - 10;
             }
 
             columnWidth = view.GuildMembersList.Size.Width / view.GuildMembersList.Columns.Count;
@@ -145,10 +146,14 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Guild] Sorting Members");
         }
 
-        private void View_InitGuild(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking)
+        private void View_InitGuild(GuildMap guild,
+                                    GuildWarParticipationInfo guildwarParticipationInfo,
+                                    List<GuildWarMember> guildwarMemberList,
+                                    List<GuildMemberDefense> guildMemberDefenseList,
+                                    GuildWarRankingStat guildwarRanking,
+                                    List<long> siegeDefenses,
+                                    List<Monster> monsters)
         {
-            view.GuildMembersList.AddObjects(model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList));
-            Logger.log.Info($"[Guild] Guild members to list done");
             view.GuildName = guild.GuildInfo.Name;
             Logger.log.Info($"[Guild] Guild name done");
             view.GuildLeaderName = guild.GuildInfo.MasterWizardName;
@@ -181,6 +186,12 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Guild] Guild defenses amount done");
             view.GuildMembersDefensesMax = (byte)(guildwarParticipationInfo.MemberCount * 6);
             Logger.log.Info($"[Guild] Guild defenses max done");
+
+            view.GuildMembersList.AddObjects(model.GuildMembersList(guild, guildwarParticipationInfo, guildwarMemberList, guildMemberDefenseList));
+            Logger.log.Info($"[Guild] Guild members to list done");
+
+            view.GuildSiegeDefensesList.AddObjects(model.GuildSiegeDefensesList(siegeDefenses, monsters));
+            Logger.log.Info($"[Guild] Guild Siege defenses to list done");
         }
     }
 }

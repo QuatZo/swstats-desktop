@@ -28,12 +28,12 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        event Action<GuildMap, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat> InitGuild;
+        event Action<GuildMap, GuildWarParticipationInfo, List<GuildWarMember>, List<GuildMemberDefense>, GuildWarRankingStat, List<long>, List<Monster>> InitGuild;
         event Action Resized;
         #endregion
 
         #region Methods
-        void Init(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking);
+        void Init(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking, List<long> siegeDefenses, List<Monster> monsters);
         void Front();
         #endregion
     }
