@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Menu\MenuPresenter.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
@@ -1412,6 +1413,11 @@
   <ItemGroup>
     <None Include="Properties\images\icon_guild_ranking.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\images\menu_guild_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\menu_guild_on.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

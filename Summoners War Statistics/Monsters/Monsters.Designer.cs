@@ -622,6 +622,7 @@
             // checkedListBoxCollectionStars
             // 
             this.checkedListBoxCollectionStars.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionStars.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBoxCollectionStars.CheckOnClick = true;
             this.checkedListBoxCollectionStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxCollectionStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
@@ -632,7 +633,7 @@
             "5"});
             this.checkedListBoxCollectionStars.Location = new System.Drawing.Point(309, 5);
             this.checkedListBoxCollectionStars.Name = "checkedListBoxCollectionStars";
-            this.checkedListBoxCollectionStars.Size = new System.Drawing.Size(120, 58);
+            this.checkedListBoxCollectionStars.Size = new System.Drawing.Size(120, 54);
             this.checkedListBoxCollectionStars.TabIndex = 80;
             this.toolTip1.SetToolTip(this.checkedListBoxCollectionStars, "Natural stars of monsters in Collection.");
             this.checkedListBoxCollectionStars.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);
@@ -640,6 +641,7 @@
             // checkedListBoxCollectionAttribute
             // 
             this.checkedListBoxCollectionAttribute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionAttribute.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBoxCollectionAttribute.CheckOnClick = true;
             this.checkedListBoxCollectionAttribute.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxCollectionAttribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
@@ -652,7 +654,7 @@
             "Dark"});
             this.checkedListBoxCollectionAttribute.Location = new System.Drawing.Point(309, 68);
             this.checkedListBoxCollectionAttribute.Name = "checkedListBoxCollectionAttribute";
-            this.checkedListBoxCollectionAttribute.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBoxCollectionAttribute.Size = new System.Drawing.Size(120, 90);
             this.checkedListBoxCollectionAttribute.TabIndex = 79;
             this.toolTip1.SetToolTip(this.checkedListBoxCollectionAttribute, "Attribute of monsters in Collection");
             this.checkedListBoxCollectionAttribute.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);

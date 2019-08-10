@@ -2593,6 +2593,26 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_guild_off {
+            get {
+                object obj = ResourceManager.GetObject("menu_guild_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_guild_on {
+            get {
+                object obj = ResourceManager.GetObject("menu_guild_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_monsters_off {
             get {
                 object obj = ResourceManager.GetObject("menu_monsters_off", resourceCulture);

@@ -16,6 +16,8 @@ namespace Summoners_War_Statistics
         private readonly IView view;
         private readonly Model model;
 
+        private readonly MenuPresenter menuPresenter;
+
         private readonly SummaryPresenter summaryPresenter;
         private readonly MonstersPresenter monsterPresenter;
         private readonly RunesPresenter runesPresenter;
@@ -26,6 +28,8 @@ namespace Summoners_War_Statistics
         {
             this.view = view;
             this.model = model;
+
+            menuPresenter = new MenuPresenter(this.view.MenuView, model);
 
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
             monsterPresenter = new MonstersPresenter(this.view.MonstersView, model);

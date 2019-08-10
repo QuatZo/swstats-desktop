@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBoxSelectJson = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.summary1 = new Summoners_War_Statistics.Summary();
             this.menu1 = new Summoners_War_Statistics.Menu();
             this.dimHole1 = new Summoners_War_Statistics.DimHole();
             this.other1 = new Summoners_War_Statistics.Other();
             this.runes1 = new Summoners_War_Statistics.Runes();
             this.monsters1 = new Summoners_War_Statistics.Monsters();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectJson)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,13 @@
             this.pictureBoxSelectJson.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBoxSelectJson, "Click here to select JSON File");
             this.pictureBoxSelectJson.Click += new System.EventHandler(this.pictureBoxSelectJson_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
             // 
             // summary1
             // 
@@ -96,7 +103,6 @@
             // 
             // menu1
             // 
-            this.menu1.AutoScroll = true;
             this.menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.menu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu1.Location = new System.Drawing.Point(0, 70);
@@ -176,6 +182,8 @@
             this.monsters1.MonsterAttributeLight = ((ushort)(0));
             this.monsters1.MonsterAttributeWater = ((ushort)(0));
             this.monsters1.MonsterAttributeWind = ((ushort)(0));
+            this.monsters1.MonstersCollectionSummoner = 0;
+            this.monsters1.MonstersCollectionWhole = 0;
             this.monsters1.MonstersLDNat4PlusAmount = ((ushort)(0));
             this.monsters1.MonstersLocked = ((System.Collections.Generic.List<long>)(resources.GetObject("monsters1.MonstersLocked")));
             this.monsters1.MonstersNat5Amount = ((ushort)(0));
@@ -189,13 +197,6 @@
             this.monsters1.Size = new System.Drawing.Size(800, 581);
             this.monsters1.TabIndex = 14;
             this.monsters1.Visible = false;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Help";
             // 
             // FormMain
             // 
