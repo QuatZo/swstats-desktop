@@ -19,7 +19,7 @@ namespace Summoners_War_Statistics
         static void Main()
         {
             XmlConfigurator.Configure();
-            Logger.log.Info($"Starting app....");
+            Logger.log.Info($"Starting app...");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -28,7 +28,7 @@ namespace Summoners_War_Statistics
 
             Presenter presenter = new Presenter(view, model);
             Application.Run((FormMain)view);
-            Logger.log.Info($"Closing app....");
+            Logger.log.Info($"Closing app...");
             Logger.log.Info($"-----------------------------------");
         }
     }

@@ -70,6 +70,14 @@
             this.labelLDNat4sPlus = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelHeaderMid = new System.Windows.Forms.Panel();
+            this.labelCollection = new System.Windows.Forms.Label();
+            this.checkedListBoxCollectionStars = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxCollectionAttribute = new System.Windows.Forms.CheckedListBox();
+            this.labelCollectionAttribute = new System.Windows.Forms.Label();
+            this.labelCollectionStars = new System.Windows.Forms.Label();
+            this.labelCollectionWhole = new System.Windows.Forms.Label();
+            this.labelCollectionSlash = new System.Windows.Forms.Label();
+            this.labelCollectionSummoner = new System.Windows.Forms.Label();
             this.panelHeaderRight = new System.Windows.Forms.Panel();
             this.panelHeaderLeft = new System.Windows.Forms.Panel();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -203,7 +211,7 @@
             this.labelStarsSixAmount.AutoSize = true;
             this.labelStarsSixAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsSixAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsSixAmount.Location = new System.Drawing.Point(158, 3);
+            this.labelStarsSixAmount.Location = new System.Drawing.Point(144, 3);
             this.labelStarsSixAmount.Name = "labelStarsSixAmount";
             this.labelStarsSixAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsSixAmount.TabIndex = 20;
@@ -216,7 +224,7 @@
             this.labelStarsFiveAmount.AutoSize = true;
             this.labelStarsFiveAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsFiveAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsFiveAmount.Location = new System.Drawing.Point(158, 35);
+            this.labelStarsFiveAmount.Location = new System.Drawing.Point(144, 35);
             this.labelStarsFiveAmount.Name = "labelStarsFiveAmount";
             this.labelStarsFiveAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsFiveAmount.TabIndex = 21;
@@ -229,7 +237,7 @@
             this.labelStarsFourAmount.AutoSize = true;
             this.labelStarsFourAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsFourAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsFourAmount.Location = new System.Drawing.Point(158, 65);
+            this.labelStarsFourAmount.Location = new System.Drawing.Point(144, 65);
             this.labelStarsFourAmount.Name = "labelStarsFourAmount";
             this.labelStarsFourAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsFourAmount.TabIndex = 22;
@@ -242,7 +250,7 @@
             this.labelStarsThreeAmount.AutoSize = true;
             this.labelStarsThreeAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsThreeAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsThreeAmount.Location = new System.Drawing.Point(158, 95);
+            this.labelStarsThreeAmount.Location = new System.Drawing.Point(144, 95);
             this.labelStarsThreeAmount.Name = "labelStarsThreeAmount";
             this.labelStarsThreeAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsThreeAmount.TabIndex = 23;
@@ -255,7 +263,7 @@
             this.labelStarsTwoAmount.AutoSize = true;
             this.labelStarsTwoAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsTwoAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsTwoAmount.Location = new System.Drawing.Point(158, 125);
+            this.labelStarsTwoAmount.Location = new System.Drawing.Point(144, 125);
             this.labelStarsTwoAmount.Name = "labelStarsTwoAmount";
             this.labelStarsTwoAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsTwoAmount.TabIndex = 24;
@@ -268,7 +276,7 @@
             this.labelStarsOneAmount.AutoSize = true;
             this.labelStarsOneAmount.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
             this.labelStarsOneAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelStarsOneAmount.Location = new System.Drawing.Point(158, 155);
+            this.labelStarsOneAmount.Location = new System.Drawing.Point(144, 155);
             this.labelStarsOneAmount.Name = "labelStarsOneAmount";
             this.labelStarsOneAmount.Size = new System.Drawing.Size(17, 22);
             this.labelStarsOneAmount.TabIndex = 25;
@@ -362,7 +370,7 @@
             // pictureBoxStars6
             // 
             this.pictureBoxStars6.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_6;
-            this.pictureBoxStars6.Location = new System.Drawing.Point(20, 3);
+            this.pictureBoxStars6.Location = new System.Drawing.Point(6, 3);
             this.pictureBoxStars6.Name = "pictureBoxStars6";
             this.pictureBoxStars6.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars6.TabIndex = 59;
@@ -463,7 +471,7 @@
             // pictureBoxStars1
             // 
             this.pictureBoxStars1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_1;
-            this.pictureBoxStars1.Location = new System.Drawing.Point(20, 155);
+            this.pictureBoxStars1.Location = new System.Drawing.Point(6, 155);
             this.pictureBoxStars1.Name = "pictureBoxStars1";
             this.pictureBoxStars1.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars1.TabIndex = 60;
@@ -473,7 +481,7 @@
             // pictureBoxStars2
             // 
             this.pictureBoxStars2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_2;
-            this.pictureBoxStars2.Location = new System.Drawing.Point(20, 125);
+            this.pictureBoxStars2.Location = new System.Drawing.Point(6, 125);
             this.pictureBoxStars2.Name = "pictureBoxStars2";
             this.pictureBoxStars2.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars2.TabIndex = 61;
@@ -483,7 +491,7 @@
             // pictureBoxStars3
             // 
             this.pictureBoxStars3.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_3;
-            this.pictureBoxStars3.Location = new System.Drawing.Point(20, 95);
+            this.pictureBoxStars3.Location = new System.Drawing.Point(6, 95);
             this.pictureBoxStars3.Name = "pictureBoxStars3";
             this.pictureBoxStars3.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars3.TabIndex = 62;
@@ -493,7 +501,7 @@
             // pictureBoxStars4
             // 
             this.pictureBoxStars4.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_4;
-            this.pictureBoxStars4.Location = new System.Drawing.Point(20, 65);
+            this.pictureBoxStars4.Location = new System.Drawing.Point(6, 65);
             this.pictureBoxStars4.Name = "pictureBoxStars4";
             this.pictureBoxStars4.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars4.TabIndex = 63;
@@ -503,7 +511,7 @@
             // pictureBoxStars5
             // 
             this.pictureBoxStars5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_5;
-            this.pictureBoxStars5.Location = new System.Drawing.Point(20, 35);
+            this.pictureBoxStars5.Location = new System.Drawing.Point(6, 35);
             this.pictureBoxStars5.Name = "pictureBoxStars5";
             this.pictureBoxStars5.Size = new System.Drawing.Size(132, 24);
             this.pictureBoxStars5.TabIndex = 64;
@@ -572,6 +580,14 @@
             // 
             // panelHeaderMid
             // 
+            this.panelHeaderMid.Controls.Add(this.labelCollection);
+            this.panelHeaderMid.Controls.Add(this.checkedListBoxCollectionStars);
+            this.panelHeaderMid.Controls.Add(this.checkedListBoxCollectionAttribute);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionAttribute);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionStars);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionWhole);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionSlash);
+            this.panelHeaderMid.Controls.Add(this.labelCollectionSummoner);
             this.panelHeaderMid.Controls.Add(this.pictureBoxStars6);
             this.panelHeaderMid.Controls.Add(this.labelStarsOneAmount);
             this.panelHeaderMid.Controls.Add(this.labelStarsTwoAmount);
@@ -587,8 +603,126 @@
             this.panelHeaderMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeaderMid.Location = new System.Drawing.Point(210, 42);
             this.panelHeaderMid.Name = "panelHeaderMid";
-            this.panelHeaderMid.Size = new System.Drawing.Size(370, 188);
+            this.panelHeaderMid.Size = new System.Drawing.Size(433, 188);
             this.panelHeaderMid.TabIndex = 70;
+            // 
+            // labelCollection
+            // 
+            this.labelCollection.AutoSize = true;
+            this.labelCollection.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollection.Location = new System.Drawing.Point(234, 163);
+            this.labelCollection.Name = "labelCollection";
+            this.labelCollection.Size = new System.Drawing.Size(68, 22);
+            this.labelCollection.TabIndex = 81;
+            this.labelCollection.Text = "Collection";
+            this.labelCollection.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollection, "Amount of specific monsters in Summoner\'s Collection");
+            // 
+            // checkedListBoxCollectionStars
+            // 
+            this.checkedListBoxCollectionStars.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionStars.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxCollectionStars.CheckOnClick = true;
+            this.checkedListBoxCollectionStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxCollectionStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.checkedListBoxCollectionStars.FormattingEnabled = true;
+            this.checkedListBoxCollectionStars.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.checkedListBoxCollectionStars.Location = new System.Drawing.Point(309, 5);
+            this.checkedListBoxCollectionStars.Name = "checkedListBoxCollectionStars";
+            this.checkedListBoxCollectionStars.Size = new System.Drawing.Size(120, 54);
+            this.checkedListBoxCollectionStars.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.checkedListBoxCollectionStars, "Natural stars of monsters in Collection.");
+            this.checkedListBoxCollectionStars.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);
+            // 
+            // checkedListBoxCollectionAttribute
+            // 
+            this.checkedListBoxCollectionAttribute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.checkedListBoxCollectionAttribute.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxCollectionAttribute.CheckOnClick = true;
+            this.checkedListBoxCollectionAttribute.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxCollectionAttribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.checkedListBoxCollectionAttribute.FormattingEnabled = true;
+            this.checkedListBoxCollectionAttribute.Items.AddRange(new object[] {
+            "Water",
+            "Fire",
+            "Wind",
+            "Light",
+            "Dark"});
+            this.checkedListBoxCollectionAttribute.Location = new System.Drawing.Point(309, 68);
+            this.checkedListBoxCollectionAttribute.Name = "checkedListBoxCollectionAttribute";
+            this.checkedListBoxCollectionAttribute.Size = new System.Drawing.Size(120, 90);
+            this.checkedListBoxCollectionAttribute.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.checkedListBoxCollectionAttribute, "Attribute of monsters in Collection");
+            this.checkedListBoxCollectionAttribute.SelectedIndexChanged += new System.EventHandler(this.CheckedListBoxCollectionStars_ItemCheck);
+            // 
+            // labelCollectionAttribute
+            // 
+            this.labelCollectionAttribute.AutoSize = true;
+            this.labelCollectionAttribute.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionAttribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionAttribute.Location = new System.Drawing.Point(234, 97);
+            this.labelCollectionAttribute.Name = "labelCollectionAttribute";
+            this.labelCollectionAttribute.Size = new System.Drawing.Size(67, 22);
+            this.labelCollectionAttribute.TabIndex = 78;
+            this.labelCollectionAttribute.Text = "Attribute";
+            this.labelCollectionAttribute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionAttribute, "Attribute of monsters in Collection");
+            // 
+            // labelCollectionStars
+            // 
+            this.labelCollectionStars.AutoSize = true;
+            this.labelCollectionStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionStars.Location = new System.Drawing.Point(213, 28);
+            this.labelCollectionStars.Name = "labelCollectionStars";
+            this.labelCollectionStars.Size = new System.Drawing.Size(88, 22);
+            this.labelCollectionStars.TabIndex = 77;
+            this.labelCollectionStars.Text = "Natural stars";
+            this.labelCollectionStars.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionStars, "Natural stars of monsters in Collection.\r\nAll = 3*+");
+            // 
+            // labelCollectionWhole
+            // 
+            this.labelCollectionWhole.AutoSize = true;
+            this.labelCollectionWhole.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionWhole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionWhole.Location = new System.Drawing.Point(412, 163);
+            this.labelCollectionWhole.Name = "labelCollectionWhole";
+            this.labelCollectionWhole.Size = new System.Drawing.Size(17, 22);
+            this.labelCollectionWhole.TabIndex = 74;
+            this.labelCollectionWhole.Text = "0";
+            this.labelCollectionWhole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionWhole, "Amount of specific monsters in Collection");
+            // 
+            // labelCollectionSlash
+            // 
+            this.labelCollectionSlash.AutoSize = true;
+            this.labelCollectionSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionSlash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionSlash.Location = new System.Drawing.Point(392, 163);
+            this.labelCollectionSlash.Name = "labelCollectionSlash";
+            this.labelCollectionSlash.Size = new System.Drawing.Size(14, 22);
+            this.labelCollectionSlash.TabIndex = 73;
+            this.labelCollectionSlash.Text = "/";
+            this.labelCollectionSlash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionSlash, "Attribute of monsters in Collection");
+            // 
+            // labelCollectionSummoner
+            // 
+            this.labelCollectionSummoner.AutoSize = true;
+            this.labelCollectionSummoner.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCollectionSummoner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCollectionSummoner.Location = new System.Drawing.Point(369, 163);
+            this.labelCollectionSummoner.Name = "labelCollectionSummoner";
+            this.labelCollectionSummoner.Size = new System.Drawing.Size(17, 22);
+            this.labelCollectionSummoner.TabIndex = 72;
+            this.labelCollectionSummoner.Text = "0";
+            this.labelCollectionSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.labelCollectionSummoner, "Amount of specific monsters in Summoner\'s Collection");
             // 
             // panelHeaderRight
             // 
@@ -605,9 +739,9 @@
             this.panelHeaderRight.Controls.Add(this.labelLDNat4sPlus);
             this.panelHeaderRight.Controls.Add(this.labelNat5s);
             this.panelHeaderRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderRight.Location = new System.Drawing.Point(580, 42);
+            this.panelHeaderRight.Location = new System.Drawing.Point(643, 42);
             this.panelHeaderRight.Name = "panelHeaderRight";
-            this.panelHeaderRight.Size = new System.Drawing.Size(200, 188);
+            this.panelHeaderRight.Size = new System.Drawing.Size(137, 188);
             this.panelHeaderRight.TabIndex = 71;
             // 
             // panelHeaderLeft
@@ -816,5 +950,13 @@
         private BrightIdeasSoftware.OLVColumn olvColumn22;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCollectionStars;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCollectionAttribute;
+        private System.Windows.Forms.Label labelCollectionAttribute;
+        private System.Windows.Forms.Label labelCollectionStars;
+        private System.Windows.Forms.Label labelCollectionWhole;
+        private System.Windows.Forms.Label labelCollectionSlash;
+        private System.Windows.Forms.Label labelCollectionSummoner;
+        private System.Windows.Forms.Label labelCollection;
     }
 }

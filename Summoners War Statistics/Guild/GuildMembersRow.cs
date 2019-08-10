@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Summoners_War_Statistics
 {
-    class GuildRow
+    class GuildMembersRow
     {
         public string Name { get; set; }
         public string Joined { get; set; }
@@ -14,7 +14,7 @@ namespace Summoners_War_Statistics
         public string FirstDefense { get; set; }
         public string SecondDefense { get; set; }
 
-        public GuildRow(string name, string joined, string offlinesince, string firstdefense, string seconddefense)
+        public GuildMembersRow(string name, string joined, string offlinesince, string firstdefense, string seconddefense)
         {
             Name = name;
             Joined = joined;

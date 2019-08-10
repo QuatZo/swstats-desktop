@@ -16,10 +16,13 @@ namespace Summoners_War_Statistics
         private readonly IView view;
         private readonly Model model;
 
+        private readonly MenuPresenter menuPresenter;
+
         private readonly SummaryPresenter summaryPresenter;
         private readonly MonstersPresenter monsterPresenter;
         private readonly RunesPresenter runesPresenter;
         private readonly DimHolePresenter dimHolePresenter;
+        private readonly GuildPresenter guildPresenter;
         private readonly OtherPresenter otherPresenter;
 
         public Presenter(IView view, Model model)
@@ -27,10 +30,13 @@ namespace Summoners_War_Statistics
             this.view = view;
             this.model = model;
 
+            menuPresenter = new MenuPresenter(this.view.MenuView, model);
+
             summaryPresenter = new SummaryPresenter(this.view.SummaryView, model);
             monsterPresenter = new MonstersPresenter(this.view.MonstersView, model);
             runesPresenter = new RunesPresenter(this.view.RunesView, model);
             dimHolePresenter = new DimHolePresenter(this.view.DimHoleView, model);
+            guildPresenter = new GuildPresenter(this.view.GuildView, model);
             otherPresenter = new OtherPresenter(this.view.OtherView, model);
 
             this.view.Loaded += View_Loaded;
@@ -48,6 +54,7 @@ namespace Summoners_War_Statistics
                 view.MonstersView.Cntrls,
                 view.RunesView.Cntrls,
                 view.DimHoleView.Cntrls,
+                view.GuildView.Cntrls,
                 view.OtherView.Cntrls
             };
             foreach(var controls in controlList)
@@ -64,12 +71,17 @@ namespace Summoners_War_Statistics
                         control.Font = new Font(view.FF, 12, FontStyle.Regular);
                         continue;
                     }
+                    if (control.Name.Contains("checkedListBox"))
+                    {
+                        control.Font = new Font(view.FF, 10, FontStyle.Regular);
+                        continue;
+                    }
                     if (control.Name.Contains("Level"))
                     {
                         control.Font = new Font(view.FF, 20, FontStyle.Regular);
                         continue;
                     }
-                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other"))
+                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other") || control.Name.Contains("Guild"))
                     {
                         control.Font = new Font(view.FF, 24, FontStyle.Regular);
                         continue;
@@ -106,6 +118,10 @@ namespace Summoners_War_Statistics
                 case "dimhole":
                     view.DimHoleView.Front();
                     view.DimHoleViewVisibility = true;
+                    break;
+                case "guild":
+                    view.GuildView.Front();
+                    view.GuildViewVisibility = true;
                     break;
                 case "other":
                     view.OtherView.Front();
@@ -161,10 +177,14 @@ namespace Summoners_War_Statistics
                         view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
                         Logger.log.Info("[Dimension Hole] DONE");
 
+                        Logger.log.Info($"Guild tab");
+                        view.GuildView.GuildMembersList.Items.Clear();
+                        view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
+                        Logger.log.Info("[Guild] DONE");
+
                         Logger.log.Info($"Other tab");
                         view.OtherView.SummonerFriendsList.Items.Clear();
-                        view.OtherView.GuildMembersList.Items.Clear();
-                        view.OtherView.Init(json.FriendList, json.Guild, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat);
+                        view.OtherView.Init(json.FriendList);
                         Logger.log.Info("[Other] DONE");
                     }
                     catch (FormatException e)

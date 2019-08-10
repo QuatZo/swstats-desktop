@@ -64,7 +64,15 @@ namespace Summoners_War_Statistics
                     panelHeaderMid,
                     panelHeaderRight,
                     panelFooter,
-                    panelFooterRight
+                    panelFooterRight,
+                    labelCollectionStars,
+                    checkedListBoxCollectionStars,
+                    labelCollectionAttribute,
+                    checkedListBoxCollectionAttribute,
+                    labelCollection,
+                    labelCollectionSummoner,
+                    labelCollectionSlash,
+                    labelCollectionWhole
                 };
 
         public int MonsterStarsChecked
@@ -182,6 +190,44 @@ namespace Summoners_War_Statistics
             get => objectListViewMonstersToLock;
             set => objectListViewMonstersToLock = value;
         }
+
+        public List<int> MonstersCollectionCheckedStars
+        {
+            get {
+                List<int> checkedStars = new List<int>();
+                if(checkedListBoxCollectionStars.CheckedItems.Count > 0)
+                foreach(var item in checkedListBoxCollectionStars.CheckedItems)
+                {
+                        checkedStars.Add(int.Parse(item.ToString()));
+                }
+
+                return checkedStars;
+            }
+        }
+        public List<string> MonstersCollectionCheckedAttributes
+        {
+            get
+            {
+                List<string> checkedAttribute = new List<string>();
+                if (checkedListBoxCollectionAttribute.CheckedItems.Count > 0)
+                    foreach (var item in checkedListBoxCollectionAttribute.CheckedItems)
+                    {
+                        checkedAttribute.Add(item.ToString());
+                    }
+
+                return checkedAttribute;
+            }
+        }
+        public int MonstersCollectionSummoner
+        {
+            get => int.Parse(labelCollectionSummoner.Text);
+            set => labelCollectionSummoner.Text = value.ToString();
+        }
+        public int MonstersCollectionWhole
+        {
+            get => int.Parse(labelCollectionWhole.Text);
+            set => labelCollectionWhole.Text = value.ToString();
+        }
         #endregion
 
         #region Events
@@ -192,6 +238,7 @@ namespace Summoners_War_Statistics
         public event Action<RadioButton> MonstersStarsChanged;
         public event Action Resized;
         public event Action CanSeeMonstersTab;
+        public event Action MonstersCollectionItemChecked;
         #endregion
 
         public Monsters()
@@ -248,5 +295,10 @@ namespace Summoners_War_Statistics
             }
         }
         #endregion
+
+        private void CheckedListBoxCollectionStars_ItemCheck(object sender, EventArgs e)
+        {
+            MonstersCollectionItemChecked?.Invoke();
+        }
     }
 }

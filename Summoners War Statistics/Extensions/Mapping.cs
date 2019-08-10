@@ -1998,6 +1998,7 @@ namespace Summoners_War_Statistics
         private Dictionary<int, int> axpPerFloor = new Dictionary<int, int>();
 
         private Dictionary<int, string> decksPlace = new Dictionary<int, string>();
+        private Dictionary<(int Stars, string Attribute), int> monstersCollection = new Dictionary<(int Stars, string Attribute), int>();
         #endregion
 
         #region Properties
@@ -2078,6 +2079,23 @@ namespace Summoners_War_Statistics
             }
             return "Unknown Rune Effect Type";
         }
+
+        public Dictionary<(int Stars, string Attribute), int> GetMonstersCollection()
+        {
+            if(monstersCollection.Count > 0) { return monstersCollection; }
+
+            foreach(var monster in monsterBaseClass)
+            {
+                if(monster.Value < 3) { continue; }
+                string attribute = GetMonsterAttribute(monster.Key);
+                if (!monstersCollection.ContainsKey((monster.Value, attribute)))
+                {
+                    monstersCollection.Add((monster.Value, attribute), 1);
+                }
+                else { monstersCollection[(monster.Value, attribute)]++; }
+            }
+            return monstersCollection;
+        }   
 
         public Dictionary<int, string> GetAllRuneEffectTypes()
         {

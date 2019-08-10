@@ -16,12 +16,14 @@ namespace Summoners_War_Statistics
         IMonstersView MonstersView { get; }
         IRunesView RunesView { get; }
         IDimHoleView DimHoleView { get; }
+        IGuildView GuildView { get; }
         IOtherView OtherView { get; }
 
         bool SummaryViewVisibility { get; set; }
         bool MonstersViewVisibility { get; set; }
         bool RunesViewVisibility { get; set; }
         bool DimHoleViewVisibility { get; set; }
+        bool GuildViewVisibility { get; set; }
         bool OtherViewVisibility { get; set; }
 
         OpenFileDialog OpenFile { get; set; }

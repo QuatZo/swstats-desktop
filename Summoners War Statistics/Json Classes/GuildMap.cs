@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Summoners_War_Statistics
 {
-    public partial class Guild
+    public partial class GuildMap
     {
         [JsonProperty("price")]
         public long? Price { get; set; }

@@ -23,6 +23,7 @@ namespace Summoners_War_Statistics
                     pictureBoxMonsters,
                     pictureBoxRunes,
                     pictureBoxDimHole,
+                    pictureBoxGuild,
                     pictureBoxOther
                 };
             set
@@ -31,23 +32,62 @@ namespace Summoners_War_Statistics
                 pictureBoxMonsters = value[1];
                 pictureBoxRunes = value[2];
                 pictureBoxDimHole = value[3];
-                pictureBoxOther = value[4];
+                pictureBoxGuild = value[4];
+                pictureBoxOther = value[5];
             }
         }
+
+        public List<Control> ControlList
+        {
+            get
+            {
+                List<Control> controls = new List<Control>();
+                foreach(Control control in Controls)
+                {
+                    controls.Add(control);
+                }
+                return controls;
+            }
+        }
+        public bool IsMouseDown { get; set; } = false;
+        public Point MouseLocation { get; set; } = new Point(-1, -1);
+
+        public int WindowWidth { get; set; }
         #endregion
 
         #region Events
         public event Action<object> ButtonClicked;
+        public event Action MousePressed;
+        public event Action MouseUnpressed;
+        public event Action<Point> MouseMoved;
         #endregion
 
         public Menu()
         {
             InitializeComponent();
+            foreach(Control control in Controls)
+            {
+                Console.WriteLine(control.Name);
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
         {
             ButtonClicked?.Invoke(sender);
+        }
+
+        private void PictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            MousePressed?.Invoke();
+        }
+
+        private void PictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseUnpressed?.Invoke();
+        }
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            MouseMoved?.Invoke(e.Location);
         }
     }
 }

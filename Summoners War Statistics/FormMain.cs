@@ -18,8 +18,6 @@ namespace Summoners_War_Statistics
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
 
-
-
         #region Properties
         public FontFamily FF { get; set; }
         public Font Fnt { get; set; }
@@ -28,6 +26,7 @@ namespace Summoners_War_Statistics
         public IMonstersView MonstersView => monsters1;
         public IRunesView RunesView => runes1;
         public IDimHoleView DimHoleView => dimHole1;
+        public IGuildView GuildView => guild1;
         public IOtherView OtherView => other1;
 
         public bool MenuViewVisibility
@@ -55,6 +54,11 @@ namespace Summoners_War_Statistics
             get => dimHole1.Visible;
             set => dimHole1.Visible = value;
         }
+        public bool GuildViewVisibility
+        {
+            get => guild1.Visible;
+            set => guild1.Visible = value;
+        }
         public bool OtherViewVisibility
         {
             get => other1.Visible;
@@ -76,6 +80,7 @@ namespace Summoners_War_Statistics
         public FormMain()
         {
             InitializeComponent();
+            MenuView.WindowWidth = Size.Width;
         }
 
         #region Methods
@@ -140,6 +145,7 @@ namespace Summoners_War_Statistics
             MonstersViewVisibility = false;
             RunesViewVisibility = false;
             DimHoleViewVisibility = false;
+            GuildViewVisibility = false;
             OtherViewVisibility = false;
         }
 
@@ -168,6 +174,7 @@ namespace Summoners_War_Statistics
         private void FormMain_Resize(object sender, EventArgs e)
         {
             pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
+            MenuView.WindowWidth = Size.Width;
             Refresh();
         }
         #endregion

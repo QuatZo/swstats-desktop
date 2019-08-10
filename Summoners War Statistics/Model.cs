@@ -98,9 +98,9 @@ namespace Summoners_War_Statistics
             return friends;
         }
 
-        public List<GuildRow> GuildMembersList(Guild guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
+        public List<GuildMembersRow> GuildMembersList(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
         {
-            List<GuildRow> members = new List<GuildRow>();
+            List<GuildMembersRow> members = new List<GuildMembersRow>();
             List<long> membersInGuildwar = new List<long>();
 
             foreach (var guildwarMember in guildwarMemberList)
@@ -124,7 +124,7 @@ namespace Summoners_War_Statistics
                 }
 
                 members.Add(
-                    new GuildRow
+                    new GuildMembersRow
                     (
                         member.Value.WizardName,
                         DateTimeOffset.FromUnixTimeSeconds((long)member.Value.JoinTimestamp).DateTime.ToString("dd-MMMM-yyyy HH:mm:ss"),
@@ -136,6 +136,34 @@ namespace Summoners_War_Statistics
             }
 
             return members;
+        }
+
+        public List<GuildSiegeDefensesRow> GuildSiegeDefensesList(List<long> siegeDefenses, List<Monster> monsters)
+        {
+            List<GuildSiegeDefensesRow> comps = new List<GuildSiegeDefensesRow>();
+
+            for(int i = 0; i < siegeDefenses.Count; i+= 3)
+            {
+                string[] units = { "-", "-", "-" };
+                foreach(var unit in monsters)
+                {
+                    if (siegeDefenses[i] == unit.UnitId) { units[i % 3] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (siegeDefenses[i + 1] == unit.UnitId) { units[(i % 3) + 1] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (siegeDefenses[i + 2] == unit.UnitId) { units[(i % 3) + 2] = Mapping.Instance.GetMonsterName((int)unit.UnitMasterId); }
+                    if (!units.Contains("-")) { break; }
+                }
+
+                comps.Add(
+                    new GuildSiegeDefensesRow
+                    (
+                        units[0],
+                        units[1],
+                        units[2]
+                    )
+                );
+            }
+
+            return comps;
         }
 
         public List<Rune> RunesEvenEquipped(List<Rune> runesArg, List<Monster> monsters)
@@ -308,6 +336,69 @@ namespace Summoners_War_Statistics
             }
 
             return decksRows;
+        }
+
+        public Dictionary<(int Stars, string Attribute), int> GetSummonersMonstersCollection(List<Monster> monsters)
+        {
+            Dictionary<(int Stars, string Attribute), int> monstersSummonerCollection = new Dictionary<(int Stars, string Attribute), int>();
+
+            List<int> monstersInCollection = new List<int>();
+            foreach (var monster in monsters)
+            {
+                int monsterId = (int)monster.UnitMasterId;
+                int baseClass = Mapping.Instance.GetMonsterBaseClass(monsterId);
+                if (monstersInCollection.Contains(monsterId) || baseClass < 3) { continue; }
+                monstersInCollection.Add(monsterId);
+
+                string attribute = Mapping.Instance.GetMonsterAttribute(monsterId);
+                if (!monstersSummonerCollection.ContainsKey((baseClass, attribute)))
+                {
+                    monstersSummonerCollection.Add((baseClass, attribute), 1);
+                }
+                else
+                {
+                    monstersSummonerCollection[(baseClass, attribute)]++;
+                }
+            }
+            return monstersSummonerCollection;
+        }
+
+        public int GetMonstersAmountInCollection(Dictionary<(int Stars, string Attribute), int> collectionArg, bool specificStar, bool specificAttribute, List<int> stars, List<string> attributes)
+        {
+            int amount = 0;
+            foreach (var collection in collectionArg)
+            {
+                if (specificStar && specificAttribute)
+                {
+                    foreach (var star in stars)
+                    {
+                        foreach (var attribute in attributes)
+                        {
+                            if (collection.Key == (star, attribute)) { amount += collection.Value; }
+                        }
+                    }
+                }
+                else if (specificStar)
+                {
+                    foreach (var star in stars)
+                    {
+                        if (collection.Key.Stars == star) { amount += collection.Value; }
+                    }
+                }
+                else if (specificAttribute)
+                {
+                    foreach (var attribute in attributes)
+                    {
+                        if (collection.Key.Attribute == attribute) { amount += collection.Value; }
+                    }
+                }
+                else
+                {
+                    amount += collection.Value;
+                }
+            }
+
+            return amount;
         }
     }
 }
