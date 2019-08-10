@@ -51,6 +51,8 @@ namespace Summoners_War_Statistics
         }
         public bool IsMouseDown { get; set; } = false;
         public Point MouseLocation { get; set; } = new Point(-1, -1);
+
+        public int WindowWidth { get; set; }
         #endregion
 
         #region Events
@@ -63,6 +65,10 @@ namespace Summoners_War_Statistics
         public Menu()
         {
             InitializeComponent();
+            foreach(Control control in Controls)
+            {
+                Console.WriteLine(control.Name);
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

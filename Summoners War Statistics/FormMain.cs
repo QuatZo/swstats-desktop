@@ -76,6 +76,7 @@ namespace Summoners_War_Statistics
         public FormMain()
         {
             InitializeComponent();
+            MenuView.WindowWidth = Size.Width;
         }
 
         #region Methods
@@ -168,6 +169,7 @@ namespace Summoners_War_Statistics
         private void FormMain_Resize(object sender, EventArgs e)
         {
             pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
+            MenuView.WindowWidth = Size.Width;
             Refresh();
         }
         #endregion

@@ -18,6 +18,7 @@ namespace Summoners_War_Statistics
         bool IsMouseDown { get; set; }
 
         Point MouseLocation { get; set; }
+        int WindowWidth { get; set; }
         #endregion
 
         #region Events

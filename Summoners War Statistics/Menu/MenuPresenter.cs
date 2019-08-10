@@ -42,8 +42,24 @@ namespace Summoners_War_Statistics
             }
         }
 
+        private void ResetMenuLocation()
+        {
+            for (int i = 0; i < view.ControlList.Count; i++)
+            {
+                view.ControlList[i].Location = new Point(i * view.ControlList[i].Size.Width, view.ControlList[i].Location.Y);
+            }
+        }
+
         private void View_MouseUnpressed()
         {
+            for (int i = 0; i < view.ControlList.Count; i++)
+            {
+                if(view.ControlList[i].Name.Contains("Summary") && view.ControlList[i].Location.X > view.WindowWidth - 30 || view.ControlList[i].Name.Contains("Other") && view.ControlList[i].Location.X < -130)
+                {
+                    ResetMenuLocation();
+                    break;
+                }
+            }
             view.IsMouseDown = false;
             view.MouseLocation = new Point(-1, -1);
         }

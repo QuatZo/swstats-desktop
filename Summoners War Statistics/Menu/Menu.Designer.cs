@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxSummary = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDimHole = new System.Windows.Forms.PictureBox();
             this.pictureBoxGuild = new System.Windows.Forms.PictureBox();
             this.pictureBoxOther = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDimHole = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRunes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMonsters = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSummary = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimHole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuild)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOther)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimHole)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRunes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMonsters)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSummary)).BeginInit();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -140,12 +140,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.Controls.Add(this.pictureBoxSummary);
+            this.Controls.Add(this.pictureBoxMonsters);
+            this.Controls.Add(this.pictureBoxRunes);
+            this.Controls.Add(this.pictureBoxDimHole);
             this.Controls.Add(this.pictureBoxGuild);
             this.Controls.Add(this.pictureBoxOther);
-            this.Controls.Add(this.pictureBoxDimHole);
-            this.Controls.Add(this.pictureBoxRunes);
-            this.Controls.Add(this.pictureBoxMonsters);
-            this.Controls.Add(this.pictureBoxSummary);
             this.Name = "Menu";
             this.Size = new System.Drawing.Size(962, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGuild)).EndInit();
@@ -164,8 +164,8 @@
         private System.Windows.Forms.PictureBox pictureBoxMonsters;
         private System.Windows.Forms.PictureBox pictureBoxRunes;
         private System.Windows.Forms.PictureBox pictureBoxDimHole;
+        private System.Windows.Forms.PictureBox pictureBoxGuild;
         private System.Windows.Forms.PictureBox pictureBoxOther;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pictureBoxGuild;
     }
 }
