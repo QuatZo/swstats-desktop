@@ -46,13 +46,15 @@ namespace Summoners_War_Statistics
 
         private void View_Resized()
         {
-            // NEED TO CHANGE (REPAIR)
+            //labelOtherActiveFriends   - 0
+            //objectListViewFriends     - 1
+            //panelFriends              - 2
 
             view.SummonerFriendsList.BeginUpdate();
 
-            //view.Cntrls[13].Size = new Size(view.Cntrls[13].Size.Width, view.TabSize.Height * 50 / 100);
-            //view.Cntrls[14].Location = new Point(0, view.Cntrls[13].Size.Height);
-            //view.Cntrls[14].Size = new Size(view.Cntrls[14].Size.Width, view.TabSize.Height - view.Cntrls[13].Size.Height);
+            view.Cntrls[1].Size = new Size(view.Cntrls[1].Size.Width, view.TabSize.Height * 50 / 100);
+            view.Cntrls[2].Location = new Point(0, view.Cntrls[1].Size.Height);
+            view.Cntrls[2].Size = new Size(view.Cntrls[2].Size.Width, view.TabSize.Height - view.Cntrls[1].Size.Height);
 
             int columnWidth = view.SummonerFriendsList.Size.Width / view.SummonerFriendsList.Columns.Count;
             foreach (ColumnHeader column in view.SummonerFriendsList.Columns)
