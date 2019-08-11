@@ -56,6 +56,10 @@ namespace Summoners_War_Statistics
             BringToFront();
         }
 
+        public void ResetOnFail()
+        {
+            SummonerFriendsList.Items.Clear();
+        }
         private void Other_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();

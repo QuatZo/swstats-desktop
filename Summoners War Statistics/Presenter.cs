@@ -44,6 +44,18 @@ namespace Summoners_War_Statistics
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
 
             this.view.MenuView.ButtonClicked += MenuView_ButtonClicked;
+
+            this.view.InitFailed += View_InitFailed;
+        }
+
+        private void View_InitFailed()
+        {
+            view.SummaryView.ResetOnFail();
+            view.MonstersView.ResetOnFail();
+            view.RunesView.ResetOnFail();
+            view.DimHoleView.ResetOnFail();
+            view.GuildView.ResetOnFail();
+            view.OtherView.ResetOnFail();
         }
 
         private void View_Loaded()
@@ -189,14 +201,17 @@ namespace Summoners_War_Statistics
                     }
                     catch (FormatException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (NullReferenceException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (InvalidJSONException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     finally

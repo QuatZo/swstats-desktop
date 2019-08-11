@@ -123,6 +123,14 @@ namespace Summoners_War_Statistics
             BringToFront();
         }
 
+        public void ResetOnFail()
+        {
+            GuildSiegeDefensesList.Items.Clear();
+            GuildMembersList.Items.Clear();
+            GuildName = GuildLeaderName = GuildActualRanking = GuildBestRanking = "Initializaion failed.";
+            GuildMembers = GuildMembersMax = GuildMembersDefenses = GuildMembersDefensesMax = 0;
+        }
+
         private void Guild_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();

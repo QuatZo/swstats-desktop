@@ -349,8 +349,10 @@ namespace Summoners_War_Statistics
             set => objectListViewRunes = value;
         }
 
+        #region RunesList & MonstersMasterId (no physical field in designer)
         public List<Rune> RunesList { get; set; }
         public Dictionary<long, int> MonstersMasterId { get; set; }
+        #endregion
         #endregion
 
         #region Events
@@ -431,6 +433,11 @@ namespace Summoners_War_Statistics
         public void Front()
         {
             BringToFront();
+        }
+        public void ResetOnFail()
+        {
+            objectListViewRunes.Items.Clear();
+            RunesEfficiencyMax = RunesEfficiencyMean = RunesEfficiencyMedian = RunesEfficiencyMin = RunesEfficiencyStandardDeviation = RunesAmount = RunesMaxed = RunesInventory = 0;
         }
         #endregion
 

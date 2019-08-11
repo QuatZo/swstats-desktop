@@ -85,6 +85,7 @@ namespace Summoners_War_Statistics
             set => objectListViewDimHole = value;
         }
 
+        #region Dictionary<RadioButton, ushort> DimHoleLevelAXP
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -96,6 +97,7 @@ namespace Summoners_War_Statistics
                 { radioButton4, 740 },
                 { radioButton5, 960 }
             };
+        #endregion
 
         public List<TimeSpan> DimHoleFloorTimes
         {
@@ -171,6 +173,13 @@ namespace Summoners_War_Statistics
         public void Front()
         {
             BringToFront();
+        }
+
+        public void ResetOnFail()
+        {
+            SummonerDimensionalHoleEnergy = SummonerDimensionalHoleEnergyMax = 0;
+            SummonerDimensionalHoleEnergyMaxInfo = DimHoleFloorTime = DimHoleFloorSuccess = "Initialization failed.";
+            DimHoleMonstersListView.Items.Clear();
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)

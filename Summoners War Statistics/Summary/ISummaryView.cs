@@ -55,6 +55,7 @@ namespace Summoners_War_Statistics
         #region Methods
         void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck);
         void Front();
+        void ResetOnFail();
         #endregion
     }
 }

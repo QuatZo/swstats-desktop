@@ -35,11 +35,13 @@ namespace Summoners_War_Statistics
         #region Events
         event Action SelectFileButtonClicked;
         event Action Loaded;
+        event Action InitFailed;
         #endregion
 
         #region Methods
         void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null);
         void HideViews();
+        void InitFail();
         #endregion
     }
 }

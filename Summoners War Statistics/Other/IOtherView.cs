@@ -25,6 +25,7 @@ namespace Summoners_War_Statistics
         #region Methods
         void Init(List<Friend> friendsList);
         void Front();
+        void ResetOnFail();
         #endregion
 
     }
