@@ -219,21 +219,23 @@ namespace Summoners_War_Statistics
             List<byte> filters = new List<byte>()
             {
                 view.ChosenRuneSet, // ID 0
+                view.ChosenRuneStars,
+                view.ChosenRuneStarsStatement,
                 view.ChosenRuneMainstat,
                 view.ChosenRuneInnate,
-                view.ChosenRuneQuality,
+                view.ChosenRuneQuality, // ID 5
                 view.ChosenRuneOriginQuality,
-                view.ChosenRuneSlot, // ID 5
+                view.ChosenRuneSlot,
                 view.ChosenRuneUpgrade,
                 view.ChosenRuneUpgradeStatement,
-                view.ChosenRuneEfficiency,
+                view.ChosenRuneEfficiency, // ID 10
                 view.ChosenRuneEfficiencyStatement,
-                view.ChosenRuneSubstat1, // ID 10
+                view.ChosenRuneSubstat1,
                 view.ChosenRuneSubstat1Statement,
                 view.ChosenRuneSubstat2,
-                view.ChosenRuneSubstat2Statement,
+                view.ChosenRuneSubstat2Statement, // ID 15
                 view.ChosenRuneSubstat3,
-                view.ChosenRuneSubstat3Statement, // ID 15
+                view.ChosenRuneSubstat3Statement, 
                 view.ChosenRuneSubstat4,
                 view.ChosenRuneSubstat4Statement,
             };

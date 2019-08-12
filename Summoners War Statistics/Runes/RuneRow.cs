@@ -9,6 +9,7 @@ namespace Summoners_War_Statistics
     class RuneRow
     {
         public string Set { get; set; }
+        public byte Stars { get; set; }
         public byte Slot { get; set; }
         public byte Level { get; set; }
         public string Origin { get; set; }
@@ -27,9 +28,10 @@ namespace Summoners_War_Statistics
         public string Acc { get; set; }
         public string Eff { get; set; }
 
-        public RuneRow(string set, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff)
+        public RuneRow(string set, byte stars, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff)
         {
             Set = set;
+            Stars = stars;
             Slot = slot;
             Level = level;
             Origin = origin;

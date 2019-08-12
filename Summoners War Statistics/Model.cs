@@ -196,27 +196,34 @@ namespace Summoners_War_Statistics
         private bool RuneMeetsRequirements(Rune rune, List<byte> filters, double runeEfficiency)
         {
             if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
-            if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { return false; } // mainstat
 
-            if (filters[2] == 98 && rune.PrefixEff[0] == 0) { return false; }
-            else if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
-            else if (filters[2] != 99 && filters[2] != 98 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; } // innate
+            if (filters[2] == 0 && rune.Class != filters[1]) { return false; } // stars
+            if (filters[2] == 1 && rune.Class > filters[1]) { return false; }
+            if (filters[2] == 2 && rune.Class < filters[1]) { return false; }
+            if (filters[2] == 3 && rune.Class >= filters[1]) { return false; }
+            if (filters[2] == 4 && rune.Class <= filters[1]) { return false; }
 
-            if (filters[3] != 0 && rune.Rank != filters[3]) { return false; } // quality
-            if (filters[4] != 0 && rune.Extra != filters[4]) { return false; } // original quality
-            if (filters[5] != 0 && rune.SlotNo != filters[5]) { return false; } // slot
+            if (filters[3] != 0 && rune.PriEff[0] != filters[3]) { return false; } // mainstat
 
-            if (filters[7] == 0 && rune.UpgradeCurr != filters[6]) { return false; } // level
-            if (filters[7] == 1 && rune.UpgradeCurr > filters[6]) { return false; }
-            if (filters[7] == 2 && rune.UpgradeCurr < filters[6]) { return false; }
-            if (filters[7] == 3 && rune.UpgradeCurr >= filters[6]) { return false; }
-            if (filters[7] == 4 && rune.UpgradeCurr <= filters[6]) { return false; }
+            if (filters[4] == 98 && rune.PrefixEff[0] == 0) { return false; }
+            else if (filters[4] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
+            else if (filters[4] != 99 && filters[4] != 98 && filters[4] != 0 && rune.PrefixEff[0] != filters[4]) { return false; } // innate
 
-            if (filters[9] == 0 && runeEfficiency != filters[8]) { return false; } // efficiency
-            if (filters[9] == 1 && runeEfficiency > filters[8]) { return false; }
-            if (filters[9] == 2 && runeEfficiency < filters[8]) { return false; }
-            if (filters[9] == 3 && runeEfficiency >= filters[8]) { return false; }
-            if (filters[9] == 4 && runeEfficiency <= filters[8]) { return false; }
+            if (filters[5] != 0 && rune.Rank != filters[5]) { return false; } // quality
+            if (filters[6] != 0 && rune.Extra != filters[6]) { return false; } // original quality
+            if (filters[7] != 0 && rune.SlotNo != filters[7]) { return false; } // slot
+
+            if (filters[9] == 0 && rune.UpgradeCurr != filters[8]) { return false; } // level
+            if (filters[9] == 1 && rune.UpgradeCurr > filters[8]) { return false; }
+            if (filters[9] == 2 && rune.UpgradeCurr < filters[8]) { return false; }
+            if (filters[9] == 3 && rune.UpgradeCurr >= filters[8]) { return false; }
+            if (filters[9] == 4 && rune.UpgradeCurr <= filters[8]) { return false; }
+
+            if (filters[11] == 0 && runeEfficiency != filters[10]) { return false; } // efficiency
+            if (filters[11] == 1 && runeEfficiency > filters[10]) { return false; }
+            if (filters[11] == 2 && runeEfficiency < filters[10]) { return false; }
+            if (filters[11] == 3 && runeEfficiency >= filters[10]) { return false; }
+            if (filters[11] == 4 && runeEfficiency <= filters[10]) { return false; }
 
             // substats filter
             List<(byte Substat, byte YesNo)> substatFilters = new List<(byte Substat, byte YesNo)>()
@@ -277,6 +284,7 @@ namespace Summoners_War_Statistics
                     new RuneRow
                     (
                         Mapping.Instance.GetRuneSet((int)rune.SetId),
+                        (byte)rune.Class,
                         (byte)rune.SlotNo,
                         (byte)rune.UpgradeCurr,
                         origin,

@@ -86,6 +86,27 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        public byte ChosenRuneStars
+        {
+            get
+            {
+                try
+                {
+                    if (int.Parse(comboBoxRuneStars.SelectedItem.ToString()) < 0) { return 0; }
+                    return byte.Parse(comboBoxRuneStars.SelectedItem.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneStarsStatement
+        {
+            get
+            {
+                if (comboBoxRuneStarsIf.SelectedIndex < 0) { return 2; } // >=
+                return (byte)comboBoxRuneStarsIf.SelectedIndex;
+            }
+        }
         public byte ChosenRuneMainstat
         {
             get
@@ -414,6 +435,8 @@ namespace Summoners_War_Statistics
             comboBoxRuneOriginalQuality.ValueMember = "Key";
 
             comboBoxRuneSlot.SelectedIndex = 0;
+            comboBoxRuneStars.SelectedIndex = 0;
+            comboBoxRuneStarsIf.SelectedIndex = 2;
             comboBoxRuneUpgrade.SelectedIndex = 0;
             comboBoxRuneUpgradeIf.SelectedIndex = 2;
             comboBoxRuneEfficiency.SelectedIndex = 0;

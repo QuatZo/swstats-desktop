@@ -16,6 +16,8 @@ namespace Summoners_War_Statistics
 
         List<Control> Cntrls { get; }
         byte ChosenRuneSet { get; }
+        byte ChosenRuneStars { get; }
+        byte ChosenRuneStarsStatement { get; }
         byte ChosenRuneMainstat { get; }
         byte ChosenRuneInnate { get; }
         byte ChosenRuneQuality { get; }
