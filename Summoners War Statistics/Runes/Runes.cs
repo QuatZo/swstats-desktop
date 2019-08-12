@@ -378,27 +378,28 @@ namespace Summoners_War_Statistics
             comboBoxRuneSet.DisplayMember = "Value";
             comboBoxRuneSet.ValueMember = "Key";
 
-            Dictionary<int, string> runeEffectTypes = Mapping.Instance.GetAllRuneEffectTypes(); // rune mainstats (and probably in future substats)
+            Dictionary<int, string> runeEffectTypes = Mapping.Instance.GetAllRuneEffectTypes(); // rune mainstats
             if (!runeEffectTypes.ContainsKey(0)) { runeEffectTypes.Add(0, "All"); }
             runeEffectTypes = runeEffectTypes.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
             comboBoxRuneMainstat.DataSource = new BindingSource(runeEffectTypes, null);
             comboBoxRuneMainstat.DisplayMember = "Value";
             comboBoxRuneMainstat.ValueMember = "Key";
-            comboBoxRuneSubstat1.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat1.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat1.DisplayMember = "Value";
             comboBoxRuneSubstat1.ValueMember = "Key";
-            comboBoxRuneSubstat2.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat2.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat2.DisplayMember = "Value";
             comboBoxRuneSubstat2.ValueMember = "Key";
-            comboBoxRuneSubstat3.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat3.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat3.DisplayMember = "Value";
             comboBoxRuneSubstat3.ValueMember = "Key";
-            comboBoxRuneSubstat4.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat4.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat4.DisplayMember = "Value";
             comboBoxRuneSubstat4.ValueMember = "Key";
+            if (!runeEffectTypes.ContainsKey(98)) { runeEffectTypes.Add(98, "Any"); } // rune innate
             if (!runeEffectTypes.ContainsKey(99)) { runeEffectTypes.Add(99, "None"); }
             runeEffectTypes = runeEffectTypes.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
-            comboBoxRuneInnate.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneInnate.DataSource = new BindingSource(runeEffectTypes, null); 
             comboBoxRuneInnate.DisplayMember = "Value";
             comboBoxRuneInnate.ValueMember = "Key";
 

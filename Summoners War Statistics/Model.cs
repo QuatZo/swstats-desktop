@@ -198,8 +198,9 @@ namespace Summoners_War_Statistics
             if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
             if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { return false; } // mainstat
 
-            if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
-            else if (filters[2] != 99 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; } // innate
+            if (filters[2] == 98 && rune.PrefixEff[0] == 0) { return false; }
+            else if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
+            else if (filters[2] != 99 && filters[2] != 98 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; } // innate
 
             if (filters[3] != 0 && rune.Rank != filters[3]) { return false; } // quality
             if (filters[4] != 0 && rune.Extra != filters[4]) { return false; } // original quality
