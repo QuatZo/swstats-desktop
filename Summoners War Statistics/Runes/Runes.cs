@@ -71,7 +71,12 @@ namespace Summoners_War_Statistics
             comboBoxRuneSubstat3YesNo,
             labelRuneSubstat4,
             comboBoxRuneSubstat4,
-            comboBoxRuneSubstat4YesNo
+            comboBoxRuneSubstat4YesNo,
+            labelStars,
+            comboBoxRuneStars,
+            comboBoxRuneStarsIf,
+            labelRuneAncient,
+            comboBoxRuneAncient
         };
 
         public byte ChosenRuneSet
@@ -162,6 +167,14 @@ namespace Summoners_War_Statistics
             {
                 if(comboBoxRuneSlot.SelectedIndex < 0) { return 0; }
                 return (byte)comboBoxRuneSlot.SelectedIndex;
+            }
+        }
+        public byte ChosenRuneAncient
+        {
+            get
+            {
+                if (comboBoxRuneAncient.SelectedIndex < 0) { return 0; } // All
+                return (byte)comboBoxRuneAncient.SelectedIndex;
             }
         }
         public byte ChosenRuneUpgrade
@@ -441,6 +454,7 @@ namespace Summoners_War_Statistics
             comboBoxRuneUpgradeIf.SelectedIndex = 2;
             comboBoxRuneEfficiency.SelectedIndex = 0;
             comboBoxRuneEfficiencyIf.SelectedIndex = 2;
+            comboBoxRuneAncient.SelectedIndex = 0;
 
             comboBoxRuneSubstat1YesNo.SelectedIndex = 1;
             comboBoxRuneSubstat2YesNo.SelectedIndex = 1;

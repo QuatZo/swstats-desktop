@@ -197,11 +197,14 @@ namespace Summoners_War_Statistics
         {
             if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
 
-            if (filters[2] == 0 && rune.Class != filters[1]) { return false; } // stars
-            if (filters[2] == 1 && rune.Class > filters[1]) { return false; }
-            if (filters[2] == 2 && rune.Class < filters[1]) { return false; }
-            if (filters[2] == 3 && rune.Class >= filters[1]) { return false; }
-            if (filters[2] == 4 && rune.Class <= filters[1]) { return false; }
+            bool runeAncient = rune.Class > 10;
+            byte runeClass =  runeAncient? (byte)(rune.Class - 10) : (byte)rune.Class;
+
+            if (filters[2] == 0 && runeClass != filters[1]) { return false; } // stars
+            if (filters[2] == 1 && runeClass > filters[1]) { return false; }
+            if (filters[2] == 2 && runeClass < filters[1]) { return false; }
+            if (filters[2] == 3 && runeClass >= filters[1]) { return false; }
+            if (filters[2] == 4 && runeClass <= filters[1]) { return false; }
 
             if (filters[3] != 0 && rune.PriEff[0] != filters[3]) { return false; } // mainstat
 
@@ -213,25 +216,28 @@ namespace Summoners_War_Statistics
             if (filters[6] != 0 && rune.Extra != filters[6]) { return false; } // original quality
             if (filters[7] != 0 && rune.SlotNo != filters[7]) { return false; } // slot
 
-            if (filters[9] == 0 && rune.UpgradeCurr != filters[8]) { return false; } // level
-            if (filters[9] == 1 && rune.UpgradeCurr > filters[8]) { return false; }
-            if (filters[9] == 2 && rune.UpgradeCurr < filters[8]) { return false; }
-            if (filters[9] == 3 && rune.UpgradeCurr >= filters[8]) { return false; }
-            if (filters[9] == 4 && rune.UpgradeCurr <= filters[8]) { return false; }
+            if (filters[8] == 1 && !runeAncient) { return false; } // ancient
+            else if(filters[8] == 2 && runeAncient) { return false; }
 
-            if (filters[11] == 0 && runeEfficiency != filters[10]) { return false; } // efficiency
-            if (filters[11] == 1 && runeEfficiency > filters[10]) { return false; }
-            if (filters[11] == 2 && runeEfficiency < filters[10]) { return false; }
-            if (filters[11] == 3 && runeEfficiency >= filters[10]) { return false; }
-            if (filters[11] == 4 && runeEfficiency <= filters[10]) { return false; }
+            if (filters[10] == 0 && rune.UpgradeCurr != filters[9]) { return false; } // level
+            if (filters[10] == 1 && rune.UpgradeCurr > filters[9]) { return false; }
+            if (filters[10] == 2 && rune.UpgradeCurr < filters[9]) { return false; }
+            if (filters[10] == 3 && rune.UpgradeCurr >= filters[9]) { return false; }
+            if (filters[10] == 4 && rune.UpgradeCurr <= filters[9]) { return false; }
+
+            if (filters[12] == 0 && runeEfficiency != filters[11]) { return false; } // efficiency
+            if (filters[12] == 1 && runeEfficiency > filters[11]) { return false; }
+            if (filters[12] == 2 && runeEfficiency < filters[11]) { return false; }
+            if (filters[12] == 3 && runeEfficiency >= filters[11]) { return false; }
+            if (filters[12] == 4 && runeEfficiency <= filters[11]) { return false; }
 
             // substats filter
             List<(byte Substat, byte YesNo)> substatFilters = new List<(byte Substat, byte YesNo)>()
                 {
-                    (filters[10], filters[11]),
-                    (filters[12], filters[13]),
-                    (filters[14], filters[15]),
-                    (filters[16], filters[17])
+                    (filters[13], filters[14]),
+                    (filters[15], filters[16]),
+                    (filters[17], filters[18]),
+                    (filters[19], filters[20])
                 };
             bool shouldSkipRune = false;
             foreach ((byte Substat, byte YesNo) in substatFilters)
@@ -280,11 +286,13 @@ namespace Summoners_War_Statistics
                 string origin = "Inventory";
                 if (rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
 
+                byte runeClass = rune.Class > 10 ? (byte)(rune.Class - 10) : (byte)rune.Class;
+
                 runesToReturn.Add(
                     new RuneRow
                     (
                         Mapping.Instance.GetRuneSet((int)rune.SetId),
-                        (byte)rune.Class,
+                        runeClass,
                         (byte)rune.SlotNo,
                         (byte)rune.UpgradeCurr,
                         origin,
@@ -301,7 +309,8 @@ namespace Summoners_War_Statistics
                         effect[10], // cdmg
                         effect[11], // res
                         effect[12], // acc
-                        runeEfficiency.ToString() // eff.%
+                        runeEfficiency.ToString(), // eff.%
+                        Mapping.Instance.GetRuneAncientStatus(rune) // ancient
                     )
                 );
             }

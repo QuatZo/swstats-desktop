@@ -2230,7 +2230,7 @@ namespace Summoners_War_Statistics
             return "Unknown Difficulty";
         }
 
-        private bool IsAncient(Rune rune)
+        public bool GetRuneAncientStatus(Rune rune)
         {
             if (rune.Class > 10) { return true; }
             return false;
@@ -2240,7 +2240,7 @@ namespace Summoners_War_Statistics
         {
             double ratio = 0.0;
             int runeClass = (int)rune.Class;
-            if (IsAncient(rune)) { runeClass -= 10; }
+            if (GetRuneAncientStatus(rune)) { runeClass -= 10; }
 
             // mainstat
             ratio += (double)runeMainstats[(int)rune.PriEff[0]][runeClass] / (double)runeMainstats[(int)rune.PriEff[0]][6];

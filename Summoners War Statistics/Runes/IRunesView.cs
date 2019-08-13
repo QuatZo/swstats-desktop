@@ -23,6 +23,7 @@ namespace Summoners_War_Statistics
         byte ChosenRuneQuality { get; }
         byte ChosenRuneOriginQuality { get; }
         byte ChosenRuneSlot { get; }
+        byte ChosenRuneAncient { get; }
         byte ChosenRuneUpgrade { get; }
         byte ChosenRuneUpgradeStatement { get; }
         byte ChosenRuneEfficiency { get; }

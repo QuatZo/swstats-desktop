@@ -117,6 +117,10 @@
             this.olvColumn17 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelRuneAncient = new System.Windows.Forms.Label();
+            this.comboBoxRuneAncient = new System.Windows.Forms.ComboBox();
             this.panelHeader.SuspendLayout();
             this.flowLayoutPanelFilters.SuspendLayout();
             this.panelSet.SuspendLayout();
@@ -134,6 +138,7 @@
             this.panelSubstat4.SuspendLayout();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRunes
@@ -589,6 +594,7 @@
             this.flowLayoutPanelFilters.Controls.Add(this.panelQuality);
             this.flowLayoutPanelFilters.Controls.Add(this.panelQualityOriginal);
             this.flowLayoutPanelFilters.Controls.Add(this.panelSlot);
+            this.flowLayoutPanelFilters.Controls.Add(this.panel1);
             this.flowLayoutPanelFilters.Controls.Add(this.panelUpgrade);
             this.flowLayoutPanelFilters.Controls.Add(this.panelEfficiency);
             this.flowLayoutPanelFilters.Controls.Add(this.panelSubstat1);
@@ -1106,6 +1112,7 @@
             this.objectListViewRunes.AllColumns.Add(this.olvColumn16);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn17);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn18);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn20);
             this.objectListViewRunes.AllowColumnReorder = true;
             this.objectListViewRunes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.objectListViewRunes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1127,7 +1134,8 @@
             this.olvColumn15,
             this.olvColumn16,
             this.olvColumn17,
-            this.olvColumn18});
+            this.olvColumn18,
+            this.olvColumn20});
             this.objectListViewRunes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewRunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.objectListViewRunes.FullRowSelect = true;
@@ -1262,6 +1270,53 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
+            // olvColumn20
+            // 
+            this.olvColumn20.AspectName = "Ancient";
+            this.olvColumn20.CellPadding = null;
+            this.olvColumn20.Text = "Ancient";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelRuneAncient);
+            this.panel1.Controls.Add(this.comboBoxRuneAncient);
+            this.panel1.Location = new System.Drawing.Point(680, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(85, 60);
+            this.panel1.TabIndex = 60;
+            // 
+            // labelRuneAncient
+            // 
+            this.labelRuneAncient.AutoSize = true;
+            this.labelRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRuneAncient.Location = new System.Drawing.Point(3, 0);
+            this.labelRuneAncient.Name = "labelRuneAncient";
+            this.labelRuneAncient.Size = new System.Drawing.Size(55, 22);
+            this.labelRuneAncient.TabIndex = 14;
+            this.labelRuneAncient.Text = "Ancient";
+            this.toolTip1.SetToolTip(this.labelRuneAncient, "Filters");
+            // 
+            // comboBoxRuneAncient
+            // 
+            this.comboBoxRuneAncient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneAncient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneAncient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneAncient.FormattingEnabled = true;
+            this.comboBoxRuneAncient.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.comboBoxRuneAncient.Location = new System.Drawing.Point(7, 25);
+            this.comboBoxRuneAncient.MaxDropDownItems = 25;
+            this.comboBoxRuneAncient.Name = "comboBoxRuneAncient";
+            this.comboBoxRuneAncient.Size = new System.Drawing.Size(80, 27);
+            this.comboBoxRuneAncient.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.comboBoxRuneAncient, "Filters");
+            this.comboBoxRuneAncient.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
+            // 
             // Runes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1307,6 +1362,8 @@
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1401,5 +1458,9 @@
         private System.Windows.Forms.ComboBox comboBoxRuneStarsIf;
         private System.Windows.Forms.ComboBox comboBoxRuneStars;
         private BrightIdeasSoftware.OLVColumn olvColumn19;
+        private BrightIdeasSoftware.OLVColumn olvColumn20;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelRuneAncient;
+        private System.Windows.Forms.ComboBox comboBoxRuneAncient;
     }
 }

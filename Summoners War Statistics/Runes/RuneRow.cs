@@ -27,8 +27,9 @@ namespace Summoners_War_Statistics
         public string Res { get; set; }
         public string Acc { get; set; }
         public string Eff { get; set; }
+        public bool Ancient { get; set; }
 
-        public RuneRow(string set, byte stars, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff)
+        public RuneRow(string set, byte stars, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff, bool ancient)
         {
             Set = set;
             Stars = stars;
@@ -49,6 +50,7 @@ namespace Summoners_War_Statistics
             Res = res;
             Acc = acc;
             Eff = eff;
+            Ancient = ancient;
         }
     }
 }
