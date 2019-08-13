@@ -288,6 +288,7 @@ namespace Summoners_War_Statistics
         {
             if (Visible == true)
             {
+                Resized?.Invoke();
                 CanSeeMonstersTab?.Invoke();
             }
         }

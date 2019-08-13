@@ -486,13 +486,14 @@ namespace Summoners_War_Statistics
 
         private void Runes_Resize(object sender, EventArgs e)
         {
-            Resized?.Invoke();
+
         }
 
         private void Runes_VisibleChanged(object sender, EventArgs e)
         {
             if(Visible == true)
             {
+                Resized?.Invoke();
                 CanSeeRunesTab?.Invoke();
             }
         }

@@ -201,6 +201,7 @@ namespace Summoners_War_Statistics
         {
             if (Visible == true)
             {
+                Resized?.Invoke();
                 CanSeeDimHoleTab?.Invoke();
             }
         }

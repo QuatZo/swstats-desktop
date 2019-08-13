@@ -76,6 +76,9 @@
             this.labelRuneOriginalQuality = new System.Windows.Forms.Label();
             this.comboBoxRuneOriginalQuality = new System.Windows.Forms.ComboBox();
             this.panelSlot = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelRuneAncient = new System.Windows.Forms.Label();
+            this.comboBoxRuneAncient = new System.Windows.Forms.ComboBox();
             this.panelUpgrade = new System.Windows.Forms.Panel();
             this.panelEfficiency = new System.Windows.Forms.Panel();
             this.panelSubstat1 = new System.Windows.Forms.Panel();
@@ -116,11 +119,8 @@
             this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn17 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelRuneAncient = new System.Windows.Forms.Label();
-            this.comboBoxRuneAncient = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelHeader.SuspendLayout();
             this.flowLayoutPanelFilters.SuspendLayout();
             this.panelSet.SuspendLayout();
@@ -130,6 +130,7 @@
             this.panelQuality.SuspendLayout();
             this.panelQualityOriginal.SuspendLayout();
             this.panelSlot.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelUpgrade.SuspendLayout();
             this.panelEfficiency.SuspendLayout();
             this.panelSubstat1.SuspendLayout();
@@ -138,7 +139,6 @@
             this.panelSubstat4.SuspendLayout();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRunes
@@ -812,6 +812,47 @@
             this.panelSlot.Size = new System.Drawing.Size(85, 60);
             this.panelSlot.TabIndex = 59;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelRuneAncient);
+            this.panel1.Controls.Add(this.comboBoxRuneAncient);
+            this.panel1.Location = new System.Drawing.Point(680, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(85, 60);
+            this.panel1.TabIndex = 60;
+            // 
+            // labelRuneAncient
+            // 
+            this.labelRuneAncient.AutoSize = true;
+            this.labelRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRuneAncient.Location = new System.Drawing.Point(3, 0);
+            this.labelRuneAncient.Name = "labelRuneAncient";
+            this.labelRuneAncient.Size = new System.Drawing.Size(55, 22);
+            this.labelRuneAncient.TabIndex = 14;
+            this.labelRuneAncient.Text = "Ancient";
+            this.toolTip1.SetToolTip(this.labelRuneAncient, "Filters");
+            // 
+            // comboBoxRuneAncient
+            // 
+            this.comboBoxRuneAncient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneAncient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneAncient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneAncient.FormattingEnabled = true;
+            this.comboBoxRuneAncient.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.comboBoxRuneAncient.Location = new System.Drawing.Point(7, 25);
+            this.comboBoxRuneAncient.MaxDropDownItems = 25;
+            this.comboBoxRuneAncient.Name = "comboBoxRuneAncient";
+            this.comboBoxRuneAncient.Size = new System.Drawing.Size(80, 27);
+            this.comboBoxRuneAncient.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.comboBoxRuneAncient, "Filters");
+            this.comboBoxRuneAncient.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
+            // 
             // panelUpgrade
             // 
             this.panelUpgrade.Controls.Add(this.labelUpgrade);
@@ -1263,59 +1304,18 @@
             this.olvColumn18.CellPadding = null;
             this.olvColumn18.Text = "Eff%";
             // 
-            // toolTip1
-            // 
-            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Help";
-            // 
             // olvColumn20
             // 
             this.olvColumn20.AspectName = "Ancient";
             this.olvColumn20.CellPadding = null;
             this.olvColumn20.Text = "Ancient";
             // 
-            // panel1
+            // toolTip1
             // 
-            this.panel1.Controls.Add(this.labelRuneAncient);
-            this.panel1.Controls.Add(this.comboBoxRuneAncient);
-            this.panel1.Location = new System.Drawing.Point(680, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(85, 60);
-            this.panel1.TabIndex = 60;
-            // 
-            // labelRuneAncient
-            // 
-            this.labelRuneAncient.AutoSize = true;
-            this.labelRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelRuneAncient.Location = new System.Drawing.Point(3, 0);
-            this.labelRuneAncient.Name = "labelRuneAncient";
-            this.labelRuneAncient.Size = new System.Drawing.Size(55, 22);
-            this.labelRuneAncient.TabIndex = 14;
-            this.labelRuneAncient.Text = "Ancient";
-            this.toolTip1.SetToolTip(this.labelRuneAncient, "Filters");
-            // 
-            // comboBoxRuneAncient
-            // 
-            this.comboBoxRuneAncient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.comboBoxRuneAncient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRuneAncient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.comboBoxRuneAncient.FormattingEnabled = true;
-            this.comboBoxRuneAncient.Items.AddRange(new object[] {
-            "All",
-            "Yes",
-            "No"});
-            this.comboBoxRuneAncient.Location = new System.Drawing.Point(7, 25);
-            this.comboBoxRuneAncient.MaxDropDownItems = 25;
-            this.comboBoxRuneAncient.Name = "comboBoxRuneAncient";
-            this.comboBoxRuneAncient.Size = new System.Drawing.Size(80, 27);
-            this.comboBoxRuneAncient.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.comboBoxRuneAncient, "Filters");
-            this.comboBoxRuneAncient.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Help";
             // 
             // Runes
             // 
@@ -1328,8 +1328,8 @@
             this.DoubleBuffered = true;
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
-            this.SizeChanged += new System.EventHandler(this.Runes_Resize);
             this.VisibleChanged += new System.EventHandler(this.Runes_VisibleChanged);
+            this.Resize += new System.EventHandler(this.Runes_Resize);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.flowLayoutPanelFilters.ResumeLayout(false);
@@ -1347,6 +1347,8 @@
             this.panelQualityOriginal.PerformLayout();
             this.panelSlot.ResumeLayout(false);
             this.panelSlot.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelUpgrade.ResumeLayout(false);
             this.panelUpgrade.PerformLayout();
             this.panelEfficiency.ResumeLayout(false);
@@ -1362,8 +1364,6 @@
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewRunes)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
