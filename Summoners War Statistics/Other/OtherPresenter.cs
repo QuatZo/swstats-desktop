@@ -64,10 +64,25 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.EndUpdate();
         }
 
-        private void View_InitOther(List<Friend> friendsList)
+        private void View_InitOther(List<Friend> friendsList, List<Decoration> decorations)
         {
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
+
+            List<Building> buildings = Mapping.Instance.GetBuildings();
+
+            foreach (var building in buildings)
+            {
+                foreach (var decoration in decorations)
+                {
+                    if (decoration.MasterId == building.Id)
+                    {
+                        building.ActualLevel = (int)decoration.Level;
+                        Console.WriteLine($"{building.Id}.\t[{building.Area.ToString()}]\t{building.Name} ({building.Type}) - {building.ActualLevel} / {building.Bonus.Keys.ToList()[building.Bonus.Count - 1]} - {(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel] : 0)} - {building.FullUpgradeCost} - {building.CalcRemainingUpgradeCost()}");
+                        break;
+                    }
+                }
+            }
         }
     }
 }

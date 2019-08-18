@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\Building.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="GuildSiegeDefensesRow.cs" />
     <Compile Include="Guild\Guild.cs">

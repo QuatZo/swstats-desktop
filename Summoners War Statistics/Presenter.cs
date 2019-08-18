@@ -196,7 +196,7 @@ namespace Summoners_War_Statistics
 
                         Logger.log.Info($"Other tab");
                         view.OtherView.SummonerFriendsList.Items.Clear();
-                        view.OtherView.Init(json.FriendList);
+                        view.OtherView.Init(json.FriendList, json.DecorationList);
                         Logger.log.Info("[Other] DONE");
                     }
                     catch (FormatException e)

@@ -30,5 +30,18 @@ namespace Summoners_War_Statistics
             UpgradeCost = upgradeCost;
             FullUpgradeCost = upgradeCost.Values.Sum();
         }
+
+        public int CalcRemainingUpgradeCost()
+        {
+            if (ActualLevel == 10) { return 0; }
+
+            int upgradeCost = 0;
+            for(int i = ActualLevel; i > 0; i--)
+            {
+                upgradeCost += UpgradeCost[i];
+            }
+
+            return FullUpgradeCost - upgradeCost;
+        }
     }
 }

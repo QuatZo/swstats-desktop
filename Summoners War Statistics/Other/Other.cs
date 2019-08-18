@@ -35,7 +35,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<List<Friend>> InitOther;
+        public event Action<List<Friend>, List<Decoration>> InitOther;
         public event Action Resized;
         #endregion
 
@@ -46,9 +46,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(List<Friend> friendsList)
+        public void Init(List<Friend> friendsList, List<Decoration> decorations)
         {
-            InitOther?.Invoke(friendsList);
+            InitOther?.Invoke(friendsList, decorations);
         }
 
         public void Front()

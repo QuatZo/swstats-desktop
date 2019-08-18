@@ -18,12 +18,12 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        event Action<List<Friend>> InitOther;
+        event Action<List<Friend>, List<Decoration>> InitOther;
         event Action Resized;
         #endregion
 
         #region Methods
-        void Init(List<Friend> friendsList);
+        void Init(List<Friend> friendsList, List<Decoration> decorations);
         void Front();
         void ResetOnFail();
         #endregion
