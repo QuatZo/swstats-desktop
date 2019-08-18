@@ -38,9 +38,19 @@
             this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelTowersFlags = new System.Windows.Forms.Panel();
+            this.objectListViewTowersFlags = new BrightIdeasSoftware.ObjectListView();
+            this.labelOtherTowerFlags = new System.Windows.Forms.Label();
+            this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn12 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn13 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn15 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).BeginInit();
+            this.panelTowersFlags.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOtherActiveFriends
@@ -64,7 +74,7 @@
             this.panelFriends.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFriends.Location = new System.Drawing.Point(0, 0);
             this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(780, 210);
+            this.panelFriends.Size = new System.Drawing.Size(780, 185);
             this.panelFriends.TabIndex = 49;
             // 
             // objectListViewFriends
@@ -89,7 +99,7 @@
             this.objectListViewFriends.Location = new System.Drawing.Point(0, 42);
             this.objectListViewFriends.Name = "objectListViewFriends";
             this.objectListViewFriends.ShowGroups = false;
-            this.objectListViewFriends.Size = new System.Drawing.Size(780, 168);
+            this.objectListViewFriends.Size = new System.Drawing.Size(780, 143);
             this.objectListViewFriends.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewFriends.TabIndex = 60;
             this.objectListViewFriends.UseCompatibleStateImageBehavior = false;
@@ -132,25 +142,108 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
-            // label2
+            // panelTowersFlags
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(171, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(423, 84);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "There will be some other info.\r\nI will try to add Towers/Flags stuff here.";
-            this.toolTip1.SetToolTip(this.label2, "This is the section when you can see list of your friends list, incl. their reps " +
+            this.panelTowersFlags.Controls.Add(this.objectListViewTowersFlags);
+            this.panelTowersFlags.Controls.Add(this.labelOtherTowerFlags);
+            this.panelTowersFlags.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTowersFlags.Location = new System.Drawing.Point(0, 185);
+            this.panelTowersFlags.Name = "panelTowersFlags";
+            this.panelTowersFlags.Size = new System.Drawing.Size(780, 226);
+            this.panelTowersFlags.TabIndex = 61;
+            // 
+            // objectListViewTowersFlags
+            // 
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn7);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn12);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn13);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn14);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn15);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn16);
+            this.objectListViewTowersFlags.AllowColumnReorder = true;
+            this.objectListViewTowersFlags.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.objectListViewTowersFlags.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn7,
+            this.olvColumn12,
+            this.olvColumn13,
+            this.olvColumn14,
+            this.olvColumn15,
+            this.olvColumn16});
+            this.objectListViewTowersFlags.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewTowersFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.objectListViewTowersFlags.FullRowSelect = true;
+            this.objectListViewTowersFlags.HideSelection = false;
+            this.objectListViewTowersFlags.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewTowersFlags.Name = "objectListViewTowersFlags";
+            this.objectListViewTowersFlags.ShowGroups = false;
+            this.objectListViewTowersFlags.Size = new System.Drawing.Size(780, 184);
+            this.objectListViewTowersFlags.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.objectListViewTowersFlags.TabIndex = 60;
+            this.objectListViewTowersFlags.UseCompatibleStateImageBehavior = false;
+            this.objectListViewTowersFlags.View = System.Windows.Forms.View.Details;
+            // 
+            // labelOtherTowerFlags
+            // 
+            this.labelOtherTowerFlags.AutoSize = true;
+            this.labelOtherTowerFlags.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelOtherTowerFlags.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOtherTowerFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelOtherTowerFlags.Location = new System.Drawing.Point(0, 0);
+            this.labelOtherTowerFlags.Name = "labelOtherTowerFlags";
+            this.labelOtherTowerFlags.Size = new System.Drawing.Size(151, 42);
+            this.labelOtherTowerFlags.TabIndex = 0;
+            this.labelOtherTowerFlags.Text = "Towers, Flags";
+            this.toolTip1.SetToolTip(this.labelOtherTowerFlags, "This is the section when you can see list of your friends list, incl. their reps " +
         "and last log-in time");
+            // 
+            // olvColumn7
+            // 
+            this.olvColumn7.AspectName = "Area";
+            this.olvColumn7.CellPadding = null;
+            this.olvColumn7.Text = "Area";
+            this.olvColumn7.Width = 102;
+            // 
+            // olvColumn12
+            // 
+            this.olvColumn12.AspectName = "Name";
+            this.olvColumn12.CellPadding = null;
+            this.olvColumn12.Text = "Name";
+            this.olvColumn12.Width = 87;
+            // 
+            // olvColumn13
+            // 
+            this.olvColumn13.AspectName = "Bonus";
+            this.olvColumn13.CellPadding = null;
+            this.olvColumn13.Text = "Bonus";
+            this.olvColumn13.Width = 87;
+            // 
+            // olvColumn14
+            // 
+            this.olvColumn14.AspectName = "Level";
+            this.olvColumn14.CellPadding = null;
+            this.olvColumn14.Text = "Level";
+            this.olvColumn14.Width = 85;
+            // 
+            // olvColumn15
+            // 
+            this.olvColumn15.AspectName = "NextUpgrade";
+            this.olvColumn15.CellPadding = null;
+            this.olvColumn15.Text = "Next Upgrade";
+            this.olvColumn15.Width = 86;
+            // 
+            // olvColumn16
+            // 
+            this.olvColumn16.AspectName = "RemainingUpgrade";
+            this.olvColumn16.CellPadding = null;
+            this.olvColumn16.Text = "Remaining Upgrade";
+            this.olvColumn16.Width = 88;
             // 
             // Other
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panelTowersFlags);
             this.Controls.Add(this.panelFriends);
             this.Name = "Other";
             this.Size = new System.Drawing.Size(780, 411);
@@ -158,8 +251,10 @@
             this.panelFriends.ResumeLayout(false);
             this.panelFriends.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).EndInit();
+            this.panelTowersFlags.ResumeLayout(false);
+            this.panelTowersFlags.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -174,6 +269,14 @@
         private BrightIdeasSoftware.OLVColumn olvColumn10;
         private BrightIdeasSoftware.OLVColumn olvColumn11;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelTowersFlags;
+        private BrightIdeasSoftware.ObjectListView objectListViewTowersFlags;
+        private System.Windows.Forms.Label labelOtherTowerFlags;
+        private BrightIdeasSoftware.OLVColumn olvColumn7;
+        private BrightIdeasSoftware.OLVColumn olvColumn12;
+        private BrightIdeasSoftware.OLVColumn olvColumn13;
+        private BrightIdeasSoftware.OLVColumn olvColumn14;
+        private BrightIdeasSoftware.OLVColumn olvColumn15;
+        private BrightIdeasSoftware.OLVColumn olvColumn16;
     }
 }

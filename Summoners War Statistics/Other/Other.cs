@@ -32,6 +32,11 @@ namespace Summoners_War_Statistics
             get => objectListViewFriends;
             set => objectListViewFriends = value;
         }
+        public ObjectListView SummonerTowersFlagsList
+        {
+            get => objectListViewTowersFlags;
+            set => objectListViewTowersFlags = value;
+        }
         #endregion
 
         #region Events
@@ -43,6 +48,7 @@ namespace Summoners_War_Statistics
         {
             InitializeComponent();
             objectListViewFriends.DoubleBuffering(true);
+            objectListViewTowersFlags.DoubleBuffering(true);
         }
 
         #region Methods

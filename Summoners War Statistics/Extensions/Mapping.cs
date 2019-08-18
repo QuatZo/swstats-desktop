@@ -2257,7 +2257,7 @@ namespace Summoners_War_Statistics
                       15,
                       BuildingArea.Arena,
                       "Fire Sanctuary",
-                      "ATK % [Fire]",
+                      "ATK [Fire] %",
                       new Dictionary<int, int>()
                       {
                         { 0, 0 },
@@ -2293,7 +2293,7 @@ namespace Summoners_War_Statistics
                       16,
                       BuildingArea.Arena,
                       "Water Sanctuary",
-                      "ATK % [Water]",
+                      "ATK [Water] %",
                       new Dictionary<int, int>()
                       {
                         { 0, 0 },
@@ -2329,7 +2329,7 @@ namespace Summoners_War_Statistics
                       17,
                       BuildingArea.Arena,
                       "Wind Sanctuary",
-                      "ATK % [Wind]",
+                      "ATK [Wind] %",
                       new Dictionary<int, int>()
                       {
                         { 0, 0 },
@@ -2365,7 +2365,7 @@ namespace Summoners_War_Statistics
                       18,
                       BuildingArea.Arena,
                       "Light Sanctuary",
-                      "ATK % [Light]",
+                      "ATK [Light] %",
                       new Dictionary<int, int>()
                       {
                         { 0, 0 },
@@ -2401,7 +2401,7 @@ namespace Summoners_War_Statistics
                       19,
                       BuildingArea.Arena,
                       "Dark Sanctuary",
-                      "ATK % [Dark]",
+                      "ATK [Dark] %",
                       new Dictionary<int, int>()
                       {
                         { 0, 0 },

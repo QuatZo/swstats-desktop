@@ -15,6 +15,7 @@ namespace Summoners_War_Statistics
         Size TabSize { get; set; }
         List<Control> Cntrls { get; }
         ObjectListView SummonerFriendsList { get; set; }
+        ObjectListView SummonerTowersFlagsList { get; set; }
         #endregion
 
         #region Events

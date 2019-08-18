@@ -31,6 +31,10 @@ namespace Summoners_War_Statistics
             FullUpgradeCost = upgradeCost.Values.Sum();
         }
 
+        /// <summary>
+        /// It calculates the amount of Glory Points / Guild Points (depends on the area) needed to max the building.
+        /// </summary>
+        /// <returns>integer - Amount of Glory Points / Guild Points needed to max the building.</returns>
         public int CalcRemainingUpgradeCost()
         {
             if (ActualLevel == 10) { return 0; }

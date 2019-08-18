@@ -23,7 +23,28 @@ namespace Summoners_War_Statistics
             this.view.SummonerFriendsList.ColumnClick += SummonerFriendsList_ColumnClick;
             this.view.SummonerFriendsList.BeforeSorting += SummonerFriendsList_BeforeSorting;
 
+            this.view.SummonerTowersFlagsList.ColumnClick += SummonerTowersFlagsList_ColumnClick;
+            this.view.SummonerTowersFlagsList.BeforeSorting += SummonerTowersFlagsList_BeforeSorting;
+
             this.view.Resized += View_Resized;
+        }
+
+        private void SummonerTowersFlagsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
+        {
+            if (view.SummonerTowersFlagsList.PrimarySortColumn != view.SummonerTowersFlagsList.SecondarySortColumn) { view.SummonerTowersFlagsList.SecondarySortColumn = view.SummonerTowersFlagsList.PrimarySortColumn; }
+        }
+
+        private void SummonerTowersFlagsList_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (view.SummonerTowersFlagsList.SecondarySortColumn != null)
+            {
+                view.SummonerTowersFlagsList.ListViewItemSorter = new ListViewItemComparer(e.Column, view.SummonerTowersFlagsList.SecondarySortColumn.Index);
+            }
+            else
+            {
+                view.SummonerTowersFlagsList.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+            }
+            Logger.log.Info($"[Towers&Flags] Sorting");
         }
 
         private void SummonerFriendsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
@@ -69,20 +90,9 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
 
-            List<Building> buildings = Mapping.Instance.GetBuildings();
 
-            foreach (var building in buildings)
-            {
-                foreach (var decoration in decorations)
-                {
-                    if (decoration.MasterId == building.Id)
-                    {
-                        building.ActualLevel = (int)decoration.Level;
-                        Console.WriteLine($"{building.Id}.\t[{building.Area.ToString()}]\t{building.Name} ({building.Type}) - {building.ActualLevel} / {building.Bonus.Keys.ToList()[building.Bonus.Count - 1]} - {(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel] : 0)} - {building.FullUpgradeCost} - {building.CalcRemainingUpgradeCost()}");
-                        break;
-                    }
-                }
-            }
+            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(decorations, Mapping.Instance.GetBuildings()));
+            Logger.log.Info($"[Towers&Flags] Towers & Flags to list done");
         }
     }
 }
