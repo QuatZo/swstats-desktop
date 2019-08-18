@@ -32,9 +32,6 @@ namespace Summoners_War_Statistics
         [JsonProperty("deco_list")]
         public List<Decoration> DecorationList { get; set; }
 
-        [JsonProperty("obstacle_list")]
-        public List<object> ObstacleList { get; set; }
-
         [JsonProperty("mob_list")]
         public List<Mob> MobList { get; set; } // Ellia, ride
 
