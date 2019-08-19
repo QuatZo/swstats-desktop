@@ -2224,7 +2224,7 @@ namespace Summoners_War_Statistics
                       "Time/Energy",
                       new Dictionary<int, int>()
                       {
-                        {0, 0 },
+                        {0, 300 },
                         { 1, 292 },
                         { 2, 284 },
                         { 3, 276 },

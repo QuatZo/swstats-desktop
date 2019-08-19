@@ -38,9 +38,9 @@
             this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelOtherTowerFlags = new System.Windows.Forms.Label();
             this.panelTowersFlags = new System.Windows.Forms.Panel();
             this.objectListViewTowersFlags = new BrightIdeasSoftware.ObjectListView();
-            this.labelOtherTowerFlags = new System.Windows.Forms.Label();
             this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn12 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn13 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -142,6 +142,20 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
+            // labelOtherTowerFlags
+            // 
+            this.labelOtherTowerFlags.AutoSize = true;
+            this.labelOtherTowerFlags.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelOtherTowerFlags.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOtherTowerFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelOtherTowerFlags.Location = new System.Drawing.Point(0, 0);
+            this.labelOtherTowerFlags.Name = "labelOtherTowerFlags";
+            this.labelOtherTowerFlags.Size = new System.Drawing.Size(151, 42);
+            this.labelOtherTowerFlags.TabIndex = 0;
+            this.labelOtherTowerFlags.Text = "Towers, Flags";
+            this.toolTip1.SetToolTip(this.labelOtherTowerFlags, "This is the section when you can see list of your friends list, incl. their reps " +
+        "and last log-in time");
+            // 
             // panelTowersFlags
             // 
             this.panelTowersFlags.Controls.Add(this.objectListViewTowersFlags);
@@ -181,20 +195,6 @@
             this.objectListViewTowersFlags.TabIndex = 60;
             this.objectListViewTowersFlags.UseCompatibleStateImageBehavior = false;
             this.objectListViewTowersFlags.View = System.Windows.Forms.View.Details;
-            // 
-            // labelOtherTowerFlags
-            // 
-            this.labelOtherTowerFlags.AutoSize = true;
-            this.labelOtherTowerFlags.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelOtherTowerFlags.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOtherTowerFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelOtherTowerFlags.Location = new System.Drawing.Point(0, 0);
-            this.labelOtherTowerFlags.Name = "labelOtherTowerFlags";
-            this.labelOtherTowerFlags.Size = new System.Drawing.Size(151, 42);
-            this.labelOtherTowerFlags.TabIndex = 0;
-            this.labelOtherTowerFlags.Text = "Towers, Flags";
-            this.toolTip1.SetToolTip(this.labelOtherTowerFlags, "This is the section when you can see list of your friends list, incl. their reps " +
-        "and last log-in time");
             // 
             // olvColumn7
             // 

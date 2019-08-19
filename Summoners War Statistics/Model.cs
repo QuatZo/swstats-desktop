@@ -429,26 +429,25 @@ namespace Summoners_War_Statistics
                     if (decoration.MasterId == building.Id)
                     {
                         building.ActualLevel = (int)decoration.Level;
-
-                        string bonus = "-";
-
-                        if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
-                        else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
-                        else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
-
-                        towersFlags.Add(
-                            new BuildingRow(
-                                building.Area,
-                                building.Name,
-                                bonus,
-                                (byte)building.ActualLevel,
-                                (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
-                                (ushort)building.CalcRemainingUpgradeCost()
-                            )
-                        );
                         break;
                     }
                 }
+                string bonus = "-";
+
+                if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
+                else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
+                else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
+
+                towersFlags.Add(
+                    new BuildingRow(
+                        building.Area,
+                        building.Name,
+                        bonus,
+                        (byte)building.ActualLevel,
+                        (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
+                        (ushort)building.CalcRemainingUpgradeCost()
+                    )
+                );
             }
             return towersFlags;
         }

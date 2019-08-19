@@ -24,7 +24,9 @@ namespace Summoners_War_Statistics
         {
             labelOtherActiveFriends,
             objectListViewFriends,
-            panelFriends
+            panelFriends,
+            objectListViewTowersFlags,
+            panelTowersFlags
         };
 
         public ObjectListView SummonerFriendsList

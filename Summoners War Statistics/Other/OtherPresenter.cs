@@ -83,6 +83,14 @@ namespace Summoners_War_Statistics
                 column.Width = columnWidth - 5;
             }
             view.SummonerFriendsList.EndUpdate();
+
+            view.SummonerTowersFlagsList.BeginUpdate();
+            columnWidth = view.SummonerTowersFlagsList.Size.Width / view.SummonerTowersFlagsList.Columns.Count;
+            foreach (ColumnHeader column in view.SummonerTowersFlagsList.Columns)
+            {
+                column.Width = columnWidth - 5;
+            }
+            view.SummonerTowersFlagsList.EndUpdate();
         }
 
         private void View_InitOther(List<Friend> friendsList, List<Decoration> decorations)
