@@ -72,8 +72,7 @@ namespace Summoners_War_Statistics
         {
             Resized?.Invoke();
         }
+
         #endregion
-
-
     }
 }

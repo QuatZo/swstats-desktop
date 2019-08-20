@@ -14,8 +14,9 @@ namespace Summoners_War_Statistics
         public byte Level { get; set; }
         public ushort NextUpgrade { get; set; }
         public ushort RemainingUpgrade { get; set; }
+        public string RemainingDays { get; set; }
 
-        public BuildingRow(Mapping.BuildingArea area, string name, string bonus, byte level, ushort nextUpgrade, ushort remainingUpgrade)
+        public BuildingRow(Mapping.BuildingArea area, string name, string bonus, byte level, ushort nextUpgrade, ushort remainingUpgrade, string remainingDays)
         {
             Area = area;
             Name = name;
@@ -23,6 +24,7 @@ namespace Summoners_War_Statistics
             Level = level;
             NextUpgrade = nextUpgrade;
             RemainingUpgrade = remainingUpgrade;
+            RemainingDays = remainingDays;
         }
     }
 }

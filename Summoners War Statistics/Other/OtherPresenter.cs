@@ -70,12 +70,14 @@ namespace Summoners_War_Statistics
             //labelOtherActiveFriends   - 0
             //objectListViewFriends     - 1
             //panelFriends              - 2
+            //objectListViewTowersFlags - 3
+            //panelTowersFlags          - 4
 
             view.SummonerFriendsList.BeginUpdate();
 
-            view.Cntrls[1].Size = new Size(view.Cntrls[1].Size.Width, view.TabSize.Height * 50 / 100);
-            view.Cntrls[2].Location = new Point(0, view.Cntrls[1].Size.Height);
-            view.Cntrls[2].Size = new Size(view.Cntrls[2].Size.Width, view.TabSize.Height - view.Cntrls[1].Size.Height);
+            view.Cntrls[2].Size = new Size(view.Cntrls[1].Size.Width, view.TabSize.Height * 40 / 100);
+            view.Cntrls[4].Location = new Point(0, view.Cntrls[1].Size.Height);
+            view.Cntrls[4].Size = new Size(view.Cntrls[4].Size.Width, view.TabSize.Height - view.Cntrls[2].Size.Height);
 
             int columnWidth = view.SummonerFriendsList.Size.Width / view.SummonerFriendsList.Columns.Count;
             foreach (ColumnHeader column in view.SummonerFriendsList.Columns)

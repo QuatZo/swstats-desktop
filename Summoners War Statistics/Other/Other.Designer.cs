@@ -39,6 +39,24 @@
             this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelOtherTowerFlags = new System.Windows.Forms.Label();
+            this.comboBoxRanking = new System.Windows.Forms.ComboBox();
+            this.labelRanking = new System.Windows.Forms.Label();
+            this.labelMaxedFlagsText = new System.Windows.Forms.Label();
+            this.labelMaxedTowersText = new System.Windows.Forms.Label();
+            this.labelMaxedTowers = new System.Windows.Forms.Label();
+            this.labelMaxedFlags = new System.Windows.Forms.Label();
+            this.labelWingsPerWeek = new System.Windows.Forms.Label();
+            this.comboBoxWingsPerWeek = new System.Windows.Forms.ComboBox();
+            this.labelGuildBattlesWon = new System.Windows.Forms.Label();
+            this.comboBoxGuildBattlesWon = new System.Windows.Forms.ComboBox();
+            this.labelSiegeResult1 = new System.Windows.Forms.Label();
+            this.comboBoxSiegeResult1 = new System.Windows.Forms.ComboBox();
+            this.labelSiegeResult2 = new System.Windows.Forms.Label();
+            this.comboBoxSiegeResult2 = new System.Windows.Forms.ComboBox();
+            this.labelRankingSiege = new System.Windows.Forms.Label();
+            this.comboBoxRankingSiege = new System.Windows.Forms.ComboBox();
+            this.labelRankingGuild = new System.Windows.Forms.Label();
+            this.comboBoxRankingGuild = new System.Windows.Forms.ComboBox();
             this.panelTowersFlags = new System.Windows.Forms.Panel();
             this.objectListViewTowersFlags = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -47,10 +65,15 @@
             this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn15 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.panelTowersFlagsRight = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).BeginInit();
             this.panelTowersFlags.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).BeginInit();
+            this.panelTowersFlagsRight.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelOtherActiveFriends
@@ -156,9 +179,248 @@
             this.toolTip1.SetToolTip(this.labelOtherTowerFlags, "This is the section when you can see list of your friends list, incl. their reps " +
         "and last log-in time");
             // 
+            // comboBoxRanking
+            // 
+            this.comboBoxRanking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRanking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRanking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRanking.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRanking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRanking.FormattingEnabled = true;
+            this.comboBoxRanking.Location = new System.Drawing.Point(3, 26);
+            this.comboBoxRanking.MaxDropDownItems = 25;
+            this.comboBoxRanking.Name = "comboBoxRanking";
+            this.comboBoxRanking.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxRanking.TabIndex = 62;
+            this.toolTip1.SetToolTip(this.comboBoxRanking, "Filters");
+            // 
+            // labelRanking
+            // 
+            this.labelRanking.AutoSize = true;
+            this.labelRanking.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRanking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRanking.Location = new System.Drawing.Point(-1, 1);
+            this.labelRanking.Name = "labelRanking";
+            this.labelRanking.Size = new System.Drawing.Size(55, 22);
+            this.labelRanking.TabIndex = 63;
+            this.labelRanking.Text = "Ranking";
+            this.toolTip1.SetToolTip(this.labelRanking, "Filters");
+            // 
+            // labelMaxedFlagsText
+            // 
+            this.labelMaxedFlagsText.AutoSize = true;
+            this.labelMaxedFlagsText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaxedFlagsText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelMaxedFlagsText.Location = new System.Drawing.Point(638, 0);
+            this.labelMaxedFlagsText.Name = "labelMaxedFlagsText";
+            this.labelMaxedFlagsText.Size = new System.Drawing.Size(93, 22);
+            this.labelMaxedFlagsText.TabIndex = 64;
+            this.labelMaxedFlagsText.Text = "Flags maxed in";
+            this.toolTip1.SetToolTip(this.labelMaxedFlagsText, "Filters");
+            // 
+            // labelMaxedTowersText
+            // 
+            this.labelMaxedTowersText.AutoSize = true;
+            this.labelMaxedTowersText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaxedTowersText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelMaxedTowersText.Location = new System.Drawing.Point(-1, 0);
+            this.labelMaxedTowersText.Name = "labelMaxedTowersText";
+            this.labelMaxedTowersText.Size = new System.Drawing.Size(104, 22);
+            this.labelMaxedTowersText.TabIndex = 65;
+            this.labelMaxedTowersText.Text = "Towers maxed in";
+            this.toolTip1.SetToolTip(this.labelMaxedTowersText, "Filters");
+            // 
+            // labelMaxedTowers
+            // 
+            this.labelMaxedTowers.AutoSize = true;
+            this.labelMaxedTowers.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaxedTowers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelMaxedTowers.Location = new System.Drawing.Point(105, 0);
+            this.labelMaxedTowers.Name = "labelMaxedTowers";
+            this.labelMaxedTowers.Size = new System.Drawing.Size(42, 22);
+            this.labelMaxedTowers.TabIndex = 66;
+            this.labelMaxedTowers.Text = "Never";
+            this.toolTip1.SetToolTip(this.labelMaxedTowers, "Filters");
+            // 
+            // labelMaxedFlags
+            // 
+            this.labelMaxedFlags.AutoSize = true;
+            this.labelMaxedFlags.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaxedFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelMaxedFlags.Location = new System.Drawing.Point(737, 0);
+            this.labelMaxedFlags.Name = "labelMaxedFlags";
+            this.labelMaxedFlags.Size = new System.Drawing.Size(42, 22);
+            this.labelMaxedFlags.TabIndex = 67;
+            this.labelMaxedFlags.Text = "Never";
+            this.toolTip1.SetToolTip(this.labelMaxedFlags, "Filters");
+            // 
+            // labelWingsPerWeek
+            // 
+            this.labelWingsPerWeek.AutoSize = true;
+            this.labelWingsPerWeek.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWingsPerWeek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelWingsPerWeek.Location = new System.Drawing.Point(105, 1);
+            this.labelWingsPerWeek.Name = "labelWingsPerWeek";
+            this.labelWingsPerWeek.Size = new System.Drawing.Size(88, 22);
+            this.labelWingsPerWeek.TabIndex = 69;
+            this.labelWingsPerWeek.Text = "Wings per day";
+            this.toolTip1.SetToolTip(this.labelWingsPerWeek, "Filters");
+            // 
+            // comboBoxWingsPerWeek
+            // 
+            this.comboBoxWingsPerWeek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxWingsPerWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWingsPerWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxWingsPerWeek.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxWingsPerWeek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxWingsPerWeek.FormattingEnabled = true;
+            this.comboBoxWingsPerWeek.Location = new System.Drawing.Point(109, 26);
+            this.comboBoxWingsPerWeek.MaxDropDownItems = 25;
+            this.comboBoxWingsPerWeek.Name = "comboBoxWingsPerWeek";
+            this.comboBoxWingsPerWeek.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxWingsPerWeek.TabIndex = 68;
+            this.toolTip1.SetToolTip(this.comboBoxWingsPerWeek, "Filters");
+            // 
+            // labelGuildBattlesWon
+            // 
+            this.labelGuildBattlesWon.AutoSize = true;
+            this.labelGuildBattlesWon.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGuildBattlesWon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelGuildBattlesWon.Location = new System.Drawing.Point(324, 1);
+            this.labelGuildBattlesWon.Name = "labelGuildBattlesWon";
+            this.labelGuildBattlesWon.Size = new System.Drawing.Size(109, 22);
+            this.labelGuildBattlesWon.TabIndex = 71;
+            this.labelGuildBattlesWon.Text = "Guild battles won";
+            this.toolTip1.SetToolTip(this.labelGuildBattlesWon, "Filters");
+            // 
+            // comboBoxGuildBattlesWon
+            // 
+            this.comboBoxGuildBattlesWon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxGuildBattlesWon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGuildBattlesWon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxGuildBattlesWon.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxGuildBattlesWon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxGuildBattlesWon.FormattingEnabled = true;
+            this.comboBoxGuildBattlesWon.Location = new System.Drawing.Point(328, 26);
+            this.comboBoxGuildBattlesWon.MaxDropDownItems = 25;
+            this.comboBoxGuildBattlesWon.Name = "comboBoxGuildBattlesWon";
+            this.comboBoxGuildBattlesWon.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxGuildBattlesWon.TabIndex = 70;
+            this.toolTip1.SetToolTip(this.comboBoxGuildBattlesWon, "Filters");
+            // 
+            // labelSiegeResult1
+            // 
+            this.labelSiegeResult1.AutoSize = true;
+            this.labelSiegeResult1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSiegeResult1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSiegeResult1.Location = new System.Drawing.Point(536, 1);
+            this.labelSiegeResult1.Name = "labelSiegeResult1";
+            this.labelSiegeResult1.Size = new System.Drawing.Size(93, 22);
+            this.labelSiegeResult1.TabIndex = 73;
+            this.labelSiegeResult1.Text = "Siege result (1)";
+            this.toolTip1.SetToolTip(this.labelSiegeResult1, "Filters");
+            // 
+            // comboBoxSiegeResult1
+            // 
+            this.comboBoxSiegeResult1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxSiegeResult1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSiegeResult1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSiegeResult1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSiegeResult1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxSiegeResult1.FormattingEnabled = true;
+            this.comboBoxSiegeResult1.Location = new System.Drawing.Point(540, 26);
+            this.comboBoxSiegeResult1.MaxDropDownItems = 25;
+            this.comboBoxSiegeResult1.Name = "comboBoxSiegeResult1";
+            this.comboBoxSiegeResult1.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxSiegeResult1.TabIndex = 72;
+            this.toolTip1.SetToolTip(this.comboBoxSiegeResult1, "Filters");
+            // 
+            // labelSiegeResult2
+            // 
+            this.labelSiegeResult2.AutoSize = true;
+            this.labelSiegeResult2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSiegeResult2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSiegeResult2.Location = new System.Drawing.Point(642, 1);
+            this.labelSiegeResult2.Name = "labelSiegeResult2";
+            this.labelSiegeResult2.Size = new System.Drawing.Size(96, 22);
+            this.labelSiegeResult2.TabIndex = 75;
+            this.labelSiegeResult2.Text = "Siege result (2)";
+            this.toolTip1.SetToolTip(this.labelSiegeResult2, "Filters");
+            // 
+            // comboBoxSiegeResult2
+            // 
+            this.comboBoxSiegeResult2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxSiegeResult2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSiegeResult2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSiegeResult2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSiegeResult2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxSiegeResult2.FormattingEnabled = true;
+            this.comboBoxSiegeResult2.Location = new System.Drawing.Point(646, 26);
+            this.comboBoxSiegeResult2.MaxDropDownItems = 25;
+            this.comboBoxSiegeResult2.Name = "comboBoxSiegeResult2";
+            this.comboBoxSiegeResult2.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxSiegeResult2.TabIndex = 74;
+            this.toolTip1.SetToolTip(this.comboBoxSiegeResult2, "Filters");
+            // 
+            // labelRankingSiege
+            // 
+            this.labelRankingSiege.AutoSize = true;
+            this.labelRankingSiege.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRankingSiege.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRankingSiege.Location = new System.Drawing.Point(430, 1);
+            this.labelRankingSiege.Name = "labelRankingSiege";
+            this.labelRankingSiege.Size = new System.Drawing.Size(88, 22);
+            this.labelRankingSiege.TabIndex = 79;
+            this.labelRankingSiege.Text = "Siege Ranking";
+            this.toolTip1.SetToolTip(this.labelRankingSiege, "Filters");
+            // 
+            // comboBoxRankingSiege
+            // 
+            this.comboBoxRankingSiege.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRankingSiege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRankingSiege.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRankingSiege.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRankingSiege.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRankingSiege.FormattingEnabled = true;
+            this.comboBoxRankingSiege.Location = new System.Drawing.Point(434, 26);
+            this.comboBoxRankingSiege.MaxDropDownItems = 25;
+            this.comboBoxRankingSiege.Name = "comboBoxRankingSiege";
+            this.comboBoxRankingSiege.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxRankingSiege.TabIndex = 78;
+            this.toolTip1.SetToolTip(this.comboBoxRankingSiege, "Filters");
+            // 
+            // labelRankingGuild
+            // 
+            this.labelRankingGuild.AutoSize = true;
+            this.labelRankingGuild.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRankingGuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRankingGuild.Location = new System.Drawing.Point(215, 1);
+            this.labelRankingGuild.Name = "labelRankingGuild";
+            this.labelRankingGuild.Size = new System.Drawing.Size(107, 22);
+            this.labelRankingGuild.TabIndex = 81;
+            this.labelRankingGuild.Text = "Guild War Ranking";
+            this.toolTip1.SetToolTip(this.labelRankingGuild, "Filters");
+            // 
+            // comboBoxRankingGuild
+            // 
+            this.comboBoxRankingGuild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRankingGuild.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRankingGuild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRankingGuild.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRankingGuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRankingGuild.FormattingEnabled = true;
+            this.comboBoxRankingGuild.Location = new System.Drawing.Point(219, 26);
+            this.comboBoxRankingGuild.MaxDropDownItems = 25;
+            this.comboBoxRankingGuild.Name = "comboBoxRankingGuild";
+            this.comboBoxRankingGuild.Size = new System.Drawing.Size(100, 27);
+            this.comboBoxRankingGuild.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.comboBoxRankingGuild, "Filters");
+            // 
             // panelTowersFlags
             // 
             this.panelTowersFlags.Controls.Add(this.objectListViewTowersFlags);
+            this.panelTowersFlags.Controls.Add(this.panelTowersFlagsRight);
+            this.panelTowersFlags.Controls.Add(this.panel1);
             this.panelTowersFlags.Controls.Add(this.labelOtherTowerFlags);
             this.panelTowersFlags.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTowersFlags.Location = new System.Drawing.Point(0, 185);
@@ -174,6 +436,7 @@
             this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn14);
             this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn15);
             this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn16);
+            this.objectListViewTowersFlags.AllColumns.Add(this.olvColumn1);
             this.objectListViewTowersFlags.AllowColumnReorder = true;
             this.objectListViewTowersFlags.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.objectListViewTowersFlags.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -182,15 +445,16 @@
             this.olvColumn13,
             this.olvColumn14,
             this.olvColumn15,
-            this.olvColumn16});
+            this.olvColumn16,
+            this.olvColumn1});
             this.objectListViewTowersFlags.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewTowersFlags.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.objectListViewTowersFlags.FullRowSelect = true;
             this.objectListViewTowersFlags.HideSelection = false;
-            this.objectListViewTowersFlags.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewTowersFlags.Location = new System.Drawing.Point(0, 100);
             this.objectListViewTowersFlags.Name = "objectListViewTowersFlags";
             this.objectListViewTowersFlags.ShowGroups = false;
-            this.objectListViewTowersFlags.Size = new System.Drawing.Size(780, 184);
+            this.objectListViewTowersFlags.Size = new System.Drawing.Size(780, 104);
             this.objectListViewTowersFlags.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewTowersFlags.TabIndex = 60;
             this.objectListViewTowersFlags.UseCompatibleStateImageBehavior = false;
@@ -238,6 +502,46 @@
             this.olvColumn16.Text = "Remaining Upgrade";
             this.olvColumn16.Width = 88;
             // 
+            // panelTowersFlagsRight
+            // 
+            this.panelTowersFlagsRight.Controls.Add(this.labelRankingGuild);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxRankingGuild);
+            this.panelTowersFlagsRight.Controls.Add(this.labelRankingSiege);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxRankingSiege);
+            this.panelTowersFlagsRight.Controls.Add(this.labelSiegeResult2);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxSiegeResult2);
+            this.panelTowersFlagsRight.Controls.Add(this.labelSiegeResult1);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxSiegeResult1);
+            this.panelTowersFlagsRight.Controls.Add(this.labelGuildBattlesWon);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxGuildBattlesWon);
+            this.panelTowersFlagsRight.Controls.Add(this.labelWingsPerWeek);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxWingsPerWeek);
+            this.panelTowersFlagsRight.Controls.Add(this.labelRanking);
+            this.panelTowersFlagsRight.Controls.Add(this.comboBoxRanking);
+            this.panelTowersFlagsRight.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTowersFlagsRight.Location = new System.Drawing.Point(0, 42);
+            this.panelTowersFlagsRight.Name = "panelTowersFlagsRight";
+            this.panelTowersFlagsRight.Size = new System.Drawing.Size(780, 58);
+            this.panelTowersFlagsRight.TabIndex = 62;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelMaxedTowersText);
+            this.panel1.Controls.Add(this.labelMaxedFlags);
+            this.panel1.Controls.Add(this.labelMaxedTowers);
+            this.panel1.Controls.Add(this.labelMaxedFlagsText);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 204);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(780, 22);
+            this.panel1.TabIndex = 78;
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "RemainingDays";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Remaining Days";
+            // 
             // Other
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +558,10 @@
             this.panelTowersFlags.ResumeLayout(false);
             this.panelTowersFlags.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).EndInit();
+            this.panelTowersFlagsRight.ResumeLayout(false);
+            this.panelTowersFlagsRight.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,5 +586,26 @@
         private BrightIdeasSoftware.OLVColumn olvColumn14;
         private BrightIdeasSoftware.OLVColumn olvColumn15;
         private BrightIdeasSoftware.OLVColumn olvColumn16;
+        private System.Windows.Forms.Panel panelTowersFlagsRight;
+        private System.Windows.Forms.ComboBox comboBoxRanking;
+        private System.Windows.Forms.Label labelMaxedFlags;
+        private System.Windows.Forms.Label labelMaxedTowers;
+        private System.Windows.Forms.Label labelMaxedTowersText;
+        private System.Windows.Forms.Label labelMaxedFlagsText;
+        private System.Windows.Forms.Label labelRanking;
+        private System.Windows.Forms.Label labelWingsPerWeek;
+        private System.Windows.Forms.ComboBox comboBoxWingsPerWeek;
+        private System.Windows.Forms.Label labelGuildBattlesWon;
+        private System.Windows.Forms.ComboBox comboBoxGuildBattlesWon;
+        private System.Windows.Forms.Label labelSiegeResult2;
+        private System.Windows.Forms.ComboBox comboBoxSiegeResult2;
+        private System.Windows.Forms.Label labelSiegeResult1;
+        private System.Windows.Forms.ComboBox comboBoxSiegeResult1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelRankingSiege;
+        private System.Windows.Forms.ComboBox comboBoxRankingSiege;
+        private System.Windows.Forms.Label labelRankingGuild;
+        private System.Windows.Forms.ComboBox comboBoxRankingGuild;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
     }
 }
