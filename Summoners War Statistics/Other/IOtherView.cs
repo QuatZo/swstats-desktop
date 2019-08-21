@@ -16,6 +16,14 @@ namespace Summoners_War_Statistics
         List<Control> Cntrls { get; }
         ObjectListView SummonerFriendsList { get; set; }
         ObjectListView SummonerTowersFlagsList { get; set; }
+
+        ushort ChosenArenaRanking { get; }
+        byte ChosenArenaWingsPerDay { get; }
+        ushort ChosenGuildRanking { get; }
+        byte ChosenGuildBattlesWon { get;}
+        ushort ChosenSiegeRanking { get; }
+        byte ChosenSiegeFirstBattleResult { get; }
+        byte ChosenSiegeSecondBattleResult { get; }
         #endregion
 
         #region Events
@@ -24,7 +32,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Methods
-        void Init(List<Friend> friendsList, List<Decoration> decorations);
+        void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId);
         void Front();
         void ResetOnFail();
         #endregion

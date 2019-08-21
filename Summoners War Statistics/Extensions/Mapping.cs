@@ -1944,7 +1944,7 @@ namespace Summoners_War_Statistics
             rankingGuild.Add(4012, "Guardian II");
             rankingGuild.Add(4013, "Guardian III");
 
-            rankingGuild.Add(5011, "Guardian III");
+            rankingGuild.Add(5011, "Legend");
             #endregion
 
             #region Dim Hole AXP
@@ -2688,6 +2688,99 @@ namespace Summoners_War_Statistics
             );
             #endregion
             #endregion
+
+            #region Siege Rewards
+            siegeRewards.Add(
+                new SiegeRewards(
+                    1011,
+                    (20, 3),
+                    (15, 2),
+                    (10, 2)
+                )
+            );
+
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2011,
+                    (30, 6),
+                    (25, 4),
+                    (20, 4)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2012,
+                    (40, 9),
+                    (30, 6),
+                    (25, 6)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2013,
+                    (50, 12),
+                    (40, 8),
+                    (30, 8)
+                )
+            );
+
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3011,
+                    (60, 15),
+                    (45, 11),
+                    (35, 11)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3012,
+                    (80, 18),
+                    (65, 13),
+                    (50, 13)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3013,
+                    (100, 21),
+                    (80, 15),
+                    (60, 15)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    4011,
+                    (140, 27),
+                    (100, 20),
+                    (80, 20)
+                )
+            );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     4012,
+                     (200, 32),
+                     (160, 25),
+                     (130, 25)
+                 )
+             );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     4013,
+                     (250, 37),
+                     (200, 30),
+                     (170, 30)
+                 )
+             );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     5011,
+                     (250, 37),
+                     (200, 30),
+                     (170, 30)
+                 )
+             );
+            #endregion
         }
         #endregion
 
@@ -2727,6 +2820,8 @@ namespace Summoners_War_Statistics
 
         public enum BuildingArea { Arena = 0, Guild = 1 }
         private List<Building> buildings = new List<Building>();
+
+        private List<SiegeRewards> siegeRewards = new List<SiegeRewards>();
         #endregion
 
         #region Properties
@@ -2993,13 +3088,18 @@ namespace Summoners_War_Statistics
             return (Math.Round(efficiency, 2), Math.Round(efficiencyMax, 2));
         }
 
-        public string GetRanking(int id)
+        public string GetArenaRanking(int id)
         {
             if (rankingArena.ContainsKey(id))
             {
                 return rankingArena[id];
             }
             return "Unknown Ranking";
+        }
+
+        public Dictionary<int, string> GetAllArenaRankings()
+        {
+            return rankingArena;
         }
 
         public string GetGuildRanking(int id)
@@ -3009,6 +3109,11 @@ namespace Summoners_War_Statistics
                 return rankingGuild[id];
             }
             return "Unknown Guild Ranking";
+        }
+
+        public Dictionary<int, string> GetAllGuildRankings()
+        {
+            return rankingGuild;
         }
 
         public int GetAxpByFloor(int floor)

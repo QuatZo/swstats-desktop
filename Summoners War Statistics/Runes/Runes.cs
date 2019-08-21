@@ -477,7 +477,6 @@ namespace Summoners_War_Statistics
             objectListViewRunes.Items.Clear();
             RunesEfficiencyMax = RunesEfficiencyMean = RunesEfficiencyMedian = RunesEfficiencyMin = RunesEfficiencyStandardDeviation = RunesAmount = RunesMaxed = RunesInventory = 0;
         }
-        #endregion
 
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {
@@ -497,5 +496,6 @@ namespace Summoners_War_Statistics
                 CanSeeRunesTab?.Invoke();
             }
         }
+        #endregion
     }
 }

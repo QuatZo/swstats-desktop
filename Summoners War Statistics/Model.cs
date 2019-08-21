@@ -445,7 +445,8 @@ namespace Summoners_War_Statistics
                         bonus,
                         (byte)building.ActualLevel,
                         (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
-                        (ushort)building.CalcRemainingUpgradeCost()
+                        (ushort)building.CalcRemainingUpgradeCost(),
+                        "temp"
                     )
                 );
             }

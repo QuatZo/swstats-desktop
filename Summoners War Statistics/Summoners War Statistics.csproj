@@ -95,6 +95,7 @@
     <Compile Include="Guild\GuildPresenter.cs" />
     <Compile Include="Guild\IGuildView.cs" />
     <Compile Include="Menu\MenuPresenter.cs" />
+    <Compile Include="Extensions\SiegeRewards.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
