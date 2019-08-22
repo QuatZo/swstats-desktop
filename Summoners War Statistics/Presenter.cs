@@ -172,7 +172,7 @@ namespace Summoners_War_Statistics
                         Logger.log.Info($"Initializing...");
                     
                         Logger.log.Info($"Summary tab");
-                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks, json.RaidDeck);
+                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks);
                         Logger.log.Info("[Summary] DONE");
 
                         Logger.log.Info($"Monsters tab");

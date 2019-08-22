@@ -58,7 +58,7 @@ namespace Summoners_War_Statistics
             {
                 try
                 {
-                    return byte.Parse(comboBoxWingsPerDay.SelectedValue.ToString());
+                    return byte.Parse(comboBoxWingsPerDay.SelectedItem.ToString());
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
@@ -84,7 +84,7 @@ namespace Summoners_War_Statistics
             {
                 try
                 {
-                    return byte.Parse(comboBoxGuildBattlesWon.SelectedValue.ToString());
+                    return byte.Parse(comboBoxGuildBattlesWon.SelectedItem.ToString());
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
@@ -109,7 +109,7 @@ namespace Summoners_War_Statistics
             {
                 try
                 {
-                    return byte.Parse(comboBoxSiegeResult1.SelectedValue.ToString());
+                    return byte.Parse(comboBoxSiegeResult1.SelectedItem.ToString());
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
@@ -121,7 +121,7 @@ namespace Summoners_War_Statistics
             {
                 try
                 {
-                    return byte.Parse(comboBoxSiegeResult2.SelectedValue.ToString());
+                    return byte.Parse(comboBoxSiegeResult2.SelectedItem.ToString());
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
@@ -173,6 +173,7 @@ namespace Summoners_War_Statistics
             comboBoxSiegeResult1.SelectedIndex = 0;
             comboBoxSiegeResult2.SelectedIndex = 0;
         }
+
         public void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId)
         {
             InitComboBoxes(arenaRatingId, guildWarRankingStat.Current["rating_id"]);

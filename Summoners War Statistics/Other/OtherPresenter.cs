@@ -100,7 +100,7 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
 
-            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(decorations, Mapping.Instance.GetBuildings()));
+            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));
             Logger.log.Info($"[Towers&Flags] Towers & Flags to list done");
         }
     }

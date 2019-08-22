@@ -47,13 +47,13 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>, RaidDeck> InitSummary;
+        event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>> InitSummary;
         event Action Resized;
         event Action Loaded;
         #endregion
 
         #region Methods
-        void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck);
+        void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks);
         void Front();
         void ResetOnFail();
         #endregion

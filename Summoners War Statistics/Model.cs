@@ -317,7 +317,7 @@ namespace Summoners_War_Statistics
             return runesToReturn;
         }
 
-        public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks, RaidDeck raidDeck)
+        public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks)
         {
             List<DecksRow> decksRows = new List<DecksRow>();
 
@@ -419,7 +419,7 @@ namespace Summoners_War_Statistics
             return amount;
         }
 
-        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings)
+        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
             foreach (var building in buildings)
@@ -446,11 +446,86 @@ namespace Summoners_War_Statistics
                         (byte)building.ActualLevel,
                         (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
                         (ushort)building.CalcRemainingUpgradeCost(),
-                        "temp"
+                        TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
                     )
                 );
             }
             return towersFlags;
+        }
+
+        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        {
+            Console.WriteLine("------------------");
+            Console.WriteLine(arenaRanking);
+            Console.WriteLine(arenaWings);
+            Console.WriteLine(guildRanking);
+            Console.WriteLine(guildBattlesWon);
+            Console.WriteLine(siegeRanking);
+            Console.WriteLine(siegeFirstBattle);
+            Console.WriteLine(siegeSecondBattle);
+            int remainingUpgradeCost = building.CalcRemainingUpgradeCost();
+            if ( remainingUpgradeCost < 1) { return "0"; }
+
+            if (building.Area == Mapping.BuildingArea.Arena)
+            {
+                int gloryPointsPerWin = (arenaRanking / 1000 + 2);
+                if (arenaRanking > 5000) { gloryPointsPerWin--; } // Legend gets same amount as Guardian
+
+                double gloryPointsWeek = gloryPointsPerWin * arenaWings * 7;
+                double gloryPointsDay = Math.Max((gloryPointsWeek - 180) / 7, 0); // devilmon
+
+                return Math.Ceiling(remainingUpgradeCost / gloryPointsDay).ToString();
+            }
+            else
+            {
+                int guildPointsPerFight = (guildRanking / 1000 + 2);
+                if (guildRanking > 5000) { guildPointsPerFight--; } // Legend gets same amount as Guardian
+
+                int guildPointsPerBattle = guildPointsPerFight * 6 + 12; // 12 -> +6 rule
+
+                SiegeRewards guildSiege = Mapping.Instance.GetSiegeRewards()[0];
+                foreach (var siege in Mapping.Instance.GetSiegeRewards())
+                {
+                    if(siege.Id == siegeRanking) { guildSiege = siege; break; }
+                }
+
+                int guildPointsSiegeFirst;
+                switch (siegeFirstBattle)
+                {
+                    case 1:
+                        guildPointsSiegeFirst = (int)((guildSiege.FirstPlace.GuildPoints / 100) * 20000 * .05);
+                        break;
+                    case 2:
+                        guildPointsSiegeFirst = (int)((guildSiege.SecondPlace.GuildPoints / 100) * 15000 * .05);
+                        break;
+                    case 3:
+                        guildPointsSiegeFirst = (int)((guildSiege.ThirdPlace.GuildPoints / 100) * 10000 * .05);
+                        break;
+                    default:
+                        guildPointsSiegeFirst = 0;
+                        break;
+                }
+
+                int guildPointsSiegeSecond;
+                switch (siegeSecondBattle)
+                {
+                    case 1:
+                        guildPointsSiegeSecond = (int)((guildSiege.FirstPlace.GuildPoints / 100) * 20000 * .05);
+                        break;
+                    case 2:
+                        guildPointsSiegeSecond = (int)((guildSiege.SecondPlace.GuildPoints / 100) * 15000 * .05);
+                        break;
+                    case 3:
+                        guildPointsSiegeSecond = (int)((guildSiege.ThirdPlace.GuildPoints / 100) * 10000 * .05);
+                        break;
+                    default:
+                        guildPointsSiegeSecond = 0;
+                        break;
+                }
+
+                double gloryPointsWeek = Math.Max((guildPointsPerBattle * 12 + guildPointsPerBattle * guildBattlesWon) + guildPointsSiegeFirst + guildPointsSiegeSecond - 150, 0);
+                return Math.Ceiling(remainingUpgradeCost * 7 / gloryPointsWeek).ToString();
+            }
         }
     }
 }

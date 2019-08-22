@@ -3138,6 +3138,11 @@ namespace Summoners_War_Statistics
         {
             return buildings;
         }
+
+        public List<SiegeRewards> GetSiegeRewards()
+        {
+            return siegeRewards;
+        }
         #endregion
     }
 }

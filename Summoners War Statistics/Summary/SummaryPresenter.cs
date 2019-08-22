@@ -180,7 +180,7 @@ namespace Summoners_War_Statistics
         }
 
         private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, 
-            DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck)
+            DateTime jsonModificationTime, string country, List<Deck> decks)
         {
             view.SummonerRunes = 0;
             view.SummonerRunesLocked = 0;
@@ -244,7 +244,7 @@ namespace Summoners_War_Statistics
             view.SummonerRunes = (ushort)(runes.Count + view.SummonerRunesLocked);
             Logger.log.Info("[Summary] Summoner runes done");
 
-            view.SummaryDecksListView.SetObjects(model.SummaryDecks(monsters, decks, raidDeck));
+            view.SummaryDecksListView.SetObjects(model.SummaryDecks(monsters, decks));
             Logger.log.Info("[Summary] Summoner decks done");
 
 
