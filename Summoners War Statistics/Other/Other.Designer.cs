@@ -193,6 +193,7 @@
             this.comboBoxRankingArena.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRankingArena.TabIndex = 62;
             this.toolTip1.SetToolTip(this.comboBoxRankingArena, "Filters");
+            this.comboBoxRankingArena.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelRankingArena
             // 
@@ -290,6 +291,7 @@
             this.comboBoxWingsPerDay.Size = new System.Drawing.Size(100, 27);
             this.comboBoxWingsPerDay.TabIndex = 68;
             this.toolTip1.SetToolTip(this.comboBoxWingsPerDay, "Filters");
+            this.comboBoxWingsPerDay.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelGuildBattlesWon
             // 
@@ -331,6 +333,7 @@
             this.comboBoxGuildBattlesWon.Size = new System.Drawing.Size(100, 27);
             this.comboBoxGuildBattlesWon.TabIndex = 70;
             this.toolTip1.SetToolTip(this.comboBoxGuildBattlesWon, "Filters");
+            this.comboBoxGuildBattlesWon.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelSiegeResult1
             // 
@@ -363,6 +366,7 @@
             this.comboBoxSiegeResult1.Size = new System.Drawing.Size(100, 27);
             this.comboBoxSiegeResult1.TabIndex = 72;
             this.toolTip1.SetToolTip(this.comboBoxSiegeResult1, "Filters");
+            this.comboBoxSiegeResult1.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelSiegeResult2
             // 
@@ -395,6 +399,7 @@
             this.comboBoxSiegeResult2.Size = new System.Drawing.Size(100, 27);
             this.comboBoxSiegeResult2.TabIndex = 74;
             this.toolTip1.SetToolTip(this.comboBoxSiegeResult2, "Filters");
+            this.comboBoxSiegeResult2.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelRankingSiege
             // 
@@ -422,6 +427,7 @@
             this.comboBoxRankingSiege.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRankingSiege.TabIndex = 78;
             this.toolTip1.SetToolTip(this.comboBoxRankingSiege, "Filters");
+            this.comboBoxRankingSiege.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // labelRankingGuild
             // 
@@ -449,6 +455,7 @@
             this.comboBoxRankingGuild.Size = new System.Drawing.Size(100, 27);
             this.comboBoxRankingGuild.TabIndex = 80;
             this.toolTip1.SetToolTip(this.comboBoxRankingGuild, "Filters");
+            this.comboBoxRankingGuild.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // panelTowersFlags
             // 

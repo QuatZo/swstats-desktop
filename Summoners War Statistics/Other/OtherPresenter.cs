@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace Summoners_War_Statistics
             this.view.SummonerTowersFlagsList.BeforeSorting += SummonerTowersFlagsList_BeforeSorting;
 
             this.view.Resized += View_Resized;
+
+            this.view.InitTowersFlags += InitTowersFlags;
         }
 
         private void SummonerTowersFlagsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
@@ -100,8 +103,27 @@ namespace Summoners_War_Statistics
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
 
-            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));
+            InitTowersFlags();
+        }
+
+        private void InitTowersFlags()
+        {
+            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(view.Decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));
             Logger.log.Info($"[Towers&Flags] Towers & Flags to list done");
+
+            double towersDays = 0;
+            double flagsDays = 0;
+            foreach (OLVListItem rowObject in view.SummonerTowersFlagsList.Items)
+            {
+                BuildingRow row = (BuildingRow)rowObject.RowObject;
+
+                if (row.Area == Mapping.BuildingArea.Arena) { towersDays += double.Parse(row.RemainingDays); }
+                else { flagsDays += double.Parse(row.RemainingDays); }
+            }
+            view.DaysToMaxTowers = towersDays.ToString();
+            view.DaysToMaxFlags = flagsDays.ToString();
+
+            Logger.log.Info($"[Towers&Flags] Towers & Flags Maxed done");
         }
     }
 }

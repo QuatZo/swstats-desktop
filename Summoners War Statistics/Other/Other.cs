@@ -127,11 +127,66 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+
+        public List<Decoration> Decorations { get; set; }
+
+        public string DaysToMaxTowers
+        {
+            get
+            {
+                if (labelMaxedTowers.Text.Contains("days"))
+                {
+                    return labelMaxedTowers.Text.Remove(labelMaxedTowers.Text.Length - 5);
+                }
+                return "Never";
+            }
+            set
+            {
+                try
+                {
+                    if (double.IsInfinity(double.Parse(value))){
+                        labelMaxedTowers.Text = "Never";
+                    }
+                    else
+                    {
+                        labelMaxedTowers.Text = value;
+                    }
+                }
+                catch (FormatException) { }
+            }
+        }
+        public string DaysToMaxFlags
+        {
+            get
+            {
+                if (labelMaxedFlags.Text.Contains("days"))
+                {
+                    return labelMaxedFlags.Text.Remove(labelMaxedFlags.Text.Length - 5);
+                }
+                return "Never";
+            }
+            set
+            {
+                try
+                {
+                    if (double.IsInfinity(double.Parse(value)))
+                    {
+                        labelMaxedFlags.Text = "Never";
+                    }
+                    else
+                    {
+                        labelMaxedFlags.Text = value;
+                    }
+                }
+                catch (FormatException) { }
+            }
+        }
         #endregion
 
         #region Events
         public event Action<List<Friend>, List<Decoration>> InitOther;
         public event Action Resized;
+        public event Action InitTowersFlags;
         #endregion
 
         public Other()
@@ -176,6 +231,9 @@ namespace Summoners_War_Statistics
 
         public void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId)
         {
+            objectListViewTowersFlags.Items.Clear();
+            Decorations = decorations;
+
             InitComboBoxes(arenaRatingId, guildWarRankingStat.Current["rating_id"]);
             InitOther?.Invoke(friendsList, decorations);
         }
@@ -193,7 +251,13 @@ namespace Summoners_War_Statistics
         {
             Resized?.Invoke();
         }
-
+        private void ComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            objectListViewTowersFlags.Items.Clear();
+            InitTowersFlags?.Invoke();
+        }
         #endregion
+
+
     }
 }

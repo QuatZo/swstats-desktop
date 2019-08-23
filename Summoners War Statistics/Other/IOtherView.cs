@@ -24,11 +24,17 @@ namespace Summoners_War_Statistics
         ushort ChosenSiegeRanking { get; }
         byte ChosenSiegeFirstBattleResult { get; }
         byte ChosenSiegeSecondBattleResult { get; }
+
+        List<Decoration> Decorations { get; set; }
+
+        string DaysToMaxTowers { get; set; }
+        string DaysToMaxFlags { get; set; }
         #endregion
 
         #region Events
         event Action<List<Friend>, List<Decoration>> InitOther;
         event Action Resized;
+        event Action InitTowersFlags;
         #endregion
 
         #region Methods
