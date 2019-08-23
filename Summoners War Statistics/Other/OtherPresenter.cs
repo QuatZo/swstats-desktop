@@ -75,6 +75,10 @@ namespace Summoners_War_Statistics
             //panelFriends              - 2
             //objectListViewTowersFlags - 3
             //panelTowersFlags          - 4
+            //labelMaxedFlags           - 5
+            //labelMaxedFlagsText       - 6
+            //labelMaxedTowers          - 7
+            //labelMaxedTowersText      - 8
 
             view.SummonerFriendsList.BeginUpdate();
 
@@ -96,6 +100,12 @@ namespace Summoners_War_Statistics
                 column.Width = columnWidth - 5;
             }
             view.SummonerTowersFlagsList.EndUpdate();
+
+            view.Cntrls[8].Location = new Point(5, 0);
+            view.Cntrls[7].Location = new Point(view.Cntrls[8].Location.X + view.Cntrls[8].Size.Width + 5, 0);
+
+            view.Cntrls[5].Location = new Point(view.TabSize.Width - view.Cntrls[5].Size.Width - 5, 0);
+            view.Cntrls[6].Location = new Point(view.Cntrls[5].Location.X - view.Cntrls[6].Size.Width - 0);
         }
 
         private void View_InitOther(List<Friend> friendsList, List<Decoration> decorations)

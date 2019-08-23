@@ -26,7 +26,11 @@ namespace Summoners_War_Statistics
             objectListViewFriends,
             panelFriends,
             objectListViewTowersFlags,
-            panelTowersFlags
+            panelTowersFlags,
+            labelMaxedFlags,
+            labelMaxedFlagsText,
+            labelMaxedTowers,
+            labelMaxedTowersText
         };
 
         public ObjectListView SummonerFriendsList

@@ -476,10 +476,8 @@ namespace Summoners_War_Statistics
                 int guildPointsPerBattle = guildPointsPerFight * 6 + 12; // 12 -> +6 rule
 
                 SiegeRewards guildSiege = Mapping.Instance.GetSiegeRewards()[0];
-                Console.WriteLine($"First: {guildSiege.Id}");
                 foreach (var siege in Mapping.Instance.GetSiegeRewards())
                 {
-                    Console.WriteLine($"Checking: {siege.Id}");
                     if (siege.Id == siegeRanking) { guildSiege = siege; break; }
                 }
 
@@ -487,13 +485,13 @@ namespace Summoners_War_Statistics
                 switch (siegeFirstBattle)
                 {
                     case 1:
-                        guildPointsSiegeFirst = (int)(((double)guildSiege.FirstPlace.GuildPoints / 100) * 20000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
                         break;
                     case 2:
-                        guildPointsSiegeFirst = (int)(((double)guildSiege.SecondPlace.GuildPoints / 100) * 15000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
                         break;
                     case 3:
-                        guildPointsSiegeFirst = (int)(((double)guildSiege.ThirdPlace.GuildPoints / 100) * 10000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
                         break;
                     default:
                         guildPointsSiegeFirst = 0;
@@ -504,13 +502,13 @@ namespace Summoners_War_Statistics
                 switch (siegeSecondBattle)
                 {
                     case 1:
-                        guildPointsSiegeSecond = (int)(((double)guildSiege.FirstPlace.GuildPoints / 100) * 20000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
                         break;
                     case 2:
-                        guildPointsSiegeSecond = (int)(((double)guildSiege.SecondPlace.GuildPoints / 100) * 15000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
                         break;
                     case 3:
-                        guildPointsSiegeSecond = (int)(((double)guildSiege.ThirdPlace.GuildPoints / 100) * 10000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
                         break;
                     default:
                         guildPointsSiegeSecond = 0;
