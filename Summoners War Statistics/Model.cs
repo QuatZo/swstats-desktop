@@ -196,34 +196,48 @@ namespace Summoners_War_Statistics
         private bool RuneMeetsRequirements(Rune rune, List<byte> filters, double runeEfficiency)
         {
             if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
-            if (filters[1] != 0 && rune.PriEff[0] != filters[1]) { return false; } // mainstat
 
-            if (filters[2] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
-            else if (filters[2] != 99 && filters[2] != 0 && rune.PrefixEff[0] != filters[2]) { return false; } // innate
+            bool runeAncient = rune.Class > 10;
+            byte runeClass =  runeAncient? (byte)(rune.Class - 10) : (byte)rune.Class;
 
-            if (filters[3] != 0 && rune.Rank != filters[3]) { return false; } // quality
-            if (filters[4] != 0 && rune.Extra != filters[4]) { return false; } // original quality
-            if (filters[5] != 0 && rune.SlotNo != filters[5]) { return false; } // slot
+            if (filters[2] == 0 && runeClass != filters[1]) { return false; } // stars
+            if (filters[2] == 1 && runeClass > filters[1]) { return false; }
+            if (filters[2] == 2 && runeClass < filters[1]) { return false; }
+            if (filters[2] == 3 && runeClass >= filters[1]) { return false; }
+            if (filters[2] == 4 && runeClass <= filters[1]) { return false; }
 
-            if (filters[7] == 0 && rune.UpgradeCurr != filters[6]) { return false; } // level
-            if (filters[7] == 1 && rune.UpgradeCurr > filters[6]) { return false; }
-            if (filters[7] == 2 && rune.UpgradeCurr < filters[6]) { return false; }
-            if (filters[7] == 3 && rune.UpgradeCurr >= filters[6]) { return false; }
-            if (filters[7] == 4 && rune.UpgradeCurr <= filters[6]) { return false; }
+            if (filters[3] != 0 && rune.PriEff[0] != filters[3]) { return false; } // mainstat
 
-            if (filters[9] == 0 && runeEfficiency != filters[8]) { return false; } // efficiency
-            if (filters[9] == 1 && runeEfficiency > filters[8]) { return false; }
-            if (filters[9] == 2 && runeEfficiency < filters[8]) { return false; }
-            if (filters[9] == 3 && runeEfficiency >= filters[8]) { return false; }
-            if (filters[9] == 4 && runeEfficiency <= filters[8]) { return false; }
+            if (filters[4] == 98 && rune.PrefixEff[0] == 0) { return false; }
+            else if (filters[4] == 99 && rune.PrefixEff[0] > 0) { return false; } // innate
+            else if (filters[4] != 99 && filters[4] != 98 && filters[4] != 0 && rune.PrefixEff[0] != filters[4]) { return false; } // innate
+
+            if (filters[5] != 0 && rune.Rank != filters[5]) { return false; } // quality
+            if (filters[6] != 0 && rune.Extra != filters[6]) { return false; } // original quality
+            if (filters[7] != 0 && rune.SlotNo != filters[7]) { return false; } // slot
+
+            if (filters[8] == 1 && !runeAncient) { return false; } // ancient
+            else if(filters[8] == 2 && runeAncient) { return false; }
+
+            if (filters[10] == 0 && rune.UpgradeCurr != filters[9]) { return false; } // level
+            if (filters[10] == 1 && rune.UpgradeCurr > filters[9]) { return false; }
+            if (filters[10] == 2 && rune.UpgradeCurr < filters[9]) { return false; }
+            if (filters[10] == 3 && rune.UpgradeCurr >= filters[9]) { return false; }
+            if (filters[10] == 4 && rune.UpgradeCurr <= filters[9]) { return false; }
+
+            if (filters[12] == 0 && runeEfficiency != filters[11]) { return false; } // efficiency
+            if (filters[12] == 1 && runeEfficiency > filters[11]) { return false; }
+            if (filters[12] == 2 && runeEfficiency < filters[11]) { return false; }
+            if (filters[12] == 3 && runeEfficiency >= filters[11]) { return false; }
+            if (filters[12] == 4 && runeEfficiency <= filters[11]) { return false; }
 
             // substats filter
             List<(byte Substat, byte YesNo)> substatFilters = new List<(byte Substat, byte YesNo)>()
                 {
-                    (filters[10], filters[11]),
-                    (filters[12], filters[13]),
-                    (filters[14], filters[15]),
-                    (filters[16], filters[17])
+                    (filters[13], filters[14]),
+                    (filters[15], filters[16]),
+                    (filters[17], filters[18]),
+                    (filters[19], filters[20])
                 };
             bool shouldSkipRune = false;
             foreach ((byte Substat, byte YesNo) in substatFilters)
@@ -272,10 +286,13 @@ namespace Summoners_War_Statistics
                 string origin = "Inventory";
                 if (rune.OccupiedId != 0) { origin = Mapping.Instance.GetMonsterName(monstersMasterId[(long)rune.OccupiedId]); }
 
+                byte runeClass = rune.Class > 10 ? (byte)(rune.Class - 10) : (byte)rune.Class;
+
                 runesToReturn.Add(
                     new RuneRow
                     (
                         Mapping.Instance.GetRuneSet((int)rune.SetId),
+                        runeClass,
                         (byte)rune.SlotNo,
                         (byte)rune.UpgradeCurr,
                         origin,
@@ -292,14 +309,15 @@ namespace Summoners_War_Statistics
                         effect[10], // cdmg
                         effect[11], // res
                         effect[12], // acc
-                        runeEfficiency.ToString() // eff.%
+                        runeEfficiency.ToString(), // eff.%
+                        Mapping.Instance.GetRuneAncientStatus(rune) // ancient
                     )
                 );
             }
             return runesToReturn;
         }
 
-        public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks, RaidDeck raidDeck)
+        public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks)
         {
             List<DecksRow> decksRows = new List<DecksRow>();
 
@@ -399,6 +417,107 @@ namespace Summoners_War_Statistics
             }
 
             return amount;
+        }
+
+        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        {
+            List<BuildingRow> towersFlags = new List<BuildingRow>();
+            foreach (var building in buildings)
+            {
+                foreach (var decoration in decorations)
+                {
+                    if (decoration.MasterId == building.Id)
+                    {
+                        building.ActualLevel = (int)decoration.Level;
+                        break;
+                    }
+                }
+                string bonus = "-";
+
+                if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
+                else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
+                else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
+
+                towersFlags.Add(
+                    new BuildingRow(
+                        building.Area,
+                        building.Name,
+                        bonus,
+                        (byte)building.ActualLevel,
+                        (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
+                        (ushort)building.CalcRemainingUpgradeCost(),
+                        TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
+                    )
+                );
+            }
+            return towersFlags;
+        }
+
+        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        {
+            int remainingUpgradeCost = building.CalcRemainingUpgradeCost();
+            if ( remainingUpgradeCost < 1) { return "0"; }
+
+            if (building.Area == Mapping.BuildingArea.Arena)
+            {
+                int gloryPointsPerWin = (arenaRanking / 1000 + 2);
+                if (arenaRanking > 5000) { gloryPointsPerWin--; } // Legend gets same amount as Guardian
+
+                double gloryPointsWeek = gloryPointsPerWin * arenaWings * 7;
+                double gloryPointsDay = Math.Max((gloryPointsWeek - 180) / 7, 0); // devilmon
+
+                return Math.Ceiling(remainingUpgradeCost / gloryPointsDay).ToString();
+            }
+            else
+            {
+                int guildPointsPerFight = (guildRanking / 1000 + 2);
+                if (guildRanking > 5000) { guildPointsPerFight--; } // Legend gets same amount as Guardian
+
+                int guildPointsPerBattle = guildPointsPerFight * 6 + 12; // 12 -> +6 rule
+
+                SiegeRewards guildSiege = Mapping.Instance.GetSiegeRewards()[0];
+                foreach (var siege in Mapping.Instance.GetSiegeRewards())
+                {
+                    if (siege.Id == siegeRanking) { guildSiege = siege; break; }
+                }
+
+                int guildPointsSiegeFirst;
+                switch (siegeFirstBattle)
+                {
+                    case 1:
+                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        break;
+                    case 2:
+                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        break;
+                    case 3:
+                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        break;
+                    default:
+                        guildPointsSiegeFirst = 0;
+                        break;
+                }
+
+                int guildPointsSiegeSecond;
+                switch (siegeSecondBattle)
+                {
+                    case 1:
+                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        break;
+                    case 2:
+                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        break;
+                    case 3:
+                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        break;
+                    default:
+                        guildPointsSiegeSecond = 0;
+                        break;
+                }
+
+                double gloryPointsWeek = Math.Max((guildPointsPerBattle * 12 + guildPointsPerBattle * guildBattlesWon) + guildPointsSiegeFirst + guildPointsSiegeSecond - 150, 0);
+                return Math.Ceiling(remainingUpgradeCost * 7 / gloryPointsWeek).ToString();
+            }
         }
     }
 }

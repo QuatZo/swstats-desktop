@@ -65,10 +65,6 @@ namespace Summoners_War_Statistics
         public Menu()
         {
             InitializeComponent();
-            foreach(Control control in Controls)
-            {
-                Console.WriteLine(control.Name);
-            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

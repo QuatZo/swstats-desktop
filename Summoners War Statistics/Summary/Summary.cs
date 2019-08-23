@@ -210,7 +210,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
-        public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>, RaidDeck> InitSummary;
+        public event Action<Summoner, DimensionHoleInfo, List<Monster>, List<long>, List<Rune>, DateTime, string, List<Deck>> InitSummary;
         public event Action Resized;
         public event Action Loaded;
         #endregion
@@ -221,14 +221,26 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
-        public void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks, RaidDeck raidDeck)
+        public void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, DateTime jsonModificationTime, string country, 
+            List<Deck> decks)
         {
-            InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country, decks, raidDeck);
+            InitSummary?.Invoke(wizardInfo, dimensionHoleInfo, monsters, monstersLocked, runes, jsonModificationTime, country, decks);
         }
 
         public void Front()
         {
             BringToFront();
+        }
+
+        public void ResetOnFail()
+        {
+            SummonerName = "QuatZo";
+            SummonerMana = SummonerCrystals = SummonerGuildPoints = SummonerGloryPoints = SummonerRTAMedals = SummonerShapeshiftingStones = SummonerMonstersAmount = SummonerMonstersLocked = SummonerRunes = 
+                SummonerRunesLocked = SummonerSocialPoints = SummonerAncientCoins = SummonerLevel = SummonerEnergy = SummonerEnergyMax = SummonerArenaEnergy = SummonerArenaEnergyMax = SummonerDimensionalHoleEnergy =
+                SummonerDimensionalHoleEnergyMax = SummonerDimensionalCrystals = SummonerDimensionalCrystalsMax  = 0;
+            JsonModifcationDate = "Initialization failed.";
+            SummaryDecksListView.Items.Clear();
+            Resized?.Invoke();
         }
 
         private void Summary_Resize(object sender, EventArgs e)
@@ -241,7 +253,6 @@ namespace Summoners_War_Statistics
             Loaded?.Invoke();
         }
         #endregion
-
 
     }
 }

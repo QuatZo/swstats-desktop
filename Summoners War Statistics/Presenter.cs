@@ -44,6 +44,18 @@ namespace Summoners_War_Statistics
             this.view.SelectFileButtonClicked += View_SelectFileButtonClicked;
 
             this.view.MenuView.ButtonClicked += MenuView_ButtonClicked;
+
+            this.view.InitFailed += View_InitFailed;
+        }
+
+        private void View_InitFailed()
+        {
+            view.SummaryView.ResetOnFail();
+            view.MonstersView.ResetOnFail();
+            view.RunesView.ResetOnFail();
+            view.DimHoleView.ResetOnFail();
+            view.GuildView.ResetOnFail();
+            view.OtherView.ResetOnFail();
         }
 
         private void View_Loaded()
@@ -160,7 +172,7 @@ namespace Summoners_War_Statistics
                         Logger.log.Info($"Initializing...");
                     
                         Logger.log.Info($"Summary tab");
-                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks, json.RaidDeck);
+                        view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks);
                         Logger.log.Info("[Summary] DONE");
 
                         Logger.log.Info($"Monsters tab");
@@ -184,19 +196,22 @@ namespace Summoners_War_Statistics
 
                         Logger.log.Info($"Other tab");
                         view.OtherView.SummonerFriendsList.Items.Clear();
-                        view.OtherView.Init(json.FriendList);
+                        view.OtherView.Init(json.FriendList, json.DecorationList, json.GuildWarRankingStat, json.ArenaStats["rating_id"]);
                         Logger.log.Info("[Other] DONE");
                     }
                     catch (FormatException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (NullReferenceException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     catch (InvalidJSONException e)
                     {
+                        view.InitFail();
                         view.ShowMessage(jsonErrorMessage, MessageBoxIcon.Error, e);
                     }
                     finally

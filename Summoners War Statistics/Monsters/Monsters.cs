@@ -176,12 +176,15 @@ namespace Summoners_War_Statistics
             set => labelDaysLDLightning.Text = value.ToString() + " days";
         }
 
+        #region MonstersList (no physical field in designer)
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Monster> MonstersList { get; set; } = new List<Monster>();
         public List<long> MonstersLocked { get; set; } = new List<long>();
+        #endregion
 
+        #region ObjectListView MonstersListView
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -190,6 +193,7 @@ namespace Summoners_War_Statistics
             get => objectListViewMonstersToLock;
             set => objectListViewMonstersToLock = value;
         }
+        #endregion
 
         public List<int> MonstersCollectionCheckedStars
         {
@@ -259,27 +263,20 @@ namespace Summoners_War_Statistics
 
         public void ResetMonstersStats()
         {
-            MonsterAttributeWater = 0;
-            MonsterAttributeFire = 0;
-            MonsterAttributeWind = 0;
-            MonsterAttributeLight = 0;
-            MonsterAttributeDark = 0;
-
-            MonsterStarsSix = 0;
-            MonsterStarsFive = 0;
-            MonsterStarsFour = 0;
-            MonsterStarsThree = 0;
-            MonsterStarsTwo = 0;
-            MonsterStarsOne = 0;
-
-            MonstersNat5Amount = 0;
-            MonstersLDNat4PlusAmount = 0;
-            DaysSinceNat5 = 0;
-            DaysSinceLastLDLightning = 0;
+            MonsterAttributeWater = MonsterAttributeFire = MonsterAttributeWind = MonsterAttributeLight = MonsterAttributeDark =
+                MonsterStarsSix = MonsterStarsFive = MonsterStarsFour = MonsterStarsThree = MonsterStarsTwo = MonsterStarsOne =
+                MonstersNat5Amount = MonstersLDNat4PlusAmount = DaysSinceNat5 = DaysSinceLastLDLightning = 0;
         }
         public void Front()
         {
             BringToFront();
+        }
+
+        public void ResetOnFail()
+        {
+            ResetMonstersStats();
+            MonstersListView.Items.Clear();
+            MonstersCollectionSummoner = MonstersCollectionWhole = 0;
         }
 
         private void Monsters_Resize(object sender, EventArgs e)
@@ -291,6 +288,7 @@ namespace Summoners_War_Statistics
         {
             if (Visible == true)
             {
+                Resized?.Invoke();
                 CanSeeMonstersTab?.Invoke();
             }
         }

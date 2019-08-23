@@ -16,11 +16,14 @@ namespace Summoners_War_Statistics
 
         List<Control> Cntrls { get; }
         byte ChosenRuneSet { get; }
+        byte ChosenRuneStars { get; }
+        byte ChosenRuneStarsStatement { get; }
         byte ChosenRuneMainstat { get; }
         byte ChosenRuneInnate { get; }
         byte ChosenRuneQuality { get; }
         byte ChosenRuneOriginQuality { get; }
         byte ChosenRuneSlot { get; }
+        byte ChosenRuneAncient { get; }
         byte ChosenRuneUpgrade { get; }
         byte ChosenRuneUpgradeStatement { get; }
         byte ChosenRuneEfficiency { get; }
@@ -60,6 +63,7 @@ namespace Summoners_War_Statistics
         #region Methods
         void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId);
         void Front();
+        void ResetOnFail();
         #endregion
     }
 }

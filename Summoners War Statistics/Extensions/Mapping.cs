@@ -1944,7 +1944,7 @@ namespace Summoners_War_Statistics
             rankingGuild.Add(4012, "Guardian II");
             rankingGuild.Add(4013, "Guardian III");
 
-            rankingGuild.Add(5011, "Guardian III");
+            rankingGuild.Add(5011, "Legend");
             #endregion
 
             #region Dim Hole AXP
@@ -1962,6 +1962,824 @@ namespace Summoners_War_Statistics
             decksPlace.Add(4, "Lab 5-man");
             decksPlace.Add(5, "Lab 4-man");
             decksPlace.Add(6, "ToA");
+            #endregion
+
+            #region Buildings
+            #region Arena
+            buildings.Add(
+                new Building(
+                    4,
+                    BuildingArea.Arena,
+                    "Guardstone",
+                    "DEF %",
+                    new Dictionary<int, int>()
+                    {
+                        {0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                    },
+                    new Dictionary<int, int>()
+                    {
+                        {0, 0 },
+                        { 1, 100 },
+                        { 2, 280 },
+                        { 3, 460 },
+                        { 4, 640 },
+                        { 5, 820 },
+                        { 6, 1000 },
+                        { 7, 1180 },
+                        { 8, 1360 },
+                        { 9, 1540 },
+                        { 10, 1720 }
+                    }
+                )
+            );
+            buildings.Add(
+                new Building(
+                    5,
+                    BuildingArea.Arena,
+                    "Mana Fountain",
+                    "Production Speed %",
+                    new Dictionary<int, int>()
+                    {
+                        {0, 0 },
+                        { 1, 5 },
+                        { 2, 10 },
+                        { 3, 15 },
+                        { 4, 20 },
+                        { 5, 25 },
+                        { 6, 30 },
+                        { 7, 35 },
+                        { 8, 40 },
+                        { 9, 45 },
+                        { 10, 50 }
+                    },
+                    new Dictionary<int, int>()
+                    {
+                        {0, 0 },
+                        { 1, 40 },
+                        { 2, 90 },
+                        { 3, 140 },
+                        { 4, 190 },
+                        { 5, 240 },
+                        { 6, 290 },
+                        { 7, 340 },
+                        { 8, 390 },
+                        { 9, 440 },
+                        { 10, 490 }
+                    }
+                )
+            );
+            buildings.Add(
+                new Building(
+                    6,
+                    BuildingArea.Arena,
+                    "Sky Tribe Totem",
+                    "Speed %",
+                    new Dictionary<int, int>()
+                    {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 3 },
+                        { 3, 5 },
+                        { 4, 6 },
+                        { 5, 8 },
+                        { 6, 9 },
+                        { 7, 11 },
+                        { 8, 12 },
+                        { 9, 14 },
+                        { 10, 15 }
+                    },
+                    new Dictionary<int, int>()
+                    {
+                        {0, 0 },
+                        { 1, 240 },
+                        { 2, 440 },
+                        { 3, 640 },
+                        { 4, 840 },
+                        { 5, 1040 },
+                        { 6, 1240 },
+                        { 7, 1440 },
+                        { 8, 1640 },
+                        { 9, 1840 },
+                        { 10, 2040 }
+                    }
+                )
+            );
+            buildings.Add(
+                 new Building(
+                     7,
+                     BuildingArea.Arena,
+                     "Arcane Boost Tower",
+                     "Arcane Tower Speed %",
+                     new Dictionary<int, int>()
+                     {
+                        {0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                     },
+                     new Dictionary<int, int>()
+                     {
+                        { 0, 0 },
+                        { 1, 80 },
+                        { 2, 130 },
+                        { 3, 180 },
+                        { 4, 230 },
+                        { 5, 280 },
+                        { 6, 330 },
+                        { 7, 380 },
+                        { 8, 430 },
+                        { 9, 480 },
+                        { 10, 530 }
+                     }
+                 )
+            );
+            buildings.Add(
+                 new Building(
+                     8,
+                     BuildingArea.Arena,
+                     "Crystal Altar",
+                     "HP %",
+                     new Dictionary<int, int>()
+                     {
+                        {0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                     },
+                     new Dictionary<int, int>()
+                     {
+                        { 0, 0 },
+                        { 1, 200 },
+                        { 2, 400 },
+                        { 3, 600 },
+                        { 4, 800 },
+                        { 5, 1000 },
+                        { 6, 1200 },
+                        { 7, 1400 },
+                        { 8, 1600 },
+                        { 9, 1800 },
+                        { 10, 2000 }
+                     }
+                 )
+            );
+            buildings.Add(
+                 new Building(
+                     9,
+                     BuildingArea.Arena,
+                     "Ancient Sword",
+                     "ATK %",
+                     new Dictionary<int, int>()
+                     {
+                        {0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                     },
+                     new Dictionary<int, int>()
+                     {
+                        { 1, 150 },
+                        { 2, 375 },
+                        { 3, 600 },
+                        { 4, 825 },
+                        { 5, 1050 },
+                        { 6, 1275 },
+                        { 7, 1500 },
+                        { 8, 1725 },
+                        { 9, 1950 },
+                        { 10, 2175 }
+                     }
+                 )
+            );
+            buildings.Add(
+                  new Building(
+                      10,
+                      BuildingArea.Arena,
+                      "Sanctum of Energy",
+                      "Max Energy",
+                      new Dictionary<int, int>()
+                      {
+                        {0, 0 },
+                        { 1, 1 },
+                        { 2, 2 },
+                        { 3, 3 },
+                        { 4, 4 },
+                        { 5, 5 },
+                        { 6, 6 },
+                        { 7, 7 },
+                        { 8, 8 },
+                        { 9, 9 },
+                        { 10, 10 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 1, 20 },
+                        { 2, 80 },
+                        { 3, 140 },
+                        { 4, 200 },
+                        { 5, 260 },
+                        { 6, 320 },
+                        { 7, 380 },
+                        { 8, 440 },
+                        { 9, 500 },
+                        { 10, 560 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      11,
+                      BuildingArea.Arena,
+                      "Mysterious Plant",
+                      "Time/Energy",
+                      new Dictionary<int, int>()
+                      {
+                        {0, 300 },
+                        { 1, 292 },
+                        { 2, 284 },
+                        { 3, 276 },
+                        { 4, 268 },
+                        { 5, 261 },
+                        { 6, 255 },
+                        { 7, 248 },
+                        { 8, 242 },
+                        { 9, 237 },
+                        { 10, 231 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        {0, 0 },
+                        { 1, 50 },
+                        { 2, 100 },
+                        { 3, 150 },
+                        { 4, 200 },
+                        { 5, 250 },
+                        { 6, 300 },
+                        { 7, 350 },
+                        { 8, 400 },
+                        { 9, 450 },
+                        { 10, 500 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      15,
+                      BuildingArea.Arena,
+                      "Fire Sanctuary",
+                      "ATK [Fire] %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 3 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 11 },
+                        { 6, 13 },
+                        { 7, 15 },
+                        { 8, 17 },
+                        { 9, 19 },
+                        { 10, 21 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      16,
+                      BuildingArea.Arena,
+                      "Water Sanctuary",
+                      "ATK [Water] %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 3 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 11 },
+                        { 6, 13 },
+                        { 7, 15 },
+                        { 8, 17 },
+                        { 9, 19 },
+                        { 10, 21 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      17,
+                      BuildingArea.Arena,
+                      "Wind Sanctuary",
+                      "ATK [Wind] %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 3 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 11 },
+                        { 6, 13 },
+                        { 7, 15 },
+                        { 8, 17 },
+                        { 9, 19 },
+                        { 10, 21 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      18,
+                      BuildingArea.Arena,
+                      "Light Sanctuary",
+                      "ATK [Light] %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 3 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 11 },
+                        { 6, 13 },
+                        { 7, 15 },
+                        { 8, 17 },
+                        { 9, 19 },
+                        { 10, 21 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      19,
+                      BuildingArea.Arena,
+                      "Dark Sanctuary",
+                      "ATK [Dark] %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 3 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 11 },
+                        { 6, 13 },
+                        { 7, 15 },
+                        { 8, 17 },
+                        { 9, 19 },
+                        { 10, 21 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      31,
+                      BuildingArea.Arena,
+                      "Fallen Ancient Guardian",
+                      "Crit DMG %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 10 },
+                        { 5, 12 },
+                        { 6, 15 },
+                        { 7, 17 },
+                        { 8, 20 },
+                        { 9, 22 },
+                        { 10, 25 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 120 },
+                        { 2, 240 },
+                        { 3, 360 },
+                        { 4, 480 },
+                        { 5, 600 },
+                        { 6, 720 },
+                        { 7, 840 },
+                        { 8, 960 },
+                        { 9, 1080 },
+                        { 10, 1200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                  new Building(
+                      34,
+                      BuildingArea.Arena,
+                      "Crystal Rock",
+                      "Arcane Tower ATK %",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 1 },
+                        { 2, 2 },
+                        { 3, 3 },
+                        { 4, 4 },
+                        { 5, 5 },
+                        { 6, 6 },
+                        { 7, 7 },
+                        { 8, 8 },
+                        { 9, 9 },
+                        { 10, 10 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 80 },
+                        { 2, 130 },
+                        { 3, 180 },
+                        { 4, 230 },
+                        { 5, 280 },
+                        { 6, 330 },
+                        { 7, 380 },
+                        { 8, 430 },
+                        { 9, 480 },
+                        { 10, 530 }
+                      }
+                  )
+            );
+            buildings.Add(
+                   new Building(
+                       35,
+                       BuildingArea.Arena,
+                       "Fairy Tree",
+                       "Mana Stone Storage",
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 200 },
+                        { 2, 400 },
+                        { 3, 600 },
+                        { 4, 800 },
+                        { 5, 1000 },
+                        { 6, 1200 },
+                        { 7, 1400 },
+                        { 8, 1600 },
+                        { 9, 1800 },
+                        { 10, 2000 }
+                       },
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 30 },
+                        { 2, 80 },
+                        { 3, 130 },
+                        { 4, 180 },
+                        { 5, 230 },
+                        { 6, 280 },
+                        { 7, 330 },
+                        { 8, 380 },
+                        { 9, 430 },
+                        { 10, 480 }
+                       }
+                   )
+            );
+            #endregion
+            #region Guild
+            buildings.Add(
+                  new Building(
+                      36,
+                      BuildingArea.Guild,
+                      "Flag of Battle",
+                      "ATK % [Guild]",
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                      },
+                      new Dictionary<int, int>()
+                      {
+                        { 0, 0 },
+                        { 1, 280 },
+                        { 2, 460 },
+                        { 3, 800 },
+                        { 4, 1250 },
+                        { 5, 1810 },
+                        { 6, 2320 },
+                        { 7, 2910 },
+                        { 8, 3590 },
+                        { 9, 4350 },
+                        { 10, 5200 }
+                      }
+                  )
+            );
+            buildings.Add(
+                   new Building(
+                       37,
+                       BuildingArea.Guild,
+                       "Flag of Rage",
+                       "Crit DMG % [Guild]",
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 5 },
+                        { 3, 7 },
+                        { 4, 9 },
+                        { 5, 12 },
+                        { 6, 15 },
+                        { 7, 17 },
+                        { 8, 20 },
+                        { 9, 22 },
+                        { 10, 25 }
+                       },
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 260 },
+                        { 2, 410 },
+                        { 3, 700 },
+                        { 4, 1080 },
+                        { 5, 1560 },
+                        { 6, 1990 },
+                        { 7, 2490 },
+                        { 8, 3070 },
+                        { 9, 3720 },
+                        { 10, 4440 }
+                       }
+                   )
+            );
+            buildings.Add(
+                   new Building(
+                       38,
+                       BuildingArea.Guild,
+                       "Flag of Hope",
+                       "HP % [Guild]",
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                       },
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 330 },
+                        { 2, 540 },
+                        { 3, 930 },
+                        { 4, 1450 },
+                        { 5, 2100 },
+                        { 6, 2680 },
+                        { 7, 3360 },
+                        { 8, 4140 },
+                        { 9, 5020 },
+                        { 10, 5990 }
+                       }
+                   )
+            );
+            buildings.Add(
+                   new Building(
+                       39,
+                       BuildingArea.Guild,
+                       "Flag of Will",
+                       "DEF % [Guild]",
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 2 },
+                        { 2, 4 },
+                        { 3, 6 },
+                        { 4, 8 },
+                        { 5, 10 },
+                        { 6, 12 },
+                        { 7, 14 },
+                        { 8, 16 },
+                        { 9, 18 },
+                        { 10, 20 }
+                       },
+                       new Dictionary<int, int>()
+                       {
+                        { 0, 0 },
+                        { 1, 300 },
+                        { 2, 460 },
+                        { 3, 760 },
+                        { 4, 1160 },
+                        { 5, 1670 },
+                        { 6, 2130 },
+                        { 7, 2660 },
+                        { 8, 3270 },
+                        { 9, 3960 },
+                        { 10, 4720 }
+                       }
+                   )
+            );
+            #endregion
+            #endregion
+
+            #region Siege Rewards
+            siegeRewards.Add(
+                new SiegeRewards(
+                    1011,
+                    (20, 3),
+                    (15, 2),
+                    (10, 2)
+                )
+            );
+
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2011,
+                    (30, 6),
+                    (25, 4),
+                    (20, 4)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2012,
+                    (40, 9),
+                    (30, 6),
+                    (25, 6)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    2013,
+                    (50, 12),
+                    (40, 8),
+                    (30, 8)
+                )
+            );
+
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3011,
+                    (60, 15),
+                    (45, 11),
+                    (35, 11)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3012,
+                    (80, 18),
+                    (65, 13),
+                    (50, 13)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    3013,
+                    (100, 21),
+                    (80, 15),
+                    (60, 15)
+                )
+            );
+            siegeRewards.Add(
+                new SiegeRewards(
+                    4011,
+                    (140, 27),
+                    (100, 20),
+                    (80, 20)
+                )
+            );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     4012,
+                     (200, 32),
+                     (160, 25),
+                     (130, 25)
+                 )
+             );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     4013,
+                     (250, 37),
+                     (200, 30),
+                     (170, 30)
+                 )
+             );
+            siegeRewards.Add(
+                 new SiegeRewards(
+                     5011,
+                     (250, 37),
+                     (200, 30),
+                     (170, 30)
+                 )
+             );
             #endregion
         }
         #endregion
@@ -1999,10 +2817,15 @@ namespace Summoners_War_Statistics
 
         private Dictionary<int, string> decksPlace = new Dictionary<int, string>();
         private Dictionary<(int Stars, string Attribute), int> monstersCollection = new Dictionary<(int Stars, string Attribute), int>();
+
+        public enum BuildingArea { Arena = 0, Guild = 1 }
+        private List<Building> buildings = new List<Building>();
+
+        private List<SiegeRewards> siegeRewards = new List<SiegeRewards>();
         #endregion
 
         #region Properties
-        public string Credits { get; set; } = "Xzandro";
+        public string Credits { get; set; } = "Xzandro, Porksmash";
         #endregion
 
         #region Methods
@@ -2082,11 +2905,11 @@ namespace Summoners_War_Statistics
 
         public Dictionary<(int Stars, string Attribute), int> GetMonstersCollection()
         {
-            if(monstersCollection.Count > 0) { return monstersCollection; }
+            if (monstersCollection.Count > 0) { return monstersCollection; }
 
-            foreach(var monster in monsterBaseClass)
+            foreach (var monster in monsterBaseClass)
             {
-                if(monster.Value < 3) { continue; }
+                if (monster.Value < 3) { continue; }
                 string attribute = GetMonsterAttribute(monster.Key);
                 if (!monstersCollection.ContainsKey((monster.Value, attribute)))
                 {
@@ -2095,7 +2918,7 @@ namespace Summoners_War_Statistics
                 else { monstersCollection[(monster.Value, attribute)]++; }
             }
             return monstersCollection;
-        }   
+        }
 
         public Dictionary<int, string> GetAllRuneEffectTypes()
         {
@@ -2230,7 +3053,7 @@ namespace Summoners_War_Statistics
             return "Unknown Difficulty";
         }
 
-        private bool IsAncient(Rune rune)
+        public bool GetRuneAncientStatus(Rune rune)
         {
             if (rune.Class > 10) { return true; }
             return false;
@@ -2240,7 +3063,7 @@ namespace Summoners_War_Statistics
         {
             double ratio = 0.0;
             int runeClass = (int)rune.Class;
-            if (IsAncient(rune)) { runeClass -= 10; }
+            if (GetRuneAncientStatus(rune)) { runeClass -= 10; }
 
             // mainstat
             ratio += (double)runeMainstats[(int)rune.PriEff[0]][runeClass] / (double)runeMainstats[(int)rune.PriEff[0]][6];
@@ -2265,13 +3088,18 @@ namespace Summoners_War_Statistics
             return (Math.Round(efficiency, 2), Math.Round(efficiencyMax, 2));
         }
 
-        public string GetRanking(int id)
+        public string GetArenaRanking(int id)
         {
             if (rankingArena.ContainsKey(id))
             {
                 return rankingArena[id];
             }
             return "Unknown Ranking";
+        }
+
+        public Dictionary<int, string> GetAllArenaRankings()
+        {
+            return rankingArena;
         }
 
         public string GetGuildRanking(int id)
@@ -2281,6 +3109,11 @@ namespace Summoners_War_Statistics
                 return rankingGuild[id];
             }
             return "Unknown Guild Ranking";
+        }
+
+        public Dictionary<int, string> GetAllGuildRankings()
+        {
+            return rankingGuild;
         }
 
         public int GetAxpByFloor(int floor)
@@ -2299,6 +3132,16 @@ namespace Summoners_War_Statistics
                 return decksPlace[id];
             }
             return "Unknown Place";
+        }
+
+        public List<Building> GetBuildings()
+        {
+            return buildings;
+        }
+
+        public List<SiegeRewards> GetSiegeRewards()
+        {
+            return siegeRewards;
         }
         #endregion
     }

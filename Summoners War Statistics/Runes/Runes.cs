@@ -71,7 +71,12 @@ namespace Summoners_War_Statistics
             comboBoxRuneSubstat3YesNo,
             labelRuneSubstat4,
             comboBoxRuneSubstat4,
-            comboBoxRuneSubstat4YesNo
+            comboBoxRuneSubstat4YesNo,
+            labelStars,
+            comboBoxRuneStars,
+            comboBoxRuneStarsIf,
+            labelRuneAncient,
+            comboBoxRuneAncient
         };
 
         public byte ChosenRuneSet
@@ -84,6 +89,27 @@ namespace Summoners_War_Statistics
                 }
                 catch (NullReferenceException) { return 0; }
                 catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneStars
+        {
+            get
+            {
+                try
+                {
+                    if (int.Parse(comboBoxRuneStars.SelectedItem.ToString()) < 0) { return 0; }
+                    return byte.Parse(comboBoxRuneStars.SelectedItem.ToString());
+                }
+                catch (NullReferenceException) { return 0; }
+                catch (FormatException) { return 0; }
+            }
+        }
+        public byte ChosenRuneStarsStatement
+        {
+            get
+            {
+                if (comboBoxRuneStarsIf.SelectedIndex < 0) { return 2; } // >=
+                return (byte)comboBoxRuneStarsIf.SelectedIndex;
             }
         }
         public byte ChosenRuneMainstat
@@ -141,6 +167,14 @@ namespace Summoners_War_Statistics
             {
                 if(comboBoxRuneSlot.SelectedIndex < 0) { return 0; }
                 return (byte)comboBoxRuneSlot.SelectedIndex;
+            }
+        }
+        public byte ChosenRuneAncient
+        {
+            get
+            {
+                if (comboBoxRuneAncient.SelectedIndex < 0) { return 0; } // All
+                return (byte)comboBoxRuneAncient.SelectedIndex;
             }
         }
         public byte ChosenRuneUpgrade
@@ -349,8 +383,10 @@ namespace Summoners_War_Statistics
             set => objectListViewRunes = value;
         }
 
+        #region RunesList & MonstersMasterId (no physical field in designer)
         public List<Rune> RunesList { get; set; }
         public Dictionary<long, int> MonstersMasterId { get; set; }
+        #endregion
         #endregion
 
         #region Events
@@ -376,27 +412,28 @@ namespace Summoners_War_Statistics
             comboBoxRuneSet.DisplayMember = "Value";
             comboBoxRuneSet.ValueMember = "Key";
 
-            Dictionary<int, string> runeEffectTypes = Mapping.Instance.GetAllRuneEffectTypes(); // rune mainstats (and probably in future substats)
+            Dictionary<int, string> runeEffectTypes = Mapping.Instance.GetAllRuneEffectTypes(); // rune mainstats
             if (!runeEffectTypes.ContainsKey(0)) { runeEffectTypes.Add(0, "All"); }
             runeEffectTypes = runeEffectTypes.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
             comboBoxRuneMainstat.DataSource = new BindingSource(runeEffectTypes, null);
             comboBoxRuneMainstat.DisplayMember = "Value";
             comboBoxRuneMainstat.ValueMember = "Key";
-            comboBoxRuneSubstat1.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat1.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat1.DisplayMember = "Value";
             comboBoxRuneSubstat1.ValueMember = "Key";
-            comboBoxRuneSubstat2.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat2.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat2.DisplayMember = "Value";
             comboBoxRuneSubstat2.ValueMember = "Key";
-            comboBoxRuneSubstat3.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat3.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat3.DisplayMember = "Value";
             comboBoxRuneSubstat3.ValueMember = "Key";
-            comboBoxRuneSubstat4.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneSubstat4.DataSource = new BindingSource(runeEffectTypes, null); // rune substats
             comboBoxRuneSubstat4.DisplayMember = "Value";
             comboBoxRuneSubstat4.ValueMember = "Key";
+            if (!runeEffectTypes.ContainsKey(98)) { runeEffectTypes.Add(98, "Any"); } // rune innate
             if (!runeEffectTypes.ContainsKey(99)) { runeEffectTypes.Add(99, "None"); }
             runeEffectTypes = runeEffectTypes.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
-            comboBoxRuneInnate.DataSource = new BindingSource(runeEffectTypes, null);
+            comboBoxRuneInnate.DataSource = new BindingSource(runeEffectTypes, null); 
             comboBoxRuneInnate.DisplayMember = "Value";
             comboBoxRuneInnate.ValueMember = "Key";
 
@@ -411,10 +448,13 @@ namespace Summoners_War_Statistics
             comboBoxRuneOriginalQuality.ValueMember = "Key";
 
             comboBoxRuneSlot.SelectedIndex = 0;
+            comboBoxRuneStars.SelectedIndex = 0;
+            comboBoxRuneStarsIf.SelectedIndex = 2;
             comboBoxRuneUpgrade.SelectedIndex = 0;
             comboBoxRuneUpgradeIf.SelectedIndex = 2;
             comboBoxRuneEfficiency.SelectedIndex = 0;
             comboBoxRuneEfficiencyIf.SelectedIndex = 2;
+            comboBoxRuneAncient.SelectedIndex = 0;
 
             comboBoxRuneSubstat1YesNo.SelectedIndex = 1;
             comboBoxRuneSubstat2YesNo.SelectedIndex = 1;
@@ -432,7 +472,11 @@ namespace Summoners_War_Statistics
         {
             BringToFront();
         }
-        #endregion
+        public void ResetOnFail()
+        {
+            objectListViewRunes.Items.Clear();
+            RunesEfficiencyMax = RunesEfficiencyMean = RunesEfficiencyMedian = RunesEfficiencyMin = RunesEfficiencyStandardDeviation = RunesAmount = RunesMaxed = RunesInventory = 0;
+        }
 
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {
@@ -441,15 +485,17 @@ namespace Summoners_War_Statistics
 
         private void Runes_Resize(object sender, EventArgs e)
         {
-            Resized?.Invoke();
+
         }
 
         private void Runes_VisibleChanged(object sender, EventArgs e)
         {
             if(Visible == true)
             {
+                Resized?.Invoke();
                 CanSeeRunesTab?.Invoke();
             }
         }
+        #endregion
     }
 }

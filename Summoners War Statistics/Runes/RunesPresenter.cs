@@ -92,6 +92,10 @@ namespace Summoners_War_Statistics
             //labelRuneSubstat4                 - 49
             //comboBoxRuneSubstat4              - 50
             //comboBoxRuneSubstat4YesNo         - 51
+            //labelStars                        - 52
+            //comboBoxRuneStars                 - 53
+            //labelRuneAncient                  - 54
+            //comboBoxRuneAncient               - 55
 
             FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)view.Cntrls[37];
             if(flowLayoutPanel.Controls[0].Location.Y != flowLayoutPanel.Controls[flowLayoutPanel.Controls.Count - 1].Location.Y)
@@ -179,6 +183,13 @@ namespace Summoners_War_Statistics
             view.Cntrls[11].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
             view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
 
+            view.Cntrls[52].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[53].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[54].Location = new Point(headerWidthFirstLevel + view.Cntrls[53].Size.Width + 2, headerHeightSecondLevel);
+
+            view.Cntrls[55].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[56].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+
             view.Cntrls[22].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
             view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
             view.Cntrls[31].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width + 2, headerHeightSecondLevel);
@@ -218,24 +229,27 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Runes] Reading filters");
             List<byte> filters = new List<byte>()
             {
-                view.ChosenRuneSet, // ID 0
+                view.ChosenRuneSet,                 // ID 0
+                view.ChosenRuneStars,
+                view.ChosenRuneStarsStatement,
                 view.ChosenRuneMainstat,
                 view.ChosenRuneInnate,
-                view.ChosenRuneQuality,
+                view.ChosenRuneQuality,             // ID 5
                 view.ChosenRuneOriginQuality,
-                view.ChosenRuneSlot, // ID 5
+                view.ChosenRuneSlot,
+                view.ChosenRuneAncient,
                 view.ChosenRuneUpgrade,
-                view.ChosenRuneUpgradeStatement,
-                view.ChosenRuneEfficiency,
+                view.ChosenRuneUpgradeStatement,    // ID 10
+                view.ChosenRuneEfficiency, 
                 view.ChosenRuneEfficiencyStatement,
-                view.ChosenRuneSubstat1, // ID 10
+                view.ChosenRuneSubstat1,
                 view.ChosenRuneSubstat1Statement,
-                view.ChosenRuneSubstat2,
+                view.ChosenRuneSubstat2,            // ID 15
                 view.ChosenRuneSubstat2Statement,
-                view.ChosenRuneSubstat3,
-                view.ChosenRuneSubstat3Statement, // ID 15
+                view.ChosenRuneSubstat3, 
+                view.ChosenRuneSubstat3Statement, 
                 view.ChosenRuneSubstat4,
-                view.ChosenRuneSubstat4Statement,
+                view.ChosenRuneSubstat4Statement,   // ID 20
             };
 
             Logger.log.Info($"[Runes] Correct");

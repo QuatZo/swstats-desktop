@@ -63,6 +63,10 @@
             this.panelSet = new System.Windows.Forms.Panel();
             this.labelRuneSet = new System.Windows.Forms.Label();
             this.comboBoxRuneSet = new System.Windows.Forms.ComboBox();
+            this.panelStars = new System.Windows.Forms.Panel();
+            this.labelStars = new System.Windows.Forms.Label();
+            this.comboBoxRuneStarsIf = new System.Windows.Forms.ComboBox();
+            this.comboBoxRuneStars = new System.Windows.Forms.ComboBox();
             this.panelMainstat = new System.Windows.Forms.Panel();
             this.panelInnate = new System.Windows.Forms.Panel();
             this.labelRuneInnate = new System.Windows.Forms.Label();
@@ -72,6 +76,9 @@
             this.labelRuneOriginalQuality = new System.Windows.Forms.Label();
             this.comboBoxRuneOriginalQuality = new System.Windows.Forms.ComboBox();
             this.panelSlot = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelRuneAncient = new System.Windows.Forms.Label();
+            this.comboBoxRuneAncient = new System.Windows.Forms.ComboBox();
             this.panelUpgrade = new System.Windows.Forms.Panel();
             this.panelEfficiency = new System.Windows.Forms.Panel();
             this.panelSubstat1 = new System.Windows.Forms.Panel();
@@ -94,6 +101,7 @@
             this.panelFooter = new System.Windows.Forms.Panel();
             this.objectListViewRunes = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -111,15 +119,18 @@
             this.olvColumn16 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn17 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelHeader.SuspendLayout();
             this.flowLayoutPanelFilters.SuspendLayout();
             this.panelSet.SuspendLayout();
+            this.panelStars.SuspendLayout();
             this.panelMainstat.SuspendLayout();
             this.panelInnate.SuspendLayout();
             this.panelQuality.SuspendLayout();
             this.panelQualityOriginal.SuspendLayout();
             this.panelSlot.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelUpgrade.SuspendLayout();
             this.panelEfficiency.SuspendLayout();
             this.panelSubstat1.SuspendLayout();
@@ -577,11 +588,13 @@
             // flowLayoutPanelFilters
             // 
             this.flowLayoutPanelFilters.Controls.Add(this.panelSet);
+            this.flowLayoutPanelFilters.Controls.Add(this.panelStars);
             this.flowLayoutPanelFilters.Controls.Add(this.panelMainstat);
             this.flowLayoutPanelFilters.Controls.Add(this.panelInnate);
             this.flowLayoutPanelFilters.Controls.Add(this.panelQuality);
             this.flowLayoutPanelFilters.Controls.Add(this.panelQualityOriginal);
             this.flowLayoutPanelFilters.Controls.Add(this.panelSlot);
+            this.flowLayoutPanelFilters.Controls.Add(this.panel1);
             this.flowLayoutPanelFilters.Controls.Add(this.panelUpgrade);
             this.flowLayoutPanelFilters.Controls.Add(this.panelEfficiency);
             this.flowLayoutPanelFilters.Controls.Add(this.panelSubstat1);
@@ -631,11 +644,78 @@
             this.toolTip1.SetToolTip(this.comboBoxRuneSet, "Filters");
             this.comboBoxRuneSet.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
+            // panelStars
+            // 
+            this.panelStars.Controls.Add(this.labelStars);
+            this.panelStars.Controls.Add(this.comboBoxRuneStarsIf);
+            this.panelStars.Controls.Add(this.comboBoxRuneStars);
+            this.panelStars.Location = new System.Drawing.Point(94, 3);
+            this.panelStars.Name = "panelStars";
+            this.panelStars.Size = new System.Drawing.Size(125, 60);
+            this.panelStars.TabIndex = 60;
+            // 
+            // labelStars
+            // 
+            this.labelStars.AutoSize = true;
+            this.labelStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelStars.Location = new System.Drawing.Point(3, 5);
+            this.labelStars.Name = "labelStars";
+            this.labelStars.Size = new System.Drawing.Size(43, 22);
+            this.labelStars.TabIndex = 15;
+            this.labelStars.Text = "Stars";
+            this.toolTip1.SetToolTip(this.labelStars, "Filters");
+            // 
+            // comboBoxRuneStarsIf
+            // 
+            this.comboBoxRuneStarsIf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneStarsIf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneStarsIf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneStarsIf.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneStarsIf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneStarsIf.FormattingEnabled = true;
+            this.comboBoxRuneStarsIf.Items.AddRange(new object[] {
+            "=",
+            "<=",
+            ">=",
+            "<",
+            ">"});
+            this.comboBoxRuneStarsIf.Location = new System.Drawing.Point(92, 30);
+            this.comboBoxRuneStarsIf.MaxDropDownItems = 25;
+            this.comboBoxRuneStarsIf.Name = "comboBoxRuneStarsIf";
+            this.comboBoxRuneStarsIf.Size = new System.Drawing.Size(40, 27);
+            this.comboBoxRuneStarsIf.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.comboBoxRuneStarsIf, "Filters");
+            this.comboBoxRuneStarsIf.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
+            // 
+            // comboBoxRuneStars
+            // 
+            this.comboBoxRuneStars.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneStars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneStars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneStars.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneStars.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneStars.FormattingEnabled = true;
+            this.comboBoxRuneStars.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.comboBoxRuneStars.Location = new System.Drawing.Point(7, 30);
+            this.comboBoxRuneStars.MaxDropDownItems = 25;
+            this.comboBoxRuneStars.Name = "comboBoxRuneStars";
+            this.comboBoxRuneStars.Size = new System.Drawing.Size(80, 27);
+            this.comboBoxRuneStars.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.comboBoxRuneStars, "Filters");
+            this.comboBoxRuneStars.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
+            // 
             // panelMainstat
             // 
             this.panelMainstat.Controls.Add(this.labelRuneMainstat);
             this.panelMainstat.Controls.Add(this.comboBoxRuneMainstat);
-            this.panelMainstat.Location = new System.Drawing.Point(94, 3);
+            this.panelMainstat.Location = new System.Drawing.Point(225, 3);
             this.panelMainstat.Name = "panelMainstat";
             this.panelMainstat.Size = new System.Drawing.Size(85, 60);
             this.panelMainstat.TabIndex = 59;
@@ -644,7 +724,7 @@
             // 
             this.panelInnate.Controls.Add(this.labelRuneInnate);
             this.panelInnate.Controls.Add(this.comboBoxRuneInnate);
-            this.panelInnate.Location = new System.Drawing.Point(185, 3);
+            this.panelInnate.Location = new System.Drawing.Point(316, 3);
             this.panelInnate.Name = "panelInnate";
             this.panelInnate.Size = new System.Drawing.Size(85, 60);
             this.panelInnate.TabIndex = 61;
@@ -681,7 +761,7 @@
             // 
             this.panelQuality.Controls.Add(this.labelRuneQuality);
             this.panelQuality.Controls.Add(this.comboBoxRuneQuality);
-            this.panelQuality.Location = new System.Drawing.Point(276, 3);
+            this.panelQuality.Location = new System.Drawing.Point(407, 3);
             this.panelQuality.Name = "panelQuality";
             this.panelQuality.Size = new System.Drawing.Size(85, 60);
             this.panelQuality.TabIndex = 59;
@@ -690,7 +770,7 @@
             // 
             this.panelQualityOriginal.Controls.Add(this.labelRuneOriginalQuality);
             this.panelQualityOriginal.Controls.Add(this.comboBoxRuneOriginalQuality);
-            this.panelQualityOriginal.Location = new System.Drawing.Point(367, 3);
+            this.panelQualityOriginal.Location = new System.Drawing.Point(498, 3);
             this.panelQualityOriginal.Name = "panelQualityOriginal";
             this.panelQualityOriginal.Size = new System.Drawing.Size(85, 60);
             this.panelQualityOriginal.TabIndex = 60;
@@ -727,17 +807,58 @@
             // 
             this.panelSlot.Controls.Add(this.labelRuneSlot);
             this.panelSlot.Controls.Add(this.comboBoxRuneSlot);
-            this.panelSlot.Location = new System.Drawing.Point(458, 3);
+            this.panelSlot.Location = new System.Drawing.Point(589, 3);
             this.panelSlot.Name = "panelSlot";
             this.panelSlot.Size = new System.Drawing.Size(85, 60);
             this.panelSlot.TabIndex = 59;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelRuneAncient);
+            this.panel1.Controls.Add(this.comboBoxRuneAncient);
+            this.panel1.Location = new System.Drawing.Point(680, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(85, 60);
+            this.panel1.TabIndex = 60;
+            // 
+            // labelRuneAncient
+            // 
+            this.labelRuneAncient.AutoSize = true;
+            this.labelRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelRuneAncient.Location = new System.Drawing.Point(3, 0);
+            this.labelRuneAncient.Name = "labelRuneAncient";
+            this.labelRuneAncient.Size = new System.Drawing.Size(55, 22);
+            this.labelRuneAncient.TabIndex = 14;
+            this.labelRuneAncient.Text = "Ancient";
+            this.toolTip1.SetToolTip(this.labelRuneAncient, "Filters");
+            // 
+            // comboBoxRuneAncient
+            // 
+            this.comboBoxRuneAncient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.comboBoxRuneAncient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRuneAncient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxRuneAncient.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRuneAncient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.comboBoxRuneAncient.FormattingEnabled = true;
+            this.comboBoxRuneAncient.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.comboBoxRuneAncient.Location = new System.Drawing.Point(7, 25);
+            this.comboBoxRuneAncient.MaxDropDownItems = 25;
+            this.comboBoxRuneAncient.Name = "comboBoxRuneAncient";
+            this.comboBoxRuneAncient.Size = new System.Drawing.Size(80, 27);
+            this.comboBoxRuneAncient.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.comboBoxRuneAncient, "Filters");
+            this.comboBoxRuneAncient.SelectionChangeCommitted += new System.EventHandler(this.comboBox_SelectionChangeCommited);
             // 
             // panelUpgrade
             // 
             this.panelUpgrade.Controls.Add(this.labelUpgrade);
             this.panelUpgrade.Controls.Add(this.comboBoxRuneUpgradeIf);
             this.panelUpgrade.Controls.Add(this.comboBoxRuneUpgrade);
-            this.panelUpgrade.Location = new System.Drawing.Point(549, 3);
+            this.panelUpgrade.Location = new System.Drawing.Point(3, 69);
             this.panelUpgrade.Name = "panelUpgrade";
             this.panelUpgrade.Size = new System.Drawing.Size(125, 60);
             this.panelUpgrade.TabIndex = 59;
@@ -747,7 +868,7 @@
             this.panelEfficiency.Controls.Add(this.labelRuneEfficiency);
             this.panelEfficiency.Controls.Add(this.comboBoxRuneEfficiencyIf);
             this.panelEfficiency.Controls.Add(this.comboBoxRuneEfficiency);
-            this.panelEfficiency.Location = new System.Drawing.Point(3, 69);
+            this.panelEfficiency.Location = new System.Drawing.Point(134, 69);
             this.panelEfficiency.Name = "panelEfficiency";
             this.panelEfficiency.Size = new System.Drawing.Size(125, 60);
             this.panelEfficiency.TabIndex = 60;
@@ -757,7 +878,7 @@
             this.panelSubstat1.Controls.Add(this.labelRuneSubstat1);
             this.panelSubstat1.Controls.Add(this.comboBoxRuneSubstat1YesNo);
             this.panelSubstat1.Controls.Add(this.comboBoxRuneSubstat1);
-            this.panelSubstat1.Location = new System.Drawing.Point(134, 69);
+            this.panelSubstat1.Location = new System.Drawing.Point(265, 69);
             this.panelSubstat1.Name = "panelSubstat1";
             this.panelSubstat1.Size = new System.Drawing.Size(125, 60);
             this.panelSubstat1.TabIndex = 61;
@@ -814,7 +935,7 @@
             this.panelSubstat2.Controls.Add(this.labelRuneSubstat2);
             this.panelSubstat2.Controls.Add(this.comboBoxRuneSubstat2YesNo);
             this.panelSubstat2.Controls.Add(this.comboBoxRuneSubstat2);
-            this.panelSubstat2.Location = new System.Drawing.Point(265, 69);
+            this.panelSubstat2.Location = new System.Drawing.Point(396, 69);
             this.panelSubstat2.Name = "panelSubstat2";
             this.panelSubstat2.Size = new System.Drawing.Size(125, 60);
             this.panelSubstat2.TabIndex = 61;
@@ -871,7 +992,7 @@
             this.panelSubstat3.Controls.Add(this.labelRuneSubstat3);
             this.panelSubstat3.Controls.Add(this.comboBoxRuneSubstat3YesNo);
             this.panelSubstat3.Controls.Add(this.comboBoxRuneSubstat3);
-            this.panelSubstat3.Location = new System.Drawing.Point(396, 69);
+            this.panelSubstat3.Location = new System.Drawing.Point(527, 69);
             this.panelSubstat3.Name = "panelSubstat3";
             this.panelSubstat3.Size = new System.Drawing.Size(125, 60);
             this.panelSubstat3.TabIndex = 61;
@@ -928,7 +1049,7 @@
             this.panelSubstat4.Controls.Add(this.labelRuneSubstat4);
             this.panelSubstat4.Controls.Add(this.comboBoxRuneSubstat4YesNo);
             this.panelSubstat4.Controls.Add(this.comboBoxRuneSubstat4);
-            this.panelSubstat4.Location = new System.Drawing.Point(527, 69);
+            this.panelSubstat4.Location = new System.Drawing.Point(3, 135);
             this.panelSubstat4.Name = "panelSubstat4";
             this.panelSubstat4.Size = new System.Drawing.Size(125, 60);
             this.panelSubstat4.TabIndex = 61;
@@ -1014,6 +1135,7 @@
             // objectListViewRunes
             // 
             this.objectListViewRunes.AllColumns.Add(this.olvColumn1);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn19);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn2);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn3);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn4);
@@ -1031,10 +1153,12 @@
             this.objectListViewRunes.AllColumns.Add(this.olvColumn16);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn17);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn18);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn20);
             this.objectListViewRunes.AllowColumnReorder = true;
             this.objectListViewRunes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.objectListViewRunes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
+            this.olvColumn19,
             this.olvColumn2,
             this.olvColumn3,
             this.olvColumn4,
@@ -1051,7 +1175,8 @@
             this.olvColumn15,
             this.olvColumn16,
             this.olvColumn17,
-            this.olvColumn18});
+            this.olvColumn18,
+            this.olvColumn20});
             this.objectListViewRunes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewRunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.objectListViewRunes.FullRowSelect = true;
@@ -1070,6 +1195,12 @@
             this.olvColumn1.AspectName = "Set";
             this.olvColumn1.CellPadding = null;
             this.olvColumn1.Text = "Set";
+            // 
+            // olvColumn19
+            // 
+            this.olvColumn19.AspectName = "Stars";
+            this.olvColumn19.CellPadding = null;
+            this.olvColumn19.Text = "Stars";
             // 
             // olvColumn2
             // 
@@ -1173,6 +1304,12 @@
             this.olvColumn18.CellPadding = null;
             this.olvColumn18.Text = "Eff%";
             // 
+            // olvColumn20
+            // 
+            this.olvColumn20.AspectName = "Ancient";
+            this.olvColumn20.CellPadding = null;
+            this.olvColumn20.Text = "Ancient";
+            // 
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -1191,13 +1328,15 @@
             this.DoubleBuffered = true;
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
-            this.SizeChanged += new System.EventHandler(this.Runes_Resize);
             this.VisibleChanged += new System.EventHandler(this.Runes_VisibleChanged);
+            this.Resize += new System.EventHandler(this.Runes_Resize);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.flowLayoutPanelFilters.ResumeLayout(false);
             this.panelSet.ResumeLayout(false);
             this.panelSet.PerformLayout();
+            this.panelStars.ResumeLayout(false);
+            this.panelStars.PerformLayout();
             this.panelMainstat.ResumeLayout(false);
             this.panelMainstat.PerformLayout();
             this.panelInnate.ResumeLayout(false);
@@ -1208,6 +1347,8 @@
             this.panelQualityOriginal.PerformLayout();
             this.panelSlot.ResumeLayout(false);
             this.panelSlot.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelUpgrade.ResumeLayout(false);
             this.panelUpgrade.PerformLayout();
             this.panelEfficiency.ResumeLayout(false);
@@ -1312,5 +1453,14 @@
         private System.Windows.Forms.ComboBox comboBoxRuneSubstat4YesNo;
         private System.Windows.Forms.ComboBox comboBoxRuneSubstat4;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panelStars;
+        private System.Windows.Forms.Label labelStars;
+        private System.Windows.Forms.ComboBox comboBoxRuneStarsIf;
+        private System.Windows.Forms.ComboBox comboBoxRuneStars;
+        private BrightIdeasSoftware.OLVColumn olvColumn19;
+        private BrightIdeasSoftware.OLVColumn olvColumn20;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelRuneAncient;
+        private System.Windows.Forms.ComboBox comboBoxRuneAncient;
     }
 }

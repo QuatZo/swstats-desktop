@@ -75,6 +75,7 @@ namespace Summoners_War_Statistics
         #region Events
         public event Action SelectFileButtonClicked;
         public event Action Loaded;
+        public event Action InitFailed;
         #endregion
 
         public FormMain()
@@ -147,6 +148,11 @@ namespace Summoners_War_Statistics
             DimHoleViewVisibility = false;
             GuildViewVisibility = false;
             OtherViewVisibility = false;
+        }
+
+        public void InitFail()
+        {
+            InitFailed?.Invoke();
         }
 
         // Flickering while bringing something to front https://stackoverflow.com/a/2613272

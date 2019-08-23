@@ -15,16 +15,32 @@ namespace Summoners_War_Statistics
         Size TabSize { get; set; }
         List<Control> Cntrls { get; }
         ObjectListView SummonerFriendsList { get; set; }
+        ObjectListView SummonerTowersFlagsList { get; set; }
+
+        ushort ChosenArenaRanking { get; }
+        byte ChosenArenaWingsPerDay { get; }
+        ushort ChosenGuildRanking { get; }
+        byte ChosenGuildBattlesWon { get;}
+        ushort ChosenSiegeRanking { get; }
+        byte ChosenSiegeFirstBattleResult { get; }
+        byte ChosenSiegeSecondBattleResult { get; }
+
+        List<Decoration> Decorations { get; set; }
+
+        string DaysToMaxTowers { get; set; }
+        string DaysToMaxFlags { get; set; }
         #endregion
 
         #region Events
-        event Action<List<Friend>> InitOther;
+        event Action<List<Friend>, List<Decoration>> InitOther;
         event Action Resized;
+        event Action InitTowersFlags;
         #endregion
 
         #region Methods
-        void Init(List<Friend> friendsList);
+        void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId);
         void Front();
+        void ResetOnFail();
         #endregion
 
     }
