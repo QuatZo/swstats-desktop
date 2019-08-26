@@ -1329,7 +1329,6 @@
             this.Name = "Runes";
             this.Size = new System.Drawing.Size(780, 411);
             this.VisibleChanged += new System.EventHandler(this.Runes_VisibleChanged);
-            this.Resize += new System.EventHandler(this.Runes_Resize);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.flowLayoutPanelFilters.ResumeLayout(false);

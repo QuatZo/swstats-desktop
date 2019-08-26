@@ -671,7 +671,6 @@
             this.Name = "DimHole";
             this.Size = new System.Drawing.Size(780, 411);
             this.VisibleChanged += new System.EventHandler(this.DimHole_VisibleChanged);
-            this.Resize += new System.EventHandler(this.DimHole_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

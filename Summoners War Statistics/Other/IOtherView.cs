@@ -41,6 +41,7 @@ namespace Summoners_War_Statistics
         void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId);
         void Front();
         void ResetOnFail();
+        void Other_Resize(object sender, EventArgs e);
         #endregion
 
     }

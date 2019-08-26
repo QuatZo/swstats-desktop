@@ -41,6 +41,7 @@ namespace Summoners_War_Statistics
         void Init(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList);
         void Front();
         void ResetOnFail();
+        void DimHole_Resize(object sender, EventArgs e);
         #endregion
     }
 }

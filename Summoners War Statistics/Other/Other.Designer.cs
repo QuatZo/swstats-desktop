@@ -593,7 +593,6 @@
             this.Controls.Add(this.panelFriends);
             this.Name = "Other";
             this.Size = new System.Drawing.Size(780, 411);
-            this.Resize += new System.EventHandler(this.Other_Resize);
             this.panelFriends.ResumeLayout(false);
             this.panelFriends.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).EndInit();

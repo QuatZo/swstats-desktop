@@ -387,6 +387,15 @@ namespace Summoners_War_Statistics
         public List<Rune> RunesList { get; set; }
         public Dictionary<long, int> MonstersMasterId { get; set; }
         #endregion
+
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public FlowLayoutPanel FlowPanel
+        {
+            get => flowLayoutPanelFilters;
+            set => flowLayoutPanelFilters = value;
+        }
         #endregion
 
         #region Events
@@ -477,17 +486,14 @@ namespace Summoners_War_Statistics
             objectListViewRunes.Items.Clear();
             RunesEfficiencyMax = RunesEfficiencyMean = RunesEfficiencyMedian = RunesEfficiencyMin = RunesEfficiencyStandardDeviation = RunesAmount = RunesMaxed = RunesInventory = 0;
         }
-
         private void comboBox_SelectionChangeCommited(object sender, EventArgs e)
         {
             InitRunes?.Invoke();
         }
-
-        private void Runes_Resize(object sender, EventArgs e)
+        public void Runes_Resize(object sender, EventArgs e)
         {
-
+            Resized?.Invoke();
         }
-
         private void Runes_VisibleChanged(object sender, EventArgs e)
         {
             if(Visible == true)

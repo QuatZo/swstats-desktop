@@ -154,6 +154,12 @@ namespace Summoners_War_Statistics
                 ResourceManager rm = Resources.ResourceManager;
                 button.Image = (Image)rm.GetObject(resourceName);
             }
+            if (view.SummaryViewVisibility) { view.SummaryView.Summary_Resize(null, EventArgs.Empty); }
+            else if (view.MonstersViewVisibility) { view.MonstersView.Monsters_Resize(null, EventArgs.Empty); }
+            else if (view.RunesViewVisibility) { view.RunesView.Runes_Resize(null, EventArgs.Empty); }
+            else if (view.DimHoleViewVisibility) { view.DimHoleView.DimHole_Resize(null, EventArgs.Empty); }
+            else if (view.GuildViewVisibility) { view.GuildView.Guild_Resize(null, EventArgs.Empty); }
+            else if (view.OtherViewVisibility) { view.OtherView.Other_Resize(null, EventArgs.Empty); }
         }
 
         private void View_SelectFileButtonClicked()

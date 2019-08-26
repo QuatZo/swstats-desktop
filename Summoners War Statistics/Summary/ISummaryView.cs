@@ -56,6 +56,7 @@ namespace Summoners_War_Statistics
         void Init(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monstersList, List<long> monstersLockedList, List<Rune> runes, DateTime jsonModificationTime, string country, List<Deck> decks);
         void Front();
         void ResetOnFail();
+        void Summary_Resize(object sender, EventArgs e);
         #endregion
     }
 }
