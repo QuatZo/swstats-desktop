@@ -36,6 +36,7 @@ namespace Summoners_War_Statistics
         void Init(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList, GuildWarRankingStat guildwarRanking, List<long> siegeDefenses, List<Monster> monsters);
         void Front();
         void ResetOnFail();
+        void Guild_Resize(object sender, EventArgs e);
         #endregion
     }
 }

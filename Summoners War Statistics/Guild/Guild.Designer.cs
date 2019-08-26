@@ -464,7 +464,6 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Guild";
             this.Size = new System.Drawing.Size(800, 600);
-            this.Resize += new System.EventHandler(this.Guild_Resize);
             this.panelGuildText.ResumeLayout(false);
             this.panelGuildText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxActualRanking)).EndInit();

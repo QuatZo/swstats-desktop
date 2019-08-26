@@ -255,7 +255,7 @@ namespace Summoners_War_Statistics
             comboBoxGuildBattlesWon.SelectedIndex = comboBoxRankingArena.SelectedIndex = comboBoxRankingGuild.SelectedIndex = comboBoxRankingSiege.SelectedIndex = comboBoxSiegeResult1.SelectedIndex = 
                 comboBoxSiegeResult2.SelectedIndex = comboBoxWingsPerDay.SelectedIndex = 0;
         }
-        private void Other_Resize(object sender, EventArgs e)
+        public void Other_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
         }

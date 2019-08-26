@@ -187,7 +187,7 @@ namespace Summoners_War_Statistics
             DimHoleLevelChanged?.Invoke((RadioButton)sender);
         }
 
-        private void DimHole_Resize(object sender, EventArgs e)
+        public void DimHole_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
         }

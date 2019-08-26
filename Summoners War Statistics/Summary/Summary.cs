@@ -243,7 +243,7 @@ namespace Summoners_War_Statistics
             Resized?.Invoke();
         }
 
-        private void Summary_Resize(object sender, EventArgs e)
+        public void Summary_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
         }

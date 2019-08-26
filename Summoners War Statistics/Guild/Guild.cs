@@ -131,8 +131,8 @@ namespace Summoners_War_Statistics
             GuildMembers = GuildMembersMax = GuildMembersDefenses = GuildMembersDefensesMax = 0;
         }
 
-        private void Guild_Resize(object sender, EventArgs e)
-        {
+        public void Guild_Resize(object sender, EventArgs e)
+        { 
             Resized?.Invoke();
         }
         #endregion

@@ -60,6 +60,7 @@ namespace Summoners_War_Statistics
         void ResetMonstersStats();
         void Front();
         void ResetOnFail();
+        void Monsters_Resize(object sender, EventArgs e);
         #endregion
     }
 }

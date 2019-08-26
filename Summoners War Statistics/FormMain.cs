@@ -17,6 +17,7 @@ namespace Summoners_War_Statistics
     {
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+        private FormWindowState? LastWindowState = null;
 
         #region Properties
         public FontFamily FF { get; set; }
@@ -179,10 +180,32 @@ namespace Summoners_War_Statistics
 
         private void FormMain_Resize(object sender, EventArgs e)
         {
-            pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
-            MenuView.WindowWidth = Size.Width;
-            Refresh();
+            if (WindowState != LastWindowState)
+            {
+                LastWindowState = WindowState;
+                FormMain_SizeChanged(null, EventArgs.Empty);
+            }
+           
         }
         #endregion
+
+        private void FormMain_SizeChanged(object sender, EventArgs e)
+        {
+            pictureBoxSelectJson.Padding = new Padding((pictureBoxSelectJson.Size.Width - pictureBoxSelectJson.Image.Size.Width) / 2, 10, 0, 0);
+            MenuView.WindowWidth = Size.Width;
+
+            if (SummaryViewVisibility) { SummaryView.Summary_Resize(null, EventArgs.Empty); }
+            else if (MonstersViewVisibility) { MonstersView.Monsters_Resize(null, EventArgs.Empty); }
+            else if (RunesViewVisibility) { RunesView.Runes_Resize(null, EventArgs.Empty); }
+            else if (DimHoleViewVisibility) { DimHoleView.DimHole_Resize(null, EventArgs.Empty); }
+            else if (GuildViewVisibility) { GuildView.Guild_Resize(null, EventArgs.Empty); }
+            else if (OtherViewVisibility) { OtherView.Other_Resize(null, EventArgs.Empty); }
+            Refresh();
+        }
+
+        private void FormMain_ResizeBegin(object sender, EventArgs e)
+        {
+            RunesView.FlowPanel.SuspendLayout();
+        }
     }
 }

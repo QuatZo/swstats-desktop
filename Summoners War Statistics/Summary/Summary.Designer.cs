@@ -874,7 +874,6 @@
             this.Name = "Summary";
             this.Size = new System.Drawing.Size(784, 431);
             this.Load += new System.EventHandler(this.Summary_Load);
-            this.Resize += new System.EventHandler(this.Summary_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSocialPoints)).EndInit();

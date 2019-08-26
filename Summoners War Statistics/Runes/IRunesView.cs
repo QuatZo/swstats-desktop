@@ -52,6 +52,8 @@ namespace Summoners_War_Statistics
 
         List<Rune> RunesList { get; set; }
         Dictionary<long, int> MonstersMasterId { get; set; }
+
+        FlowLayoutPanel FlowPanel { get; set; }
         #endregion
 
         #region Events
@@ -64,6 +66,7 @@ namespace Summoners_War_Statistics
         void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId);
         void Front();
         void ResetOnFail();
+        void Runes_Resize(object sender, EventArgs e);
         #endregion
     }
 }

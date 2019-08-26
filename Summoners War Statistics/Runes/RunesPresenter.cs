@@ -98,6 +98,7 @@ namespace Summoners_War_Statistics
             //comboBoxRuneAncient               - 55
 
             FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)view.Cntrls[37];
+            flowLayoutPanel.ResumeLayout();
             if(flowLayoutPanel.Controls[0].Location.Y != flowLayoutPanel.Controls[flowLayoutPanel.Controls.Count - 1].Location.Y)
             {
                 view.Cntrls[32].Height = (flowLayoutPanel.Controls[0].Height * 2) + 20 + view.Cntrls[0].Height;

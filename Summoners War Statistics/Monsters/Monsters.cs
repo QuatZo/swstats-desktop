@@ -279,7 +279,7 @@ namespace Summoners_War_Statistics
             MonstersCollectionSummoner = MonstersCollectionWhole = 0;
         }
 
-        private void Monsters_Resize(object sender, EventArgs e)
+        public void Monsters_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
         }
