@@ -140,6 +140,7 @@ namespace Summoners_War_Statistics
             monsterNames.Add(11414, "Groggo");
             monsterNames.Add(11415, "Maggi");
 
+
             monsterNames.Add(115, "Griffon");
             monsterNames.Add(11511, "Kahn");
             monsterNames.Add(11512, "Spectra");
@@ -908,6 +909,29 @@ namespace Summoners_War_Statistics
             monsterNames.Add(23005, "Vampire Lord");
             monsterNames.Add(23015, "Eirgar");
 
+            monsterNames.Add(231, "Demon");
+            monsterNames.Add(23111, "Belial");
+            monsterNames.Add(23112, "Bael");
+            monsterNames.Add(23113, "Mephisto");
+            monsterNames.Add(23114, "Lucifer");
+            monsterNames.Add(23115, "Beelzebub");
+            monsterNames.Add(232, "Demon");
+            monsterNames.Add(23211, "Belial");
+            monsterNames.Add(23215, "Beelzebub");
+
+            monsterNames.Add(233, "Gargoyle");
+            monsterNames.Add(23311, "Tanzaite");
+            monsterNames.Add(23312, "Kunite");
+            monsterNames.Add(23313, "Malite");
+            monsterNames.Add(23314, "Pheneka");
+            monsterNames.Add(23315, "Onyx");
+            monsterNames.Add(234, "Gargoyle");
+            monsterNames.Add(23411, "Tanzaite");
+            monsterNames.Add(23412, "Kunite");
+            monsterNames.Add(23413, "Malite");
+            monsterNames.Add(23414, "Pheneka");
+            monsterNames.Add(23415, "Onyx");
+
             monsterNames.Add(15105, "Devilmon");
             monsterNames.Add(14314, "Rainbowmon");
 
@@ -1604,6 +1628,25 @@ namespace Summoners_War_Statistics
             monsterBaseClass.Add(22915, 5);
 
             monsterBaseClass.Add(23015, 5);
+
+            monsterBaseClass.Add(23111, 5);
+            monsterBaseClass.Add(23112, 5);
+            monsterBaseClass.Add(23113, 5);
+            monsterBaseClass.Add(23114, 5);
+            monsterBaseClass.Add(23115, 5);
+            monsterBaseClass.Add(23211, 5);
+            monsterBaseClass.Add(23215, 5);
+
+            monsterBaseClass.Add(23311, 4);
+            monsterBaseClass.Add(23312, 4);
+            monsterBaseClass.Add(23313, 4);
+            monsterBaseClass.Add(23314, 4);
+            monsterBaseClass.Add(23315, 4);
+            monsterBaseClass.Add(23411, 4);
+            monsterBaseClass.Add(23412, 4);
+            monsterBaseClass.Add(23413, 4);
+            monsterBaseClass.Add(23414, 4);
+            monsterBaseClass.Add(23415, 4);
 
             monsterBaseClass.Add(15105, 1);
             monsterBaseClass.Add(14314, 0);
