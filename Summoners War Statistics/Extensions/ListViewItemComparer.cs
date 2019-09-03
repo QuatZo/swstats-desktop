@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
 {
+    /// <summary>
+    /// Class, which compares and sorts columns (up to 2)
+    /// </summary>
     public class ListViewItemComparer : IComparer
     {
         private readonly int col;

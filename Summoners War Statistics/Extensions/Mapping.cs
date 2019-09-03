@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Summoners_War_Statistics
 {
+    /// <summary>
+    /// Class that maps Com2Us representation of information to more human form
+    /// </summary>
     internal class Mapping
     {
         #region Singleton
@@ -2828,50 +2831,134 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Fields
+        /// <summary>
+        /// Attribute ID to Attribute name
+        /// </summary>
         private Dictionary<int, string> monsterAttributes = new Dictionary<int, string>();
+        /// <summary>
+        /// Monster ID to Monster name
+        /// </summary>
         private Dictionary<int, string> monsterNames = new Dictionary<int, string>();
+        /// <summary>
+        /// Monster ID connected with its Base Class
+        /// </summary>
         private Dictionary<int, int> monsterBaseClass = new Dictionary<int, int>();
+        /// <summary>
+        /// List of monsters that were HoH
+        /// </summary>
         private List<int> monsterHoH = new List<int>();
+        /// <summary>
+        /// List of fusable monsters
+        /// </summary>
         private List<int> monsterFusion = new List<int>();
 
+        /// <summary>
+        /// Type of rune effects
+        /// </summary>
         private Dictionary<int, string> runeEffectTypes = new Dictionary<int, string>();
+        /// <summary>
+        /// Type of rune sets
+        /// </summary>
         private Dictionary<int, (string Name, byte Amount)> runeSets = new Dictionary<int, (string Name, byte Amount)>();
+        /// <summary>
+        /// Rune qualities
+        /// </summary>
         private Dictionary<int, string> runeQuality = new Dictionary<int, string>();
+        /// <summary>
+        /// Rune mainstats
+        /// </summary>
         private Dictionary<int, Dictionary<int, int>> runeMainstats = new Dictionary<int, Dictionary<int, int>>();
+        /// <summary>
+        /// Rune substats
+        /// </summary>
         private Dictionary<int, Dictionary<int, int>> runeSubstats = new Dictionary<int, Dictionary<int, int>>();
 
+        /// <summary>
+        /// Grindstones with min and max values
+        /// </summary>
         private Dictionary<int, Dictionary<int, (int Min, int Max)>> grindstones = new Dictionary<int, Dictionary<int, (int Min, int Max)>>();
+        /// <summary>
+        /// Enchants with min and max values
+        /// </summary>
         private Dictionary<int, Dictionary<int, (int Min, int Max)>> enchantGems = new Dictionary<int, Dictionary<int, (int Min, int Max)>>();
 
+        /// <summary>
+        /// Scenario areas
+        /// </summary>
         private Dictionary<int, string> scenario = new Dictionary<int, string>();
+        /// <summary>
+        /// Dungeons
+        /// </summary>
         private Dictionary<int, string> dungeons = new Dictionary<int, string>();
+        /// <summary>
+        /// Elemental Rift Dungeons
+        /// </summary>
         private Dictionary<int, string> elementalRiftDungeons = new Dictionary<int, string>();
+        /// <summary>
+        /// Levels of Raid Dungeon
+        /// </summary>
         private Dictionary<int, string> raidRiftLevels = new Dictionary<int, string>();
+        /// <summary>
+        /// Difficulties for major areas
+        /// </summary>
         private Dictionary<int, string> difficulties = new Dictionary<int, string>();
 
+        /// <summary>
+        /// Attributes of essences
+        /// </summary>
         private Dictionary<int, string> essenceAttributes = new Dictionary<int, string>();
+        /// <summary>
+        /// Grades of essences
+        /// </summary>
         private Dictionary<int, string> essenceGrades = new Dictionary<int, string>();
+        /// <summary>
+        /// Craft materials
+        /// </summary>
         private Dictionary<int, string> craftMaterials = new Dictionary<int, string>();
 
+        /// <summary>
+        /// Ranking places in arena
+        /// </summary>
         private Dictionary<int, string> rankingArena = new Dictionary<int, string>();
+        /// <summary>
+        /// Ranking places in Guild content (GW, Siege)
+        /// </summary>
         private Dictionary<int, string> rankingGuild = new Dictionary<int, string>();
 
+        /// <summary>
+        /// AXP per Floor in Dim Hole
+        /// </summary>
         private Dictionary<int, int> axpPerFloor = new Dictionary<int, int>();
 
+        /// <summary>
+        /// In which place the deck is saved
+        /// </summary>
         private Dictionary<int, string> decksPlace = new Dictionary<int, string>();
+        /// <summary>
+        /// Monsters Collection (with stars and attribute)
+        /// </summary>
         private Dictionary<(int Stars, string Attribute), int> monstersCollection = new Dictionary<(int Stars, string Attribute), int>();
 
         public enum BuildingArea { Arena = 0, Guild = 1 }
+        /// <summary>
+        /// List of building (incl. arena towers & guild flags)
+        /// </summary>
         private List<Building> buildings = new List<Building>();
 
+        /// <summary>
+        /// List of siege rewards
+        /// </summary>
         private List<SiegeRewards> siegeRewards = new List<SiegeRewards>();
         #endregion
 
         #region Properties
-        public string Credits { get; set; } = "Xzandro, Porksmash";
+        public string Credits { get; set; } = "Xzandro, Porksmash, QuatZo";
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Gets the attribute of specific monster
+        /// </summary>
         public string GetMonsterAttribute(int id)
         {
             if (id > 9) { id = id % 10; }
@@ -2882,6 +2969,9 @@ namespace Summoners_War_Statistics
             return "Unknown Monster's Attribute";
         }
 
+        /// <summary>
+        /// Gets the name of specific monster
+        /// </summary>
         public string GetMonsterName(int id)
         {
             if (monsterNames.ContainsKey(id))
@@ -2899,6 +2989,9 @@ namespace Summoners_War_Statistics
             return "Unknown Monster";
         }
 
+        /// <summary>
+        /// Gets the base class of specific monster
+        /// </summary>
         public int GetMonsterBaseClass(int id)
         {
             if (monsterBaseClass.ContainsKey(id))
@@ -2925,27 +3018,26 @@ namespace Summoners_War_Statistics
             return -1;
         }
 
+        /// <summary>
+        /// Gets the HoH status of specific monster
+        /// </summary>
         public bool GetMonsterHoHStatus(int id)
         {
             if (monsterHoH.Contains(id)) { return true; }
             return false;
         }
 
+        /// <summary>
+        /// Gets the Fusion status of specific monster
+        /// </summary>
         public bool GetMonsterFusionStatus(int id)
         {
             if (monsterFusion.Contains(id)) { return true; }
             return false;
         }
-
-        public string GetRuneEffectType(int id)
-        {
-            if (runeEffectTypes.ContainsKey(id))
-            {
-                return runeEffectTypes[id];
-            }
-            return "Unknown Rune Effect Type";
-        }
-
+        /// <summary>
+        /// Gets whole monsters collection
+        /// </summary>
         public Dictionary<(int Stars, string Attribute), int> GetMonstersCollection()
         {
             if (monstersCollection.Count > 0) { return monstersCollection; }
@@ -2963,11 +3055,29 @@ namespace Summoners_War_Statistics
             return monstersCollection;
         }
 
+        /// <summary>
+        /// Gets the effect type of specific rune
+        /// </summary>
+        public string GetRuneEffectType(int id)
+        {
+            if (runeEffectTypes.ContainsKey(id))
+            {
+                return runeEffectTypes[id];
+            }
+            return "Unknown Rune Effect Type";
+        }
+
+        /// <summary>
+        /// Gets ALL rune effect types
+        /// </summary>
         public Dictionary<int, string> GetAllRuneEffectTypes()
         {
             return runeEffectTypes;
         }
 
+        /// <summary>
+        /// Gets the primary effect of specific rune
+        /// </summary>
         public string GetRuneEffect(Rune rune)
         {
             Dictionary<int, string> effect = new Dictionary<int, string>()
@@ -2988,6 +3098,9 @@ namespace Summoners_War_Statistics
             return effect[(int)rune.PriEff[0]];
         }
 
+        /// <summary>
+        /// Gets the innate effect of specific rune
+        /// </summary>
         public string GetRuneInnateEffect(Rune rune)
         {
             if (rune.PrefixEff.Count <= 0 || rune.PrefixEff[0] <= 0) { return "-"; }
@@ -3009,6 +3122,9 @@ namespace Summoners_War_Statistics
             return effect[(int)rune.PrefixEff[0]];
         }
 
+        /// <summary>
+        /// Gets the set type of specific rune
+        /// </summary>
         public string GetRuneSet(int id)
         {
             if (runeSets.ContainsKey(id))
@@ -3018,6 +3134,10 @@ namespace Summoners_War_Statistics
             return "Unknown Rune Set";
         }
 
+        /// <summary>
+        /// Gets ALL rune set types
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<int, string> GetAllRuneSets()
         {
             Dictionary<int, string> runeSetsAll = new Dictionary<int, string>();
@@ -3028,6 +3148,9 @@ namespace Summoners_War_Statistics
             return runeSetsAll;
         }
 
+        /// <summary>
+        /// Gets the amount of runes of specific type needed to include the bonus
+        /// </summary>
         public string GetRuneSetAmount(string set)
         {
             foreach (KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
@@ -3037,6 +3160,9 @@ namespace Summoners_War_Statistics
             return "Unknown Rune Set Amount";
         }
 
+        /// <summary>
+        /// Gets the quality of specific rune
+        /// </summary>
         public string GetRuneQuality(int id)
         {
             if (runeQuality.ContainsKey(id))
@@ -3046,11 +3172,18 @@ namespace Summoners_War_Statistics
             return "Unknown Rune Quality";
         }
 
+        /// <summary>
+        /// Gets ALL rune qualities
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<int, string> GetAllRuneQuailities()
         {
             return runeQuality;
         }
 
+        /// <summary>
+        /// Gets the scenario name
+        /// </summary>
         public string GetScenario(int id)
         {
             if (scenario.ContainsKey(id))
@@ -3060,6 +3193,9 @@ namespace Summoners_War_Statistics
             return "Unknown Scenario";
         }
 
+        /// <summary>
+        /// Gets the dungeon name
+        /// </summary>
         public string GetDungeon(int id)
         {
             if (dungeons.ContainsKey(id))
@@ -3069,6 +3205,9 @@ namespace Summoners_War_Statistics
             return "Unknown Dungeon";
         }
 
+        /// <summary>
+        /// Gets the name of Elemental Rift dungeon
+        /// </summary>
         public string GetElementalRiftDungeon(int id)
         {
             if (elementalRiftDungeons.ContainsKey(id))
@@ -3078,6 +3217,9 @@ namespace Summoners_War_Statistics
             return "Unknown Elemental Rift Dungeon";
         }
 
+        /// <summary>
+        /// Gets the level of Raid Dungeon
+        /// </summary>
         public string GetRaidRiftLevel(int id)
         {
             if (raidRiftLevels.ContainsKey(id))
@@ -3087,6 +3229,9 @@ namespace Summoners_War_Statistics
             return "Unknown Raid Rift Level";
         }
 
+        /// <summary>
+        /// Gets the difficulty
+        /// </summary>
         public string GetDifficulty(int id)
         {
             if (difficulties.ContainsKey(id))
@@ -3096,12 +3241,18 @@ namespace Summoners_War_Statistics
             return "Unknown Difficulty";
         }
 
+        /// <summary>
+        /// Gets the info, if specific rune is ancient or not
+        /// </summary>
         public bool GetRuneAncientStatus(Rune rune)
         {
             if (rune.Class > 10) { return true; }
             return false;
         }
 
+        /// <summary>
+        /// Gets the current & max efficiency of specific rune
+        /// </summary>
         public (double Current, double Max) GetRuneEfficiency(Rune rune)
         {
             double ratio = 0.0;
@@ -3131,6 +3282,9 @@ namespace Summoners_War_Statistics
             return (Math.Round(efficiency, 2), Math.Round(efficiencyMax, 2));
         }
 
+        /// <summary>
+        /// Gets the arena ranking of Summoner
+        /// </summary>
         public string GetArenaRanking(int id)
         {
             if (rankingArena.ContainsKey(id))
@@ -3140,11 +3294,17 @@ namespace Summoners_War_Statistics
             return "Unknown Ranking";
         }
 
+        /// <summary>
+        /// Gets ALL arena rankings
+        /// </summary>
         public Dictionary<int, string> GetAllArenaRankings()
         {
             return rankingArena;
         }
 
+        /// <summary>
+        /// Gets the guild ranking of Summoner
+        /// </summary>
         public string GetGuildRanking(int id)
         {
             if (rankingGuild.ContainsKey(id))
@@ -3154,11 +3314,17 @@ namespace Summoners_War_Statistics
             return "Unknown Guild Ranking";
         }
 
+        /// <summary>
+        /// Gets ALL guild rankings
+        /// </summary>
         public Dictionary<int, string> GetAllGuildRankings()
         {
             return rankingGuild;
         }
 
+        /// <summary>
+        /// Gets the amount of AXP monster gets by clearing specific Dim Hole floor
+        /// </summary>
         public int GetAxpByFloor(int floor)
         {
             if (axpPerFloor.ContainsKey(floor))
@@ -3168,6 +3334,9 @@ namespace Summoners_War_Statistics
             return 0;
         }
 
+        /// <summary>
+        /// Gets the place of specific deck
+        /// </summary>
         public string GetDeckPlace(int id)
         {
             if (decksPlace.ContainsKey(id))
@@ -3177,11 +3346,17 @@ namespace Summoners_War_Statistics
             return "Unknown Place";
         }
 
+        /// <summary>
+        /// Gets ALL buildings
+        /// </summary>
         public List<Building> GetBuildings()
         {
             return buildings;
         }
 
+        /// <summary>
+        /// Gets ALL siege rewards
+        /// </summary>
         public List<SiegeRewards> GetSiegeRewards()
         {
             return siegeRewards;

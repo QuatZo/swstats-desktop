@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Summoners_War_Statistics
 {
+    /// <summary>
+    /// Class that contains extensions for every Win Forms control
+    /// </summary>
     public static class ControlExtensions
     {
         public static void DoubleBuffering(this Control control, bool enable)
