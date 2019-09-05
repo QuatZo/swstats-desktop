@@ -29,11 +29,17 @@ namespace Summoners_War_Statistics
             this.view.Resized += View_Resized;
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void GuildSiegeDefensesList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.GuildSiegeDefensesList.PrimarySortColumn != view.GuildSiegeDefensesList.SecondarySortColumn) { view.GuildSiegeDefensesList.SecondarySortColumn = view.GuildSiegeDefensesList.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void GuildSiegeDefensesList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.GuildSiegeDefensesList.SecondarySortColumn != null)
@@ -47,6 +53,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Guild] Sorting Siege Defenses");
         }
 
+        /// <summary>
+        /// Resizing window
+        /// </summary>
         private void View_Resized()
         {
             //pictureBoxDefenseUnits            - 0
@@ -128,11 +137,16 @@ namespace Summoners_War_Statistics
             view.GuildMembersList.EndUpdate();
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void GuildMembersList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.GuildMembersList.PrimarySortColumn != view.GuildMembersList.SecondarySortColumn) { view.GuildMembersList.SecondarySortColumn = view.GuildMembersList.PrimarySortColumn; }
         }
-
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void GuildMembersList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.GuildMembersList.SecondarySortColumn != null)
@@ -146,6 +160,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Guild] Sorting Members");
         }
 
+        /// <summary>
+        /// Initialize guild tab
+        /// </summary>
         private void View_InitGuild(GuildMap guild,
                                     GuildWarParticipationInfo guildwarParticipationInfo,
                                     List<GuildWarMember> guildwarMemberList,
