@@ -22,6 +22,9 @@ namespace Summoners_War_Statistics
             this.view.MouseMoved += View_MouseMoved;
         }
 
+        /// <summary>
+        /// Event, when you move the mouse pointer
+        /// </summary>
         private void View_MouseMoved(Point location)
         {
             if (view.IsMouseDown)
@@ -42,6 +45,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// This method sets the menu location to the default position
+        /// </summary>
         private void ResetMenuLocation()
         {
             for (int i = 0; i < view.ControlList.Count; i++)
@@ -50,6 +56,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Event, when you stop holding your finger on mouse
+        /// </summary>
         private void View_MouseUnpressed()
         {
             for (int i = 0; i < view.ControlList.Count; i++)
@@ -64,6 +73,9 @@ namespace Summoners_War_Statistics
             view.MouseLocation = new Point(-1, -1);
         }
 
+        /// <summary>
+        /// Event, when you hold your finger on mouse
+        /// </summary>
         private void View_MousePressed()
         {
             view.IsMouseDown = true;
