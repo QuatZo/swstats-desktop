@@ -148,7 +148,7 @@ namespace Summoners_War_Statistics
 
             foreach(ColumnHeader column in view.RunesListView.Columns)
             {
-                column.Width = columnWidth - 5;
+                column.Width = columnWidth - 1;
             }
             view.RunesListView.EndUpdate();
         }

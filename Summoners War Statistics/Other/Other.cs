@@ -185,17 +185,7 @@ namespace Summoners_War_Statistics
             }
             set
             {
-                try
-                {
-                    if (double.IsInfinity(double.Parse(value))){
-                        labelMaxedTowers.Text = "Never";
-                    }
-                    else
-                    {
-                        labelMaxedTowers.Text = value;
-                    }
-                }
-                catch (FormatException) { }
+                labelMaxedTowers.Text = value;
             }
         }
         /// <summary>
@@ -213,18 +203,7 @@ namespace Summoners_War_Statistics
             }
             set
             {
-                try
-                {
-                    if (double.IsInfinity(double.Parse(value)))
-                    {
-                        labelMaxedFlags.Text = "Never";
-                    }
-                    else
-                    {
-                        labelMaxedFlags.Text = value;
-                    }
-                }
-                catch (FormatException) { }
+                labelMaxedFlags.Text = value;
             }
         }
         #endregion
@@ -314,9 +293,10 @@ namespace Summoners_War_Statistics
         {
             SummonerFriendsList.Items.Clear();
             SummonerTowersFlagsList.Items.Clear();
-
+            InitComboBoxes(0, 0);
             comboBoxGuildBattlesWon.SelectedIndex = comboBoxRankingArena.SelectedIndex = comboBoxRankingGuild.SelectedIndex = comboBoxRankingSiege.SelectedIndex = comboBoxSiegeResult1.SelectedIndex = 
                 comboBoxSiegeResult2.SelectedIndex = comboBoxWingsPerDay.SelectedIndex = 0;
+            DaysToMaxFlags = DaysToMaxTowers = "Never";
         }
 
         public void Other_Resize(object sender, EventArgs e)

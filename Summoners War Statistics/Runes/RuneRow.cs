@@ -12,6 +12,14 @@ namespace Summoners_War_Statistics
     class RuneRow
     {
         /// <summary>
+        /// Quality of the rune
+        /// </summary>
+        public string Quality { get; set; }
+        /// <summary>
+        /// Original quality of the rune
+        /// </summary>
+        public string OriginalQuality { get; set; }
+        /// <summary>
         /// From which set the rune is (f.e. Violent)
         /// </summary>
         public string Set { get; set; }
@@ -92,8 +100,10 @@ namespace Summoners_War_Statistics
         /// </summary>
         public bool Ancient { get; set; }
 
-        public RuneRow(string set, byte stars, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff, bool ancient)
+        public RuneRow(string quality, string originalQuality, string set, byte stars, byte slot, byte level, string origin, string mainstat, string innate, string hpflat, string hppercentage, string atkflat, string atkpercentage, string defflat, string defpercentage, string spd, string crate, string cdmg, string res, string acc, string eff, bool ancient)
         {
+            Quality = quality;
+            OriginalQuality = originalQuality;
             Set = set;
             Stars = stars;
             Slot = slot;

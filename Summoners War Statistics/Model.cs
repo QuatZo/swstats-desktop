@@ -315,9 +315,12 @@ namespace Summoners_War_Statistics
 
                 byte runeClass = rune.Class > 10 ? (byte)(rune.Class - 10) : (byte)rune.Class;
 
+                bool runeAncientStatus = Mapping.Instance.GetRuneAncientStatus(rune);
                 runesToReturn.Add(
                     new RuneRow
                     (
+                        Mapping.Instance.GetRuneQuality(runeAncientStatus ? (int)rune.Rank - 10 : (int)rune.Rank),
+                        Mapping.Instance.GetRuneQuality(runeAncientStatus ? (int)rune.Extra - 10 : (int)rune.Extra),
                         Mapping.Instance.GetRuneSet((int)rune.SetId),
                         runeClass,
                         (byte)rune.SlotNo,
@@ -337,7 +340,7 @@ namespace Summoners_War_Statistics
                         effect[11], // res
                         effect[12], // acc
                         runeEfficiency.ToString(), // eff.%
-                        Mapping.Instance.GetRuneAncientStatus(rune) // ancient
+                        runeAncientStatus // ancient
                     )
                 );
             }
