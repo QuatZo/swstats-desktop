@@ -121,6 +121,8 @@
             this.olvColumn18 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelHeader.SuspendLayout();
             this.flowLayoutPanelFilters.SuspendLayout();
             this.panelSet.SuspendLayout();
@@ -1134,6 +1136,8 @@
             // 
             // objectListViewRunes
             // 
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn21);
+            this.objectListViewRunes.AllColumns.Add(this.olvColumn22);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn1);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn19);
             this.objectListViewRunes.AllColumns.Add(this.olvColumn2);
@@ -1157,6 +1161,8 @@
             this.objectListViewRunes.AllowColumnReorder = true;
             this.objectListViewRunes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.objectListViewRunes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn21,
+            this.olvColumn22,
             this.olvColumn1,
             this.olvColumn19,
             this.olvColumn2,
@@ -1317,6 +1323,20 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
+            // olvColumn21
+            // 
+            this.olvColumn21.AspectName = "Quality";
+            this.olvColumn21.CellPadding = null;
+            this.olvColumn21.Text = "Quality";
+            this.olvColumn21.Width = 49;
+            // 
+            // olvColumn22
+            // 
+            this.olvColumn22.AspectName = "OriginalQuality";
+            this.olvColumn22.CellPadding = null;
+            this.olvColumn22.Text = "Original";
+            this.olvColumn22.Width = 52;
+            // 
             // Runes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1461,5 +1481,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelRuneAncient;
         private System.Windows.Forms.ComboBox comboBoxRuneAncient;
+        private BrightIdeasSoftware.OLVColumn olvColumn21;
+        private BrightIdeasSoftware.OLVColumn olvColumn22;
     }
 }

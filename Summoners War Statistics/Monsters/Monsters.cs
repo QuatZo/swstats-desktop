@@ -14,7 +14,14 @@ namespace Summoners_War_Statistics
     public partial class Monsters : UserControl, IMonstersView
     {
         #region Properties
+
+        /// <summary>
+        /// Size of the window
+        /// </summary>
         public Size SizeWindow => Size;
+        /// <summary>
+        /// List of the controls used in Dynamic UI
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -75,6 +82,9 @@ namespace Summoners_War_Statistics
                     labelCollectionWhole
                 };
 
+        /// <summary>
+        /// Checkes the amount of minimum monster's stars needed to be even considered in Monster To Lock table
+        /// </summary>
         public int MonsterStarsChecked
         {
             get
@@ -84,73 +94,115 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Amount of monsters with Water attribute
+        /// </summary>
         public ushort MonsterAttributeWater
         {
             get => ushort.Parse(labelWater.Text);
             set => labelWater.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters withFire attribute
+        /// </summary>
         public ushort MonsterAttributeFire
         {
             get => ushort.Parse(labelFire.Text);
             set => labelFire.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with Wind attribute
+        /// </summary>
         public ushort MonsterAttributeWind
         {
             get => ushort.Parse(labelWind.Text);
             set => labelWind.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with Light attribute
+        /// </summary>
         public ushort MonsterAttributeLight
         {
             get => ushort.Parse(labelLight.Text);
             set => labelLight.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with Dark attribute
+        /// </summary>
         public ushort MonsterAttributeDark
         {
             get => ushort.Parse(labelDark.Text);
             set => labelDark.Text = value.ToString();
         }
 
+        /// <summary>
+        /// Amount of monsters with 6 stars
+        /// </summary>
         public ushort MonsterStarsSix
         {
             get => ushort.Parse(labelStarsSixAmount.Text);
             set => labelStarsSixAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with 5 stars
+        /// </summary>
         public ushort MonsterStarsFive
         {
             get => ushort.Parse(labelStarsFiveAmount.Text);
             set => labelStarsFiveAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with 4 stars
+        /// </summary>
         public ushort MonsterStarsFour
         {
             get => ushort.Parse(labelStarsFourAmount.Text);
             set => labelStarsFourAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with 3 stars
+        /// </summary>
         public ushort MonsterStarsThree
         {
             get => ushort.Parse(labelStarsThreeAmount.Text);
             set => labelStarsThreeAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with 2 stars
+        /// </summary>
         public ushort MonsterStarsTwo
         {
             get => ushort.Parse(labelStarsTwoAmount.Text);
             set => labelStarsTwoAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of monsters with 1 star
+        /// </summary>
         public ushort MonsterStarsOne
         {
             get => ushort.Parse(labelStarsOneAmount.Text);
             set => labelStarsOneAmount.Text = value.ToString();
         }
 
+        /// <summary>
+        /// Amount of non-fusable, non-dupe nat5's
+        /// </summary>
         public ushort MonstersNat5Amount
         {
             get => ushort.Parse(labelNat5.Text);
             set => labelNat5.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of non-fusable, non-dupe, non-hoh LD nat4's+
+        /// </summary>
         public ushort MonstersLDNat4PlusAmount
         {
             get => ushort.Parse(labelLDNat4Plus.Text);
             set => labelLDNat4Plus.Text = value.ToString();
         }
+        /// <summary>
+        /// Days since last non-fusable, non-dupe nat5's
+        /// </summary>
         public ushort DaysSinceNat5
         {
             get
@@ -163,6 +215,9 @@ namespace Summoners_War_Statistics
             }
             set => labelDaysNat5.Text = value.ToString() + " days";
         }
+        /// <summary>
+        /// Days since last non-fusable, non-dupe, non-hoh LD nat4's+
+        /// </summary>
         public ushort DaysSinceLastLDLightning
         {
             get
@@ -177,14 +232,23 @@ namespace Summoners_War_Statistics
         }
 
         #region MonstersList (no physical field in designer)
+        /// <summary>
+        /// List of the monsters owned by Summoner
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Monster> MonstersList { get; set; } = new List<Monster>();
+        /// <summary>
+        /// List of locked monsters owned by Summoner
+        /// </summary>
         public List<long> MonstersLocked { get; set; } = new List<long>();
         #endregion
 
         #region ObjectListView MonstersListView
+        /// <summary>
+        /// Monsters To Lock table
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -195,6 +259,9 @@ namespace Summoners_War_Statistics
         }
         #endregion
 
+        /// <summary>
+        /// List of stars checked in Monster Collection filters
+        /// </summary>
         public List<int> MonstersCollectionCheckedStars
         {
             get {
@@ -208,6 +275,9 @@ namespace Summoners_War_Statistics
                 return checkedStars;
             }
         }
+        /// <summary>
+        /// List of sattributes checked in Monster Collection filters
+        /// </summary>
         public List<string> MonstersCollectionCheckedAttributes
         {
             get
@@ -222,11 +292,17 @@ namespace Summoners_War_Statistics
                 return checkedAttribute;
             }
         }
+        /// <summary>
+        /// Amount of Summoner's monsters that meet the filter requirements
+        /// </summary>
         public int MonstersCollectionSummoner
         {
             get => int.Parse(labelCollectionSummoner.Text);
             set => labelCollectionSummoner.Text = value.ToString();
         }
+        /// <summary>
+        /// Amount of ALL monsters in the game that meet the filter requirements
+        /// </summary>
         public int MonstersCollectionWhole
         {
             get => int.Parse(labelCollectionWhole.Text);
@@ -235,13 +311,28 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        /// <summary>
+        /// Initialize whole Monster Tab
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event Action<List<Monster>, List<long>> InitMonsters;
+        /// <summary>
+        /// Triggers when checked RadioButton next to Monster To Lock table has been changed
+        /// </summary>
         public event Action<RadioButton> MonstersStarsChanged;
+        /// <summary>
+        /// Triggers when window ends resizing
+        /// </summary>
         public event Action Resized;
+        /// <summary>
+        /// Makes sure user sees what he should see
+        /// </summary>
         public event Action CanSeeMonstersTab;
+        /// <summary>
+        /// Triggers when some combobox from Monster Collection section is being changed
+        /// </summary>
         public event Action MonstersCollectionItemChecked;
         #endregion
 
@@ -252,6 +343,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        /// <summary>
+        /// Initialize the whole Monster Tab
+        /// </summary>
         public void Init(List<Monster> monsters, List<long> monstersLocked)
         {
             InitMonsters?.Invoke(monsters, monstersLocked);
@@ -261,17 +355,27 @@ namespace Summoners_War_Statistics
             MonstersStarsChanged?.Invoke((RadioButton)sender);
         }
 
+        /// <summary>
+        /// Resets the monster stats when reloading JSON file
+        /// </summary>
         public void ResetMonstersStats()
         {
             MonsterAttributeWater = MonsterAttributeFire = MonsterAttributeWind = MonsterAttributeLight = MonsterAttributeDark =
                 MonsterStarsSix = MonsterStarsFive = MonsterStarsFour = MonsterStarsThree = MonsterStarsTwo = MonsterStarsOne =
                 MonstersNat5Amount = MonstersLDNat4PlusAmount = DaysSinceNat5 = DaysSinceLastLDLightning = 0;
         }
+
+        /// <summary>
+        /// Moves the Monster Tab to the front
+        /// </summary>
         public void Front()
         {
             BringToFront();
         }
 
+        /// <summary>
+        /// Resets everything on fail (when the JSON file, that was given, is invalid)
+        /// </summary>
         public void ResetOnFail()
         {
             ResetMonstersStats();

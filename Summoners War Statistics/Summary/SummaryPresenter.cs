@@ -28,11 +28,17 @@ namespace Summoners_War_Statistics
             this.view.SummaryDecksListView.BeforeSorting += SummaryDecksListView_BeforeSorting;
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummaryDecksListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.SummaryDecksListView.PrimarySortColumn != view.SummaryDecksListView.SecondarySortColumn) { view.SummaryDecksListView.SecondarySortColumn = view.SummaryDecksListView.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummaryDecksListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.SummaryDecksListView.SecondarySortColumn != null)
@@ -46,6 +52,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Summary] Sorting");
         }
 
+        /// <summary>
+        /// Dynamic UI
+        /// </summary>
         private void View_Resized()
         {
             //labelAncientCoins                 - 0
@@ -179,6 +188,9 @@ namespace Summoners_War_Statistics
             view.SummaryDecksListView.EndUpdate();
         }
 
+        /// <summary>
+        /// Initialize whole Summary tab
+        /// </summary>
         private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, 
             DateTime jsonModificationTime, string country, List<Deck> decks)
         {

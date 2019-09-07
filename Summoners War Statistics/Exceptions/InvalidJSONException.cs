@@ -2,6 +2,9 @@
 
 namespace Summoners_War_Statistics
 {
+    /// <summary>
+    /// Represents error that occurs when selected JSON is invalid (incomplete)
+    /// </summary>
     internal class InvalidJSONException : Exception
     {
         public InvalidJSONException() { }

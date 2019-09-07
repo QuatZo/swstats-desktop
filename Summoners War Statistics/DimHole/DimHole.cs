@@ -16,6 +16,9 @@ namespace Summoners_War_Statistics
             set => Size = value;
         }
 
+        /// <summary>
+        /// List of controls used in Dynamic UI
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -59,26 +62,45 @@ namespace Summoners_War_Statistics
             panelFarm,
             panelFarmRight
         };
-
+        /// <summary>
+        /// AXP needed for the chosen Dim Hole floor level (B1-B5)
+        /// </summary>
         public ushort AxpPerLevel { get; set; }
+        /// <summary>
+        /// Actual amount of Dim Hole energy Summoner has
+        /// </summary>
         public byte SummonerDimensionalHoleEnergy
         {
             get => byte.Parse(labelDimensionalHoleEnergy.Text);
             set => labelDimensionalHoleEnergy.Text = value.ToString();
         }
+        /// <summary>
+        /// Maximum amount of Dim Hole energy Summoner can have
+        /// </summary>
         public byte SummonerDimensionalHoleEnergyMax
         {
             get => byte.Parse(labelDimensionalHoleEnergyMax.Text);
             set => labelDimensionalHoleEnergyMax.Text = value.ToString();
         }
+        /// <summary>
+        /// Info when or if summoner has maxed out Dim Hole energy
+        /// </summary>
         public string SummonerDimensionalHoleEnergyMaxInfo
         {
             get => labelDimensionalHoleEnergyMaxInfo.Text;
             set => labelDimensionalHoleEnergyMaxInfo.Text = value;
         }
+        /// <summary>
+        /// Date of last Dim Hole energy gain (one per 2h)
+        /// </summary>
         public DateTime DimensionalEnergyGainStart { get; set; }
+        /// <summary>
+        /// List of monsters available to 2A
+        /// </summary>
         public List<Awakening> DimHoleMonsters { get; set; }
-
+        /// <summary>
+        /// Dimension Hole Table
+        /// </summary>
         public ObjectListView DimHoleMonstersListView
         {
             get => objectListViewDimHole;
@@ -86,6 +108,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Dictionary<RadioButton, ushort> DimHoleLevelAXP
+        /// <summary>
+        /// Radio buttons matching specific AXP (depending on floor, B1-B5)
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -99,6 +124,9 @@ namespace Summoners_War_Statistics
             };
         #endregion
 
+        /// <summary>
+        /// Times of doing Dim Hole floors
+        /// </summary>
         public List<TimeSpan> DimHoleFloorTimes
         {
             get
@@ -129,7 +157,9 @@ namespace Summoners_War_Statistics
                 return list;
             }
         }
-
+        /// <summary>
+        /// Success rate of doing Dim Hole floors
+        /// </summary>
         public List<double> DimHoleFloorSuccessRates
         {
             get
@@ -146,18 +176,41 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Which floor should be farmed, depending on Clearing Time (output of Dim Hole calculator)
+        /// </summary>
         public string DimHoleFloorTime { set => labelFarmTime.Text = value; }
+        /// <summary>
+        /// Which floor should be farmed, depending on Success Rate (output of Dim Hole calculator)
+        /// </summary>
         public string DimHoleFloorSuccess { set => labelFarmSuccess.Text = value; }
         #endregion
 
         #region Events
+        /// <summary>
+        /// Initialization of Dim Hole tab
+        /// </summary>
         public event Action<DimensionHoleInfo, List<Monster>> InitDimHole;
+        /// <summary>
+        /// Event of changing Dim Hole level (next to table)
+        /// </summary>
         public event Action<RadioButton> DimHoleLevelChanged;
+        /// <summary>
+        /// Event of resizing window
+        /// </summary>
         public event Action Resized;
+        /// <summary>
+        /// Event of Dim Hole Calculator
+        /// </summary>
         public event Action FloorTextChanged;
+        /// <summary>
+        /// Native UI
+        /// </summary>
         public event Action CanSeeDimHoleTab;
         #endregion
-
+        /// <summary>
+        /// Constructor of DimHole class
+        /// </summary>
         public DimHole()
         {
             InitializeComponent();
@@ -165,16 +218,27 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        /// <summary>
+        /// Method initializing whole Dim Hole tab
+        /// </summary>
+        /// <param name="dimensionHoleInfo">Summoner's Dim Hole Info/param>
+        /// <param name="unitList">List of all Summoner's monsters</param>
         public void Init(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)
         {
             InitDimHole?.Invoke(dimensionHoleInfo, unitList);
         }
 
+        /// <summary>
+        /// Bring Dim Hole tab to front
+        /// </summary>
         public void Front()
         {
             BringToFront();
         }
 
+        /// <summary>
+        /// Reset everything, if app failed to init given json file
+        /// </summary>
         public void ResetOnFail()
         {
             SummonerDimensionalHoleEnergy = SummonerDimensionalHoleEnergyMax = 0;
@@ -197,6 +261,11 @@ namespace Summoners_War_Statistics
             FloorTextChanged?.Invoke();
         }
 
+        /// <summary>
+        /// Method invoking the Resized & CanSeeDimHoleTab events only when Tab changed its visibility to visible
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DimHole_VisibleChanged(object sender, EventArgs e)
         {
             if (Visible == true)

@@ -32,6 +32,9 @@ namespace Summoners_War_Statistics
 
         }
 
+        /// <summary>
+        /// Event that triggers when someone check/uncheck one of the comboboxes which represent monster collection
+        /// </summary>
         private void View_MonstersCollectionItemChecked()
         {
             view.MonstersCollectionSummoner = view.MonstersCollectionWhole = 0;
@@ -50,6 +53,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Monsters] Monsters Collection done");
         }
 
+        /// <summary>
+        /// Method that makes the static part of UI
+        /// </summary>
         private void View_CanSeeMonstersTab()
         {
             // panelHeader
@@ -94,11 +100,17 @@ namespace Summoners_War_Statistics
             view.Cntrls[3].Location = new Point(view.Cntrls[3].Location.X, headerHeightFourthLevel);
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void MonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.MonstersListView.PrimarySortColumn != view.MonstersListView.SecondarySortColumn) { view.MonstersListView.SecondarySortColumn = view.MonstersListView.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.MonstersListView.SecondarySortColumn != null)
@@ -112,6 +124,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Monsters] Sorting");
         }
 
+        /// <summary>
+        /// Event, which triggers when window is being resized
+        /// </summary>
         private void View_Resized()
         {
             //labelNat5s                    - 0
@@ -224,6 +239,10 @@ namespace Summoners_War_Statistics
             view.MonstersListView.EndUpdate();
         }
 
+        /// <summary>
+        /// Event, which triggers when the active radiobox has been changed, next to Monsters To Lock table. It represent the minimum amount of stars monster needs to have (except devilmon) to be considered in table
+        /// </summary>
+        /// <param name="obj"></param>
         private void View_MonstersStarsChanged(RadioButton obj)
         {
             Logger.log.Info("[Monsters] MonstersToLock star changing");
@@ -232,6 +251,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info("[Monsters] MonstersToLock star changed");
         }
 
+        /// <summary>
+        /// Method that initializes the whole Monster Tab
+        /// </summary>
         private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
         {
             view.MonstersList = monsters;

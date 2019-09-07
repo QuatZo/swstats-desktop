@@ -29,6 +29,9 @@ namespace Summoners_War_Statistics
             this.view.FloorTextChanged += View_FloorTextChanged;
         }
 
+        /// <summary>
+        /// This method sets the position of Native UI elements
+        /// </summary>
         private void View_CanSeeDimHoleTab()
         {
             int heightFarmFirstLevel = 40;
@@ -41,6 +44,9 @@ namespace Summoners_War_Statistics
             view.Cntrls[30].Location = new Point(widthFarmFirstLevel, heightFarmSecondLevel);
         }
 
+        /// <summary>
+        /// Method that calculates (and updates) the best floor to farm, depending on Time & Success Rate
+        /// </summary>
         private void View_FloorTextChanged()
         {
             List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)> inputs = new List<(int Floor, TimeSpan Time, double SuccessRate, double Ratio)>();
@@ -63,6 +69,9 @@ namespace Summoners_War_Statistics
 
         }
 
+        /// <summary>
+        /// Method handling double-sorting
+        /// </summary>
         private void DimHoleMonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.DimHoleMonstersListView.PrimarySortColumn != view.DimHoleMonstersListView.SecondarySortColumn)
@@ -70,7 +79,9 @@ namespace Summoners_War_Statistics
                 view.DimHoleMonstersListView.SecondarySortColumn = view.DimHoleMonstersListView.PrimarySortColumn;
             }
         }
-
+        /// <summary>
+        /// Method handling double-sorting
+        /// </summary>
         private void DimHoleMonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.DimHoleMonstersListView.SecondarySortColumn != null)
@@ -84,6 +95,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Dimension Hole] Sorting");
         }
 
+        /// <summary>
+        /// Method handling Resized event
+        /// </summary>
         private void View_Resized()
         {
             //labelDimHoleMonsters                  - 0
@@ -174,6 +188,9 @@ namespace Summoners_War_Statistics
             view.DimHoleMonstersListView.EndUpdate();
         }
 
+        /// <summary>
+        /// Method initializing whole DimHole tab
+        /// </summary>
         private void View_InitDimHole(DimensionHoleInfo dimensionHoleInfo, List<Monster> unitList)
         {
             view.SummonerDimensionalHoleEnergy = dimensionHoleInfo.Energy;
@@ -220,6 +237,10 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Dimension Hole] Dim Hole calculator done");
         }
 
+        /// <summary>
+        /// Method calculating energy needed to 2A monsters (table)
+        /// </summary>
+        /// <param name="obj"></param>
         private void View_DimHoleLevelChanged(RadioButton obj)
         {
             Logger.log.Info($"[Dimension Hole] Dim Hole level changed to {obj.Name.Remove(0, 11)}");

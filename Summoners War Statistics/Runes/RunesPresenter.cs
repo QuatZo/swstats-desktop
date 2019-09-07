@@ -28,16 +28,25 @@ namespace Summoners_War_Statistics
             this.view.Resized += View_Resized;
         }
 
+        /// <summary>
+        /// Makes sure user sees what he should see
+        /// </summary>
         private void View_CanSeeRunesTab()
         {
             SetUI();
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void RunesListView_BeforeSorting(object sender, BeforeSortingEventArgs e)
         {
             if (view.RunesListView.PrimarySortColumn != view.RunesListView.SecondarySortColumn) { view.RunesListView.SecondarySortColumn = view.RunesListView.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Resizing window
+        /// </summary>
         private void View_Resized()
         {
             //labelRunes                        - 0
@@ -139,11 +148,14 @@ namespace Summoners_War_Statistics
 
             foreach(ColumnHeader column in view.RunesListView.Columns)
             {
-                column.Width = columnWidth - 5;
+                column.Width = columnWidth - 1;
             }
             view.RunesListView.EndUpdate();
         }
 
+        /// <summary>
+        /// Double-column sorting
+        /// </summary>
         private void RunesList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if(view.RunesListView.SecondarySortColumn != null)
@@ -157,6 +169,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Runes] Sorting by {e.Column}");
         }
 
+        /// <summary>
+        /// Sets the static part in the UI
+        /// </summary>
         private void SetUI()
         {
             int headerHeightNullLevel = 5;
@@ -224,6 +239,9 @@ namespace Summoners_War_Statistics
             view.Cntrls[10].Location = new Point(view.Cntrls[4].Location.X, footerHeightSecondLevel);
         }
 
+        /// <summary>
+        /// Initializes whole Runes tab
+        /// </summary>
         private void View_InitRunes()
         {
             view.RunesListView.Items.Clear();

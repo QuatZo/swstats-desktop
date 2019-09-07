@@ -13,6 +13,9 @@ namespace Summoners_War_Statistics
     public partial class Menu : UserControl, IMenuView
     {
         #region Properties
+        /// <summary>
+        /// List of Buttons picture boxes
+        /// </summary>
         [Browsable(false)] 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<PictureBox> Buttons
@@ -37,6 +40,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// List of control used in resizing tab
+        /// </summary>
         public List<Control> ControlList
         {
             get
@@ -49,16 +55,38 @@ namespace Summoners_War_Statistics
                 return controls;
             }
         }
+        /// <summary>
+        /// State of Mouse - if is down or not
+        /// </summary>
         public bool IsMouseDown { get; set; } = false;
+
+        /// <summary>
+        /// Location of the mouse
+        /// </summary>
         public Point MouseLocation { get; set; } = new Point(-1, -1);
 
+        /// <summary>
+        /// Window width
+        /// </summary>
         public int WindowWidth { get; set; }
         #endregion
 
         #region Events
+        /// <summary>
+        /// Event of clicking the menu button
+        /// </summary>
         public event Action<object> ButtonClicked;
+        /// <summary>
+        /// Event of pressing the mouse button
+        /// </summary>
         public event Action MousePressed;
+        /// <summary>
+        /// Event of stopping press the mouse button
+        /// </summary>
         public event Action MouseUnpressed;
+        /// <summary>
+        /// Event of moving the mouse
+        /// </summary>
         public event Action<Point> MouseMoved;
         #endregion
 
