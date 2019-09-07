@@ -32,11 +32,17 @@ namespace Summoners_War_Statistics
             this.view.InitTowersFlags += InitTowersFlags;
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummonerTowersFlagsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.SummonerTowersFlagsList.PrimarySortColumn != view.SummonerTowersFlagsList.SecondarySortColumn) { view.SummonerTowersFlagsList.SecondarySortColumn = view.SummonerTowersFlagsList.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummonerTowersFlagsList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.SummonerTowersFlagsList.SecondarySortColumn != null)
@@ -50,11 +56,17 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Towers&Flags] Sorting");
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummonerFriendsList_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
             if (view.SummonerFriendsList.PrimarySortColumn != view.SummonerFriendsList.SecondarySortColumn) { view.SummonerFriendsList.SecondarySortColumn = view.SummonerFriendsList.PrimarySortColumn; }
         }
 
+        /// <summary>
+        /// Double-colum sorting
+        /// </summary>
         private void SummonerFriendsList_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (view.SummonerFriendsList.SecondarySortColumn != null)
@@ -68,6 +80,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Friends] Sorting");
         }
 
+        /// <summary>
+        /// Method used to resize the window (Dynamic UI)
+        /// </summary>
         private void View_Resized()
         {
             //labelOtherActiveFriends   - 0
@@ -108,6 +123,9 @@ namespace Summoners_War_Statistics
             view.Cntrls[6].Location = new Point(view.Cntrls[5].Location.X - view.Cntrls[6].Size.Width - 0);
         }
 
+        /// <summary>
+        /// Initialize the Other tab
+        /// </summary>
         private void View_InitOther(List<Friend> friendsList, List<Decoration> decorations)
         {
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
@@ -116,6 +134,9 @@ namespace Summoners_War_Statistics
             InitTowersFlags();
         }
 
+        /// <summary>
+        /// Initialize the Towers & Flags calculator (w/ table)
+        /// </summary>
         private void InitTowersFlags()
         {
             view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(view.Decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));

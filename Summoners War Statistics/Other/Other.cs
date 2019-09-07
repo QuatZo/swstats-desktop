@@ -14,12 +14,18 @@ namespace Summoners_War_Statistics
     public partial class Other : UserControl, IOtherView
     {
         #region Properties
+        /// <summary>
+        /// Size of the tab
+        /// </summary>
         public Size TabSize
         {
             get => Size;
             set => Size = new Size(value.Width, value.Height);
         }
 
+        /// <summary>
+        /// List of the controls used in Dynamic UI
+        /// </summary>
         public List<Control> Cntrls => new List<Control>()
         {
             labelOtherActiveFriends,
@@ -33,17 +39,26 @@ namespace Summoners_War_Statistics
             labelMaxedTowersText
         };
 
+        /// <summary>
+        /// Friends List table
+        /// </summary>
         public ObjectListView SummonerFriendsList
         {
             get => objectListViewFriends;
             set => objectListViewFriends = value;
         }
+        /// <summary>
+        /// Towers & Flags calculator table
+        /// </summary>
         public ObjectListView SummonerTowersFlagsList
         {
             get => objectListViewTowersFlags;
             set => objectListViewTowersFlags = value;
         }
 
+        /// <summary>
+        /// Chosen arena ranking
+        /// </summary>
         public ushort ChosenArenaRanking
         {
             get
@@ -56,6 +71,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen amount of wings used per day
+        /// </summary>
         public byte ChosenArenaWingsPerDay
         {
             get
@@ -69,6 +87,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Chosen guild ranking
+        /// </summary>
         public ushort ChosenGuildRanking
         {
             get
@@ -82,6 +103,9 @@ namespace Summoners_War_Statistics
 
             }
         }
+        /// <summary>
+        /// Chosen amount of won guild battles per week
+        /// </summary>
         public byte ChosenGuildBattlesWon
         {
             get
@@ -95,6 +119,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Chosen siege ranking
+        /// </summary>
         public ushort ChosenSiegeRanking
         {
             get
@@ -107,6 +134,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen the result of 1st siege battle during week
+        /// </summary>
         public byte ChosenSiegeFirstBattleResult
         {
             get
@@ -119,6 +149,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen the result of 2nd siege battle during week
+        /// </summary>
         public byte ChosenSiegeSecondBattleResult
         {
             get
@@ -132,8 +165,14 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// List of buildings
+        /// </summary>
         public List<Decoration> Decorations { get; set; }
 
+        /// <summary>
+        /// Days needed to max ALL towers, from the current state
+        /// </summary>
         public string DaysToMaxTowers
         {
             get
@@ -159,6 +198,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { }
             }
         }
+        /// <summary>
+        /// Days needed to max ALL flags, from the current state
+        /// </summary>
         public string DaysToMaxFlags
         {
             get
@@ -188,8 +230,17 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        /// <summary>
+        /// Initialize whole Other tab
+        /// </summary>
         public event Action<List<Friend>, List<Decoration>> InitOther;
+        /// <summary>
+        /// Resize the window
+        /// </summary>
         public event Action Resized;
+        /// <summary>
+        /// Initialize Towers & Flags (w/ table)
+        /// </summary>
         public event Action InitTowersFlags;
         #endregion
 
@@ -201,6 +252,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        /// <summary>
+        /// Initialize comboboxes
+        /// </summary>
         private void InitComboBoxes(long arenaRanking, double guildRanking)
         {
             Dictionary<int, string> towersFlagsRankingArena = Mapping.Instance.GetAllArenaRankings(); // arena ranks
@@ -233,6 +287,9 @@ namespace Summoners_War_Statistics
             comboBoxSiegeResult2.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Initialize whole Other tab
+        /// </summary>
         public void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId)
         {
             objectListViewTowersFlags.Items.Clear();
@@ -242,11 +299,17 @@ namespace Summoners_War_Statistics
             InitOther?.Invoke(friendsList, decorations);
         }
 
+        /// <summary>
+        /// Bring Other tab to front
+        /// </summary>
         public void Front()
         {
             BringToFront();
         }
 
+        /// <summary>
+        /// Reset Other tab to the default state, when the provided JSON file is invalid
+        /// </summary>
         public void ResetOnFail()
         {
             SummonerFriendsList.Items.Clear();
@@ -255,6 +318,7 @@ namespace Summoners_War_Statistics
             comboBoxGuildBattlesWon.SelectedIndex = comboBoxRankingArena.SelectedIndex = comboBoxRankingGuild.SelectedIndex = comboBoxRankingSiege.SelectedIndex = comboBoxSiegeResult1.SelectedIndex = 
                 comboBoxSiegeResult2.SelectedIndex = comboBoxWingsPerDay.SelectedIndex = 0;
         }
+
         public void Other_Resize(object sender, EventArgs e)
         {
             Resized?.Invoke();
