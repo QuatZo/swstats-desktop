@@ -14,7 +14,13 @@ namespace Summoners_War_Statistics
     public partial class Runes : UserControl, IRunesView
     {
         #region Properties
+        /// <summary>
+        /// Size of the window
+        /// </summary>
         public Size SizeWindow => Size;
+        /// <summary>
+        /// List of the controls used in Dynamic UI
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -79,6 +85,9 @@ namespace Summoners_War_Statistics
             comboBoxRuneAncient
         };
 
+        /// <summary>
+        /// Chosen rune set (filters)
+        /// </summary>
         public byte ChosenRuneSet
         {
             get
@@ -91,6 +100,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune stars (filters)
+        /// </summary>
         public byte ChosenRuneStars
         {
             get
@@ -104,6 +116,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune stars statement (filters)
+        /// </summary>
         public byte ChosenRuneStarsStatement
         {
             get
@@ -112,6 +127,9 @@ namespace Summoners_War_Statistics
                 return (byte)comboBoxRuneStarsIf.SelectedIndex;
             }
         }
+        /// <summary>
+        /// Chosen rune mainstat (filters)
+        /// </summary>
         public byte ChosenRuneMainstat
         {
             get
@@ -124,6 +142,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune innate stat (filters)
+        /// </summary>
         public byte ChosenRuneInnate
         {
             get
@@ -136,6 +157,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune quality (filters)
+        /// </summary>
         public byte ChosenRuneQuality
         {
             get
@@ -148,6 +172,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune original quality (filters)
+        /// </summary>
         public byte ChosenRuneOriginQuality
         {
             get
@@ -160,7 +187,10 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
-        
+
+        /// <summary>
+        /// Chosen rune slot (filters)
+        /// </summary>
         public byte ChosenRuneSlot
         {
             get
@@ -169,6 +199,9 @@ namespace Summoners_War_Statistics
                 return (byte)comboBoxRuneSlot.SelectedIndex;
             }
         }
+        /// <summary>
+        /// Chosen if rune should be ancient (filters)
+        /// </summary>
         public byte ChosenRuneAncient
         {
             get
@@ -177,6 +210,9 @@ namespace Summoners_War_Statistics
                 return (byte)comboBoxRuneAncient.SelectedIndex;
             }
         }
+        /// <summary>
+        /// Chosen rune level (filters)
+        /// </summary>
         public byte ChosenRuneUpgrade
         {
             get
@@ -190,6 +226,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune level statement (filters)
+        /// </summary>
         public byte ChosenRuneUpgradeStatement
         {
             get
@@ -198,6 +237,9 @@ namespace Summoners_War_Statistics
                 return (byte)comboBoxRuneUpgradeIf.SelectedIndex;
             }
         }
+        /// <summary>
+        /// Chosen rune efficiency (filters)
+        /// </summary>
         public byte ChosenRuneEfficiency
         {
             get
@@ -211,6 +253,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune efficiency statement (filters)
+        /// </summary>
         public byte ChosenRuneEfficiencyStatement
         {
             get
@@ -220,6 +265,9 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// Chosen rune 1st substat (filters)
+        /// </summary>
         public byte ChosenRuneSubstat1
         {
             get
@@ -232,6 +280,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune 1st substat statement (filters)
+        /// </summary>
         public byte ChosenRuneSubstat1Statement
         {
             get
@@ -240,6 +291,9 @@ namespace Summoners_War_Statistics
                 return 0;
             }
         }
+        /// <summary>
+        /// Chosen rune 2nd substat (filters)
+        /// </summary>
         public byte ChosenRuneSubstat2
         {
             get
@@ -252,6 +306,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune 2nd substat statement (filters)
+        /// </summary>
         public byte ChosenRuneSubstat2Statement
         {
             get
@@ -260,6 +317,9 @@ namespace Summoners_War_Statistics
                 return 0;
             }
         }
+        /// <summary>
+        /// Chosen rune 3rd substat (filters)
+        /// </summary>
         public byte ChosenRuneSubstat3
         {
             get
@@ -272,6 +332,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune 3rd substat statement (filters)
+        /// </summary>
         public byte ChosenRuneSubstat3Statement
         {
             get
@@ -280,6 +343,9 @@ namespace Summoners_War_Statistics
                 return 0;
             }
         }
+        /// <summary>
+        /// Chosen rune 4th substat (filters)
+        /// </summary>
         public byte ChosenRuneSubstat4
         {
             get
@@ -292,6 +358,9 @@ namespace Summoners_War_Statistics
                 catch (FormatException) { return 0; }
             }
         }
+        /// <summary>
+        /// Chosen rune 4th substat statement (filters)
+        /// </summary>
         public byte ChosenRuneSubstat4Statement
         {
             get
@@ -301,21 +370,33 @@ namespace Summoners_War_Statistics
             }
         }
 
+        /// <summary>
+        /// The amount of runes (under table)
+        /// </summary>
         public ushort RunesAmount
         {
             get => ushort.Parse(labelRunesAmount.Text);
             set => labelRunesAmount.Text = value.ToString();
         }
+        /// <summary>
+        /// The amount of maxed runes (under table)
+        /// </summary>
         public ushort RunesMaxed
         {
             get => ushort.Parse(labelRunesMaxed.Text);
             set => labelRunesMaxed.Text = value.ToString();
         }
+        /// <summary>
+        /// The amount of runes in inventory (under table)
+        /// </summary>
         public ushort RunesInventory
         {
             get => ushort.Parse(labelRunesInventory.Text);
             set => labelRunesInventory.Text = value.ToString();
         }
+        /// <summary>
+        /// Lowest efficiency (under table)
+        /// </summary>
         public double RunesEfficiencyMin
         {
             get
@@ -328,6 +409,9 @@ namespace Summoners_War_Statistics
             }
             set => labelRunesEfficiencyLow.Text = value.ToString() + "%";
         }
+        /// <summary>
+        /// Highest efficieny (under table)
+        /// </summary>
         public double RunesEfficiencyMax
         {
             get
@@ -340,6 +424,9 @@ namespace Summoners_War_Statistics
             }
             set => labelRunesEfficiencyHigh.Text = value.ToString() + "%";
         }
+        /// <summary>
+        /// Mean efficiency (under table)
+        /// </summary>
         public double RunesEfficiencyMean
         {
             get
@@ -352,6 +439,9 @@ namespace Summoners_War_Statistics
             }
             set => labelRunesEfficiencyMean.Text = value.ToString() + "%";
         }
+        /// <summary>
+        /// Median efficiency (under table)
+        /// </summary>
         public double RunesEfficiencyMedian
         {
             get
@@ -364,6 +454,9 @@ namespace Summoners_War_Statistics
             }
             set => labelRunesEfficiencyMedian.Text = value.ToString() + "%";
         }
+        /// <summary>
+        /// Standard deviation of the efficiency (under table)
+        /// </summary>
         public double RunesEfficiencyStandardDeviation
         {
             get
@@ -377,6 +470,9 @@ namespace Summoners_War_Statistics
             set => labelRunesStandardDeviation.Text = value.ToString() + "%";
         }
 
+        /// <summary>
+        /// Runes table
+        /// </summary>
         public ObjectListView RunesListView
         {
             get => objectListViewRunes;
@@ -384,10 +480,19 @@ namespace Summoners_War_Statistics
         }
 
         #region RunesList & MonstersMasterId (no physical field in designer)
+        /// <summary>
+        /// List of runes
+        /// </summary>
         public List<Rune> RunesList { get; set; }
+        /// <summary>
+        /// Monster ID that is connected with Monster Master ID
+        /// </summary>
         public Dictionary<long, int> MonstersMasterId { get; set; }
         #endregion
 
+        /// <summary>
+        /// Flow panel used for filters
+        /// </summary>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -399,8 +504,17 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        /// <summary>
+        /// Initialize Runes tab
+        /// </summary>
         public event Action InitRunes;
+        /// <summary>
+        /// Resize window
+        /// </summary>
         public event Action Resized;
+        /// <summary>
+        /// Makes sure user sees what he should see
+        /// </summary>
         public event Action CanSeeRunesTab;
         #endregion
         
@@ -412,6 +526,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        /// <summary>
+        /// Initialize comboboxes
+        /// </summary>
         private void InitComboBoxes()
         {
             Dictionary<int, string> runeSets = Mapping.Instance.GetAllRuneSets(); // rune sets
@@ -470,6 +587,9 @@ namespace Summoners_War_Statistics
             comboBoxRuneSubstat3YesNo.SelectedIndex = 1;
             comboBoxRuneSubstat4YesNo.SelectedIndex = 1;
         }
+        /// <summary>
+        /// Initialize whole Runes tab
+        /// </summary>
         public void Init(List<Rune> runes, Dictionary<long, int> monstersMasterId)
         {
             RunesList = runes;
@@ -477,10 +597,16 @@ namespace Summoners_War_Statistics
             InitComboBoxes();
             InitRunes?.Invoke();
         }
+        /// <summary>
+        /// Bring Runes tab to front
+        /// </summary>
         public void Front()
         {
             BringToFront();
         }
+        /// <summary>
+        /// Reset everything to the default state, if provided JSON file was invalid
+        /// </summary>
         public void ResetOnFail()
         {
             objectListViewRunes.Items.Clear();
