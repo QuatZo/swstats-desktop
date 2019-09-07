@@ -6,6 +6,9 @@ namespace Summoners_War_Statistics
 {
     internal class Model
     {
+        /// <summary>
+        /// Calculate the time needed to 2A the monster
+        /// </summary>
         public string DimHoleCalculateTime(ushort energyNeeded, short energy, DateTime energyGainStart, bool listView)
         {
             string date;
@@ -26,6 +29,9 @@ namespace Summoners_War_Statistics
             return date;
         }
 
+        /// <summary>
+        /// List of monsters needed to lock, in form of rows
+        /// </summary>
         public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
         {
             List<MonstersToLockRow> mons = new List<MonstersToLockRow>();
@@ -78,6 +84,9 @@ namespace Summoners_War_Statistics
             return mons;
         }
 
+        /// <summary>
+        /// List of friends, in form of rows
+        /// </summary>
         public List<FriendsRow> FriendsList(List<Friend> friendsList)
         {
             List<FriendsRow> friends = new List<FriendsRow>();
@@ -98,6 +107,9 @@ namespace Summoners_War_Statistics
             return friends;
         }
 
+        /// <summary>
+        /// List of the guild members, in form of rows
+        /// </summary>
         public List<GuildMembersRow> GuildMembersList(GuildMap guild, GuildWarParticipationInfo guildwarParticipationInfo, List<GuildWarMember> guildwarMemberList, List<GuildMemberDefense> guildMemberDefenseList)
         {
             List<GuildMembersRow> members = new List<GuildMembersRow>();
@@ -138,6 +150,9 @@ namespace Summoners_War_Statistics
             return members;
         }
 
+        /// <summary>
+        /// List of the guild siege defenses, in form of rows
+        /// </summary>
         public List<GuildSiegeDefensesRow> GuildSiegeDefensesList(List<long> siegeDefenses, List<Monster> monsters)
         {
             List<GuildSiegeDefensesRow> comps = new List<GuildSiegeDefensesRow>();
@@ -166,6 +181,9 @@ namespace Summoners_War_Statistics
             return comps;
         }
 
+        /// <summary>
+        /// List of the ALL runes, with the equipped ones
+        /// </summary>
         public List<Rune> RunesEvenEquipped(List<Rune> runesArg, List<Monster> monsters)
         {
             List<Rune> runes = runesArg;
@@ -181,6 +199,9 @@ namespace Summoners_War_Statistics
             return runes;
         }
 
+        /// <summary>
+        /// Monsters' ID assigned to it's Master ID
+        /// </summary>
         public Dictionary<long, int> MonstersMasterId(List<Monster> monsters)
         {
             Dictionary<long, int> monstersMasterId = new Dictionary<long, int>();
@@ -193,6 +214,9 @@ namespace Summoners_War_Statistics
             return monstersMasterId;
         }
 
+        /// <summary>
+        /// Tells if the rune meets the filter requirements
+        /// </summary>
         private bool RuneMeetsRequirements(Rune rune, List<byte> filters, double runeEfficiency)
         {
             if (filters[0] != 0 && rune.SetId != filters[0]) { return false; } // set
@@ -256,6 +280,9 @@ namespace Summoners_War_Statistics
             return true;
         }
 
+        /// <summary>
+        /// List of the runes, in form of rows
+        /// </summary>
         public List<RuneRow> RunesList(List<Rune> runes, Dictionary<long, int> monstersMasterId, List<byte> filters)
         {
             List<RuneRow> runesToReturn = new List<RuneRow>();
@@ -317,6 +344,9 @@ namespace Summoners_War_Statistics
             return runesToReturn;
         }
 
+        /// <summary>
+        /// List of the decks, in form of rows
+        /// </summary>
         public List<DecksRow> SummaryDecks(List<Monster> monsters, List<Deck> decks)
         {
             List<DecksRow> decksRows = new List<DecksRow>();
@@ -355,7 +385,10 @@ namespace Summoners_War_Statistics
 
             return decksRows;
         }
-
+        
+        /// <summary>
+        /// Gets the Summoner's monster collection
+        /// </summary>
         public Dictionary<(int Stars, string Attribute), int> GetSummonersMonstersCollection(List<Monster> monsters)
         {
             Dictionary<(int Stars, string Attribute), int> monstersSummonerCollection = new Dictionary<(int Stars, string Attribute), int>();
@@ -381,6 +414,9 @@ namespace Summoners_War_Statistics
             return monstersSummonerCollection;
         }
 
+        /// <summary>
+        /// Gets the amount of ALL monsters in the collection (in other way: gets the whole collection of monsters)
+        /// </summary>
         public int GetMonstersAmountInCollection(Dictionary<(int Stars, string Attribute), int> collectionArg, bool specificStar, bool specificAttribute, List<int> stars, List<string> attributes)
         {
             int amount = 0;
@@ -419,6 +455,9 @@ namespace Summoners_War_Statistics
             return amount;
         }
 
+        /// <summary>
+        /// List of Towers & Flags, in form of rows
+        /// </summary>
         public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
@@ -453,6 +492,9 @@ namespace Summoners_War_Statistics
             return towersFlags;
         }
 
+        /// <summary>
+        /// Method that calculates the days needed to max the specific tower/flag from the current upgrade level
+        /// </summary>
         private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
         {
             int remainingUpgradeCost = building.CalcRemainingUpgradeCost();

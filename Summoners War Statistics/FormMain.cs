@@ -15,57 +15,111 @@ namespace Summoners_War_Statistics
 {
     public partial class FormMain : Form, IView
     {
+        /// <summary>
+        /// Stores the last state of the window
+        /// </summary>
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
         private FormWindowState? LastWindowState = null;
 
         #region Properties
+        /// <summary>
+        /// Font family used in the app
+        /// </summary>
         public FontFamily FF { get; set; }
+        /// <summary>
+        /// Font used in the app
+        /// </summary>
         public Font Fnt { get; set; }
+        /// <summary>
+        /// Summary Tab
+        /// </summary>
         public ISummaryView SummaryView => summary1;
+        /// <summary>
+        /// Menu
+        /// </summary>
         public IMenuView MenuView =>  menu1;
+        /// <summary>
+        /// Monsters Tab
+        /// </summary>
         public IMonstersView MonstersView => monsters1;
+        /// <summary>
+        /// Runes Tab
+        /// </summary>
         public IRunesView RunesView => runes1;
+        /// <summary>
+        /// Dim Hole Tab
+        /// </summary>
         public IDimHoleView DimHoleView => dimHole1;
+        /// <summary>
+        /// Guild Tab
+        /// </summary>
         public IGuildView GuildView => guild1;
+        /// <summary>
+        /// Inventory Tab
+        /// </summary>
         public IOtherView OtherView => other1;
 
+        /// <summary>
+        /// Visibility of the Menu
+        /// </summary>
         public bool MenuViewVisibility
         {
             get => menu1.Visible;
             set => menu1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Summary Tab
+        /// </summary>
         public bool SummaryViewVisibility
         {
             get => summary1.Visible;
             set => summary1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Monsters Tab
+        /// </summary>
         public bool MonstersViewVisibility
         {
             get => monsters1.Visible;
             set => monsters1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Runes Tab
+        /// </summary>
         public bool RunesViewVisibility
         {
             get => runes1.Visible;
             set => runes1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Dim Hole Tab
+        /// </summary>
         public bool DimHoleViewVisibility
         {
             get => dimHole1.Visible;
             set => dimHole1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Guild Tab
+        /// </summary>
         public bool GuildViewVisibility
         {
             get => guild1.Visible;
             set => guild1.Visible = value;
         }
+        /// <summary>
+        /// Visibility of the Other Tab
+        /// </summary>
         public bool OtherViewVisibility
         {
             get => other1.Visible;
             set => other1.Visible = value;
         }
 
+        /// <summary>
+        /// Open File Dialog
+        /// </summary>
         public OpenFileDialog OpenFile
         {
             get => openFileDialog;
@@ -74,8 +128,17 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Events
+        /// <summary>
+        /// Clicked button which opens the Open File Dialog
+        /// </summary>
         public event Action SelectFileButtonClicked;
+        /// <summary>
+        /// 1st load of the app
+        /// </summary>
         public event Action Loaded;
+        /// <summary>
+        /// Event, which triggers when initialization failed (invalid JSON File)
+        /// </summary>
         public event Action InitFailed;
         #endregion
 
@@ -86,6 +149,9 @@ namespace Summoners_War_Statistics
         }
 
         #region Methods
+        /// <summary>
+        /// Loads the font
+        /// </summary>
         private void LoadFont()
         {
             byte[] fontArray = Properties.Resources.coolvetica_condensed_rg;
@@ -108,6 +174,9 @@ namespace Summoners_War_Statistics
             Fnt = new Font(FF, 14f, FontStyle.Regular);
         }
 
+        /// <summary>
+        /// Shows the Alert Message
+        /// </summary>
         public void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null)
         {
             if(e != null)
@@ -140,6 +209,9 @@ namespace Summoners_War_Statistics
             MessageBox.Show(message, caption, buttons, messageBoxIcon);
         }
 
+        /// <summary>
+        /// Hide all views
+        /// </summary>
         public void HideViews()
         {
             MenuViewVisibility = true;
@@ -151,6 +223,9 @@ namespace Summoners_War_Statistics
             OtherViewVisibility = false;
         }
 
+        /// <summary>
+        /// Triggers when initialization failed
+        /// </summary>
         public void InitFail()
         {
             InitFailed?.Invoke();

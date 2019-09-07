@@ -48,6 +48,9 @@ namespace Summoners_War_Statistics
             this.view.InitFailed += View_InitFailed;
         }
 
+        /// <summary>
+        /// Triggers when initialization failed 
+        /// </summary>
         private void View_InitFailed()
         {
             view.SummaryView.ResetOnFail();
@@ -58,6 +61,9 @@ namespace Summoners_War_Statistics
             view.OtherView.ResetOnFail();
         }
 
+        /// <summary>
+        /// 1st load of the app, sets the font etc.
+        /// </summary>
         private void View_Loaded()
         {
             List<List<Control>> controlList = new List<List<Control>>()
@@ -103,7 +109,10 @@ namespace Summoners_War_Statistics
                 }
             }
         }
-
+        
+        /// <summary>
+        /// Menu button has been clicked
+        /// </summary>
         private void MenuView_ButtonClicked(object obj)
         {
             if (obj.GetType() != typeof(PictureBox)) { return; }
@@ -162,6 +171,9 @@ namespace Summoners_War_Statistics
             else if (view.OtherViewVisibility) { view.OtherView.Other_Resize(null, EventArgs.Empty); }
         }
 
+        /// <summary>
+        /// Select File Button has been clicked
+        /// </summary>
         private void View_SelectFileButtonClicked()
         {
             Logger.log.Info("Selecting file...");
