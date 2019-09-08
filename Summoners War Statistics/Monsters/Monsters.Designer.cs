@@ -575,7 +575,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 230);
+            this.panelHeader.Size = new System.Drawing.Size(1008, 230);
             this.panelHeader.TabIndex = 69;
             // 
             // panelHeaderMid
@@ -603,7 +603,7 @@
             this.panelHeaderMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeaderMid.Location = new System.Drawing.Point(210, 42);
             this.panelHeaderMid.Name = "panelHeaderMid";
-            this.panelHeaderMid.Size = new System.Drawing.Size(433, 188);
+            this.panelHeaderMid.Size = new System.Drawing.Size(661, 188);
             this.panelHeaderMid.TabIndex = 70;
             // 
             // labelCollection
@@ -739,7 +739,7 @@
             this.panelHeaderRight.Controls.Add(this.labelLDNat4sPlus);
             this.panelHeaderRight.Controls.Add(this.labelNat5s);
             this.panelHeaderRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderRight.Location = new System.Drawing.Point(643, 42);
+            this.panelHeaderRight.Location = new System.Drawing.Point(871, 42);
             this.panelHeaderRight.Name = "panelHeaderRight";
             this.panelHeaderRight.Size = new System.Drawing.Size(137, 188);
             this.panelHeaderRight.TabIndex = 71;
@@ -770,7 +770,7 @@
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFooter.Location = new System.Drawing.Point(0, 230);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(780, 181);
+            this.panelFooter.Size = new System.Drawing.Size(1008, 349);
             this.panelFooter.TabIndex = 70;
             // 
             // objectListViewMonstersToLock
@@ -795,7 +795,7 @@
             this.objectListViewMonstersToLock.Location = new System.Drawing.Point(0, 42);
             this.objectListViewMonstersToLock.Name = "objectListViewMonstersToLock";
             this.objectListViewMonstersToLock.ShowGroups = false;
-            this.objectListViewMonstersToLock.Size = new System.Drawing.Size(726, 139);
+            this.objectListViewMonstersToLock.Size = new System.Drawing.Size(954, 307);
             this.objectListViewMonstersToLock.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewMonstersToLock.TabIndex = 59;
             this.objectListViewMonstersToLock.UseCompatibleStateImageBehavior = false;
@@ -840,9 +840,9 @@
             this.panelFooterRight.Controls.Add(this.radioButton5);
             this.panelFooterRight.Controls.Add(this.radioButton6);
             this.panelFooterRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFooterRight.Location = new System.Drawing.Point(726, 42);
+            this.panelFooterRight.Location = new System.Drawing.Point(954, 42);
             this.panelFooterRight.Name = "panelFooterRight";
-            this.panelFooterRight.Size = new System.Drawing.Size(54, 139);
+            this.panelFooterRight.Size = new System.Drawing.Size(54, 307);
             this.panelFooterRight.TabIndex = 45;
             // 
             // toolTip1
@@ -860,7 +860,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Name = "Monsters";
-            this.Size = new System.Drawing.Size(780, 411);
+            this.Size = new System.Drawing.Size(1008, 579);
             this.VisibleChanged += new System.EventHandler(this.Monsters_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).EndInit();

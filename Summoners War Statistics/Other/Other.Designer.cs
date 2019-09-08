@@ -97,7 +97,7 @@
             this.panelFriends.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFriends.Location = new System.Drawing.Point(0, 0);
             this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(780, 185);
+            this.panelFriends.Size = new System.Drawing.Size(1008, 185);
             this.panelFriends.TabIndex = 49;
             // 
             // objectListViewFriends
@@ -122,7 +122,7 @@
             this.objectListViewFriends.Location = new System.Drawing.Point(0, 42);
             this.objectListViewFriends.Name = "objectListViewFriends";
             this.objectListViewFriends.ShowGroups = false;
-            this.objectListViewFriends.Size = new System.Drawing.Size(780, 143);
+            this.objectListViewFriends.Size = new System.Drawing.Size(1008, 143);
             this.objectListViewFriends.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewFriends.TabIndex = 60;
             this.objectListViewFriends.UseCompatibleStateImageBehavior = false;
@@ -466,7 +466,7 @@
             this.panelTowersFlags.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTowersFlags.Location = new System.Drawing.Point(0, 185);
             this.panelTowersFlags.Name = "panelTowersFlags";
-            this.panelTowersFlags.Size = new System.Drawing.Size(780, 226);
+            this.panelTowersFlags.Size = new System.Drawing.Size(1008, 394);
             this.panelTowersFlags.TabIndex = 61;
             // 
             // objectListViewTowersFlags
@@ -495,7 +495,7 @@
             this.objectListViewTowersFlags.Location = new System.Drawing.Point(0, 100);
             this.objectListViewTowersFlags.Name = "objectListViewTowersFlags";
             this.objectListViewTowersFlags.ShowGroups = false;
-            this.objectListViewTowersFlags.Size = new System.Drawing.Size(780, 104);
+            this.objectListViewTowersFlags.Size = new System.Drawing.Size(1008, 272);
             this.objectListViewTowersFlags.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewTowersFlags.TabIndex = 60;
             this.objectListViewTowersFlags.UseCompatibleStateImageBehavior = false;
@@ -569,7 +569,7 @@
             this.panelTowersFlagsRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTowersFlagsRight.Location = new System.Drawing.Point(0, 42);
             this.panelTowersFlagsRight.Name = "panelTowersFlagsRight";
-            this.panelTowersFlagsRight.Size = new System.Drawing.Size(780, 58);
+            this.panelTowersFlagsRight.Size = new System.Drawing.Size(1008, 58);
             this.panelTowersFlagsRight.TabIndex = 62;
             // 
             // panel1
@@ -579,9 +579,9 @@
             this.panel1.Controls.Add(this.labelMaxedTowers);
             this.panel1.Controls.Add(this.labelMaxedFlagsText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 204);
+            this.panel1.Location = new System.Drawing.Point(0, 372);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 22);
+            this.panel1.Size = new System.Drawing.Size(1008, 22);
             this.panel1.TabIndex = 78;
             // 
             // Other
@@ -592,7 +592,7 @@
             this.Controls.Add(this.panelTowersFlags);
             this.Controls.Add(this.panelFriends);
             this.Name = "Other";
-            this.Size = new System.Drawing.Size(780, 411);
+            this.Size = new System.Drawing.Size(1008, 579);
             this.panelFriends.ResumeLayout(false);
             this.panelFriends.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).EndInit();

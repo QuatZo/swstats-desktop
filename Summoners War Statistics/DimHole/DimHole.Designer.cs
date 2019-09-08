@@ -252,7 +252,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(780, 91);
+            this.panelHeader.Size = new System.Drawing.Size(1008, 91);
             this.panelHeader.TabIndex = 43;
             // 
             // panelContent
@@ -263,7 +263,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 227);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(780, 184);
+            this.panelContent.Size = new System.Drawing.Size(1008, 352);
             this.panelContent.TabIndex = 36;
             // 
             // objectListViewDimHole
@@ -286,7 +286,7 @@
             this.objectListViewDimHole.Location = new System.Drawing.Point(0, 42);
             this.objectListViewDimHole.Name = "objectListViewDimHole";
             this.objectListViewDimHole.ShowGroups = false;
-            this.objectListViewDimHole.Size = new System.Drawing.Size(720, 142);
+            this.objectListViewDimHole.Size = new System.Drawing.Size(948, 310);
             this.objectListViewDimHole.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewDimHole.TabIndex = 58;
             this.objectListViewDimHole.UseCompatibleStateImageBehavior = false;
@@ -328,9 +328,9 @@
             this.panelButtons.Controls.Add(this.radioButton1);
             this.panelButtons.Controls.Add(this.radioButton4);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelButtons.Location = new System.Drawing.Point(720, 42);
+            this.panelButtons.Location = new System.Drawing.Point(948, 42);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(60, 142);
+            this.panelButtons.Size = new System.Drawing.Size(60, 310);
             this.panelButtons.TabIndex = 43;
             // 
             // panelFarm
@@ -357,7 +357,7 @@
             this.panelFarm.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFarm.Location = new System.Drawing.Point(0, 91);
             this.panelFarm.Name = "panelFarm";
-            this.panelFarm.Size = new System.Drawing.Size(780, 136);
+            this.panelFarm.Size = new System.Drawing.Size(1008, 136);
             this.panelFarm.TabIndex = 44;
             // 
             // panelFarmRight
@@ -366,7 +366,7 @@
             this.panelFarmRight.Controls.Add(this.labelFarmSuccess);
             this.panelFarmRight.Controls.Add(this.labelFarmTime);
             this.panelFarmRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFarmRight.Location = new System.Drawing.Point(677, 0);
+            this.panelFarmRight.Location = new System.Drawing.Point(905, 0);
             this.panelFarmRight.Name = "panelFarmRight";
             this.panelFarmRight.Size = new System.Drawing.Size(103, 136);
             this.panelFarmRight.TabIndex = 66;
@@ -669,7 +669,7 @@
             this.Controls.Add(this.panelFarm);
             this.Controls.Add(this.panelHeader);
             this.Name = "DimHole";
-            this.Size = new System.Drawing.Size(780, 411);
+            this.Size = new System.Drawing.Size(1008, 579);
             this.VisibleChanged += new System.EventHandler(this.DimHole_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).EndInit();
             this.panelHeader.ResumeLayout(false);

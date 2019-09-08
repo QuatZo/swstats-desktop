@@ -251,6 +251,13 @@ namespace Summoners_War_Statistics
         {
             LoadFont();
             Loaded?.Invoke();
+            FormMain_SizeChanged(null, EventArgs.Empty);
+            Console.WriteLine(summary1.Size);
+            Console.WriteLine(monsters1.Size);
+            Console.WriteLine(runes1.Size);
+            Console.WriteLine(dimHole1.Size);
+            Console.WriteLine(guild1.Size);
+            Console.WriteLine(other1.Size);
         }
 
         private void FormMain_Resize(object sender, EventArgs e)
