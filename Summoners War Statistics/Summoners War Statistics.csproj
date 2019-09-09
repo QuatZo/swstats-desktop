@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMonster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMonster.Designer.cs">
+      <DependentUpon>FormMonster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Other\BuildingRow.cs" />
     <Compile Include="Extensions\Building.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMonster.resx">
+      <DependentUpon>FormMonster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guild\Guild.resx">
       <DependentUpon>Guild.cs</DependentUpon>
@@ -1433,6 +1442,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\images\menu_guild_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lapis.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

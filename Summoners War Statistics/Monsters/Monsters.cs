@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
+using System.Resources;
+using Summoners_War_Statistics.Properties;
 
 namespace Summoners_War_Statistics
 {
     public partial class Monsters : UserControl, IMonstersView
     {
+        private List<Monster> monsters;
+
         #region Properties
 
         /// <summary>
@@ -35,7 +39,7 @@ namespace Summoners_War_Statistics
                     labelFire,
                     labelLDNat4Plus,
                     labelLight,
-                    labelMonsters,
+                    labelMonstersToLock,
                     labelMonsterStats,
                     labelNat5,
                     labelStarsFiveAmount,
@@ -348,8 +352,41 @@ namespace Summoners_War_Statistics
         /// </summary>
         public void Init(List<Monster> monsters, List<long> monstersLocked)
         {
+            this.monsters = monsters;
             InitMonsters?.Invoke(monsters, monstersLocked);
+            ResourceManager rm = Resources.ResourceManager;
+
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                PictureBox mon = new PictureBox();
+                string monsterName = Mapping.Instance.GetMonsterName((int)monsters[i].UnitMasterId).ToLower();
+                Image img = (Image)rm.GetObject("monster_awakened_" + monsterName);
+                try
+                {
+                    mon.Image = img;
+                    mon.Size = img.Size;
+                }
+                catch(NullReferenceException){ }
+                mon.Tag = monsters[i].UnitId;
+                mon.Name = i.ToString();
+                mon.Click += Test_Click;
+                flowLayoutPanelMonsters.Controls.Add(mon);
+            }
         }
+
+        private void Test_Click(object sender, EventArgs e)
+        {
+            foreach (PictureBox control in flowLayoutPanelMonsters.Controls)
+            {
+                if(control.Tag == ((PictureBox)sender).Tag)
+                {
+                    FormMonster formMonster = new FormMonster(monsters[int.Parse(control.Name)]);
+                    formMonster.Show();
+                    break;
+                }
+            }
+        }
+
         private void radioButton_Click(object sender, EventArgs e)
         {
             MonstersStarsChanged?.Invoke((RadioButton)sender);
