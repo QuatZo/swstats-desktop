@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Resources;
+using Summoners_War_Statistics.Properties;
 
 namespace Summoners_War_Statistics
 {
@@ -23,8 +25,8 @@ namespace Summoners_War_Statistics
 
             this.view.CanSeeMonstersTab += View_CanSeeMonstersTab;
 
-            this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
-            this.view.MonstersListView.BeforeSorting += MonstersListView_BeforeSorting;
+            this.view.MonstersLockedListView.ColumnClick += MonstersListView_ColumnClick;
+            this.view.MonstersLockedListView.BeforeSorting += MonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
 
@@ -105,7 +107,7 @@ namespace Summoners_War_Statistics
         /// </summary>
         private void MonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
         {
-            if (view.MonstersListView.PrimarySortColumn != view.MonstersListView.SecondarySortColumn) { view.MonstersListView.SecondarySortColumn = view.MonstersListView.PrimarySortColumn; }
+            if (view.MonstersLockedListView.PrimarySortColumn != view.MonstersLockedListView.SecondarySortColumn) { view.MonstersLockedListView.SecondarySortColumn = view.MonstersLockedListView.PrimarySortColumn; }
         }
 
         /// <summary>
@@ -113,13 +115,13 @@ namespace Summoners_War_Statistics
         /// </summary>
         private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if (view.MonstersListView.SecondarySortColumn != null)
+            if (view.MonstersLockedListView.SecondarySortColumn != null)
             {
-                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.MonstersListView.SecondarySortColumn.Index);
+                view.MonstersLockedListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.MonstersLockedListView.SecondarySortColumn.Index);
             }
             else
             {
-                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
+                view.MonstersLockedListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
             }
             Logger.log.Info($"[Monsters] Sorting");
         }
@@ -230,13 +232,13 @@ namespace Summoners_War_Statistics
             view.Cntrls[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
             view.Cntrls[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
 
-            view.MonstersListView.BeginUpdate();
-            int columnWidth = view.MonstersListView.Size.Width / view.MonstersListView.Columns.Count;
-            foreach(ColumnHeader column in view.MonstersListView.Columns)
+            view.MonstersLockedListView.BeginUpdate();
+            int columnWidth = view.MonstersLockedListView.Size.Width / view.MonstersLockedListView.Columns.Count;
+            foreach(ColumnHeader column in view.MonstersLockedListView.Columns)
             {
                 column.Width = columnWidth - 5;
             }
-            view.MonstersListView.EndUpdate();
+            view.MonstersLockedListView.EndUpdate();
         }
 
         /// <summary>
@@ -246,18 +248,58 @@ namespace Summoners_War_Statistics
         private void View_MonstersStarsChanged(RadioButton obj)
         {
             Logger.log.Info("[Monsters] MonstersToLock star changing");
-            view.MonstersListView.Items.Clear();
-            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
+            view.MonstersLockedListView.Items.Clear();
+            view.MonstersLockedListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
             Logger.log.Info("[Monsters] MonstersToLock star changed");
         }
 
         /// <summary>
         /// Method that initializes the whole Monster Tab
         /// </summary>
-        private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
+        private void View_InitMonsters(List<long> monstersLocked)
         {
-            view.MonstersList = monsters;
+            ResourceManager rm = Resources.ResourceManager;
+            // Summoner's monsters
+            int devilsAndRainbows = 0;
+            for (int i = 0; i < view.MonstersList.Count; i++)
+            {
+                PictureBox mon = new PictureBox();
+                string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
+                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_");
+                object obj = rm.GetObject("monster_awakened_" + monsterFileName.ToLower());
+
+                if (monsterName.ToLower() == "devilmon" || monsterName.ToLower() == "rainbowmon")
+                {
+                    devilsAndRainbows++;
+                    continue;
+                }
+                if (obj == null)
+                {
+                    obj = rm.GetObject("monster_" + monsterFileName.ToLower());
+                    if (obj == null)
+                    {
+                        obj = rm.GetObject("monster_unknown");
+                    }
+                }
+                Image img = (Image)obj;
+                mon.Image = img;
+                mon.Size = img.Size;
+
+                view.SetInfoOnHover(mon, monsterName);
+                mon.Tag = view.MonstersList[i].UnitId;
+
+                mon.Name = i.ToString();
+                mon.Click += Test_Click;
+                view.MonstersListView.Controls.Add(mon);
+                Console.WriteLine(monsterFileName);
+            }
+
+            view.MonstersListHeader = "Monsters (" + (view.MonstersList.Count - devilsAndRainbows) + ")";
             Logger.log.Info($"[Monsters] Monsters list done");
+
+            Ranking.Instance.Create(view.MonstersList);
+            Logger.log.Info("[Monsters] Ranking done");
+
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");
 
@@ -322,10 +364,23 @@ namespace Summoners_War_Statistics
             if (monsterStars.Keys.Contains((byte)1)) { view.MonsterStarsOne = monsterStars[1]; }
             Logger.log.Info($"[Monsters] Stars done");
 
-            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
+            view.MonstersLockedListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
             Logger.log.Info($"[Monsters] Monsters To Lock list done");
 
             View_MonstersCollectionItemChecked();
+        }
+        private void Test_Click(object sender, EventArgs e)
+        {
+            foreach (PictureBox control in view.MonstersListView.Controls)
+            {
+                if (control.Tag == ((PictureBox)sender).Tag)
+                {
+                    // NEEDS TO BE SINGLETON!
+                    FormMonster formMonster = new FormMonster(view.MonstersList[int.Parse(control.Name)]);
+                    formMonster.Show();
+                    break;
+                }
+            }
         }
     }
 }

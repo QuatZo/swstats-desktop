@@ -15,8 +15,6 @@ namespace Summoners_War_Statistics
 {
     public partial class Monsters : UserControl, IMonstersView
     {
-        private List<Monster> monsters;
-
         #region Properties
 
         /// <summary>
@@ -256,10 +254,21 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObjectListView MonstersListView
+        public ObjectListView MonstersLockedListView
         {
             get => objectListViewMonstersToLock;
             set => objectListViewMonstersToLock = value;
+        }
+        #endregion
+
+        #region FlowLayoutPanel MonstersListView
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public FlowLayoutPanel MonstersListView
+        {
+            get => flowLayoutPanelMonsters;
+            set => flowLayoutPanelMonsters = value;
         }
         #endregion
 
@@ -312,6 +321,14 @@ namespace Summoners_War_Statistics
             get => int.Parse(labelCollectionWhole.Text);
             set => labelCollectionWhole.Text = value.ToString();
         }
+
+        /// <summary>
+        /// Header of the Monsters List panel
+        /// </summary>
+        public string MonstersListHeader
+        {
+            set => labelMonsters.Text = value;
+        }
         #endregion
 
         #region Events
@@ -321,7 +338,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public event Action<List<Monster>, List<long>> InitMonsters;
+        public event Action<List<long>> InitMonsters;
         /// <summary>
         /// Triggers when checked RadioButton next to Monster To Lock table has been changed
         /// </summary>
@@ -352,59 +369,9 @@ namespace Summoners_War_Statistics
         /// </summary>
         public void Init(List<Monster> monsters, List<long> monstersLocked)
         {
-            this.monsters = monsters;
-            InitMonsters?.Invoke(monsters, monstersLocked);
-            ResourceManager rm = Resources.ResourceManager;
-            // Summoner's monsters
-            int devilsAndRainbows = 0;
-            for (int i = 0; i < monsters.Count; i++)
-            {
-                PictureBox mon = new PictureBox();
-                string monsterName = Mapping.Instance.GetMonsterName((int)monsters[i].UnitMasterId);
-                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_");
-                object obj = rm.GetObject("monster_awakened_" + monsterFileName.ToLower());
+            MonstersList = monsters;
+            InitMonsters?.Invoke(monstersLocked);
 
-                if(monsterName.ToLower() == "devilmon" || monsterName.ToLower() == "rainbowmon")
-                {
-                    devilsAndRainbows++;
-                    continue;
-                }
-                if (obj == null)
-                {
-                    obj = rm.GetObject("monster_" + monsterFileName.ToLower());
-                    if (obj == null)
-                    {
-                        obj = rm.GetObject("monster_unknown");
-                    }
-                }
-                Image img = (Image)obj;
-                mon.Image = img;
-                mon.Size = img.Size;
-
-                toolTip1.SetToolTip(mon, monsterName);
-                mon.Tag = monsters[i].UnitId;
-
-                mon.Name = i.ToString();
-                mon.Click += Test_Click;
-                flowLayoutPanelMonsters.Controls.Add(mon);
-                Console.WriteLine(monsterFileName);
-            }
-
-            labelMonsters.Text = "Monsters (" + (monsters.Count - devilsAndRainbows) + ")";
-        }
-
-        private void Test_Click(object sender, EventArgs e)
-        {
-            foreach (PictureBox control in flowLayoutPanelMonsters.Controls)
-            {
-                if(control.Tag == ((PictureBox)sender).Tag)
-                {
-                    // NEEDS TO BE SINGLETON!
-                    FormMonster formMonster = new FormMonster(monsters[int.Parse(control.Name)]);
-                    formMonster.Show();
-                    break;
-                }
-            }
         }
 
         private void radioButton_Click(object sender, EventArgs e)
@@ -436,8 +403,9 @@ namespace Summoners_War_Statistics
         public void ResetOnFail()
         {
             ResetMonstersStats();
-            MonstersListView.Items.Clear();
+            MonstersLockedListView.Items.Clear();
             MonstersCollectionSummoner = MonstersCollectionWhole = 0;
+            MonstersListHeader = "Monsters";
         }
 
         public void Monsters_Resize(object sender, EventArgs e)
@@ -452,6 +420,14 @@ namespace Summoners_War_Statistics
                 Resized?.Invoke();
                 CanSeeMonstersTab?.Invoke();
             }
+        }
+
+        /// <summary>
+        /// Sets the tooltip over provided control
+        /// </summary>
+        public void SetInfoOnHover(Control control, string info)
+        {
+            toolTip1.SetToolTip(control, info);
         }
         #endregion
 

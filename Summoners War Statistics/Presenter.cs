@@ -194,7 +194,7 @@ namespace Summoners_War_Statistics
                         Logger.log.Info("[Summary] DONE");
 
                         Logger.log.Info($"Monsters tab");
-                        view.MonstersView.MonstersListView.Items.Clear();
+                        view.MonstersView.MonstersLockedListView.Items.Clear();
                         view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
                         Logger.log.Info("[Monsters] DONE");
 

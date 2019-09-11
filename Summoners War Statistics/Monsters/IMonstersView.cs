@@ -38,17 +38,20 @@ namespace Summoners_War_Statistics
         List<Monster> MonstersList { get; set; }
         List<long> MonstersLocked { get; set; }
 
-        ObjectListView MonstersListView { get; set; }
+        ObjectListView MonstersLockedListView { get; set; }
 
+        FlowLayoutPanel MonstersListView { get; set; }
 
         List<int> MonstersCollectionCheckedStars { get;}
         List<string> MonstersCollectionCheckedAttributes { get; }
         int MonstersCollectionSummoner { get; set; }
         int MonstersCollectionWhole { get; set; }
+
+        string MonstersListHeader { set; }
         #endregion
 
         #region Events
-        event Action<List<Monster>, List<long>> InitMonsters;
+        event Action<List<long>> InitMonsters;
         event Action<RadioButton> MonstersStarsChanged;
         event Action Resized;
         event Action CanSeeMonstersTab;
@@ -61,6 +64,7 @@ namespace Summoners_War_Statistics
         void Front();
         void ResetOnFail();
         void Monsters_Resize(object sender, EventArgs e);
+        void SetInfoOnHover(Control control, string info);
         #endregion
     }
 }

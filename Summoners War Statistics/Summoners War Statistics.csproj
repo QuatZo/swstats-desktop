@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\RankingNotCreatedException.cs" />
     <Compile Include="FormMonster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ranking.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
