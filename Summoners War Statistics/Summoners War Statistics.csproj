@@ -102,6 +102,11 @@
     <Compile Include="Guild\IGuildView.cs" />
     <Compile Include="Menu\MenuPresenter.cs" />
     <Compile Include="Extensions\SiegeRewards.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
@@ -162,11 +167,6 @@
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\OtherPresenter.cs" />
     <Compile Include="Other\IOtherView.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Runes\RuneRow.cs" />
     <Compile Include="Runes\RunesPresenter.cs" />
     <Compile Include="Runes\IRunesView.cs" />
@@ -1445,6 +1445,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\images\monsters\monster_awakened_lapis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lushen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\done\monster_unknown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

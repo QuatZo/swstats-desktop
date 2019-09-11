@@ -61,8 +61,25 @@
             this.labelCollectionWhole = new System.Windows.Forms.Label();
             this.labelCollectionSlash = new System.Windows.Forms.Label();
             this.labelCollectionSummoner = new System.Windows.Forms.Label();
+            this.pictureBoxStars6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStars5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStars1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStars2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStars3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStars4 = new System.Windows.Forms.PictureBox();
             this.panelHeaderRight = new System.Windows.Forms.Panel();
+            this.pictureBoxLDNat4Plus = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStarsFourPlus = new System.Windows.Forms.PictureBox();
+            this.pictureBoxElementalNat5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStarFives = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLDNat4PlusClock = new System.Windows.Forms.PictureBox();
+            this.pictureBoxElementalNat5Clock = new System.Windows.Forms.PictureBox();
             this.panelHeaderLeft = new System.Windows.Forms.Panel();
+            this.pictureBoxLight = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWater = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDark = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFire = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWind = new System.Windows.Forms.PictureBox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.objectListViewMonstersToLock = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -75,48 +92,31 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.flowLayoutPanelMonsters = new System.Windows.Forms.FlowLayoutPanel();
             this.labelMonsters = new System.Windows.Forms.Label();
-            this.pictureBoxStars6 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStars5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStars1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStars2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStars3 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStars4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLDNat4Plus = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStarsFourPlus = new System.Windows.Forms.PictureBox();
-            this.pictureBoxElementalNat5 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxStarFives = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLDNat4PlusClock = new System.Windows.Forms.PictureBox();
-            this.pictureBoxElementalNat5Clock = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLight = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWater = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDark = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFire = new System.Windows.Forms.PictureBox();
-            this.pictureBoxWind = new System.Windows.Forms.PictureBox();
             this.panelHeader.SuspendLayout();
             this.panelHeaderMid.SuspendLayout();
-            this.panelHeaderRight.SuspendLayout();
-            this.panelHeaderLeft.SuspendLayout();
-            this.panelFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).BeginInit();
-            this.panelFooterRight.SuspendLayout();
-            this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).BeginInit();
+            this.panelHeaderRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4Plus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4PlusClock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).BeginInit();
+            this.panelHeaderLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).BeginInit();
+            this.panelFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).BeginInit();
+            this.panelFooterRight.SuspendLayout();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMonstersToLock
@@ -556,6 +556,66 @@
             this.labelCollectionSummoner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelCollectionSummoner, "Amount of specific monsters in Summoner\'s Collection");
             // 
+            // pictureBoxStars6
+            // 
+            this.pictureBoxStars6.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_6;
+            this.pictureBoxStars6.Location = new System.Drawing.Point(6, 3);
+            this.pictureBoxStars6.Name = "pictureBoxStars6";
+            this.pictureBoxStars6.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars6.TabIndex = 59;
+            this.pictureBoxStars6.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars6, "The amount of 6* monsters you have");
+            // 
+            // pictureBoxStars5
+            // 
+            this.pictureBoxStars5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_5;
+            this.pictureBoxStars5.Location = new System.Drawing.Point(6, 35);
+            this.pictureBoxStars5.Name = "pictureBoxStars5";
+            this.pictureBoxStars5.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars5.TabIndex = 64;
+            this.pictureBoxStars5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars5, "The amount of 5* monsters you have");
+            // 
+            // pictureBoxStars1
+            // 
+            this.pictureBoxStars1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_1;
+            this.pictureBoxStars1.Location = new System.Drawing.Point(6, 155);
+            this.pictureBoxStars1.Name = "pictureBoxStars1";
+            this.pictureBoxStars1.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars1.TabIndex = 60;
+            this.pictureBoxStars1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars1, "The amount of 1* monsters you have");
+            // 
+            // pictureBoxStars2
+            // 
+            this.pictureBoxStars2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_2;
+            this.pictureBoxStars2.Location = new System.Drawing.Point(6, 125);
+            this.pictureBoxStars2.Name = "pictureBoxStars2";
+            this.pictureBoxStars2.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars2.TabIndex = 61;
+            this.pictureBoxStars2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars2, "The amount of 2* monsters you have");
+            // 
+            // pictureBoxStars3
+            // 
+            this.pictureBoxStars3.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_3;
+            this.pictureBoxStars3.Location = new System.Drawing.Point(6, 95);
+            this.pictureBoxStars3.Name = "pictureBoxStars3";
+            this.pictureBoxStars3.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars3.TabIndex = 62;
+            this.pictureBoxStars3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars3, "The amount of 3* monsters you have");
+            // 
+            // pictureBoxStars4
+            // 
+            this.pictureBoxStars4.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_4;
+            this.pictureBoxStars4.Location = new System.Drawing.Point(6, 65);
+            this.pictureBoxStars4.Name = "pictureBoxStars4";
+            this.pictureBoxStars4.Size = new System.Drawing.Size(132, 24);
+            this.pictureBoxStars4.TabIndex = 63;
+            this.pictureBoxStars4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStars4, "The amount of 4* monsters you have");
+            // 
             // panelHeaderRight
             // 
             this.panelHeaderRight.Controls.Add(this.pictureBoxLDNat4Plus);
@@ -576,6 +636,68 @@
             this.panelHeaderRight.Size = new System.Drawing.Size(137, 188);
             this.panelHeaderRight.TabIndex = 71;
             // 
+            // pictureBoxLDNat4Plus
+            // 
+            this.pictureBoxLDNat4Plus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_lightdark;
+            this.pictureBoxLDNat4Plus.Location = new System.Drawing.Point(30, 56);
+            this.pictureBoxLDNat4Plus.Name = "pictureBoxLDNat4Plus";
+            this.pictureBoxLDNat4Plus.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxLDNat4Plus.TabIndex = 53;
+            this.pictureBoxLDNat4Plus.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLDNat4Plus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
+            // 
+            // pictureBoxStarsFourPlus
+            // 
+            this.pictureBoxStarsFourPlus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBoxStarsFourPlus.Location = new System.Drawing.Point(19, 56);
+            this.pictureBoxStarsFourPlus.Name = "pictureBoxStarsFourPlus";
+            this.pictureBoxStarsFourPlus.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxStarsFourPlus.TabIndex = 67;
+            this.pictureBoxStarsFourPlus.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStarsFourPlus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
+            // 
+            // pictureBoxElementalNat5
+            // 
+            this.pictureBoxElementalNat5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_elemental;
+            this.pictureBoxElementalNat5.Location = new System.Drawing.Point(30, -2);
+            this.pictureBoxElementalNat5.Name = "pictureBoxElementalNat5";
+            this.pictureBoxElementalNat5.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxElementalNat5.TabIndex = 56;
+            this.pictureBoxElementalNat5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
+            // 
+            // pictureBoxStarFives
+            // 
+            this.pictureBoxStarFives.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
+            this.pictureBoxStarFives.Location = new System.Drawing.Point(19, -2);
+            this.pictureBoxStarFives.Name = "pictureBoxStarFives";
+            this.pictureBoxStarFives.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxStarFives.TabIndex = 65;
+            this.pictureBoxStarFives.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxStarFives, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
+        "ou have (it calculates dupes too)");
+            // 
+            // pictureBoxLDNat4PlusClock
+            // 
+            this.pictureBoxLDNat4PlusClock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLDNat4PlusClock.Image")));
+            this.pictureBoxLDNat4PlusClock.Location = new System.Drawing.Point(30, 86);
+            this.pictureBoxLDNat4PlusClock.Name = "pictureBoxLDNat4PlusClock";
+            this.pictureBoxLDNat4PlusClock.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxLDNat4PlusClock.TabIndex = 54;
+            this.pictureBoxLDNat4PlusClock.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLDNat4PlusClock, "Days since last non-farmable 4* L&D monster");
+            // 
+            // pictureBoxElementalNat5Clock
+            // 
+            this.pictureBoxElementalNat5Clock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxElementalNat5Clock.Image")));
+            this.pictureBoxElementalNat5Clock.Location = new System.Drawing.Point(30, 28);
+            this.pictureBoxElementalNat5Clock.Name = "pictureBoxElementalNat5Clock";
+            this.pictureBoxElementalNat5Clock.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxElementalNat5Clock.TabIndex = 55;
+            this.pictureBoxElementalNat5Clock.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5Clock, "Days since last non-farmable 5* monster");
+            // 
             // panelHeaderLeft
             // 
             this.panelHeaderLeft.Controls.Add(this.labelLight);
@@ -593,6 +715,56 @@
             this.panelHeaderLeft.Name = "panelHeaderLeft";
             this.panelHeaderLeft.Size = new System.Drawing.Size(210, 188);
             this.panelHeaderLeft.TabIndex = 69;
+            // 
+            // pictureBoxLight
+            // 
+            this.pictureBoxLight.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_light;
+            this.pictureBoxLight.Location = new System.Drawing.Point(10, 93);
+            this.pictureBoxLight.Name = "pictureBoxLight";
+            this.pictureBoxLight.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxLight.TabIndex = 8;
+            this.pictureBoxLight.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxLight, "The amount of light monsters you have");
+            // 
+            // pictureBoxWater
+            // 
+            this.pictureBoxWater.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_water;
+            this.pictureBoxWater.Location = new System.Drawing.Point(10, 5);
+            this.pictureBoxWater.Name = "pictureBoxWater";
+            this.pictureBoxWater.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxWater.TabIndex = 4;
+            this.pictureBoxWater.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxWater, "The amount of water monsters you have");
+            // 
+            // pictureBoxDark
+            // 
+            this.pictureBoxDark.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_dark;
+            this.pictureBoxDark.Location = new System.Drawing.Point(10, 123);
+            this.pictureBoxDark.Name = "pictureBoxDark";
+            this.pictureBoxDark.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxDark.TabIndex = 7;
+            this.pictureBoxDark.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxDark, "The amount of dark monsters you have");
+            // 
+            // pictureBoxFire
+            // 
+            this.pictureBoxFire.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_fire;
+            this.pictureBoxFire.Location = new System.Drawing.Point(10, 35);
+            this.pictureBoxFire.Name = "pictureBoxFire";
+            this.pictureBoxFire.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxFire.TabIndex = 6;
+            this.pictureBoxFire.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxFire, "The amount of fire monsters you have");
+            // 
+            // pictureBoxWind
+            // 
+            this.pictureBoxWind.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_storm;
+            this.pictureBoxWind.Location = new System.Drawing.Point(10, 63);
+            this.pictureBoxWind.Name = "pictureBoxWind";
+            this.pictureBoxWind.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxWind.TabIndex = 5;
+            this.pictureBoxWind.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBoxWind, "The amount of wind monsters you have");
             // 
             // panelFooter
             // 
@@ -697,6 +869,7 @@
             // 
             // flowLayoutPanelMonsters
             // 
+            this.flowLayoutPanelMonsters.AutoScroll = true;
             this.flowLayoutPanelMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMonsters.Location = new System.Drawing.Point(0, 42);
             this.flowLayoutPanelMonsters.Name = "flowLayoutPanelMonsters";
@@ -717,178 +890,6 @@
             this.labelMonsters.Text = "Monsters";
             this.toolTip1.SetToolTip(this.labelMonsters, "This section shows monsters");
             // 
-            // pictureBoxStars6
-            // 
-            this.pictureBoxStars6.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_6;
-            this.pictureBoxStars6.Location = new System.Drawing.Point(6, 3);
-            this.pictureBoxStars6.Name = "pictureBoxStars6";
-            this.pictureBoxStars6.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars6.TabIndex = 59;
-            this.pictureBoxStars6.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars6, "The amount of 6* monsters you have");
-            // 
-            // pictureBoxStars5
-            // 
-            this.pictureBoxStars5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_5;
-            this.pictureBoxStars5.Location = new System.Drawing.Point(6, 35);
-            this.pictureBoxStars5.Name = "pictureBoxStars5";
-            this.pictureBoxStars5.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars5.TabIndex = 64;
-            this.pictureBoxStars5.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars5, "The amount of 5* monsters you have");
-            // 
-            // pictureBoxStars1
-            // 
-            this.pictureBoxStars1.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_1;
-            this.pictureBoxStars1.Location = new System.Drawing.Point(6, 155);
-            this.pictureBoxStars1.Name = "pictureBoxStars1";
-            this.pictureBoxStars1.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars1.TabIndex = 60;
-            this.pictureBoxStars1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars1, "The amount of 1* monsters you have");
-            // 
-            // pictureBoxStars2
-            // 
-            this.pictureBoxStars2.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_2;
-            this.pictureBoxStars2.Location = new System.Drawing.Point(6, 125);
-            this.pictureBoxStars2.Name = "pictureBoxStars2";
-            this.pictureBoxStars2.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars2.TabIndex = 61;
-            this.pictureBoxStars2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars2, "The amount of 2* monsters you have");
-            // 
-            // pictureBoxStars3
-            // 
-            this.pictureBoxStars3.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_3;
-            this.pictureBoxStars3.Location = new System.Drawing.Point(6, 95);
-            this.pictureBoxStars3.Name = "pictureBoxStars3";
-            this.pictureBoxStars3.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars3.TabIndex = 62;
-            this.pictureBoxStars3.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars3, "The amount of 3* monsters you have");
-            // 
-            // pictureBoxStars4
-            // 
-            this.pictureBoxStars4.Image = global::Summoners_War_Statistics.Properties.Resources.icon_stars_4;
-            this.pictureBoxStars4.Location = new System.Drawing.Point(6, 65);
-            this.pictureBoxStars4.Name = "pictureBoxStars4";
-            this.pictureBoxStars4.Size = new System.Drawing.Size(132, 24);
-            this.pictureBoxStars4.TabIndex = 63;
-            this.pictureBoxStars4.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStars4, "The amount of 4* monsters you have");
-            // 
-            // pictureBoxLDNat4Plus
-            // 
-            this.pictureBoxLDNat4Plus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_lightdark;
-            this.pictureBoxLDNat4Plus.Location = new System.Drawing.Point(30, 56);
-            this.pictureBoxLDNat4Plus.Name = "pictureBoxLDNat4Plus";
-            this.pictureBoxLDNat4Plus.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxLDNat4Plus.TabIndex = 53;
-            this.pictureBoxLDNat4Plus.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxLDNat4Plus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
-            // 
-            // pictureBoxStarsFourPlus
-            // 
-            this.pictureBoxStarsFourPlus.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
-            this.pictureBoxStarsFourPlus.Location = new System.Drawing.Point(19, 56);
-            this.pictureBoxStarsFourPlus.Name = "pictureBoxStarsFourPlus";
-            this.pictureBoxStarsFourPlus.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxStarsFourPlus.TabIndex = 67;
-            this.pictureBoxStarsFourPlus.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStarsFourPlus, "The amount of non-farmable (non-hoh etc.) 4*+ L&D monsters you have");
-            // 
-            // pictureBoxElementalNat5
-            // 
-            this.pictureBoxElementalNat5.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_elemental;
-            this.pictureBoxElementalNat5.Location = new System.Drawing.Point(30, -2);
-            this.pictureBoxElementalNat5.Name = "pictureBoxElementalNat5";
-            this.pictureBoxElementalNat5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxElementalNat5.TabIndex = 56;
-            this.pictureBoxElementalNat5.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
-        "ou have (it calculates dupes too)");
-            // 
-            // pictureBoxStarFives
-            // 
-            this.pictureBoxStarFives.Image = global::Summoners_War_Statistics.Properties.Resources.icon_star;
-            this.pictureBoxStarFives.Location = new System.Drawing.Point(19, -2);
-            this.pictureBoxStarFives.Name = "pictureBoxStarFives";
-            this.pictureBoxStarFives.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxStarFives.TabIndex = 65;
-            this.pictureBoxStarFives.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxStarFives, "The amount of non-farmable (nun-fuseable, non-event etc.) elemental 5* monsters y" +
-        "ou have (it calculates dupes too)");
-            // 
-            // pictureBoxLDNat4PlusClock
-            // 
-            this.pictureBoxLDNat4PlusClock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLDNat4PlusClock.Image")));
-            this.pictureBoxLDNat4PlusClock.Location = new System.Drawing.Point(30, 86);
-            this.pictureBoxLDNat4PlusClock.Name = "pictureBoxLDNat4PlusClock";
-            this.pictureBoxLDNat4PlusClock.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxLDNat4PlusClock.TabIndex = 54;
-            this.pictureBoxLDNat4PlusClock.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxLDNat4PlusClock, "Days since last non-farmable 4* L&D monster");
-            // 
-            // pictureBoxElementalNat5Clock
-            // 
-            this.pictureBoxElementalNat5Clock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxElementalNat5Clock.Image")));
-            this.pictureBoxElementalNat5Clock.Location = new System.Drawing.Point(30, 28);
-            this.pictureBoxElementalNat5Clock.Name = "pictureBoxElementalNat5Clock";
-            this.pictureBoxElementalNat5Clock.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxElementalNat5Clock.TabIndex = 55;
-            this.pictureBoxElementalNat5Clock.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxElementalNat5Clock, "Days since last non-farmable 5* monster");
-            // 
-            // pictureBoxLight
-            // 
-            this.pictureBoxLight.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_light;
-            this.pictureBoxLight.Location = new System.Drawing.Point(10, 93);
-            this.pictureBoxLight.Name = "pictureBoxLight";
-            this.pictureBoxLight.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxLight.TabIndex = 8;
-            this.pictureBoxLight.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxLight, "The amount of light monsters you have");
-            // 
-            // pictureBoxWater
-            // 
-            this.pictureBoxWater.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_water;
-            this.pictureBoxWater.Location = new System.Drawing.Point(10, 5);
-            this.pictureBoxWater.Name = "pictureBoxWater";
-            this.pictureBoxWater.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxWater.TabIndex = 4;
-            this.pictureBoxWater.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxWater, "The amount of water monsters you have");
-            // 
-            // pictureBoxDark
-            // 
-            this.pictureBoxDark.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_dark;
-            this.pictureBoxDark.Location = new System.Drawing.Point(10, 123);
-            this.pictureBoxDark.Name = "pictureBoxDark";
-            this.pictureBoxDark.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxDark.TabIndex = 7;
-            this.pictureBoxDark.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxDark, "The amount of dark monsters you have");
-            // 
-            // pictureBoxFire
-            // 
-            this.pictureBoxFire.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_fire;
-            this.pictureBoxFire.Location = new System.Drawing.Point(10, 35);
-            this.pictureBoxFire.Name = "pictureBoxFire";
-            this.pictureBoxFire.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxFire.TabIndex = 6;
-            this.pictureBoxFire.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxFire, "The amount of fire monsters you have");
-            // 
-            // pictureBoxWind
-            // 
-            this.pictureBoxWind.Image = global::Summoners_War_Statistics.Properties.Resources.icon_unit_attribute_storm;
-            this.pictureBoxWind.Location = new System.Drawing.Point(10, 63);
-            this.pictureBoxWind.Name = "pictureBoxWind";
-            this.pictureBoxWind.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxWind.TabIndex = 5;
-            this.pictureBoxWind.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBoxWind, "The amount of wind monsters you have");
-            // 
             // Monsters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -904,10 +905,27 @@
             this.panelHeader.PerformLayout();
             this.panelHeaderMid.ResumeLayout(false);
             this.panelHeaderMid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).EndInit();
             this.panelHeaderRight.ResumeLayout(false);
             this.panelHeaderRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4Plus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4PlusClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).EndInit();
             this.panelHeaderLeft.ResumeLayout(false);
             this.panelHeaderLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).EndInit();
@@ -915,23 +933,6 @@
             this.panelFooterRight.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4Plus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarsFourPlus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStarFives)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLDNat4PlusClock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElementalNat5Clock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWater)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDark)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).EndInit();
             this.ResumeLayout(false);
 
         }

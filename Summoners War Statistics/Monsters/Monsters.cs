@@ -355,23 +355,42 @@ namespace Summoners_War_Statistics
             this.monsters = monsters;
             InitMonsters?.Invoke(monsters, monstersLocked);
             ResourceManager rm = Resources.ResourceManager;
-
+            // Summoner's monsters
+            int devilsAndRainbows = 0;
             for (int i = 0; i < monsters.Count; i++)
             {
                 PictureBox mon = new PictureBox();
-                string monsterName = Mapping.Instance.GetMonsterName((int)monsters[i].UnitMasterId).ToLower();
-                Image img = (Image)rm.GetObject("monster_awakened_" + monsterName);
-                try
+                string monsterName = Mapping.Instance.GetMonsterName((int)monsters[i].UnitMasterId);
+                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_");
+                object obj = rm.GetObject("monster_awakened_" + monsterFileName.ToLower());
+
+                if(monsterName.ToLower() == "devilmon" || monsterName.ToLower() == "rainbowmon")
                 {
-                    mon.Image = img;
-                    mon.Size = img.Size;
+                    devilsAndRainbows++;
+                    continue;
                 }
-                catch(NullReferenceException){ }
+                if (obj == null)
+                {
+                    obj = rm.GetObject("monster_" + monsterFileName.ToLower());
+                    if (obj == null)
+                    {
+                        obj = rm.GetObject("monster_unknown");
+                    }
+                }
+                Image img = (Image)obj;
+                mon.Image = img;
+                mon.Size = img.Size;
+
+                toolTip1.SetToolTip(mon, monsterName);
                 mon.Tag = monsters[i].UnitId;
+
                 mon.Name = i.ToString();
                 mon.Click += Test_Click;
                 flowLayoutPanelMonsters.Controls.Add(mon);
+                Console.WriteLine(monsterFileName);
             }
+
+            labelMonsters.Text = "Monsters (" + (monsters.Count - devilsAndRainbows) + ")";
         }
 
         private void Test_Click(object sender, EventArgs e)
@@ -380,6 +399,7 @@ namespace Summoners_War_Statistics
             {
                 if(control.Tag == ((PictureBox)sender).Tag)
                 {
+                    // NEEDS TO BE SINGLETON!
                     FormMonster formMonster = new FormMonster(monsters[int.Parse(control.Name)]);
                     formMonster.Show();
                     break;

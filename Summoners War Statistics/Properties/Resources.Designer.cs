@@ -2773,9 +2773,9 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap monster_awakened_lapis {
+        internal static System.Drawing.Bitmap monster_unknown {
             get {
-                object obj = ResourceManager.GetObject("monster_awakened_lapis", resourceCulture);
+                object obj = ResourceManager.GetObject("monster_unknown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
