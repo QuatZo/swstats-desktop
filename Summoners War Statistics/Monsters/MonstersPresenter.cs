@@ -291,7 +291,6 @@ namespace Summoners_War_Statistics
                 mon.Name = i.ToString();
                 mon.Click += Test_Click;
                 view.MonstersListView.Controls.Add(mon);
-                Console.WriteLine(monsterFileName);
             }
 
             view.MonstersListHeader = "Monsters (" + (view.MonstersList.Count - devilsAndRainbows) + ")";
@@ -299,6 +298,12 @@ namespace Summoners_War_Statistics
 
             Ranking.Instance.Create(view.MonstersList);
             Logger.log.Info("[Monsters] Ranking done");
+
+            foreach(var monster in view.MonstersList)
+            {
+                (int Rank, int Spd) rank = Ranking.Instance.GetRankingSpeed(monster);
+                Console.WriteLine($"{Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)} is #{rank.Rank} in Speed Ranking with {rank.Spd} speed!");
+            }
 
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");

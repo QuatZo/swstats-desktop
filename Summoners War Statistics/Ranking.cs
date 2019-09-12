@@ -95,12 +95,18 @@ namespace Summoners_War_Statistics
             }
 
             // ALL RANKS
-            foreach (var rank in TopSpeed)
-            {
-                Console.WriteLine($"#{rank.Key}: {rank.Value.Spd} ({Mapping.Instance.GetMonsterName((int)rank.Value.Mon.UnitMasterId)})");
-            }
+            //foreach (var rank in TopSpeed)
+            //{
+            //    Console.WriteLine($"#{rank.Key}: {rank.Value.Spd} ({Mapping.Instance.GetMonsterName((int)rank.Value.Mon.UnitMasterId)})");
+            //}
             // #1
             //Console.WriteLine($"#1: {TopSpeed[1].Spd} ({Mapping.Instance.GetMonsterName((int)TopSpeed[1].Mon.UnitMasterId)})");
+        }
+
+        public (int Rank, int Spd) GetRankingSpeed(Monster monster)
+        {
+            KeyValuePair<int, (Monster Mon, int Spd)> rank = TopSpeed.Where(item => item.Value.Mon == monster).First();
+            return (rank.Key, rank.Value.Spd);
         }
         #endregion
     }

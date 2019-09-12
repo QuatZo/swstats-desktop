@@ -19,6 +19,7 @@ namespace Summoners_War_Statistics
             this.monster = monster;
 
             label1.Text = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
+            label3.Text = "#" + Ranking.Instance.GetRankingSpeed(monster).Rank;
         }
     }
 }
