@@ -32,11 +32,11 @@ namespace Summoners_War_Statistics
             monsterNames.Add(10113, "Aeilene");
             monsterNames.Add(10114, "Neal");
             monsterNames.Add(10115, "Sorin");
-            monsterNames.Add(10131, "Elucia");
-            monsterNames.Add(10132, "Iselia");
-            monsterNames.Add(10133, "Aeilene");
-            monsterNames.Add(10134, "Neal");
-            monsterNames.Add(10135, "Sorin");
+            monsterNames.Add(10131, "Elucia (2A)");
+            monsterNames.Add(10132, "Iselia (2A)");
+            monsterNames.Add(10133, "Aeilene (2A)");
+            monsterNames.Add(10134, "Neal (2A)");
+            monsterNames.Add(10135, "Sorin (2A)");
 
             monsterNames.Add(102, "Imp");
             monsterNames.Add(10211, "Fynn");
@@ -51,11 +51,11 @@ namespace Summoners_War_Statistics
             monsterNames.Add(10313, "Shannon");
             monsterNames.Add(10314, "Cheryl");
             monsterNames.Add(10315, "Camaryn");
-            monsterNames.Add(10331, "Kacey");
-            monsterNames.Add(10332, "Tatu");
-            monsterNames.Add(10333, "Shannon");
-            monsterNames.Add(10334, "Cheryl");
-            monsterNames.Add(10335, "Camaryn");
+            monsterNames.Add(10331, "Kacey (2A)");
+            monsterNames.Add(10332, "Tatu (2A)");
+            monsterNames.Add(10333, "Shannon (2A)");
+            monsterNames.Add(10334, "Cheryl (2A)");
+            monsterNames.Add(10335, "Camaryn (2A)");
 
             monsterNames.Add(104, "Yeti");
             monsterNames.Add(10411, "Kunda");
@@ -84,11 +84,11 @@ namespace Summoners_War_Statistics
             monsterNames.Add(10713, "Ramagos");
             monsterNames.Add(10714, "Lusha");
             monsterNames.Add(10715, "Gorgo");
-            monsterNames.Add(10731, "Dagora");
-            monsterNames.Add(10732, "Ursha");
-            monsterNames.Add(10733, "Ramagos");
-            monsterNames.Add(10734, "Lusha");
-            monsterNames.Add(10735, "Gorgo");
+            monsterNames.Add(10731, "Dagora (2A)");
+            monsterNames.Add(10732, "Ursha (2A)");
+            monsterNames.Add(10733, "Ramagos (2A)");
+            monsterNames.Add(10734, "Lusha (2A)");
+            monsterNames.Add(10735, "Gorgo (2A)");
 
             monsterNames.Add(108, "Elemental");
             monsterNames.Add(10811, "Daharenos");
@@ -110,11 +110,11 @@ namespace Summoners_War_Statistics
             monsterNames.Add(11013, "Ramahan");
             monsterNames.Add(11014, "Belladeon");
             monsterNames.Add(11015, "Kro");
-            monsterNames.Add(11031, "Icaru");
-            monsterNames.Add(11032, "Raoq");
-            monsterNames.Add(11033, "Ramahan");
-            monsterNames.Add(11034, "Belladeon");
-            monsterNames.Add(11035, "Kro");
+            monsterNames.Add(11031, "Icaru (2A)");
+            monsterNames.Add(11032, "Raoq (2A)");
+            monsterNames.Add(11033, "Ramahan (2A)");
+            monsterNames.Add(11034, "Belladeon (2A)");
+            monsterNames.Add(11035, "Kro (2A)");
 
             monsterNames.Add(111, "Salamander");
             monsterNames.Add(11111, "Kaimann");

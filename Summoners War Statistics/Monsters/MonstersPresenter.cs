@@ -265,8 +265,16 @@ namespace Summoners_War_Statistics
             {
                 PictureBox mon = new PictureBox();
                 string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
+                string monsterAwakened = "monster_awakened_";
                 string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_");
-                object obj = rm.GetObject("monster_awakened_" + monsterFileName.ToLower());
+
+                if (monsterName.Contains("(2A)"))
+                {
+                    monsterAwakened = "monster_secondawakened_";
+                    monsterFileName = monsterFileName.Remove(monsterFileName.Length - 1 - 2);
+                }
+
+                object obj = rm.GetObject(monsterAwakened + monsterFileName.ToLower());
 
                 if (monsterName.ToLower() == "devilmon" || monsterName.ToLower() == "rainbowmon")
                 {
@@ -299,11 +307,12 @@ namespace Summoners_War_Statistics
             Ranking.Instance.Create(view.MonstersList);
             Logger.log.Info("[Monsters] Ranking done");
 
-            foreach(var monster in view.MonstersList)
-            {
-                (int Rank, int Spd) rank = Ranking.Instance.GetRankingSpeed(monster);
-                Console.WriteLine($"{Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)} is #{rank.Rank} in Speed Ranking with {rank.Spd} speed!");
-            }
+            // Get the Speed ranking
+            //foreach(var monster in view.MonstersList)
+            //{
+            //    (int Rank, int Spd) rank = Ranking.Instance.GetRankingSpeed(monster);
+            //    Console.WriteLine($"{Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)} is #{rank.Rank} in Speed Ranking with {rank.Spd} speed!");
+            //}
 
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");
