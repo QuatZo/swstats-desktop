@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Resources;
 using Summoners_War_Statistics.Properties;
+using System.Drawing.Imaging;
 
 namespace Summoners_War_Statistics
 {
@@ -244,24 +245,59 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Event, which triggers when the active radiobox has been changed, next to Monsters To Lock table. It represent the minimum amount of stars monster needs to have (except devilmon) to be considered in table
         /// </summary>
-        /// <param name="obj"></param>
         private void View_MonstersStarsChanged(RadioButton obj)
         {
             Logger.log.Info("[Monsters] MonstersToLock star changing");
             view.MonstersLockedListView.Items.Clear();
             view.MonstersLockedListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
             Logger.log.Info("[Monsters] MonstersToLock star changed");
+
+            InitMonstersList();
         }
 
-        /// <summary>
-        /// Method that initializes the whole Monster Tab
-        /// </summary>
-        private void View_InitMonsters(List<long> monstersLocked)
+        //https://web.archive.org/web/20110827032809/http://www.switchonthecode.com/tutorials/csharp-tutorial-convert-a-color-image-to-grayscale
+        private static Bitmap MakeGrayscale3(Bitmap original)
+        {
+            //create a blank bitmap the same size as original
+            Bitmap newBitmap = new Bitmap(original.Width, original.Height);
+
+            //get a graphics object from the new image
+            Graphics g = Graphics.FromImage(newBitmap);
+
+            //create the grayscale ColorMatrix
+            ColorMatrix colorMatrix = new ColorMatrix(
+               new float[][]
+               {
+                 new float[] {.3f, .3f, .3f, 0, 0},
+                 new float[] {.59f, .59f, .59f, 0, 0},
+                 new float[] {.11f, .11f, .11f, 0, 0},
+                 new float[] {0, 0, 0, 1, 0},
+                 new float[] {0, 0, 0, 0, 1}
+               });
+
+            //create some image attributes
+            ImageAttributes attributes = new ImageAttributes();
+
+            //set the color matrix attribute
+            attributes.SetColorMatrix(colorMatrix);
+
+            //draw the original image on the new image
+            //using the grayscale color matrix
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height),
+               0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
+
+            //dispose the Graphics object
+            g.Dispose();
+            return newBitmap;
+        }
+
+        private void InitMonstersList()
         {
             view.MonstersListView.Controls.Clear();
+
+            List<MonstersToLockRow> monstersToLock = model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked);
             ResourceManager rm = Resources.ResourceManager;
-            // Summoner's monsters
-            int devilsAndRainbows = 0;
+
             for (int i = 0; i < view.MonstersList.Count; i++)
             {
                 PictureBox mon = new PictureBox();
@@ -276,12 +312,6 @@ namespace Summoners_War_Statistics
                 }
 
                 object obj = rm.GetObject(monsterAwakened + monsterFileName.ToLower());
-
-                if (monsterName.ToLower() == "devilmon" || monsterName.ToLower() == "rainbowmon")
-                {
-                    devilsAndRainbows++;
-                    continue;
-                }
                 if (obj == null)
                 {
                     obj = rm.GetObject("monster_" + monsterFileName.ToLower());
@@ -290,23 +320,45 @@ namespace Summoners_War_Statistics
                         obj = rm.GetObject("monster_unknown");
                     }
                 }
-                Image img = (Image)obj;
+                Image img;
+                img = (Image)obj;
+                mon.BorderStyle = BorderStyle.FixedSingle;
+
+                if (monstersToLock.Where(shouldBeLocked => shouldBeLocked.ID == view.MonstersList[i].UnitId).Any())
+                {
+                    img = MakeGrayscale3((Bitmap)img);
+                    view.SetInfoOnHover(mon, monsterName + " (This unit is in grayscale, because it should be locked!)");
+                }
+                else
+                {
+                    view.SetInfoOnHover(mon, monsterName);
+                }
+
                 mon.Image = img;
                 mon.Size = img.Size;
-
-                view.SetInfoOnHover(mon, monsterName);
                 mon.Tag = view.MonstersList[i].UnitId;
-
                 mon.Name = i.ToString();
                 mon.Click += Test_Click;
+
                 view.MonstersListView.Controls.Add(mon);
             }
 
-            view.MonstersListHeader = "Monsters (" + (view.MonstersList.Count - devilsAndRainbows) + ")";
+            view.MonstersListHeader = "Monsters (" + view.MonstersList.Count + ")";
             Logger.log.Info($"[Monsters] Monsters list done");
+        }
+
+        /// <summary>
+        /// Method that initializes the whole Monster Tab
+        /// </summary>
+        private void View_InitMonsters(List<long> monstersLocked)
+        {
+            view.MonstersLocked = monstersLocked;
+            Logger.log.Info($"[Monsters] Monsters locked done");
 
             Ranking.Instance.Create(view.MonstersList);
             Logger.log.Info("[Monsters] Ranking done");
+
+            InitMonstersList();
 
             // Get the Speed ranking
             //foreach(var monster in view.MonstersList)
@@ -314,9 +366,6 @@ namespace Summoners_War_Statistics
             //    (int Rank, int Spd) rank = Ranking.Instance.GetRankingSpeed(monster);
             //    Console.WriteLine($"{Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)} is #{rank.Rank} in Speed Ranking with {rank.Spd} speed!");
             //}
-
-            view.MonstersLocked = monstersLocked;
-            Logger.log.Info($"[Monsters] Monsters locked done");
 
             view.ResetMonstersStats();
             Logger.log.Info($"[Monsters] Stats reseted");

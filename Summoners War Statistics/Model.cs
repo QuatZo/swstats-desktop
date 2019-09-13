@@ -73,6 +73,7 @@ namespace Summoners_War_Statistics
                 else { sets = sets.Remove(sets.Length - 2, 2); }
 
                 mons.Add(new MonstersToLockRow(
+                        (long)monsterToLock.UnitId,
                         Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), 
                         (byte)monsterToLock.Class, 
                         (byte)monsterToLock.UnitLevel, 
