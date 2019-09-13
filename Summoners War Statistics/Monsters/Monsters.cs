@@ -308,10 +308,6 @@ namespace Summoners_War_Statistics
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event Action<List<long>> InitMonsters;
         /// <summary>
-        /// Triggers when checked RadioButton next to Monster To Lock table has been changed
-        /// </summary>
-        public event Action<RadioButton> MonstersStarsChanged;
-        /// <summary>
         /// Triggers when window ends resizing
         /// </summary>
         public event Action Resized;
@@ -339,11 +335,6 @@ namespace Summoners_War_Statistics
             MonstersList = monsters;
             InitMonsters?.Invoke(monstersLocked);
 
-        }
-
-        private void radioButton_Click(object sender, EventArgs e)
-        {
-            MonstersStarsChanged?.Invoke((RadioButton)sender);
         }
 
         /// <summary>

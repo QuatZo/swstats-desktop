@@ -22,7 +22,6 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             this.view.InitMonsters += View_InitMonsters;
-            this.view.MonstersStarsChanged += View_MonstersStarsChanged;
 
             this.view.CanSeeMonstersTab += View_CanSeeMonstersTab;
 
@@ -51,6 +50,7 @@ namespace Summoners_War_Statistics
 
             View_Resized();
             Logger.log.Info($"[Monsters] Monsters Collection done");
+            InitMonstersList();
         }
 
         /// <summary>
@@ -201,17 +201,6 @@ namespace Summoners_War_Statistics
             view.Cntrls[12].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
         }
 
-        /// <summary>
-        /// Event, which triggers when the active radiobox has been changed, next to Monsters To Lock table. It represent the minimum amount of stars monster needs to have (except devilmon) to be considered in table
-        /// </summary>
-        private void View_MonstersStarsChanged(RadioButton obj)
-        {
-            Logger.log.Info("[Monsters] MonstersToLock star changing");
-
-            InitMonstersList();
-            Logger.log.Info("[Monsters] MonstersToLock star changed");
-        }
-
         //https://web.archive.org/web/20110827032809/http://www.switchonthecode.com/tutorials/csharp-tutorial-convert-a-color-image-to-grayscale
         private static Bitmap MakeGrayscale3(Bitmap original)
         {
@@ -255,8 +244,12 @@ namespace Summoners_War_Statistics
             List<MonstersToLockRow> monstersToLock = model.MonstersToLock(view.MonstersList, view.MonstersLocked);
             ResourceManager rm = Resources.ResourceManager;
 
+            int monsterCounter = 0;
             for (int i = 0; i < view.MonstersList.Count; i++)
             {
+                if(view.MonstersCollectionCheckedStars.Count > 0 && !view.MonstersCollectionCheckedStars.Contains(Mapping.Instance.GetMonsterBaseClass((int)view.MonstersList[i].UnitMasterId)) || view.MonstersCollectionCheckedAttributes.Count > 0 && !view.MonstersCollectionCheckedAttributes.Contains(Mapping.Instance.GetMonsterAttribute((int)view.MonstersList[i].UnitMasterId))) { continue; }
+
+                monsterCounter++;
                 PictureBox mon = new PictureBox();
                 string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
                 string monsterAwakened = "monster_awakened_";
@@ -300,7 +293,7 @@ namespace Summoners_War_Statistics
                 view.MonstersListView.Controls.Add(mon);
             }
 
-            view.MonstersListHeader = "Monsters (" + view.MonstersList.Count + ")";
+            view.MonstersListHeader = "Monsters (" + monsterCounter + ")";
             Logger.log.Info($"[Monsters] Monsters list done");
         }
 
