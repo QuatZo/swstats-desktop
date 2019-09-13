@@ -12413,6 +12413,16 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap monster_pierret_wind {
+            get {
+                object obj = ResourceManager.GetObject("monster_pierret_wind", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monster_pioneer_dark {
             get {
                 object obj = ResourceManager.GetObject("monster_pioneer_dark", resourceCulture);
@@ -13796,16 +13806,6 @@ namespace Summoners_War_Statistics.Properties {
         internal static System.Drawing.Bitmap monster_werewolf_wind {
             get {
                 object obj = ResourceManager.GetObject("monster_werewolf_wind", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap monster_wind_pierret {
-            get {
-                object obj = ResourceManager.GetObject("monster_wind_pierret", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4790,5 +4790,8 @@
   <ItemGroup>
     <None Include="Properties\images\monsters\monster_rakshasa_water.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_wind.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

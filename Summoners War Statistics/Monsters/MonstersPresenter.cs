@@ -258,6 +258,7 @@ namespace Summoners_War_Statistics
         /// </summary>
         private void View_InitMonsters(List<long> monstersLocked)
         {
+            view.MonstersListView.Controls.Clear();
             ResourceManager rm = Resources.ResourceManager;
             // Summoner's monsters
             int devilsAndRainbows = 0;
@@ -266,7 +267,7 @@ namespace Summoners_War_Statistics
                 PictureBox mon = new PictureBox();
                 string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
                 string monsterAwakened = "monster_awakened_";
-                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_");
+                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_").Replace("'", "_");
 
                 if (monsterName.Contains("(2A)"))
                 {

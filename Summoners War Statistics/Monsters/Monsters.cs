@@ -406,6 +406,7 @@ namespace Summoners_War_Statistics
             MonstersLockedListView.Items.Clear();
             MonstersCollectionSummoner = MonstersCollectionWhole = 0;
             MonstersListHeader = "Monsters";
+            MonstersListView.Controls.Clear();
         }
 
         public void Monsters_Resize(object sender, EventArgs e)
