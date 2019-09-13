@@ -37,7 +37,6 @@ namespace Summoners_War_Statistics
                     labelFire,
                     labelLDNat4Plus,
                     labelLight,
-                    labelMonstersToLock,
                     labelMonsterStats,
                     labelNat5,
                     labelStarsFiveAmount,
@@ -48,9 +47,6 @@ namespace Summoners_War_Statistics
                     labelStarsTwoAmount,
                     labelWater,
                     labelWind,
-                    objectListViewMonstersToLock,
-                    radioButton5,
-                    radioButton6,
                     pictureBoxStarFives,
                     pictureBoxElementalNat5,
                     pictureBoxElementalNat5Clock,
@@ -72,8 +68,6 @@ namespace Summoners_War_Statistics
                     panelHeaderLeft,
                     panelHeaderMid,
                     panelHeaderRight,
-                    panelFooter,
-                    panelFooterRight,
                     labelCollectionStars,
                     checkedListBoxCollectionStars,
                     labelCollectionAttribute,
@@ -83,18 +77,6 @@ namespace Summoners_War_Statistics
                     labelCollectionSlash,
                     labelCollectionWhole
                 };
-
-        /// <summary>
-        /// Checkes the amount of minimum monster's stars needed to be even considered in Monster To Lock table
-        /// </summary>
-        public int MonsterStarsChecked
-        {
-            get
-            {
-                if (radioButton5.Checked) { return 5; }
-                else { return 6; }
-            }
-        }
 
         /// <summary>
         /// Amount of monsters with Water attribute
@@ -247,20 +229,6 @@ namespace Summoners_War_Statistics
         public List<long> MonstersLocked { get; set; } = new List<long>();
         #endregion
 
-        #region ObjectListView MonstersListView
-        /// <summary>
-        /// Monsters To Lock table
-        /// </summary>
-        [Browsable(false)]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObjectListView MonstersLockedListView
-        {
-            get => objectListViewMonstersToLock;
-            set => objectListViewMonstersToLock = value;
-        }
-        #endregion
-
         #region FlowLayoutPanel MonstersListView
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -360,7 +328,6 @@ namespace Summoners_War_Statistics
         public Monsters()
         {
             InitializeComponent();
-            objectListViewMonstersToLock.DoubleBuffering(true);
         }
 
         #region Methods
@@ -403,7 +370,6 @@ namespace Summoners_War_Statistics
         public void ResetOnFail()
         {
             ResetMonstersStats();
-            MonstersLockedListView.Items.Clear();
             MonstersCollectionSummoner = MonstersCollectionWhole = 0;
             MonstersListHeader = "Monsters";
             MonstersListView.Controls.Clear();

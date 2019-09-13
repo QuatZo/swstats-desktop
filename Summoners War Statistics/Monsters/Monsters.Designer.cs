@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monsters));
-            this.labelMonstersToLock = new System.Windows.Forms.Label();
             this.labelMonsterStats = new System.Windows.Forms.Label();
             this.labelWater = new System.Windows.Forms.Label();
             this.labelWind = new System.Windows.Forms.Label();
@@ -43,8 +42,6 @@
             this.labelStarsThreeAmount = new System.Windows.Forms.Label();
             this.labelStarsTwoAmount = new System.Windows.Forms.Label();
             this.labelStarsOneAmount = new System.Windows.Forms.Label();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.labelDaysNat5 = new System.Windows.Forms.Label();
             this.labelDaysLDLightning = new System.Windows.Forms.Label();
             this.labelLDNat4Plus = new System.Windows.Forms.Label();
@@ -80,14 +77,6 @@
             this.pictureBoxDark = new System.Windows.Forms.PictureBox();
             this.pictureBoxFire = new System.Windows.Forms.PictureBox();
             this.pictureBoxWind = new System.Windows.Forms.PictureBox();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.objectListViewMonstersToLock = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.panelFooterRight = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelContent = new System.Windows.Forms.Panel();
             this.flowLayoutPanelMonsters = new System.Windows.Forms.FlowLayoutPanel();
@@ -113,24 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).BeginInit();
-            this.panelFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).BeginInit();
-            this.panelFooterRight.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelMonstersToLock
-            // 
-            this.labelMonstersToLock.AutoSize = true;
-            this.labelMonstersToLock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelMonstersToLock.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonstersToLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelMonstersToLock.Location = new System.Drawing.Point(0, 0);
-            this.labelMonstersToLock.Name = "labelMonstersToLock";
-            this.labelMonstersToLock.Size = new System.Drawing.Size(198, 42);
-            this.labelMonstersToLock.TabIndex = 1;
-            this.labelMonstersToLock.Text = "Monsters To Lock";
-            this.toolTip1.SetToolTip(this.labelMonstersToLock, "This is the section when you can see monsters you should lock");
             // 
             // labelMonsterStats
             // 
@@ -287,36 +260,6 @@
             this.labelStarsOneAmount.Text = "0";
             this.labelStarsOneAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.labelStarsOneAmount, "The amount of 1* monsters you have");
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Checked = true;
-            this.radioButton6.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton6.Location = new System.Drawing.Point(3, 50);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(43, 23);
-            this.radioButton6.TabIndex = 44;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "6★";
-            this.toolTip1.SetToolTip(this.radioButton6, "Choose which monsters you want to see:\r\n5*+\r\n6*");
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.Click += new System.EventHandler(this.radioButton_Click);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.radioButton5.Location = new System.Drawing.Point(3, 21);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(43, 23);
-            this.radioButton5.TabIndex = 43;
-            this.radioButton5.Text = "5★";
-            this.toolTip1.SetToolTip(this.radioButton5, "Choose which monsters you want to see:\r\n5*+\r\n6*");
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.Click += new System.EventHandler(this.radioButton_Click);
             // 
             // labelDaysNat5
             // 
@@ -766,89 +709,6 @@
             this.pictureBoxWind.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBoxWind, "The amount of wind monsters you have");
             // 
-            // panelFooter
-            // 
-            this.panelFooter.Controls.Add(this.objectListViewMonstersToLock);
-            this.panelFooter.Controls.Add(this.panelFooterRight);
-            this.panelFooter.Controls.Add(this.labelMonstersToLock);
-            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 442);
-            this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1008, 137);
-            this.panelFooter.TabIndex = 70;
-            // 
-            // objectListViewMonstersToLock
-            // 
-            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn19);
-            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn20);
-            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn21);
-            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn22);
-            this.objectListViewMonstersToLock.AllColumns.Add(this.olvColumn1);
-            this.objectListViewMonstersToLock.AllowColumnReorder = true;
-            this.objectListViewMonstersToLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.objectListViewMonstersToLock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn19,
-            this.olvColumn20,
-            this.olvColumn21,
-            this.olvColumn22,
-            this.olvColumn1});
-            this.objectListViewMonstersToLock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.objectListViewMonstersToLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.objectListViewMonstersToLock.FullRowSelect = true;
-            this.objectListViewMonstersToLock.HideSelection = false;
-            this.objectListViewMonstersToLock.Location = new System.Drawing.Point(0, 42);
-            this.objectListViewMonstersToLock.Name = "objectListViewMonstersToLock";
-            this.objectListViewMonstersToLock.ShowGroups = false;
-            this.objectListViewMonstersToLock.Size = new System.Drawing.Size(954, 95);
-            this.objectListViewMonstersToLock.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.objectListViewMonstersToLock.TabIndex = 59;
-            this.objectListViewMonstersToLock.UseCompatibleStateImageBehavior = false;
-            this.objectListViewMonstersToLock.View = System.Windows.Forms.View.Details;
-            // 
-            // olvColumn19
-            // 
-            this.olvColumn19.AspectName = "Name";
-            this.olvColumn19.CellPadding = null;
-            this.olvColumn19.Text = "Name";
-            this.olvColumn19.Width = 164;
-            // 
-            // olvColumn20
-            // 
-            this.olvColumn20.AspectName = "Stars";
-            this.olvColumn20.CellPadding = null;
-            this.olvColumn20.Text = "Stars";
-            this.olvColumn20.Width = 226;
-            // 
-            // olvColumn21
-            // 
-            this.olvColumn21.AspectName = "Level";
-            this.olvColumn21.CellPadding = null;
-            this.olvColumn21.Text = "Level";
-            this.olvColumn21.Width = 131;
-            // 
-            // olvColumn22
-            // 
-            this.olvColumn22.AspectName = "Runes";
-            this.olvColumn22.CellPadding = null;
-            this.olvColumn22.Text = "Runes";
-            this.olvColumn22.Width = 109;
-            // 
-            // olvColumn1
-            // 
-            this.olvColumn1.AspectName = "RuneSets";
-            this.olvColumn1.CellPadding = null;
-            this.olvColumn1.Text = "Rune sets";
-            // 
-            // panelFooterRight
-            // 
-            this.panelFooterRight.Controls.Add(this.radioButton5);
-            this.panelFooterRight.Controls.Add(this.radioButton6);
-            this.panelFooterRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelFooterRight.Location = new System.Drawing.Point(954, 42);
-            this.panelFooterRight.Name = "panelFooterRight";
-            this.panelFooterRight.Size = new System.Drawing.Size(54, 95);
-            this.panelFooterRight.TabIndex = 45;
-            // 
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -863,7 +723,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 230);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1008, 212);
+            this.panelContent.Size = new System.Drawing.Size(1008, 349);
             this.panelContent.TabIndex = 71;
             this.toolTip1.SetToolTip(this.panelContent, "This section shows monsters");
             // 
@@ -873,7 +733,7 @@
             this.flowLayoutPanelMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelMonsters.Location = new System.Drawing.Point(0, 42);
             this.flowLayoutPanelMonsters.Name = "flowLayoutPanelMonsters";
-            this.flowLayoutPanelMonsters.Size = new System.Drawing.Size(1008, 170);
+            this.flowLayoutPanelMonsters.Size = new System.Drawing.Size(1008, 307);
             this.flowLayoutPanelMonsters.TabIndex = 0;
             this.toolTip1.SetToolTip(this.flowLayoutPanelMonsters, "This section shows monsters");
             // 
@@ -896,7 +756,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Name = "Monsters";
             this.Size = new System.Drawing.Size(1008, 579);
@@ -926,11 +785,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDark)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFire)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWind)).EndInit();
-            this.panelFooter.ResumeLayout(false);
-            this.panelFooter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewMonstersToLock)).EndInit();
-            this.panelFooterRight.ResumeLayout(false);
-            this.panelFooterRight.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
             this.ResumeLayout(false);
@@ -938,8 +792,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelMonstersToLock;
         private System.Windows.Forms.Label labelMonsterStats;
         private System.Windows.Forms.PictureBox pictureBoxWater;
         private System.Windows.Forms.PictureBox pictureBoxWind;
@@ -957,8 +809,6 @@
         private System.Windows.Forms.Label labelStarsThreeAmount;
         private System.Windows.Forms.Label labelStarsTwoAmount;
         private System.Windows.Forms.Label labelStarsOneAmount;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Label labelDaysNat5;
         private System.Windows.Forms.Label labelDaysLDLightning;
         private System.Windows.Forms.Label labelLDNat4Plus;
@@ -981,14 +831,6 @@
         private System.Windows.Forms.Panel panelHeaderMid;
         private System.Windows.Forms.Panel panelHeaderRight;
         private System.Windows.Forms.Panel panelHeaderLeft;
-        private System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.Panel panelFooterRight;
-        private BrightIdeasSoftware.ObjectListView objectListViewMonstersToLock;
-        private BrightIdeasSoftware.OLVColumn olvColumn19;
-        private BrightIdeasSoftware.OLVColumn olvColumn20;
-        private BrightIdeasSoftware.OLVColumn olvColumn21;
-        private BrightIdeasSoftware.OLVColumn olvColumn22;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckedListBox checkedListBoxCollectionStars;
         private System.Windows.Forms.CheckedListBox checkedListBoxCollectionAttribute;

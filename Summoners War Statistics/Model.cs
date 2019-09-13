@@ -32,7 +32,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// List of monsters needed to lock, in form of rows
         /// </summary>
-        public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
+        public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked)
         {
             List<MonstersToLockRow> mons = new List<MonstersToLockRow>();
 
@@ -43,7 +43,7 @@ namespace Summoners_War_Statistics
 
                 // 14314 - rainbowmon
                 // 15105 - devilmon
-                if (((monster.Class >= stars && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
+                if (((monster.Class >= 5 && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
             }
 
             foreach (Monster monsterToLock in monstersToLock)

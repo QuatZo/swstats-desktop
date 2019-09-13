@@ -15,8 +15,6 @@ namespace Summoners_War_Statistics
         Size SizeWindow { get; }
         List<Control> Cntrls { get; }
 
-        int MonsterStarsChecked { get; }
-
         ushort MonsterAttributeWater { get; set; }
         ushort MonsterAttributeFire { get; set; }
         ushort MonsterAttributeWind { get; set; }
@@ -37,8 +35,6 @@ namespace Summoners_War_Statistics
 
         List<Monster> MonstersList { get; set; }
         List<long> MonstersLocked { get; set; }
-
-        ObjectListView MonstersLockedListView { get; set; }
 
         FlowLayoutPanel MonstersListView { get; set; }
 
