@@ -133,6 +133,10 @@ namespace Summoners_War_Statistics
         /// </summary>
         public event Action SelectFileButtonClicked;
         /// <summary>
+        /// Clicked button which uses the test JSON file
+        /// </summary>
+        public event Action TestFileButtonClicked;
+        /// <summary>
         /// 1st load of the app
         /// </summary>
         public event Action Loaded;
@@ -282,6 +286,11 @@ namespace Summoners_War_Statistics
         private void FormMain_ResizeBegin(object sender, EventArgs e)
         {
             RunesView.FlowPanel.SuspendLayout();
+        }
+
+        private void PictureBoxTestJson_Click(object sender, EventArgs e)
+        {
+            TestFileButtonClicked?.Invoke();
         }
     }
 }

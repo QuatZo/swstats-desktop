@@ -333,6 +333,16 @@ namespace Summoners_War_Statistics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap banner_testjsonfile {
+            get {
+                object obj = ResourceManager.GetObject("banner_testjsonfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BB {
             get {
                 object obj = ResourceManager.GetObject("BB", resourceCulture);

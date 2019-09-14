@@ -250,6 +250,7 @@
     <EmbeddedResource Include="Properties\fonts\coolvetica rg.ttf" />
     <None Include="Properties\images\banner.xcf" />
     <None Include="Properties\images\menu.xcf" />
+    <None Include="Properties\json\test.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -259,6 +260,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="test.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -4792,6 +4794,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\images\monsters\monster_pierret_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\banner_testjsonfile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

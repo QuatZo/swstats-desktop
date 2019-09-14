@@ -8,6 +8,8 @@ using System.Drawing;
 using System.Resources;
 using Summoners_War_Statistics.Properties;
 using System.Drawing.Imaging;
+using System.Reflection;
+using System.IO;
 
 namespace Summoners_War_Statistics
 {
@@ -307,8 +309,6 @@ namespace Summoners_War_Statistics
 
             Ranking.Instance.Create(view.MonstersList);
             Logger.log.Info("[Monsters] Ranking done");
-
-            InitMonstersList();
 
             // Get the Speed ranking
             //foreach(var monster in view.MonstersList)
