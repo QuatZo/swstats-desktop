@@ -28,6 +28,8 @@ namespace Summoners_War_Statistics
             TopSpeed = new Dictionary<int, (Monster Mon, int Spd)>();
         }
 
+        //private 
+
         public void Create(List<Monster> monsters)
         {
             ResetRanking();
@@ -81,7 +83,7 @@ namespace Summoners_War_Statistics
                     if(Mapping.Instance.GetRuneSet((int)rune.SetId).ToLower() == "swift") { swiftRunes++; }
                     
                 }
-                if (swiftRunes >= 4) { spd += (int)Math.Ceiling((double)monsters[i - 1].Spd * .25); }
+                spd += (int)Math.Ceiling((double)monsters[i - 1].Spd * (int)(swiftRunes / 4) * .25);
                 
                 topSpeed.Add(i, (monsters[i - 1], spd));
             }

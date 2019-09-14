@@ -16,10 +16,14 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         /// <summary>
-        /// Stores the last state of the window
+        /// Adds the font resources to the memory
         /// </summary>
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+
+        /// <summary>
+        /// Stores the last state of the window
+        /// </summary>
         private FormWindowState? LastWindowState = null;
 
         #region Properties
