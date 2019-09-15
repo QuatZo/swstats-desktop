@@ -63,10 +63,10 @@ namespace Summoners_War_Statistics
                 foreach (KeyValuePair<string, byte> runesOnMonster in runesOfSpecificSet)
                 {
                     byte tempRunesOnMonster = runesOnMonster.Value;
-                    while (tempRunesOnMonster >= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key)))
+                    while (tempRunesOnMonster >= Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key))
                     {
                         sets += $"{runesOnMonster.Key}, ";
-                        tempRunesOnMonster -= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key));
+                        tempRunesOnMonster -= (byte)Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key);
                     }
                 }
                 if (sets.Length == 0) { sets = "-"; }

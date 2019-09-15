@@ -33,12 +33,23 @@
             this.labelSpeed = new System.Windows.Forms.Label();
             this.labelSpeedRank = new System.Windows.Forms.Label();
             this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
+            this.labelHPRank = new System.Windows.Forms.Label();
+            this.labelHP = new System.Windows.Forms.Label();
+            this.labelDEFRank = new System.Windows.Forms.Label();
+            this.labelDEF = new System.Windows.Forms.Label();
+            this.labelATKRank = new System.Windows.Forms.Label();
+            this.labelATK = new System.Windows.Forms.Label();
+            this.labelCDMGRank = new System.Windows.Forms.Label();
+            this.labelCDMG = new System.Windows.Forms.Label();
+            this.labelEffRank = new System.Windows.Forms.Label();
+            this.labelEff = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelName.Location = new System.Drawing.Point(109, 9);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
@@ -48,7 +59,8 @@
             // labelSpeed
             // 
             this.labelSpeed.AutoSize = true;
-            this.labelSpeed.Location = new System.Drawing.Point(109, 36);
+            this.labelSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSpeed.Location = new System.Drawing.Point(-3, 105);
             this.labelSpeed.Name = "labelSpeed";
             this.labelSpeed.Size = new System.Drawing.Size(38, 13);
             this.labelSpeed.TabIndex = 1;
@@ -57,7 +69,8 @@
             // labelSpeedRank
             // 
             this.labelSpeedRank.AutoSize = true;
-            this.labelSpeedRank.Location = new System.Drawing.Point(153, 36);
+            this.labelSpeedRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSpeedRank.Location = new System.Drawing.Point(41, 105);
             this.labelSpeedRank.Name = "labelSpeedRank";
             this.labelSpeedRank.Size = new System.Drawing.Size(13, 13);
             this.labelSpeedRank.TabIndex = 2;
@@ -72,12 +85,122 @@
             this.pictureBoxAvatar.TabIndex = 3;
             this.pictureBoxAvatar.TabStop = false;
             // 
+            // labelHPRank
+            // 
+            this.labelHPRank.AutoSize = true;
+            this.labelHPRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelHPRank.Location = new System.Drawing.Point(41, 141);
+            this.labelHPRank.Name = "labelHPRank";
+            this.labelHPRank.Size = new System.Drawing.Size(13, 13);
+            this.labelHPRank.TabIndex = 5;
+            this.labelHPRank.Text = "0";
+            // 
+            // labelHP
+            // 
+            this.labelHP.AutoSize = true;
+            this.labelHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelHP.Location = new System.Drawing.Point(-3, 141);
+            this.labelHP.Name = "labelHP";
+            this.labelHP.Size = new System.Drawing.Size(22, 13);
+            this.labelHP.TabIndex = 4;
+            this.labelHP.Text = "HP";
+            // 
+            // labelDEFRank
+            // 
+            this.labelDEFRank.AutoSize = true;
+            this.labelDEFRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDEFRank.Location = new System.Drawing.Point(41, 175);
+            this.labelDEFRank.Name = "labelDEFRank";
+            this.labelDEFRank.Size = new System.Drawing.Size(13, 13);
+            this.labelDEFRank.TabIndex = 7;
+            this.labelDEFRank.Text = "0";
+            // 
+            // labelDEF
+            // 
+            this.labelDEF.AutoSize = true;
+            this.labelDEF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelDEF.Location = new System.Drawing.Point(-3, 175);
+            this.labelDEF.Name = "labelDEF";
+            this.labelDEF.Size = new System.Drawing.Size(28, 13);
+            this.labelDEF.TabIndex = 6;
+            this.labelDEF.Text = "DEF";
+            // 
+            // labelATKRank
+            // 
+            this.labelATKRank.AutoSize = true;
+            this.labelATKRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelATKRank.Location = new System.Drawing.Point(41, 207);
+            this.labelATKRank.Name = "labelATKRank";
+            this.labelATKRank.Size = new System.Drawing.Size(13, 13);
+            this.labelATKRank.TabIndex = 9;
+            this.labelATKRank.Text = "0";
+            // 
+            // labelATK
+            // 
+            this.labelATK.AutoSize = true;
+            this.labelATK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelATK.Location = new System.Drawing.Point(-3, 207);
+            this.labelATK.Name = "labelATK";
+            this.labelATK.Size = new System.Drawing.Size(28, 13);
+            this.labelATK.TabIndex = 8;
+            this.labelATK.Text = "ATK";
+            // 
+            // labelCDMGRank
+            // 
+            this.labelCDMGRank.AutoSize = true;
+            this.labelCDMGRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCDMGRank.Location = new System.Drawing.Point(41, 239);
+            this.labelCDMGRank.Name = "labelCDMGRank";
+            this.labelCDMGRank.Size = new System.Drawing.Size(13, 13);
+            this.labelCDMGRank.TabIndex = 11;
+            this.labelCDMGRank.Text = "0";
+            // 
+            // labelCDMG
+            // 
+            this.labelCDMG.AutoSize = true;
+            this.labelCDMG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelCDMG.Location = new System.Drawing.Point(-3, 239);
+            this.labelCDMG.Name = "labelCDMG";
+            this.labelCDMG.Size = new System.Drawing.Size(39, 13);
+            this.labelCDMG.TabIndex = 10;
+            this.labelCDMG.Text = "CDMG";
+            // 
+            // labelEffRank
+            // 
+            this.labelEffRank.AutoSize = true;
+            this.labelEffRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelEffRank.Location = new System.Drawing.Point(41, 276);
+            this.labelEffRank.Name = "labelEffRank";
+            this.labelEffRank.Size = new System.Drawing.Size(13, 13);
+            this.labelEffRank.TabIndex = 13;
+            this.labelEffRank.Text = "0";
+            // 
+            // labelEff
+            // 
+            this.labelEff.AutoSize = true;
+            this.labelEff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelEff.Location = new System.Drawing.Point(-3, 276);
+            this.labelEff.Name = "labelEff";
+            this.labelEff.Size = new System.Drawing.Size(20, 13);
+            this.labelEff.TabIndex = 12;
+            this.labelEff.Text = "Eff";
+            // 
             // FormMonster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(184, 361);
+            this.Controls.Add(this.labelEffRank);
+            this.Controls.Add(this.labelEff);
+            this.Controls.Add(this.labelCDMGRank);
+            this.Controls.Add(this.labelCDMG);
+            this.Controls.Add(this.labelATKRank);
+            this.Controls.Add(this.labelATK);
+            this.Controls.Add(this.labelDEFRank);
+            this.Controls.Add(this.labelDEF);
+            this.Controls.Add(this.labelHPRank);
+            this.Controls.Add(this.labelHP);
             this.Controls.Add(this.pictureBoxAvatar);
             this.Controls.Add(this.labelSpeedRank);
             this.Controls.Add(this.labelSpeed);
@@ -103,5 +226,15 @@
         private System.Windows.Forms.Label labelSpeed;
         private System.Windows.Forms.Label labelSpeedRank;
         private System.Windows.Forms.PictureBox pictureBoxAvatar;
+        private System.Windows.Forms.Label labelHPRank;
+        private System.Windows.Forms.Label labelHP;
+        private System.Windows.Forms.Label labelDEFRank;
+        private System.Windows.Forms.Label labelDEF;
+        private System.Windows.Forms.Label labelATKRank;
+        private System.Windows.Forms.Label labelATK;
+        private System.Windows.Forms.Label labelCDMGRank;
+        private System.Windows.Forms.Label labelCDMG;
+        private System.Windows.Forms.Label labelEffRank;
+        private System.Windows.Forms.Label labelEff;
     }
 }

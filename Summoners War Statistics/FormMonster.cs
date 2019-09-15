@@ -40,8 +40,24 @@ namespace Summoners_War_Statistics
             Text = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
 
             labelName.Text = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
+
             (int Rank, int Spd) spdRank = Ranking.Instance.GetRankingSpeed(this.monster);
             labelSpeedRank.Text = $"#{spdRank.Rank} ({spdRank.Spd})";
+
+            (int Rank, int HP) hpRank = Ranking.Instance.GetRankingHP(this.monster);
+            labelHPRank.Text = $"#{hpRank.Rank} ({hpRank.HP})";
+
+            (int Rank, int DEF) defRank = Ranking.Instance.GetRankingDEF(this.monster);
+            labelDEFRank.Text = $"#{defRank.Rank} ({defRank.DEF})";
+
+            (int Rank, int ATK) atkRank = Ranking.Instance.GetRankingATK(this.monster);
+            labelATKRank.Text = $"#{atkRank.Rank} ({atkRank.ATK})";
+
+            (int Rank, int CDMG) cdmgRank = Ranking.Instance.GetRankingCDMG(this.monster);
+            labelCDMGRank.Text = $"#{cdmgRank.Rank} ({cdmgRank.CDMG})";
+
+            (int Rank, double Eff) effRank = Ranking.Instance.GetRankingEff(this.monster);
+            labelEffRank.Text = $"#{effRank.Rank} ({Math.Round(effRank.Eff, 2)})";
 
             string monsterName = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
             string monsterAwakened = "monster_awakened_";

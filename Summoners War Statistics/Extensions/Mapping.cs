@@ -3152,13 +3152,13 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Gets the amount of runes of specific type needed to include the bonus
         /// </summary>
-        public string GetRuneSetAmount(string set)
+        public int GetRuneSetAmount(string set)
         {
             foreach (KeyValuePair<int, (string Name, byte Amount)> runeSet in runeSets)
             {
-                if (runeSet.Value.Name.ToLower() == set.ToLower()) { return runeSet.Value.Amount.ToString(); }
+                if (runeSet.Value.Name.ToLower() == set.ToLower()) { return runeSet.Value.Amount; }
             }
-            return "Unknown Rune Set Amount";
+            return 0;
         }
 
         /// <summary>
