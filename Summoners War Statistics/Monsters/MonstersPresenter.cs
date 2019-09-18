@@ -299,23 +299,23 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Monsters] Monsters list done");
         }
 
+        private void SortByAttribute()
+        {
+            view.MonstersList = view.MonstersList.OrderBy(p => p.Attribute).ThenBy(q=>Mapping.Instance.GetMonsterBaseClass((int)q.UnitMasterId)).ThenBy(r=>r.UnitMasterId).ToList();
+        }
+
         /// <summary>
         /// Method that initializes the whole Monster Tab
         /// </summary>
         private void View_InitMonsters(List<long> monstersLocked)
         {
+            SortByAttribute();
+
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");
 
             Ranking.Instance.Create(view.MonstersList);
             Logger.log.Info("[Monsters] Ranking done");
-
-            // Get the Speed ranking
-            //foreach(var monster in view.MonstersList)
-            //{
-            //    (int Rank, int Spd) rank = Ranking.Instance.GetRankingSpeed(monster);
-            //    Console.WriteLine($"{Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)} is #{rank.Rank} in Speed Ranking with {rank.Spd} speed!");
-            //}
 
             view.ResetMonstersStats();
             Logger.log.Info($"[Monsters] Stats reseted");
@@ -386,9 +386,7 @@ namespace Summoners_War_Statistics
             {
                 if (control.Tag == ((PictureBox)sender).Tag)
                 {
-                    // NEEDS TO BE SINGLETON!
-                    FormMonster formMonster = new FormMonster(view.MonstersList[int.Parse(control.Name)]);
-                    formMonster.Show();
+                    FormMonster.Instance.Display(view.MonstersList[int.Parse(control.Name)]);
                     break;
                 }
             }

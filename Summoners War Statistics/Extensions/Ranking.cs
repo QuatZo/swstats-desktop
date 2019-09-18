@@ -182,15 +182,6 @@ namespace Summoners_War_Statistics
                 TopCDMG.Add(monsters.Count - i, (topCDMGArray[i].Value.Mon, topCDMGArray[i].Value.CDMG));
                 TopEff.Add(monsters.Count - i, (topEffArray[i].Value.Mon, topEffArray[i].Value.Eff));
             }
-
-
-            // ALL RANKS
-            //foreach (var rank in TopSpeed)
-            //{
-            //    Console.WriteLine($"#{rank.Key}: {rank.Value.Spd} ({Mapping.Instance.GetMonsterName((int)rank.Value.Mon.UnitMasterId)})");
-            //}
-            // #1
-            //Console.WriteLine($"#1: {TopSpeed[1].Spd} ({Mapping.Instance.GetMonsterName((int)TopSpeed[1].Mon.UnitMasterId)})");
         }
 
         public (int Rank, int Spd) GetRankingSpeed(Monster monster)

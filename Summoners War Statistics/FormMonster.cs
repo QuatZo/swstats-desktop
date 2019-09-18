@@ -16,7 +16,9 @@ namespace Summoners_War_Statistics
 {
     public partial class FormMonster : Form
     {
-        private readonly Monster monster;
+        private static FormMonster instance = null;
+
+        public static FormMonster Instance => instance ?? (instance = new FormMonster());
 
         /// <summary>
         /// Font family used in the app
@@ -27,39 +29,49 @@ namespace Summoners_War_Statistics
         /// </summary>
         public Font Fnt { get; set; }
 
-        public FormMonster(Monster monster)
+        private FormMonster()
         {
             InitializeComponent();
 
+            FormClosing += FormMonster_FormClosing;
+        }
+
+        private void FormMonster_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+
+        public void Display(Monster monster)
+        {
             LoadFont();
             SetFont();
 
             ResourceManager rm = Resources.ResourceManager;
 
-            this.monster = monster;
-            Text = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
+            Text = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
 
-            labelName.Text = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
+            labelName.Text = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
 
-            (int Rank, int Spd) spdRank = Ranking.Instance.GetRankingSpeed(this.monster);
+            (int Rank, int Spd) spdRank = Ranking.Instance.GetRankingSpeed(monster);
             labelSpeedRank.Text = $"#{spdRank.Rank} ({spdRank.Spd})";
 
-            (int Rank, int HP) hpRank = Ranking.Instance.GetRankingHP(this.monster);
+            (int Rank, int HP) hpRank = Ranking.Instance.GetRankingHP(monster);
             labelHPRank.Text = $"#{hpRank.Rank} ({hpRank.HP})";
 
-            (int Rank, int DEF) defRank = Ranking.Instance.GetRankingDEF(this.monster);
+            (int Rank, int DEF) defRank = Ranking.Instance.GetRankingDEF(monster);
             labelDEFRank.Text = $"#{defRank.Rank} ({defRank.DEF})";
 
-            (int Rank, int ATK) atkRank = Ranking.Instance.GetRankingATK(this.monster);
+            (int Rank, int ATK) atkRank = Ranking.Instance.GetRankingATK(monster);
             labelATKRank.Text = $"#{atkRank.Rank} ({atkRank.ATK})";
 
-            (int Rank, int CDMG) cdmgRank = Ranking.Instance.GetRankingCDMG(this.monster);
+            (int Rank, int CDMG) cdmgRank = Ranking.Instance.GetRankingCDMG(monster);
             labelCDMGRank.Text = $"#{cdmgRank.Rank} ({cdmgRank.CDMG})";
 
-            (int Rank, double Eff) effRank = Ranking.Instance.GetRankingEff(this.monster);
+            (int Rank, double Eff) effRank = Ranking.Instance.GetRankingEff(monster);
             labelEffRank.Text = $"#{effRank.Rank} ({Math.Round(effRank.Eff, 2)})";
 
-            string monsterName = Mapping.Instance.GetMonsterName((int)this.monster.UnitMasterId);
+            string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
             string monsterAwakened = "monster_awakened_";
             string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_").Replace("'", "_");
 
@@ -82,7 +94,10 @@ namespace Summoners_War_Statistics
             img = (Image)obj;
             pictureBoxAvatar.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxAvatar.Image = img;
+
+            Show();
         }
+        
 
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
