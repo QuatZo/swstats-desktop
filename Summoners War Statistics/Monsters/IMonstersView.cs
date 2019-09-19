@@ -34,6 +34,7 @@ namespace Summoners_War_Statistics
         ushort DaysSinceLastLDLightning { get; set; }
 
         List<Monster> MonstersList { get; set; }
+        List<Monster> MonstersListAffectedByCollection { get; set; }
         List<long> MonstersLocked { get; set; }
 
         FlowLayoutPanel MonstersListView { get; set; }

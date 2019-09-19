@@ -219,14 +219,13 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// List of the monsters owned by Summoner
         /// </summary>
-        [Browsable(false)]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Monster> MonstersList { get; set; } = new List<Monster>();
         /// <summary>
         /// List of locked monsters owned by Summoner
         /// </summary>
         public List<long> MonstersLocked { get; set; } = new List<long>();
+
+        public List<Monster> MonstersListAffectedByCollection { get; set; } = new List<Monster>();
         #endregion
 
         #region FlowLayoutPanel MonstersListView

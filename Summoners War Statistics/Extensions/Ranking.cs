@@ -19,12 +19,12 @@ namespace Summoners_War_Statistics
         }
 
         #region Properties
-        private Dictionary<int, (Monster Mon, int Spd)> TopSpeed;
-        private Dictionary<int, (Monster Mon, int HP)> TopHP;
-        private Dictionary<int, (Monster Mon, int DEF)> TopDEF;
-        private Dictionary<int, (Monster Mon, int ATK)> TopATK;
-        private Dictionary<int, (Monster Mon, int CDMG)> TopCDMG;
-        private Dictionary<int, (Monster Mon, double Eff)> TopEff;
+        private Dictionary<int, (Monster Mon, int Spd)> TopSpeed = new Dictionary<int, (Monster Mon, int Spd)>();
+        private Dictionary<int, (Monster Mon, int HP)> TopHP = new Dictionary<int, (Monster Mon, int HP)>();
+        private Dictionary<int, (Monster Mon, int DEF)> TopDEF = new Dictionary<int, (Monster Mon, int DEF)>();
+        private Dictionary<int, (Monster Mon, int ATK)> TopATK = new Dictionary<int, (Monster Mon, int ATK)>();
+        private Dictionary<int, (Monster Mon, int CDMG)> TopCDMG = new Dictionary<int, (Monster Mon, int CDMG)>();
+        private Dictionary<int, (Monster Mon, double Eff)> TopEff = new Dictionary<int, (Monster Mon, double Eff)>();
         #endregion
 
         #region Methods
@@ -38,9 +38,16 @@ namespace Summoners_War_Statistics
             TopEff = new Dictionary<int, (Monster Mon, double Eff)>();
         }
 
-        public void Create(List<Monster> monsters)
+        public void Create(List<Monster> monsters, bool force=false)
         {
-            ResetRanking();
+            if (force && (TopATK.Count > 1 || TopCDMG.Count > 1 || TopDEF.Count > 1 || TopEff.Count > 1 || TopHP.Count > 1 || TopSpeed.Count > 1))
+            {
+                ResetRanking();
+            }
+            else if (TopATK.Count > 1 || TopCDMG.Count > 1 || TopDEF.Count > 1 || TopEff.Count > 1 || TopHP.Count > 1 || TopSpeed.Count > 1)
+            {
+                throw new RankingAlreadyExistsException("If you want to force new Ranking, please use \"force\" argument.");
+            }
 
             if (monsters.Count < 1) { throw new InvalidJSONException(); }
 

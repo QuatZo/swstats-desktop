@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\RankingAlreadyExistsException.cs" />
     <Compile Include="Exceptions\RankingNotCreatedException.cs" />
     <Compile Include="FormMonster.cs">
       <SubType>Form</SubType>

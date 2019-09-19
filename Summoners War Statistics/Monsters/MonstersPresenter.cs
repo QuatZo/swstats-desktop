@@ -52,7 +52,11 @@ namespace Summoners_War_Statistics
 
             View_Resized();
             Logger.log.Info($"[Monsters] Monsters Collection done");
+
             InitMonstersList();
+
+            Ranking.Instance.Create(view.MonstersListAffectedByCollection, force: true);
+            Logger.log.Info("[Monsters] Ranking done");
         }
 
         /// <summary>
@@ -246,12 +250,14 @@ namespace Summoners_War_Statistics
             List<MonstersToLockRow> monstersToLock = model.MonstersToLock(view.MonstersList, view.MonstersLocked);
             ResourceManager rm = Resources.ResourceManager;
 
+            List<Monster> monsters = new List<Monster>();
             int monsterCounter = 0;
             for (int i = 0; i < view.MonstersList.Count; i++)
             {
                 if(view.MonstersCollectionCheckedStars.Count > 0 && !view.MonstersCollectionCheckedStars.Contains(Mapping.Instance.GetMonsterBaseClass((int)view.MonstersList[i].UnitMasterId)) || view.MonstersCollectionCheckedAttributes.Count > 0 && !view.MonstersCollectionCheckedAttributes.Contains(Mapping.Instance.GetMonsterAttribute((int)view.MonstersList[i].UnitMasterId))) { continue; }
 
                 monsterCounter++;
+                monsters.Add(view.MonstersList[i]);
                 PictureBox mon = new PictureBox();
                 string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
                 string monsterAwakened = "monster_awakened_";
@@ -294,7 +300,7 @@ namespace Summoners_War_Statistics
 
                 view.MonstersListView.Controls.Add(mon);
             }
-
+            view.MonstersListAffectedByCollection = monsters;
             view.MonstersListHeader = "Monsters (" + monsterCounter + ")";
             Logger.log.Info($"[Monsters] Monsters list done");
         }
@@ -313,9 +319,6 @@ namespace Summoners_War_Statistics
 
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");
-
-            Ranking.Instance.Create(view.MonstersList);
-            Logger.log.Info("[Monsters] Ranking done");
 
             view.ResetMonstersStats();
             Logger.log.Info($"[Monsters] Stats reseted");
