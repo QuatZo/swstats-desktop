@@ -43,6 +43,7 @@
             this.labelCDMG = new System.Windows.Forms.Label();
             this.labelEffRank = new System.Windows.Forms.Label();
             this.labelEff = new System.Windows.Forms.Label();
+            this.labelPlace = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,12 +186,23 @@
             this.labelEff.TabIndex = 12;
             this.labelEff.Text = "Eff";
             // 
+            // labelPlace
+            // 
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelPlace.Location = new System.Drawing.Point(108, 9);
+            this.labelPlace.Name = "labelPlace";
+            this.labelPlace.Size = new System.Drawing.Size(34, 13);
+            this.labelPlace.TabIndex = 14;
+            this.labelPlace.Text = "Place";
+            // 
             // FormMonster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(184, 361);
+            this.Controls.Add(this.labelPlace);
             this.Controls.Add(this.labelEffRank);
             this.Controls.Add(this.labelEff);
             this.Controls.Add(this.labelCDMGRank);
@@ -236,5 +248,6 @@
         private System.Windows.Forms.Label labelCDMG;
         private System.Windows.Forms.Label labelEffRank;
         private System.Windows.Forms.Label labelEff;
+        private System.Windows.Forms.Label labelPlace;
     }
 }

@@ -25,6 +25,7 @@ namespace Summoners_War_Statistics
         private Dictionary<int, (Monster Mon, int ATK)> TopATK = new Dictionary<int, (Monster Mon, int ATK)>();
         private Dictionary<int, (Monster Mon, int CDMG)> TopCDMG = new Dictionary<int, (Monster Mon, int CDMG)>();
         private Dictionary<int, (Monster Mon, double Eff)> TopEff = new Dictionary<int, (Monster Mon, double Eff)>();
+        private Dictionary<int, (Monster Mon, double Points)> Top = new Dictionary<int, (Monster Mon, double Points)>();
         #endregion
 
         #region Methods
@@ -36,6 +37,7 @@ namespace Summoners_War_Statistics
             TopATK = new Dictionary<int, (Monster Mon, int ATK)>();
             TopCDMG = new Dictionary<int, (Monster Mon, int CDMG)>();
             TopEff = new Dictionary<int, (Monster Mon, double Eff)>();
+            Top = new Dictionary<int, (Monster Mon, double Points)>();
         }
 
         public void Create(List<Monster> monsters, bool force=false)
@@ -57,6 +59,7 @@ namespace Summoners_War_Statistics
             Dictionary<int, (Monster Mon, int ATK)> topATK = new Dictionary<int, (Monster Mon, int ATK)>();
             Dictionary<int, (Monster Mon, int CDMG)> topCDMG = new Dictionary<int, (Monster Mon, int CDMG)>();
             Dictionary<int, (Monster Mon, double Eff)> topEff = new Dictionary<int, (Monster Mon, double Eff)>();
+            Dictionary<int, (Monster Mon, double Points)> top = new Dictionary<int, (Monster Mon, double Points)>();
 
             for (int i = 1; i <= monsters.Count; i++)
             {
@@ -180,14 +183,36 @@ namespace Summoners_War_Statistics
             Array.Sort(topCDMGArray, (a, b) => a.Value.CDMG.CompareTo(b.Value.CDMG));
             Array.Sort(topEffArray, (a, b) => a.Value.Eff.CompareTo(b.Value.Eff));
 
+
             for (int i = 0; i < monsters.Count; i++)
             {
-                TopSpeed.Add(monsters.Count - i, (topSpeedArray[i].Value.Mon, topSpeedArray[i].Value.Spd));
-                TopHP.Add(monsters.Count - i, (topHPArray[i].Value.Mon, topHPArray[i].Value.HP));
-                TopDEF.Add(monsters.Count - i, (topDEFArray[i].Value.Mon, topDEFArray[i].Value.DEF));
-                TopATK.Add(monsters.Count - i, (topATKArray[i].Value.Mon, topATKArray[i].Value.ATK));
-                TopCDMG.Add(monsters.Count - i, (topCDMGArray[i].Value.Mon, topCDMGArray[i].Value.CDMG));
-                TopEff.Add(monsters.Count - i, (topEffArray[i].Value.Mon, topEffArray[i].Value.Eff));
+                int rank = monsters.Count - i;
+                TopSpeed.Add(rank, (topSpeedArray[i].Value.Mon, topSpeedArray[i].Value.Spd));
+                TopHP.Add(rank, (topHPArray[i].Value.Mon, topHPArray[i].Value.HP));
+                TopDEF.Add(rank, (topDEFArray[i].Value.Mon, topDEFArray[i].Value.DEF));
+                TopATK.Add(rank, (topATKArray[i].Value.Mon, topATKArray[i].Value.ATK));
+                TopCDMG.Add(rank, (topCDMGArray[i].Value.Mon, topCDMGArray[i].Value.CDMG));
+                TopEff.Add(rank, (topEffArray[i].Value.Mon, topEffArray[i].Value.Eff));
+            }
+
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                int rank = monsters.Count - i;
+                top.Add(rank, (monsters[i], 0));
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopSpeed.Where(m => m.Value.Mon == monsters[i]).First().Key / TopSpeed.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopHP.Where(m => m.Value.Mon == monsters[i]).First().Key / TopHP.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopDEF.Where(m => m.Value.Mon == monsters[i]).First().Key / TopDEF.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopATK.Where(m => m.Value.Mon == monsters[i]).First().Key / TopATK.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopCDMG.Where(m => m.Value.Mon == monsters[i]).First().Key / TopCDMG.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopEff.Where(m => m.Value.Mon == monsters[i]).First().Key / TopEff.Count);
+            }
+
+            KeyValuePair<int, (Monster Mon, double Points)>[] topArray = top.ToArray();
+            Array.Sort(topArray, (a, b) => a.Value.Points.CompareTo(b.Value.Points));
+
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                Top.Add(monsters.Count - i, (topArray[i].Value.Mon, topArray[i].Value.Points));
             }
         }
 
@@ -220,6 +245,12 @@ namespace Summoners_War_Statistics
         {
             KeyValuePair<int, (Monster Mon, double Eff)> rank = TopEff.Where(item => item.Value.Mon == monster).First();
             return (rank.Key, rank.Value.Eff);
+        }
+
+        public (int Rank, double Points) GetRankingTop(Monster monster)
+        {
+            KeyValuePair<int, (Monster Mon, double Points)> rank = Top.Where(item => item.Value.Mon == monster).First();
+            return (rank.Key, rank.Value.Points);
         }
         #endregion
     }

@@ -55,8 +55,16 @@ namespace Summoners_War_Statistics
 
             InitMonstersList();
 
-            Ranking.Instance.Create(view.MonstersListAffectedByCollection, force: true);
-            Logger.log.Info("[Monsters] Ranking done");
+            try
+            {
+                Ranking.Instance.Create(view.MonstersListAffectedByCollection, force: true);
+                Logger.log.Info("[Monsters] Ranking done");
+            }
+            catch (InvalidJSONException)
+            {
+                _ = MessageBox.Show("The JSON file you provided is invalid OR you didn't provide any JSON file at all.", "Invalid JSON File!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>

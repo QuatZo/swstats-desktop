@@ -71,6 +71,9 @@ namespace Summoners_War_Statistics
             (int Rank, double Eff) effRank = Ranking.Instance.GetRankingEff(monster);
             labelEffRank.Text = $"#{effRank.Rank} ({Math.Round(effRank.Eff, 2)})";
 
+            (int Rank, double Points) topRank = Ranking.Instance.GetRankingTop(monster);
+            labelPlace.Text = $"#{topRank.Rank} ({Math.Round(topRank.Points, 2)})";
+
             string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
             string monsterAwakened = "monster_awakened_";
             string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_").Replace("'", "_");
