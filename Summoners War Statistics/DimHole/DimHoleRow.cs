@@ -24,6 +24,10 @@ namespace Summoners_War_Statistics
         /// </summary>
         public ushort EnergyNeeded { get; set; }
         /// <summary>
+        /// Days needed to 2A specific monster
+        /// </summary>
+        public ushort DaysNeeded { get; set; }
+        /// <summary>
         /// When specific monster will get 2A. String, because of infinity
         /// </summary>
         public string When2A { get; set; }
@@ -31,16 +35,13 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Constructor of DimHoleRow class
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="axpneeded"></param>
-        /// <param name="energyneeded"></param>
-        /// <param name="when2a"></param>
-        public DimHoleRow(string name, uint axpneeded, ushort energyneeded, string when2a)
+        public DimHoleRow(string name, uint axpNeeded, ushort energyNeeded, ushort daysNeeded, string when2A)
         {
             Name = name;
-            AXPNeeded = axpneeded;
-            EnergyNeeded = energyneeded;
-            When2A = when2a;
+            AXPNeeded = axpNeeded;
+            EnergyNeeded = energyNeeded;
+            DaysNeeded = daysNeeded;
+            When2A = when2A;
         }
     }
 }

@@ -73,6 +73,7 @@
             this.labelTextB1 = new System.Windows.Forms.Label();
             this.labelDimHoleFloor = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -271,6 +272,7 @@
             this.objectListViewDimHole.AllColumns.Add(this.olvColumn19);
             this.objectListViewDimHole.AllColumns.Add(this.olvColumn20);
             this.objectListViewDimHole.AllColumns.Add(this.olvColumn21);
+            this.objectListViewDimHole.AllColumns.Add(this.olvColumn1);
             this.objectListViewDimHole.AllColumns.Add(this.olvColumn22);
             this.objectListViewDimHole.AllowColumnReorder = true;
             this.objectListViewDimHole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -278,6 +280,7 @@
             this.olvColumn19,
             this.olvColumn20,
             this.olvColumn21,
+            this.olvColumn1,
             this.olvColumn22});
             this.objectListViewDimHole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewDimHole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
@@ -660,6 +663,13 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
             // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "DaysNeeded";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Days Needed";
+            this.olvColumn1.Width = 99;
+            // 
             // DimHole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,5 +743,6 @@
         private System.Windows.Forms.Label labelFarmSuccess;
         private System.Windows.Forms.Panel panelFarmRight;
         private System.Windows.Forms.ToolTip toolTip1;
+        private BrightIdeasSoftware.OLVColumn olvColumn1;
     }
 }

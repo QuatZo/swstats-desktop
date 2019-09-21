@@ -9,8 +9,9 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Calculate the time needed to 2A the monster
         /// </summary>
-        public string DimHoleCalculateTime(ushort energyNeeded, short energy, DateTime energyGainStart, bool listView)
+        public (ushort Days, string Date) DimHoleCalculateTime(ushort energyNeeded, short energy, DateTime energyGainStart, bool listView)
         {
+            ushort days = 0;
             string date;
 
             if (listView) { date = "You have enough dimensional energy to 2A this unit."; }
@@ -22,11 +23,11 @@ namespace Summoners_War_Statistics
                 DateTime energyGain = energyGainStart;
                 energyGain = energyGain.AddHours(2 * energyToGet);
 
-                if (listView) { date = energyGain.ToString("dd-MMMM-yyyy HH:mm:ss"); }
+                if (listView) { date = energyGain.ToString("dd-MMMM-yyyy HH:mm:ss"); days = (ushort)Math.Ceiling((double)energyNeeded / 12); }
                 else { date = $"{energyGain.ToString("dd-MMMM-yyyy HH:mm:ss")} you'll have {energyNeeded} dimensional energy if you don't use any."; }
             }
 
-            return date;
+            return (days, date);
         }
 
         /// <summary>

@@ -201,7 +201,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info($"[Dimension Hole] Dim Hole energy gain start done");
             view.DimHoleMonsters = new List<Awakening>();
 
-            view.SummonerDimensionalHoleEnergyMaxInfo = model.DimHoleCalculateTime(view.SummonerDimensionalHoleEnergyMax, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, false);
+            (ushort Days, string Date) dimHoleCalculatedTime = model.DimHoleCalculateTime(view.SummonerDimensionalHoleEnergyMax, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, false);
+
+            view.SummonerDimensionalHoleEnergyMaxInfo = dimHoleCalculatedTime.Date;
             Logger.log.Info($"[Dimension Hole] Dim Hole energy max INFO done");
             view.Cntrls[3].Location = new Point(view.SizeWindow.Width - 5 - view.Cntrls[3].Size.Width, view.Cntrls[1].Location.Y);
 
@@ -230,8 +232,8 @@ namespace Summoners_War_Statistics
                     if (dimHoleLevel.Key.Checked == true) { view.AxpPerLevel = dimHoleLevel.Value; break; }
                 }
                 ushort energyNeeded = (ushort)Math.Ceiling((decimal)(mon.MaxExp - mon.Exp) / view.AxpPerLevel);
-                string dateWhen2A = model.DimHoleCalculateTime(energyNeeded, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, true);
-                dimHoleRows.Add(new DimHoleRow(Mapping.Instance.GetMonsterName((int)mon.UnitMasterId), (uint)(mon.MaxExp - mon.Exp), energyNeeded, dateWhen2A ));
+                (ushort Days, string Date) when2A = model.DimHoleCalculateTime(energyNeeded, view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, true);
+                dimHoleRows.Add(new DimHoleRow(Mapping.Instance.GetMonsterName((int)mon.UnitMasterId), (uint)(mon.MaxExp - mon.Exp), energyNeeded, when2A.Days, when2A.Date ));
             }
             view.DimHoleMonstersListView.AddObjects(dimHoleRows);
             Logger.log.Info($"[Dimension Hole] Dim Hole calculator done");
@@ -258,14 +260,19 @@ namespace Summoners_War_Statistics
                         item.Add(Math.Ceiling(decimal.Parse(item[1]) / view.AxpPerLevel).ToString());
                         continue;
                     }
-                    if(j == 3)
+                    if (j == 3)
                     {
-                        item.Add(model.DimHoleCalculateTime(ushort.Parse(item[2]), view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, true));
+                        item.Add(model.DimHoleCalculateTime(ushort.Parse(item[2]), view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, true).Days.ToString());
+                        continue;
+                    }
+                    if (j == 4)
+                    {
+                        item.Add(model.DimHoleCalculateTime(ushort.Parse(item[2]), view.SummonerDimensionalHoleEnergy, view.DimensionalEnergyGainStart, true).Date);
                         continue;
                     }
                     item.Add(view.DimHoleMonstersListView.Items[i].SubItems[j].Text);
                 }
-                rows.Add(new DimHoleRow(item[0], uint.Parse(item[1]), ushort.Parse(item[2]), item[3]));
+                rows.Add(new DimHoleRow(item[0], uint.Parse(item[1]), ushort.Parse(item[2]), ushort.Parse(item[3]), item[4]));
             }
             view.DimHoleMonstersListView.SetObjects(rows);
             Logger.log.Info($"[Dimension Hole] Dim Hole calculator done");
