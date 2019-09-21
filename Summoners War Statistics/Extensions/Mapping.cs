@@ -1719,6 +1719,7 @@ namespace Summoners_War_Statistics
             monsterHoH.Add(13414);
             monsterHoH.Add(13315);
             monsterHoH.Add(22113);
+            monsterHoH.Add(20111);
             #endregion
 
             #region Monster Fusion
