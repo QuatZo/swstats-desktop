@@ -47,6 +47,7 @@
             this.olvColumn19 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn20 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn21 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn22 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelButtons = new System.Windows.Forms.Panel();
             this.panelFarm = new System.Windows.Forms.Panel();
@@ -73,7 +74,6 @@
             this.labelTextB1 = new System.Windows.Forms.Label();
             this.labelDimHoleFloor = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDimensionalHoleEnergy)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -315,6 +315,13 @@
             this.olvColumn21.CellPadding = null;
             this.olvColumn21.Text = "Energy Needed";
             this.olvColumn21.Width = 131;
+            // 
+            // olvColumn1
+            // 
+            this.olvColumn1.AspectName = "DaysNeeded";
+            this.olvColumn1.CellPadding = null;
+            this.olvColumn1.Text = "Days Needed";
+            this.olvColumn1.Width = 99;
             // 
             // olvColumn22
             // 
@@ -662,13 +669,6 @@
             this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Help";
-            // 
-            // olvColumn1
-            // 
-            this.olvColumn1.AspectName = "DaysNeeded";
-            this.olvColumn1.CellPadding = null;
-            this.olvColumn1.Text = "Days Needed";
-            this.olvColumn1.Width = 99;
             // 
             // DimHole
             // 

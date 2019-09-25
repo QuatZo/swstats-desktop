@@ -199,12 +199,12 @@ namespace Summoners_War_Statistics
             {
                 int rank = monsters.Count - i;
                 top.Add(rank, (monsters[i], 0));
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopSpeed.Where(m => m.Value.Mon == monsters[i]).First().Key / TopSpeed.Count);
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopHP.Where(m => m.Value.Mon == monsters[i]).First().Key / TopHP.Count);
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopDEF.Where(m => m.Value.Mon == monsters[i]).First().Key / TopDEF.Count);
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopATK.Where(m => m.Value.Mon == monsters[i]).First().Key / TopATK.Count);
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopCDMG.Where(m => m.Value.Mon == monsters[i]).First().Key / TopCDMG.Count);
-                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopEff.Where(m => m.Value.Mon == monsters[i]).First().Key / TopEff.Count);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopSpeed.Where(m => m.Value.Mon == monsters[i]).First().Key / TopSpeed.Count + (double)TopSpeed.Where(m => m.Value.Mon == monsters[i]).First().Value.Spd / TopSpeed[1].Spd);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopHP.Where(m => m.Value.Mon == monsters[i]).First().Key / TopHP.Count + (double)TopHP.Where(m => m.Value.Mon == monsters[i]).First().Value.HP / TopHP[1].HP);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopDEF.Where(m => m.Value.Mon == monsters[i]).First().Key / TopDEF.Count + (double)TopDEF.Where(m => m.Value.Mon == monsters[i]).First().Value.DEF / TopDEF[1].DEF);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopATK.Where(m => m.Value.Mon == monsters[i]).First().Key / TopATK.Count + (double)TopATK.Where(m => m.Value.Mon == monsters[i]).First().Value.ATK / TopATK[1].ATK);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopCDMG.Where(m => m.Value.Mon == monsters[i]).First().Key / TopCDMG.Count + (double)TopCDMG.Where(m => m.Value.Mon == monsters[i]).First().Value.CDMG / TopCDMG[1].CDMG);
+                top[rank] = (top[rank].Mon, top[rank].Points + 1 - (double)TopEff.Where(m => m.Value.Mon == monsters[i]).First().Key / TopEff.Count + (double)TopEff.Where(m => m.Value.Mon == monsters[i]).First().Value.Eff / TopEff[1].Eff);
             }
 
             KeyValuePair<int, (Monster Mon, double Points)>[] topArray = top.ToArray();
