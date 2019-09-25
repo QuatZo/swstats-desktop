@@ -128,6 +128,7 @@ namespace Summoners_War_Statistics
         /// </summary>
         private void View_InitOther(List<Friend> friendsList, List<Decoration> decorations)
         {
+            view.Decorations = decorations;
             view.SummonerFriendsList.AddObjects(model.FriendsList(friendsList));
             Logger.log.Info($"[Friends] Friends to list done");
 
@@ -139,6 +140,7 @@ namespace Summoners_War_Statistics
         /// </summary>
         private void InitTowersFlags()
         {
+            view.SummonerTowersFlagsList.Items.Clear();
             view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(view.Decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));
             Logger.log.Info($"[Towers&Flags] Towers & Flags to list done");
 

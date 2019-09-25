@@ -466,15 +466,24 @@ namespace Summoners_War_Statistics
         public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
+            bool exists;
             foreach (var building in buildings)
             {
+                exists = false;
+                Console.WriteLine($"{building.Id}, {building.Name}, {building.ActualLevel}");
                 foreach (var decoration in decorations)
                 {
+                    Console.WriteLine($"\t{decoration.MasterId}. {decoration.Level}");
                     if (decoration.MasterId == building.Id)
                     {
                         building.ActualLevel = (int)decoration.Level;
+                        exists = true;
                         break;
                     }
+                }
+                if (!exists)
+                {
+                    building.ActualLevel = 0;
                 }
                 string bonus = "-";
 
