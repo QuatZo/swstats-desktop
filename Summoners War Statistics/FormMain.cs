@@ -187,10 +187,18 @@ namespace Summoners_War_Statistics
         /// </summary>
         public void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null)
         {
+            string tab = "Unknown";
             if(e != null)
             {
                 Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
-                Logger.log.Error(e.StackTrace);
+                string stackTrace = e.StackTrace;
+                Logger.log.Error(stackTrace);
+
+                if (stackTrace.Contains("Summary")) { tab = "Summary"; }
+                else if (stackTrace.Contains("Monsters")) { tab = "Monsters"; }
+                else if (stackTrace.Contains("Runes")) { tab = "Runes"; }
+                else if (stackTrace.Contains("DimHole")) { tab = "Dim Hole"; }
+                else if (stackTrace.Contains("Other")) { tab = "Other"; }
             }
 
             string caption = "";
@@ -213,7 +221,7 @@ namespace Summoners_War_Statistics
                     buttons = MessageBoxButtons.OKCancel;
                     break;
             }
-
+            if(caption == "Error") { message = $"{message}\nError occured while trying to init {tab} tab.\n\nMore info in log file."; }
             MessageBox.Show(message, caption, buttons, messageBoxIcon);
         }
 

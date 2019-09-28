@@ -53,17 +53,23 @@ namespace Summoners_War_Statistics
 
         private void View_TestFileButtonClicked()
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "Summoners_War_Statistics.test.json";
+            try {
+                var assembly = Assembly.GetExecutingAssembly();
+                var resourceName = "Summoners_War_Statistics.test.json";
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
+                using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    Logger.log.Info("------------------ TEST FILE ------------------");
+                    File.WriteAllText("temp.json", reader.ReadToEnd());
+                    Init("temp.json");
+                    File.Delete("temp.json");
+                    Logger.log.Info("------------------ INITIALIZATION OF TEST FILE HAS ENDED ------------------");
+                }
+            }
+            catch (UnauthorizedAccessException)
             {
-                Logger.log.Info("------------------ TEST FILE ------------------");
-                File.WriteAllText("temp.json", reader.ReadToEnd());
-                Init("temp.json");
-                File.Delete("temp.json");
-                Logger.log.Info("------------------ INITIALIZATION OF TEST FILE HAS ENDED ------------------");
+                MessageBox.Show("Access denied. Run program as an administrator to use this feature.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -238,35 +244,35 @@ namespace Summoners_War_Statistics
 
         private void Init(string filename)
         {
-                var json = JsonSwex.FromJson(File.ReadAllText($"{filename}"));
-                Logger.log.Info($"Initializing...");
+            var json = JsonSwex.FromJson(File.ReadAllText($"{filename}"));
+            Logger.log.Info($"Initializing...");
 
-                Logger.log.Info($"Summary tab");
-                view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks);
-                Logger.log.Info("[Summary] DONE");
+            Logger.log.Info($"Summary tab");
+            view.SummaryView.Init(json.Summoner, json.DimensionHoleInfo, json.MonsterList, json.LockedMonstersList, json.Runes, File.GetLastWriteTime($"{view.OpenFile.FileName}"), json.Country, json.Decks);
+            Logger.log.Info("[Summary] DONE");
 
-                Logger.log.Info($"Monsters tab");
-                view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
-                Logger.log.Info("[Monsters] DONE");
+            Logger.log.Info($"Monsters tab");
+            view.MonstersView.Init(json.MonsterList, json.LockedMonstersList);
+            Logger.log.Info("[Monsters] DONE");
 
-                Logger.log.Info($"Runes tab");
-                view.RunesView.Init(model.RunesEvenEquipped(json.Runes, json.MonsterList), model.MonstersMasterId(json.MonsterList));
-                Logger.log.Info("[Runes] DONE");
+            Logger.log.Info($"Runes tab");
+            view.RunesView.Init(model.RunesEvenEquipped(json.Runes, json.MonsterList), model.MonstersMasterId(json.MonsterList));
+            Logger.log.Info("[Runes] DONE");
 
-                Logger.log.Info($"Dimension Hole tab");
-                view.DimHoleView.DimHoleMonstersListView.Items.Clear();
-                view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
-                Logger.log.Info("[Dimension Hole] DONE");
+            Logger.log.Info($"Dimension Hole tab");
+            view.DimHoleView.DimHoleMonstersListView.Items.Clear();
+            view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
+            Logger.log.Info("[Dimension Hole] DONE");
 
-                Logger.log.Info($"Guild tab");
-                view.GuildView.GuildMembersList.Items.Clear();
-                view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
-                Logger.log.Info("[Guild] DONE");
+            Logger.log.Info($"Guild tab");
+            view.GuildView.GuildMembersList.Items.Clear();
+            view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
+            Logger.log.Info("[Guild] DONE");
 
-                Logger.log.Info($"Other tab");
-                view.OtherView.SummonerFriendsList.Items.Clear();
-                view.OtherView.Init(json.FriendList, json.DecorationList, json.GuildWarRankingStat, json.ArenaStats["rating_id"]);
-                Logger.log.Info("[Other] DONE");
+            Logger.log.Info($"Other tab");
+            view.OtherView.SummonerFriendsList.Items.Clear();
+            view.OtherView.Init(json.FriendList, json.DecorationList, json.GuildWarRankingStat, json.ArenaStats["rating_id"]);
+            Logger.log.Info("[Other] DONE");
         }
     }
 }
