@@ -46,7 +46,6 @@
             this.labelMaxedTowers = new System.Windows.Forms.Label();
             this.labelMaxedFlags = new System.Windows.Forms.Label();
             this.labelWingsPerWeek = new System.Windows.Forms.Label();
-            this.comboBoxWingsPerDay = new System.Windows.Forms.ComboBox();
             this.labelGuildBattlesWon = new System.Windows.Forms.Label();
             this.comboBoxGuildBattlesWon = new System.Windows.Forms.ComboBox();
             this.labelSiegeResult1 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.comboBoxRankingSiege = new System.Windows.Forms.ComboBox();
             this.labelRankingGuild = new System.Windows.Forms.Label();
             this.comboBoxRankingGuild = new System.Windows.Forms.ComboBox();
+            this.numericUpDownWingsPerDay = new System.Windows.Forms.NumericUpDown();
             this.panelTowersFlags = new System.Windows.Forms.Panel();
             this.objectListViewTowersFlags = new BrightIdeasSoftware.ObjectListView();
             this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -70,6 +70,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWingsPerDay)).BeginInit();
             this.panelTowersFlags.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).BeginInit();
             this.panelTowersFlagsRight.SuspendLayout();
@@ -267,32 +268,6 @@
             this.labelWingsPerWeek.Text = "Wings per day";
             this.toolTip1.SetToolTip(this.labelWingsPerWeek, "Filters");
             // 
-            // comboBoxWingsPerDay
-            // 
-            this.comboBoxWingsPerDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.comboBoxWingsPerDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWingsPerDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxWingsPerDay.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxWingsPerDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.comboBoxWingsPerDay.FormattingEnabled = true;
-            this.comboBoxWingsPerDay.Items.AddRange(new object[] {
-            "0",
-            "5",
-            "10",
-            "15",
-            "20",
-            "30",
-            "50",
-            "70",
-            "100"});
-            this.comboBoxWingsPerDay.Location = new System.Drawing.Point(109, 26);
-            this.comboBoxWingsPerDay.MaxDropDownItems = 25;
-            this.comboBoxWingsPerDay.Name = "comboBoxWingsPerDay";
-            this.comboBoxWingsPerDay.Size = new System.Drawing.Size(100, 27);
-            this.comboBoxWingsPerDay.TabIndex = 68;
-            this.toolTip1.SetToolTip(this.comboBoxWingsPerDay, "Filters");
-            this.comboBoxWingsPerDay.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
-            // 
             // labelGuildBattlesWon
             // 
             this.labelGuildBattlesWon.AutoSize = true;
@@ -457,6 +432,24 @@
             this.toolTip1.SetToolTip(this.comboBoxRankingGuild, "Filters");
             this.comboBoxRankingGuild.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
+            // numericUpDownWingsPerDay
+            // 
+            this.numericUpDownWingsPerDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.numericUpDownWingsPerDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownWingsPerDay.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F);
+            this.numericUpDownWingsPerDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.numericUpDownWingsPerDay.Location = new System.Drawing.Point(109, 26);
+            this.numericUpDownWingsPerDay.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.numericUpDownWingsPerDay.Name = "numericUpDownWingsPerDay";
+            this.numericUpDownWingsPerDay.Size = new System.Drawing.Size(104, 27);
+            this.numericUpDownWingsPerDay.TabIndex = 82;
+            this.toolTip1.SetToolTip(this.numericUpDownWingsPerDay, "Filters");
+            this.numericUpDownWingsPerDay.ValueChanged += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
+            // 
             // panelTowersFlags
             // 
             this.panelTowersFlags.Controls.Add(this.objectListViewTowersFlags);
@@ -552,6 +545,7 @@
             // 
             // panelTowersFlagsRight
             // 
+            this.panelTowersFlagsRight.Controls.Add(this.numericUpDownWingsPerDay);
             this.panelTowersFlagsRight.Controls.Add(this.labelRankingGuild);
             this.panelTowersFlagsRight.Controls.Add(this.comboBoxRankingGuild);
             this.panelTowersFlagsRight.Controls.Add(this.labelRankingSiege);
@@ -563,7 +557,6 @@
             this.panelTowersFlagsRight.Controls.Add(this.labelGuildBattlesWon);
             this.panelTowersFlagsRight.Controls.Add(this.comboBoxGuildBattlesWon);
             this.panelTowersFlagsRight.Controls.Add(this.labelWingsPerWeek);
-            this.panelTowersFlagsRight.Controls.Add(this.comboBoxWingsPerDay);
             this.panelTowersFlagsRight.Controls.Add(this.labelRankingArena);
             this.panelTowersFlagsRight.Controls.Add(this.comboBoxRankingArena);
             this.panelTowersFlagsRight.Dock = System.Windows.Forms.DockStyle.Top;
@@ -596,6 +589,7 @@
             this.panelFriends.ResumeLayout(false);
             this.panelFriends.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWingsPerDay)).EndInit();
             this.panelTowersFlags.ResumeLayout(false);
             this.panelTowersFlags.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).EndInit();
@@ -635,7 +629,6 @@
         private System.Windows.Forms.Label labelMaxedFlagsText;
         private System.Windows.Forms.Label labelRankingArena;
         private System.Windows.Forms.Label labelWingsPerWeek;
-        private System.Windows.Forms.ComboBox comboBoxWingsPerDay;
         private System.Windows.Forms.Label labelGuildBattlesWon;
         private System.Windows.Forms.ComboBox comboBoxGuildBattlesWon;
         private System.Windows.Forms.Label labelSiegeResult2;
@@ -648,5 +641,6 @@
         private System.Windows.Forms.Label labelRankingGuild;
         private System.Windows.Forms.ComboBox comboBoxRankingGuild;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private System.Windows.Forms.NumericUpDown numericUpDownWingsPerDay;
     }
 }

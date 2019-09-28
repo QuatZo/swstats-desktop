@@ -466,43 +466,46 @@ namespace Summoners_War_Statistics
         public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
-            bool exists;
-            foreach (var building in buildings)
+            try
             {
-                exists = false;
-                Console.WriteLine($"{building.Id}, {building.Name}, {building.ActualLevel}");
-                foreach (var decoration in decorations)
+
+                bool exists;
+                foreach (var building in buildings)
                 {
-                    Console.WriteLine($"\t{decoration.MasterId}. {decoration.Level}");
-                    if (decoration.MasterId == building.Id)
+                    exists = false;
+                    foreach (var decoration in decorations)
                     {
-                        building.ActualLevel = (int)decoration.Level;
-                        exists = true;
-                        break;
+                        if (decoration.MasterId == building.Id)
+                        {
+                            building.ActualLevel = (int)decoration.Level;
+                            exists = true;
+                            break;
+                        }
                     }
-                }
-                if (!exists)
-                {
-                    building.ActualLevel = 0;
-                }
-                string bonus = "-";
+                    if (!exists)
+                    {
+                        building.ActualLevel = 0;
+                    }
+                    string bonus = "-";
 
-                if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
-                else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
-                else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
+                    if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
+                    else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
+                    else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
 
-                towersFlags.Add(
-                    new BuildingRow(
-                        building.Area,
-                        building.Name,
-                        bonus,
-                        (byte)building.ActualLevel,
-                        (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
-                        (ushort)building.CalcRemainingUpgradeCost(),
-                        TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
-                    )
-                );
+                    towersFlags.Add(
+                        new BuildingRow(
+                            building.Area,
+                            building.Name,
+                            bonus,
+                            (byte)building.ActualLevel,
+                            (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
+                            (ushort)building.CalcRemainingUpgradeCost(),
+                            TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
+                        )
+                    );
+                }
             }
+            catch (NullReferenceException) { }
             return towersFlags;
         }
 

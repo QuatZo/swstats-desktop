@@ -74,18 +74,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Chosen amount of wings used per day
         /// </summary>
-        public byte ChosenArenaWingsPerDay
-        {
-            get
-            {
-                try
-                {
-                    return byte.Parse(comboBoxWingsPerDay.SelectedItem.ToString());
-                }
-                catch (NullReferenceException) { return 0; }
-                catch (FormatException) { return 0; }
-            }
-        }
+        public byte ChosenArenaWingsPerDay => (byte)numericUpDownWingsPerDay.Value;
 
         /// <summary>
         /// Chosen guild ranking
@@ -260,7 +249,7 @@ namespace Summoners_War_Statistics
 
             comboBoxRankingSiege.SelectedValue = (int)guildRanking;
 
-            comboBoxWingsPerDay.SelectedIndex = 2;
+            numericUpDownWingsPerDay.Value = 10;
             comboBoxGuildBattlesWon.SelectedIndex = 12;
             comboBoxSiegeResult1.SelectedIndex = 0;
             comboBoxSiegeResult2.SelectedIndex = 0;
@@ -294,8 +283,8 @@ namespace Summoners_War_Statistics
             SummonerFriendsList.Items.Clear();
             SummonerTowersFlagsList.Items.Clear();
             InitComboBoxes(0, 0);
-            comboBoxGuildBattlesWon.SelectedIndex = comboBoxRankingArena.SelectedIndex = comboBoxRankingGuild.SelectedIndex = comboBoxRankingSiege.SelectedIndex = comboBoxSiegeResult1.SelectedIndex = 
-                comboBoxSiegeResult2.SelectedIndex = comboBoxWingsPerDay.SelectedIndex = 0;
+            numericUpDownWingsPerDay.Value = comboBoxGuildBattlesWon.SelectedIndex = comboBoxRankingArena.SelectedIndex = comboBoxRankingGuild.SelectedIndex = comboBoxRankingSiege.SelectedIndex = comboBoxSiegeResult1.SelectedIndex = 
+                comboBoxSiegeResult2.SelectedIndex = 10;
             DaysToMaxFlags = DaysToMaxTowers = "Never";
         }
 
@@ -309,7 +298,5 @@ namespace Summoners_War_Statistics
             InitTowersFlags?.Invoke();
         }
         #endregion
-
-
     }
 }
