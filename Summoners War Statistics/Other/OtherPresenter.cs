@@ -141,7 +141,7 @@ namespace Summoners_War_Statistics
         private void InitTowersFlags()
         {
             view.SummonerTowersFlagsList.Items.Clear();
-            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(view.Decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeSecondBattleResult));
+            view.SummonerTowersFlagsList.AddObjects(model.TowersFlags(view.Decorations, Mapping.Instance.GetBuildings(), view.ChosenArenaRanking, view.ChosenArenaWingsPerDay, view.ChosenGuildRanking, view.ChosenGuildBattlesWon, view.ChosenSiegeRanking, view.ChosenSiegeFirstBattleResult, view.ChosenSiegeFirstBattleContribution, view.ChosenSiegeSecondBattleResult, view.ChosenSiegeSecondBattleContribution));
             Logger.log.Info($"[Towers&Flags] Towers & Flags to list done");
 
             double towersDays = 0;

@@ -23,7 +23,9 @@ namespace Summoners_War_Statistics
         byte ChosenGuildBattlesWon { get;}
         ushort ChosenSiegeRanking { get; }
         byte ChosenSiegeFirstBattleResult { get; }
+        byte ChosenSiegeFirstBattleContribution { get; }
         byte ChosenSiegeSecondBattleResult { get; }
+        byte ChosenSiegeSecondBattleContribution { get; }
 
         List<Decoration> Decorations { get; set; }
 

@@ -463,7 +463,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// List of Towers & Flags, in form of rows
         /// </summary>
-        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeFirstContribution, byte siegeSecondBattle, byte siegeSecondContribution)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
             try
@@ -500,7 +500,7 @@ namespace Summoners_War_Statistics
                             (byte)building.ActualLevel,
                             (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
                             (ushort)building.CalcRemainingUpgradeCost(),
-                            TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
+                            TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeFirstContribution, siegeSecondBattle, siegeSecondContribution)
                         )
                     );
                 }
@@ -512,7 +512,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Method that calculates the days needed to max the specific tower/flag from the current upgrade level
         /// </summary>
-        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeFirstContribution, byte siegeSecondBattle, byte siegeSecondContribution)
         {
             int remainingUpgradeCost = building.CalcRemainingUpgradeCost();
             if ( remainingUpgradeCost < 1) { return "0"; }
@@ -544,13 +544,13 @@ namespace Summoners_War_Statistics
                 switch (siegeFirstBattle)
                 {
                     case 1:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * siegeFirstContribution / 100);
                         break;
                     case 2:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * siegeFirstContribution / 100);
                         break;
                     case 3:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * siegeFirstContribution / 100);
                         break;
                     default:
                         guildPointsSiegeFirst = 0;
@@ -561,13 +561,13 @@ namespace Summoners_War_Statistics
                 switch (siegeSecondBattle)
                 {
                     case 1:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * siegeSecondContribution / 100);
                         break;
                     case 2:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * siegeSecondContribution / 100);
                         break;
                     case 3:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * siegeSecondContribution / 100);
                         break;
                     default:
                         guildPointsSiegeSecond = 0;

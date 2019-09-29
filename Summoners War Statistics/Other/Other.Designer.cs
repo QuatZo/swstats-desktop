@@ -68,6 +68,10 @@
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panelTowersFlagsRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numericUpDownSiegeContribution1 = new System.Windows.Forms.NumericUpDown();
+            this.labelSiegeContribution1 = new System.Windows.Forms.Label();
+            this.labelSiegeContribution2 = new System.Windows.Forms.Label();
+            this.numericUpDownSiegeContribution2 = new System.Windows.Forms.NumericUpDown();
             this.panelFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewFriends)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWingsPerDay)).BeginInit();
@@ -75,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTowersFlags)).BeginInit();
             this.panelTowersFlagsRight.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSiegeContribution1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSiegeContribution2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOtherActiveFriends
@@ -348,7 +354,7 @@
             this.labelSiegeResult2.AutoSize = true;
             this.labelSiegeResult2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSiegeResult2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
-            this.labelSiegeResult2.Location = new System.Drawing.Point(642, 1);
+            this.labelSiegeResult2.Location = new System.Drawing.Point(752, 1);
             this.labelSiegeResult2.Name = "labelSiegeResult2";
             this.labelSiegeResult2.Size = new System.Drawing.Size(91, 22);
             this.labelSiegeResult2.TabIndex = 75;
@@ -368,7 +374,7 @@
             "2",
             "3",
             "0"});
-            this.comboBoxSiegeResult2.Location = new System.Drawing.Point(646, 26);
+            this.comboBoxSiegeResult2.Location = new System.Drawing.Point(756, 26);
             this.comboBoxSiegeResult2.MaxDropDownItems = 25;
             this.comboBoxSiegeResult2.Name = "comboBoxSiegeResult2";
             this.comboBoxSiegeResult2.Size = new System.Drawing.Size(100, 27);
@@ -545,6 +551,10 @@
             // 
             // panelTowersFlagsRight
             // 
+            this.panelTowersFlagsRight.Controls.Add(this.labelSiegeContribution2);
+            this.panelTowersFlagsRight.Controls.Add(this.numericUpDownSiegeContribution2);
+            this.panelTowersFlagsRight.Controls.Add(this.labelSiegeContribution1);
+            this.panelTowersFlagsRight.Controls.Add(this.numericUpDownSiegeContribution1);
             this.panelTowersFlagsRight.Controls.Add(this.numericUpDownWingsPerDay);
             this.panelTowersFlagsRight.Controls.Add(this.labelRankingGuild);
             this.panelTowersFlagsRight.Controls.Add(this.comboBoxRankingGuild);
@@ -577,6 +587,66 @@
             this.panel1.Size = new System.Drawing.Size(1008, 22);
             this.panel1.TabIndex = 78;
             // 
+            // numericUpDownSiegeContribution1
+            // 
+            this.numericUpDownSiegeContribution1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.numericUpDownSiegeContribution1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownSiegeContribution1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F);
+            this.numericUpDownSiegeContribution1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.numericUpDownSiegeContribution1.Location = new System.Drawing.Point(646, 26);
+            this.numericUpDownSiegeContribution1.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDownSiegeContribution1.Name = "numericUpDownSiegeContribution1";
+            this.numericUpDownSiegeContribution1.Size = new System.Drawing.Size(104, 27);
+            this.numericUpDownSiegeContribution1.TabIndex = 84;
+            this.toolTip1.SetToolTip(this.numericUpDownSiegeContribution1, "Filters");
+            this.numericUpDownSiegeContribution1.ValueChanged += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
+            // 
+            // labelSiegeContribution1
+            // 
+            this.labelSiegeContribution1.AutoSize = true;
+            this.labelSiegeContribution1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSiegeContribution1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSiegeContribution1.Location = new System.Drawing.Point(642, 1);
+            this.labelSiegeContribution1.Name = "labelSiegeContribution1";
+            this.labelSiegeContribution1.Size = new System.Drawing.Size(114, 22);
+            this.labelSiegeContribution1.TabIndex = 83;
+            this.labelSiegeContribution1.Text = "Contribution (1)[%]";
+            this.toolTip1.SetToolTip(this.labelSiegeContribution1, "Filters");
+            // 
+            // labelSiegeContribution2
+            // 
+            this.labelSiegeContribution2.AutoSize = true;
+            this.labelSiegeContribution2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSiegeContribution2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.labelSiegeContribution2.Location = new System.Drawing.Point(858, 1);
+            this.labelSiegeContribution2.Name = "labelSiegeContribution2";
+            this.labelSiegeContribution2.Size = new System.Drawing.Size(117, 22);
+            this.labelSiegeContribution2.TabIndex = 85;
+            this.labelSiegeContribution2.Text = "Contribution (2)[%]";
+            this.toolTip1.SetToolTip(this.labelSiegeContribution2, "Filters");
+            // 
+            // numericUpDownSiegeContribution2
+            // 
+            this.numericUpDownSiegeContribution2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.numericUpDownSiegeContribution2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownSiegeContribution2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F);
+            this.numericUpDownSiegeContribution2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.numericUpDownSiegeContribution2.Location = new System.Drawing.Point(862, 26);
+            this.numericUpDownSiegeContribution2.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDownSiegeContribution2.Name = "numericUpDownSiegeContribution2";
+            this.numericUpDownSiegeContribution2.Size = new System.Drawing.Size(104, 27);
+            this.numericUpDownSiegeContribution2.TabIndex = 86;
+            this.toolTip1.SetToolTip(this.numericUpDownSiegeContribution2, "Filters");
+            this.numericUpDownSiegeContribution2.ValueChanged += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
+            // 
             // Other
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,6 +667,8 @@
             this.panelTowersFlagsRight.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSiegeContribution1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSiegeContribution2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,5 +714,9 @@
         private System.Windows.Forms.ComboBox comboBoxRankingGuild;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private System.Windows.Forms.NumericUpDown numericUpDownWingsPerDay;
+        private System.Windows.Forms.Label labelSiegeContribution2;
+        private System.Windows.Forms.NumericUpDown numericUpDownSiegeContribution2;
+        private System.Windows.Forms.Label labelSiegeContribution1;
+        private System.Windows.Forms.NumericUpDown numericUpDownSiegeContribution1;
     }
 }
