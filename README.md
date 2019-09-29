@@ -1,22 +1,47 @@
 # Summoners War Statistics
 
-This tool will give you an information about your Summoner's War account, like amount of monsters, friends list and dimension hole calculator. In the first published version you are able to check some currency stuff, extended info about your monsters (as a group, e.g. amount of elemental monsters or days since last **usable** (non-feeded) nat5), some info about runes (min, max, mean, median, standard deviation efficiency; amount of runes: total, maxed and in inventory), dimension hole caculator (when you will be able to 2A next monster), friends list (their reps, since when they are offline) and guild stuff (members, best rank, defense monsters). The very first version is static (in terms of resolution), but I'm planning to do it more dynamic (once I learn how to).
+This tool will give you an information about your Summoner's War account, like amount of monsters, friends list and dimension hole calculator. In the first published version you were able to check some currency stuff, extended info about your monsters (as a group, e.g. amount of elemental monsters or days since last **usable** (non-feeded) nat5), some info about runes (min, max, mean, median, standard deviation efficiency; amount of runes: total, maxed and in inventory), dimension hole caculator (when you will be able to 2A next monster), friends list (their reps, since when they are offline) and guild stuff (members, best rank, defense monsters). Now it's more complex, with addition of Dynamic UI.
+
+![summary]
+
+[summary]: https://i.imgur.com/5VfXA5d.png
+## v1.0.0 Changelog
+* Increased the minimum (and standard) resolution from ~800x600 to 1024x768
+* Added TEST JSON Button
+  * If you installed the app on the system drive, you need admin privileges to use Test file
+  * If admin privileges not provided, you'll see proper information
+  * It basically contains my private JSON w/o any personal information (yeah, my account is bad lol)
+* Added list of monsters (with their avatars) connected with Collection checkboxes
+  * It's ordered by Attribute, then by natural star, then by monster (f.e. Lushen next to dupe Lushen) and finally by acquiration date
+* Merged Monsters To Lock list with Monsters List (the one with avatars)
+  * It still takes care of devilmons in the first place, then the old 5* option is checked as the default
+  * Monster, which should be locked will have their avatars in grayscale
+  * When you hover the grayscale avatar, the ToolTip will tell you that you should lock this monster
+* Added Ranking feature, which consists of stats like "#3 Fastest Monster" and "#273 Tankiest Monster"
+  * It is affected by "Monsters Collection" panel (the one with checkboxes in Monsters tab)
+  * It contains the overall rank based on positions in other categories;
+  * Formula: 1 - rank / rank_last + value / value_best for every category, sum for whole ranking
+* Added new window, which occurs when you click on the monster in Monsters List
+  * It uses the Ranking feature mentioned above
+  * At the current state, you can check the rank for only few categories (SPD, ATK, CDMG, DEF, HP, Rune Efficiency)
+  * If you checked anything in Monsters Collection (in other words, if you filtered out some monsters), the info you see is for actual Monsters List; it means, if you choose only wind monsters and click on f.e. Bernard, it'll say you how fast he is, compared to other wind monsters
+* Added amount of days needed to 2A a monster, next to the date of 2A (Dim Hole Calculator)
+* Fixed UI for some tabs
+* Improved UI
+* Fixed the Towers & Flags list not being refreshed while changing JSON file
+* Added better Decks recognition for Lab stages (Com2Us changed it in 5.1.1. update)
+* Added info where the app failed to init given json file to the Error Message
+* Changed Wings Per Day Dropdown List to Numeric Value box in Towers & Flags Calculator
+* Added adjustable Siege Contribution for every Siege battle, instead of constant 5% contribution
+  * Worth noting, that it still uses 20k points for 1st place, 15k points for 2nd and 10k for 3rd
+* Updated README of Summoners War Statistics project, which means updated info while checking project GitHub page
 
 ## Future features
-* Double-level rune filters (it means more of them)
-* Refactor Dynamic UI (now it looks meh, but hey it works)
-* Fix efficiency calc (some of them don't overlap with SWOP nor SWARFARM)
+* Advanced Sorting for Monsters List (sort by rank, name, element, stars) being user-dependent, not hard-coded
+* Wages in specific ranking based on monster type (like Lushen's rank won't be downgraded because of being ATK type monster and having total of 10k HP, 500 DEF & 110 SPD)
+* More stuff for any user-dependent options
 * Transmog tab (or at least some info in Monsters/Other tab, but I need more JSON files with in-game info [like who has which aura/wings])
-* More information in Monsters tab (probably list with filters similar to Rune tab)
-* Advanced Rune tab (my main objective here is to make some plots and checker if your runes comply with the normal distribution rules [for fun])
-* Decks tab
-* Move Guild info from Other tab to new Guild tab, which means adding more guild stuff
-* Other tab fullfiled with less important info
 * Make a Linux version (?)
-
-![screen]
-
-[screen]: https://i.imgur.com/dh2sD3n.png
 
 I understand that other tools have more options than mine. I respect the creators of them. I'll try my best to develop it as long as possible, because it's a nice experience for a young (in terms of experience) programmers.
 
@@ -36,6 +61,9 @@ You just need to download (clone) this repo and open **Summoners War Statistics.
 2. Run installer
 3. Follow steps
 4. Run **Summoners War Statistics.exe** from your Desktop
+
+## Screenshots
+[Here, IMGUR link](https://imgur.com/a/Bh01XHa)
 
 ## Running the tests
 
