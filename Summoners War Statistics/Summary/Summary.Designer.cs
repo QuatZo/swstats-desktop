@@ -317,7 +317,7 @@
             this.labelLevel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelLevel.AutoSize = true;
             this.labelLevel.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F);
-            this.labelLevel.Location = new System.Drawing.Point(753, 0);
+            this.labelLevel.Location = new System.Drawing.Point(977, 0);
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(25, 32);
             this.labelLevel.TabIndex = 17;
@@ -637,7 +637,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(784, 80);
+            this.panelHeader.Size = new System.Drawing.Size(1008, 80);
             this.panelHeader.TabIndex = 56;
             // 
             // panelDecks
@@ -647,7 +647,7 @@
             this.panelDecks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDecks.Location = new System.Drawing.Point(0, 201);
             this.panelDecks.Name = "panelDecks";
-            this.panelDecks.Size = new System.Drawing.Size(784, 179);
+            this.panelDecks.Size = new System.Drawing.Size(1008, 327);
             this.panelDecks.TabIndex = 57;
             // 
             // objectListViewDecks
@@ -682,7 +682,7 @@
             this.objectListViewDecks.Location = new System.Drawing.Point(0, 42);
             this.objectListViewDecks.Name = "objectListViewDecks";
             this.objectListViewDecks.ShowGroups = false;
-            this.objectListViewDecks.Size = new System.Drawing.Size(784, 137);
+            this.objectListViewDecks.Size = new System.Drawing.Size(1008, 285);
             this.objectListViewDecks.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewDecks.TabIndex = 59;
             this.objectListViewDecks.UseCompatibleStateImageBehavior = false;
@@ -774,9 +774,9 @@
             this.panelFooter.Controls.Add(this.labelJsonCreatedText);
             this.panelFooter.Controls.Add(this.labelJsonModified);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 380);
+            this.panelFooter.Location = new System.Drawing.Point(0, 528);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(784, 51);
+            this.panelFooter.Size = new System.Drawing.Size(1008, 51);
             this.panelFooter.TabIndex = 58;
             // 
             // panelContent
@@ -787,7 +787,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelContent.Location = new System.Drawing.Point(0, 80);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(784, 121);
+            this.panelContent.Size = new System.Drawing.Size(1008, 121);
             this.panelContent.TabIndex = 59;
             // 
             // panelContentMid
@@ -819,7 +819,7 @@
             this.panelContentMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContentMid.Location = new System.Drawing.Point(200, 0);
             this.panelContentMid.Name = "panelContentMid";
-            this.panelContentMid.Size = new System.Drawing.Size(485, 121);
+            this.panelContentMid.Size = new System.Drawing.Size(709, 121);
             this.panelContentMid.TabIndex = 56;
             // 
             // panelContentRight
@@ -833,7 +833,7 @@
             this.panelContentRight.Controls.Add(this.labelMonsLocked);
             this.panelContentRight.Controls.Add(this.labelMons);
             this.panelContentRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelContentRight.Location = new System.Drawing.Point(685, 0);
+            this.panelContentRight.Location = new System.Drawing.Point(909, 0);
             this.panelContentRight.Name = "panelContentRight";
             this.panelContentRight.Size = new System.Drawing.Size(99, 121);
             this.panelContentRight.TabIndex = 55;
@@ -872,7 +872,7 @@
             this.Controls.Add(this.panelHeader);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Summary";
-            this.Size = new System.Drawing.Size(784, 431);
+            this.Size = new System.Drawing.Size(1008, 579);
             this.Load += new System.EventHandler(this.Summary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAncientCoins)).EndInit();

@@ -82,6 +82,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\RankingAlreadyExistsException.cs" />
+    <Compile Include="Exceptions\RankingNotCreatedException.cs" />
+    <Compile Include="FormMonster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMonster.Designer.cs">
+      <DependentUpon>FormMonster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Other\BuildingRow.cs" />
     <Compile Include="Extensions\Building.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
@@ -96,6 +104,12 @@
     <Compile Include="Guild\IGuildView.cs" />
     <Compile Include="Menu\MenuPresenter.cs" />
     <Compile Include="Extensions\SiegeRewards.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\Ranking.cs" />
     <Compile Include="Summary\DecksRow.cs" />
     <Compile Include="Json Classes\DeckList.cs" />
     <Compile Include="DimHole\DimHoleRow.cs" />
@@ -156,11 +170,6 @@
     <Compile Include="Monsters\IMonstersView.cs" />
     <Compile Include="Other\OtherPresenter.cs" />
     <Compile Include="Other\IOtherView.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Runes\RuneRow.cs" />
     <Compile Include="Runes\RunesPresenter.cs" />
     <Compile Include="Runes\IRunesView.cs" />
@@ -209,6 +218,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMonster.resx">
+      <DependentUpon>FormMonster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Guild\Guild.resx">
       <DependentUpon>Guild.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +251,7 @@
     <EmbeddedResource Include="Properties\fonts\coolvetica rg.ttf" />
     <None Include="Properties\images\banner.xcf" />
     <None Include="Properties\images\menu.xcf" />
+    <None Include="Properties\json\test.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -248,6 +261,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="test.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -1433,6 +1447,3357 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\images\menu_guild_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lapis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lushen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\done\monster_unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_amazon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_amazon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_amazon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_amazon_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_amazon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_angelmon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_angelmon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_angelmon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_angelmon_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_angelmon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_anubis_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_anubis_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_anubis_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_anubis_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_anubis_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_archangel_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_archangel_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_archangel_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_archangel_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_archangel_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_assassin_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_assassin_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_assassin_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_assassin_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_assassin_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_abellio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_abigail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_acasis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_adrian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aegir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aeilene.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ahman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_akhamamir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_akia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_akroma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_alexandra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_alicia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_allen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_amarna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_amduat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_amelia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_anavel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_anduril.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_anne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_antares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aqcus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aquila.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_arang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ardella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_argen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ariel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_arkajan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_arnold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_artamiel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_aschubel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_asima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_astar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_atenai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_avaris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_baekdu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bael.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bagir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_baleygr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_baretta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_barque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_basalt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bastet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_beelzebub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_belial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_belita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_belladeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bellenus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bering.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bernard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_beth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bethony.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_betta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_blueangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bluekingangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bolverk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_brandia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bremis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_briand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_brig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_bulldozer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_burentau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cadiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cahule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_calicus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_camaryn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_camilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_camules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_carbine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_carcano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_carrack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cassandra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cassie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_celia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ceres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chacha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chamie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chandra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_charlotte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chasun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cheryl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chichi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chilling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chiwu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chloe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_chris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_christina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cichild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_clara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_cogma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_colleen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_conrad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_copper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_covenant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_craka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_crane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_crawler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dagora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dagorr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_daharenos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_daphnis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_darion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_darkangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_darkkingangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_decamaron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_delphoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_deva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_devinodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_diana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dova.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_draco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dragunov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_driller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_drogan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_duamutef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_dusky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_einheri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eintau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eirgar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eladriel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eleanor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_elenoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ellena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ellin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_elpuria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_elsharion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_elucia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eludain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eludia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eluin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_emily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_emma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eredas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ermeda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_erwin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eshir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ethna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_eva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fairo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fami.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fedora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_felleria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fengyan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fermion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_figaro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_frigate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fuco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_fynn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_galleon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gamir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gangchun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ganymede.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_garo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_garoche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_garok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_geldnir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gemini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_geoffrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_giana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gildong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_glinodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_goldangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_goldkingangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gorgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_granite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_grego.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_grogen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_groggo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_grotau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gruda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_guillaume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_gunpyeong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_haken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_halphas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_han.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hannah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hanra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_harmonia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hathor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_helena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hellea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hemos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_herne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_herteit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_homunculus_attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_homunculus_attack_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_homunculus_support_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_homunculus_support_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_homunculus_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_honghua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hraesvelg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hrungnir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_huga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hwa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hwadam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hwahee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_hyanes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_icares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_icaru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_icasha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_igmanodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ignicus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_illianna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_imesety.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_iona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_iris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_isabelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_isael.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_iselia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_isis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_iunu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_izaria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jaara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jackie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jamie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jamire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_janssen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jansson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jeanne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_josephine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jubelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_julianne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_julie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_julien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jultan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jumaline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_jun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_juno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kabilla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kacey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kahli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kahn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kai%27en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kaimann.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kamatau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kamiya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_karakum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_karl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_katarina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kaz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kernodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_khmun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_konamiya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_korona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_krakdon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kroa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kugo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kuhn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kumae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kumar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kuna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kunda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kungen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_kunite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lagmaron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_laika.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_laima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lanett.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_leo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_leona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lexy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_liebli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_liesel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_linda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lindermen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lingling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_liumei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_logan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_loque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_loren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_louis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_louise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_luan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lucas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lucasha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lucien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lucifer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ludo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_luer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lukan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lulu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lumirecia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_luna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lupinus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lusha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lydia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_lyn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_maggi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_magnum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_malaka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_malite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_manannan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mantura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_marble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_martina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_maruna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_megan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_meihouwang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_melissa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mellia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mephisto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_michelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mihael.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_miho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mihyang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mikene.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mimirr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_mina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_misty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_miying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_molly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_molong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_monte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_moria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_morris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_naki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_namib.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nangrim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_naomi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_natalie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_neal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nephthys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nickel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nicki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nigong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nubia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nysha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_nyx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_oberon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_odin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_okeanos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_olivia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_olivine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_onyx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ophilia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_orion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_orochi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_pang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_pater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_perna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_phenaka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_pigma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_platy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_pontos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_poseidon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_praha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_prilea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_priz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_prom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_psamathe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_pungbaek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_purian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_qebehsenuef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_qitiandasheng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_racuni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ragdoll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ragion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rahul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rakaja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rakan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_raki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ralph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ramagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ramahan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ramira.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_randy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_raoq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rasheed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_raviti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rebecca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_redangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_redkingangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_remy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_reno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rigel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ritesh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rizak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_roger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_roid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_rumicus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ryan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sabrina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sahara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_scarlett.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_seal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_seara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sekhmet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_selena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_seren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shaffron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shailoq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shaina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shakan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shamann.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shamar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sharman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sharron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shazam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shihou.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shihwa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shimitae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shumar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_shushu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sieq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sigmarus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_silia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sisroo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_skogul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_smokey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_soha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sonnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sonora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sonzhanglao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sophia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sorin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_spectra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_stella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_su.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_suri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_surtr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_susano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_sylvia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tablo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tagaros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_taharus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_talc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_talia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tantra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tanya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tanzaite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_taor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_taranys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tarq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_taru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tatu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_taurus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_teon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tesarion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_teshar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tetra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_thebae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_theomars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_thrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tiana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tianlang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tienqin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tilasha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_toma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tosi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tractor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_trasar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_trevor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_triana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_trinity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_triton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_tyron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_ursha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_urtau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_valantis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_vanessa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_varus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_velajuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_velfinodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_verad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_verdehile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_veromos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_vidurr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_vigor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_vivachel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_walkers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_walter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_wayne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_wedjat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_weishin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_whiteangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_whitekingangelmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_windy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_wolyung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_woochi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_woonhak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_woonsa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_woosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_xiaochun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_xiaolin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_xiaoling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_xingzhe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_xiongfei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_yaku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_yen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_yeonhong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zaiross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zenobia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zephicus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zerath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zeratu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zibrolta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakened_zinc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_awakenedisillen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bailey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_barbaricking_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_barbaricking_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_barbaricking_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_barbaricking_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_barbaricking_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_battlemammoth_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_battlemammoth_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_battlemammoth_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_battlemammoth_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_battlemammoth_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bearman_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bearman_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bearman_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bearman_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bearman_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beasthunter_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beasthunter_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beasthunter_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beasthunter_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beasthunter_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beastmonk_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beastmonk_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beastmonk_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beastmonk_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_beastmonk_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_boomerangwarrior_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_boomerangwarrior_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_boomerangwarrior_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_boomerangwarrior_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_boomerangwarrior_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bountyhunter_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bountyhunter_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bountyhunter_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bountyhunter_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_bountyhunter_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_browniemagician_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_browniemagician_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_browniemagician_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_browniemagician_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_browniemagician_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cannongirl_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cannongirl_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cannongirl_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cannongirl_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cannongirl_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chakramdancer_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chakramdancer_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chakramdancer_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chakramdancer_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chakramdancer_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chargershark_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chargershark_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chargershark_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chargershark_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chargershark_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chimera_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chimera_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chimera_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chimera_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_chimera_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cowgirl_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cowgirl_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cowgirl_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cowgirl_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_cowgirl_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_deathknight_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_deathknight_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_deathknight_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_deathknight_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_deathknight_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_demon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_demon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_demon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_demon_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_demon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_desertqueen_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_desertqueen_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_desertqueen_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_desertqueen_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_desertqueen_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_devilmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dicemagician_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dicemagician_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dicemagician_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dicemagician_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dicemagician_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragon_verad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragonknight_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragonknight_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragonknight_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragonknight_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dragonknight_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_druid_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_druid_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_druid_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_druid_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_druid_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_drunkenmaster_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_drunkenmaster_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_drunkenmaster_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_drunkenmaster_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_drunkenmaster_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dryad_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dryad_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dryad_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dryad_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_dryad_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elemental_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elemental_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elemental_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elemental_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elemental_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elvenranger_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elvenranger_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elvenranger_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elvenranger_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_elvenranger_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_epikionpriest_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_epikionpriest_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_epikionpriest_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_epikionpriest_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_epikionpriest_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairy_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairy_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairy_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairy_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairy_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyking_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyking_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyking_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyking_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyking_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_fairyqueen_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_frankenstein_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_frankenstein_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_frankenstein_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_frankenstein_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_frankenstein_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_gargoyle_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_gargoyle_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_gargoyle_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_gargoyle_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_gargoyle_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_garuda_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_garuda_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_garuda_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_garuda_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_garuda_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_giantwarrior_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_giantwarrior_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_giantwarrior_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_giantwarrior_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_giantwarrior_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_golem_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_golem_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_golem_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_golem_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_golem_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_griffon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_griffon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_griffon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_griffon_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_griffon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_grimreaper_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_grimreaper_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_grimreaper_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_grimreaper_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_grimreaper_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harg_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harg_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harg_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harg_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harg_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpmagician_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpmagician_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpmagician_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpmagician_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpmagician_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpu_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpu_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpu_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpu_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpu_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpy_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpy_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpy_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpy_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_harpy_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_hellhound_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_hellhound_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_hellhound_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_hellhound_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_hellhound_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_helllady_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_helllady_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_helllady_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_helllday_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_helllday_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_highelemental_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_highelemental_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_highelemental_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_highelemental_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_highelemental_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_homunculus_attack_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_homunculus_attack_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_homunculus_attack_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_homunculus_support_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_homunculus_support_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_horus_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_horus_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_horus_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_horus_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_horus_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_howl_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_howl_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_howl_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_howl_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_howl_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_huan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ifrit_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ifrit_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ifrit_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ifrit_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ifrit_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_imp_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_imp_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_imp_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_imp_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_imp_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_impchampion_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_impchampion_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_impchampion_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_impchampion_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_impchampion_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inferno_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inferno_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inferno_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inferno_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inferno_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inugami_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inugami_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inugami_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inugami_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_inugami_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_iron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_jack_o%27_lantern_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_jack_o%27_lantern_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_jack_o%27_lantern_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_jack_o%27_lantern_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_jack_o%27_lantern_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_joker_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_joker_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_joker_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_joker_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_joker_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kaito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kingangelmon_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kingangelmon_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kingangelmon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kingangelmon_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kingangelmon_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_koboldbomber_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_koboldbomber_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_koboldbomber_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_koboldbomber_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_koboldbomber_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kungfugirl_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kungfugirl_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kungfugirl_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kungfugirl_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_kungfugirl_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lich_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lich_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lich_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lich_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lich_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lightningemperor_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lightningemperor_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lightningemperor_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lightningemperor_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lightningemperor_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_livingarmor_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_livingarmor_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_livingarmor_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_livingarmor_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_livingarmor_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lizardman_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lizardman_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lizardman_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lizardman_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_lizardman_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicalarcher_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicalarcher_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicalarcher_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicalarcher_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicalarcher_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicknight_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicknight_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicknight_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicknight_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_magicknight_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialartist_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialartist_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialartist_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialartist_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialartist_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialcat_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialcat_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialcat_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialcat_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_martialcat_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mermaid_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mermaid_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mermaid_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mermaid_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mermaid_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_minotauros_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_minotauros_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_minotauros_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_minotauros_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_minotauros_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_monkeyking_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_monkeyking_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_monkeyking_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_monkeyking_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_monkeyking_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mummy_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mummy_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mummy_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mummy_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mummy_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mysticwitch_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mysticwitch_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mysticwitch_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mysticwitch_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_mysticwitch_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostoneagent_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostoneagent_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostoneagent_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostoneagent_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostoneagent_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostonefighter_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostonefighter_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostonefighter_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostonefighter_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_neostonefighter_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_nine_tailedfox_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_nine_tailedfox_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_nine_tailedfox_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_nine_tailedfox_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_nine_tailedfox_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ninja_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ninja_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ninja_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ninja_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_ninja_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_occultgirl_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_occultgirl_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_occultgirl_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_occultgirl_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_occultgirl_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_oracle_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_oracle_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_oracle_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_oracle_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_oracle_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_paladin_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_paladin_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_paladin_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_paladin_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_paladin_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pandawarrior_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pandawarrior_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pandawarrior_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pandawarrior_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pandawarrior_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_penguinknight_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_penguinknight_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_penguinknight_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_penguinknight_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_penguinknight_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phantomthief_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phantomthief_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phantomthief_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phantomthief_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phantomthief_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phoenix_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phoenix_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phoenix_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phoenix_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_phoenix_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pioneer_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pioneer_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pioneer_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pioneer_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pioneer_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_piratecaptain_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_piratecaptain_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_piratecaptain_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_piratecaptain_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_piratecaptain_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pixie_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pixie_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pixie_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pixie_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pixie_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_polarqueen_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_polarqueen_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_polarqueen_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_polarqueen_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_polarqueen_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rainbowmon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasha_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasha_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasha_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasha_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasha_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_salamander_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_salamander_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_salamander_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_salamander_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_salamander_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_samurai_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_samurai_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_samurai_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_samurai_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_samurai_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_seaemperor_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_seaemperor_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_seaemperor_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_seaemperor_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_seaemperor_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_aeilene.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_belladeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_camaryn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_cheryl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_dagora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_gorgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_icaru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_iselia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_kacey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_kro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_lusha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_neal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_ramagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_ramahan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_raoq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_shannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_sorin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondawakened_tatu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_secondwakened_elucia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_serpent_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_serpent_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_serpent_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_serpent_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_serpent_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_skydancer_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_skydancer_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_skydancer_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_skydancer_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_skydancer_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_snipermk_i_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_snipermk_i_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_snipermk_i_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_snipermk_i_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_snipermk_i_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_special.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_succubus_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_succubus_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_succubus_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_succubus_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_succubus_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylph_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylph_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylph_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylph_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylph_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylphid_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylphid_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylphid_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylphid_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_sylphid_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_taoist_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_taoist_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_taoist_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_taoist_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_taoist_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_undine_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_undine_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_undine_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_undine_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_undine_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unicorn_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unicorn_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unicorn_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unicorn_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_unicorn_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vagabond_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vagabond_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vagabond_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vagabond_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vagabond_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_valkyrja_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_valkyrja_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_valkyrja_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_valkyrja_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_valkyrja_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampire_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampire_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampire_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampire_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampire_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_vampirelord_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_viking_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_viking_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_viking_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_viking_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_viking_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_warbear_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_warbear_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_warbear_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_warbear_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_warbear_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_werewolf_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_werewolf_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_werewolf_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_werewolf_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_werewolf_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_wind_pierret.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_yeti_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_yeti_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_yeti_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_yeti_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_yeti_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasa_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasa_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasa_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasa_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_rakshasa_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\monsters\monster_pierret_wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\images\banner_testjsonfile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

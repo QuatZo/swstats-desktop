@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBoxElementalNat5Clock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxLDNat4PlusClock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkUso
         RFEcxn9maOS5MAtJuYthRQnJUkOkKM2M8lq4944Zau413TuysVS2ysJjY7CwsWZrYauU8ijZ2FoRG+n6
@@ -146,7 +146,7 @@
         /QH9UU3fxjf+nQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBoxLDNat4PlusClock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxElementalNat5Clock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkUso
         RFEcxn9maOS5MAtJuYthRQnJUkOkKM2M8lq4944Zau413TuysVS2ysJjY7CwsWZrYauU8ijZ2FoRG+n6

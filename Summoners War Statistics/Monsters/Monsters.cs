@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
+using System.Resources;
+using Summoners_War_Statistics.Properties;
 
 namespace Summoners_War_Statistics
 {
@@ -35,7 +37,6 @@ namespace Summoners_War_Statistics
                     labelFire,
                     labelLDNat4Plus,
                     labelLight,
-                    labelMonsters,
                     labelMonsterStats,
                     labelNat5,
                     labelStarsFiveAmount,
@@ -46,9 +47,6 @@ namespace Summoners_War_Statistics
                     labelStarsTwoAmount,
                     labelWater,
                     labelWind,
-                    objectListViewMonstersToLock,
-                    radioButton5,
-                    radioButton6,
                     pictureBoxStarFives,
                     pictureBoxElementalNat5,
                     pictureBoxElementalNat5Clock,
@@ -70,8 +68,6 @@ namespace Summoners_War_Statistics
                     panelHeaderLeft,
                     panelHeaderMid,
                     panelHeaderRight,
-                    panelFooter,
-                    panelFooterRight,
                     labelCollectionStars,
                     checkedListBoxCollectionStars,
                     labelCollectionAttribute,
@@ -81,18 +77,6 @@ namespace Summoners_War_Statistics
                     labelCollectionSlash,
                     labelCollectionWhole
                 };
-
-        /// <summary>
-        /// Checkes the amount of minimum monster's stars needed to be even considered in Monster To Lock table
-        /// </summary>
-        public int MonsterStarsChecked
-        {
-            get
-            {
-                if (radioButton5.Checked) { return 5; }
-                else { return 6; }
-            }
-        }
 
         /// <summary>
         /// Amount of monsters with Water attribute
@@ -235,27 +219,23 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// List of the monsters owned by Summoner
         /// </summary>
-        [Browsable(false)]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Monster> MonstersList { get; set; } = new List<Monster>();
         /// <summary>
         /// List of locked monsters owned by Summoner
         /// </summary>
         public List<long> MonstersLocked { get; set; } = new List<long>();
+
+        public List<Monster> MonstersListAffectedByCollection { get; set; } = new List<Monster>();
         #endregion
 
-        #region ObjectListView MonstersListView
-        /// <summary>
-        /// Monsters To Lock table
-        /// </summary>
+        #region FlowLayoutPanel MonstersListView
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public ObjectListView MonstersListView
+        public FlowLayoutPanel MonstersListView
         {
-            get => objectListViewMonstersToLock;
-            set => objectListViewMonstersToLock = value;
+            get => flowLayoutPanelMonsters;
+            set => flowLayoutPanelMonsters = value;
         }
         #endregion
 
@@ -308,6 +288,14 @@ namespace Summoners_War_Statistics
             get => int.Parse(labelCollectionWhole.Text);
             set => labelCollectionWhole.Text = value.ToString();
         }
+
+        /// <summary>
+        /// Header of the Monsters List panel
+        /// </summary>
+        public string MonstersListHeader
+        {
+            set => labelMonsters.Text = value;
+        }
         #endregion
 
         #region Events
@@ -317,11 +305,7 @@ namespace Summoners_War_Statistics
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public event Action<List<Monster>, List<long>> InitMonsters;
-        /// <summary>
-        /// Triggers when checked RadioButton next to Monster To Lock table has been changed
-        /// </summary>
-        public event Action<RadioButton> MonstersStarsChanged;
+        public event Action<List<long>> InitMonsters;
         /// <summary>
         /// Triggers when window ends resizing
         /// </summary>
@@ -339,7 +323,6 @@ namespace Summoners_War_Statistics
         public Monsters()
         {
             InitializeComponent();
-            objectListViewMonstersToLock.DoubleBuffering(true);
         }
 
         #region Methods
@@ -348,11 +331,9 @@ namespace Summoners_War_Statistics
         /// </summary>
         public void Init(List<Monster> monsters, List<long> monstersLocked)
         {
-            InitMonsters?.Invoke(monsters, monstersLocked);
-        }
-        private void radioButton_Click(object sender, EventArgs e)
-        {
-            MonstersStarsChanged?.Invoke((RadioButton)sender);
+            MonstersList = monsters;
+            InitMonsters?.Invoke(monstersLocked);
+
         }
 
         /// <summary>
@@ -379,8 +360,9 @@ namespace Summoners_War_Statistics
         public void ResetOnFail()
         {
             ResetMonstersStats();
-            MonstersListView.Items.Clear();
             MonstersCollectionSummoner = MonstersCollectionWhole = 0;
+            MonstersListHeader = "Monsters";
+            MonstersListView.Controls.Clear();
         }
 
         public void Monsters_Resize(object sender, EventArgs e)
@@ -395,6 +377,14 @@ namespace Summoners_War_Statistics
                 Resized?.Invoke();
                 CanSeeMonstersTab?.Invoke();
             }
+        }
+
+        /// <summary>
+        /// Sets the tooltip over provided control
+        /// </summary>
+        public void SetInfoOnHover(Control control, string info)
+        {
+            toolTip1.SetToolTip(control, info);
         }
         #endregion
 

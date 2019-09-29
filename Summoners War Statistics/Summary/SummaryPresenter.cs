@@ -191,7 +191,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Initialize whole Summary tab
         /// </summary>
-        private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes, 
+        private void View_InitSummary(Summoner wizardInfo, DimensionHoleInfo dimensionHoleInfo, List<Monster> monsters, List<long> monstersLocked, List<Rune> runes,
             DateTime jsonModificationTime, string country, List<Deck> decks)
         {
             view.SummonerRunes = 0;
@@ -260,8 +260,9 @@ namespace Summoners_War_Statistics
             Logger.log.Info("[Summary] Summoner decks done");
 
 
-
-            view.JsonModifcationDate = jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
+            view.JsonModifcationDate = jsonModificationTime.ToString("yyyy") == "1601"
+                ? "[Test JSON] Sunday, ‎29 ‎September, ‎2019, ‏‎19:28:01"
+                : jsonModificationTime.ToString("dddd, dd-MMMM-yyyy HH:mm:ss");
             Logger.log.Info("[Summary] Summoner json done");
             View_Resized();
         }

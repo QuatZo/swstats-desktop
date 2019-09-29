@@ -16,10 +16,14 @@ namespace Summoners_War_Statistics
     public partial class FormMain : Form, IView
     {
         /// <summary>
-        /// Stores the last state of the window
+        /// Adds the font resources to the memory
         /// </summary>
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbfont, uint cbfont, IntPtr pdv, [In] ref uint pcFonts);
+
+        /// <summary>
+        /// Stores the last state of the window
+        /// </summary>
         private FormWindowState? LastWindowState = null;
 
         #region Properties
@@ -133,6 +137,10 @@ namespace Summoners_War_Statistics
         /// </summary>
         public event Action SelectFileButtonClicked;
         /// <summary>
+        /// Clicked button which uses the test JSON file
+        /// </summary>
+        public event Action TestFileButtonClicked;
+        /// <summary>
         /// 1st load of the app
         /// </summary>
         public event Action Loaded;
@@ -179,10 +187,18 @@ namespace Summoners_War_Statistics
         /// </summary>
         public void ShowMessage(string message, MessageBoxIcon messageBoxIcon, Exception e = null)
         {
+            string tab = "Unknown";
             if(e != null)
             {
                 Logger.log.Error($"Initializer encountered a problem. It won't load more data.");
-                Logger.log.Error(e.StackTrace);
+                string stackTrace = e.StackTrace;
+                Logger.log.Error(stackTrace);
+
+                if (stackTrace.Contains("Summary")) { tab = "Summary"; }
+                else if (stackTrace.Contains("Monsters")) { tab = "Monsters"; }
+                else if (stackTrace.Contains("Runes")) { tab = "Runes"; }
+                else if (stackTrace.Contains("DimHole")) { tab = "Dim Hole"; }
+                else if (stackTrace.Contains("Other")) { tab = "Other"; }
             }
 
             string caption = "";
@@ -205,7 +221,7 @@ namespace Summoners_War_Statistics
                     buttons = MessageBoxButtons.OKCancel;
                     break;
             }
-
+            if(caption == "Error") { message = $"{message}\nError occured while trying to init {tab} tab.\n\nMore info in log file."; }
             MessageBox.Show(message, caption, buttons, messageBoxIcon);
         }
 
@@ -251,6 +267,7 @@ namespace Summoners_War_Statistics
         {
             LoadFont();
             Loaded?.Invoke();
+            FormMain_SizeChanged(null, EventArgs.Empty);
         }
 
         private void FormMain_Resize(object sender, EventArgs e)
@@ -281,6 +298,11 @@ namespace Summoners_War_Statistics
         private void FormMain_ResizeBegin(object sender, EventArgs e)
         {
             RunesView.FlowPanel.SuspendLayout();
+        }
+
+        private void PictureBoxTestJson_Click(object sender, EventArgs e)
+        {
+            TestFileButtonClicked?.Invoke();
         }
     }
 }

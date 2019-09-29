@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Resources;
+using Summoners_War_Statistics.Properties;
+using System.Drawing.Imaging;
+using System.Reflection;
+using System.IO;
 
 namespace Summoners_War_Statistics
 {
@@ -19,12 +24,8 @@ namespace Summoners_War_Statistics
             this.model = model;
 
             this.view.InitMonsters += View_InitMonsters;
-            this.view.MonstersStarsChanged += View_MonstersStarsChanged;
 
             this.view.CanSeeMonstersTab += View_CanSeeMonstersTab;
-
-            this.view.MonstersListView.ColumnClick += MonstersListView_ColumnClick;
-            this.view.MonstersListView.BeforeSorting += MonstersListView_BeforeSorting;
 
             this.view.Resized += View_Resized;
 
@@ -51,6 +52,19 @@ namespace Summoners_War_Statistics
 
             View_Resized();
             Logger.log.Info($"[Monsters] Monsters Collection done");
+
+            InitMonstersList();
+
+            try
+            {
+                Ranking.Instance.Create(view.MonstersListAffectedByCollection, force: true);
+                Logger.log.Info("[Monsters] Ranking done");
+            }
+            catch (InvalidJSONException)
+            {
+                _ = MessageBox.Show("The JSON file you provided is invalid OR you didn't provide any JSON file at all.", "Invalid JSON File!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -63,65 +77,41 @@ namespace Summoners_War_Statistics
             // left
             int height = view.Cntrls[28].Size.Height + 2;
             int headerWidthFirstLevel = 10;
-            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
-            view.Cntrls[17].Location = new Point(headerWidthFirstLevel + view.Cntrls[28].Size.Width, headerHeightFirstLevel);
+            view.Cntrls[24].Location = new Point(headerWidthFirstLevel, headerHeightFirstLevel);
+            view.Cntrls[16].Location = new Point(headerWidthFirstLevel + view.Cntrls[24].Size.Width, headerHeightFirstLevel);
 
             int headerHeightSecondLevel = headerHeightFirstLevel + height;
-            view.Cntrls[29].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
-            view.Cntrls[5].Location = new Point(headerWidthFirstLevel + view.Cntrls[29].Size.Width, headerHeightSecondLevel);
+            view.Cntrls[25].Location = new Point(headerWidthFirstLevel, headerHeightSecondLevel);
+            view.Cntrls[5].Location = new Point(headerWidthFirstLevel + view.Cntrls[25].Size.Width, headerHeightSecondLevel);
 
             int headerHeightThirdLevel = headerHeightSecondLevel + height;
-            view.Cntrls[30].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
-            view.Cntrls[18].Location = new Point(headerWidthFirstLevel + view.Cntrls[30].Size.Width, headerHeightThirdLevel);
+            view.Cntrls[26].Location = new Point(headerWidthFirstLevel, headerHeightThirdLevel);
+            view.Cntrls[17].Location = new Point(headerWidthFirstLevel + view.Cntrls[26].Size.Width, headerHeightThirdLevel);
 
             int headerHeightFourthLevel = headerHeightThirdLevel + height;
-            view.Cntrls[31].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
-            view.Cntrls[7].Location = new Point(headerWidthFirstLevel + view.Cntrls[31].Size.Width, headerHeightFourthLevel);
+            view.Cntrls[27].Location = new Point(headerWidthFirstLevel, headerHeightFourthLevel);
+            view.Cntrls[7].Location = new Point(headerWidthFirstLevel + view.Cntrls[27].Size.Width, headerHeightFourthLevel);
 
             int headerHeightFifthLevel = headerHeightFourthLevel + height;
-            view.Cntrls[32].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
-            view.Cntrls[2].Location = new Point(headerWidthFirstLevel + view.Cntrls[32].Size.Width, headerHeightFifthLevel);
+            view.Cntrls[28].Location = new Point(headerWidthFirstLevel, headerHeightFifthLevel);
+            view.Cntrls[2].Location = new Point(headerWidthFirstLevel + view.Cntrls[28].Size.Width, headerHeightFifthLevel);
 
             // right
             view.Cntrls[0].Location = new Point(view.Cntrls[0].Location.X, headerHeightFirstLevel);
-            view.Cntrls[22].Location = new Point(view.Cntrls[22].Location.X, headerHeightFirstLevel);
-            view.Cntrls[23].Location = new Point(view.Cntrls[23].Location.X, headerHeightFirstLevel);
-            view.Cntrls[10].Location = new Point(view.Cntrls[10].Location.X, headerHeightFirstLevel);
+            view.Cntrls[18].Location = new Point(view.Cntrls[18].Location.X, headerHeightFirstLevel);
+            view.Cntrls[19].Location = new Point(view.Cntrls[19].Location.X, headerHeightFirstLevel);
+            view.Cntrls[9].Location = new Point(view.Cntrls[9].Location.X, headerHeightFirstLevel);
 
-            view.Cntrls[24].Location = new Point(view.Cntrls[24].Location.X, headerHeightSecondLevel);
+            view.Cntrls[20].Location = new Point(view.Cntrls[20].Location.X, headerHeightSecondLevel);
             view.Cntrls[4].Location = new Point(view.Cntrls[4].Location.X, headerHeightSecondLevel);
 
             view.Cntrls[1].Location = new Point(view.Cntrls[1].Location.X, headerHeightThirdLevel);
-            view.Cntrls[25].Location = new Point(view.Cntrls[25].Location.X, headerHeightThirdLevel);
-            view.Cntrls[26].Location = new Point(view.Cntrls[26].Location.X, headerHeightThirdLevel);
+            view.Cntrls[21].Location = new Point(view.Cntrls[21].Location.X, headerHeightThirdLevel);
+            view.Cntrls[22].Location = new Point(view.Cntrls[22].Location.X, headerHeightThirdLevel);
             view.Cntrls[6].Location = new Point(view.Cntrls[6].Location.X, headerHeightThirdLevel);
 
-            view.Cntrls[27].Location = new Point(view.Cntrls[27].Location.X, headerHeightFourthLevel);
+            view.Cntrls[23].Location = new Point(view.Cntrls[23].Location.X, headerHeightFourthLevel);
             view.Cntrls[3].Location = new Point(view.Cntrls[3].Location.X, headerHeightFourthLevel);
-        }
-
-        /// <summary>
-        /// Double-column sorting
-        /// </summary>
-        private void MonstersListView_BeforeSorting(object sender, BrightIdeasSoftware.BeforeSortingEventArgs e)
-        {
-            if (view.MonstersListView.PrimarySortColumn != view.MonstersListView.SecondarySortColumn) { view.MonstersListView.SecondarySortColumn = view.MonstersListView.PrimarySortColumn; }
-        }
-
-        /// <summary>
-        /// Double-column sorting
-        /// </summary>
-        private void MonstersListView_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            if (view.MonstersListView.SecondarySortColumn != null)
-            {
-                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, view.MonstersListView.SecondarySortColumn.Index);
-            }
-            else
-            {
-                view.MonstersListView.ListViewItemSorter = new ListViewItemComparer(e.Column, -1);
-            }
-            Logger.log.Info($"[Monsters] Sorting");
         }
 
         /// <summary>
@@ -137,127 +127,204 @@ namespace Summoners_War_Statistics
             //labelFire                     - 5
             //labelLDNat4Plus               - 6
             //labelLight                    - 7
-            //labelMonsters                 - 8
-            //labelMonsterStats             - 9
-            //labelNat5                     - 10
-            //labelStarsFiveAmount          - 11
-            //labelStarsFourAmount          - 12
-            //labelStarsOneAmount           - 13
-            //labelStarsSixAmount           - 14
-            //labelStarsThreeAmount         - 15
-            //labelStarsTwoAmount           - 16
-            //labelWater                    - 17
-            //labelWind                     - 18
-            //listViewMonstersToLock        - 19
-            //radioButton5                  - 20
-            //radioButton6                  - 21
-            //pictureBoxStarFives           - 22
-            //pictureBoxElementalNat5       - 23
-            //pictureBoxElementalNat5Clock  - 24
-            //pictureBoxStarsFourPlus       - 25
-            //pictureBoxLDNat4Plus          - 26
-            //pictureBoxLDNat4PlusClock     - 27
-            //pictureBoxWater               - 28
-            //pictureBoxFire                - 29
-            //pictureBoxWind                - 30
-            //pictureBoxLight               - 31
-            //pictureBoxDark                - 32
-            //pictureBoxStars6              - 33
-            //pictureBoxStars5              - 34
-            //pictureBoxStars4              - 35
-            //pictureBoxStars3              - 36
-            //pictureBoxStars2              - 37
-            //pictureBoxStars1              - 38
-            //panelHeader                   - 39
-            //panelHeaderLeft               - 40
-            //panelHeaderMid                - 41
-            //panelHeaderRight              - 42
-            //panelFooter                   - 43
-            //panelFooterRight              - 44
-            //labelCollectionStars          - 45
-            //checkedListBoxCollectionStars - 46
-            //labelCollectionAttribute      - 47
-            //checkListBoxCol[...]Attribute - 48
-            //labelCollection               - 49
-            //labelCollectionSummoner       - 50
-            //labelCollectionSlash          - 51
-            //labelCollectionWhole          - 52
+            //labelMonsterStats             - 8
+            //labelNat5                     - 9
+            //labelStarsFiveAmount          - 10
+            //labelStarsFourAmount          - 11
+            //labelStarsOneAmount           - 12
+            //labelStarsSixAmount           - 13
+            //labelStarsThreeAmount         - 14
+            //labelStarsTwoAmount           - 15
+            //labelWater                    - 16
+            //labelWind                     - 17
+            //pictureBoxStarFives           - 18
+            //pictureBoxElementalNat5       - 19
+            //pictureBoxElementalNat5Clock  - 20
+            //pictureBoxStarsFourPlus       - 21
+            //pictureBoxLDNat4Plus          - 22
+            //pictureBoxLDNat4PlusClock     - 23
+            //pictureBoxWater               - 24
+            //pictureBoxFire                - 25
+            //pictureBoxWind                - 26
+            //pictureBoxLight               - 27
+            //pictureBoxDark                - 28
+            //pictureBoxStars6              - 29
+            //pictureBoxStars5              - 30
+            //pictureBoxStars4              - 31
+            //pictureBoxStars3              - 32
+            //pictureBoxStars2              - 33
+            //pictureBoxStars1              - 34
+            //panelHeader                   - 35
+            //panelHeaderLeft               - 36
+            //panelHeaderMid                - 37
+            //panelHeaderRight              - 38
+            //labelCollectionStars          - 39
+            //checkedListBoxCollectionStars - 40
+            //labelCollectionAttribute      - 41
+            //checkListBoxCol[...]Attribute - 42
+            //labelCollection               - 43
+            //labelCollectionSummoner       - 54
+            //labelCollectionSlash          - 55
+            //labelCollectionWhole          - 56
 
             // panelHeader
             int headerHeightFirstLevel = 10;
             // left
-            int height = view.Cntrls[28].Size.Height + 2;
+            int height = view.Cntrls[24].Size.Height + 2;
             int headerHeightSecondLevel = headerHeightFirstLevel + height;
             int headerHeightThirdLevel = headerHeightSecondLevel + height;
             int headerHeightFourthLevel = headerHeightThirdLevel + height;
             int headerHeightFifthLevel = headerHeightFourthLevel + height;
 
             // mid
-            int headerWidthSecondLevel = view.Cntrls[41].Size.Width / 10;
-            int headerWidthSecondHalfLevel = headerWidthSecondLevel + view.Cntrls[33].Size.Width;
-            view.Cntrls[33].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
-            view.Cntrls[14].Location = new Point(headerWidthSecondHalfLevel, headerHeightFirstLevel);
+            int headerWidthSecondLevel = view.Cntrls[37].Size.Width / 10;
+            int headerWidthSecondHalfLevel = headerWidthSecondLevel + view.Cntrls[29].Size.Width;
+            view.Cntrls[29].Location = new Point(headerWidthSecondLevel, headerHeightFirstLevel);
+            view.Cntrls[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightFirstLevel);
 
-            view.Cntrls[34].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
-            view.Cntrls[11].Location = new Point(headerWidthSecondHalfLevel, headerHeightSecondLevel);
+            view.Cntrls[30].Location = new Point(headerWidthSecondLevel, headerHeightSecondLevel);
+            view.Cntrls[10].Location = new Point(headerWidthSecondHalfLevel, headerHeightSecondLevel);
 
-            view.Cntrls[35].Location = new Point(headerWidthSecondLevel, headerHeightThirdLevel);
-            view.Cntrls[12].Location = new Point(headerWidthSecondHalfLevel, headerHeightThirdLevel);
+            view.Cntrls[31].Location = new Point(headerWidthSecondLevel, headerHeightThirdLevel);
+            view.Cntrls[11].Location = new Point(headerWidthSecondHalfLevel, headerHeightThirdLevel);
 
-            view.Cntrls[36].Location = new Point(headerWidthSecondLevel, headerHeightFourthLevel);
-            view.Cntrls[15].Location = new Point(headerWidthSecondHalfLevel, headerHeightFourthLevel);
+            view.Cntrls[32].Location = new Point(headerWidthSecondLevel, headerHeightFourthLevel);
+            view.Cntrls[14].Location = new Point(headerWidthSecondHalfLevel, headerHeightFourthLevel);
 
-            view.Cntrls[37].Location = new Point(headerWidthSecondLevel, headerHeightFifthLevel);
-            view.Cntrls[16].Location = new Point(headerWidthSecondHalfLevel, headerHeightFifthLevel);
+            view.Cntrls[33].Location = new Point(headerWidthSecondLevel, headerHeightFifthLevel);
+            view.Cntrls[15].Location = new Point(headerWidthSecondHalfLevel, headerHeightFifthLevel);
 
-            int headerWidthThirdLevel = view.Cntrls[41].Size.Width * 5 / 10;
-            int headerWidthThirdHalfLevel = headerWidthThirdLevel + view.Cntrls[45].Size.Width;
-            int headerHeightSecondListBox = headerHeightFirstLevel + view.Cntrls[46].Size.Height;
-            int headerHeightAfterListBox = headerHeightSecondListBox + view.Cntrls[48].Size.Height;
+            int headerWidthThirdLevel = view.Cntrls[37].Size.Width * 5 / 10;
+            int headerWidthThirdHalfLevel = headerWidthThirdLevel + view.Cntrls[39].Size.Width;
+            int headerHeightSecondListBox = headerHeightFirstLevel + view.Cntrls[40].Size.Height;
+            int headerHeightAfterListBox = headerHeightSecondListBox + view.Cntrls[42].Size.Height;
 
-            view.Cntrls[45].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
-            view.Cntrls[46].Location = new Point(headerWidthThirdHalfLevel, headerHeightFirstLevel);
+            view.Cntrls[39].Location = new Point(headerWidthThirdLevel, headerHeightFirstLevel);
+            view.Cntrls[40].Location = new Point(headerWidthThirdHalfLevel, headerHeightFirstLevel);
 
-            view.Cntrls[47].Location = new Point(headerWidthThirdLevel, headerHeightSecondListBox);
-            view.Cntrls[48].Location = new Point(headerWidthThirdHalfLevel, headerHeightSecondListBox);
+            view.Cntrls[41].Location = new Point(headerWidthThirdLevel, headerHeightSecondListBox);
+            view.Cntrls[42].Location = new Point(headerWidthThirdHalfLevel, headerHeightSecondListBox);
 
-            view.Cntrls[49].Location = new Point(headerWidthThirdLevel, headerHeightAfterListBox);
-            view.Cntrls[50].Location = new Point(headerWidthThirdHalfLevel, headerHeightAfterListBox);
-            view.Cntrls[51].Location = new Point(view.Cntrls[50].Location.X + view.Cntrls[50].Size.Width, headerHeightAfterListBox);
-            view.Cntrls[52].Location = new Point(view.Cntrls[51].Location.X + view.Cntrls[51].Size.Width, headerHeightAfterListBox);
+            view.Cntrls[43].Location = new Point(headerWidthThirdLevel, headerHeightAfterListBox);
+            view.Cntrls[44].Location = new Point(headerWidthThirdHalfLevel, headerHeightAfterListBox);
+            view.Cntrls[45].Location = new Point(view.Cntrls[44].Location.X + view.Cntrls[44].Size.Width, headerHeightAfterListBox);
+            view.Cntrls[46].Location = new Point(view.Cntrls[45].Location.X + view.Cntrls[45].Size.Width, headerHeightAfterListBox);
 
             int headerHeightSixthLevel = headerHeightFifthLevel + height;
-            view.Cntrls[38].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
-            view.Cntrls[13].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
-
-            view.MonstersListView.BeginUpdate();
-            int columnWidth = view.MonstersListView.Size.Width / view.MonstersListView.Columns.Count;
-            foreach(ColumnHeader column in view.MonstersListView.Columns)
-            {
-                column.Width = columnWidth - 5;
-            }
-            view.MonstersListView.EndUpdate();
+            view.Cntrls[34].Location = new Point(headerWidthSecondLevel, headerHeightSixthLevel);
+            view.Cntrls[12].Location = new Point(headerWidthSecondHalfLevel, headerHeightSixthLevel);
         }
 
-        /// <summary>
-        /// Event, which triggers when the active radiobox has been changed, next to Monsters To Lock table. It represent the minimum amount of stars monster needs to have (except devilmon) to be considered in table
-        /// </summary>
-        /// <param name="obj"></param>
-        private void View_MonstersStarsChanged(RadioButton obj)
+        //https://web.archive.org/web/20110827032809/http://www.switchonthecode.com/tutorials/csharp-tutorial-convert-a-color-image-to-grayscale
+        private static Bitmap MakeGrayscale3(Bitmap original)
         {
-            Logger.log.Info("[Monsters] MonstersToLock star changing");
-            view.MonstersListView.Items.Clear();
-            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, int.Parse(obj.Name.Remove(0, 11))));
-            Logger.log.Info("[Monsters] MonstersToLock star changed");
+            //create a blank bitmap the same size as original
+            Bitmap newBitmap = new Bitmap(original.Width, original.Height);
+
+            //get a graphics object from the new image
+            Graphics g = Graphics.FromImage(newBitmap);
+
+            //create the grayscale ColorMatrix
+            ColorMatrix colorMatrix = new ColorMatrix(
+               new float[][]
+               {
+                 new float[] {.3f, .3f, .3f, 0, 0},
+                 new float[] {.59f, .59f, .59f, 0, 0},
+                 new float[] {.11f, .11f, .11f, 0, 0},
+                 new float[] {0, 0, 0, 1, 0},
+                 new float[] {0, 0, 0, 0, 1}
+               });
+
+            //create some image attributes
+            ImageAttributes attributes = new ImageAttributes();
+
+            //set the color matrix attribute
+            attributes.SetColorMatrix(colorMatrix);
+
+            //draw the original image on the new image
+            //using the grayscale color matrix
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height),
+               0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
+
+            //dispose the Graphics object
+            g.Dispose();
+            return newBitmap;
+        }
+
+        private void InitMonstersList()
+        {
+            view.MonstersListView.Controls.Clear();
+
+            List<MonstersToLockRow> monstersToLock = model.MonstersToLock(view.MonstersList, view.MonstersLocked);
+            ResourceManager rm = Resources.ResourceManager;
+
+            List<Monster> monsters = new List<Monster>();
+            int monsterCounter = 0;
+            for (int i = 0; i < view.MonstersList.Count; i++)
+            {
+                if(view.MonstersCollectionCheckedStars.Count > 0 && !view.MonstersCollectionCheckedStars.Contains(Mapping.Instance.GetMonsterBaseClass((int)view.MonstersList[i].UnitMasterId)) || view.MonstersCollectionCheckedAttributes.Count > 0 && !view.MonstersCollectionCheckedAttributes.Contains(Mapping.Instance.GetMonsterAttribute((int)view.MonstersList[i].UnitMasterId))) { continue; }
+
+                monsterCounter++;
+                monsters.Add(view.MonstersList[i]);
+                PictureBox mon = new PictureBox();
+                string monsterName = Mapping.Instance.GetMonsterName((int)view.MonstersList[i].UnitMasterId);
+                string monsterAwakened = "monster_awakened_";
+                string monsterFileName = monsterName.ToLower().Replace(" ", "").Replace("(", "_").Replace(")", "").Replace(".", "_").Replace("-", "_").Replace("'", "_");
+
+                if (monsterName.Contains("(2A)"))
+                {
+                    monsterAwakened = "monster_secondawakened_";
+                    monsterFileName = monsterFileName.Remove(monsterFileName.Length - 1 - 2);
+                }
+
+                object obj = rm.GetObject(monsterAwakened + monsterFileName.ToLower());
+                if (obj == null)
+                {
+                    obj = rm.GetObject("monster_" + monsterFileName.ToLower());
+                    if (obj == null)
+                    {
+                        obj = rm.GetObject("monster_unknown");
+                    }
+                }
+                Image img;
+                img = (Image)obj;
+                mon.BorderStyle = BorderStyle.FixedSingle;
+
+                if (monstersToLock.Where(shouldBeLocked => shouldBeLocked.ID == view.MonstersList[i].UnitId).Any())
+                {
+                    img = MakeGrayscale3((Bitmap)img);
+                    view.SetInfoOnHover(mon, monsterName + " (This unit is in grayscale, because it should be locked!)");
+                }
+                else
+                {
+                    view.SetInfoOnHover(mon, monsterName);
+                }
+
+                mon.Image = img;
+                mon.Size = img.Size;
+                mon.Tag = view.MonstersList[i].UnitId;
+                mon.Name = i.ToString();
+                mon.Click += Test_Click;
+
+                view.MonstersListView.Controls.Add(mon);
+            }
+            view.MonstersListAffectedByCollection = monsters;
+            view.MonstersListHeader = "Monsters (" + monsterCounter + ")";
+            Logger.log.Info($"[Monsters] Monsters list done");
+        }
+
+        private void SortByAttribute()
+        {
+            view.MonstersList = view.MonstersList.OrderBy(p => p.Attribute).ThenBy(q=>Mapping.Instance.GetMonsterBaseClass((int)q.UnitMasterId)).ThenBy(r=>r.UnitMasterId).ToList();
         }
 
         /// <summary>
         /// Method that initializes the whole Monster Tab
         /// </summary>
-        private void View_InitMonsters(List<Monster> monsters, List<long> monstersLocked)
+        private void View_InitMonsters(List<long> monstersLocked)
         {
-            view.MonstersList = monsters;
-            Logger.log.Info($"[Monsters] Monsters list done");
+            SortByAttribute();
+
             view.MonstersLocked = monstersLocked;
             Logger.log.Info($"[Monsters] Monsters locked done");
 
@@ -322,10 +389,18 @@ namespace Summoners_War_Statistics
             if (monsterStars.Keys.Contains((byte)1)) { view.MonsterStarsOne = monsterStars[1]; }
             Logger.log.Info($"[Monsters] Stars done");
 
-            view.MonstersListView.AddObjects(model.MonstersToLock(view.MonstersList, view.MonstersLocked, view.MonsterStarsChecked));
-            Logger.log.Info($"[Monsters] Monsters To Lock list done");
-
             View_MonstersCollectionItemChecked();
+        }
+        private void Test_Click(object sender, EventArgs e)
+        {
+            foreach (PictureBox control in view.MonstersListView.Controls)
+            {
+                if (control.Tag == ((PictureBox)sender).Tag)
+                {
+                    FormMonster.Instance.Display(view.MonstersList[int.Parse(control.Name)]);
+                    break;
+                }
+            }
         }
     }
 }

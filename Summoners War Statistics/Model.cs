@@ -9,8 +9,9 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Calculate the time needed to 2A the monster
         /// </summary>
-        public string DimHoleCalculateTime(ushort energyNeeded, short energy, DateTime energyGainStart, bool listView)
+        public (ushort Days, string Date) DimHoleCalculateTime(ushort energyNeeded, short energy, DateTime energyGainStart, bool listView)
         {
+            ushort days = 0;
             string date;
 
             if (listView) { date = "You have enough dimensional energy to 2A this unit."; }
@@ -22,17 +23,17 @@ namespace Summoners_War_Statistics
                 DateTime energyGain = energyGainStart;
                 energyGain = energyGain.AddHours(2 * energyToGet);
 
-                if (listView) { date = energyGain.ToString("dd-MMMM-yyyy HH:mm:ss"); }
+                if (listView) { date = energyGain.ToString("dd-MMMM-yyyy HH:mm:ss"); days = (ushort)Math.Ceiling((double)energyNeeded / 12); }
                 else { date = $"{energyGain.ToString("dd-MMMM-yyyy HH:mm:ss")} you'll have {energyNeeded} dimensional energy if you don't use any."; }
             }
 
-            return date;
+            return (days, date);
         }
 
         /// <summary>
         /// List of monsters needed to lock, in form of rows
         /// </summary>
-        public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked, int stars)
+        public List<MonstersToLockRow> MonstersToLock(List<Monster> monsters, List<long> monstersLocked)
         {
             List<MonstersToLockRow> mons = new List<MonstersToLockRow>();
 
@@ -43,7 +44,7 @@ namespace Summoners_War_Statistics
 
                 // 14314 - rainbowmon
                 // 15105 - devilmon
-                if (((monster.Class >= stars && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
+                if (((monster.Class >= 5 && monster.UnitMasterId != 14314) || monster.UnitMasterId == 15105) && !monstersLocked.Contains((long)monster.UnitId)) { monstersToLock.Add(monster); }
             }
 
             foreach (Monster monsterToLock in monstersToLock)
@@ -63,16 +64,17 @@ namespace Summoners_War_Statistics
                 foreach (KeyValuePair<string, byte> runesOnMonster in runesOfSpecificSet)
                 {
                     byte tempRunesOnMonster = runesOnMonster.Value;
-                    while (tempRunesOnMonster >= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key)))
+                    while (tempRunesOnMonster >= Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key))
                     {
                         sets += $"{runesOnMonster.Key}, ";
-                        tempRunesOnMonster -= byte.Parse(Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key));
+                        tempRunesOnMonster -= (byte)Mapping.Instance.GetRuneSetAmount(runesOnMonster.Key);
                     }
                 }
                 if (sets.Length == 0) { sets = "-"; }
                 else { sets = sets.Remove(sets.Length - 2, 2); }
 
                 mons.Add(new MonstersToLockRow(
+                        (long)monsterToLock.UnitId,
                         Mapping.Instance.GetMonsterName((int)monsterToLock.UnitMasterId), 
                         (byte)monsterToLock.Class, 
                         (byte)monsterToLock.UnitLevel, 
@@ -370,13 +372,13 @@ namespace Summoners_War_Statistics
                         if(monster.UnitId == unit)
                         {
                             string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
+                            Console.WriteLine($"{deck.DeckType}: {Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)}");
                             monstersDecks.Add(monsterName);
                             if (!isLeader && monster.UnitId == deck.LeaderUnitId) { leader = monsterName; isLeader = true; }
                             break;
                         }
                     }
                 }
-
                 decksRows.Add(new DecksRow
                     (
                         place,
@@ -461,44 +463,56 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// List of Towers & Flags, in form of rows
         /// </summary>
-        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        public List<BuildingRow> TowersFlags(List<Decoration> decorations, List<Building> buildings, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeFirstContribution, byte siegeSecondBattle, byte siegeSecondContribution)
         {
             List<BuildingRow> towersFlags = new List<BuildingRow>();
-            foreach (var building in buildings)
+            try
             {
-                foreach (var decoration in decorations)
+
+                bool exists;
+                foreach (var building in buildings)
                 {
-                    if (decoration.MasterId == building.Id)
+                    exists = false;
+                    foreach (var decoration in decorations)
                     {
-                        building.ActualLevel = (int)decoration.Level;
-                        break;
+                        if (decoration.MasterId == building.Id)
+                        {
+                            building.ActualLevel = (int)decoration.Level;
+                            exists = true;
+                            break;
+                        }
                     }
+                    if (!exists)
+                    {
+                        building.ActualLevel = 0;
+                    }
+                    string bonus = "-";
+
+                    if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
+                    else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
+                    else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
+
+                    towersFlags.Add(
+                        new BuildingRow(
+                            building.Area,
+                            building.Name,
+                            bonus,
+                            (byte)building.ActualLevel,
+                            (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
+                            (ushort)building.CalcRemainingUpgradeCost(),
+                            TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeFirstContribution, siegeSecondBattle, siegeSecondContribution)
+                        )
+                    );
                 }
-                string bonus = "-";
-
-                if (building.Type.Contains("%")) { bonus = building.Type.Replace("%", "") + building.Bonus[building.ActualLevel] + "%"; }
-                else if (building.Type.Contains("Time/Energy")) { bonus = "Energy every " + Math.Floor((double)(building.Bonus[building.ActualLevel] / 60)) + ":" + building.Bonus[building.ActualLevel] % 60 + " minutes"; }
-                else { bonus = building.Type + " +" + building.Bonus[building.ActualLevel]; }
-
-                towersFlags.Add(
-                    new BuildingRow(
-                        building.Area,
-                        building.Name,
-                        bonus,
-                        (byte)building.ActualLevel,
-                        (ushort)(building.ActualLevel < 10 ? building.UpgradeCost[building.ActualLevel + 1] : 0),
-                        (ushort)building.CalcRemainingUpgradeCost(),
-                        TowersFlagsCalculateDays(building, arenaRanking, arenaWings, guildRanking, guildBattlesWon, siegeRanking, siegeFirstBattle, siegeSecondBattle)
-                    )
-                );
             }
+            catch (NullReferenceException) { }
             return towersFlags;
         }
 
         /// <summary>
         /// Method that calculates the days needed to max the specific tower/flag from the current upgrade level
         /// </summary>
-        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeSecondBattle)
+        private string TowersFlagsCalculateDays(Building building, ushort arenaRanking, byte arenaWings, ushort guildRanking, byte guildBattlesWon, ushort siegeRanking, byte siegeFirstBattle, byte siegeFirstContribution, byte siegeSecondBattle, byte siegeSecondContribution)
         {
             int remainingUpgradeCost = building.CalcRemainingUpgradeCost();
             if ( remainingUpgradeCost < 1) { return "0"; }
@@ -530,13 +544,13 @@ namespace Summoners_War_Statistics
                 switch (siegeFirstBattle)
                 {
                     case 1:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * siegeFirstContribution / 100);
                         break;
                     case 2:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * siegeFirstContribution / 100);
                         break;
                     case 3:
-                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        guildPointsSiegeFirst = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * siegeFirstContribution / 100);
                         break;
                     default:
                         guildPointsSiegeFirst = 0;
@@ -547,13 +561,13 @@ namespace Summoners_War_Statistics
                 switch (siegeSecondBattle)
                 {
                     case 1:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.FirstPlace.GuildPoints / 100 * 20000 * siegeSecondContribution / 100);
                         break;
                     case 2:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.SecondPlace.GuildPoints / 100 * 15000 * siegeSecondContribution / 100);
                         break;
                     case 3:
-                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * .05);
+                        guildPointsSiegeSecond = (int)((double)guildSiege.ThirdPlace.GuildPoints / 100 * 10000 * siegeSecondContribution / 100);
                         break;
                     default:
                         guildPointsSiegeSecond = 0;

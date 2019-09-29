@@ -15,8 +15,6 @@ namespace Summoners_War_Statistics
         Size SizeWindow { get; }
         List<Control> Cntrls { get; }
 
-        int MonsterStarsChecked { get; }
-
         ushort MonsterAttributeWater { get; set; }
         ushort MonsterAttributeFire { get; set; }
         ushort MonsterAttributeWind { get; set; }
@@ -36,20 +34,21 @@ namespace Summoners_War_Statistics
         ushort DaysSinceLastLDLightning { get; set; }
 
         List<Monster> MonstersList { get; set; }
+        List<Monster> MonstersListAffectedByCollection { get; set; }
         List<long> MonstersLocked { get; set; }
 
-        ObjectListView MonstersListView { get; set; }
-
+        FlowLayoutPanel MonstersListView { get; set; }
 
         List<int> MonstersCollectionCheckedStars { get;}
         List<string> MonstersCollectionCheckedAttributes { get; }
         int MonstersCollectionSummoner { get; set; }
         int MonstersCollectionWhole { get; set; }
+
+        string MonstersListHeader { set; }
         #endregion
 
         #region Events
-        event Action<List<Monster>, List<long>> InitMonsters;
-        event Action<RadioButton> MonstersStarsChanged;
+        event Action<List<long>> InitMonsters;
         event Action Resized;
         event Action CanSeeMonstersTab;
         event Action MonstersCollectionItemChecked;
@@ -61,6 +60,7 @@ namespace Summoners_War_Statistics
         void Front();
         void ResetOnFail();
         void Monsters_Resize(object sender, EventArgs e);
+        void SetInfoOnHover(Control control, string info);
         #endregion
     }
 }

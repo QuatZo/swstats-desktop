@@ -12,6 +12,11 @@ namespace Summoners_War_Statistics
     class MonstersToLockRow
     {
         /// <summary>
+        /// Monster's ID (not Monster's Master ID)
+        /// </summary>
+        public long ID { get; set; }
+
+        /// <summary>
         /// Name of the monster (awakaned and unawakened)
         /// </summary>
         public string Name { get; set; }
@@ -32,8 +37,9 @@ namespace Summoners_War_Statistics
         /// </summary>
         public string RuneSets { get; set; }
 
-        public MonstersToLockRow(string name, byte stars, byte level, byte runes, string runesets)
+        public MonstersToLockRow(long id, string name, byte stars, byte level, byte runes, string runesets)
         {
+            ID = id;
             Name = name;
             Stars = stars;
             Level = level;

@@ -97,7 +97,7 @@
             this.panelGuildText.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelGuildText.Location = new System.Drawing.Point(0, 0);
             this.panelGuildText.Name = "panelGuildText";
-            this.panelGuildText.Size = new System.Drawing.Size(800, 115);
+            this.panelGuildText.Size = new System.Drawing.Size(1008, 115);
             this.panelGuildText.TabIndex = 50;
             this.toolTip1.SetToolTip(this.panelGuildText, "Some guild info");
             // 
@@ -339,7 +339,7 @@
             this.objectListViewGuildMembers.Location = new System.Drawing.Point(0, 42);
             this.objectListViewGuildMembers.Name = "objectListViewGuildMembers";
             this.objectListViewGuildMembers.ShowGroups = false;
-            this.objectListViewGuildMembers.Size = new System.Drawing.Size(800, 263);
+            this.objectListViewGuildMembers.Size = new System.Drawing.Size(1008, 173);
             this.objectListViewGuildMembers.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewGuildMembers.TabIndex = 59;
             this.objectListViewGuildMembers.UseCompatibleStateImageBehavior = false;
@@ -382,7 +382,7 @@
             this.panelGuildMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGuildMembers.Location = new System.Drawing.Point(0, 115);
             this.panelGuildMembers.Name = "panelGuildMembers";
-            this.panelGuildMembers.Size = new System.Drawing.Size(800, 305);
+            this.panelGuildMembers.Size = new System.Drawing.Size(1008, 215);
             this.panelGuildMembers.TabIndex = 49;
             // 
             // panelGuildSiegeDefenses
@@ -390,9 +390,9 @@
             this.panelGuildSiegeDefenses.Controls.Add(this.objectListViewGuildSiegeDefenses);
             this.panelGuildSiegeDefenses.Controls.Add(this.labelGuildSiegeDefenses);
             this.panelGuildSiegeDefenses.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelGuildSiegeDefenses.Location = new System.Drawing.Point(0, 420);
+            this.panelGuildSiegeDefenses.Location = new System.Drawing.Point(0, 330);
             this.panelGuildSiegeDefenses.Name = "panelGuildSiegeDefenses";
-            this.panelGuildSiegeDefenses.Size = new System.Drawing.Size(800, 180);
+            this.panelGuildSiegeDefenses.Size = new System.Drawing.Size(1008, 249);
             this.panelGuildSiegeDefenses.TabIndex = 60;
             // 
             // objectListViewGuildSiegeDefenses
@@ -413,7 +413,7 @@
             this.objectListViewGuildSiegeDefenses.Location = new System.Drawing.Point(0, 42);
             this.objectListViewGuildSiegeDefenses.Name = "objectListViewGuildSiegeDefenses";
             this.objectListViewGuildSiegeDefenses.ShowGroups = false;
-            this.objectListViewGuildSiegeDefenses.Size = new System.Drawing.Size(800, 138);
+            this.objectListViewGuildSiegeDefenses.Size = new System.Drawing.Size(1008, 207);
             this.objectListViewGuildSiegeDefenses.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewGuildSiegeDefenses.TabIndex = 59;
             this.objectListViewGuildSiegeDefenses.UseCompatibleStateImageBehavior = false;
@@ -463,7 +463,7 @@
             this.Controls.Add(this.panelGuildText);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.Name = "Guild";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(1008, 579);
             this.panelGuildText.ResumeLayout(false);
             this.panelGuildText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxActualRanking)).EndInit();
