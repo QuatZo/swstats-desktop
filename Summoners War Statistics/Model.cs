@@ -372,13 +372,13 @@ namespace Summoners_War_Statistics
                         if(monster.UnitId == unit)
                         {
                             string monsterName = Mapping.Instance.GetMonsterName((int)monster.UnitMasterId);
+                            Console.WriteLine($"{deck.DeckType}: {Mapping.Instance.GetMonsterName((int)monster.UnitMasterId)}");
                             monstersDecks.Add(monsterName);
                             if (!isLeader && monster.UnitId == deck.LeaderUnitId) { leader = monsterName; isLeader = true; }
                             break;
                         }
                     }
                 }
-
                 decksRows.Add(new DecksRow
                     (
                         place,

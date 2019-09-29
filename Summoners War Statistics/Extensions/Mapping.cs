@@ -2007,9 +2007,14 @@ namespace Summoners_War_Statistics
             decksPlace.Add(1, "Arena");
             decksPlace.Add(2, "Guild War");
             decksPlace.Add(3, "Raid");
-            decksPlace.Add(4, "Lab 5-man");
-            decksPlace.Add(5, "Lab 4-man");
+            decksPlace.Add(4, "Lab Normal");
+            decksPlace.Add(5, "Lab Rescue");
             decksPlace.Add(6, "ToA");
+            decksPlace.Add(7, "Lab Speed Limit");
+            decksPlace.Add(8, "Lab Time Limit");
+            decksPlace.Add(9, "Lab Cooldown");
+            decksPlace.Add(10, "Lab Explode");
+            decksPlace.Add(11, "Lab Boss");
             #endregion
 
             #region Buildings
