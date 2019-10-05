@@ -264,14 +264,22 @@ namespace Summoners_War_Statistics
             view.DimHoleView.Init(json.DimensionHoleInfo, json.MonsterList);
             Logger.log.Info("[Dimension Hole] DONE");
 
-            Logger.log.Info($"Guild tab");
-            view.GuildView.GuildMembersList.Items.Clear();
-            view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
-            Logger.log.Info("[Guild] DONE");
+            try
+            {
+                Logger.log.Info($"Guild tab");
+                view.GuildView.GuildMembersList.Items.Clear();
+                view.GuildView.Init(json.GuildMap, json.GuildWarParticipationInfo, json.GuildWarMemberList, json.GuildMemberDefenseList, json.GuildWarRankingStat, json.GuildSiegeDefenseUnitList, json.MonsterList);
+                Logger.log.Info("[Guild] DONE");
+            }
+            catch (NullReferenceException)
+            {
+                view.GuildView.ResetOnFail();
+                Logger.log.Info("[Guild] NO GUILD?");
+            }
 
             Logger.log.Info($"Other tab");
             view.OtherView.SummonerFriendsList.Items.Clear();
-            view.OtherView.Init(json.FriendList, json.DecorationList, json.GuildWarRankingStat, json.ArenaStats["rating_id"]);
+            view.OtherView.Init(json.FriendList, json.DecorationList, json.ArenaStats["rating_id"], json.GuildWarRankingStat);
             Logger.log.Info("[Other] DONE");
         }
     }

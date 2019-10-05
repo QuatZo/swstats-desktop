@@ -125,9 +125,9 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Summoner's energy
         /// </summary>
-        public byte SummonerEnergy
+        public int SummonerEnergy
         {
-            get => byte.Parse(labelEnergy.Text);
+            get => int.Parse(labelEnergy.Text);
             set => labelEnergy.Text = value.ToString();
         }
         /// <summary>
@@ -337,8 +337,9 @@ namespace Summoners_War_Statistics
         {
             SummonerName = "QuatZo";
             SummonerMana = SummonerCrystals = SummonerGuildPoints = SummonerGloryPoints = SummonerRTAMedals = SummonerShapeshiftingStones = SummonerMonstersAmount = SummonerMonstersLocked = SummonerRunes = 
-                SummonerRunesLocked = SummonerSocialPoints = SummonerAncientCoins = SummonerLevel = SummonerEnergy = SummonerEnergyMax = SummonerArenaEnergy = SummonerArenaEnergyMax = SummonerDimensionalHoleEnergy =
+                SummonerRunesLocked = SummonerSocialPoints = SummonerAncientCoins = SummonerLevel = SummonerEnergyMax = SummonerArenaEnergy = SummonerArenaEnergyMax = SummonerDimensionalHoleEnergy =
                 SummonerDimensionalHoleEnergyMax = SummonerDimensionalCrystals = SummonerDimensionalCrystalsMax  = 0;
+            SummonerEnergy = 0;
             JsonModifcationDate = "Initialization failed.";
             SummaryDecksListView.Items.Clear();
             Resized?.Invoke();

@@ -40,7 +40,7 @@ namespace Summoners_War_Statistics
         #endregion
 
         #region Methods
-        void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId);
+        void Init(List<Friend> friendsList, List<Decoration> decorations, long arenaRatingId, GuildWarRankingStat guildWarRankingStat);
         void Front();
         void ResetOnFail();
         void Other_Resize(object sender, EventArgs e);

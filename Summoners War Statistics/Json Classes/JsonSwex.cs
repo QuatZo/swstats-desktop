@@ -150,8 +150,8 @@ namespace Summoners_War_Statistics
         [JsonProperty("daily_reward_special_status")]
         public long? DailyRewardSpecialStatus { get; set; }
 
-        [JsonProperty("daily_reward_info")]
-        public DailyRewardInfo DailyRewardInfo { get; set; }
+        //[JsonProperty("daily_reward_info")]
+        //public DailyRewardInfo DailyRewardInfo { get; set; }
 
         [JsonProperty("pvp_info")]
         public Dictionary<string, long> ArenaStats { get; set; }

@@ -231,7 +231,7 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Initialize comboboxes
         /// </summary>
-        private void InitComboBoxes(long arenaRanking, double guildRanking)
+        private void InitComboBoxes(long arenaRanking, double? guildRanking)
         {
             Dictionary<int, string> towersFlagsRankingArena = Mapping.Instance.GetAllArenaRankings(); // arena ranks
             towersFlagsRankingArena = towersFlagsRankingArena.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
@@ -247,7 +247,7 @@ namespace Summoners_War_Statistics
             comboBoxRankingGuild.DisplayMember = "Value";
             comboBoxRankingGuild.ValueMember = "Key";
 
-            comboBoxRankingGuild.SelectedValue = (int)guildRanking;
+            comboBoxRankingGuild.SelectedValue = guildRanking != null ? (int)guildRanking : 0;
 
             Dictionary<int, string> towersFlagsRankingSiege = Mapping.Instance.GetAllGuildRankings(); // siege ranks
             towersFlagsRankingSiege = towersFlagsRankingSiege.OrderBy(x => x.Key).ToDictionary(pair => pair.Key, pair => pair.Value);
@@ -255,7 +255,7 @@ namespace Summoners_War_Statistics
             comboBoxRankingSiege.DisplayMember = "Value";
             comboBoxRankingSiege.ValueMember = "Key";
 
-            comboBoxRankingSiege.SelectedValue = (int)guildRanking;
+            comboBoxRankingSiege.SelectedValue = guildRanking != null ? (int)guildRanking : 0;
 
             numericUpDownWingsPerDay.Value = 10;
             comboBoxGuildBattlesWon.SelectedIndex = 12;
@@ -268,12 +268,14 @@ namespace Summoners_War_Statistics
         /// <summary>
         /// Initialize whole Other tab
         /// </summary>
-        public void Init(List<Friend> friendsList, List<Decoration> decorations, GuildWarRankingStat guildWarRankingStat, long arenaRatingId)
+        public void Init(List<Friend> friendsList, List<Decoration> decorations, long arenaRatingId, GuildWarRankingStat guildWarRankingStat)
         {
             objectListViewTowersFlags.Items.Clear();
             Decorations = decorations;
 
-            InitComboBoxes(arenaRatingId, guildWarRankingStat.Current["rating_id"]);
+            if (guildWarRankingStat == null) { InitComboBoxes(arenaRatingId, Mapping.Instance.GetAllGuildRankings().Keys.First()); }
+            else { InitComboBoxes(arenaRatingId, guildWarRankingStat.Current["rating_id"]); }
+
             InitOther?.Invoke(friendsList, decorations);
         }
 
