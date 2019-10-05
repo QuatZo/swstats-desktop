@@ -21,7 +21,7 @@ namespace Summoners_War_Statistics
         byte SummonerLevel { get; set; }
         ulong SummonerMana { get; set; }
         uint SummonerCrystals { get; set; }
-        byte SummonerEnergy { get; set; }
+        int SummonerEnergy { get; set; }
         byte SummonerEnergyMax { get; set; }
         byte SummonerArenaEnergy { get; set; }
         byte SummonerArenaEnergyMax { get; set; }

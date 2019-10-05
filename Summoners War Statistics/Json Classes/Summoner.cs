@@ -40,7 +40,7 @@ namespace Summoners_War_Statistics
         public long? Experience { get; set; }
 
         [JsonProperty("wizard_energy")]
-        public byte WizardEnergy { get; set; }
+        public int WizardEnergy { get; set; }
 
         [JsonProperty("energy_max")]
         public byte EnergyMax { get; set; }
