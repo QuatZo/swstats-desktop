@@ -77,7 +77,8 @@ namespace Summoners_War_Statistics
                     panelDecks,
                     panelFooter,
                     panelHeader,
-                    objectListViewDecks
+                    objectListViewDecks,
+                    labelSummaryDecks
                 };
 
         /// <summary>

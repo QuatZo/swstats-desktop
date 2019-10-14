@@ -86,11 +86,11 @@
             // labelDimHoleEnergy
             // 
             this.labelDimHoleEnergy.AutoSize = true;
-            this.labelDimHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDimHoleEnergy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimHoleEnergy.Location = new System.Drawing.Point(0, 0);
             this.labelDimHoleEnergy.Name = "labelDimHoleEnergy";
-            this.labelDimHoleEnergy.Size = new System.Drawing.Size(249, 42);
+            this.labelDimHoleEnergy.Size = new System.Drawing.Size(381, 39);
             this.labelDimHoleEnergy.TabIndex = 1;
             this.labelDimHoleEnergy.Text = "Dimension Hole Energy";
             this.toolTip1.SetToolTip(this.labelDimHoleEnergy, "Shows the actual dimension hole energy you have");
@@ -108,11 +108,11 @@
             // labelDimensionalHoleEnergyMax
             // 
             this.labelDimensionalHoleEnergyMax.AutoSize = true;
-            this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergyMax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(75, 47);
             this.labelDimensionalHoleEnergyMax.Name = "labelDimensionalHoleEnergyMax";
-            this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(28, 22);
+            this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(40, 24);
             this.labelDimensionalHoleEnergyMax.TabIndex = 33;
             this.labelDimensionalHoleEnergyMax.Text = "100";
             this.labelDimensionalHoleEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,11 +121,11 @@
             // labelDimensionalHoleEnergySlash
             // 
             this.labelDimensionalHoleEnergySlash.AutoSize = true;
-            this.labelDimensionalHoleEnergySlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergySlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergySlash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimensionalHoleEnergySlash.Location = new System.Drawing.Point(63, 47);
             this.labelDimensionalHoleEnergySlash.Name = "labelDimensionalHoleEnergySlash";
-            this.labelDimensionalHoleEnergySlash.Size = new System.Drawing.Size(14, 22);
+            this.labelDimensionalHoleEnergySlash.Size = new System.Drawing.Size(15, 24);
             this.labelDimensionalHoleEnergySlash.TabIndex = 32;
             this.labelDimensionalHoleEnergySlash.Text = "/";
             this.labelDimensionalHoleEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,11 +134,11 @@
             // labelDimensionalHoleEnergy
             // 
             this.labelDimensionalHoleEnergy.AutoSize = true;
-            this.labelDimensionalHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimensionalHoleEnergy.Location = new System.Drawing.Point(40, 47);
             this.labelDimensionalHoleEnergy.Name = "labelDimensionalHoleEnergy";
-            this.labelDimensionalHoleEnergy.Size = new System.Drawing.Size(17, 22);
+            this.labelDimensionalHoleEnergy.Size = new System.Drawing.Size(20, 24);
             this.labelDimensionalHoleEnergy.TabIndex = 31;
             this.labelDimensionalHoleEnergy.Text = "0";
             this.labelDimensionalHoleEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,11 +147,11 @@
             // labelDimensionalHoleEnergyMaxInfo
             // 
             this.labelDimensionalHoleEnergyMaxInfo.AutoSize = true;
-            this.labelDimensionalHoleEnergyMaxInfo.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergyMaxInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergyMaxInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimensionalHoleEnergyMaxInfo.Location = new System.Drawing.Point(109, 47);
             this.labelDimensionalHoleEnergyMaxInfo.Name = "labelDimensionalHoleEnergyMaxInfo";
-            this.labelDimensionalHoleEnergyMaxInfo.Size = new System.Drawing.Size(0, 22);
+            this.labelDimensionalHoleEnergyMaxInfo.Size = new System.Drawing.Size(0, 24);
             this.labelDimensionalHoleEnergyMaxInfo.TabIndex = 35;
             this.labelDimensionalHoleEnergyMaxInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.labelDimensionalHoleEnergyMaxInfo, "Shows if your energy is maxed out and/or when it\'ll be");
@@ -160,11 +160,11 @@
             // 
             this.labelDimHoleMonsters.AutoSize = true;
             this.labelDimHoleMonsters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDimHoleMonsters.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleMonsters.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDimHoleMonsters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimHoleMonsters.Location = new System.Drawing.Point(0, 0);
             this.labelDimHoleMonsters.Name = "labelDimHoleMonsters";
-            this.labelDimHoleMonsters.Size = new System.Drawing.Size(279, 42);
+            this.labelDimHoleMonsters.Size = new System.Drawing.Size(415, 39);
             this.labelDimHoleMonsters.TabIndex = 36;
             this.labelDimHoleMonsters.Text = "Dimension Hole Monsters";
             this.toolTip1.SetToolTip(this.labelDimHoleMonsters, "This section calculates energy and time needed to 2A monster, depending on level " +
@@ -173,11 +173,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.radioButton1.Location = new System.Drawing.Point(6, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(36, 23);
+            this.radioButton1.Size = new System.Drawing.Size(47, 24);
             this.radioButton1.TabIndex = 38;
             this.radioButton1.Text = "B1";
             this.toolTip1.SetToolTip(this.radioButton1, "Here you can change which floor you\'ll farm to 2A a monster");
@@ -187,11 +187,11 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.radioButton2.Location = new System.Drawing.Point(6, 32);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 23);
+            this.radioButton2.Size = new System.Drawing.Size(47, 24);
             this.radioButton2.TabIndex = 39;
             this.radioButton2.Text = "B2";
             this.toolTip1.SetToolTip(this.radioButton2, "Here you can change which floor you\'ll farm to 2A a monster");
@@ -201,11 +201,11 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.radioButton3.Location = new System.Drawing.Point(6, 61);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 23);
+            this.radioButton3.Size = new System.Drawing.Size(47, 24);
             this.radioButton3.TabIndex = 40;
             this.radioButton3.Text = "B3";
             this.toolTip1.SetToolTip(this.radioButton3, "Here you can change which floor you\'ll farm to 2A a monster");
@@ -215,11 +215,11 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.radioButton4.Location = new System.Drawing.Point(6, 90);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(39, 23);
+            this.radioButton4.Size = new System.Drawing.Size(47, 24);
             this.radioButton4.TabIndex = 41;
             this.radioButton4.Text = "B4";
             this.toolTip1.SetToolTip(this.radioButton4, "Here you can change which floor you\'ll farm to 2A a monster");
@@ -230,11 +230,11 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Checked = true;
-            this.radioButton5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.radioButton5.Location = new System.Drawing.Point(6, 119);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(39, 23);
+            this.radioButton5.Size = new System.Drawing.Size(47, 24);
             this.radioButton5.TabIndex = 42;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "B5";
@@ -286,10 +286,10 @@
             this.objectListViewDimHole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.objectListViewDimHole.FullRowSelect = true;
             this.objectListViewDimHole.HideSelection = false;
-            this.objectListViewDimHole.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewDimHole.Location = new System.Drawing.Point(0, 39);
             this.objectListViewDimHole.Name = "objectListViewDimHole";
             this.objectListViewDimHole.ShowGroups = false;
-            this.objectListViewDimHole.Size = new System.Drawing.Size(948, 310);
+            this.objectListViewDimHole.Size = new System.Drawing.Size(948, 313);
             this.objectListViewDimHole.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewDimHole.TabIndex = 58;
             this.objectListViewDimHole.UseCompatibleStateImageBehavior = false;
@@ -338,9 +338,9 @@
             this.panelButtons.Controls.Add(this.radioButton1);
             this.panelButtons.Controls.Add(this.radioButton4);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelButtons.Location = new System.Drawing.Point(948, 42);
+            this.panelButtons.Location = new System.Drawing.Point(948, 39);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(60, 310);
+            this.panelButtons.Size = new System.Drawing.Size(60, 313);
             this.panelButtons.TabIndex = 43;
             // 
             // panelFarm
@@ -384,11 +384,11 @@
             // labelTextFarm
             // 
             this.labelTextFarm.AutoSize = true;
-            this.labelTextFarm.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextFarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextFarm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextFarm.Location = new System.Drawing.Point(0, 48);
             this.labelTextFarm.Name = "labelTextFarm";
-            this.labelTextFarm.Size = new System.Drawing.Size(100, 22);
+            this.labelTextFarm.Size = new System.Drawing.Size(147, 24);
             this.labelTextFarm.TabIndex = 53;
             this.labelTextFarm.Text = "You should farm";
             this.labelTextFarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,11 +397,11 @@
             // labelFarmSuccess
             // 
             this.labelFarmSuccess.AutoSize = true;
-            this.labelFarmSuccess.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelFarmSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelFarmSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelFarmSuccess.Location = new System.Drawing.Point(41, 97);
             this.labelFarmSuccess.Name = "labelFarmSuccess";
-            this.labelFarmSuccess.Size = new System.Drawing.Size(24, 22);
+            this.labelFarmSuccess.Size = new System.Drawing.Size(32, 24);
             this.labelFarmSuccess.TabIndex = 65;
             this.labelFarmSuccess.Text = "B5";
             this.labelFarmSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,11 +410,11 @@
             // labelFarmTime
             // 
             this.labelFarmTime.AutoSize = true;
-            this.labelFarmTime.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelFarmTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelFarmTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelFarmTime.Location = new System.Drawing.Point(41, 70);
             this.labelFarmTime.Name = "labelFarmTime";
-            this.labelFarmTime.Size = new System.Drawing.Size(24, 22);
+            this.labelFarmTime.Size = new System.Drawing.Size(32, 24);
             this.labelFarmTime.TabIndex = 54;
             this.labelFarmTime.Text = "B5";
             this.labelFarmTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -563,11 +563,11 @@
             // labelTextSuccessRate
             // 
             this.labelTextSuccessRate.AutoSize = true;
-            this.labelTextSuccessRate.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextSuccessRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextSuccessRate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextSuccessRate.Location = new System.Drawing.Point(26, 97);
             this.labelTextSuccessRate.Name = "labelTextSuccessRate";
-            this.labelTextSuccessRate.Size = new System.Drawing.Size(87, 22);
+            this.labelTextSuccessRate.Size = new System.Drawing.Size(118, 24);
             this.labelTextSuccessRate.TabIndex = 52;
             this.labelTextSuccessRate.Text = "Success rate";
             this.labelTextSuccessRate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -576,11 +576,11 @@
             // labelTextTime
             // 
             this.labelTextTime.AutoSize = true;
-            this.labelTextTime.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextTime.Location = new System.Drawing.Point(75, 73);
             this.labelTextTime.Name = "labelTextTime";
-            this.labelTextTime.Size = new System.Drawing.Size(38, 22);
+            this.labelTextTime.Size = new System.Drawing.Size(53, 24);
             this.labelTextTime.TabIndex = 51;
             this.labelTextTime.Text = "Time";
             this.labelTextTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -589,11 +589,11 @@
             // labelTextB5
             // 
             this.labelTextB5.AutoSize = true;
-            this.labelTextB5.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextB5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextB5.Location = new System.Drawing.Point(585, 48);
             this.labelTextB5.Name = "labelTextB5";
-            this.labelTextB5.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB5.Size = new System.Drawing.Size(32, 24);
             this.labelTextB5.TabIndex = 50;
             this.labelTextB5.Text = "B5";
             this.labelTextB5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -602,11 +602,11 @@
             // labelTextB4
             // 
             this.labelTextB4.AutoSize = true;
-            this.labelTextB4.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextB4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextB4.Location = new System.Drawing.Point(483, 48);
             this.labelTextB4.Name = "labelTextB4";
-            this.labelTextB4.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB4.Size = new System.Drawing.Size(32, 24);
             this.labelTextB4.TabIndex = 49;
             this.labelTextB4.Text = "B4";
             this.labelTextB4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -615,11 +615,11 @@
             // labelTextB3
             // 
             this.labelTextB3.AutoSize = true;
-            this.labelTextB3.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextB3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextB3.Location = new System.Drawing.Point(374, 48);
             this.labelTextB3.Name = "labelTextB3";
-            this.labelTextB3.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB3.Size = new System.Drawing.Size(32, 24);
             this.labelTextB3.TabIndex = 48;
             this.labelTextB3.Text = "B3";
             this.labelTextB3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -628,11 +628,11 @@
             // labelTextB2
             // 
             this.labelTextB2.AutoSize = true;
-            this.labelTextB2.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextB2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextB2.Location = new System.Drawing.Point(268, 48);
             this.labelTextB2.Name = "labelTextB2";
-            this.labelTextB2.Size = new System.Drawing.Size(24, 22);
+            this.labelTextB2.Size = new System.Drawing.Size(32, 24);
             this.labelTextB2.TabIndex = 47;
             this.labelTextB2.Text = "B2";
             this.labelTextB2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -641,11 +641,11 @@
             // labelTextB1
             // 
             this.labelTextB1.AutoSize = true;
-            this.labelTextB1.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelTextB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelTextB1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelTextB1.Location = new System.Drawing.Point(155, 48);
             this.labelTextB1.Name = "labelTextB1";
-            this.labelTextB1.Size = new System.Drawing.Size(21, 22);
+            this.labelTextB1.Size = new System.Drawing.Size(32, 24);
             this.labelTextB1.TabIndex = 36;
             this.labelTextB1.Text = "B1";
             this.labelTextB1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -654,11 +654,11 @@
             // labelDimHoleFloor
             // 
             this.labelDimHoleFloor.AutoSize = true;
-            this.labelDimHoleFloor.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDimHoleFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDimHoleFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelDimHoleFloor.Location = new System.Drawing.Point(0, 0);
             this.labelDimHoleFloor.Name = "labelDimHoleFloor";
-            this.labelDimHoleFloor.Size = new System.Drawing.Size(228, 42);
+            this.labelDimHoleFloor.Size = new System.Drawing.Size(350, 39);
             this.labelDimHoleFloor.TabIndex = 36;
             this.labelDimHoleFloor.Text = "Dimension Hole Floor";
             this.toolTip1.SetToolTip(this.labelDimHoleFloor, "This section calculates which floor you should farm");

@@ -529,7 +529,7 @@ namespace Summoners_War_Statistics
             }
             else
             {
-                int guildPointsPerFight = (guildRanking / 1000 + 2);
+                int guildPointsPerFight = (guildRanking / 1000 + 6);
                 if (guildRanking > 5000) { guildPointsPerFight--; } // Legend gets same amount as Guardian
 
                 int guildPointsPerBattle = guildPointsPerFight * 6 + 12; // 12 -> +6 rule
@@ -574,7 +574,7 @@ namespace Summoners_War_Statistics
                         break;
                 }
 
-                double gloryPointsWeek = Math.Max((guildPointsPerBattle * 12 + guildPointsPerBattle * guildBattlesWon) + guildPointsSiegeFirst + guildPointsSiegeSecond - 150, 0);
+                double gloryPointsWeek = Math.Max((guildPointsPerBattle * 12 + ((guildRanking / 100) + 10) * guildBattlesWon) + guildPointsSiegeFirst + guildPointsSiegeSecond - 150, 0);
                 return Math.Ceiling(remainingUpgradeCost * 7 / gloryPointsWeek).ToString();
             }
         }

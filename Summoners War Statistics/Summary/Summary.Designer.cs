@@ -124,10 +124,10 @@
             // labelSummonerName
             // 
             this.labelSummonerName.AutoSize = true;
-            this.labelSummonerName.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummonerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSummonerName.Location = new System.Drawing.Point(96, 0);
             this.labelSummonerName.Name = "labelSummonerName";
-            this.labelSummonerName.Size = new System.Drawing.Size(124, 57);
+            this.labelSummonerName.Size = new System.Drawing.Size(184, 55);
             this.labelSummonerName.TabIndex = 0;
             this.labelSummonerName.Text = "QuatZo";
             this.toolTip1.SetToolTip(this.labelSummonerName, "Your nickname");
@@ -135,10 +135,10 @@
             // labelMana
             // 
             this.labelMana.AutoSize = true;
-            this.labelMana.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMana.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelMana.Location = new System.Drawing.Point(33, 0);
             this.labelMana.Name = "labelMana";
-            this.labelMana.Size = new System.Drawing.Size(17, 22);
+            this.labelMana.Size = new System.Drawing.Size(20, 24);
             this.labelMana.TabIndex = 1;
             this.labelMana.Text = "0";
             this.labelMana.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,10 +147,10 @@
             // labelCrystals
             // 
             this.labelCrystals.AutoSize = true;
-            this.labelCrystals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelCrystals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelCrystals.Location = new System.Drawing.Point(33, 30);
             this.labelCrystals.Name = "labelCrystals";
-            this.labelCrystals.Size = new System.Drawing.Size(17, 22);
+            this.labelCrystals.Size = new System.Drawing.Size(20, 24);
             this.labelCrystals.TabIndex = 2;
             this.labelCrystals.Text = "0";
             this.labelCrystals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -159,10 +159,10 @@
             // labelEnergy
             // 
             this.labelEnergy.AutoSize = true;
-            this.labelEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelEnergy.Location = new System.Drawing.Point(303, 2);
             this.labelEnergy.Name = "labelEnergy";
-            this.labelEnergy.Size = new System.Drawing.Size(17, 22);
+            this.labelEnergy.Size = new System.Drawing.Size(20, 24);
             this.labelEnergy.TabIndex = 3;
             this.labelEnergy.Text = "0";
             this.labelEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,10 +171,10 @@
             // labelEnergySlash
             // 
             this.labelEnergySlash.AutoSize = true;
-            this.labelEnergySlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelEnergySlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelEnergySlash.Location = new System.Drawing.Point(327, 2);
             this.labelEnergySlash.Name = "labelEnergySlash";
-            this.labelEnergySlash.Size = new System.Drawing.Size(14, 22);
+            this.labelEnergySlash.Size = new System.Drawing.Size(15, 24);
             this.labelEnergySlash.TabIndex = 4;
             this.labelEnergySlash.Text = "/";
             this.labelEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,10 +183,10 @@
             // labelEnergyMax
             // 
             this.labelEnergyMax.AutoSize = true;
-            this.labelEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelEnergyMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelEnergyMax.Location = new System.Drawing.Point(338, 2);
             this.labelEnergyMax.Name = "labelEnergyMax";
-            this.labelEnergyMax.Size = new System.Drawing.Size(17, 22);
+            this.labelEnergyMax.Size = new System.Drawing.Size(20, 24);
             this.labelEnergyMax.TabIndex = 5;
             this.labelEnergyMax.Text = "0";
             this.labelEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,10 +195,10 @@
             // labelGldPoints
             // 
             this.labelGldPoints.AutoSize = true;
-            this.labelGldPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelGldPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelGldPoints.Location = new System.Drawing.Point(33, 91);
             this.labelGldPoints.Name = "labelGldPoints";
-            this.labelGldPoints.Size = new System.Drawing.Size(17, 22);
+            this.labelGldPoints.Size = new System.Drawing.Size(20, 24);
             this.labelGldPoints.TabIndex = 6;
             this.labelGldPoints.Text = "0";
             this.labelGldPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -207,10 +207,10 @@
             // labelGloryPoints
             // 
             this.labelGloryPoints.AutoSize = true;
-            this.labelGloryPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelGloryPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelGloryPoints.Location = new System.Drawing.Point(33, 62);
             this.labelGloryPoints.Name = "labelGloryPoints";
-            this.labelGloryPoints.Size = new System.Drawing.Size(17, 22);
+            this.labelGloryPoints.Size = new System.Drawing.Size(20, 24);
             this.labelGloryPoints.TabIndex = 7;
             this.labelGloryPoints.Text = "0";
             this.labelGloryPoints.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -219,10 +219,10 @@
             // labelRTAMedals
             // 
             this.labelRTAMedals.AutoSize = true;
-            this.labelRTAMedals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRTAMedals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelRTAMedals.Location = new System.Drawing.Point(33, 5);
             this.labelRTAMedals.Name = "labelRTAMedals";
-            this.labelRTAMedals.Size = new System.Drawing.Size(17, 22);
+            this.labelRTAMedals.Size = new System.Drawing.Size(20, 24);
             this.labelRTAMedals.TabIndex = 8;
             this.labelRTAMedals.Text = "0";
             this.labelRTAMedals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -231,10 +231,10 @@
             // labelShapeshiftingStones
             // 
             this.labelShapeshiftingStones.AutoSize = true;
-            this.labelShapeshiftingStones.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelShapeshiftingStones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelShapeshiftingStones.Location = new System.Drawing.Point(33, 33);
             this.labelShapeshiftingStones.Name = "labelShapeshiftingStones";
-            this.labelShapeshiftingStones.Size = new System.Drawing.Size(17, 22);
+            this.labelShapeshiftingStones.Size = new System.Drawing.Size(20, 24);
             this.labelShapeshiftingStones.TabIndex = 9;
             this.labelShapeshiftingStones.Text = "0";
             this.labelShapeshiftingStones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,10 +243,10 @@
             // labelDimensionalCrystals
             // 
             this.labelDimensionalCrystals.AutoSize = true;
-            this.labelDimensionalCrystals.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalCrystals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalCrystals.Location = new System.Drawing.Point(303, 92);
             this.labelDimensionalCrystals.Name = "labelDimensionalCrystals";
-            this.labelDimensionalCrystals.Size = new System.Drawing.Size(17, 22);
+            this.labelDimensionalCrystals.Size = new System.Drawing.Size(20, 24);
             this.labelDimensionalCrystals.TabIndex = 10;
             this.labelDimensionalCrystals.Text = "0";
             this.labelDimensionalCrystals.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,10 +255,10 @@
             // labelDimensionalCrystalsSlash
             // 
             this.labelDimensionalCrystalsSlash.AutoSize = true;
-            this.labelDimensionalCrystalsSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalCrystalsSlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalCrystalsSlash.Location = new System.Drawing.Point(327, 92);
             this.labelDimensionalCrystalsSlash.Name = "labelDimensionalCrystalsSlash";
-            this.labelDimensionalCrystalsSlash.Size = new System.Drawing.Size(14, 22);
+            this.labelDimensionalCrystalsSlash.Size = new System.Drawing.Size(15, 24);
             this.labelDimensionalCrystalsSlash.TabIndex = 11;
             this.labelDimensionalCrystalsSlash.Text = "/";
             this.labelDimensionalCrystalsSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,10 +267,10 @@
             // labelDimensionalCrystalsMax
             // 
             this.labelDimensionalCrystalsMax.AutoSize = true;
-            this.labelDimensionalCrystalsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalCrystalsMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalCrystalsMax.Location = new System.Drawing.Point(338, 92);
             this.labelDimensionalCrystalsMax.Name = "labelDimensionalCrystalsMax";
-            this.labelDimensionalCrystalsMax.Size = new System.Drawing.Size(21, 22);
+            this.labelDimensionalCrystalsMax.Size = new System.Drawing.Size(30, 24);
             this.labelDimensionalCrystalsMax.TabIndex = 12;
             this.labelDimensionalCrystalsMax.Text = "10";
             this.labelDimensionalCrystalsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,10 +279,10 @@
             // labelDimensionalHoleEnergy
             // 
             this.labelDimensionalHoleEnergy.AutoSize = true;
-            this.labelDimensionalHoleEnergy.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergy.Location = new System.Drawing.Point(303, 30);
             this.labelDimensionalHoleEnergy.Name = "labelDimensionalHoleEnergy";
-            this.labelDimensionalHoleEnergy.Size = new System.Drawing.Size(17, 22);
+            this.labelDimensionalHoleEnergy.Size = new System.Drawing.Size(20, 24);
             this.labelDimensionalHoleEnergy.TabIndex = 13;
             this.labelDimensionalHoleEnergy.Text = "0";
             this.labelDimensionalHoleEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -291,10 +291,10 @@
             // labelDimensionalHoleEnergySlash
             // 
             this.labelDimensionalHoleEnergySlash.AutoSize = true;
-            this.labelDimensionalHoleEnergySlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergySlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergySlash.Location = new System.Drawing.Point(327, 30);
             this.labelDimensionalHoleEnergySlash.Name = "labelDimensionalHoleEnergySlash";
-            this.labelDimensionalHoleEnergySlash.Size = new System.Drawing.Size(14, 22);
+            this.labelDimensionalHoleEnergySlash.Size = new System.Drawing.Size(15, 24);
             this.labelDimensionalHoleEnergySlash.TabIndex = 14;
             this.labelDimensionalHoleEnergySlash.Text = "/";
             this.labelDimensionalHoleEnergySlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,10 +303,10 @@
             // labelDimensionalHoleEnergyMax
             // 
             this.labelDimensionalHoleEnergyMax.AutoSize = true;
-            this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelDimensionalHoleEnergyMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDimensionalHoleEnergyMax.Location = new System.Drawing.Point(338, 30);
             this.labelDimensionalHoleEnergyMax.Name = "labelDimensionalHoleEnergyMax";
-            this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(28, 22);
+            this.labelDimensionalHoleEnergyMax.Size = new System.Drawing.Size(40, 24);
             this.labelDimensionalHoleEnergyMax.TabIndex = 15;
             this.labelDimensionalHoleEnergyMax.Text = "100";
             this.labelDimensionalHoleEnergyMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -316,10 +316,10 @@
             // 
             this.labelLevel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelLevel.AutoSize = true;
-            this.labelLevel.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 20.25F);
+            this.labelLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.labelLevel.Location = new System.Drawing.Point(977, 0);
             this.labelLevel.Name = "labelLevel";
-            this.labelLevel.Size = new System.Drawing.Size(25, 32);
+            this.labelLevel.Size = new System.Drawing.Size(29, 31);
             this.labelLevel.TabIndex = 17;
             this.labelLevel.Text = "0";
             this.labelLevel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -328,10 +328,10 @@
             // labelArenaWings
             // 
             this.labelArenaWings.AutoSize = true;
-            this.labelArenaWings.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelArenaWings.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelArenaWings.Location = new System.Drawing.Point(303, 62);
             this.labelArenaWings.Name = "labelArenaWings";
-            this.labelArenaWings.Size = new System.Drawing.Size(17, 22);
+            this.labelArenaWings.Size = new System.Drawing.Size(20, 24);
             this.labelArenaWings.TabIndex = 18;
             this.labelArenaWings.Text = "0";
             this.labelArenaWings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,10 +340,10 @@
             // labelArenaWingsSlash
             // 
             this.labelArenaWingsSlash.AutoSize = true;
-            this.labelArenaWingsSlash.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelArenaWingsSlash.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelArenaWingsSlash.Location = new System.Drawing.Point(327, 62);
             this.labelArenaWingsSlash.Name = "labelArenaWingsSlash";
-            this.labelArenaWingsSlash.Size = new System.Drawing.Size(14, 22);
+            this.labelArenaWingsSlash.Size = new System.Drawing.Size(15, 24);
             this.labelArenaWingsSlash.TabIndex = 19;
             this.labelArenaWingsSlash.Text = "/";
             this.labelArenaWingsSlash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -352,10 +352,10 @@
             // labelArenaWingsMax
             // 
             this.labelArenaWingsMax.AutoSize = true;
-            this.labelArenaWingsMax.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelArenaWingsMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelArenaWingsMax.Location = new System.Drawing.Point(338, 62);
             this.labelArenaWingsMax.Name = "labelArenaWingsMax";
-            this.labelArenaWingsMax.Size = new System.Drawing.Size(17, 22);
+            this.labelArenaWingsMax.Size = new System.Drawing.Size(20, 24);
             this.labelArenaWingsMax.TabIndex = 20;
             this.labelArenaWingsMax.Text = "0";
             this.labelArenaWingsMax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,10 +365,10 @@
             // 
             this.labelSocialPoints.AutoSize = true;
             this.labelSocialPoints.BackColor = System.Drawing.Color.Transparent;
-            this.labelSocialPoints.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelSocialPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelSocialPoints.Location = new System.Drawing.Point(33, 59);
             this.labelSocialPoints.Name = "labelSocialPoints";
-            this.labelSocialPoints.Size = new System.Drawing.Size(17, 22);
+            this.labelSocialPoints.Size = new System.Drawing.Size(20, 24);
             this.labelSocialPoints.TabIndex = 45;
             this.labelSocialPoints.Text = "0";
             this.labelSocialPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,10 +378,10 @@
             // 
             this.labelJsonModified.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelJsonModified.AutoSize = true;
-            this.labelJsonModified.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelJsonModified.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelJsonModified.Location = new System.Drawing.Point(62, 16);
             this.labelJsonModified.Name = "labelJsonModified";
-            this.labelJsonModified.Size = new System.Drawing.Size(178, 22);
+            this.labelJsonModified.Size = new System.Drawing.Size(256, 24);
             this.labelJsonModified.TabIndex = 46;
             this.labelJsonModified.Text = "Date of JSON file modification";
             this.toolTip1.SetToolTip(this.labelJsonModified, "Date of JSON file modification");
@@ -389,10 +389,10 @@
             // labelMons
             // 
             this.labelMons.AutoSize = true;
-            this.labelMons.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelMons.Location = new System.Drawing.Point(36, 0);
             this.labelMons.Name = "labelMons";
-            this.labelMons.Size = new System.Drawing.Size(17, 22);
+            this.labelMons.Size = new System.Drawing.Size(20, 24);
             this.labelMons.TabIndex = 47;
             this.labelMons.Text = "0";
             this.labelMons.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -401,10 +401,10 @@
             // labelMonsLocked
             // 
             this.labelMonsLocked.AutoSize = true;
-            this.labelMonsLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelMonsLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelMonsLocked.Location = new System.Drawing.Point(36, 30);
             this.labelMonsLocked.Name = "labelMonsLocked";
-            this.labelMonsLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelMonsLocked.Size = new System.Drawing.Size(20, 24);
             this.labelMonsLocked.TabIndex = 48;
             this.labelMonsLocked.Text = "0";
             this.labelMonsLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -413,10 +413,10 @@
             // labelRnes
             // 
             this.labelRnes.AutoSize = true;
-            this.labelRnes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRnes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelRnes.Location = new System.Drawing.Point(36, 60);
             this.labelRnes.Name = "labelRnes";
-            this.labelRnes.Size = new System.Drawing.Size(17, 22);
+            this.labelRnes.Size = new System.Drawing.Size(20, 24);
             this.labelRnes.TabIndex = 49;
             this.labelRnes.Text = "0";
             this.labelRnes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -425,10 +425,10 @@
             // labelRnesLocked
             // 
             this.labelRnesLocked.AutoSize = true;
-            this.labelRnesLocked.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelRnesLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelRnesLocked.Location = new System.Drawing.Point(36, 92);
             this.labelRnesLocked.Name = "labelRnesLocked";
-            this.labelRnesLocked.Size = new System.Drawing.Size(17, 22);
+            this.labelRnesLocked.Size = new System.Drawing.Size(20, 24);
             this.labelRnesLocked.TabIndex = 50;
             this.labelRnesLocked.Text = "0";
             this.labelRnesLocked.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -438,10 +438,10 @@
             // 
             this.labelJsonCreatedText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelJsonCreatedText.AutoSize = true;
-            this.labelJsonCreatedText.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelJsonCreatedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelJsonCreatedText.Location = new System.Drawing.Point(3, 16);
             this.labelJsonCreatedText.Name = "labelJsonCreatedText";
-            this.labelJsonCreatedText.Size = new System.Drawing.Size(62, 22);
+            this.labelJsonCreatedText.Size = new System.Drawing.Size(86, 24);
             this.labelJsonCreatedText.TabIndex = 51;
             this.labelJsonCreatedText.Text = "Created: ";
             this.toolTip1.SetToolTip(this.labelJsonCreatedText, "Date of JSON file modification");
@@ -450,10 +450,10 @@
             // 
             this.labelAncientCoins.AutoSize = true;
             this.labelAncientCoins.BackColor = System.Drawing.Color.Transparent;
-            this.labelAncientCoins.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 14F);
+            this.labelAncientCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelAncientCoins.Location = new System.Drawing.Point(33, 91);
             this.labelAncientCoins.Name = "labelAncientCoins";
-            this.labelAncientCoins.Size = new System.Drawing.Size(17, 22);
+            this.labelAncientCoins.Size = new System.Drawing.Size(20, 24);
             this.labelAncientCoins.TabIndex = 53;
             this.labelAncientCoins.Text = "0";
             this.labelAncientCoins.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -679,10 +679,10 @@
             this.objectListViewDecks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.objectListViewDecks.FullRowSelect = true;
             this.objectListViewDecks.HideSelection = false;
-            this.objectListViewDecks.Location = new System.Drawing.Point(0, 42);
+            this.objectListViewDecks.Location = new System.Drawing.Point(0, 39);
             this.objectListViewDecks.Name = "objectListViewDecks";
             this.objectListViewDecks.ShowGroups = false;
-            this.objectListViewDecks.Size = new System.Drawing.Size(1008, 285);
+            this.objectListViewDecks.Size = new System.Drawing.Size(1008, 288);
             this.objectListViewDecks.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListViewDecks.TabIndex = 59;
             this.objectListViewDecks.UseCompatibleStateImageBehavior = false;
@@ -760,11 +760,11 @@
             // 
             this.labelSummaryDecks.AutoSize = true;
             this.labelSummaryDecks.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSummaryDecks.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSummaryDecks.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSummaryDecks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
             this.labelSummaryDecks.Location = new System.Drawing.Point(0, 0);
             this.labelSummaryDecks.Name = "labelSummaryDecks";
-            this.labelSummaryDecks.Size = new System.Drawing.Size(80, 42);
+            this.labelSummaryDecks.Size = new System.Drawing.Size(115, 39);
             this.labelSummaryDecks.TabIndex = 60;
             this.labelSummaryDecks.Text = "Decks";
             this.toolTip1.SetToolTip(this.labelSummaryDecks, "This is the section when you can see monsters you should lock");

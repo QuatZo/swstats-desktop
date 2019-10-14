@@ -36,7 +36,26 @@ namespace Summoners_War_Statistics
             labelMaxedFlags,
             labelMaxedFlagsText,
             labelMaxedTowers,
-            labelMaxedTowersText
+            labelMaxedTowersText,
+            labelGuildBattlesWon,
+            labelOtherTowerFlags,
+            labelRankingArena,
+            labelRankingGuild,
+            labelSiegeContribution1,
+            labelSiegeContribution2,
+            labelRankingSige,
+            labelSiegeResult1,
+            labelSiegeResult2,
+            labelWingsPerWeek,
+            comboBoxGuildBattlesWon,
+            comboBoxRankingArena,
+            comboBoxRankingGuild,
+            comboBoxRankingSiege,
+            comboBoxSiegeResult1,
+            comboBoxSiegeResult2,
+            numericUpDownSiegeContribution1,
+            numericUpDownSiegeContribution2,
+            numericUpDownWingsPerDay
         };
 
         /// <summary>

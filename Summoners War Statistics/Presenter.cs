@@ -109,7 +109,7 @@ namespace Summoners_War_Statistics
                         control.Font = new Font(view.FF, 32, FontStyle.Regular);
                         continue;
                     }
-                    if (control.Name.Contains("ListView") || control.Name.Contains("TextBox"))
+                    if (control.Name.Contains("ListView") || control.Name.Contains("TextBox") || control.Name.Contains("comboBox") || control.Name.Contains("numeric"))
                     {
                         control.Font = new Font(view.FF, 12, FontStyle.Regular);
                         continue;
@@ -124,12 +124,11 @@ namespace Summoners_War_Statistics
                         control.Font = new Font(view.FF, 20, FontStyle.Regular);
                         continue;
                     }
-                    if (control.Name.Contains("Stats") || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other") || control.Name.Contains("Guild"))
+                    if (control.Name.Contains("Stats") || control.Name.Contains("Decks")  || control.Name == "labelMonsters" || control.Name == "labelRunes" || control.Name.Contains("DimHole") || control.Name.Contains("Other") || (control.Name.Contains("Guild") && !control.Name.Contains("Ranking") && !control.Name.Contains("GuildBattles")) || control.Name.Contains("DimHole"))
                     {
                         control.Font = new Font(view.FF, 24, FontStyle.Regular);
                         continue;
-                    }
-                    
+                    }                    
                     control.Font = new Font(view.FF, 14, FontStyle.Regular);
                 }
             }

@@ -60,7 +60,8 @@ namespace Summoners_War_Statistics
             labelFarmTime,
             labelFarmSuccess,
             panelFarm,
-            panelFarmRight
+            panelFarmRight,
+            labelDimHoleFloor
         };
         /// <summary>
         /// AXP needed for the chosen Dim Hole floor level (B1-B5)
