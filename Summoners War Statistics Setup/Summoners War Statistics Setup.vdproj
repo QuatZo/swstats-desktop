@@ -406,25 +406,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_024CA1BC7CE4681E3B38DC03766E28B1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_132D483717D63FF91EEB536C88D0B4C9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4DA68058A3CE717534F28E58CBF17832"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_821728BA1A561E97AE3C9538D6A01AF0"
+        "OwnerKey" = "8:_36E7C9220B8EF4BCD32BE462ECFACCA7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -436,7 +418,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_36E7C9220B8EF4BCD32BE462ECFACCA7"
+        "OwnerKey" = "8:_821728BA1A561E97AE3C9538D6A01AF0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4DA68058A3CE717534F28E58CBF17832"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_132D483717D63FF91EEB536C88D0B4C9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_024CA1BC7CE4681E3B38DC03766E28B1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1896,7 +1896,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.2"
+        "ProductVersion" = "8:1.0.3"
         "Manufacturer" = "8:QuatZo"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://reddit.com/u/quatzo"

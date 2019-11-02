@@ -81,6 +81,7 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.flowLayoutPanelMonsters = new System.Windows.Forms.FlowLayoutPanel();
             this.labelMonsters = new System.Windows.Forms.Label();
+            this.checkBoxRunes = new System.Windows.Forms.CheckBox();
             this.panelHeader.SuspendLayout();
             this.panelHeaderMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStars6)).BeginInit();
@@ -719,6 +720,7 @@
             // panelContent
             // 
             this.panelContent.Controls.Add(this.flowLayoutPanelMonsters);
+            this.panelContent.Controls.Add(this.checkBoxRunes);
             this.panelContent.Controls.Add(this.labelMonsters);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 230);
@@ -731,9 +733,9 @@
             // 
             this.flowLayoutPanelMonsters.AutoScroll = true;
             this.flowLayoutPanelMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelMonsters.Location = new System.Drawing.Point(0, 42);
+            this.flowLayoutPanelMonsters.Location = new System.Drawing.Point(58, 42);
             this.flowLayoutPanelMonsters.Name = "flowLayoutPanelMonsters";
-            this.flowLayoutPanelMonsters.Size = new System.Drawing.Size(1008, 307);
+            this.flowLayoutPanelMonsters.Size = new System.Drawing.Size(950, 307);
             this.flowLayoutPanelMonsters.TabIndex = 0;
             this.toolTip1.SetToolTip(this.flowLayoutPanelMonsters, "This section shows monsters");
             // 
@@ -749,6 +751,20 @@
             this.labelMonsters.TabIndex = 72;
             this.labelMonsters.Text = "Monsters";
             this.toolTip1.SetToolTip(this.labelMonsters, "This section shows monsters");
+            // 
+            // checkBoxRunes
+            // 
+            this.checkBoxRunes.AutoSize = true;
+            this.checkBoxRunes.Dock = System.Windows.Forms.DockStyle.Left;
+            this.checkBoxRunes.Font = new System.Drawing.Font("Coolvetica Condensed Rg", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(124)))), ((int)(((byte)(0)))));
+            this.checkBoxRunes.Location = new System.Drawing.Point(0, 42);
+            this.checkBoxRunes.Name = "checkBoxRunes";
+            this.checkBoxRunes.Size = new System.Drawing.Size(58, 307);
+            this.checkBoxRunes.TabIndex = 73;
+            this.checkBoxRunes.Text = "Runes";
+            this.checkBoxRunes.UseVisualStyleBackColor = true;
+            this.checkBoxRunes.CheckStateChanged += new System.EventHandler(this.CheckBoxRunes_CheckStateChanged);
             // 
             // Monsters
             // 
@@ -843,5 +859,6 @@
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label labelMonsters;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMonsters;
+        private System.Windows.Forms.CheckBox checkBoxRunes;
     }
 }

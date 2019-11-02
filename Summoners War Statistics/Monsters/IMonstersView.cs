@@ -45,6 +45,8 @@ namespace Summoners_War_Statistics
         int MonstersCollectionWhole { get; set; }
 
         string MonstersListHeader { set; }
+
+        bool MonstersWithRunes { get; }
         #endregion
 
         #region Events

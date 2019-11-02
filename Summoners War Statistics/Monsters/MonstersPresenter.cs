@@ -262,6 +262,7 @@ namespace Summoners_War_Statistics
             int monsterCounter = 0;
             for (int i = 0; i < view.MonstersList.Count; i++)
             {
+                if(view.MonstersWithRunes && view.MonstersList[i].Runes.Count == 0) { continue; }
                 if(view.MonstersCollectionCheckedStars.Count > 0 && !view.MonstersCollectionCheckedStars.Contains(Mapping.Instance.GetMonsterBaseClass((int)view.MonstersList[i].UnitMasterId)) || view.MonstersCollectionCheckedAttributes.Count > 0 && !view.MonstersCollectionCheckedAttributes.Contains(Mapping.Instance.GetMonsterAttribute((int)view.MonstersList[i].UnitMasterId))) { continue; }
 
                 monsterCounter++;
@@ -315,7 +316,7 @@ namespace Summoners_War_Statistics
 
         private void SortByAttribute()
         {
-            view.MonstersList = view.MonstersList.OrderBy(p => p.Attribute).ThenBy(q=>Mapping.Instance.GetMonsterBaseClass((int)q.UnitMasterId)).ThenBy(r=>r.UnitMasterId).ToList();
+            view.MonstersList = view.MonstersList.OrderBy(p => p.Attribute).ThenByDescending(q=>Mapping.Instance.GetMonsterBaseClass((int)q.UnitMasterId)).ThenBy(r=>r.UnitMasterId).ToList();
         }
 
         /// <summary>

@@ -75,7 +75,8 @@ namespace Summoners_War_Statistics
                     labelCollection,
                     labelCollectionSummoner,
                     labelCollectionSlash,
-                    labelCollectionWhole
+                    labelCollectionWhole,
+                    checkBoxRunes
                 };
 
         /// <summary>
@@ -296,6 +297,8 @@ namespace Summoners_War_Statistics
         {
             set => labelMonsters.Text = value;
         }
+
+        public bool MonstersWithRunes => checkBoxRunes.Checked;
         #endregion
 
         #region Events
@@ -389,6 +392,11 @@ namespace Summoners_War_Statistics
         #endregion
 
         private void CheckedListBoxCollectionStars_ItemCheck(object sender, EventArgs e)
+        {
+            MonstersCollectionItemChecked?.Invoke();
+        }
+
+        private void CheckBoxRunes_CheckStateChanged(object sender, EventArgs e)
         {
             MonstersCollectionItemChecked?.Invoke();
         }
