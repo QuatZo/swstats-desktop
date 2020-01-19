@@ -1,5 +1,5 @@
 # Deprecated
-Due to the fact that the technology I used doesn't meet my performance or design requirements, I decided to deprecate this project, or at least give up the current technology. Unfortunately, I learned about the slowness and inability to create some things in this technology only after trying to create something more advanced. This doesn't mean that the subject of the project has fallen. Slowly (due to the number of projects in my studies) I'm creating an online version of this project. Thanks to this (this time after recognition) I will be able to do more things I wanted to do at the very beginning, plus - you will be able to use it regardless of whether you are using Windows or not. Excuse me. 
+I decided to deprecate give up the current technology for this project. This doesn't mean that the subject of the project has fallen. Slowly (due to the number of projects in my studies) I'm creating an online version of this project. Thanks to this I will be able to do more things I wanted to do at the very beginning, plus - you will be able to use it regardless of whether you are using Windows or not.
 
 # Summoners War Statistics
 
