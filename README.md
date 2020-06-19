@@ -1,4 +1,8 @@
 # Deprecated
+### UPDATE
+New online version is live under[Summoners War Statistics Web](https://swstats.info/) (also known as SWStats) url. It contains updated Desktop App functionalities and big data analysis.
+
+### OLD
 I decided to deprecate give up the current technology for this project. This doesn't mean that the subject of the project has fallen. Slowly (due to the number of projects in my studies) I'm creating an online version of this project. Thanks to this I will be able to do more things I wanted to do at the very beginning, plus - you will be able to use it regardless of whether you are using Windows or not.
 
 # Summoners War Statistics
